@@ -172,7 +172,7 @@ export default function LearnPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="container-site">
           <SectionHeading
             eyebrow="Learn from experience"
@@ -183,7 +183,7 @@ export default function LearnPage() {
             <Testimonials />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA */}
       <section className="container-site pb-24">

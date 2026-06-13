@@ -36,15 +36,15 @@ export default function BeforeAfter({
   return (
     <div
       ref={ref}
-      className={`group relative select-none overflow-hidden rounded-3xl ${className}`}
+      className={`group relative select-none touch-none overflow-hidden rounded-3xl ${className}`}
       onPointerDown={(e) => {
         dragging.current = true;
-        (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+        e.currentTarget.setPointerCapture(e.pointerId);
         setFromClientX(e.clientX);
       }}
       onPointerMove={(e) => dragging.current && setFromClientX(e.clientX)}
       onPointerUp={() => (dragging.current = false)}
-      onPointerLeave={() => (dragging.current = false)}
+      onPointerCancel={() => (dragging.current = false)}
     >
       {/* After (full) */}
       <Image
