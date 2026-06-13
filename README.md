@@ -1,4 +1,4 @@
-# SetlesStudio — Website
+# SetlesStudio
 
 Premium marketing + lead-gen website for SetlesStudio (AI fashion content agency).
 Built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion + Swiper**.
@@ -45,12 +45,6 @@ so you can see exactly where images are still missing:
 - Blog: 3 post covers
 - Services: Video Ad Creation image
 - Portfolio: 4 extra gallery slots
-
-## Contact form
-
-The form currently shows a success state client-side. Wire it to your backend in
-`components/ContactForm.tsx` (look for the `TODO`) — e.g. a Next.js route handler
-posting to Resend, Formspree, or your CRM.
 
 ## Notes
 - Brand tokens (orange `#F26A1B`, ink, cream, gold) are in `tailwind.config.ts`.
