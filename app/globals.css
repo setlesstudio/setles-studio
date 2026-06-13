@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #f26a1b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+}
+
+::selection {
+  background: #f26a1b;
+  color: #fff;
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-dark hover:shadow-lg hover:shadow-brand/25;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-black;
+  }
+  .btn-outline {
+    @apply btn border border-ink/15 bg-white text-ink hover:border-brand hover:text-brand;
+  }
+  .btn-ghost-light {
+    @apply btn border border-white/30 text-white hover:bg-white hover:text-ink;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.22em] text-brand;
+  }
+  .card {
+    @apply rounded-3xl border border-ink/[0.06] bg-white shadow-[0_2px_24px_-12px_rgba(28,24,20,0.12)];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}

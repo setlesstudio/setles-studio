@@ -1,0 +1,84 @@
+import Link from "next/link";
+import { site } from "@/lib/data";
+import Logo from "./Logo";
+
+const cols = [
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About us" },
+      { href: "/portfolio", label: "Portfolio" },
+      { href: "/blog", label: "Blog" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { href: "/services#studio-product-photography", label: "Studio Photography" },
+      { href: "/services#lifestyle-photography", label: "Lifestyle Photography" },
+      { href: "/services#luxury-fashion-campaigns", label: "Luxury Campaigns" },
+      { href: "/services#video-ad-creation", label: "Video Ads" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/learn", label: "Learn" },
+      { href: "/pricing", label: "Pricing" },
+      { href: "/pricing#faq", label: "FAQ" },
+    ],
+  },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-ink text-white">
+      <div className="container-site grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div>
+          <div className="flex items-center gap-2">
+            <Logo size={100} className="rounded-lg" />
+           
+          </div>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
+            Premium AI fashion content for modern apparel brands. Studio,
+            lifestyle, and editorial visuals — delivered in days, not weeks.
+          </p>
+          <a
+            href={`mailto:${site.email}`}
+            className="mt-5 inline-block text-sm font-semibold text-brand hover:underline"
+          >
+            {site.email}
+          </a>
+        </div>
+
+        {cols.map((col) => (
+          <nav key={col.title} aria-label={col.title}>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">
+              {col.title}
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {col.links.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/70 transition-colors hover:text-white"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
+          <p>© {new Date().getFullYear()} SetlesStudio. All rights reserved.</p>
+          <p>Top Rated Plus on Upwork · 4+ years of industry experience</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

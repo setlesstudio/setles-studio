@@ -1,0 +1,86 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ImageSlot from "./ImageSlot";
+
+type Item = {
+  src: string;
+  alt: string;
+  category: "Studio" | "Lifestyle" | "Campaign" | "Footwear" | "Bags";
+  tall?: boolean;
+};
+
+const items: Item[] = [
+  { src: "/images/after-walk.jpg", alt: "Navy activewear set, lifestyle street scene", category: "Lifestyle", tall: true },
+  { src: "/images/studio-pink.png", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
+  { src: "/images/luxury-stairs.jpg", alt: "Fuchsia two-piece campaign on stairs", category: "Campaign", tall: true },
+  { src: "/images/footwear-heels.png", alt: "Black heels editorial product shot", category: "Footwear" },
+  { src: "/images/after-window.jpg", alt: "Navy activewear set, window lifestyle scene", category: "Lifestyle", tall: true },
+  { src: "/images/lifestyle-men.png", alt: "Menswear knit set, café lifestyle scene", category: "Lifestyle", tall: true },
+  { src: "/images/bags-dress.png", alt: "Straw handbag with embroidered dress", category: "Bags" },
+  { src: "/images/studio-long-coat-man.png", alt: "Man in long coat, studio product shot", category: "Studio" },
+  { src: "/images/luxury-stairs-wide.jpg", alt: "Fuchsia campaign, wide composition", category: "Campaign" },
+  { src: "/images/lifestyle-beach-pink-dress.png", alt: "Pink dress, beach lifestyle scene", category: "Lifestyle", tall: true },
+  { src: "/images/studio-white-shirt-gray-shorts-man.png", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
+  { src: "/images/multiple-models-environment.png", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", tall: true },
+];
+
+const filters = ["All", "Studio", "Lifestyle", "Campaign", "Footwear", "Bags"] as const;
+
+export default function PortfolioGallery() {
+  const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const visible = items.filter((i) => active === "All" || i.category === active);
+
+  return (
+    <div>
+      <div className="flex flex-wrap justify-center gap-2" role="tablist">
+        {filters.map((f) => (
+          <button
+            key={f}
+            role="tab"
+            aria-selected={active === f}
+            onClick={() => setActive(f)}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+              active === f
+                ? "bg-brand text-white"
+                : "bg-white text-ink-soft hover:text-brand"
+            }`}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
+
+      <motion.div layout className="mt-10 columns-2 gap-5 lg:columns-3 [&>*]:mb-5">
+        <AnimatePresence mode="popLayout">
+          {visible.map((item) => (
+            <motion.figure
+              layout
+              key={item.src}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25 }}
+              className="group relative break-inside-avoid overflow-hidden rounded-3xl"
+            >
+              <ImageSlot
+                src={item.src}
+                alt={item.alt}
+                label={item.alt}
+                className={`w-full ${item.tall ? "aspect-[3/4]" : "aspect-square"}`}
+                sizes="(min-width: 1024px) 33vw, 50vw"
+              />
+              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="text-xs font-bold uppercase tracking-widest text-brand">
+                  {item.category}
+                </span>
+                <p className="text-sm font-semibold text-white">{item.alt}</p>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+    </div>
+  );
+}
