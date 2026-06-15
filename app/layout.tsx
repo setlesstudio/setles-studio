@@ -19,11 +19,11 @@ const sans = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://setlesstudio.com"),
   title: {
-    default: "SetlesStudio — Premium AI Fashion Content for Ecommerce Brands",
+    default: "SetlesStudio | Premium AI Fashion Content for Ecommerce Brands",
     template: "%s | SetlesStudio",
   },
   description:
-    "Realistic fashion and apparel AI model shoots for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks — 10x more affordable than traditional photoshoots.",
+    "Realistic fashion and apparel AI model shoots for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
   openGraph: {
     siteName: "SetlesStudio",
     type: "website",

@@ -127,7 +127,7 @@ export default function AboutPage() {
               <div className="flex items-center justify-center rounded-2xl bg-white p-8 shadow-sm">
                 <Image
                   src="/images/badge-fiverr-choice.jpg"
-                  alt="Fiverr's Choice — 5.0 Pro Verified"
+                  alt="Fiverr's Choice, 5.0 Pro Verified"
                   width={280}
                   height={140}
                   className="h-auto w-full object-contain"

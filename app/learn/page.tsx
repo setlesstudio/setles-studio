@@ -16,7 +16,7 @@ import { learnIncluded, learnProducts } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Learn",
   description:
-    "Learn the process behind premium AI fashion content — workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+    "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
 };
 
 const promises = [
@@ -45,7 +45,6 @@ const promises = [
 export default function LearnPage() {
   return (
     <>
-      {/* Hero — dark + gold education look from the Learn design */}
       <section className="relative overflow-hidden bg-ink pb-24 pt-40 text-white">
         <div
           className="pointer-events-none absolute -left-20 top-1/3 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
@@ -72,7 +71,7 @@ export default function LearnPage() {
           <Reveal delay={0.15}>
             <ImageSlot
               src="/images/learn-hero.jpeg"
-              alt="Fashion model leaning on a vintage car — SetlesStudio editorial photography"
+              alt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
               label="Learn hero image"
               className="aspect-[4/5] w-full rounded-4xl"
               imageClassName="object-center"
@@ -116,7 +115,6 @@ export default function LearnPage() {
               <Reveal key={p.id} delay={i * 0.07}>
                 <article className="card group flex h-full flex-col overflow-hidden">
                   <div className="relative">
-                    {/* Cover slot: set p.image in lib/data.ts, e.g. /images/learn-masterclass.jpg */}
                     <ImageSlot
                       src={p.image}
                       alt={`${p.title} cover`}
@@ -172,7 +170,7 @@ export default function LearnPage() {
       </section>
 
       {/* Testimonials */}
-      {/* <section className="py-24">
+      <section className="py-24">
         <div className="container-site">
           <SectionHeading
             eyebrow="Learn from experience"
@@ -183,13 +181,12 @@ export default function LearnPage() {
             <Testimonials />
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Final CTA */}
       <section className="container-site pb-24">
         <Reveal>
           <div className="grid items-center gap-10 overflow-hidden rounded-4xl bg-ink p-10 text-white sm:p-14 lg:grid-cols-[1fr_1.2fr]">
-            {/* Image slot: replace src with e.g. /images/learn-cta.jpg */}
             <ImageSlot
               src=""
               alt="SetlesStudio learning materials"

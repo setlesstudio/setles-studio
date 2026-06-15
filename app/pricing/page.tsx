@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, CircleDollarSign, Clock, Infinity, Layers } from "lucide-react";
+
+const valueIcons = [CircleDollarSign, Clock, Infinity, Layers];
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
@@ -13,7 +15,7 @@ import { pricingTiers, valueProps } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent, flexible pricing. Starter $299, Growth $799, Premium $1,999+ — premium AI fashion content for every brand size.",
+    "Simple, transparent, flexible pricing. Starter $299, Growth $799, Premium $1,999+. Premium AI fashion content for every brand size.",
 };
 
 export default function PricingPage() {
@@ -29,7 +31,7 @@ export default function PricingPage() {
         }
         text="From product launches to global campaigns, choose the level of content production your brand needs."
         image="/images/pricing-hero.jpeg"
-        imageAlt="AI fashion model in pink outfit — SetlesStudio lifestyle photography"
+        imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
       >
         <Link href="/contact" className="btn-primary">
           Start Project
@@ -40,23 +42,31 @@ export default function PricingPage() {
       </PageHero>
 
       {/* Value strip */}
-      <section className="">
-        <div className="container-site grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
-          {valueProps.map((v) => (
-            <div key={v.title} className="text-center sm:text-left">
-              <p className="font-bold">{v.title}</p>
-              <p className="mt-1 text-sm text-ink-soft">{v.text}</p>
-            </div>
-          ))}
+      <section className="bg-white mt-6">
+        <div className="container-site">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand">
+            {valueProps.map((v, i) => {
+              const Icon = valueIcons[i];
+              return (
+                <div key={v.title} className="flex items-center gap-4 px-6 py-8">
+                  <Icon size={40} strokeWidth={1.5} className="shrink-0 text-brand" />
+                  <div>
+                    <p className="font-bold text-sm">{v.title}</p>
+                    <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">{v.text}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Our Work Speaks */}
-      <section className="container-site pb-14 mt-10">
+      <section className="container-site mt-10">
         <Reveal>
           <div className="overflow-hidden rounded-4xl bg-cream px-8 py-10 sm:px-12 sm:py-12 lg:flex lg:items-center lg:gap-12">
             {/* Text */}
-            <div className="shrink-0 lg:max-w-xs xl:max-w-sm">
+            <div className="shrink-0 lg:max-w-md">
               <p className="eyebrow">Our Work Speaks</p>
               <h2 className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
                 Creating Visuals That Build Brands
@@ -75,32 +85,38 @@ export default function PricingPage() {
 
             {/* Images */}
             <div className="mt-8 flex gap-3 lg:mt-0 lg:flex-1 lg:justify-end md:justify-center">
-              <div className="relative h-52 min-w-0 flex-1 overflow-hidden rounded-2xl sm:h-64 sm:w-44 sm:flex-none sm:shrink-0">
-                <Image
-                  src="/images/lifestyle-red-dress-nyc-1.jpeg"
-                  alt="Model in red dress on NYC street"
-                  fill
-                  sizes="(min-width: 640px) 176px, 33vw"
-                  className="object-cover object-top"
-                />
+              <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44">
+                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
+                  <Image
+                    src="/images/lifestyle-red-dress-nyc-1.jpeg"
+                    alt="Model in red dress on NYC street"
+                    fill
+                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </div>
-              <div className="relative mt-5 h-52 min-w-0 flex-1 overflow-hidden rounded-2xl sm:mt-6 sm:h-64 sm:w-44 sm:flex-none sm:shrink-0">
-                <Image
-                  src="/images/lifestyle-red-dress-nyc-2.jpeg"
-                  alt="Model in red dress walking in New York"
-                  fill
-                  sizes="(min-width: 640px) 176px, 33vw"
-                  className="object-cover object-top"
-                />
+              <div className="mt-5 min-w-0 flex-1 animate-float sm:mt-6 sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:0.6s]">
+                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
+                  <Image
+                    src="/images/lifestyle-red-dress-nyc-2.jpeg"
+                    alt="Model in red dress walking in New York"
+                    fill
+                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </div>
-              <div className="relative h-52 min-w-0 flex-1 overflow-hidden rounded-2xl sm:h-64 sm:w-44 sm:flex-none sm:shrink-0">
-                <Image
-                  src="/images/lifestyle-pink-outfit-cafe.jpeg"
-                  alt="Model in pink outfit outside a café"
-                  fill
-                  sizes="(min-width: 640px) 176px, 33vw"
-                  className="object-cover object-top"
-                />
+              <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:1.2s]">
+                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
+                  <Image
+                    src="/images/lifestyle-pink-outfit-cafe.jpeg"
+                    alt="Model in pink outfit outside a café"
+                    fill
+                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
               </div>
             </div>
           </div>

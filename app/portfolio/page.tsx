@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Before/after transformations and selected work — studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+    "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
 };
 
 export default function PortfolioPage() {
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
 
       <CTABand
         title="Want results like these for your brand?"
-        text="Send one product image and get a free sample — no credit card required."
+        text="Send one product image and get a free sample. No credit card required."
         primary={{ href: "/contact?intent=sample", label: "Request Free Sample" }}
         secondary={{ href: "/pricing", label: "See Pricing" }}
       />

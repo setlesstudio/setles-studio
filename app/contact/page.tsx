@@ -15,7 +15,7 @@ const points = [
   {
     icon: Gift,
     title: "Free sample available",
-    text: "Send one product image and receive a free sample — no credit card required.",
+    text: "Send one product image and receive a free sample. No credit card required.",
   },
   {
     icon: Clock,

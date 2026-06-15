@@ -10,7 +10,7 @@ import { services } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, video ads, and our Fashion AI Content Course — seven services for modern apparel brands.",
+    "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, video ads, and our Fashion AI Content Course. Seven services for modern apparel brands.",
 };
 
 export default function ServicesPage() {
