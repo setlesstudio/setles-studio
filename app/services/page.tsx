@@ -37,22 +37,23 @@ export default function ServicesPage() {
       </PageHero>
 
       <div className="container-site py-14">
-        <div className="space-y-24">
+        <div className="space-y-24 md:space-y-16">
           {services.map((s, i) => (
             <section
               key={s.id}
               id={s.id}
-              className="grid scroll-mt-28 items-center gap-10 lg:grid-cols-2 lg:gap-16"
+              className="grid scroll-mt-28 items-stretch gap-10 md:grid-cols-[1.5fr_3fr] md:gap-10"
             >
-              <Reveal>
+              <Reveal className="h-full">
                 <ImageSlot
                   src={s.image}
                   alt={s.title}
                   label={s.title}
-                  className="aspect-[6.4/6] w-full rounded-4xl"
+                  className="aspect-[3/4] w-full rounded-4xl bg-cream md:aspect-auto md:h-full md:min-h-[400px]"
+                  imageClassName="object-contain object-center"
                 />
               </Reveal>
-              <Reveal delay={0.1}>
+              <Reveal delay={0.1} className="flex flex-col justify-center">
                 <span className="font-display text-4xl font-semibold text-brand/20 xl:text-5xl">
                   {s.number}
                 </span>
@@ -78,7 +79,7 @@ export default function ServicesPage() {
                       ? "/learn"
                       : `/contact?service=${s.id}`
                   }
-                  className="btn-dark mt-6 xl:mt-8"
+                  className="btn-dark mt-6 self-start xl:mt-8"
                 >
                   {s.id === "fashion-ai-content-course"
                     ? "Browse Learn Resources"
