@@ -28,9 +28,11 @@ export default function PageHero({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-top opacity-55"
+            className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/45 to-ink/10" />
+          <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-[72%] bg-gradient-to-t from-ink/90 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-[52%] bg-gradient-to-r from-ink/75 to-transparent" />
         </>
       )}
       <div
