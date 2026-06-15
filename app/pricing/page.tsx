@@ -223,7 +223,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="scroll-mt-24 bg-cream py-14">
+      <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
           <div className="mt-12">

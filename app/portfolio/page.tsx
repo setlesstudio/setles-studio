@@ -42,7 +42,7 @@ export default function PortfolioPage() {
         </Reveal>
       </section> */}
 
-      <section className="bg-cream py-14">
+      <section className="bg-cream py-14 rounded-b-3xl">
         <div className="container-site">
           <SectionHeading
             eyebrow="Selected work"

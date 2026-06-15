@@ -79,7 +79,7 @@ export default function BlogPage() {
         </Reveal>
 
         {/* Grid */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((post, i) => (
             <Reveal key={post.slug} delay={i * 0.08}>
               <Link

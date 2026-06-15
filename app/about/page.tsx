@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-cream py-14">
+      <section className="bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading
             eyebrow="Meet the team"
