@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Download,
   Infinity as InfinityIcon,
@@ -10,6 +11,11 @@ import {
   Network,
   FileText,
   ImageIcon,
+  Award,
+  Star,
+  Globe,
+  Package,
+  Clock,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
@@ -192,31 +198,64 @@ export default function LearnPage() {
       {/* Final CTA */}
       <section className="container-site pb-14 mt-10">
         <Reveal>
-          <div className="grid items-center gap-10 overflow-hidden rounded-4xl bg-ink p-10 text-white sm:p-14 lg:grid-cols-[1fr_1.2fr]">
-            <ImageSlot
-              src=""
-              alt="SetlesStudio learning materials"
-              label="Learn CTA image"
-              className="aspect-[4/3] w-full rounded-3xl"
+          <div className="relative overflow-hidden rounded-4xl text-white">
+            <Image
+              src="/images/book-image-small.png"
+              alt="SetlesStudio books and course materials"
+              fill
+              sizes="100vw"
+              className="object-cover object-center lg:hidden"
+              priority
             />
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold">
-                Invest in your skills
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-                Start learning. Start creating.
-              </h2>
-              <p className="mt-4 max-w-md text-white/65">
-                Access premium resources that help you create realistic,
-                high-quality fashion content and grow your creative business.
-              </p>
-              <a href="#resources" className="btn mt-8 bg-gold text-ink hover:brightness-110">
-                Browse All Resources
-              </a>
-              <p className="mt-6 text-xs text-white/40">
-                Top Rated Plus on Upwork · Top 1% talent · 5,000+ projects
-                delivered · 4+ years of industry experience
-              </p>
+            <Image
+              src="/images/books-image.png"
+              alt="SetlesStudio books and course materials"
+              fill
+              sizes="100vw"
+              className="hidden object-cover object-center lg:block"
+              priority
+            />
+
+            <div className="relative z-10 flex min-h-[480px] flex-col justify-center lg:min-h-[460px]">
+              <div className="pointer-events-none absolute inset-0 bg-ink/60 lg:hidden" />
+              <div className="pointer-events-none absolute inset-0 hidden lg:block bg-[linear-gradient(to_left,rgba(28,24,20,0.90)_0%,rgba(28,24,20,0.85)_30%,rgba(28,24,20,0.3)_50%,transparent_62%)]" />
+
+              <div className="relative z-10 flex w-full flex-col items-center px-8 py-16 text-center lg:ml-auto lg:w-1/2 lg:items-start lg:px-16 lg:py-20 lg:text-left">
+                <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold">
+                  Invest in your skills
+                </p>
+                <h2 className="mt-3 font-display text-4xl font-bold leading-tight sm:text-5xl">
+                  Start Learning.<br />Start Creating.
+                </h2>
+                <p className="mt-5 max-w-sm leading-relaxed text-white/80">
+                  Access premium resources that help you create realistic,
+                  high-quality fashion content and grow your creative business.
+                </p>
+                <a
+                  href="#resources"
+                  className="btn mt-8 bg-gold text-sm font-bold uppercase tracking-widest text-ink hover:brightness-110"
+                >
+                  Browse All Resources
+                </a>
+              </div>
+            </div>
+
+            <div className="relative z-10 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 bg-ink/70 px-8 py-5 sm:grid-cols-5 sm:gap-0 sm:divide-x sm:divide-white/10">
+              {[
+                { Icon: Award,   title: "Top Rated Plus",  sub: "on Upwork" },
+                { Icon: Star,    title: "Top 1% Talented", sub: "Professional" },
+                { Icon: Globe,   title: "Worked With",     sub: "Global Brands" },
+                { Icon: Package, title: "5,000+ Projects", sub: "Delivered Successfully" },
+                { Icon: Clock,   title: "4+ Years",        sub: "Industry Experience" },
+              ].map(({ Icon, title, sub }) => (
+                <div key={title} className="flex items-center gap-3 sm:px-5">
+                  <Icon size={22} strokeWidth={1.5} className="shrink-0 text-gold" />
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-wide">{title}</p>
+                    <p className="text-xs text-white/55">{sub}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
