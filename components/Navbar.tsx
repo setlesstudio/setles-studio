@@ -30,7 +30,8 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [pathname]);
 
-  const opaque = scrolled || open;
+  const isBlogPost = pathname.startsWith("/blog/");
+  const opaque = scrolled || open || isBlogPost;
 
   return (
     <header

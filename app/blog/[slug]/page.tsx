@@ -41,7 +41,7 @@ export default function BlogPostPage({
   return (
     <>
       <article className="pt-36">
-        <header className="container-site max-w-4xl">
+        <header className="container-site max-w-5xl">
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-semibold text-ink-soft hover:text-brand"
@@ -75,7 +75,7 @@ export default function BlogPostPage({
           />
         </div>
 
-        <div className="container-site mt-14 max-w-4xl pb-24">
+        <div className="container-site mt-14 max-w-5xl pb-24">
           <div className="space-y-6 text-[17px] leading-[1.85] text-ink-soft">
             {post.body.map((para, i) => (
               <p key={i}>{para}</p>
