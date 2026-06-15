@@ -5,8 +5,13 @@ import {
   Infinity as InfinityIcon,
   TrendingUp,
   Wrench,
-  ArrowRight,
+  FolderOpen,
+  Lightbulb,
+  Network,
+  FileText,
+  ImageIcon,
 } from "lucide-react";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
@@ -42,52 +47,38 @@ const promises = [
   },
 ];
 
+const includedIcons = [FolderOpen, Lightbulb, Network, FileText, ImageIcon, InfinityIcon];
+
 export default function LearnPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink pb-24 pt-40 text-white">
-        <div
-          className="pointer-events-none absolute -left-20 top-1/3 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-          aria-hidden
-        />
-        <div className="container-site grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
-          <Reveal>
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold">
-              SetlesStudio Learn
-            </p>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] sm:text-5xl">
-              Learn the process behind{" "}
-              <span className="text-gold">premium AI fashion content</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
-              Access the same workflows, practice files, prompt collections, and
-              creative techniques used to create realistic fashion content for
-              brands worldwide.
-            </p>
-            <a href="#resources" className="btn mt-9 bg-gold text-ink hover:brightness-110">
-              Browse Resources <ArrowRight size={16} />
-            </a>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <ImageSlot
-              src="/images/learn-hero.jpeg"
-              alt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
-              label="Learn hero image"
-              className="aspect-[4/5] w-full rounded-4xl"
-              imageClassName="object-center"
-              priority
-            />
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="SetlesStudio Learn"
+        title={
+          <>
+            Learn the process behind{" "}
+            <span className="text-brand">premium AI fashion content</span>
+          </>
+        }
+        text="Access the same workflows, practice files, prompt collections, and creative techniques used to create realistic fashion content for brands worldwide."
+        image="/images/learn-hero.jpeg"
+        imageAlt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
+      >
+        <a href="#resources" className="btn-primary">
+          Browse Resources
+        </a>
+        <Link href="/contact" className="btn-ghost-light">
+          Contact Us
+        </Link>
+      </PageHero>
 
       {/* Promise strip */}
-      <section className="border-b border-ink/[0.06]">
-        <div className="container-site grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="">
+        <div className="container-site grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-brand">
           {promises.map((p) => (
-            <div key={p.title} className="flex gap-4">
+            <div key={p.title} className="flex gap-4 lg:px-8">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand">
-                <p.icon size={20} />
+                <p.icon size={30} />
               </span>
               <div>
                 <h3 className="text-sm font-bold uppercase tracking-wide">
@@ -103,7 +94,7 @@ export default function LearnPage() {
       </section>
 
       {/* Resources */}
-      <section id="resources" className="scroll-mt-24 py-24">
+      <section id="resources" className="scroll-mt-24 py-14">
         <div className="container-site">
           <SectionHeading
             eyebrow="Featured resources"
@@ -153,24 +144,39 @@ export default function LearnPage() {
       </section>
 
       {/* What's included */}
-      <section className="bg-brand py-20 text-white">
+      <section className="bg-brand py-12 text-white">
         <div className="container-site">
-          <h2 className="text-center font-display text-3xl font-semibold">
-            What&apos;s included
-          </h2>
-          <div className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {learnIncluded.map((item) => (
-              <div key={item.title} className="text-center">
-                <h3 className="font-bold">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-white/75">{item.text}</p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch">
+            {/* Heading */}
+            <div className="flex items-center lg:shrink-0 lg:border-r lg:border-white/25 lg:pr-10">
+              <h2 className="font-display text-4xl font-extrabold uppercase leading-none tracking-tight lg:text-5xl">
+                What&apos;s<br className="hidden lg:block" /> Included
+              </h2>
+            </div>
+            {/* Items */}
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:flex lg:flex-1 lg:divide-x lg:divide-white/25 lg:gap-0">
+              {learnIncluded.map((item, i) => {
+                const Icon = includedIcons[i];
+                return (
+                  <div
+                    key={item.title}
+                    className="flex flex-col items-center gap-2.5 text-center lg:flex-1 lg:px-6 lg:py-2"
+                  >
+                    <Icon size={32} strokeWidth={1.5} />
+                    <h3 className="text-sm font-bold">{item.title}</h3>
+                    <p className="text-xs leading-relaxed text-white/70">
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-24">
+      <section className="bg-cream py-24 rounded-3xl mt-12">
         <div className="container-site">
           <SectionHeading
             eyebrow="Learn from experience"
@@ -184,7 +190,7 @@ export default function LearnPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="container-site pb-24">
+      <section className="container-site pb-14 mt-10">
         <Reveal>
           <div className="grid items-center gap-10 overflow-hidden rounded-4xl bg-ink p-10 text-white sm:p-14 lg:grid-cols-[1fr_1.2fr]">
             <ImageSlot
