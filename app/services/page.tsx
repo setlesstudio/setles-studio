@@ -24,7 +24,7 @@ export default function ServicesPage() {
             <span className="text-brand">launch faster and sell more</span>
           </>
         }
-        text="From ecommerce product imagery to full-scale marketing campaigns — every service is built around accuracy, realism, and consistency."
+        text="From ecommerce product imagery to full-scale marketing campaigns. Every service is built around accuracy, realism, and consistency."
         image="/images/services-banner-section.png"
         imageAlt="child-outdoor"
       >
@@ -44,27 +44,27 @@ export default function ServicesPage() {
               id={s.id}
               className="grid scroll-mt-28 items-center gap-10 lg:grid-cols-2 lg:gap-16"
             >
-              <Reveal className={i % 2 === 1 ? "lg:order-2" : ""}>
+              <Reveal>
                 <ImageSlot
                   src={s.image}
                   alt={s.title}
                   label={s.title}
-                  className="aspect-[4/5] w-full rounded-4xl"
+                  className="aspect-[6.4/6] w-full rounded-4xl"
                 />
               </Reveal>
               <Reveal delay={0.1}>
-                <span className="font-display text-5xl font-semibold text-brand/20">
+                <span className="font-display text-4xl font-semibold text-brand/20 xl:text-5xl">
                   {s.number}
                 </span>
-                <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
+                <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl">
                   {s.title}
                 </h2>
-                <p className="mt-4 text-lg leading-relaxed text-ink-soft">
+                <p className="mt-3 text-base leading-relaxed text-ink-soft xl:mt-4 xl:text-lg">
                   {s.long}
                 </p>
-                <ul className="mt-7 space-y-3">
+                <ul className="mt-5 space-y-2 xl:mt-7 xl:space-y-3">
                   {s.deliverables.map((d) => (
-                    <li key={d} className="flex items-start gap-3 text-[15px]">
+                    <li key={d} className="flex items-start gap-3 text-sm xl:text-[15px]">
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-soft text-brand">
                         <Check size={12} strokeWidth={3} />
                       </span>
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                       ? "/learn"
                       : `/contact?service=${s.id}`
                   }
-                  className="btn-dark mt-8"
+                  className="btn-dark mt-6 xl:mt-8"
                 >
                   {s.id === "fashion-ai-content-course"
                     ? "Browse Learn Resources"
