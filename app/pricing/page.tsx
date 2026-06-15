@@ -52,7 +52,7 @@ export default function PricingPage() {
       </section>
 
       {/* Our Work Speaks */}
-      <section className="container-site pb-24 mt-10">
+      <section className="container-site pb-14 mt-10">
         <Reveal>
           <div className="overflow-hidden rounded-4xl bg-cream px-8 py-10 sm:px-12 sm:py-12 lg:flex lg:items-center lg:gap-12">
             {/* Text */}
@@ -108,7 +108,7 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <SectionHeading
           eyebrow="Choose your package"
           title="Simple. Transparent. Flexible."
@@ -207,7 +207,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="scroll-mt-24 bg-cream py-24">
+      <section id="faq" className="scroll-mt-24 bg-cream py-14">
         <div className="container-site">
           <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
           <div className="mt-12">

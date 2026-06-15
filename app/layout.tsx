@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const display = Fraunces({
+const display = DM_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  axes: ["opsz"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const sans = Manrope({

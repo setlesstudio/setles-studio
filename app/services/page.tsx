@@ -36,7 +36,7 @@ export default function ServicesPage() {
         </Link>
       </PageHero>
 
-      <div className="container-site py-24">
+      <div className="container-site py-14">
         <div className="space-y-24">
           {services.map((s, i) => (
             <section

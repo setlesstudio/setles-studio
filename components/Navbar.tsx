@@ -32,11 +32,6 @@ export default function Navbar() {
 
   const opaque = scrolled || open;
 
-  // Home page has a light (cream) hero — keep ink text even when unscrolled.
-  // Every other page uses PageHero (bg-ink dark) so white text works there.
-  const isLightHero = pathname === "/";
-  const useDarkText = opaque || isLightHero;
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -60,9 +55,7 @@ export default function Navbar() {
               className={`text-sm font-semibold transition-colors hover:text-brand ${
                 pathname === l.href
                   ? "text-brand"
-                  : useDarkText
-                  ? "text-ink-soft"
-                  : "text-white/80"
+                  : opaque ? "text-ink/80" : "text-white/80"
               }`}
             >
               {l.label}
@@ -81,9 +74,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`grid h-10 w-10 place-items-center rounded-xl border transition-all duration-300 lg:hidden ${
-            useDarkText
-              ? "border-ink/10 text-ink"
-              : "border-white/30 bg-white/15 text-white"
+            opaque ? "border-ink/20 text-ink" : "border-white/30 bg-white/15 text-white"
           }`}
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open ? "true" : "false"}

@@ -8,7 +8,7 @@ import {
   CircleDollarSign,
   Clock,
 } from "lucide-react";
-import BeforeAfter from "@/components/BeforeAfter";
+import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import TrustedBy from "@/components/TrustedBy";
@@ -23,76 +23,47 @@ export default function HomePage() {
   return (
     <>
       {/* ------------------------------------------------ Hero */}
-      <section className="relative overflow-hidden bg-cream pb-20 pt-36 sm:pt-40">
-        <div
-          className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-brand/10 blur-3xl"
-          aria-hidden
-        />
-        <div className="container-site grid items-center gap-14 lg:grid-cols-[1.05fr_1fr]">
-          <Reveal>
-            <p className="eyebrow">AI Fashion Content Studio</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
-              Realistic fashion and apparel{" "}
-              <span className="text-brand">AI model shoots</span> for ecommerce
-              brands.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-              Create studio, lifestyle, and editorial content for your brand in
-              days instead of weeks — at a fraction of traditional production
-              costs.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link href="/portfolio" className="btn-primary">
-                View Our Work <ArrowRight size={16} />
-              </Link>
-              <Link href="/contact" className="btn-outline">
-                Book a Free Consultation
-              </Link>
-            </div>
-            <p className="mt-6 text-sm text-ink-soft/70">
-              7-day average delivery · 500+ projects completed · Top Rated Plus
-              on Upwork
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.15}>
-            <BeforeAfter
-              before="/images/product-image.png"
-              after="/images/after-walk.jpg"
-              className="aspect-[4/5] w-full shadow-2xl shadow-ink/15"
-            />
-            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-widest text-ink-soft/60">
-              Drag to compare — flat product photo → campaign-ready content
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="AI Fashion Content Studio"
+        title={
+          <>
+            Realistic fashion and apparel{" "}
+            <span className="text-brand">AI model shoots</span> for ecommerce
+            brands.
+          </>
+        }
+        text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
+        image="/images/luxury-stairs-wide.jpg"
+        imageAlt="Fashion model on luxury stairs"
+      >
+        <Link href="/portfolio" className="btn-primary">
+          View Our Work <ArrowRight size={16} />
+        </Link>
+        <Link href="/contact" className="btn-ghost-light">
+          Book a Free Consultation
+        </Link>
+        <p className="w-full text-sm text-white/50">
+          7-day average delivery · 500+ projects completed · Top Rated Plus on
+          Upwork
+        </p>
+      </PageHero>
 
       {/* ------------------------------------ From product to campaign */}
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <SectionHeading
           eyebrow="Before / After"
           title="From product photo to campaign-ready content"
           text="Send us simple flat product photos. We return realistic on-model imagery with accurate fit, fabric, and detail."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-[0.8fr_1fr_1fr]">
+        <div className="mt-10 grid gap-6 md:grid-cols-[0.8fr_1fr_1fr]">
           <Reveal className="card flex flex-col gap-4 p-6">
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-cream">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
-                src="/images/product-top.png"
+                src="/images/product-image.png"
                 alt="Navy tank top flat product photo"
-                fill
-                sizes="33vw"
-                className="object-contain p-4"
-              />
-            </div>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-cream">
-              <Image
-                src="/images/product-shorts.png"
-                alt="Navy bike shorts flat product photo"
                 fill
                 sizes="33vw"
                 className="object-contain p-4"
@@ -100,7 +71,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative h-full min-h-[420px] overflow-hidden rounded-3xl">
+            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
@@ -109,12 +80,12 @@ export default function HomePage() {
                 alt="Model wearing the navy activewear set walking outdoors"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="relative h-full min-h-[420px] overflow-hidden rounded-3xl">
+            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
@@ -123,7 +94,7 @@ export default function HomePage() {
                 alt="Model wearing the navy activewear set reading by a window"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </Reveal>
@@ -134,22 +105,22 @@ export default function HomePage() {
       <section className="container-site pb-24">
         <Reveal>
           <div className="rounded-4xl border border-brand/20 bg-brand-soft px-8 py-12 text-center sm:px-16">
-            <span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-brand text-white">
-              <Gift size={26} />
+            <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand text-white">
+              <Gift size={30} />
             </span>
             <p className="eyebrow mt-5">Free sample available</p>
             <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
               See our quality before you invest
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+            <p className="mx-auto mt-4 max-w-5xl text-ink-soft">
               Send us one product image and receive a free sample to evaluate
               our quality, realism, and attention to detail before starting a
               project.
             </p>
-            <Link href="/contact?intent=sample" className="btn-primary mt-8">
+            <Link href="/contact?intent=sample" className="btn-primary mt-5">
               Request Free Sample
             </Link>
-            <p className="mt-3 text-xs text-ink-soft/70">No credit card required</p>
+            <p className="mt-2 text-xs text-ink-soft/70">No credit card required</p>
           </div>
         </Reveal>
       </section>
@@ -163,7 +134,7 @@ export default function HomePage() {
             const Icon = fastIcons[i % fastIcons.length];
             return (
               <Reveal key={v.title} delay={i * 0.08}>
-                <div className="card h-full p-7">
+                <div className="card h-full p-7 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-soft text-brand">
                     <Icon size={20} />
                   </span>
@@ -179,7 +150,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------------------------- Services */}
-      <section className="bg-cream py-24">
+      <section className="bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
@@ -226,7 +197,7 @@ export default function HomePage() {
       </section>
 
       {/* ----------------------------------------------- Process */}
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <SectionHeading
           eyebrow="Our process"
           title="Simple. Clear. Effective."
@@ -253,7 +224,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------ Testimonials */}
-      <section className="bg-cream py-24">
+      <section className="bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading
             eyebrow="What our clients say"

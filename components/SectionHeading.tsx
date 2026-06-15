@@ -15,11 +15,11 @@ export default function SectionHeading({
 }) {
   return (
     <Reveal
-      className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : ""}`}
+      className={`max-w-6xl ${align === "center" ? "mx-auto text-center" : ""}`}
     >
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2
-        className={`mt-3 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl ${
+        className={`mt-2 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl ${
           dark ? "text-white" : "text-ink"
         }`}
       >
@@ -27,7 +27,7 @@ export default function SectionHeading({
       </h2>
       {text && (
         <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
+          className={`mt-2 text-base leading-relaxed sm:text-lg ${
             dark ? "text-white/65" : "text-ink-soft"
           }`}
         >

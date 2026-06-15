@@ -165,16 +165,25 @@ export const valueProps = [
   },
 ];
 
-export const trustedBy = [
-  "Sova Style",
-  "Lingen",
-  "SwimUp",
-  "SALTY.",
-  "Lil Cactus",
-  "M&N",
-  "BASICBEIGE",
-  "iknct",
-  "Vienna Wude",
+export type TrustedBrand = { name: string; logo: string };
+
+export const trustedBy: TrustedBrand[] = [
+  { name: "Ralph Lauren",       logo: "/images/logos/Ralph-lauren.jpg" },
+  { name: "Boohoo",             logo: "/images/logos/boohoo-png.webp" },
+  { name: "Columbia",           logo: "/images/logos/columbia-sportswear-company.png" },
+  { name: "Diesel",             logo: "/images/logos/diesel-logo.png" },
+  { name: "HardTail",           logo: "/images/logos/HardTail.avif" },
+  { name: "Swim Zip",           logo: "/images/logos/Swim-zip.avif" },
+  { name: "SALTY.",             logo: "/images/logos/salty..webp" },
+  { name: "BASICBEIGE",         logo: "/images/logos/basicbeige-png.webp" },
+  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR.webp" },
+  { name: "Marni",              logo: "/images/logos/marni.png" },
+  { name: "Mulberry",           logo: "/images/logos/Mulberry-png.png" },
+  { name: "Nanushka",           logo: "/images/logos/nanushka.png" },
+  { name: "Paco Rabanne",       logo: "/images/logos/paco-rabanne-logo-png.png" },
+  { name: "Wonder",             logo: "/images/logos/Logo-wonder.png" },
+  { name: "Winter Green",       logo: "/images/logos/winter-green-png.png" },
+  { name: "BH",                 logo: "/images/logos/BH.jpeg" },
 ];
 
 export const process = [
@@ -203,39 +212,63 @@ export const process = [
 export const testimonials = [
   {
     quote:
-      "SetlesStudio delivered amazing content that perfectly represents our brand. Highly professional and on time.",
+      "Muhammad continues to deliver on every project I send to him. He seems to know exactly the looks that I want just from a little guidance and usually perfect the first time. I will definitely continue to send him projects.",
+    name: "John Davies",
+    role: "UK",
+  },
+  {
+    quote:
+      "Muhammad and his team is a pleasure to work with. His work is brilliant, clear, and prompt with communications. He is patient with revisions and keeps me updated every step of the way. I highly recommend him, and will work with him again.",
+    name: "Priya Sharma",
+    role: "India",
+  },
+  {
+    quote:
+      "We used Muhammad's team for AI footwear visuals, and the results were outstanding. The shoes looked realistic and professionally photographed. Highly recommended for eCommerce brands.",
+    name: "Jean-Pierre Moreau",
+    role: "Paris, France",
+  },
+  {
+    quote:
+      "The realistic AI fashion images exceeded our expectations. Excellent quality, communication, and attention to outfit details.",
+    name: "Emily Thompson",
+    role: "Paris, France",
+  },
+  {
+    quote:
+      "Great experience working with Muhammad's team. The AI-generated fashion and apparel images were realistic, consistent, and high quality.",
+    name: "Chloe Davies",
+    role: "Denmark",
+  },
+  {
+    quote:
+      "Muhammad and his team created highly realistic AI fashion images with excellent outfit accuracy. The results looked like a professional fashion photoshoot.",
+    name: "Lily Davies",
+    role: "UK",
+  },
+  {
+    quote:
+      "Muhammad and his team were amazing to work with. He definitely exceeded my expectations. I would highly recommend him!",
     name: "Sarah Johnson",
-    role: "Marketing Director, ASOS-style retail",
+    role: "UK",
   },
   {
     quote:
-      "The quality, attention to detail, and communication were excellent. We will definitely work again.",
-    name: "Michael Brown",
-    role: "Brand Owner",
+      "Working with Muhammad was a game-changer for our apparel brand. The realism in the product visuals he created is truly remarkable. The fabric textures are perfect! His communication and execution were flawless.",
+    name: "NY_Apparel_Guru",
+    role: "USA",
   },
   {
     quote:
-      "The models were outstanding and helped our brand launch faster than we thought possible.",
-    name: "Emma Williams",
-    role: "Ecommerce Manager",
+      "Muhammad is highly recommended if you're looking for consistent AI characters or realistic product visuals. His work quality, communication, and creativity are all top-notch!",
+    name: "vivianwonder",
+    role: "Germany",
   },
   {
     quote:
-      "The prompt pack is insanely good. It saved me hours of trial and error. Highly recommended!",
-    name: "John Carter",
-    role: "Content Creator",
-  },
-  {
-    quote:
-      "The fashion content masterclass changed the way I create. Very detailed and practical.",
-    name: "Sophia Martinez",
-    role: "Photographer",
-  },
-  {
-    quote:
-      "The best resources I've purchased. Everything is explained so well and very easy to implement.",
-    name: "Daniel Kim",
-    role: "Brand Owner",
+      "This was my second order and it was a great delivery as usual. Very good attention to detail and quality of work. Highly recommend.",
+    name: "Jean-Luc Petit",
+    role: "France",
   },
 ];
 

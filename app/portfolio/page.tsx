@@ -27,7 +27,7 @@ export default function PortfolioPage() {
         imageAlt="multiple-models-outdoor"
       />
 
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <SectionHeading
           eyebrow="Before / After"
           title="The transformation, side by side"
@@ -42,7 +42,7 @@ export default function PortfolioPage() {
         </Reveal>
       </section>
 
-      <section className="bg-cream py-24">
+      <section className="bg-cream py-14">
         <div className="container-site">
           <SectionHeading
             eyebrow="Selected work"

@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="bg-cream py-24">
+      <section className="bg-cream py-14">
         <div className="container-site">
           <SectionHeading
             eyebrow="Meet the team"
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Awards */}
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <Reveal>
           <div className="overflow-hidden rounded-4xl bg-cream px-8 py-12 sm:px-14">
             <h2 className="text-center font-display text-2xl font-semibold sm:text-3xl">
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </section>
 
       {/* Process */}
-      <section className="container-site py-24">
+      <section className="container-site py-14">
         <SectionHeading eyebrow="Our process" title="Simple. Clear. Effective." />
         <div className="relative mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div

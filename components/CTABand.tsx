@@ -16,7 +16,7 @@ export default function CTABand({
   image?: string;
 }) {
   return (
-    <section className="container-site py-20">
+    <section className="container-site py-16">
       <Reveal>
         <div className="relative overflow-hidden rounded-4xl bg-ink px-8 py-16 text-center sm:px-16">
           {image && (
@@ -33,7 +33,7 @@ export default function CTABand({
             aria-hidden
           />
           <div className="relative">
-            <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            <h2 className="mx-auto max-w-5xl font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
               {title}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/65">{text}</p>

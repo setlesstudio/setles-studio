@@ -8,6 +8,7 @@ export default function PageHero({
   children,
   image,
   imageAlt = "",
+  fullHeight = true,
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -15,9 +16,10 @@ export default function PageHero({
   children?: React.ReactNode;
   image?: string;
   imageAlt?: string;
+  fullHeight?: boolean;
 }) {
   return (
-    <section className="relative flex min-h-[560px] flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white">
+    <section className={`relative flex ${fullHeight ? "min-h-screen" : "min-h-[560px]"} flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white`}>
       {image && (
         <>
           <Image
