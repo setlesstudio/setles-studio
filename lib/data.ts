@@ -430,65 +430,6 @@ export const team = [
   { name: "Team Member", role: "Production Expert", image: "" },
 ];
 
-export type Post = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  category: string;
-  readTime: string;
-  image: string;
-  body: string[]; // paragraphs
-};
 
-export const posts: Post[] = [
-  {
-    slug: "ai-fashion-photography-vs-traditional-photoshoots",
-    title: "AI Fashion Photography vs Traditional Photoshoots: A Real Cost Breakdown",
-    excerpt:
-      "We compare the true cost, timeline, and flexibility of AI-powered content production against a traditional studio shoot for a 30-image campaign.",
-    date: "2026-05-28",
-    category: "Industry",
-    readTime: "6 min read",
-    image: "",
-    body: [
-      "A traditional 30-image campaign typically involves a photographer, studio rental, models, hair and makeup, styling, and post-production. Costs easily reach $8,000–$25,000 with 4–8 weeks from brief to final delivery.",
-      "AI-powered production changes the economics completely. The same 30-image set, with consistent models and accurate product detail, can be produced for a fraction of the cost and delivered in about a week.",
-      "The biggest shift isn't just cost, it's iteration speed. When a scene doesn't work, you don't reschedule a shoot. You adjust the direction and regenerate, keeping the same model, lighting style, and brand look.",
-      "Where traditional shoots still win: physical events, founder portraits, and campaigns where the behind-the-scenes content is itself the marketing. For everything else, including product pages, social content, and seasonal refreshes, AI production is now the practical default for lean ecommerce teams.",
-    ],
-  },
-  {
-    slug: "how-to-keep-fabric-details-accurate-in-ai-content",
-    title: "How We Keep Fabric Details 100% Accurate in AI Fashion Content",
-    excerpt:
-      "Stitching, seams, texture, and print placement. The techniques we use to make sure the product in the image is exactly the product you sell.",
-    date: "2026-05-14",
-    category: "Process",
-    readTime: "8 min read",
-    image: "",
-    body: [
-      "The single biggest objection to AI fashion content is product accuracy. If the stitching, print placement, or fabric texture in the image doesn't match the physical garment, the content is unusable and can even create returns.",
-      "Our workflow starts with high-quality flat product photography from the brand. These reference images anchor every generation: silhouette, seams, hardware, and texture are preserved rather than reinvented.",
-      "We then run a detail-verification pass on every image, comparing collar shapes, button counts, stitch lines, and print alignment against the source product at 200% zoom before anything reaches a client gallery.",
-      "The result is content where the model, scene, and lighting are creative variables, but the product itself is a constant. That's the standard ecommerce brands need, and it's the core of what we teach in our Learn resources.",
-    ],
-  },
-  {
-    slug: "5-content-types-every-fashion-brand-needs",
-    title: "5 Content Types Every Fashion Ecommerce Brand Needs in 2026",
-    excerpt:
-      "From marketplace-compliant studio shots to scroll-stopping lifestyle scenes. The content mix that converts across every channel.",
-    date: "2026-04-30",
-    category: "Strategy",
-    readTime: "5 min read",
-    image: "",
-    body: [
-      "1. Studio product shots. Clean, consistent, marketplace-compliant. These are your conversion workhorses on product pages and they need to be uniform across the entire catalog.",
-      "2. Lifestyle imagery. Real-world context sells the feeling, not just the garment. These drive social engagement and make paid ads feel native to the feed.",
-      "3. Editorial campaign sets. A handful of luxury-grade images per season elevates brand perception far beyond their media spend.",
-      "4. Short-form video. Fabric movement and model motion consistently outperform static images in paid social. Even 6-second loops lift click-through rates.",
-      "5. Detail shots. Texture, stitching, and hardware close-ups answer the questions that stop customers from buying, and reduce return rates.",
-    ],
-  },
-];
+
+

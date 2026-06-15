@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import ImageSlot from "@/components/ImageSlot";
+import { PortableText, type SanityDocument } from "next-sanity";
 import CTABand from "@/components/CTABand";
-import { posts } from "@/lib/data";
+import { client, urlFor } from "@/sanity/client";
 
-export function generateStaticParams() {
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0] {
+  title,
+  "slug": slug.current,
+  excerpt,
+  publishedAt,
+  category,
+  readTime,
+  image,
+  body
+}`;
+
+const NEXT_POST_QUERY = `*[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0] {
+  title,
+  "slug": slug.current
+}`;
+
+const SLUGS_QUERY = `*[_type == "post" && defined(slug.current)] { "slug": slug.current }`;
+
+export async function generateStaticParams() {
+  const posts = await client.fetch<{ slug: string }[]>(SLUGS_QUERY);
   return posts.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const post = posts.find((p) => p.slug === params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await client.fetch<SanityDocument>(POST_QUERY, { slug });
   if (!post) return {};
   return { title: post.title, description: post.excerpt };
 }
@@ -28,15 +49,23 @@ function formatDate(d: string) {
   });
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const index = posts.findIndex((p) => p.slug === params.slug);
-  if (index === -1) notFound();
-  const post = posts[index];
-  const next = posts[(index + 1) % posts.length];
+  const { slug } = await params;
+
+  const [post, nextPost] = await Promise.all([
+    client.fetch<SanityDocument>(POST_QUERY, { slug }, { next: { revalidate: 60 } }),
+    client.fetch<SanityDocument>(NEXT_POST_QUERY, { slug }, { next: { revalidate: 60 } }),
+  ]);
+
+  if (!post) notFound();
+
+  const coverImageUrl = post.image
+    ? urlFor(post.image).width(1200).height(675).url()
+    : null;
 
   return (
     <>
@@ -60,47 +89,51 @@ export default function BlogPostPage({
             {post.excerpt}
           </p>
           <p className="mt-6 text-sm text-ink-soft/70">
-            {formatDate(post.date)} · SetlesStudio Team
+            {formatDate(post.publishedAt)} · SetlesStudio Team
           </p>
         </header>
 
-        <div className="container-site mt-12 max-w-5xl">
-          {/* Cover slot: set post.image in lib/data.ts */}
-          <ImageSlot
-            src={post.image}
-            alt={post.title}
-            label="Article cover image"
-            className="aspect-[16/9] w-full rounded-4xl"
-            priority
-          />
-        </div>
+        {coverImageUrl && (
+          <div className="container-site mt-12 max-w-5xl">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-4xl">
+              <Image
+                src={coverImageUrl}
+                alt={post.title}
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 1000px, 100vw"
+              />
+            </div>
+          </div>
+        )}
 
         <div className="container-site mt-14 max-w-5xl pb-24">
-          <div className="space-y-6 text-[17px] leading-[1.85] text-ink-soft">
-            {post.body.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl">
+            {Array.isArray(post.body) && <PortableText value={post.body} />}
           </div>
 
           <hr className="my-14 border-ink/10" />
 
-          <Link
-            href={`/blog/${next.slug}`}
-            className="card group flex items-center justify-between gap-6 p-7"
-          >
-            <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-brand">
-                Read next
-              </p>
-              <p className="mt-2 font-display text-lg font-semibold leading-snug group-hover:text-brand">
-                {next.title}
-              </p>
-            </div>
-            <ArrowRight
-              size={20}
-              className="shrink-0 text-brand transition-transform group-hover:translate-x-1"
-            />
-          </Link>
+          {nextPost && (
+            <Link
+              href={`/blog/${nextPost.slug}`}
+              className="card group flex items-center justify-between gap-6 p-7"
+            >
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-brand">
+                  Read next
+                </p>
+                <p className="mt-2 font-display text-lg font-semibold leading-snug group-hover:text-brand">
+                  {nextPost.title}
+                </p>
+              </div>
+              <ArrowRight
+                size={20}
+                className="shrink-0 text-brand transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          )}
         </div>
       </article>
 
