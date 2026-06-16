@@ -234,7 +234,7 @@ export default function AboutPage() {
         title="Ready to elevate your brand with premium fashion content?"
         text="Let's create something amazing together."
         primary={{ href: "/contact", label: "Start Your Project" }}
-        image={'/images/about-last-banner-image.png'}
+        image={'/images/about-last-banner-picture.png'}
       />
     </>
   );

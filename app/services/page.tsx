@@ -93,8 +93,8 @@ export default function ServicesPage() {
       </div>
 
       <CTABand
-        title="Not sure which service fits?"
-        text="Book a free consultation and we'll map the right content mix to your catalog and channels."
+        title="Not Sure Which AI Visuals Fit Your Brand"
+        text="Let’s map out a custom AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
         primary={{ href: "/contact", label: "Book a Free Consultation" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
       />

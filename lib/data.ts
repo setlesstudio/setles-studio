@@ -168,22 +168,22 @@ export const valueProps = [
 export type TrustedBrand = { name: string; logo: string };
 
 export const trustedBy: TrustedBrand[] = [
-  { name: "Ralph Lauren",       logo: "/images/logos/Ralph-lauren.jpg" },
+  { name: "Ralph Lauren",       logo: "/images/logos/Ralph-Lauren-logo.png" },
   { name: "Boohoo",             logo: "/images/logos/boohoo-png.webp" },
-  { name: "Columbia",           logo: "/images/logos/columbia-sportswear-company.png" },
-  { name: "Diesel",             logo: "/images/logos/diesel-logo.png" },
+  { name: "Columbia",           logo: "/images/logos/columbia-sportswear-logo.png" },
+  { name: "Diesel",             logo: "/images/logos/denim-division-logo.png" },
   { name: "HardTail",           logo: "/images/logos/HardTail.avif" },
-  { name: "Swim Zip",           logo: "/images/logos/Swim-zip.avif" },
+  { name: "Swim Zip",           logo: "/images/logos/swim-zip-logo.png" },
   { name: "SALTY.",             logo: "/images/logos/salty..webp" },
   { name: "BASICBEIGE",         logo: "/images/logos/basicbeige-png.webp" },
-  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR.webp" },
-  { name: "Marni",              logo: "/images/logos/marni.png" },
+  { name: "Lil Cactus Reloved", logo: "/images/logos/lilcactus-logo.png" },
+  { name: "Marni",              logo: "/images/logos/marni-logo.png" },
   { name: "Mulberry",           logo: "/images/logos/Mulberry-png.png" },
-  { name: "Nanushka",           logo: "/images/logos/nanushka.png" },
-  { name: "Paco Rabanne",       logo: "/images/logos/paco-rabanne-logo-png.png" },
+  { name: "Nanushka",           logo: "/images/logos/nanushka-logo.png" },
+  { name: "Paco Rabanne",       logo: "/images/logos/paco-rabanne-logo.png" },
   { name: "Wonder",             logo: "/images/logos/Logo-wonder.png" },
   { name: "Winter Green",       logo: "/images/logos/winter-green-png.png" },
-  { name: "BH",                 logo: "/images/logos/BH.jpeg" },
+  { name: "BH",                 logo: "/images/logos/BH-logo.png" },
 ];
 
 export const process = [

@@ -18,26 +18,30 @@ export default function CTABand({
   return (
     <section className="container-site py-16">
       <Reveal>
-        <div className="relative overflow-hidden rounded-4xl bg-ink px-8 py-16 text-center sm:px-16">
-          {image && (
-            <Image
-              src={image}
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover opacity-35"
+        <div className={`relative overflow-hidden rounded-4xl bg-ink text-center sm:px-16 ${image ? "flex min-h-[420px] flex-col justify-end px-6 pb-10 pt-6 sm:px-16 sm:pb-14 sm:pt-8" : "px-8 py-28"}`}>
+          {image ? (
+            <>
+              <Image
+                src={image}
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover object-top"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent" />
+            </>
+          ) : (
+            <div
+              className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/25 blur-3xl"
+              aria-hidden
             />
           )}
-          <div
-            className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brand/25 blur-3xl"
-            aria-hidden
-          />
           <div className="relative">
-            <h2 className="mx-auto max-w-5xl font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            <h2 className="mx-auto max-w-5xl font-display text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/65">{text}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <p className="mx-auto mt-3 max-w-xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
               <Link href={primary.href} className="btn-primary">
                 {primary.label}
               </Link>

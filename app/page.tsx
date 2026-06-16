@@ -27,9 +27,7 @@ export default function HomePage() {
         eyebrow="AI Fashion Content Studio"
         title={
           <>
-            Realistic fashion and apparel{" "}
-            <span className="text-brand">AI model shoots</span> for ecommerce
-            brands.
+            Realistic <span className="text-brand">AI Fashion</span> Photography for Ecommerce Brands
           </>
         }
         text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
@@ -241,6 +239,7 @@ export default function HomePage() {
         text="Take your brand to new heights and boost your sales 10x."
         primary={{ href: "/contact", label: "Get Started Today" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
+        image="/images/home-page-last-section-image.jpeg"
       />
     </>
   );
