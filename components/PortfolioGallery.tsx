@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageSlot from "./ImageSlot";
 
@@ -37,7 +37,20 @@ const filters = ["All", "Studio", "Lifestyle", "Campaign", "Footwear", "Bags"] a
 
 export default function PortfolioGallery() {
   const [active, setActive] = useState<(typeof filters)[number]>("All");
+  const [minHeight, setMinHeight] = useState(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
   const visible = items.filter((i) => active === "All" || i.category === active);
+
+  function handleFilterChange(f: (typeof filters)[number]) {
+    if (galleryRef.current) {
+      setMinHeight(galleryRef.current.offsetHeight);
+    }
+    setActive(f);
+    const newCount = f === "All" ? items.length : items.filter((i) => i.category === f).length;
+    const clearAfter = (newCount * 0.06 + 0.5 + 0.2) * 1000;
+    setTimeout(() => setMinHeight(0), clearAfter);
+  }
 
   return (
     <div>
@@ -47,7 +60,7 @@ export default function PortfolioGallery() {
             key={f}
             role="tab"
             aria-selected={active === f}
-            onClick={() => setActive(f)}
+            onClick={() => handleFilterChange(f)}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               active === f
                 ? "bg-brand text-white"
@@ -59,25 +72,31 @@ export default function PortfolioGallery() {
         ))}
       </div>
 
-      <motion.div layout className="mt-10 columns-2 gap-4 sm:columns-3 lg:columns-4 [&>*]:mb-4">
+      <motion.div ref={galleryRef} layout style={{ minHeight: minHeight || undefined }} className="mt-10 columns-2 gap-4 sm:columns-3 lg:columns-4 [&>*]:mb-4">
         <AnimatePresence mode="popLayout">
-          {visible.map((item) => (
+          {visible.map((item, index) => (
             <motion.figure
               layout
               key={item.src}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0, scale: 0.96, y: 24 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.94, transition: { duration: 0.15 } }}
+              viewport={{ once: true, amount: 0.08 }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
               className="group relative break-inside-avoid overflow-hidden rounded-3xl"
             >
-              <ImageSlot
-                src={item.src}
-                alt={item.alt}
-                label={item.alt}
-                className={`w-full ${item.tall ? "aspect-[3/4]" : "aspect-square"}`}
-                sizes="(min-width: 1024px) 33vw, 50vw"
-              />
+              <motion.div
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <ImageSlot
+                  src={item.src}
+                  alt={item.alt}
+                  label={item.alt}
+                  className={`w-full ${item.tall ? "aspect-[3/4]" : "aspect-square"}`}
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                />
+              </motion.div>
               <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 <span className="text-xs font-bold uppercase tracking-widest text-brand">
                   {item.category}
