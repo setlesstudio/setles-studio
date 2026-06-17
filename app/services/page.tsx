@@ -45,12 +45,12 @@ export default function ServicesPage() {
               id={s.id}
               className="grid scroll-mt-28 items-stretch gap-10 md:grid-cols-[1.5fr_3fr] md:gap-10"
             >
-              <Reveal className="h-full">
+              <Reveal className="md:h-full md:min-h-[380px]">
                 <ImageSlot
                   src={s.image}
                   alt={s.title}
                   label={s.title}
-                  className="aspect-[3/4] w-full rounded-4xl bg-cream md:aspect-auto md:h-full md:min-h-[400px]"
+                  className="aspect-[3/4] w-full rounded-4xl bg-cream md:aspect-auto md:h-full"
                   imageClassName="object-contain object-center"
                 />
               </Reveal>
