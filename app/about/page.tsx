@@ -109,43 +109,29 @@ export default function AboutPage() {
       {/* Trusted Expertise */}
       <section className="container-site py-8">
         <Reveal>
-          <div className="rounded-4xl bg-cream px-10 py-14 sm:px-16 sm:py-16">
-            <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
-
-              {/* Left — sticky heading block */}
-              <div className="lg:pt-1">
-                <p className="eyebrow">Our expertise</p>
-                <h2 className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
-                  Trusted<br />Expertise.{" "}
-                  <span className="text-brand">Proven<br />Results.</span>
-                </h2>
-                <div className="mt-6 h-1 w-12 rounded-full bg-brand" />
-              </div>
-
-              {/* Right — paragraphs stacked, separated by thin rule */}
-              <div className="flex flex-col gap-0 divide-y divide-ink/10 border-t border-ink/10 pt-8 lg:border-l lg:border-t-0 lg:pl-14 lg:pt-0 lg:divide-y lg:[border-top:none]">
-                <p className="pb-6 leading-relaxed text-ink-soft">
-                  Our team has worked with fashion brands worldwide through
-                  leading freelance marketplaces and direct client partnerships.
-                  With years of experience in fashion content creation, apparel
-                  marketing, and visual production with the help of AI, we help
-                  brands create premium content that stands out in competitive
-                  markets.
-                </p>
-                <p className="pt-6 leading-relaxed text-ink-soft">
-                  Our Creative Director is a Top Rated Plus professional on
-                  Upwork with extensive experience in apparel and fashion AI
-                  content creation. Having successfully delivered projects for
-                  brands across multiple countries, our team combines creative
-                  expertise, attention to detail, and industry knowledge to
-                  produce realistic, high quality fashion visuals. Today,
-                  SetlesStudio brings together skilled professionals dedicated
-                  to helping brands create impactful content with consistency,
-                  accuracy, and premium quality.
-                </p>
-              </div>
-
-            </div>
+          <div className="rounded-4xl bg-cream px-10 py-12 sm:px-16 sm:py-14">
+            <h2 className="text-center font-display text-3xl font-bold sm:text-4xl">
+              Trusted Expertise. <span className="text-brand">Proven Results.</span>
+            </h2>
+            <p className="mt-8 text-justify leading-relaxed text-ink-soft">
+              Our team has worked with fashion brands worldwide through
+              leading freelance marketplaces and direct client partnerships.
+              With years of experience in fashion content creation, apparel
+              marketing, and visual production with the help of AI, we help
+              brands create premium content that stands out in competitive
+              markets.
+            </p>
+            <p className="mt-6 text-justify leading-relaxed text-ink-soft">
+              Our Creative Director is a Top Rated Plus professional on
+              Upwork with extensive experience in apparel and fashion AI
+              content creation. Having successfully delivered projects for
+              brands across multiple countries, our team combines creative
+              expertise, attention to detail, and industry knowledge to
+              produce realistic, high quality fashion visuals. Today,
+              SetlesStudio brings together skilled professionals dedicated
+              to helping brands create impactful content with consistency,
+              accuracy, and premium quality.
+            </p>
           </div>
         </Reveal>
       </section>

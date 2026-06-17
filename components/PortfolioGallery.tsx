@@ -25,7 +25,6 @@ const items: Item[] = [
   { src: "/images/studio-long-coat-man.png", alt: "Man in long coat, studio product shot", category: "Studio" },
   { src: "/images/lifestyle-beach-pink-dress.png", alt: "Pink dress, beach lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/studio-white-shirt-gray-shorts-man.png", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
-  { src: "/images/multiple-models-environment-2.png", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", },
   { src: "/images/multiple-models-environment.png", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", tall: true },
   { src: "/images/lifestyle-robe-balcony.png", alt: "Woman in patterned robe on balcony with coffee", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-pink-swimsuit-coast.png", alt: "Woman in pink swimsuit on coastal rocks", category: "Lifestyle", tall: true },

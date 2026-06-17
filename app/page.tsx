@@ -50,8 +50,8 @@ export default function HomePage() {
       <section className="container-site py-14">
         <SectionHeading
           eyebrow="Before / After"
-          title="From product photo to campaign-ready content"
-          text="Send us simple flat product photos. We return realistic on-model imagery with accurate fit, fabric, and detail."
+          title="From product photo to campaign ready content"
+          text="Send us simple flat product photos. We return realistic on model imagery with accurate fit, fabric, and detail."
         />
         <div className="mt-10 grid gap-6 md:grid-cols-[0.8fr_1fr_1fr]">
           <Reveal className="card flex flex-col gap-4 p-6">
@@ -153,7 +153,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="What we do"
             title="Fashion content AI services for modern apparel brands"
-            text="From ecommerce product imagery to full-scale marketing campaigns, we create high quality visual content that helps fashion brands launch faster, sell more, and stay consistent across every channel."
+            text="From ecommerce product imagery to full scale marketing campaigns, we create high quality visual content that helps fashion brands launch faster, sell more, and stay consistent across every channel."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {services.map((s, i) => (

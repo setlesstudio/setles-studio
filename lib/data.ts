@@ -28,14 +28,14 @@ export const services: Service[] = [
     number: "01",
     title: "Studio Product Photography",
     short:
-      "High quality studio photography designed for e-commerce stores, product pages, catalogs, and online marketplaces.",
-    long: "Clean, consistent studio imagery built for conversion. We turn flat product photos into on-model studio shots with accurate fabric texture, stitching, and fit, ready for product pages, catalogs, and marketplaces like Amazon and Zalando.",
+      "High quality studio photography designed for ecommerce stores, product pages, catalogs, and online marketplaces.",
+    long: "Clean, consistent studio imagery built for conversion. We turn flat product photos into on model studio shots with accurate fabric texture, stitching, and fit, ready for product pages, catalogs, and marketplaces like Amazon and Zalando.",
     image: "/images/studio-pink.png",
     deliverables: [
-      "On-model studio shots from flat product photos",
+      "On model studio shots from flat product photos",
       "Consistent backgrounds and lighting across your catalog",
-      "Marketplace-compliant crops and ratios",
-      "High-resolution, retouched files",
+      "Marketplace compliant crops and ratios",
+      "High resolution, retouched files",
     ],
   },
   {
@@ -44,13 +44,13 @@ export const services: Service[] = [
     title: "Lifestyle Photography",
     short:
       "Showcase your products in authentic environments that connect with your audience and bring your brand story to life.",
-    long: "Real-life scenes that make your products feel lived-in: city streets, cafés, homes, beaches. Lifestyle imagery builds the emotional context that studio shots can't, perfect for social media, ads, and homepage storytelling.",
+    long: "Real life scenes that make your products feel lived in: city streets, cafés, homes, beaches. Lifestyle imagery builds the emotional context that studio shots can't, perfect for social media, ads, and homepage storytelling.",
     image: "/images/lifestyle-men.png",
     deliverables: [
-      "Authentic real-world scenes matched to your brand",
-      "Natural-looking, consistent AI models",
-      "Social-ready vertical and square formats",
-      "Seasonal and campaign-specific settings",
+      "Authentic real world scenes matched to your brand",
+      "Natural looking, consistent AI models",
+      "Social ready vertical and square formats",
+      "Seasonal and campaign specific settings",
     ],
   },
   {
@@ -59,13 +59,13 @@ export const services: Service[] = [
     title: "Luxury Fashion Campaigns",
     short:
       "High end fashion campaigns inspired by luxury brands and magazines, created for launches, advertising, and seasonal collections.",
-    long: "Editorial-grade campaign visuals inspired by luxury houses and fashion magazines. Built for collection launches, advertising, and seasonal storytelling where production value is the message.",
+    long: "Editorial grade campaign visuals inspired by luxury houses and fashion magazines. Built for collection launches, advertising, and seasonal storytelling where production value is the message.",
     image: "/images/luxury-stairs.jpg",
     deliverables: [
       "Editorial art direction and concepts",
-      "Magazine-grade lighting and composition",
+      "Magazine grade lighting and composition",
       "Cohesive multi-image campaign sets",
-      "Print- and billboard-ready resolution",
+      "Print and billboard ready resolution",
     ],
   },
   {
@@ -74,27 +74,27 @@ export const services: Service[] = [
     title: "Footwear Photography",
     short:
       "Professional photography for shoes, sneakers, heels, boots, and footwear collections. Designed for ecommerce, advertising, catalogs, and social media campaigns.",
-    long: "Footwear has its own rules: angles, reflections, on-foot fit. We create studio and on-model footwear imagery for sneakers, heels, and boots that shows silhouette and material accurately.",
+    long: "Footwear has its own rules: angles, reflections, on foot fit. We create studio and on model footwear imagery for sneakers, heels, and boots that shows silhouette and material accurately.",
     image: "/images/footwear-heels.png",
     deliverables: [
-      "On-model and product-only footwear shots",
+      "On model and product only footwear shots",
       "Accurate sole, material, and stitching detail",
-      "Catalog-consistent angle sets",
+      "Catalog consistent angle sets",
       "Campaign and social media variants",
     ],
   },
   {
-    id: "video-ad-creation",
+    id: "AI-video-&-advertising",
     number: "05",
-    title: "Video Ad Creation",
+    title: "AI Video & Advertising",
     short:
       "Short form video content designed for product launches, social media advertising, website banners, and brand campaigns.",
-    long: "Short-form video built from your products: model motion, fabric movement, and scene transitions designed for paid social, product launches, and website hero banners.",
+    long: "Short form video built from your products: model motion, fabric movement, and scene transitions designed for paid social, product launches, and website hero banners.",
     image: "",
     deliverables: [
       "6–30 second cuts for paid social",
       "Vertical, square, and landscape exports",
-      "Hook-first edits tested for ads",
+      "Hook first edits tested for ads",
       "Website banner and hero loops",
     ],
   },
@@ -104,35 +104,35 @@ export const services: Service[] = [
     title: "Fashion AI Content Course",
     short:
       "Our real time process, prompts, and creative ideas. How we achieve 100% accurate outfit details and textures.",
-    long: "We open up our real-time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural-looking models, use real-life scenes for authentic content, and apply the techniques that set our team apart from other content creators.",
+    long: "We open up our real time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural looking models, use real life scenes for authentic content, and apply the techniques that set our team apart from other content creators.",
     image: "/images/course-team.png",
     deliverables: [
-      "Step-by-step production workflows",
-      "100+ production-tested prompts",
+      "Step by step production workflows",
+      "100+ production tested prompts",
       "Practice files and real project examples",
       "Lifetime access with free updates",
     ],
   },
   {
-    id: "premium-bags-photography",
+    id: "bags-&-accessories-photography",
     number: "07",
-    title: "Premium Bags Photography",
+    title: "Bags & Accessories Photography",
     short:
-      "Professional handbag and bag photography designed for e-commerce, advertising, social media, and luxury brand campaigns.",
-    long: "Handbags demand precision: hardware, leather grain, proportions. We create on-model and still-life bag imagery for e-commerce and luxury campaigns with exacting product accuracy.",
+      "Professional handbag and bag photography designed for ecommerce, advertising, social media, and luxury brand campaigns.",
+    long: "Handbags demand precision: hardware, leather grain, proportions. We create on model and still life bag imagery for ecommerce and luxury campaigns with exacting product accuracy.",
     image: "/images/bags-dress.png",
     deliverables: [
-      "On-model and still-life bag photography",
+      "On model and still life bag photography",
       "Accurate hardware and material rendering",
       "Luxury campaign art direction",
-      "E-commerce detail and scale shots",
+      "Ecommerce detail and scale shots",
     ],
   },
 ];
 
 export const stats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "50+", label: "Happy Fashion Brands" },
+  { value: "1100+", label: "Projects Completed" },
+  { value: "100+", label: "Happy Fashion Brands" },
   { value: "30+", label: "Countries Served" },
   { value: "98%", label: "Client Satisfaction" },
 ];
@@ -196,7 +196,7 @@ export const process = [
   {
     step: "04",
     title: "Deliver",
-    text: "We deliver high quality, ready-to-use content on time, every time.",
+    text: "We deliver high quality, ready to use content on time, every time.",
   },
 ];
 
@@ -227,7 +227,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Great experience working with Muhammad's team. The AI-generated fashion and apparel images were realistic, consistent, and high quality.",
+      "Great experience working with Muhammad's team. The AI generated fashion and apparel images were realistic, consistent, and high quality.",
     name: "Chloe Davies",
     role: "Denmark",
   },
@@ -245,13 +245,13 @@ export const testimonials = [
   },
   {
     quote:
-      "Working with Muhammad was a game-changer for our apparel brand. The realism in the product visuals he created is truly remarkable. The fabric textures are perfect! His communication and execution were flawless.",
+      "Working with Muhammad was a game changer for our apparel brand. The realism in the product visuals he created is truly remarkable. The fabric textures are perfect! His communication and execution were flawless.",
     name: "NY_Apparel_Guru",
     role: "USA",
   },
   {
     quote:
-      "Muhammad is highly recommended if you're looking for consistent AI characters or realistic product visuals. His work quality, communication, and creativity are all top-notch!",
+      "Muhammad is highly recommended if you're looking for consistent AI characters or realistic product visuals. His work quality, communication, and creativity are all top notch!",
     name: "vivianwonder",
     role: "Germany",
   },
@@ -282,10 +282,10 @@ export const pricingTiers: Tier[] = [
     price: "$299",
     unit: "/ project",
     features: [
-      "10 Premium Images",
+      "20 Premium Images",
       "Studio Product Photography",
       "Model Photography",
-      "E-commerce Ready",
+      "Ecommerce Ready",
       "High Resolution Files",
       "3 Business Days Delivery",
     ],
@@ -299,7 +299,7 @@ export const pricingTiers: Tier[] = [
     price: "$799",
     unit: "/ project",
     features: [
-      "30 Premium Images",
+      "50 Premium Images",
       "Studio Photography",
       "Lifestyle Photography",
       "Multiple Models",
@@ -316,11 +316,11 @@ export const pricingTiers: Tier[] = [
     price: "$1,999+",
     unit: "/ project",
     features: [
-      "Unlimited Images",
+      "180 Images",
       "Luxury Fashion Images",
       "Lifestyle Photography",
       "Footwear Photography",
-      "Video Ad Creation",
+      "AI Video & Advertising",
       "Dedicated Project Manager",
       "Fast Turnaround",
       "Priority Support",
@@ -345,15 +345,15 @@ export const faqs = [
   },
   {
     q: "Can I choose models?",
-    a: "Absolutely. You can pick from our model library or brief us on the look, age range, and style that fits your brand. We'll create consistent, natural-looking models you can reuse across every campaign.",
+    a: "Absolutely. You can pick from our model library or brief us on the look, age range, and style that fits your brand. We'll create consistent, natural looking models you can reuse across every campaign.",
   },
   {
     q: "Do you provide raw files?",
-    a: "We deliver final, high-resolution retouched files in the formats you need (JPG, PNG, TIFF). Source and layered files are available on Premium and custom plans.",
+    a: "We deliver final, high resolution retouched files in the formats you need (JPG, PNG, TIFF). Source and layered files are available on Premium and custom plans.",
   },
   {
     q: "Do you create videos?",
-    a: "Yes, short-form video ads, product motion clips, and website banner loops are part of our Video Ad Creation service, included in the Premium plan or available as an add-on.",
+    a: "Yes, short form video ads, product motion clips, and website banner loops are part of our AI Video & Advertising service, included in the Premium plan or available as an add-on.",
   },
 ];
 
@@ -372,7 +372,7 @@ export const learnProducts: LearnProduct[] = [
     tag: "PDF Guide",
     title: "Fashion Content Masterclass",
     description:
-      "Learn how to create realistic fashion content from start to finish. A complete step-by-step workflow.",
+      "Learn how to create realistic fashion content from start to finish. A complete step by step workflow.",
     price: "$49",
     image: "",
   },
@@ -381,7 +381,7 @@ export const learnProducts: LearnProduct[] = [
     tag: "Prompt Pack",
     title: "Premium Prompt Collection",
     description:
-      "100+ high-quality prompts for fashion photography, models, lifestyle shots, footwear, and product photography.",
+      "100+ high quality prompts for fashion photography, models, lifestyle shots, footwear, and product photography.",
     price: "$29",
     image: "",
   },
@@ -390,7 +390,7 @@ export const learnProducts: LearnProduct[] = [
     tag: "PDF Guide",
     title: "Realistic Model Creation Guide",
     description:
-      "Learn techniques to create natural-looking models, consistent characters, and professional fashion visuals.",
+      "Learn techniques to create natural looking models, consistent characters, and professional fashion visuals.",
     price: "$39",
     image: "",
   },
@@ -407,10 +407,10 @@ export const learnProducts: LearnProduct[] = [
 
 export const learnIncluded = [
   { title: "Practice Files", text: "Work with real project files and examples." },
-  { title: "Prompt Collections", text: "Production-tested prompts for all scenarios." },
-  { title: "Workflow Guides", text: "Step-by-step production workflows." },
+  { title: "Prompt Collections", text: "Production tested prompts for all scenarios." },
+  { title: "Workflow Guides", text: "Step by step production workflows." },
   { title: "PDF Training Materials", text: "Detailed guides and explained processes." },
-  { title: "Real Project Examples", text: "See behind-the-scenes client projects." },
+  { title: "Real Project Examples", text: "See behind the scenes client projects." },
   { title: "Lifetime Access", text: "Access anytime, learn at your pace." },
 ];
 
@@ -418,9 +418,5 @@ export const team = [
   { name: "Team Member", role: "Creative Director & Fashion Designer", image: "/images/team-creative-director.jpeg" },
   { name: "Team Member", role: "Content Specialist & Fashion Designer", image: "/images/team-content-specialist.png" },
   { name: "Team Member", role: "Client Success Manager", image: "/images/team-client-success.png" },
-  { name: "Team Member", role: "Production Expert", image: "" },
-];
-
-
-
-
+  { name: "Team Member", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
+]

@@ -52,8 +52,8 @@ export default async function BlogPage() {
           </>
         }
         text="Production techniques, industry breakdowns, and the thinking behind content that converts."
-        image="/images/blog-page-banner.jpeg"
-        imageMobile="/images/blog-page-banner-mobile.jpeg"
+        image="/images/services-page-banner-image.jpeg"
+        imageMobile="/images/services-page-banner-mobile.jpeg"
         imageAlt="outdoor-model-image"
       />
 
