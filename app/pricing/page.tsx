@@ -124,18 +124,18 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <section className="container-site py-14">
+      <section className="container-site py-8">
         <SectionHeading
           eyebrow="Choose your package"
           title="Simple. Transparent. Flexible."
         />
-        <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid items-start gap-5 lg:grid-cols-3">
           {pricingTiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <div
-                className={`relative flex h-full flex-col rounded-4xl p-8 ${
+                className={`relative flex h-full flex-col rounded-4xl p-6 ${
                   t.featured
-                    ? "bg-ink text-white shadow-2xl shadow-ink/25 lg:-mt-4 lg:pb-12"
+                    ? "bg-ink text-white shadow-2xl shadow-ink/25 lg:-mt-2 lg:pb-8"
                     : "card"
                 }`}
               >
@@ -144,7 +144,7 @@ export default function PricingPage() {
                     {t.badge}
                   </span>
                 )}
-                <h3 className="font-display text-xl font-semibold text-brand">
+                <h3 className="font-display text-lg font-semibold text-brand">
                   {t.name}
                 </h3>
                 <p
@@ -154,8 +154,8 @@ export default function PricingPage() {
                 >
                   {t.description}
                 </p>
-                <p className="mt-6">
-                  <span className="font-display text-5xl font-semibold tracking-tight">
+                <p className="mt-4">
+                  <span className="font-display text-4xl font-semibold tracking-tight">
                     {t.price}
                   </span>
                   <span
@@ -166,9 +166,9 @@ export default function PricingPage() {
                     {t.unit}
                   </span>
                 </p>
-                <ul className="mt-8 flex-1 space-y-3.5">
+                <ul className="mt-5 flex-1 space-y-2.5">
                   {t.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-[15px]">
+                    <li key={f} className="flex items-start gap-3 text-sm">
                       <span
                         className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${
                           t.featured
@@ -184,7 +184,7 @@ export default function PricingPage() {
                 </ul>
                 <Link
                   href={t.href}
-                  className={`${t.featured ? "btn-primary" : "btn-dark"} mt-9 w-full`}
+                  className={`${t.featured ? "btn-primary" : "btn-dark"} mt-6 w-full`}
                 >
                   {t.cta}
                 </Link>
