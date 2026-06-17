@@ -23,7 +23,7 @@ export default function PortfolioPage() {
           </>
         }
         text="We combine creativity, strategy, and attention to detail to deliver content that connects and converts."
-        image="/images/portfolio-page-bannerr.png"
+        image="/images/portfolio-page-banner.jpeg"
         imageAlt="multiple-models-outdoor"
       />
 

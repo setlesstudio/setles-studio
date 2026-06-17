@@ -52,8 +52,9 @@ export default async function BlogPage() {
           </>
         }
         text="Production techniques, industry breakdowns, and the thinking behind content that converts."
-        image="/images/blog-page-banner.png"
-        imageAlt="multiple-models-outdoor"
+        image="/images/blog-page-banner.jpeg"
+        imageMobile="/images/blog-page-banner-mobile.jpeg"
+        imageAlt="outdoor-model-image"
       />
 
       <section className="container-site py-24">

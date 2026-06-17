@@ -1,19 +1,10 @@
-// ---------------------------------------------------------------------------
-// Central content store for SetlesStudio.
-// Edit copy, prices, posts and image paths here — every page reads from this
-// file, so content changes never require touching component code.
-// Image convention: put files in /public/images and reference "/images/...".
-// Use "" (empty string) for any image you haven't added yet — components
-// render a labelled placeholder slot automatically.
-// ---------------------------------------------------------------------------
 
 export const site = {
   name: "SetlesStudio",
   tagline: "Realistic fashion and apparel AI model shoots for ecommerce brands.",
   email: "hello@setlesstudio.com",
   bookingUrl: "/contact",
-  // International format, no + or spaces — e.g. "447911123456" for UK, "923001234567" for PK
-  whatsapp: "923001234567",
+  whatsapp: "923017281412",
   social: {
     instagram: "https://instagram.com/",
     linkedin: "https://linkedin.com/",

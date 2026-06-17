@@ -14,19 +14,24 @@ type Item = {
 const items: Item[] = [
   { src: "/images/after-walk.jpg", alt: "Navy activewear set, lifestyle street scene", category: "Lifestyle", tall: true },
   { src: "/images/studio-pink.png", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
+  { src: "/images/studio-pink-2.jpeg", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
   { src: "/images/luxury-stairs.jpg", alt: "Fuchsia two-piece campaign on stairs", category: "Campaign", tall: true },
   { src: "/images/footwear-heels.png", alt: "Black heels editorial product shot", category: "Footwear" },
+  { src: "/images/footwear-heels-2.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
+  { src: "/images/footwear-heels-3.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
   { src: "/images/after-window.jpg", alt: "Navy activewear set, window lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-men.png", alt: "Menswear knit set, café lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/bags-dress.png", alt: "Straw handbag with embroidered dress", category: "Bags" },
   { src: "/images/studio-long-coat-man.png", alt: "Man in long coat, studio product shot", category: "Studio" },
   { src: "/images/lifestyle-beach-pink-dress.png", alt: "Pink dress, beach lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/studio-white-shirt-gray-shorts-man.png", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
+  { src: "/images/multiple-models-environment-2.png", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", },
   { src: "/images/multiple-models-environment.png", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", tall: true },
   { src: "/images/lifestyle-robe-balcony.png", alt: "Woman in patterned robe on balcony with coffee", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-pink-swimsuit-coast.png", alt: "Woman in pink swimsuit on coastal rocks", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-plaid-shirt-indoor.png", alt: "Woman in red plaid shirt, indoor lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/campaign-men-bomber-outdoor.png", alt: "Man in black bomber jacket, outdoor campaign", category: "Campaign", tall: true },
+  { src: "/images/campaign-men-bomber-outdoor-2.jpeg", alt: "Man in black bomber jacket, outdoor campaign", category: "Campaign", tall: true },
 ];
 
 const filters = ["All", "Studio", "Lifestyle", "Campaign", "Footwear", "Bags"] as const;

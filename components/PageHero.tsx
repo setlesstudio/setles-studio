@@ -7,6 +7,7 @@ export default function PageHero({
   text,
   children,
   image,
+  imageMobile,
   imageAlt = "",
   fullHeight = true,
 }: {
@@ -15,6 +16,7 @@ export default function PageHero({
   text?: string;
   children?: React.ReactNode;
   image?: string;
+  imageMobile?: string;
   imageAlt?: string;
   fullHeight?: boolean;
 }) {
@@ -22,13 +24,25 @@ export default function PageHero({
     <section className={`relative flex ${fullHeight ? "min-h-screen" : "min-h-[560px]"} flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white`}>
       {image && (
         <>
+          {/* Mobile image — shown below md, falls back to main image if no imageMobile */}
+          {imageMobile && (
+            <Image
+              src={imageMobile}
+              alt={imageAlt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-top md:hidden"
+            />
+          )}
+          {/* Desktop image — shown at md+ (or always if no imageMobile provided) */}
           <Image
             src={image}
             alt={imageAlt}
             fill
             priority
             sizes="100vw"
-            className="object-cover object-top"
+            className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
           />
           <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 h-[72%] bg-gradient-to-t from-ink/90 to-transparent" />

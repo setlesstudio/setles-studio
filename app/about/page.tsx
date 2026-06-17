@@ -33,7 +33,8 @@ export default function AboutPage() {
           </>
         }
         text="SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results."
-        image="/images/about-page-banner-imageee.png"
+        image="/images/about-page-banner-image.jpeg"
+        imageMobile="/images/about-page-banner-imageee.png"
         imageAlt="SetlesStudio fashion content studio"
       />
 
@@ -165,39 +166,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-            {/* Awards */}
+      {/* Awards */}
       <section className="container-site py-14">
         <Reveal>
           <div className="overflow-hidden rounded-4xl bg-cream px-8 py-12 sm:px-14">
             <h2 className="text-center font-display text-2xl font-semibold sm:text-3xl">
               Awards and Certifications
             </h2>
-            <div className="mt-10 grid items-center gap-4 sm:grid-cols-3">
-              {/* Upwork Top Rated Plus + 100% Job Success */}
-              <div className="flex items-center justify-center p-4">
+            <div className="mt-5 grid items-center gap-4 sm:grid-cols-3">
+              <div className="p-4 md:p-8">
                 <Image
-                  src="/images/badge-upwork-top-rated-plus.png"
-                  alt="Upwork Top Rated Plus and 100% Job Success"
-                  width={340}
-                  height={200}
-                  className="h-auto w-full max-w-[320px] object-contain"
+                  src="/images/upwork-toprated-badge.png"
+                  alt="Upwork Top Rated"
+                  width={280}
+                  height={140}
+                  className="h-auto w-full object-contain"
                 />
               </div>
-              {/* Fiverr's Choice */}
-              <div className="flex items-center justify-center rounded-2xl bg-white p-8 shadow-sm">
+              <div className="p-4 md:p-8">
                 <Image
-                  src="/images/badge-fiverr-choice.jpg"
+                  src="/images/fiver-badge.png"
                   alt="Fiverr's Choice, 5.0 Pro Verified"
                   width={280}
                   height={140}
                   className="h-auto w-full object-contain"
                 />
               </div>
-              {/* Upwork Top Rated */}
-              <div className="flex items-center justify-center rounded-2xl bg-white p-8 shadow-sm">
+              <div className="p-4 md:p-8">
                 <Image
-                  src="/images/badge-upwork-top-rated.jpg"
-                  alt="Upwork Top Rated"
+                  src="/images/badge-upwork.png"
+                  alt="Upwork Top Rated Plus and 100% Job Success"
                   width={280}
                   height={140}
                   className="h-auto w-full object-contain"
