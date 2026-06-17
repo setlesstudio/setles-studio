@@ -49,7 +49,7 @@ const promises = [
   {
     icon: Wrench,
     title: "Practical & Actionable",
-    text: "Step-by-step tutorials and templates you can implement instantly.",
+    text: "Step by step tutorials and templates you can implement instantly.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function LearnPage() {
           <SectionHeading
             eyebrow="Featured resources"
             title="Premium resources to elevate your content creation"
-            text="Step-by-step guides, prompt packs, and practice files used by professionals to create realistic and high-quality fashion content."
+            text="Step by step guides, prompt packs, and practice files used by professionals to create realistic and high quality fashion content."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {learnProducts.map((p, i) => (
@@ -229,7 +229,7 @@ export default function LearnPage() {
                 </h2>
                 <p className="mt-5 max-w-sm leading-relaxed text-white/80">
                   Access premium resources that help you create realistic,
-                  high-quality fashion content and grow your creative business.
+                  high quality fashion content and grow your creative business.
                 </p>
                 <a
                   href="#resources"

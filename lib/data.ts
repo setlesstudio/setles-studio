@@ -64,7 +64,7 @@ export const services: Service[] = [
     deliverables: [
       "Editorial art direction and concepts",
       "Magazine grade lighting and composition",
-      "Cohesive multi-image campaign sets",
+      "Cohesive multi image campaign sets",
       "Print and billboard ready resolution",
     ],
   },

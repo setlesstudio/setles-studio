@@ -15,7 +15,7 @@ const items: Item[] = [
   { src: "/images/after-walk.jpg", alt: "Navy activewear set, lifestyle street scene", category: "Lifestyle", tall: true },
   { src: "/images/studio-pink.png", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
   { src: "/images/studio-pink-2.jpeg", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
-  { src: "/images/luxury-stairs.jpg", alt: "Fuchsia two-piece campaign on stairs", category: "Campaign", tall: true },
+  { src: "/images/luxury-stairs.jpg", alt: "Fuchsia two piece campaign on stairs", category: "Campaign", tall: true },
   { src: "/images/footwear-heels.png", alt: "Black heels editorial product shot", category: "Footwear" },
   { src: "/images/footwear-heels-2.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
   { src: "/images/footwear-heels-3.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
