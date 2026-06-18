@@ -60,6 +60,7 @@ export default function PortfolioPage() {
         text="Send one product image and get a free sample. No credit card required."
         primary={{ href: "/contact?intent=sample", label: "Request Free Sample" }}
         secondary={{ href: "/pricing", label: "See Pricing" }}
+        image="/images/portfolio-last-section-banner.jpeg"
       />
     </>
   );

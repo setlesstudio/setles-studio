@@ -28,6 +28,7 @@ export default function CTABand({
                 sizes="100vw"
                 className="object-cover object-top"
               />
+              <div className="pointer-events-none absolute inset-0 bg-ink/25" />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent" />
             </>
           ) : (
@@ -37,11 +38,11 @@ export default function CTABand({
             />
           )}
           <div className="relative">
-            <h2 className="mx-auto max-w-5xl font-display text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+            <h2 className="mx-auto max-w-5xl font-display text-xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
+            <p className="mx-auto mt-1 max-w-xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
+            <div className="mt-1 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
               <Link href={primary.href} className="btn-primary">
                 {primary.label}
               </Link>

@@ -67,7 +67,8 @@ export default function LearnPage() {
           </>
         }
         text="Access the same workflows, practice files, prompt collections, and creative techniques used to create realistic fashion content for brands worldwide."
-        image="/images/learn-hero.jpeg"
+        image="/images/learn-page-banner.jpeg"
+        imageMobile="/images/learn-page-banner-mobile.jpeg"
         imageAlt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
       >
         <a href="#resources" className="btn-primary">

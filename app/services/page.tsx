@@ -25,8 +25,8 @@ export default function ServicesPage() {
           </>
         }
         text="From ecommerce product imagery to full scale marketing campaigns. Every service is built around accuracy, realism, and consistency."
-        image="/images/blog-page-banner.jpeg"
-        imageMobile="/images/blog-page-banner-mobile.jpeg"
+        image="/images/service-page-banner.jpeg"
+        imageMobile="/images/service-page-banner-mobile.jpeg"
         imageAlt="business-model-sitting"
       >
         <Link href="/pricing" className="btn-primary">
@@ -98,6 +98,7 @@ export default function ServicesPage() {
         text="Let’s map out a custom AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
         primary={{ href: "/contact", label: "Book a Free Consultation" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
+        image="/images/services-page-last-section-image.jpeg"
       />
     </>
   );
