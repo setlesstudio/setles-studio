@@ -196,8 +196,24 @@ export default function LearnPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="container-site pb-14 mt-10">
+      {/* Final CTA — desktop: full pre-designed image */}
+      <section className="hidden md:block container-site pb-14 mt-10">
+        <Reveal>
+          <a href="#resources" aria-label="Browse all learn resources" className="block overflow-hidden rounded-4xl">
+            <Image
+              src="/images/laern-page-last-section-full.jpeg"
+              alt="Start Learning. Start Creating. — SetlesStudio learn resources"
+              width={1440}
+              height={576}
+              className="w-full h-auto"
+              sizes="100vw"
+            />
+          </a>
+        </Reveal>
+      </section>
+
+      {/* Final CTA — mobile: text overlay layout */}
+      <section className="md:hidden container-site pb-14 mt-10">
         <Reveal>
           <div className="relative overflow-hidden rounded-4xl text-white">
             <Image
