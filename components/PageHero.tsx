@@ -58,11 +58,11 @@ export default function PageHero({
       <div className="container-site relative">
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+          <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
             {title}
           </h1>
           {text && (
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/65">
+            <p className="mt-5 max-w-2xl text-sm sm:text-lg leading-relaxed text-white/65">
               {text}
             </p>
           )}

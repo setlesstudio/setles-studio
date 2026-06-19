@@ -27,7 +27,7 @@ export default function HomePage() {
         eyebrow="AI Fashion Content Studio"
         title={
           <>
-            Realistic <span className="text-brand">AI Fashion</span> Photography for Ecommerce Brands
+            Realistic <span className="text-brand">AI Fashion</span> Photography <br/>for Ecommerce Brands
           </>
         }
         text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"

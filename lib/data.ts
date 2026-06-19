@@ -120,7 +120,7 @@ export const services: Service[] = [
     short:
       "Professional handbag and bag photography designed for ecommerce, advertising, social media, and luxury brand campaigns.",
     long: "Handbags demand precision: hardware, leather grain, proportions. We create on model and still life bag imagery for ecommerce and luxury campaigns with exacting product accuracy.",
-    image: "/images/bags-dress.png",
+    image: "/images/bags-shoot-with-model.jpeg",
     deliverables: [
       "On model and still life bag photography",
       "Accurate hardware and material rendering",
