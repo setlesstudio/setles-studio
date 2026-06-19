@@ -31,7 +31,7 @@ export default function PageHero({
               alt={imageAlt}
               fill
               priority
-              unoptimized
+              quality={90}
               sizes="100vw"
               className="object-cover object-top md:hidden"
             />
@@ -42,7 +42,7 @@ export default function PageHero({
             alt={imageAlt}
             fill
             priority
-            unoptimized
+            quality={90}
             sizes="100vw"
             className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
           />
