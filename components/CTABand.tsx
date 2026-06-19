@@ -28,6 +28,7 @@ export default function CTABand({
                   src={imageMobile}
                   alt=""
                   fill
+                  unoptimized
                   sizes="100vw"
                   className="object-cover object-top md:hidden"
                 />
@@ -36,6 +37,7 @@ export default function CTABand({
                 src={image}
                 alt=""
                 fill
+                unoptimized
                 sizes="100vw"
                 className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
               />
