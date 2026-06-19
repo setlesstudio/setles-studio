@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
-import { services } from "@/lib/data";
+import { services, site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -32,9 +32,14 @@ export default function ServicesPage() {
         <Link href="/pricing" className="btn-primary">
           See Pricing
         </Link>
-        <Link href="/contact?intent=sample" className="btn-ghost-light">
+        <a
+          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free sample of your AI fashion photography.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost-light"
+        >
           Request Free Sample
-        </Link>
+        </a>
       </PageHero>
 
       <div className="container-site py-14">
@@ -74,19 +79,20 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={
-                    s.id === "fashion-ai-content-course"
-                      ? "/learn"
-                      : `/contact?service=${s.id}`
-                  }
-                  className="btn-dark mt-6 self-start xl:mt-8"
-                >
-                  {s.id === "fashion-ai-content-course"
-                    ? "Browse Learn Resources"
-                    : "Start a Project"}{" "}
-                  <ArrowRight size={16} />
-                </Link>
+                {s.id === "fashion-ai-content-course" ? (
+                  <Link href="/learn" className="btn-dark mt-6 self-start xl:mt-8">
+                    Browse Learn Resources <ArrowRight size={16} />
+                  </Link>
+                ) : (
+                  <a
+                    href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in your ${s.title} service. Can we discuss a project?`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-dark mt-6 self-start xl:mt-8"
+                  >
+                    Start a Project <ArrowRight size={16} />
+                  </a>
+                )}
               </Reveal>
             </section>
           ))}
@@ -96,7 +102,7 @@ export default function ServicesPage() {
       <CTABand
         title="Not Sure Which AI Visuals Fit Your Brand"
         text="Let’s map out a custom AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
-        primary={{ href: "/contact", label: "Book a Free Consultation" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`, label: "Book a Free Consultation" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
         image="/images/services-page-last-section-image.jpeg"
       />
