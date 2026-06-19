@@ -36,6 +36,11 @@ const items: Item[] = [
   { src: "/images/lifestyle-plaid-shirt-indoor.png", alt: "Woman in red plaid shirt, indoor lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/campaign-men-bomber-outdoor.png", alt: "Man in black bomber jacket, outdoor campaign", category: "Campaign", tall: true },
   { src: "/images/campaign-men-bomber-outdoor-2.jpeg", alt: "Man in black bomber jacket, outdoor campaign", category: "Campaign", tall: true },
+  { src: "/images/campaign-desert-knit-dress-1.jpeg", alt: "Woman in white knit halter dress, desert campaign", category: "Campaign", },
+  { src: "/images/campaign-desert-knit-dress-2.jpeg", alt: "Woman in white knit halter dress standing, desert campaign", category: "Campaign", tall: true },
+  { src: "/images/campaign-desert-knit-dress-3.jpeg", alt: "Woman in white knit halter dress, side pose desert", category: "Campaign", },
+  { src: "/images/campaign-floral-blue-dress-1.jpeg", alt: "Woman in blue floral pleated gown, architectural wall", category: "Campaign", tall: true },
+  { src: "/images/campaign-floral-blue-dress-2.jpeg", alt: "Woman in blue floral pleated gown on steps", category: "Campaign", tall: true },
 ];
 
 const filters = ["All", "Studio", "Lifestyle", "Campaign", "Footwear", "Bags"] as const;
@@ -63,8 +68,9 @@ export default function PortfolioGallery() {
         {filters.map((f) => (
           <button
             key={f}
+            type="button"
             role="tab"
-            aria-selected={active === f}
+            aria-selected={active === f ? "true" : "false"}
             onClick={() => handleFilterChange(f)}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               active === f

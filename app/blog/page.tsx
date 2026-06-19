@@ -52,8 +52,8 @@ export default async function BlogPage() {
           </>
         }
         text="Production techniques, industry breakdowns, and the thinking behind content that converts."
-        image="/images/blog-page-banner-image.jpeg"
-        imageMobile="/images/blog-page-banner-mobile.jpeg"
+        image="/images/blog-page-banner-picture.jpeg"
+        imageMobile="/images/blog-page-banner-picture-mobile.jpeg"
         imageAlt="outdoor-model-image"
       />
 
@@ -158,6 +158,8 @@ export default async function BlogPage() {
         title="Prefer results over reading?"
         text="Send one product image and get a free sample of our work."
         primary={{ href: "/contact?intent=sample", label: "Request Free Sample" }}
+        image="/images/blog-page-banner-image.jpeg"
+        imageMobile="/images/blog-page-banner-mobile.jpeg"
       />
     </>
   );

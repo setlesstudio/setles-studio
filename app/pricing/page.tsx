@@ -235,6 +235,7 @@ export default function PricingPage() {
       <CTABand
         title="Let's create content that takes your brand further."
         primary={{ href: "/contact", label: "Get Started" }}
+        image="/images/pricing-page-last-section.jpeg"
       />
     </>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mail, Clock, Gift } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import CTABand from "@/components/CTABand";
 import Reveal from "@/components/Reveal";
 import { site } from "@/lib/data";
 
@@ -40,7 +41,9 @@ export default function ContactPage() {
             <span className="text-brand">amazing together</span>
           </>
         }
-        text="Tell us about your brand and what you need. We'll come back with a plan, a timeline, and a free sample if you want one."
+        text="Tell us about your brand and what you need. We&apos;ll come back with a plan, a timeline, and a free sample if you want one."
+        image="/images/contact-page-banner-image.jpeg"
+        imageMobile="/images/contact-page-banner-image-mobile.jpeg"
       />
 
       <section className="container-site grid gap-12 py-24 lg:grid-cols-[1fr_1.4fr]">
@@ -72,6 +75,13 @@ export default function ContactPage() {
           <ContactForm />
         </Reveal>
       </section>
+
+      <CTABand
+        title="Not ready to fill the form? Let's talk first."
+        text="Book a free consultation and we'll walk you through exactly what we can create for your brand."
+        primary={{ href: "/contact?intent=consultation", label: "Book a Free Consultation" }}
+        image="/images/contact-page-last-section.jpeg"
+      />
     </>
   );
 }

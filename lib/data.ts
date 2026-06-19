@@ -206,60 +206,70 @@ export const testimonials = [
       "Muhammad continues to deliver on every project I send to him. He seems to know exactly the looks that I want just from a little guidance and usually perfect the first time. I will definitely continue to send him projects.",
     name: "John Davies",
     role: "UK",
+    image: "/images/clients/client-john-davies.png",
   },
   {
     quote:
       "Muhammad and his team is a pleasure to work with. His work is brilliant, clear, and prompt with communications. He is patient with revisions and keeps me updated every step of the way. I highly recommend him, and will work with him again.",
     name: "Priya Sharma",
     role: "India",
+    image: "/images/clients/client-priya-sharma.png",
   },
   {
     quote:
       "We used Muhammad's team for AI footwear visuals, and the results were outstanding. The shoes looked realistic and professionally photographed. Highly recommended for eCommerce brands.",
     name: "Jean-Pierre Moreau",
     role: "Paris, France",
+    image: "",
   },
   {
     quote:
       "The realistic AI fashion images exceeded our expectations. Excellent quality, communication, and attention to outfit details.",
     name: "Emily Thompson",
     role: "Paris, France",
+    image: "/images/clients/client-emily-thompson.png",
   },
   {
     quote:
       "Great experience working with Muhammad's team. The AI generated fashion and apparel images were realistic, consistent, and high quality.",
     name: "Chloe Davies",
     role: "Denmark",
+    image: "/images/clients/client-chloe-davies.png",
   },
   {
     quote:
       "Muhammad and his team created highly realistic AI fashion images with excellent outfit accuracy. The results looked like a professional fashion photoshoot.",
     name: "Lily Davies",
     role: "UK",
+    image: "/images/clients/client-lily-davies.png",
   },
   {
     quote:
       "Muhammad and his team were amazing to work with. He definitely exceeded my expectations. I would highly recommend him!",
     name: "Sarah Johnson",
     role: "UK",
+    image: "/images/clients/client-sarah-johnson.png",
   },
   {
     quote:
       "Working with Muhammad was a game changer for our apparel brand. The realism in the product visuals he created is truly remarkable. The fabric textures are perfect! His communication and execution were flawless.",
     name: "NY_Apparel_Guru",
     role: "USA",
+    image: "/images/clients/client-NY-apparel-guru.png",
   },
   {
     quote:
       "Muhammad is highly recommended if you're looking for consistent AI characters or realistic product visuals. His work quality, communication, and creativity are all top notch!",
     name: "vivianwonder",
     role: "Germany",
+    image: "/images/clients/client-vivian-wonder.png",
   },
   {
     quote:
       "This was my second order and it was a great delivery as usual. Very good attention to detail and quality of work. Highly recommend.",
     name: "Jean-Luc Petit",
     role: "France",
+    image: "/images/clients/client-jean-luc-petit.png",
   },
 ];
 

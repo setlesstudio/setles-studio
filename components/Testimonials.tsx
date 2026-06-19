@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Star } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
@@ -12,9 +13,15 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       </blockquote>
       <figcaption className="mt-5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand">
-            {t.name.charAt(0)}
-          </span>
+          {t.image ? (
+            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
+              <Image src={t.image} alt={t.name} fill sizes="36px" className="object-cover" />
+            </div>
+          ) : (
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand">
+              {t.name.charAt(0)}
+            </span>
+          )}
           <div>
             <p className="text-sm font-bold">{t.name}</p>
             <p className="text-xs text-ink-soft/70">{t.role}</p>
