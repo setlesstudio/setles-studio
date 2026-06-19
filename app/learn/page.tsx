@@ -205,8 +205,8 @@ export default function LearnPage() {
               alt="Start Learning. Start Creating. — SetlesStudio learn resources"
               width={1440}
               height={576}
+              unoptimized
               className="w-full h-auto"
-              sizes="100vw"
             />
           </a>
         </Reveal>
@@ -220,15 +220,15 @@ export default function LearnPage() {
               src="/images/book-image-small.png"
               alt="SetlesStudio books and course materials"
               fill
-              sizes="100vw"
-              className="object-cover object-center lg:hidden"
+              unoptimized
+              className="object-cover object-center"
               priority
             />
             <Image
               src="/images/books-image.png"
               alt="SetlesStudio books and course materials"
               fill
-              sizes="100vw"
+              unoptimized
               className="hidden object-cover object-center lg:block"
               priority
             />
