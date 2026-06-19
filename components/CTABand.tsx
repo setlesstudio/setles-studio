@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import { site } from "@/lib/data";
+
+const WA_DEFAULT = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`;
 
 export default function CTABand({
   title = "Let's create content that takes your brand further.",
   text = "Take your brand to new heights, and boost your sales 10x.",
-  primary = { href: "/contact", label: "Get Started Today" },
+  primary = { href: WA_DEFAULT, label: "Get Started Today" },
   secondary,
   image = "",
   imageMobile = "",
@@ -56,13 +59,25 @@ export default function CTABand({
             </h2>
             <p className="mx-auto mt-1 max-w-xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
             <div className="mt-1 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
-              <Link href={primary.href} className="btn-primary">
-                {primary.label}
-              </Link>
-              {secondary && (
-                <Link href={secondary.href} className="btn-ghost-light">
-                  {secondary.label}
+              {/^https?:\/\//.test(primary.href) ? (
+                <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  {primary.label}
+                </a>
+              ) : (
+                <Link href={primary.href} className="btn-primary">
+                  {primary.label}
                 </Link>
+              )}
+              {secondary && (
+                /^https?:\/\//.test(secondary.href) ? (
+                  <a href={secondary.href} target="_blank" rel="noopener noreferrer" className="btn-ghost-light">
+                    {secondary.label}
+                  </a>
+                ) : (
+                  <Link href={secondary.href} className="btn-ghost-light">
+                    {secondary.label}
+                  </Link>
+                )
               )}
             </div>
           </div>

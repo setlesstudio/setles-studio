@@ -5,6 +5,7 @@ import CTABand from "@/components/CTABand";
 import SectionHeading from "@/components/SectionHeading";
 import PortfolioGallery from "@/components/PortfolioGallery";
 import Reveal from "@/components/Reveal";
+import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -58,7 +59,7 @@ export default function PortfolioPage() {
       <CTABand
         title="Want results like these for your brand?"
         text="Send one product image and get a free sample. No credit card required."
-        primary={{ href: "/contact?intent=sample", label: "Request Free Sample" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free sample of your AI fashion photography.")}`, label: "Request Free Sample" }}
         secondary={{ href: "/pricing", label: "See Pricing" }}
         image="/images/portfolio-last-section-banner.jpeg"
       />

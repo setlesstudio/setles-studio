@@ -10,7 +10,7 @@ import Reveal from "@/components/Reveal";
 import FAQ from "@/components/FAQ";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
-import { pricingTiers, valueProps } from "@/lib/data";
+import { pricingTiers, site, valueProps } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -33,12 +33,22 @@ export default function PricingPage() {
         image="/images/pricing-hero.jpeg"
         imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
       >
-        <Link href="/contact" className="btn-primary">
+        <a
+          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+        >
           Start Project
-        </Link>
-        <Link href="/contact" className="btn-ghost-light">
+        </a>
+        <a
+          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your pricing.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost-light"
+        >
           Contact Us
-        </Link>
+        </a>
       </PageHero>
 
       {/* Value strip */}
@@ -207,9 +217,14 @@ export default function PricingPage() {
                 Have a big project, monthly content needs, or specific
                 requirements? We&apos;ll create a custom solution for you.
               </p>
-              <Link href="/contact?intent=custom" className="btn-primary mt-8">
+              <a
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in a custom AI fashion photography package for my brand. Can we discuss my requirements?")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-8"
+              >
                 Request Custom Quote
-              </Link>
+              </a>
             </div>
             <ImageSlot
               src="/images/lifestyle-orange-activewear.jpeg"
@@ -234,7 +249,7 @@ export default function PricingPage() {
 
       <CTABand
         title="Let's create content that takes your brand further."
-        primary={{ href: "/contact", label: "Get Started" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started" }}
         image="/images/pricing-page-last-section.jpeg"
       />
     </>

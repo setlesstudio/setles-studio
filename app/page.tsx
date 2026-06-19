@@ -15,7 +15,7 @@ import TrustedBy from "@/components/TrustedBy";
 import Testimonials from "@/components/Testimonials";
 import CTABand from "@/components/CTABand";
 import ImageSlot from "@/components/ImageSlot";
-import { process, services, valueProps } from "@/lib/data";
+import { process, services, site, valueProps } from "@/lib/data";
 
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
@@ -37,9 +37,14 @@ export default function HomePage() {
         <Link href="/portfolio" className="btn-primary">
           View Our Work <ArrowRight size={16} />
         </Link>
-        <Link href="/contact" className="btn-ghost-light">
+        <a
+          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost-light"
+        >
           Book a Free Consultation
-        </Link>
+        </a>
         <p className="w-full text-sm text-white/50">
           7-day average delivery · 500+ projects completed · Top Rated Plus on
           Upwork
@@ -115,9 +120,14 @@ export default function HomePage() {
               our quality, realism, and attention to detail before starting a
               project.
             </p>
-            <Link href="/contact?intent=sample" className="btn-primary mt-5">
+            <a
+              href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free sample of your AI fashion photography.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mt-5"
+            >
               Request Free Sample
-            </Link>
+            </a>
             <p className="mt-2 text-xs text-ink-soft/70">No credit card required</p>
           </div>
         </Reveal>
@@ -237,7 +247,7 @@ export default function HomePage() {
       <CTABand
         title="Let's create something realistic together."
         text="Take your brand to new heights and boost your sales 10x."
-        primary={{ href: "/contact", label: "Get Started Today" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started Today" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
         image="/images/home-page-last-section-image.jpeg"
       />

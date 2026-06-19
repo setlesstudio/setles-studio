@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import {
   Download,
@@ -22,7 +21,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
 import Testimonials from "@/components/Testimonials";
-import { learnIncluded, learnProducts } from "@/lib/data";
+import { learnIncluded, learnProducts, site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Learn",
@@ -74,9 +73,14 @@ export default function LearnPage() {
         <a href="#resources" className="btn-primary">
           Browse Resources
         </a>
-        <Link href="/contact" className="btn-ghost-light">
+        <a
+          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your learn resources.")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost-light"
+        >
           Contact Us
-        </Link>
+        </a>
       </PageHero>
 
       {/* Promise strip */}
@@ -135,12 +139,14 @@ export default function LearnPage() {
                       <span className="font-display text-2xl font-semibold">
                         {p.price}
                       </span>
-                      <Link
-                        href={`/contact?product=${p.id}`}
+                      <a
+                        href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in purchasing "${p.title}". How can I get access?`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-primary !px-5 !py-2 text-xs"
                       >
                         Download Now
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </article>

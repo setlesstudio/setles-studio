@@ -9,7 +9,6 @@ const cols = [
       { href: "/about", label: "About us" },
       { href: "/portfolio", label: "Portfolio" },
       { href: "/blog", label: "Blog" },
-      { href: "/contact", label: "Contact" },
     ],
   },
   {
@@ -76,6 +75,14 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
           <p>© {new Date().getFullYear()} SetlesStudio. All rights reserved.</p>
+          <div className="flex gap-5">
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="transition-colors hover:text-white">
+              Terms of Service
+            </Link>
+          </div>
           <p>Top Rated Plus on Upwork · 4+ years of industry experience</p>
         </div>
       </div>

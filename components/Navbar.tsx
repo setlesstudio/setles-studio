@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import { site } from "@/lib/data";
+
+const WA_CONSULTATION = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`;
 
 const links = [
   { href: "/", label: "Home" },
@@ -66,9 +69,9 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
-          <Link href="/contact" className="btn-primary !px-6 !py-2.5">
+          <a href={WA_CONSULTATION} target="_blank" rel="noopener noreferrer" className="btn-primary !px-6 !py-2.5">
             Book a Free Consultation
-          </Link>
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -102,9 +105,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-primary mt-3 w-full">
+          <a href={WA_CONSULTATION} target="_blank" rel="noopener noreferrer" className="btn-primary mt-3 w-full">
             Book a Free Consultation
-          </Link>
+          </a>
         </nav>
       )}
     </header>

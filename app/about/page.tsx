@@ -6,7 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
-import { process, stats, team } from "@/lib/data";
+import { process, site, stats, team } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -217,7 +217,7 @@ export default function AboutPage() {
       <CTABand
         title="Ready to elevate your brand with premium fashion content?"
         text="Let's create something amazing together."
-        primary={{ href: "/contact", label: "Start Your Project" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`, label: "Start Your Project" }}
         image={'/images/about-last-banner-picture.png'}
       />
     </>

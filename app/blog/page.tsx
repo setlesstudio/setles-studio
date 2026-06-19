@@ -7,6 +7,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CTABand from "@/components/CTABand";
 import { client, urlFor } from "@/sanity/client";
+import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -157,7 +158,7 @@ export default async function BlogPage() {
       <CTABand
         title="Prefer results over reading?"
         text="Send one product image and get a free sample of our work."
-        primary={{ href: "/contact?intent=sample", label: "Request Free Sample" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free sample of your AI fashion photography.")}`, label: "Request Free Sample" }}
         image="/images/blog-page-banner-image.jpeg"
         imageMobile="/images/blog-page-banner-mobile.jpeg"
       />

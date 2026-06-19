@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PortableText, type SanityDocument } from "next-sanity";
 import CTABand from "@/components/CTABand";
 import { client, urlFor } from "@/sanity/client";
+import { site } from "@/lib/data";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0] {
   title,
@@ -139,7 +140,7 @@ export default async function BlogPostPage({
 
       <CTABand
         title="Want this level of content for your brand?"
-        primary={{ href: "/contact", label: "Book a Free Consultation" }}
+        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`, label: "Book a Free Consultation" }}
       />
     </>
   );
