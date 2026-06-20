@@ -1,8 +1,9 @@
 
 export const site = {
   name: "SetlesStudio",
+  url: "https://www.setlesstudio.com",
   tagline: "Realistic fashion and apparel AI model shoots for ecommerce brands.",
-  email: "hello@setlesstudio.com",
+  email: "setlesstudio@gmail.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
   social: {

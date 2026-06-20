@@ -66,8 +66,10 @@ export default function LearnPage() {
           </>
         }
         text="Access the same workflows, practice files, prompt collections, and creative techniques used to create realistic fashion content for brands worldwide."
-        image="/images/learn-page-banner.jpeg"
-        imageMobile="/images/learn-page-banner-mobile.jpeg"
+        // image="/images/learn-page-banner.jpeg"
+        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1781979297/learn-page-banner_v2ajyu.jpg"
+        // imageMobile="/images/learn-page-banner-mobile.jpeg"
+        imageMobile="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1781979297/learn-page-banner-mobile_z2zxio.jpg"
         imageAlt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
         animateReveal
       >
