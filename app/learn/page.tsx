@@ -69,6 +69,7 @@ export default function LearnPage() {
         image="/images/learn-page-banner.jpeg"
         imageMobile="/images/learn-page-banner-mobile.jpeg"
         imageAlt="Fashion model leaning on a vintage car, SetlesStudio editorial photography"
+        animateReveal
       >
         <a href="#resources" className="btn-primary">
           Browse Resources

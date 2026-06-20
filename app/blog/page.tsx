@@ -56,6 +56,7 @@ export default async function BlogPage() {
         image="/images/blog-page-banner-picture.jpeg"
         imageMobile="/images/blog-page-banner-picture-mobile.jpeg"
         imageAlt="outdoor-model-image"
+        animateReveal
       />
 
       <section className="container-site py-24">

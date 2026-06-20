@@ -44,6 +44,7 @@ export default function ContactPage() {
         text="Tell us about your brand and what you need. We&apos;ll come back with a plan, a timeline, and a free sample if you want one."
         image="/images/contact-page-banner-image.jpeg"
         imageMobile="/images/contact-page-banner-image-mobile.jpeg"
+        animateReveal
       />
 
       <section className="container-site grid gap-12 py-24 lg:grid-cols-[1fr_1.4fr]">

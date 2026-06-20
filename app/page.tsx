@@ -33,6 +33,7 @@ export default function HomePage() {
         text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
         image="/images/luxury-stairs-wide.jpg"
         imageAlt="Fashion model on luxury stairs"
+        animateReveal
       >
         <Link href="/portfolio" className="btn-primary">
           View Our Work <ArrowRight size={16} />

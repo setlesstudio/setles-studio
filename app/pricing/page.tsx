@@ -32,6 +32,7 @@ export default function PricingPage() {
         text="From product launches to global campaigns, choose the level of content production your brand needs."
         image="/images/pricing-hero.jpeg"
         imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
+        animateReveal
       >
         <a
           href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`}

@@ -36,6 +36,7 @@ export default function AboutPage() {
         image="/images/about-page-banner-image.jpeg"
         imageMobile="/images/about-page-banner-image-mobile.jpeg"
         imageAlt="SetlesStudio fashion content studio"
+        animateReveal
       />
 
       {/* Story */}

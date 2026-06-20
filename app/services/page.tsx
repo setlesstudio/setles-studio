@@ -28,6 +28,7 @@ export default function ServicesPage() {
         image="/images/service-page-banner.jpeg"
         imageMobile="/images/service-page-banner-mobile.jpeg"
         imageAlt="business-model-sitting"
+        animateReveal
       >
         <Link href="/pricing" className="btn-primary">
           See Pricing
