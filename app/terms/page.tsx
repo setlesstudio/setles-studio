@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/lib/data";
+import { legal, site } from "@/lib/data";
 
 const WA_TERMS = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your terms of service.")}`;
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Terms of Service for SetlesStudio. Understand the conditions governing your use of our AI fashion content services, payment terms, deliverables, and intellectual property.",
 };
 
-const EFFECTIVE_DATE = "June 20, 2026";
+const EFFECTIVE_DATE = legal.effectiveDate;
 
 export default function TermsPage() {
   return (
@@ -100,19 +100,11 @@ export default function TermsPage() {
 
           <Section title="4. Payment Terms">
             <p>
-              All prices are quoted and billed in <strong>US Dollars (USD)</strong>. Payments are processed through our trusted third party
-              processors:
+              All prices are quoted and billed in{" "}
+              <strong>US Dollars (USD)</strong>. Payments are processed through{" "}
+              <strong>{legal.paymentProvider}</strong>, our trusted third-party
+              payment processor.
             </p>
-            <ul>
-              <li>
-                <strong>GoFastPay</strong> — for clients paying via card, bank
-                transfer, or other methods supported by GoFastPay.
-              </li>
-              <li>
-                <strong>SafePay</strong> — for clients paying via card or
-                digital wallet through the SafePay platform.
-              </li>
-            </ul>
             <p>
               Payment requirements by tier:
             </p>
@@ -309,10 +301,10 @@ export default function TermsPage() {
           <Section title="12. Governing Law">
             <p>
               These Terms are governed by and construed in accordance with the
-              laws of the <strong>Islamic Republic of Pakistan</strong>. Any
-              disputes arising under these Terms that cannot be resolved
-              amicably shall be subject to the exclusive jurisdiction of the
-              courts of Pakistan.
+              laws of the <strong>{legal.governingLaw}</strong>. Any disputes
+              arising under these Terms that cannot be resolved amicably shall
+              be subject to the exclusive jurisdiction of the courts of{" "}
+              {legal.governingLaw}.
             </p>
             <p>
               If you are a consumer located in the EU or UK, you may also have

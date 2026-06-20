@@ -12,6 +12,12 @@ export const site = {
   },
 };
 
+export const legal = {
+  effectiveDate: "June 20, 2026",
+  paymentProvider: "SafePay",
+  governingLaw: "Islamic Republic of Pakistan",
+};
+
 export type Service = {
   id: string;
   number: string;

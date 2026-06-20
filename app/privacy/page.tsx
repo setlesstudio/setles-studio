@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/lib/data";
+import { legal, site } from "@/lib/data";
 
 const WA_PRIVACY = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your privacy policy.")}`;
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Privacy Policy for SetlesStudio. Learn how we collect, use, and protect your personal data when you use our AI fashion content services.",
 };
 
-const EFFECTIVE_DATE = "June 20, 2026";
+const EFFECTIVE_DATE = legal.effectiveDate;
 
 export default function PrivacyPage() {
   return (
@@ -61,33 +61,33 @@ export default function PrivacyPage() {
             </Subsection>
             <Subsection title="Payment information">
               <p>
-                We process payments through trusted third-party payment
-                processors including <strong>GoFastPay</strong> and{" "}
-                <strong>SafePay</strong>. We do not store, process, or have
-                access to your full payment card details. All payment
-                transactions are handled directly by these processors under
-                their own privacy and security policies. We receive only a
-                transaction confirmation and the amount paid.
+                We process payments through{" "}
+                <strong>{legal.paymentProvider}</strong>, a trusted third-party
+                payment processor. We do not store, process, or have access to
+                your full payment card details. All payment transactions are
+                handled directly by {legal.paymentProvider} under their own
+                privacy and security policies. We receive only a transaction
+                confirmation and the amount paid.
               </p>
             </Subsection>
             <Subsection title="Information collected automatically">
               <p>
-                When you visit our website, we may automatically collect:
+                We do not run client-side analytics, tracking pixels, or any
+                tracking software on our website. Our hosting provider, Vercel,
+                may log basic server-side access data — such as IP addresses
+                and request timestamps — as part of normal infrastructure
+                operation. This data is outside our direct control and is
+                governed by{" "}
+                <a
+                  href="https://vercel.com/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand hover:underline"
+                >
+                  Vercel&apos;s privacy policy
+                </a>
+                .
               </p>
-              <ul>
-                <li>
-                  IP address, browser type, and device information for security
-                  and analytics purposes
-                </li>
-                <li>
-                  Pages visited, time spent on pages, and referring URLs
-                  (through analytics tools)
-                </li>
-                <li>
-                  Cookies and similar tracking technologies (see Section 5
-                  below)
-                </li>
-              </ul>
             </Subsection>
           </Section>
 
@@ -131,8 +131,8 @@ export default function PrivacyPage() {
             </p>
             <ul>
               <li>
-                <strong>Payment processors:</strong> GoFastPay and SafePay
-                receive the information necessary to process your payment.
+                <strong>Payment processor:</strong> {legal.paymentProvider}{" "}
+                receives the information necessary to process your payment.
               </li>
               <li>
                 <strong>Service providers:</strong> Trusted tools we use to
@@ -176,24 +176,15 @@ export default function PrivacyPage() {
 
           <Section title="5. Cookies">
             <p>
-              Our website uses cookies and similar technologies to improve your
-              browsing experience and gather analytics data. We use:
+              Our website does not use tracking cookies, analytics cookies, or
+              any client-side tracking technology. We do not set cookies for
+              marketing, profiling, or behavioural advertising.
             </p>
-            <ul>
-              <li>
-                <strong>Essential cookies:</strong> Required for the website to
-                function correctly.
-              </li>
-              <li>
-                <strong>Analytics cookies:</strong> Help us understand how
-                visitors use the site so we can improve it. No personally
-                identifiable information is collected through analytics.
-              </li>
-            </ul>
             <p>
-              You can control or disable cookies through your browser settings.
-              Disabling essential cookies may affect the functionality of our
-              website.
+              If you interact with a payment gateway (such as{" "}
+              {legal.paymentProvider}) during checkout, that service may set
+              its own cookies under its own privacy policy — over which we have
+              no control.
             </p>
           </Section>
 
