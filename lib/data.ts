@@ -300,7 +300,7 @@ export const pricingTiers: Tier[] = [
       "3 Business Days Delivery",
     ],
     cta: "Get Started",
-    href: "/contact?plan=starter",
+    href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in the Starter plan. Can we get started?")}`,
   },
   {
     name: "Growth",
@@ -317,7 +317,7 @@ export const pricingTiers: Tier[] = [
       "Priority Delivery",
     ],
     cta: "Get Started",
-    href: "/contact?plan=growth",
+    href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in the Growth plan. Can we get started?")}`,
     featured: true,
   },
   {
@@ -336,7 +336,7 @@ export const pricingTiers: Tier[] = [
       "Priority Support",
     ],
     cta: "Contact Us",
-    href: "/contact?plan=premium",
+    href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in the Premium plan. Can we discuss my requirements?")}`,
   },
 ];
 

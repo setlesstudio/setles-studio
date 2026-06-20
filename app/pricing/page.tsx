@@ -192,12 +192,14 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
+                <a
                   href={t.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`${t.featured ? "btn-primary" : "btn-dark"} mt-6 w-full`}
                 >
                   {t.cta}
-                </Link>
+                </a>
               </div>
             </Reveal>
           ))}
