@@ -33,7 +33,8 @@ export default function AboutPage() {
           </>
         }
         text="SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results."
-        image="/images/about-page-banner-image.jpeg"
+        // image="/images/about-page-banner-image.jpeg"
+        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1781977997/about-page-banner-image_x2evxr.jpg"
         imageMobile="/images/about-page-banner-image-mobile.jpeg"
         imageAlt="SetlesStudio fashion content studio"
         animateReveal
