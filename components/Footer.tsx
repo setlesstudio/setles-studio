@@ -41,14 +41,24 @@ export default function Footer() {
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             Premium AI fashion content for modern apparel brands. Studio,
-            lifestyle, and editorial visuals — delivered in days, not weeks.
+            lifestyle, and editorial visuals delivered in days, not weeks.
           </p>
-          <a
-            href={`mailto:${site.email}`}
-            className="mt-5 inline-block text-sm font-semibold text-brand hover:underline"
-          >
-            {site.email}
-          </a>
+          <div className="mt-5 flex flex-col gap-1.5">
+            <a
+              href={`mailto:${site.email}`}
+              className="text-sm font-semibold text-brand hover:underline"
+            >
+              {site.email}
+            </a>
+            <a
+              href={`https://wa.me/${site.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/60 hover:text-white"
+            >
+              {site.phone}
+            </a>
+          </div>
         </div>
 
         {cols.map((col) => (
@@ -81,6 +91,9 @@ export default function Footer() {
             </Link>
             <Link href="/terms" className="transition-colors hover:text-white">
               Terms of Service
+            </Link>
+            <Link href="/terms#refund" className="transition-colors hover:text-white">
+              Refund Policy
             </Link>
           </div>
           <p>Top Rated Plus on Upwork · 4+ years of industry experience</p>

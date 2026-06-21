@@ -53,8 +53,10 @@ export default async function BlogPage() {
           </>
         }
         text="Production techniques, industry breakdowns, and the thinking behind content that converts."
-        image="/images/blog-page-banner-picture.jpeg"
-        imageMobile="/images/blog-page-banner-picture-mobile.jpeg"
+        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg"
+        // image="/images/blog-page-banner-picture.jpeg"
+        imageMobile="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg"
+        // imageMobile="/images/blog-page-banner-picture-mobile.jpeg"
         imageAlt="outdoor-model-image"
         animateReveal
       />

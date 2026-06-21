@@ -31,7 +31,8 @@ export default function HomePage() {
           </>
         }
         text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
-        image="/images/luxury-stairs-wide.jpg"
+        // image="/images/luxury-stairs-wide.jpg"
+        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg"
         imageAlt="Fashion model on luxury stairs"
         animateReveal
       >

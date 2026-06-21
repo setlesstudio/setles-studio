@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             <Subsection title="Payment information">
               <p>
                 We process payments through{" "}
-                <strong>{legal.paymentProvider}</strong>, a trusted third-party
+                <strong>{legal.paymentProvider}</strong>, a trusted third party
                 payment processor. We do not store, process, or have access to
                 your full payment card details. All payment transactions are
                 handled directly by {legal.paymentProvider} under their own
@@ -72,10 +72,10 @@ export default function PrivacyPage() {
             </Subsection>
             <Subsection title="Information collected automatically">
               <p>
-                We do not run client-side analytics, tracking pixels, or any
+                We do not run client side analytics, tracking pixels, or any
                 tracking software on our website. Our hosting provider, Vercel,
-                may log basic server-side access data — such as IP addresses
-                and request timestamps — as part of normal infrastructure
+                may log basic server side access data such as IP addresses
+                and request timestamps as part of normal infrastructure
                 operation. This data is outside our direct control and is
                 governed by{" "}
                 <a
@@ -177,7 +177,7 @@ export default function PrivacyPage() {
           <Section title="5. Cookies">
             <p>
               Our website does not use tracking cookies, analytics cookies, or
-              any client-side tracking technology. We do not set cookies for
+              any client side tracking technology. We do not set cookies for
               marketing, profiling, or behavioural advertising.
             </p>
             <p>
@@ -194,7 +194,7 @@ export default function PrivacyPage() {
               protect your personal information from unauthorised access,
               disclosure, or loss. These include encrypted communication
               (HTTPS), restricted access to data, and use of reputable
-              third-party platforms with their own security standards.
+              third party platforms with their own security standards.
             </p>
             <p>
               However, no method of transmission over the internet is 100%
@@ -292,6 +292,17 @@ export default function PrivacyPage() {
                   className="text-brand hover:underline"
                 >
                   {site.email}
+                </a>
+              </p>
+              <p>
+                WhatsApp:{" "}
+                <a
+                  href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your privacy policy.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand hover:underline"
+                >
+                  {site.phone}
                 </a>
               </p>
             </address>

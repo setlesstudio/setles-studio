@@ -102,7 +102,7 @@ export default function TermsPage() {
             <p>
               All prices are quoted and billed in{" "}
               <strong>US Dollars (USD)</strong>. Payments are processed through{" "}
-              <strong>{legal.paymentProvider}</strong>, our trusted third-party
+              <strong>{legal.paymentProvider}</strong>, our trusted third party
               payment processor.
             </p>
             <p>
@@ -186,7 +186,7 @@ export default function TermsPage() {
                 charge.
               </p>
             </Subsection>
-            <Subsection title="AI-generated content">
+            <Subsection title="AI generated content">
               <p>
                 Our deliverables are created using AI assisted tools. While we
                 work diligently to produce original outputs, we cannot guarantee
@@ -206,7 +206,7 @@ export default function TermsPage() {
             </Subsection>
           </Section>
 
-          <Section title="8. Refunds and Cancellations">
+          <Section id="refund" title="8. Refunds and Cancellations">
             <p>
               Due to the custom digital nature of our work, we operate the
               following refund policy:
@@ -341,6 +341,17 @@ export default function TermsPage() {
                   {site.email}
                 </a>
               </p>
+              <p>
+                WhatsApp:{" "}
+                <a
+                  href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your terms of service.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand hover:underline"
+                >
+                  {site.phone}
+                </a>
+              </p>
             </address>
           </Section>
         </div>
@@ -359,14 +370,16 @@ export default function TermsPage() {
 }
 
 function Section({
+  id,
   title,
   children,
 }: {
+  id?: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-10">
+    <section id={id} className={`mt-10${id ? " scroll-mt-28" : ""}`}>
       <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
       <div className="mt-4 space-y-4 leading-relaxed text-ink-soft">
         {children}

@@ -6,6 +6,7 @@ export const site = {
   email: "setlesstudio@gmail.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
+  phone: "+92 301 7281412",
   social: {
     instagram: "https://instagram.com/",
     linkedin: "https://linkedin.com/",
@@ -14,8 +15,8 @@ export const site = {
 };
 
 export const legal = {
-  effectiveDate: "June 20, 2026",
-  paymentProvider: "SafePay",
+  effectiveDate: "June 21, 2026",
+  paymentProvider: "Fastpay",
   governingLaw: "Islamic Republic of Pakistan",
 };
 
