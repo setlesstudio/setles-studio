@@ -28,7 +28,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            Creating premium fashion AI content{" "}
+            Creating premium hyper realistic AI fashion content{" "}
             <span className="text-brand">for modern apparel brands</span>
           </>
         }
@@ -64,7 +64,7 @@ export default function AboutPage() {
               traditional photoshoots and high production costs.
             </p>
             <p className="mt-4 leading-relaxed text-ink-soft">
-              We combine creativity, fashion expertise, and advanced AI content
+              We combine creativity, fashion expertise, and advanced hyper realistic AI
               production techniques to deliver visuals that look real, feel
               premium, and perform across every platform.
             </p>
@@ -221,7 +221,7 @@ export default function AboutPage() {
         title="Ready to elevate your brand with premium fashion content?"
         text="Let's create something amazing together."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`, label: "Start Your Project" }}
-        image={'/images/about-last-banner-picture.png'}
+        image={'/images/about-last-banner-picture.jpg'}
       />
     </>
   );

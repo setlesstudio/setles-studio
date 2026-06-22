@@ -332,6 +332,7 @@ export default function TermsPage() {
               <p>
                 <strong>SetlesStudio</strong>
               </p>
+              <p>{site.address}</p>
               <p>
                 Email:{" "}
                 <a

@@ -285,6 +285,7 @@ export default function PrivacyPage() {
               <p>
                 <strong>SetlesStudio</strong>
               </p>
+              <p>{site.address}</p>
               <p>
                 Email:{" "}
                 <a

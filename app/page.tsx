@@ -24,7 +24,7 @@ export default function HomePage() {
     <>
       {/* ------------------------------------------------ Hero */}
       <PageHero
-        eyebrow="AI Fashion Content Studio"
+        eyebrow="Realistic AI Fashion Content Studio"
         title={
           <>
             Realistic <span className="text-brand">AI Fashion</span> Photography <br/>for Ecommerce Brands
@@ -164,7 +164,7 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
-            title="Fashion content AI services for modern apparel brands"
+            title="Hyper realistic AI fashion services for modern apparel brands"
             text="From ecommerce product imagery to full scale marketing campaigns, we create high quality visual content that helps fashion brands launch faster, sell more, and stay consistent across every channel."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">

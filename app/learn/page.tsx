@@ -61,8 +61,8 @@ export default function LearnPage() {
         eyebrow="SetlesStudio Learn"
         title={
           <>
-            Learn the process behind{" "}
-            <span className="text-brand">premium AI fashion content</span>
+            Learn the process behind premium {" "}
+            <span className="text-brand">hyper realistic AI </span>fashion content
           </>
         }
         text="Access the same workflows, practice files, prompt collections, and creative techniques used to create realistic fashion content for brands worldwide."
@@ -130,6 +130,13 @@ export default function LearnPage() {
                     <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-ink">
                       {p.tag}
                     </span>
+                    {p.comingSoon && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-ink/50">
+                        <span className="rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink">
+                          Coming Soon
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-display text-lg font-semibold leading-snug group-hover:text-brand">
@@ -139,17 +146,19 @@ export default function LearnPage() {
                       {p.description}
                     </p>
                     <div className="mt-5 flex items-center justify-between">
-                      <span className="font-display text-2xl font-semibold">
+                      <span className={`font-display ${p.comingSoon ? "text-sm text-ink-soft/50" : "text-2xl font-semibold"}`}>
                         {p.price}
                       </span>
-                      <a
-                        href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in purchasing "${p.title}". How can I get access?`)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary !px-5 !py-2 text-xs"
-                      >
-                        Download Now
-                      </a>
+                      {!p.comingSoon && (
+                        <a
+                          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in purchasing "${p.title}". How can I get access?`)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary !px-5 !py-2 text-xs"
+                        >
+                          Download Now
+                        </a>
+                      )}
                     </div>
                   </div>
                 </article>

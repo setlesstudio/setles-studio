@@ -2,11 +2,12 @@
 export const site = {
   name: "SetlesStudio",
   url: "https://www.setlesstudio.com",
-  tagline: "Realistic fashion and apparel AI model shoots for ecommerce brands.",
+  tagline: "Hyper-realistic AI fashion photography for ecommerce brands.",
   email: "setlesstudio@gmail.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
   phone: "+92 301 7281412",
+  address: "Office 1243, 1st Floor, Street No. 13, Gulberg, Lahore, Pakistan",
   social: {
     instagram: "https://instagram.com/",
     linkedin: "https://linkedin.com/",
@@ -56,7 +57,7 @@ export const services: Service[] = [
     image: "/images/lifestyle-men.png",
     deliverables: [
       "Authentic real world scenes matched to your brand",
-      "Natural looking, consistent AI models",
+      "Natural looking, consistent hyper realistic AI models",
       "Social ready vertical and square formats",
       "Seasonal and campaign specific settings",
     ],
@@ -68,7 +69,7 @@ export const services: Service[] = [
     short:
       "High end fashion campaigns inspired by luxury brands and magazines, created for launches, advertising, and seasonal collections.",
     long: "Editorial grade campaign visuals inspired by luxury houses and fashion magazines. Built for collection launches, advertising, and seasonal storytelling where production value is the message.",
-    image: "/images/luxury-stairs.jpg",
+    image: "/images/campaign-desert-knit-dress-2.jpeg",
     deliverables: [
       "Editorial art direction and concepts",
       "Magazine grade lighting and composition",
@@ -334,7 +335,7 @@ export const pricingTiers: Tier[] = [
     price: "$1,999+",
     unit: "/ project",
     features: [
-      "180 Images",
+      "180 Premium Images",
       "Luxury Fashion Images",
       "Lifestyle Photography",
       "Footwear Photography",
@@ -350,16 +351,32 @@ export const pricingTiers: Tier[] = [
 
 export const faqs = [
   {
+    q: "Are your images AI generated or real photographs?",
+    a: "Our images are created using advanced AI workflows and professional editing techniques. The final results are designed to look like real commercial fashion photography, with realistic lighting, fabric details, skin textures, and natural poses.",
+  },
+  {
+    q: "Can people tell that the images are AI generated?",
+    a: "In most cases, no. Our goal is to create images that are virtually indistinguishable from traditional photoshoots. Many clients and viewers cannot tell the difference without being informed beforehand.",
+  },
+  {
+    q: "Do you use ready made AI tools with one click results?",
+    a: "No. I use a custom workflow that combines multiple AI tools with professional Photoshop retouching and quality control. Every image is carefully refined to achieve a realistic and premium look.",
+  },
+  {
+    q: "Can you add my brand logo and clothing details accurately?",
+    a: "Yes. I can accurately place logos, labels, embroidery, prints, and other brand elements on garments. I pay close attention to product details to ensure the final image matches your clothing as closely as possible.",
+  },
+  {
+    q: "How realistic are your final results?",
+    a: "Our focus is on creating high end, commercial-quality visuals that look like they came from a professional photoshoot. I encourage clients to review our samples and judge the quality themselves, the realism speaks for itself.",
+  },
+  {
     q: "How many products can I submit?",
-    a: "Each package covers a set number of final images, not products. The Starter plan typically covers 2–4 products, Growth covers 6–12, and Premium is unlimited. If you're unsure, send us your catalog and we'll recommend the right fit.",
+    a: "Each package covers a set number of final images, not products. The Starter plan typically covers 20 images, Growth covers 50 images, and Premium covers 180 images. If you're unsure, send us your catalog and we'll recommend the right fit.",
   },
   {
     q: "How long does delivery take?",
     a: "Our average delivery is 7 days. Starter projects ship in 3 business days, and larger campaigns are scheduled with clear milestones. Priority delivery is included in Growth and Premium.",
-  },
-  {
-    q: "Do you offer monthly packages?",
-    a: "Yes. Brands with ongoing content needs can move to a monthly retainer with reserved capacity, faster turnaround, and volume pricing. Request a custom quote and we'll build a plan around your calendar.",
   },
   {
     q: "Can I choose models?",
@@ -382,6 +399,7 @@ export type LearnProduct = {
   description: string;
   price: string;
   image: string;
+  comingSoon?: boolean;
 };
 
 export const learnProducts: LearnProduct[] = [
@@ -391,8 +409,9 @@ export const learnProducts: LearnProduct[] = [
     title: "Fashion Content Masterclass",
     description:
       "Learn how to create realistic fashion content from start to finish. A complete step by step workflow.",
-    price: "$49",
+    price: "Coming Soon",
     image: "",
+    comingSoon: true,
   },
   {
     id: "premium-prompt-collection",
@@ -400,8 +419,9 @@ export const learnProducts: LearnProduct[] = [
     title: "Premium Prompt Collection",
     description:
       "100+ high quality prompts for fashion photography, models, lifestyle shots, footwear, and product photography.",
-    price: "$29",
+    price: "Coming Soon",
     image: "",
+    comingSoon: true,
   },
   {
     id: "realistic-model-creation-guide",
@@ -409,8 +429,9 @@ export const learnProducts: LearnProduct[] = [
     title: "Realistic Model Creation Guide",
     description:
       "Learn techniques to create natural looking models, consistent characters, and professional fashion visuals.",
-    price: "$39",
+    price: "Coming Soon",
     image: "",
+    comingSoon: true,
   },
   {
     id: "apparel-detail-texture-guide",
@@ -418,8 +439,9 @@ export const learnProducts: LearnProduct[] = [
     title: "Apparel Detail & Texture Guide",
     description:
       "Master the process of maintaining fabric details, stitching, textures, and product accuracy in every shot.",
-    price: "$39",
+    price: "Coming Soon",
     image: "",
+    comingSoon: true,
   },
 ];
 

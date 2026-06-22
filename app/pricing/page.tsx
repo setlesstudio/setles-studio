@@ -15,7 +15,7 @@ import { pricingTiers, site, valueProps } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Simple, transparent, flexible pricing. Starter $299, Growth $799, Premium $1,999+. Premium AI fashion content for every brand size.",
+    "Simple, transparent, flexible pricing. Starter $299, Growth $799, Premium $1,999+. Premium hyper realistic AI fashion content for every brand size.",
 };
 
 export default function PricingPage() {
@@ -25,7 +25,7 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title={
           <>
-            Premium AI fashion content{" "}
+            Premium hyper realistic AI fashion content{" "}
             <span className="text-brand">for every brand size</span>
           </>
         }

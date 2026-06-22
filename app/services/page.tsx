@@ -51,7 +51,7 @@ export default function ServicesPage() {
               id={s.id}
               className="grid scroll-mt-28 items-stretch gap-10 md:grid-cols-[1.5fr_3fr] md:gap-10"
             >
-              <Reveal className="md:h-full md:min-h-[380px]">
+              <Reveal className="md:h-full md:min-h-[380px] xl:min-h-[480px]">
                 <ImageSlot
                   src={s.image}
                   alt={s.title}
@@ -60,17 +60,17 @@ export default function ServicesPage() {
                   imageClassName="object-contain object-center"
                 />
               </Reveal>
-              <Reveal delay={0.1} className="flex flex-col justify-center">
+              <Reveal delay={0.1} className="flex flex-col justify-between">
                 <span className="font-display text-4xl font-semibold text-brand/20 xl:text-5xl">
                   {s.number}
                 </span>
-                <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl">
+                <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl xl:mt-0">
                   {s.title}
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-ink-soft xl:mt-4 xl:text-lg">
+                <p className="mt-3 text-base font-light leading-relaxed text-ink-soft xl:mt-4 xl:text-lg">
                   {s.long}
                 </p>
-                <ul className="mt-5 space-y-2 xl:mt-7 xl:space-y-3">
+                </h2>
+                <ul className="mt-5 space-y-2 xl:mt-0 xl:space-y-3">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-start gap-3 text-sm xl:text-[15px]">
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-soft text-brand">
@@ -101,8 +101,8 @@ export default function ServicesPage() {
       </div>
 
       <CTABand
-        title="Not Sure Which AI Visuals Fit Your Brand"
-        text="Let’s map out a custom AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
+        title="Not Sure Which Hyper Realistic AI Visuals Fit Your Brand"
+        text="Let’s map out a custom hyper realistic AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`, label: "Book a Free Consultation" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
         image="/images/services-page-last-section-image.jpeg"

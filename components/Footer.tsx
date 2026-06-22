@@ -17,7 +17,10 @@ const cols = [
       { href: "/services#studio-product-photography", label: "Studio Photography" },
       { href: "/services#lifestyle-photography", label: "Lifestyle Photography" },
       { href: "/services#luxury-fashion-campaigns", label: "Luxury Campaigns" },
-      { href: "/services#video-ad-creation", label: "Video Ads" },
+      { href: "/services#footwear-photography", label: "Footwear Photography" },
+      { href: "/services#AI-video-&-advertising", label: "AI Video & Advertising" },
+      { href: "/services#fashion-ai-content-course", label: "Fashion AI Content Course" },
+      { href: "/services#bags-&-accessories-photography", label: "Bags & Accessories" },
     ],
   },
   {
@@ -40,8 +43,8 @@ export default function Footer() {
            
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Premium AI fashion content for modern apparel brands. Studio,
-            lifestyle, and editorial visuals delivered in days, not weeks.
+            Premium hyper realistic AI fashion content for modern apparel brands.
+            Studio, lifestyle, and editorial visuals delivered in days, not weeks.
           </p>
           <div className="mt-5 flex flex-col gap-1.5">
             <a
@@ -58,6 +61,7 @@ export default function Footer() {
             >
               {site.phone}
             </a>
+            <p className="text-sm text-white/40">{site.address}</p>
           </div>
         </div>
 
