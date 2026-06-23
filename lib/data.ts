@@ -93,7 +93,7 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "AI-video-&-advertising",
+    id: "ai-video-and-advertising",
     number: "05",
     title: "AI Video & Advertising",
     short:
@@ -123,7 +123,7 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "bags-&-accessories-photography",
+    id: "bags-and-accessories-photography",
     number: "07",
     title: "Bags & Accessories Photography",
     short:

@@ -171,7 +171,7 @@ export default function HomePage() {
             {services.map((s, i) => (
               <Reveal key={s.id} delay={(i % 2) * 0.08}>
                 <Link
-                  href={`/services#${s.id}`}
+                  href={`/services/${s.id}`}
                   className="card group flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10"
                 >
                   <ImageSlot

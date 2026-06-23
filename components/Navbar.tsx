@@ -33,8 +33,31 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [pathname]);
 
-  const isBlogPost = pathname.startsWith("/blog/");
-  const opaque = scrolled || open || isBlogPost;
+  const validServiceSlugs = [
+    "studio-product-photography",
+    "lifestyle-photography",
+    "luxury-fashion-campaigns",
+    "footwear-photography",
+    "ai-video-and-advertising",
+    "fashion-ai-content-course",
+    "bags-and-accessories-photography",
+  ];
+
+  const hasDarkHero =
+    pathname === "/" ||
+    pathname === "/services" ||
+    validServiceSlugs.some((slug) => pathname === `/services/${slug}`) ||
+    pathname === "/about" ||
+    pathname === "/portfolio" ||
+    pathname === "/pricing" ||
+    pathname === "/learn" ||
+    pathname === "/blog" ||
+    pathname === "/contact";
+
+  const opaque = scrolled || open || !hasDarkHero;
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === href : pathname.startsWith(href);
 
   return (
     <header
@@ -57,7 +80,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               className={`text-sm font-semibold transition-colors hover:text-brand ${
-                pathname === l.href
+                isActive(l.href)
                   ? "text-brand"
                   : opaque ? "text-ink/80" : "text-white/80"
               }`}
@@ -99,7 +122,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               className={`block rounded-xl px-3 py-3 text-base font-semibold ${
-                pathname === l.href ? "bg-brand-soft text-brand" : "text-ink"
+                isActive(l.href) ? "bg-brand-soft text-brand" : "text-ink"
               }`}
             >
               {l.label}

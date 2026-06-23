@@ -14,13 +14,13 @@ const cols = [
   {
     title: "Services",
     links: [
-      { href: "/services#studio-product-photography", label: "Studio Photography" },
-      { href: "/services#lifestyle-photography", label: "Lifestyle Photography" },
-      { href: "/services#luxury-fashion-campaigns", label: "Luxury Campaigns" },
-      { href: "/services#footwear-photography", label: "Footwear Photography" },
-      { href: "/services#AI-video-&-advertising", label: "AI Video & Advertising" },
-      { href: "/services#fashion-ai-content-course", label: "Fashion AI Content Course" },
-      { href: "/services#bags-&-accessories-photography", label: "Bags & Accessories" },
+      { href: "/services/studio-product-photography", label: "Studio Photography" },
+      { href: "/services/lifestyle-photography",      label: "Lifestyle Photography" },
+      { href: "/services/luxury-fashion-campaigns",   label: "Luxury Campaigns" },
+      { href: "/services/footwear-photography",       label: "Footwear Photography" },
+      { href: "/services/ai-video-and-advertising",       label: "AI Video & Advertising" },
+      { href: "/services/fashion-ai-content-course",  label: "Fashion AI Content Course" },
+      { href: "/services/bags-and-accessories-photography", label: "Bags & Accessories Photography" },
     ],
   },
   {

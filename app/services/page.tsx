@@ -80,20 +80,25 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                {s.id === "fashion-ai-content-course" ? (
-                  <Link href="/learn" className="btn-dark mt-6 self-start xl:mt-8">
-                    Browse Learn Resources <ArrowRight size={16} />
+                <div className="mt-6 xl:mt-8 flex flex-wrap items-center gap-3 self-start">
+                  <Link href={`/services/${s.id}`} className="btn-outline">
+                    Read More <ArrowRight size={16} />
                   </Link>
-                ) : (
-                  <a
-                    href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in your ${s.title} service. Can we discuss a project?`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-dark mt-6 self-start xl:mt-8"
-                  >
-                    Start a Project <ArrowRight size={16} />
-                  </a>
-                )}
+                  {s.id === "fashion-ai-content-course" ? (
+                    <Link href="/learn" className="btn-dark">
+                      Browse Learn Resources <ArrowRight size={16} />
+                    </Link>
+                  ) : (
+                    <a
+                      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in your ${s.title} service. Can we discuss a project?`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-dark"
+                    >
+                      Start a Project <ArrowRight size={16} />
+                    </a>
+                  )}
+                </div>
               </Reveal>
             </section>
           ))}
