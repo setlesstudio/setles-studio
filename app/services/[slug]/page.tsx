@@ -115,7 +115,7 @@ const services: Record<string, ServiceData> = {
       para2:
         "Fabric texture, stitching detail, print placement, and garment silhouette are preserved throughout. Brands use this service to launch collections faster, scale catalogs without scaling budget, and maintain consistent imagery across every product and season.",
       tags: ["Amazon Ready", "Shopify Ready", "Zalando Compliant", "ASOS Compatible"],
-      img1: "/images/studio-pink.png",
+      img1: "/images/studio-pink-2.jpeg",
       img2: "/images/studio-black-bodysuit-front.png",
     },
     deliverablesTitle: "Everything your catalog needs, delivered",
@@ -172,7 +172,7 @@ const services: Record<string, ServiceData> = {
       para2:
         "Content produced this way works harder across every channel. It performs in paid social, builds brand identity on your website, and gives customers the context they need to picture themselves wearing your product.",
       tags: ["Instagram Ready", "Paid Social", "Brand Campaigns", "DTC Brands"],
-      img1: "/images/lifestyle-red-dress-nyc-1.jpeg",
+      img1: "/images/lifestyle-red-dress-nyc-1-service.jpg",
       img2: "/images/lifestyle-beach-pink-dress.jpg",
     },
     deliverablesTitle: "Content built to perform across every channel",
@@ -353,7 +353,7 @@ const services: Record<string, ServiceData> = {
       para2:
         "We work from your product photos and brand brief to produce video content formatted for Instagram, TikTok, Facebook, and YouTube. Each video is produced to your visual direction and delivered ready to run as a paid ad or brand campaign.",
       tags: ["Instagram Reels", "TikTok Ads", "Facebook Ads", "YouTube"],
-      img1: "/images/multiple-models-environment.png",
+      img1: "/images/multiple-models-environment.jpg",
       img2: "/images/lifestyle-orange-activewear.jpeg",
     },
     deliverablesTitle: "Video content built for performance",
@@ -580,9 +580,9 @@ export default function ServiceSlugPage({
         </Link>
       </PageHero>
 
-      {/* ── Overview ── */}
+      {/* Overview */}
       <section className="container-site py-20">
-        <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="grid items-center gap-14 md:grid-cols-2">
           <Reveal>
             <p className="eyebrow">What this service is</p>
             <h2 className="mt-3 font-display text-3xl font-semibold leading-snug sm:text-4xl">
@@ -602,95 +602,85 @@ export default function ServiceSlugPage({
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
-            <div className="grid grid-cols-2 gap-3">
+          <Reveal delay={0.15} className="md:h-full lg:h-auto">
+            <div className="grid grid-cols-1 gap-4 min-[450px]:grid-cols-2 md:grid-cols-1 md:h-full md:grid-rows-2 lg:h-auto lg:grid-rows-none lg:grid-cols-2">
 
-              {/* ── Flip card 1: photo → brand orange (deliverables + CTA) ── */}
+              {/* Flip card 1 */}
               <div className="group [perspective:1200px]">
-                <div className="relative aspect-[3/4] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                <div className="relative aspect-[3/4] md:aspect-auto md:h-full lg:aspect-[3/4] lg:h-auto w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front */}
                   <div className="absolute inset-0 overflow-hidden rounded-3xl shadow-lg [backface-visibility:hidden]">
                     <Image
                       src={svc.overview.img1}
                       alt={svc.overview.heading}
                       fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
                       className="object-cover object-top"
                     />
                   </div>
                   {/* Back */}
-                  <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-brand p-6 shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <div className="absolute inset-0 flex flex-col gap-5 overflow-hidden rounded-3xl bg-brand p-6 shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] min-[450px]:gap-2 min-[450px]:p-3 sm:gap-3 sm:p-4 md:gap-5 md:p-6 lg:gap-3 lg:p-4 xl:gap-4 xl:p-5">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/55">SetlesStudio</p>
-                      <p className="mt-2 font-display text-2xl font-bold leading-tight text-white">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/55 min-[450px]:text-[8px] sm:text-[9px] md:text-[10px]">SetlesStudio</p>
+                      <p className="mt-2 font-display font-bold leading-tight text-white
+                        text-2xl min-[450px]:text-sm sm:text-base md:text-2xl lg:text-xs xl:text-sm">
                         {svc.meta.title.split(" | ")[0]}
                       </p>
-                      <div className="mt-3 h-0.5 w-10 rounded-full bg-white/40" />
+                      <div className="mt-3 h-0.5 w-10 rounded-full bg-white/40 min-[450px]:mt-1.5 min-[450px]:w-6 sm:w-8 md:mt-3 md:w-10" />
                     </div>
-                    <ul className="space-y-3">
-                      {svc.deliverables.slice(0, 3).map((d) => (
-                        <li key={d.title} className="flex items-center gap-2.5 text-sm text-white/90">
-                          <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/25">
-                            <Check size={10} strokeWidth={3} className="text-white" />
+                    <ul className="space-y-3 min-[450px]:space-y-1 sm:space-y-1.5 md:space-y-3">
+                      {svc.deliverables.slice(0, 4).map((d) => (
+                        <li key={d.title} className="flex items-start gap-2.5 leading-snug text-white/90
+                          text-sm min-[450px]:text-[10px] sm:text-[11px] md:text-sm lg:text-[10px] xl:text-xs">
+                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/25 min-[450px]:h-3.5 min-[450px]:w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5">
+                            <Check size={10} strokeWidth={3} className="text-white min-[450px]:hidden md:block" />
+                            <Check size={7} strokeWidth={3} className="text-white hidden min-[450px]:block md:hidden" />
                           </span>
                           {d.title}
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href={waHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-brand transition-opacity hover:opacity-90"
-                    >
-                      Start a Project <ArrowRight size={12} />
-                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* ── Flip card 2: photo → dark ink (stats + pricing link) ── */}
-              <div className="mt-6 group [perspective:1200px]">
-                <div className="relative aspect-[3/4] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              {/* Flip card 2 */}
+              <div className="group min-[450px]:mt-6 md:mt-0 lg:mt-6 [perspective:1200px]">
+                <div className="relative aspect-[3/4] md:aspect-auto md:h-full lg:aspect-[3/4] lg:h-auto w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front */}
                   <div className="absolute inset-0 overflow-hidden rounded-3xl shadow-lg [backface-visibility:hidden]">
                     <Image
                       src={svc.overview.img2}
                       alt={svc.overview.heading}
                       fill
-                      sizes="(min-width: 1024px) 25vw, 50vw"
                       className="object-cover object-top"
                     />
                   </div>
                   {/* Back */}
-                  <div className="absolute inset-0 flex flex-col justify-between rounded-3xl bg-ink p-6 shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                  <div className="absolute inset-0 flex flex-col gap-5 overflow-hidden rounded-3xl bg-ink p-6 shadow-lg [backface-visibility:hidden] [transform:rotateY(180deg)] min-[450px]:gap-2 min-[450px]:p-3 sm:gap-3 sm:p-4 md:gap-5 md:p-6 lg:gap-3 lg:p-4 xl:gap-4 xl:p-5">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Our results</p>
-                      <p className="mt-2 font-display text-lg font-semibold leading-snug text-white">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 min-[450px]:text-[8px] sm:text-[9px] md:text-[10px]">Our results</p>
+                      <p className="mt-2 font-display font-semibold leading-snug text-white
+                        text-base min-[450px]:text-[10px] sm:text-xs md:text-lg lg:text-[10px] xl:text-sm">
                         {svc.overview.heading}
                       </p>
                     </div>
-                    <div className="grid grid-cols-2 gap-2.5">
+                    <div className="grid grid-cols-2 gap-3 min-[450px]:gap-1.5 sm:gap-2 md:gap-3">
                       {[
                         { value: "1100+", label: "Projects" },
                         { value: "98%",   label: "Satisfaction" },
                         { value: "7 Days", label: "Avg Delivery" },
                         { value: "30+",   label: "Countries" },
                       ].map((s) => (
-                        <div key={s.label} className="rounded-2xl bg-white/[0.07] p-3 text-center">
-                          <p className="font-display text-xl font-semibold text-brand">{s.value}</p>
-                          <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/40">
+                        <div key={s.label} className="rounded-2xl bg-white/[0.07] p-3 text-center min-[450px]:rounded-lg min-[450px]:p-1.5 sm:rounded-xl sm:p-2 md:rounded-2xl md:p-3 xl:p-4">
+                          <p className="font-display font-semibold text-brand
+                            text-2xl min-[450px]:text-sm sm:text-base md:text-2xl lg:text-sm xl:text-xl">{s.value}</p>
+                          <p className="font-semibold uppercase tracking-wider text-white/40
+                            text-[10px] min-[450px]:text-[7px] sm:text-[8px] md:text-[10px] lg:text-[8px] xl:text-[9px]">
                             {s.label}
                           </p>
                         </div>
                       ))}
                     </div>
-                    <Link
-                      href="/pricing"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-xs font-bold text-white transition-colors hover:bg-white/10"
-                    >
-                      View Pricing <ArrowRight size={12} />
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -700,7 +690,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── Deliverables ── */}
+      {/* Deliverables */}
       <section className="bg-cream rounded-3xl py-20">
         <div className="container-site">
           <SectionHeading
@@ -724,7 +714,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── Process ── */}
+      {/* Process */}
       <section className="bg-ink py-20 text-white">
         <div className="container-site">
           <SectionHeading
@@ -751,7 +741,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── Gallery ── */}
+      {/* Gallery */}
       <section className="container-site py-20">
         <SectionHeading
           eyebrow="Sample work"
@@ -780,7 +770,7 @@ export default function ServiceSlugPage({
         </Reveal>
       </section>
 
-      {/* ── Who it's for ── */}
+      {/* Who it's for */}
       <section className="bg-cream rounded-3xl py-20">
         <div className="container-site">
           <SectionHeading
@@ -805,7 +795,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── Stats ── */}
+      {/* Stats */}
       <section className="bg-brand py-12 text-white">
         <div className="container-site grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
           {[
@@ -822,7 +812,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* FAQ */}
       <section className="container-site py-20">
         <SectionHeading
           eyebrow="Common questions"
@@ -846,7 +836,7 @@ export default function ServiceSlugPage({
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* CTA */}
       <CTABand
         title={svc.cta.title}
         text={svc.cta.text}
