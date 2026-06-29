@@ -54,7 +54,7 @@ const items: Item[] = [
   { src: "/images/studio-pink-wave-set.png", alt: "Woman in pink wave pattern shirt and shorts set, studio shot", category: "Studio", tall: true },
   { src: "/images/studio-black-mini-dress-1.png", alt: "Woman in black strapless mini dress, studio shot", category: "Studio", tall: true },
   { src: "/images/studio-white-cutout-maxi.jpg", alt: "Woman in white one shoulder cutout maxi dress, side pose", category: "Studio", tall: true },
-  { src: "/images/studio-white-cutout-maxi-1.png", alt: "Woman in white one shoulder cutout maxi dress, side pose", category: "Studio", tall: true },
+  { src: "/images/studio-white-cutout-maxi-1.jpg", alt: "Woman in white one shoulder cutout maxi dress, side pose", category: "Studio", tall: true },
   { src: "/images/studio-white-cutout-maxi-2.png", alt: "Woman in white one shoulder cutout maxi dress, front pose", category: "Studio", tall: true },
   { src: "/images/lifestyle-kids-pink-dress-1.png", alt: "Little girl in pink embroidered dress twirling in garden", category: "Lifestyle" },
   { src: "/images/lifestyle-kids-pink-dress-2.png", alt: "Little girl in pink embroidered dress standing in garden", category: "Lifestyle", tall: true },
