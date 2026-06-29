@@ -160,7 +160,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <nav
-          className="border-t border-ink/[0.06] bg-white px-5 pb-6 pt-3 lg:hidden"
+          className="border-t border-ink/[0.06] bg-white px-5 pb-6 pt-3 lg:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-contain"
           aria-label="Mobile"
         >
           <Link
