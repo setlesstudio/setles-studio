@@ -81,12 +81,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why Apparel Brands Choose Our AI Studio Photography",
       subheading: "Realistic AI Studio Photography",
       items: [
-        { number: "01", icon: Users,      title: "100% Realistic AI Fashion Models or Custom Models" },
-        { number: "02", icon: Package,    title: "Accurate Fabric Texture, Stitching & Garment Details" },
-        { number: "03", icon: LayoutGrid, title: "Consistent Backgrounds Across Your Full Catalog" },
-        { number: "04", icon: ShoppingBag, title: "Marketplace Ready Formats for Amazon, Shopify & More" },
-        { number: "05", icon: Camera,     title: "High-Resolution, Professionally Retouched Files" },
-        { number: "06", icon: Zap,        title: "Fast Delivery — No Studio, No Shoot Day Required" },
+        { number: "01", icon: Users,       title: "100% Realistic AI Fashion Models or Custom Models",    description: "We create custom AI models tailored to your brand or choose from our library of diverse, realistic models." },
+        { number: "02", icon: Package,     title: "Accurate Fabric Texture, Stitching & Garment Details", description: "Every stitch, print, and fabric texture is accurately preserved to match your exact product." },
+        { number: "03", icon: LayoutGrid,  title: "Consistent Backgrounds Across Your Full Catalog",      description: "Keep a unified look across all product images with matching studio backgrounds and lighting." },
+        { number: "04", icon: ShoppingBag, title: "Marketplace Ready Formats for Amazon, Shopify & More", description: "Images delivered in the exact sizes and specs required by major eCommerce platforms." },
+        { number: "05", icon: Camera,      title: "High Resolution, Professionally Retouched Files",      description: "Full resolution images ready for print, web, and digital advertising without further editing." },
+        { number: "06", icon: Zap,         title: "Fast Delivery — No Studio, No Shoot Day Required",     description: "Receive your complete catalog imagery in days, not weeks, without booking a studio." },
       ],
     },
     ctaBanner: {
@@ -106,7 +106,7 @@ const services: Record<string, ServiceData> = {
   "lifestyle-realistic-ai-photography": {
     meta: {
       title: "Realistic AI Lifestyle Photography for Fashion Brands | SetlesStudio",
-      description: "Real life lifestyle scenes for your fashion brand. We transform flat product photos into realistic on-model lifestyle imagery for social media, ads, and eCommerce.",
+      description: "Real life lifestyle scenes for your fashion brand. We transform flat product photos into realistic on model lifestyle imagery for social media, ads, and eCommerce.",
     },
     hero: {
       eyebrow: "AI Lifestyle Photography",
@@ -137,12 +137,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why Apparel Brands Choose Our AI Fashion Photography",
       subheading: "Lifestyle AI Fashion Photography",
       items: [
-        { number: "01", icon: Users,      title: "100% Realistic AI Fashion Models or Custom Models" },
-        { number: "02", icon: Package,    title: "Accurate Garment Details, Colors & Fit" },
-        { number: "03", icon: MapPin,     title: "Real Lifestyle Locations, Not Fake AI generated Places" },
-        { number: "04", icon: Zap,        title: "Faster & More Affordable Than Traditional Photoshoots" },
-        { number: "05", icon: Camera,     title: "High Resolution Images Ready for eCommerce & Ads" },
-        { number: "06", icon: TrendingUp, title: "Commercial Quality Results That Increase Conversions" },
+        { number: "01", icon: Users,      title: "100% Realistic AI Fashion Models or Custom Models",    description: "Diverse, natural looking AI models styled to match your brand's target audience and aesthetic." },
+        { number: "02", icon: Package,    title: "Accurate Garment Details, Colors & Fit",               description: "Colors, patterns, logos, and garment fit are preserved accurately in every lifestyle image." },
+        { number: "03", icon: MapPin,     title: "Real Lifestyle Locations, Not Fake AI Places",         description: "We use real world photographs as location references, not computer-generated environments." },
+        { number: "04", icon: Zap,        title: "Faster & More Affordable Than Traditional Shoots",     description: "Get lifestyle imagery at a fraction of traditional production costs with no shoot day required." },
+        { number: "05", icon: Camera,     title: "High Resolution Images for eCommerce & Ads",           description: "Delivered in all formats for web, social media, and paid advertising campaigns." },
+        { number: "06", icon: TrendingUp, title: "Commercial Quality Results That Increase Conversions", description: "Images designed to perform in product listings, ads, and brand content that drives sales." },
       ],
     },
     ctaBanner: {
@@ -168,7 +168,7 @@ const services: Record<string, ServiceData> = {
       eyebrow: "AI Fashion Campaign",
       titlePrefix: "Luxury Fashion Hyper Realistic",
       titleHighlight: "AI Campaign Photography",
-      subtitle: "Editorial-Grade AI Campaign Visuals Inspired by the World's Top Fashion Houses",
+      subtitle: "Editorial Grade AI Campaign Visuals Inspired by the World's Top Fashion Houses",
       image: "/images/blog-page-banner-picture.jpeg",
       imageAlt: "Luxury fashion AI campaign editorial photography",
       waText: "Hi, I'd like to discuss a luxury fashion campaign project.",
@@ -186,12 +186,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why Fashion Brands Choose Our AI Campaign Photography",
       subheading: "Luxury AI Fashion Campaigns",
       items: [
-        { number: "01", icon: Camera,     title: "Hyper Realistic Editorial AI Fashion Photography" },
-        { number: "02", icon: Palette,    title: "Luxury Art Direction & Creative Campaign Concepts" },
-        { number: "03", icon: Gem,        title: "Magazine-Quality Lighting & Premium Composition" },
-        { number: "04", icon: LayoutGrid, title: "Cohesive Multi-Image Campaign Collections" },
-        { number: "05", icon: FileCheck,  title: "Print-Ready, Billboard Quality High-Resolution Images" },
-        { number: "06", icon: TrendingUp, title: "Commercial Quality Results Matched to Luxury Standards" },
+        { number: "01", icon: Camera,     title: "Hyper Realistic Editorial AI Fashion Photography",      description: "Campaign grade images that meet the visual standards of top fashion publications and luxury houses." },
+        { number: "02", icon: Palette,    title: "Luxury Art Direction & Creative Campaign Concepts",     description: "Custom art direction that communicates your brand identity and campaign narrative." },
+        { number: "03", icon: Gem,        title: "Magazine Quality Lighting & Premium Composition",       description: "Precise lighting setups and compositional choices matched to luxury editorial standards." },
+        { number: "04", icon: LayoutGrid, title: "Cohesive Multi Image Campaign Collections",             description: "Consistent visual language across your full campaign set for maximum brand impact." },
+        { number: "05", icon: FileCheck,  title: "Print Ready, Billboard Quality High Resolution Images", description: "Delivered at resolutions suitable for large format print, outdoor, and premium media." },
+        { number: "06", icon: TrendingUp, title: "Commercial Quality Results Matched to Luxury Standards", description: "Every image is retouched and finished to the exacting standards of luxury fashion brands." },
       ],
     },
     ctaBanner: {
@@ -211,7 +211,7 @@ const services: Record<string, ServiceData> = {
   "footwear-realistic-ai-photography": {
     meta: {
       title: "Footwear Realistic AI Photography | SetlesStudio",
-      description: "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on-foot fit. Perfect for eCommerce, marketplaces, and brand campaigns.",
+      description: "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on foot fit. Perfect for eCommerce, marketplaces, and brand campaigns.",
     },
     hero: {
       eyebrow: "AI Footwear Photography",
@@ -227,7 +227,7 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "Footwear Realistic AI Photography",
       titleSuffix: "for eCommerce Brands",
       paragraphs: [
-        "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on-foot fit.",
+        "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on foot fit.",
         "Every image preserves the sole, material, stitching, texture, and product details with a 100% realistic look — ready for Shopify, Amazon, and brand campaigns.",
       ],
     },
@@ -235,12 +235,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why Footwear Brands Choose Our AI Photography",
       subheading: "Realistic AI Footwear Photography",
       items: [
-        { number: "01", icon: Users,      title: "Hyper Realistic AI Models Wearing Your Footwear" },
-        { number: "02", icon: Package,    title: "Accurate Sole, Material, Texture & Stitching Details" },
-        { number: "03", icon: Camera,     title: "On-Model & Still Life Photography Options" },
-        { number: "04", icon: LayoutGrid, title: "Consistent Catalog Angles for eCommerce & Marketplaces" },
-        { number: "05", icon: ShoppingBag, title: "High Resolution Images for Shopify, Amazon & Ads" },
-        { number: "06", icon: Zap,        title: "Fast Delivery Without Traditional Studio Costs" },
+        { number: "01", icon: Users,       title: "Hyper Realistic AI Models Wearing Your Footwear",       description: "Natural looking AI models wearing your shoes with accurate on foot positioning and fit." },
+        { number: "02", icon: Package,     title: "Accurate Sole, Material, Texture & Stitching Details",  description: "Sole construction, leather texture, hardware, and stitching are rendered with precision." },
+        { number: "03", icon: Camera,      title: "On Model & Still Life Photography Options",              description: "Choose lifestyle on model shots, clean still life, or a combination of both styles." },
+        { number: "04", icon: LayoutGrid,  title: "Consistent Catalog Angles for eCommerce & Marketplaces", description: "Standard catalog angles applied consistently across your full footwear range." },
+        { number: "05", icon: ShoppingBag, title: "High Resolution Images for Shopify, Amazon & Ads",      description: "Delivered in all required formats for major footwear marketplaces and advertising." },
+        { number: "06", icon: Zap,         title: "Fast Delivery Without Traditional Studio Costs",         description: "Full catalog delivered in days without the expense of a traditional product shoot." },
       ],
     },
     ctaBanner: {
@@ -252,7 +252,7 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "Can you shoot all types of footwear?", a: "Yes. We produce AI photography for sneakers, heels, boots, sandals, loafers, and all footwear types. Each category has specific angle and detail requirements that we apply automatically." },
       { q: "How accurate are the shoe details in the final image?", a: "We preserve sole construction, material texture, hardware, colour, and stitching detail accurately in every image. Flag any critical detail in your brief and we make sure it reads clearly." },
-      { q: "Can I get both on-model and still life versions?", a: "Yes. We produce both on-model shots and clean still life imagery. You can request both styles in a single order." },
+      { q: "Can I get both on model and still life versions?", a: "Yes. We produce both on model shots and clean still life imagery. You can request both styles in a single order." },
       { q: "Are the images suitable for major footwear marketplaces?", a: "Yes. We deliver images that meet the technical requirements for Amazon, Zalando, ASOS, and other major footwear marketplaces." },
     ],
   },
@@ -260,7 +260,7 @@ const services: Record<string, ServiceData> = {
   "realistic-ai-video-ads-ugc": {
     meta: {
       title: "Realistic AI Video Ads & UGC Content | SetlesStudio",
-      description: "Hyper realistic AI video ads, authentic UGC-style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
+      description: "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
     },
     hero: {
       eyebrow: "AI Video Ads & UGC",
@@ -276,7 +276,7 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "Realistic AI Video Ads & UGC Content",
       titleSuffix: "for eCommerce Brands",
       paragraphs: [
-        "Create hyper realistic AI video ads, authentic UGC-style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling.",
+        "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling.",
         "Perfect for Shopify stores, eCommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
       ],
     },
@@ -284,12 +284,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why eCommerce Brands Choose Our AI Video Production",
       subheading: "Realistic AI Video Ads & UGC Content",
       items: [
-        { number: "01", icon: Play,       title: "Hyper-Realistic AI Video Ads With Natural Model Movement" },
-        { number: "02", icon: Users,      title: "Authentic UGC Style Videos That Build Trust & Conversions" },
-        { number: "03", icon: Globe,      title: "Optimized for TikTok, Instagram, Facebook & YouTube" },
-        { number: "04", icon: TrendingUp, title: "High Converting Videos for Paid Ads & Product Launches" },
-        { number: "05", icon: Camera,     title: "Commercial-Ready HD & 4K in All Format Options" },
-        { number: "06", icon: Zap,        title: "Faster & More Affordable Than Traditional Video Production" },
+        { number: "01", icon: Play,       title: "Hyper Realistic AI Video Ads With Natural Model Movement", description: "AI models move naturally in your product videos, creating authentic and engaging content." },
+        { number: "02", icon: Users,      title: "Authentic UGC Style Videos That Build Trust",             description: "Creator style content designed to feel genuine and perform in paid and organic feeds." },
+        { number: "03", icon: Globe,      title: "Optimized for TikTok, Instagram, Facebook & YouTube",     description: "Every video is cut and formatted to the exact specs of each major social platform." },
+        { number: "04", icon: TrendingUp, title: "High Converting Videos for Paid Ads & Launches",          description: "Video content engineered around direct response principles to maximize ad performance." },
+        { number: "05", icon: Camera,     title: "Commercial Ready HD & 4K in All Format Options",          description: "Delivered in vertical, square, and landscape formats in HD and 4K resolution." },
+        { number: "06", icon: Zap,        title: "Faster & More Affordable Than Traditional Production",     description: "Professional video content produced at a fraction of traditional studio production costs." },
       ],
     },
     ctaBanner: {
@@ -300,9 +300,9 @@ const services: Record<string, ServiceData> = {
     },
     faqs: [
       { q: "What video lengths and formats do you produce?", a: "We produce 6 to 30 second cuts for paid social platforms and longer formats up to 60 seconds for YouTube and website use. We deliver vertical, square, and landscape exports in every order." },
-      { q: "Can you create UGC-style videos that look authentic?", a: "Yes. Our UGC content is designed to match the organic feel of real creator content. It builds trust with audiences and performs well in paid campaigns." },
+      { q: "Can you create UGC style videos that look authentic?", a: "Yes. Our UGC content is designed to match the organic feel of real creator content. It builds trust with audiences and performs well in paid campaigns." },
       { q: "Which platforms are the videos optimised for?", a: "We optimise for TikTok, Instagram Reels, Facebook, YouTube Shorts, and Shopify product pages. Each platform has specific aspect ratios and pacing requirements that we apply." },
-      { q: "How long does video production take?", a: "Standard video projects are delivered within 5 to 7 business days. Rush delivery is available for product launches and time-sensitive campaigns." },
+      { q: "How long does video production take?", a: "Standard video projects are delivered within 5 to 7 business days. Rush delivery is available for product launches and time sensitive campaigns." },
     ],
   },
 
@@ -325,7 +325,7 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "Fashion AI Content Course",
       titleSuffix: "by SetlesStudio",
       paragraphs: [
-        "We open up our real-time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural-looking models, use real-life scenes for authentic content, and apply the techniques that set our team apart.",
+        "We open up our real time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural looking models, use real life scenes for authentic content, and apply the techniques that set our team apart.",
         "Whether you are a brand owner, content creator, or fashion photographer, this course gives you the exact workflows and prompts to produce commercial quality AI fashion images independently.",
       ],
     },
@@ -333,12 +333,12 @@ const services: Record<string, ServiceData> = {
       heading: "What You Get Inside the Course",
       subheading: "Fashion AI Content Course",
       items: [
-        { number: "01", icon: BookOpen,   title: "Step-by-Step AI Fashion Photography Workflows" },
-        { number: "02", icon: FileCheck,  title: "100+ Production-Tested Prompts & Techniques" },
-        { number: "03", icon: Layers,     title: "Real Project Examples & Practice Files" },
-        { number: "04", icon: Package,    title: "How to Achieve Accurate Outfit Details & Textures" },
-        { number: "05", icon: Camera,     title: "Create Realistic Images With Natural Looking Models" },
-        { number: "06", icon: TrendingUp, title: "Lifetime Access With Free Updates & New Content" },
+        { number: "01", icon: BookOpen,   title: "Step by Step AI Fashion Photography Workflows",          description: "Follow our exact production process from brief to final image, step by step." },
+        { number: "02", icon: FileCheck,  title: "100+ Production Tested Prompts & Techniques",           description: "Every prompt has been tested and refined on real client projects across multiple services." },
+        { number: "03", icon: Layers,     title: "Real Project Examples & Practice Files",                description: "Learn directly from actual client work with downloadable assets to practice with." },
+        { number: "04", icon: Package,    title: "How to Achieve Accurate Outfit Details & Textures",     description: "The specific techniques we use to maintain garment accuracy across every image." },
+        { number: "05", icon: Camera,     title: "Create Realistic Images With Natural Looking Models",   description: "Our methods for producing AI models that look indistinguishable from real photography." },
+        { number: "06", icon: TrendingUp, title: "Lifetime Access With Free Updates & New Content",       description: "Your purchase includes all future updates as AI tools and techniques evolve." },
       ],
     },
     ctaBanner: {
@@ -350,8 +350,8 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "Who is this course for?", a: "This course is for brand owners, content creators, fashion photographers, and marketing teams who want to produce professional AI fashion imagery independently without outsourcing every project." },
       { q: "What software or tools do I need?", a: "We cover the specific tools and platforms used in our production workflow. No advanced technical experience is required to follow the course." },
-      { q: "Do I get access to all the prompts?", a: "Yes. The course includes our complete prompt library of 100+ production-tested prompts used in real client projects." },
-      { q: "Is this a one-time purchase or a subscription?", a: "This is a one-time purchase with lifetime access. All future updates to the course are included at no additional cost." },
+      { q: "Do I get access to all the prompts?", a: "Yes. The course includes our complete prompt library of 100+ production tested prompts used in real client projects." },
+      { q: "Is this a one time purchase or a subscription?", a: "This is a one time purchase with lifetime access. All future updates to the course are included at no additional cost." },
     ],
   },
 
@@ -382,12 +382,12 @@ const services: Record<string, ServiceData> = {
       heading: "Why Handbag Brands Choose Our AI Photography",
       subheading: "Women's Handbag Realistic AI Photography",
       items: [
-        { number: "01", icon: Users,      title: "Hyper Realistic AI Models Showcasing Women's Handbags" },
-        { number: "02", icon: Package,    title: "Accurate Leather Texture, Stitching, Hardware & Colors" },
-        { number: "03", icon: Gem,        title: "Luxury Lifestyle & Professional Studio AI Photography" },
-        { number: "04", icon: ShoppingBag, title: "Perfect for All Types of Bags, Wallets & Accessories" },
-        { number: "05", icon: Camera,     title: "High Resolution Images for Shopify, Amazon & eCommerce" },
-        { number: "06", icon: TrendingUp, title: "Premium Campaign & Catalog Photography With Consistent Branding" },
+        { number: "01", icon: Users,       title: "Hyper Realistic AI Models Showcasing Women's Handbags",       description: "Natural looking AI models carry and style your bags with realistic weight and positioning." },
+        { number: "02", icon: Package,     title: "Accurate Leather Texture, Stitching, Hardware & Colors",      description: "Every material detail including grain, zipper, clasp, and stitching is accurately rendered." },
+        { number: "03", icon: Gem,         title: "Luxury Lifestyle & Professional Studio AI Photography",        description: "Both editorial lifestyle and clean studio options available for every bag style." },
+        { number: "04", icon: ShoppingBag, title: "Perfect for All Types of Bags, Wallets & Accessories",        description: "From totes and crossbodies to wallets, clutches, and all fashion accessories." },
+        { number: "05", icon: Camera,      title: "High Resolution Images for Shopify, Amazon & eCommerce",      description: "Delivered at the specifications required by major eCommerce platforms and marketplaces." },
+        { number: "06", icon: TrendingUp,  title: "Premium Campaign & Catalog Photography With Consistent Branding", description: "Maintain visual consistency across your full range for a polished, professional catalog." },
       ],
     },
     ctaBanner: {
@@ -399,8 +399,8 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "Can you shoot all types of bags and accessories?", a: "Yes. We produce AI photography for handbags, backpacks, wallets, clutches, jewelry, watches, sunglasses, and all fashion accessories. Each product type has specific angle and detail requirements." },
       { q: "How accurate are the material details in the final images?", a: "We preserve leather grain, hardware finish, stitching, colour, and proportions accurately. Flag any critical detail and we ensure it reads clearly in the final output." },
-      { q: "Can I get both lifestyle and studio versions?", a: "Yes. We produce both on-model lifestyle shots and clean studio still life imagery. You can request both styles in a single order." },
-      { q: "Are the images suitable for luxury brand campaigns?", a: "Yes. Our retouching and post-production standards match the expectations of premium fashion brands and luxury eCommerce platforms." },
+      { q: "Can I get both lifestyle and studio versions?", a: "Yes. We produce both o -model lifestyle shots and clean studio still life imagery. You can request both styles in a single order." },
+      { q: "Are the images suitable for luxury brand campaigns?", a: "Yes. Our retouching and post production standards match the expectations of premium fashion brands and luxury eCommerce platforms." },
     ],
   },
 
@@ -448,6 +448,7 @@ export default function ServiceSlugPage({
       />
 
       {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
+      
 
       <section className="bg-brand-soft py-14 md:py-20">
         <Reveal>
