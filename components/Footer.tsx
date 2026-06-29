@@ -14,13 +14,13 @@ const cols = [
   {
     title: "Services",
     links: [
-      { href: "/services/studio-product-photography", label: "Studio Photography" },
-      { href: "/services/lifestyle-photography",      label: "Lifestyle Photography" },
-      { href: "/services/luxury-fashion-campaigns",   label: "Luxury Campaigns" },
-      { href: "/services/footwear-photography",       label: "Footwear Photography" },
-      { href: "/services/ai-video-and-advertising",       label: "AI Video & Advertising" },
-      { href: "/services/fashion-ai-content-course",  label: "Fashion AI Content Course" },
-      { href: "/services/bags-and-accessories-photography", label: "Bags & Accessories Photography" },
+      { href: "/services/realistic-ai-studio-photography", label: "Realistic AI Studio Photography" },
+      { href: "/services/lifestyle-realistic-ai-photography", label: "Lifestyle AI Photography" },
+      { href: "/services/luxury-fashion-ai-campaign",         label: "Luxury AI Campaign" },
+      { href: "/services/footwear-realistic-ai-photography",          label: "Footwear AI Photography" },
+      { href: "/services/realistic-ai-video-ads-ugc",               label: "AI Video Ads & UGC" },
+      { href: "/services/fashion-ai-content-course",                 label: "Fashion AI Content Course" },
+      { href: "/services/bags-accessories-realistic-ai-photography", label: "Bags & Accessories AI Photography" },
     ],
   },
   {
