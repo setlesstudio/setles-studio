@@ -34,6 +34,7 @@ export default function PageHero({
           unoptimized
           sizes="100vw"
           className="object-cover object-top md:hidden"
+          fetchPriority="high"
         />
       )}
       {/* Desktop image — shown at md+ (or always if no imageMobile provided) */}
