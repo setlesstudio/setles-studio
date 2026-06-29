@@ -34,7 +34,6 @@ export default function PageHero({
           unoptimized
           sizes="100vw"
           className="object-cover object-top md:hidden"
-          fetchPriority="high"
         />
       )}
       {/* Desktop image — shown at md+ (or always if no imageMobile provided) */}
@@ -45,6 +44,7 @@ export default function PageHero({
         priority
         unoptimized
         sizes="100vw"
+        fetchPriority="high"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
       />
       <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
