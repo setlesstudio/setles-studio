@@ -371,7 +371,7 @@ export const faqs = [
   },
   {
     q: "How realistic are your final results?",
-    a: "Our focus is on creating high end, commercial-quality visuals that look like they came from a professional photoshoot. I encourage clients to review our samples and judge the quality themselves, the realism speaks for itself.",
+    a: "Our focus is on creating high end, commercial quality visuals that look like they came from a professional photoshoot. I encourage clients to review our samples and judge the quality themselves, the realism speaks for itself.",
   },
   {
     q: "How many products can I submit?",
