@@ -28,6 +28,18 @@ export const metadata: Metadata = {
     siteName: "SetlesStudio",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/images/logo_favicon/favicon.ico",        type: "image/x-icon" },
+      { url: "/images/logo_favicon/favicon-16x16.png",  sizes: "16x16",  type: "image/png" },
+      { url: "/images/logo_favicon/favicon-32x32.png",  sizes: "32x32",  type: "image/png" },
+      { url: "/images/logo_favicon/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/images/logo_favicon/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: { url: "/images/logo_favicon/apple-touch-icon.png" },
+    shortcut: "/images/logo_favicon/favicon.ico",
+  },
+  manifest: "/images/logo_favicon/site.webmanifest",
 };
 
 export default function RootLayout({

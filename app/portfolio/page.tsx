@@ -29,21 +29,6 @@ export default function PortfolioPage() {
         animateReveal
       />
 
-      {/* <section className="container-site py-14">
-        <SectionHeading
-          eyebrow="Before / After"
-          title="The transformation, side by side"
-          text="Drag the handle to compare the original product photo against the finished content."
-        />
-        <Reveal className="mx-auto mt-12 max-w-xl">
-          <BeforeAfter
-            before="/images/product-image.png"
-            after="/images/after-window.jpg"
-            className="aspect-[4/5] w-full shadow-2xl shadow-ink/15"
-          />
-        </Reveal>
-      </section> */}
-
       <section className="bg-cream py-14 rounded-b-3xl">
         <div className="container-site">
           <SectionHeading

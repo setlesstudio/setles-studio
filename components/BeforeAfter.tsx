@@ -4,10 +4,6 @@ import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { ChevronsLeftRight } from "lucide-react";
 
-/**
- * Draggable before/after reveal. "Before" is the flat product photo,
- * "after" is the finished AI model shot.
- */
 export default function BeforeAfter({
   before,
   after,
@@ -46,7 +42,6 @@ export default function BeforeAfter({
       onPointerUp={() => (dragging.current = false)}
       onPointerCancel={() => (dragging.current = false)}
     >
-      {/* After (full) */}
       <Image
         src={after}
         alt={afterAlt}
@@ -56,7 +51,6 @@ export default function BeforeAfter({
         className="object-cover"
       />
 
-      {/* Before (clipped) */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ width: `${pos}%` }}
@@ -73,7 +67,6 @@ export default function BeforeAfter({
         </div>
       </div>
 
-      {/* Handle */}
       <div
         className="absolute inset-y-0 z-10 w-0.5 bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.08)]"
         style={{ left: `${pos}%` }}
@@ -84,7 +77,6 @@ export default function BeforeAfter({
         </div>
       </div>
 
-      {/* Accessible slider control */}
       <input
         type="range"
         min={4}

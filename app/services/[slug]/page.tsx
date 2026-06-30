@@ -131,7 +131,7 @@ const services: Record<string, ServiceData> = {
       waText: "Hi, I'd like to start a lifestyle photography project.",
     },
     beforeAfter: {
-      before: "/images/lifestyle-before-rose-dress.jpg",
+      before: "/images/lifestyle-before-rose-dress-product.png",
       beforeAlt: "Flat lay product photo of red rose dress before AI processing",
       after: "/images/lifestyle-red-dress-nyc-1-service.jpg",
       afterAlt: "AI lifestyle photo — red rose dress on model in NYC street",
@@ -189,7 +189,7 @@ const services: Record<string, ServiceData> = {
       waText: "Hi, I'd like to discuss a luxury fashion campaign project.",
     },
     beforeAfter: {
-      before: "/images/campaign-desert-knit-dress.jpg",
+      before: "/images/campaign-desert-knit-dress-product.jpg",
       beforeAlt: "Flat lay product photo of desert knit dress before AI processing",
       after: "/images/campaign-desert-knit-dress-1.jpeg",
       afterAlt: "AI luxury campaign photo — desert knit dress on model in editorial setting",
@@ -248,7 +248,7 @@ const services: Record<string, ServiceData> = {
       waText: "Hi, I'd like to start a footwear photography project.",
     },
     beforeAfter: {
-      before: "/images/heels-product-image.jpg",
+      before: "/images/heels-product.jpg",
       beforeAlt: "Flat lay product photo of heels before AI processing",
       after: "/images/heels-image-model.jpeg",
       afterAlt: "AI footwear photo — heels on model in lifestyle setting",
@@ -411,7 +411,7 @@ const services: Record<string, ServiceData> = {
       waText: "Hi, I'd like to start a handbag and accessories photography project.",
     },
     beforeAfter: {
-      before: "/images/bag-image.png",
+      before: "/images/bag-image-product.png",
       beforeAlt: "Flat lay product photo of women's handbag before AI processing",
       after: "/images/environment-handbag-image-1.jpg",
       afterAlt: "AI handbag photo — women's luxury bag styled on model in editorial environment",
