@@ -10,7 +10,7 @@ import { services, site } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, video ads, and our Fashion AI Content Course. Seven services for modern apparel brands.",
+    "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
 };
 
 export default function ServicesPage() {
@@ -84,20 +84,14 @@ export default function ServicesPage() {
                   <Link href={`/services/${s.id}`} className="btn-outline">
                     Read More <ArrowRight size={16} />
                   </Link>
-                  {s.id === "fashion-ai-content-course" ? (
-                    <Link href="/learn" className="btn-dark">
-                      Browse Learn Resources <ArrowRight size={16} />
-                    </Link>
-                  ) : (
-                    <a
-                      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in your ${s.title} service. Can we discuss a project?`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-dark"
-                    >
-                      Start a Project <ArrowRight size={16} />
-                    </a>
-                  )}
+                  <a
+                    href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in your ${s.title} service. Can we discuss a project?`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-dark"
+                  >
+                    Start a Project <ArrowRight size={16} />
+                  </a>
                 </div>
               </Reveal>
             </section>

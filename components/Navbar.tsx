@@ -23,7 +23,6 @@ const validServiceSlugs = [
   "luxury-fashion-ai-campaign",
   "footwear-realistic-ai-photography",
   "realistic-ai-video-ads-ugc",
-  "fashion-ai-content-course",
   "bags-accessories-realistic-ai-photography",
 ];
 

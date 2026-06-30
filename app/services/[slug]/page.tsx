@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {
   Camera, Gem, Globe, Package, ShoppingBag, ShoppingCart,
-  FileCheck, Zap, Play, BookOpen, Crown, Aperture, Tag, Infinity,
+  Zap, Play, Crown, Aperture, Tag, Infinity,
   ChevronDown, Users, MapPin, TrendingUp, Layers, Star, Lightbulb, Coins, MonitorCheck,
   MessageSquare, Image as ImageIcon, ClipboardList, Download, Rocket,
 } from "lucide-react";
@@ -342,56 +342,6 @@ const services: Record<string, ServiceData> = {
       { q: "Can you create UGC style videos that look authentic?", a: "Yes. Our UGC content is designed to match the organic feel of real creator content. It builds trust with audiences and performs well in paid campaigns." },
       { q: "Which platforms are the videos optimised for?", a: "We optimise for TikTok, Instagram Reels, Facebook, YouTube Shorts, and Shopify product pages. Each platform has specific aspect ratios and pacing requirements that we apply." },
       { q: "How long does video production take?", a: "Standard video projects are delivered within 5 to 7 business days. Rush delivery is available for product launches and time sensitive campaigns." },
-    ],
-  },
-
-  "fashion-ai-content-course": {
-    meta: {
-      title: "Fashion AI Content Course | SetlesStudio",
-      description: "Our real time process, prompts, and creative ideas. Learn how we achieve 100% accurate outfit details and textures with AI fashion photography.",
-    },
-    hero: {
-      eyebrow: "Fashion AI Course",
-      titlePrefix: "Fashion AI Content",
-      titleHighlight: "Course",
-      subtitle: "Learn Our Exact Process for Creating 100% Realistic AI Fashion Photography",
-      image: "/images/course-team.png",
-      imageAlt: "Fashion AI content course by SetlesStudio team",
-      waText: "Hi, I'd like to learn more about the Fashion AI Content Course.",
-    },
-    beforeAfter: { before: "", beforeAlt: "", after: "", afterAlt: "" },
-    description: {
-      titleHighlight: "Fashion AI Content Course",
-      titleSuffix: "by SetlesStudio",
-      paragraphs: [
-        "We open up our real time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural looking models, use real life scenes for authentic content, and apply the techniques that set our team apart.",
-        "Whether you are a brand owner, content creator, or fashion photographer, this course gives you the exact workflows and prompts to produce commercial quality AI fashion images independently.",
-      ],
-    },
-    features: {
-      heading: "What You Get Inside the Course",
-      subheading: "Fashion AI Content Course",
-      items: [
-        { number: "01", icon: BookOpen,   title: "Step by Step AI Fashion Photography Workflows",          description: "Follow our exact production process from brief to final image, step by step." },
-        { number: "02", icon: FileCheck,  title: "100+ Production Tested Prompts & Techniques",           description: "Every prompt has been tested and refined on real client projects across multiple services." },
-        { number: "03", icon: Layers,     title: "Real Project Examples & Practice Files",                description: "Learn directly from actual client work with downloadable assets to practice with." },
-        { number: "04", icon: Package,    title: "How to Achieve Accurate Outfit Details & Textures",     description: "The specific techniques we use to maintain garment accuracy across every image." },
-        { number: "05", icon: Camera,     title: "Create Realistic Images With Natural Looking Models",   description: "Our methods for producing AI models that look indistinguishable from real photography." },
-        { number: "06", icon: TrendingUp, title: "Lifetime Access With Free Updates & New Content",       description: "Your purchase includes all future updates as AI tools and techniques evolve." },
-      ],
-    },
-    ctaBanner: {
-      image: "/images/laern-page-last-section-full.jpeg",
-      imageAlt: "Fashion AI Content Course CTA",
-      title: "Ready to master AI fashion photography workflows?",
-      text: "Master the exact AI workflows, prompts, and techniques our studio uses to produce commercial quality fashion imagery at scale.",
-      waText: "Hi, I'd like to learn more about the Fashion AI Content Course.",
-    },
-    faqs: [
-      { q: "Who is this course for?", a: "This course is for brand owners, content creators, fashion photographers, and marketing teams who want to produce professional AI fashion imagery independently without outsourcing every project." },
-      { q: "What software or tools do I need?", a: "We cover the specific tools and platforms used in our production workflow. No advanced technical experience is required to follow the course." },
-      { q: "Do I get access to all the prompts?", a: "Yes. The course includes our complete prompt library of 100+ production tested prompts used in real client projects." },
-      { q: "Is this a one time purchase or a subscription?", a: "This is a one time purchase with lifetime access. All future updates to the course are included at no additional cost." },
     ],
   },
 

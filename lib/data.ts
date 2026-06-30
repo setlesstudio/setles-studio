@@ -110,23 +110,8 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "fashion-ai-content-course",
-    number: "06",
-    title: "Fashion AI Content Course",
-    short:
-      "Our real time process, prompts, and creative ideas. How we achieve 100% accurate outfit details and textures.",
-    long: "We open up our real time process, prompts, and creative ideas: how we achieve accurate outfit details and textures, create realistic images with natural looking models, use real life scenes for authentic content, and apply the techniques that set our team apart from other content creators.",
-    image: "/images/course-team.png",
-    deliverables: [
-      "Step by step production workflows",
-      "100+ production tested prompts",
-      "Practice files and real project examples",
-      "Lifetime access with free updates",
-    ],
-  },
-  {
     id: "bags-accessories-realistic-ai-photography",
-    number: "07",
+    number: "06",
     title: "Women's Handbag Realistic AI Photography",
     short:
       "Hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, and social media.",

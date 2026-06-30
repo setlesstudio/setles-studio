@@ -19,7 +19,6 @@ const cols = [
       { href: "/services/luxury-fashion-ai-campaign",         label: "Luxury AI Campaign" },
       { href: "/services/footwear-realistic-ai-photography",          label: "Footwear AI Photography" },
       { href: "/services/realistic-ai-video-ads-ugc",               label: "AI Video Ads & UGC" },
-      { href: "/services/fashion-ai-content-course",                 label: "Fashion AI Content Course" },
       { href: "/services/bags-accessories-realistic-ai-photography", label: "Bags & Accessories AI Photography" },
     ],
   },
