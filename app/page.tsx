@@ -65,7 +65,7 @@ export default function HomePage() {
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative h-[180px] overflow-hidden rounded-2xl md:h-[240px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
                 src="/images/product-image.png"
                 alt="Navy tank top flat product photo"
@@ -76,7 +76,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative h-full min-h-[180px] overflow-hidden rounded-3xl md:min-h-0">
+            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
@@ -90,7 +90,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="relative h-full min-h-[180px] overflow-hidden rounded-3xl md:min-h-0">
+            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
