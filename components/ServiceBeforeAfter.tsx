@@ -21,21 +21,21 @@ export default function ServiceBeforeAfter({
   const hasTwo = Boolean(after2);
 
   return (
-    <section className="container-site py-14 md:py-20">
-      <div className={`grid gap-6 ${hasTwo ? "md:grid-cols-[0.8fr_1fr_1fr]" : "md:grid-cols-[0.8fr_1fr]"}`}>
+    <section className="container-site py-8 md:py-12">
+      <div className={`grid gap-4 ${hasTwo ? "md:grid-cols-[0.8fr_1fr_1fr]" : "md:grid-cols-[0.8fr_1fr]"}`}>
         {/* Before */}
         <Reveal>
-          <div className="card flex flex-col gap-4 p-6">
+          <div className="card flex flex-col gap-3 p-5">
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+            <div className="relative h-[280px] overflow-hidden rounded-2xl md:h-[240px]">
               <Image
                 src={before}
                 alt={beforeAlt}
                 fill
                 sizes="(min-width: 768px) 25vw, 100vw"
-                className="object-contain p-4"
+                className="object-contain p-3"
               />
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function ServiceBeforeAfter({
 
         {/* After 1 */}
         <Reveal delay={0.1}>
-          <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+          <div className="relative h-full min-h-[280px] overflow-hidden rounded-3xl md:min-h-0">
             <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
               After
             </span>
@@ -60,7 +60,7 @@ export default function ServiceBeforeAfter({
         {/* After 2 */}
         {hasTwo && (
           <Reveal delay={0.2}>
-            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+            <div className="relative h-full min-h-[280px] overflow-hidden rounded-3xl md:min-h-0">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>

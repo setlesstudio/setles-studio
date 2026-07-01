@@ -23,9 +23,9 @@ export default function ServiceFeatures({ heading, subheading, items }: Props) {
           <p className="mt-2 text-ink-soft">{subheading}</p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {items.map((item, i) => (
-            <Reveal key={item.number} delay={i * 0.07}>
+            <Reveal key={item.number} delay={i * 0.07} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
               <div className="card h-full p-7 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10">
                 <div className="flex items-center justify-between">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-soft text-brand">
@@ -33,7 +33,7 @@ export default function ServiceFeatures({ heading, subheading, items }: Props) {
                   </span>
                   <span className="text-xs font-bold text-ink/25">{item.number}</span>
                 </div>
-                <h3 className="mt-4 font-bold leading-snug text-ink">{item.title}</h3>
+                <h3 className="mt-4 font-bold">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{item.description}</p>
               </div>
             </Reveal>

@@ -30,6 +30,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
     setServicesOpen(false);
+    setDesktopServicesOpen(false);
   }, [pathname]);
 
   const hasDarkHero =
@@ -85,7 +87,11 @@ export default function Navbar() {
           <Link href="/" className={linkClass(pathname === "/")}>Home</Link>
 
           {/* Services dropdown */}
-          <div className="group relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setDesktopServicesOpen(true)}
+            onMouseLeave={() => setDesktopServicesOpen(false)}
+          >
             <button
               type="button"
               className={`flex items-center gap-1 ${linkClass(isServicesActive)}`}
@@ -93,12 +99,12 @@ export default function Navbar() {
               Services
               <ChevronDown
                 size={14}
-                className="mt-px transition-transform duration-200 group-hover:rotate-180"
+                className={`mt-px transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`}
               />
             </button>
 
             {/* Dropdown panel — pt-3 creates a hover bridge between button and panel */}
-            <div className="invisible absolute left-0 top-full pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className={`absolute left-0 top-full pt-3 transition-all duration-200 ${desktopServicesOpen ? "visible opacity-100" : "invisible opacity-0"}`}>
               <div className="w-80 overflow-hidden rounded-2xl bg-white p-2 shadow-2xl shadow-ink/10 ring-1 ring-ink/[0.06]">
                 {services.map((svc) => (
                   <Link

@@ -28,7 +28,7 @@ export default function ServiceProcess({ heading, steps }: Props) {
                 <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-brand text-xs font-bold text-white">
                   {step.number}
                 </span>
-                <div className="mt-6 grid h-14 w-14 place-items-center rounded-2xl bg-white">
+                <div className="mt-6 grid h-14 w-14 place-items-center rounded-full bg-white">
                   <step.icon size={26} className="text-ink/50" strokeWidth={1.5} />
                 </div>
                 <h3 className="mt-4 text-sm font-bold uppercase leading-snug tracking-wide text-ink">

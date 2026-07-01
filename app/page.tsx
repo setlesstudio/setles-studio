@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  Gift,
   Rocket,
   Layers,
   CircleDollarSign,
@@ -15,6 +14,7 @@ import TrustedBy from "@/components/TrustedBy";
 import Testimonials from "@/components/Testimonials";
 import CTABand from "@/components/CTABand";
 import ImageSlot from "@/components/ImageSlot";
+import FreeSampleBanner from "@/components/FreeSampleBanner";
 import { process, services, site, valueProps } from "@/lib/data";
 
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
@@ -54,29 +54,29 @@ export default function HomePage() {
       </PageHero>
 
       {/* ------------------------------------ From product to campaign */}
-      <section className="container-site py-14">
+      <section className="container-site py-10">
         <SectionHeading
           eyebrow="Before / After"
           title="From product photo to campaign ready content"
           text="Send us simple flat product photos. We return realistic on model imagery with accurate fit, fabric, and detail."
         />
-        <div className="mt-10 grid gap-6 md:grid-cols-[0.8fr_1fr_1fr]">
-          <Reveal className="card flex flex-col gap-4 p-6">
+        <div className="mt-8 grid gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
+          <Reveal className="card flex flex-col gap-3 p-5">
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+            <div className="relative h-[180px] overflow-hidden rounded-2xl md:h-[240px]">
               <Image
                 src="/images/product-image.png"
                 alt="Navy tank top flat product photo"
                 fill
                 sizes="33vw"
-                className="object-contain p-4"
+                className="object-contain p-3"
               />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+            <div className="relative h-full min-h-[180px] overflow-hidden rounded-3xl md:min-h-0">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
@@ -90,7 +90,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+            <div className="relative h-full min-h-[180px] overflow-hidden rounded-3xl md:min-h-0">
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 After
               </span>
@@ -107,33 +107,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------- Free sample */}
-      <section className="container-site pb-24">
-        <Reveal>
-          <div className="rounded-4xl border border-brand/20 bg-brand-soft px-8 py-12 text-center sm:px-16">
-            <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-brand text-white">
-              <Gift size={30} />
-            </span>
-            <p className="eyebrow mt-5">Free sample available</p>
-            <h2 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
-              See our quality before you invest
-            </h2>
-            <p className="mx-auto mt-4 max-w-5xl text-ink-soft">
-              Send us one product image and receive a free sample to evaluate
-              our quality, realism, and attention to detail before starting a
-              project.
-            </p>
-            <a
-              href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free sample of your AI fashion photography.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-5"
-            >
-              Request Free Sample
-            </a>
-            <p className="mt-2 text-xs text-ink-soft/70">No credit card required</p>
-          </div>
-        </Reveal>
-      </section>
+      <FreeSampleBanner />
 
       <TrustedBy />
 

@@ -22,9 +22,11 @@ type ServiceData = {
     titleHighlight: string;
     subtitle: string;
     image: string;
-    mobileImage?: string; 
+    mobileImage?: string;
     imageAlt: string;
     waText: string;
+    primaryLabel: string;
+    secondary: { href: string; label: string };
   };
   beforeAfter: {
     before: string;
@@ -70,9 +72,12 @@ const services: Record<string, ServiceData> = {
       titlePrefix: "Realistic AI Studio Photography for",
       titleHighlight: "Apparel Brands",
       subtitle: "Premium AI Studio Photography That Looks 100% Real",
-      image: "/images/studio-black-two-piece.jpg",
+      image: "/images/studio-service-banner.png",
+      mobileImage: "/images/studio-service-banner-mobile.png",
       imageAlt: "AI studio on-model fashion photography",
       waText: "Hi, I'd like to start a studio product photography project.",
+      primaryLabel: "Start My Studio Project",
+      secondary: { href: "/portfolio", label: "View Our Work" },
     },
     beforeAfter: {
       before: "/images/white-dress-product-image.jpg",
@@ -129,6 +134,8 @@ const services: Record<string, ServiceData> = {
       image: "/images/lifestyle-service-banner.jpg",
       imageAlt: "Realistic AI lifestyle fashion photography on model in city",
       waText: "Hi, I'd like to start a lifestyle photography project.",
+      primaryLabel: "Start My Lifestyle Shoot",
+      secondary: { href: "/portfolio", label: "View Portfolio" },
     },
     beforeAfter: {
       before: "/images/lifestyle-before-rose-dress-product.png",
@@ -187,6 +194,8 @@ const services: Record<string, ServiceData> = {
       mobileImage: "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg",
       imageAlt: "Luxury fashion AI campaign editorial photography",
       waText: "Hi, I'd like to discuss a luxury fashion campaign project.",
+      primaryLabel: "Get a Campaign Quote",
+      secondary: { href: "/portfolio", label: "View Portfolio" },
     },
     beforeAfter: {
       before: "/images/campaign-desert-knit-dress-product.jpg",
@@ -246,6 +255,8 @@ const services: Record<string, ServiceData> = {
       mobileImage: "/images/footwear-ai-photography-service-banner-mobile.jpg",
       imageAlt: "Realistic AI footwear photography on model",
       waText: "Hi, I'd like to start a footwear photography project.",
+      primaryLabel: "Start My Footwear Project",
+      secondary: { href: "/portfolio", label: "View Portfolio" },
     },
     beforeAfter: {
       before: "/images/heels-product.jpg",
@@ -302,6 +313,8 @@ const services: Record<string, ServiceData> = {
       image: "/images/service-page-banner.jpeg",
       imageAlt: "AI video ads and UGC content creation",
       waText: "Hi, I'd like to discuss an AI video ads project.",
+      primaryLabel: "Create My Video Ad",
+      secondary: { href: "/pricing", label: "See Our Pricing" },
     },
     beforeAfter: {
       before: "/images/campaign-desert-knit-dress.jpg",
@@ -359,6 +372,8 @@ const services: Record<string, ServiceData> = {
       mobileImage: "/images/handbag-service-banner-mobile.jpg",
       imageAlt: "Women's handbag realistic AI photography on model",
       waText: "Hi, I'd like to start a handbag and accessories photography project.",
+      primaryLabel: "Start My Handbag Shoot",
+      secondary: { href: "/portfolio", label: "View Portfolio" },
     },
     beforeAfter: {
       before: "/images/bag-image-product.png",
@@ -445,6 +460,7 @@ export default function ServiceSlugPage({
   if (!svc) notFound();
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
+  const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
   const hasBeforeAfter = Boolean(svc.beforeAfter.before && svc.beforeAfter.after);
 
   return (
@@ -456,7 +472,17 @@ export default function ServiceSlugPage({
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
         imageAlt={svc.hero.imageAlt}
-      />
+      >
+        <a href={waHeroHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
+          {svc.hero.primaryLabel}
+        </a>
+        <a
+          href={svc.hero.secondary.href}
+          className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+        >
+          {svc.hero.secondary.label}
+        </a>
+      </PageHero>
 
       {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
       

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import BeforeAfter from "@/components/BeforeAfter";
 import CTABand from "@/components/CTABand";
 import SectionHeading from "@/components/SectionHeading";
 import PortfolioGallery from "@/components/PortfolioGallery";
-import Reveal from "@/components/Reveal";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
