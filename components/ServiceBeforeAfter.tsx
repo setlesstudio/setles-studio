@@ -29,13 +29,13 @@ export default function ServiceBeforeAfter({
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative h-[280px] overflow-hidden rounded-2xl md:h-[240px]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl md:max-h-[320px] xl:max-h-none">
               <Image
                 src={before}
                 alt={beforeAlt}
                 fill
-                sizes="(min-width: 768px) 25vw, 100vw"
-                className="object-contain p-3"
+                sizes="100vw"
+                className="object-contain p-4"
               />
             </div>
           </div>
