@@ -21,9 +21,10 @@ type ServiceData = {
     titlePrefix: string;
     titleHighlight: string;
     subtitle: string;
-    image: string;
+    image?: string;
     mobileImage?: string;
     imageAlt: string;
+    video?: string;
     waText: string;
     primaryLabel: string;
     secondary: { href: string; label: string };
@@ -92,7 +93,7 @@ const services: Record<string, ServiceData> = {
       titleSuffix: "for Apparel Brands",
       paragraphs: [
         "Transform your apparel products into professional, studio quality fashion images without expensive photoshoots. Our realistic AI models create photorealistic fashion visuals of models wearing your apparel while maintaining accurate garment details, fabric textures, logos, colors, and fit.",
-        "Every image is carefully refined to achieve a realistic commercial look suitable for eCommerce stores, advertising campaigns, social media marketing, and fashion.",
+        "Every image is carefully refined to achieve a realistic commercial look suitable for Ecommerce stores, advertising campaigns, social media marketing, and fashion.",
       ],
     },
     features: {
@@ -116,7 +117,7 @@ const services: Record<string, ServiceData> = {
     },
     faqs: [
       { q: "Can you create AI studio photos from my apparel images?", a: "Yes, we transform flat lays, ghost mannequin photos, and product images into realistic AI studio photography while preserving garment details and colors." },
-      { q: "Are your AI fashion models realistic?", a: "Yes, we create hyper-realistic AI fashion models designed for apparel brands, eCommerce stores, and fashion marketing campaigns." },
+      { q: "Are your AI fashion models realistic?", a: "Yes, we create hyper-realistic AI fashion models designed for apparel brands, Ecommerce stores, and fashion marketing campaigns." },
       { q: "Are the images suitable for Shopify and online stores?", a: "Absolutely. Our AI studio photography is optimized for Shopify, Amazon, Etsy, WooCommerce, and apparel brand websites." },
     ],
   },
@@ -124,7 +125,7 @@ const services: Record<string, ServiceData> = {
   "lifestyle-realistic-ai-photography": {
     meta: {
       title: "Realistic AI Lifestyle Photography for Fashion Brands | SetlesStudio",
-      description: "Real life lifestyle scenes for your fashion brand. We transform flat product photos into realistic on model lifestyle imagery for social media, ads, and eCommerce.",
+      description: "Real life lifestyle scenes for your fashion brand. We transform flat product photos into realistic on model lifestyle imagery for social media, ads, and Ecommerce.",
     },
     hero: {
       eyebrow: "AI Lifestyle Photography",
@@ -150,7 +151,7 @@ const services: Record<string, ServiceData> = {
       titleSuffix: "for Apparel Brands",
       paragraphs: [
         "Transform your apparel products into photorealistic lifestyle fashion images without expensive photoshoots. Our realistic AI models showcase your clothing in natural environments such as city streets, cafes, beaches, and modern interiors while preserving accurate garment details, fabric textures, colors, logos, and fit.",
-        "Create high converting AI lifestyle photography for eCommerce, social media marketing, fashion advertising, and apparel brand campaigns.",
+        "Create high converting AI lifestyle photography for Ecommerce, social media marketing, fashion advertising, and apparel brand campaigns.",
       ],
     },
     features: {
@@ -161,7 +162,7 @@ const services: Record<string, ServiceData> = {
         { number: "02", icon: Package,    title: "Accurate Garment Details, Colors & Fit",               description: "Colors, patterns, logos, and garment fit are preserved accurately in every lifestyle image." },
         { number: "03", icon: MapPin,     title: "Real Lifestyle Locations, Not Fake AI Places",         description: "We use real world photographs as location references, not computer-generated environments." },
         { number: "04", icon: Zap,        title: "Faster & More Affordable Than Traditional Shoots",     description: "Get lifestyle imagery at a fraction of traditional production costs with no shoot day required." },
-        { number: "05", icon: Camera,     title: "High Resolution Images for eCommerce & Ads",           description: "Delivered in all formats for web, social media, and paid advertising campaigns." },
+        { number: "05", icon: Camera,     title: "High Resolution Images for Ecommerce & Ads",           description: "Delivered in all formats for web, social media, and paid advertising campaigns." },
         { number: "06", icon: TrendingUp, title: "Commercial Quality Results That Increase Conversions", description: "Images designed to perform in product listings, ads, and brand content that drives sales." },
       ],
     },
@@ -175,7 +176,7 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "Can you create AI fashion photos from my clothing images?", a: "Yes. We can transform flat lays, mannequin photos, ghost mannequin images, or existing product photos into realistic AI fashion photography." },
       { q: "Can you use the same AI model for my entire collection?", a: "Yes. We can maintain a consistent AI model across all products to create a professional and cohesive brand identity." },
-      { q: "Are the images suitable for Shopify and eCommerce stores?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, WooCommerce, and fashion brand websites." },
+      { q: "Are the images suitable for Shopify and Ecommerce stores?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, WooCommerce, and fashion brand websites." },
       { q: "What types of clothing can you work with?", a: "We can create AI fashion photography for activewear, sportswear, casual wear, streetwear, luxury fashion, swimwear, dresses, and more." },
     ],
   },
@@ -210,7 +211,7 @@ const services: Record<string, ServiceData> = {
       titleSuffix: "for Premium Brands",
       paragraphs: [
         "Transform your apparel products into high end luxury fashion campaign imagery without the cost of traditional photoshoots. Our hyper realistic AI models showcase your clothing in premium locations, luxury interiors, upscale city environments, resorts, and editorial style settings while preserving accurate garment details, fabric textures, colors, logos, and fit.",
-        "Create luxury fashion campaign photography for eCommerce brands, fashion advertising, social media marketing, lookbooks, product launches, and premium brand campaigns.",
+        "Create luxury fashion campaign photography for Ecommerce brands, fashion advertising, social media marketing, lookbooks, product launches, and premium brand campaigns.",
       ],
     },
     features: {
@@ -236,7 +237,7 @@ const services: Record<string, ServiceData> = {
       { q: "Can you create AI fashion images from my product photos?", a: "Yes, we can transform product photos, flat lays, or ghost mannequin images into luxury fashion campaign visuals." },
       { q: "Are the AI models realistic?", a: "Yes, we create hyper realistic AI fashion models that look natural and professional." },
       { q: "Can you use the same model across my collection?", a: "Yes, we can maintain a consistent AI model and style for your entire campaign." },
-      { q: "Are the images suitable for Shopify and eCommerce?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, and fashion websites." },
+      { q: "Are the images suitable for Shopify and Ecommerce?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, and fashion websites." },
       { q: "What types of clothing can you work with?", a: "We create AI fashion photography for luxury fashion, streetwear, activewear, swimwear, dresses, and more." },
     ],
   },
@@ -244,13 +245,13 @@ const services: Record<string, ServiceData> = {
   "footwear-realistic-ai-photography": {
     meta: {
       title: "Footwear Realistic AI Photography | SetlesStudio",
-      description: "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on foot fit. Perfect for eCommerce, marketplaces, and brand campaigns.",
+      description: "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on foot fit. Perfect for Ecommerce, marketplaces, and brand campaigns.",
     },
     hero: {
       eyebrow: "AI Footwear Photography",
       titlePrefix: "Footwear Realistic",
-      titleHighlight: "AI Photography for eCommerce Brands",
-      subtitle: "Perfect for eCommerce, Shopify, Amazon, fashion brands, lookbooks, social media, advertising campaigns, catalogs, and online stores.",
+      titleHighlight: "AI Photography for Ecommerce Brands",
+      subtitle: "Perfect for Ecommerce, Shopify, Amazon, fashion brands, lookbooks, social media, advertising campaigns, catalogs, and online stores.",
       image: "/images/footwear-ai-photography-service-banner.jpg",
       mobileImage: "/images/footwear-ai-photography-service-banner-mobile.jpg",
       imageAlt: "Realistic AI footwear photography on model",
@@ -268,7 +269,7 @@ const services: Record<string, ServiceData> = {
     },  
     description: {
       titleHighlight: "Footwear Realistic AI Photography",
-      titleSuffix: "for eCommerce Brands",
+      titleSuffix: "for Ecommerce Brands",
       paragraphs: [
         "Transform your footwear products into luxury fashion campaign imagery that elevates your brand and drives sales. Our Luxury AI Footwear Campaign Photography service creates premium advertising visuals for sneakers, designer shoes, luxury footwear, boots, and fashion collections using hyperrealistic AI models, editorial styling, and luxury locations. ",
         "Whether you're launching a new collection, creating a lookbook, or running advertising campaigns, we deliver high-end fashion imagery designed to increase brand value,engagement, and conversions.",
@@ -282,7 +283,7 @@ const services: Record<string, ServiceData> = {
         { number: "02", icon: Aperture,    title: "Perfect Lighting & Angles",        description: "Premium lighting and perfect angles for every shot." },
         { number: "03", icon: Tag,         title: "Consistent Branding & Style",      description: "Maintain a consistent brand look and feel across all images." },
         { number: "04", icon: Infinity,    title: "Unlimited Revisions",              description: "We work until you are 100% satisfied with the results." },
-        { number: "05", icon: ShoppingCart, title: "Optimized for eCommerce",         description: "High quality images optimized to boost your online store." },
+        { number: "05", icon: ShoppingCart, title: "Optimized for Ecommerce",         description: "High quality images optimized to boost your online store." },
         { number: "06", icon: TrendingUp,  title: "Boost Sales & Conversions",        description: "Stunning visuals that build trust and increase conversions." },
       ],
     },
@@ -296,7 +297,7 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "Can you create AI footwear photos from my product images?", a: "Yes, we can transform product photos, catalog images, and footwear references into realistic AI footwear photography." },
       { q: "Are the shoe details and logos preserved?", a: "Yes, we carefully maintain colors, textures, logos, branding, and key footwear details." },
-      { q: "Are the images suitable for Shopify and Amazon?", a: "Absolutely. Our footwear images are optimized for Shopify, Amazon, Etsy, WooCommerce, and eCommerce stores." },
+      { q: "Are the images suitable for Shopify and Amazon?", a: "Absolutely. Our footwear images are optimized for Shopify, Amazon, Etsy, WooCommerce, and Ecommerce stores." },
     ],
   },
 
@@ -310,29 +311,30 @@ const services: Record<string, ServiceData> = {
       titlePrefix: "Realistic AI Video Ads &",
       titleHighlight: "UGC Content",
       subtitle: "High Converting AI Video Ads That Look 100% Real",
-      image: "/images/service-page-banner.jpeg",
       imageAlt: "AI video ads and UGC content creation",
+      video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto/v1782991084/video-ad_bvo5xc.mp4",
       waText: "Hi, I'd like to discuss an AI video ads project.",
       primaryLabel: "Create My Video Ad",
       secondary: { href: "/pricing", label: "See Our Pricing" },
     },
     beforeAfter: {
-      before: "/images/campaign-desert-knit-dress.jpg",
-      beforeAlt: "Flat lay product photo of red rose dress before AI processing",
-      after: "/images/campaign-desert-knit-dress-1.jpeg",
-      afterAlt: "AI lifestyle photo — red rose dress on model in NYC street",
-      after2: "/images/campaign-desert-knit-dress-2.jpeg",
-      after2Alt: "AI lifestyle photo — red rose dress on model in NYC street second look",
-    },      description: {
+      before: "",
+      beforeAlt: "",
+      after: "",
+      afterAlt: "",
+      after2: "",
+      after2Alt: "",
+    },     
+    description: {
       titleHighlight: "Realistic AI Video Ads & UGC Content",
-      titleSuffix: "for eCommerce Brands",
+      titleSuffix: "for Ecommerce Brands",
       paragraphs: [
         "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling.",
-        "Perfect for Shopify stores, eCommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
+        "Perfect for Shopify stores, Ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
       ],
     },
     features: {
-      heading: "Why eCommerce Brands Choose Our AI Video Production",
+      heading: "Why Ecommerce Brands Choose Our AI Video Production",
       subheading: "Realistic AI Video Ads & UGC Content",
       items: [
         { number: "01", icon: Play,       title: "Hyper Realistic AI Video Ads With Natural Model Movement", description: "AI models move naturally in your product videos, creating authentic and engaging content." },
@@ -361,7 +363,7 @@ const services: Record<string, ServiceData> = {
   "bags-accessories-realistic-ai-photography": {
     meta: {
       title: "Women's Handbag Realistic AI Photography | SetlesStudio",
-      description: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce, and luxury brands.",
+      description: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, Ecommerce, and luxury brands.",
     },
     hero: {
       eyebrow: "Handbag AI Photography",
@@ -399,7 +401,7 @@ const services: Record<string, ServiceData> = {
         { number: "02", icon: Package,     title: "Accurate Leather Texture, Stitching, Hardware & Colors",      description: "Every material detail including grain, zipper, clasp, and stitching is accurately rendered." },
         { number: "03", icon: Gem,         title: "Luxury Lifestyle & Professional Studio AI Photography",        description: "Both editorial lifestyle and clean studio options available for every bag style." },
         { number: "04", icon: ShoppingBag, title: "Perfect for All Types of Bags, Wallets & Accessories",        description: "From totes and crossbodies to wallets, clutches, and all fashion accessories." },
-        { number: "05", icon: Camera,      title: "High Resolution Images for Shopify, Amazon & eCommerce",      description: "Delivered at the specifications required by major eCommerce platforms and marketplaces." },
+        { number: "05", icon: Camera,      title: "High Resolution Images for Shopify, Amazon & Ecommerce",      description: "Delivered at the specifications required by major Ecommerce platforms and marketplaces." },
         { number: "06", icon: TrendingUp,  title: "Premium Campaign & Catalog Photography With Consistent Branding", description: "Maintain visual consistency across your full range for a polished, professional catalog." },
       ],
     },
@@ -413,9 +415,9 @@ const services: Record<string, ServiceData> = {
     faqs: [
       { q: "What is Women's Handbags AI Photography?", a: "Women's Handbags AI Photography uses advanced AI to create realistic handbag images with AI-generated models, professional lighting, and premium backgrounds for Ecommerce, marketing, and fashion brands." },
       { q: "Can you create Women's Handbags AI Photography from my product photos?", a: "Yes. We can transform your handbag product photos into premium Women's Handbags AI Photography using realistic AI models while preserving every product detail." },
-      { q: " Is Women's Handbags AI Photography suitable for eCommerce?", a: "Absolutely. Our Women's Handbags AI Photography is perfect for Shopify, Amazon, Etsy, websites, social media, online stores, advertising, and luxury fashion lookbooks" },
+      { q: " Is Women's Handbags AI Photography suitable for Ecommerce?", a: "Absolutely. Our Women's Handbags AI Photography is perfect for Shopify, Amazon, Etsy, websites, social media, online stores, advertising, and luxury fashion lookbooks" },
       { q: "Can you match my brand style in Women's Handbags AI Photography?", a: "Yes. We customize every Women's Handbags AI Photography project to match your brand's colors, style, lighting, backgrounds, and overall visual identity." },
-      { q: "Why choose Women's Handbags AI Photography instead of a traditional photoshoot?", a: "Women's Handbags AI Photography provides realistic, high quality commercial images at a lower cost and faster turnaround than traditional photography, making it ideal for fashion and eCommerce brands." },
+      { q: "Why choose Women's Handbags AI Photography instead of a traditional photoshoot?", a: "Women's Handbags AI Photography provides realistic, high quality commercial images at a lower cost and faster turnaround than traditional photography, making it ideal for fashion and Ecommerce brands." },
     ],
     process: {
       heading: "Our Simple Process",
@@ -472,6 +474,7 @@ export default function ServiceSlugPage({
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
         imageAlt={svc.hero.imageAlt}
+        video={svc.hero.video}
       >
         <a href={waHeroHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
           {svc.hero.primaryLabel}

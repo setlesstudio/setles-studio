@@ -9,6 +9,7 @@ export default function PageHero({
   image,
   imageMobile,
   imageAlt = "",
+  video,
   fullHeight = true,
   animateReveal = false,
 }: {
@@ -19,12 +20,35 @@ export default function PageHero({
   image?: string;
   imageMobile?: string;
   imageAlt?: string;
+  video?: string;
   fullHeight?: boolean;
   animateReveal?: boolean;
 }) {
-  const imageBlock = image ? (
+  const overlays = (
     <>
-      {/* Mobile image — shown below md, falls back to main image if no imageMobile */}
+      <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[72%] bg-gradient-to-t from-ink/90 to-transparent" />
+      <div className="absolute inset-y-0 left-0 w-[52%] bg-gradient-to-r from-ink/75 to-transparent" />
+    </>
+  );
+
+  const videoBlock = video ? (
+    <>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover object-top"
+      >
+        <source src={video} type="video/mp4" />
+      </video>
+      {overlays}
+    </>
+  ) : null;
+
+  const imageBlock = !video && image ? (
+    <>
       {imageMobile && (
         <Image
           src={imageMobile}
@@ -36,7 +60,6 @@ export default function PageHero({
           className="object-cover object-top md:hidden"
         />
       )}
-      {/* Desktop image — shown at md+ (or always if no imageMobile provided) */}
       <Image
         src={image}
         alt={imageAlt}
@@ -47,14 +70,13 @@ export default function PageHero({
         loading="eager"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
       />
-      <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[72%] bg-gradient-to-t from-ink/90 to-transparent" />
-      <div className="absolute inset-y-0 left-0 w-[52%] bg-gradient-to-r from-ink/75 to-transparent" />
+      {overlays}
     </>
   ) : null;
 
   return (
     <section className={`relative flex ${fullHeight ? "min-h-screen" : "min-h-[560px]"} flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white`}>
+      {videoBlock}
       {animateReveal && imageBlock ? (
         <div className="absolute inset-0 animate-hero-reveal">
           {imageBlock}
