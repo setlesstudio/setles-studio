@@ -23,10 +23,10 @@ export default function ServiceFeatures({ heading, subheading, items }: Props) {
           <p className="mt-2 text-ink-soft">{subheading}</p>
         </Reveal>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-6">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           {items.map((item, i) => (
-            <Reveal key={item.number} delay={i * 0.07} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
-              <div className="card h-full p-7 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10">
+            <Reveal key={item.number} delay={i * 0.07} className="w-full sm:w-[calc(50%-8px)] md:w-[calc(33.333%-11px)] lg:w-[calc(20%-13px)]">
+              <div className="card h-full p-5 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10">
                 <div className="flex items-center justify-between">
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-soft text-brand">
                     <item.icon size={20} />
