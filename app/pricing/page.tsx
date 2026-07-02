@@ -10,7 +10,7 @@ import Reveal from "@/components/Reveal";
 import FAQ from "@/components/FAQ";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
-import { pricingTiers, site, valueProps } from "@/lib/data";
+import { pricingTiers, site, valueProps, faqs } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -243,9 +243,9 @@ export default function PricingPage() {
       {/* FAQ */}
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
         <div className="container-site">
-          <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
+          <SectionHeading eyebrow="FAQ" title="Frequently Asked questions" />
           <div className="mt-12">
-            <FAQ />
+            <FAQ faqs={faqs}/>
           </div>
         </div>
       </section>

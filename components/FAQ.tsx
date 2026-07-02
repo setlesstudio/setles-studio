@@ -2,14 +2,25 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { faqs } from "@/lib/data";
 
-export default function FAQ() {
+type FAQItem = {
+  q: string;
+  a: string;
+};
+
+type FAQProps = {
+  faqs: FAQItem[];
+  className?: string;
+};
+
+export default function FAQ({ faqs, className = "" }: FAQProps) {
   const [open, setOpen] = useState<number | null>(0);
+
   return (
-    <div className="mx-auto grid max-w-4xl gap-4">
+    <div className={`mx-auto grid max-w-4xl gap-4 ${className}`}>
       {faqs.map((f, i) => {
         const isOpen = open === i;
+
         return (
           <div
             key={f.q}
@@ -18,6 +29,7 @@ export default function FAQ() {
             }`}
           >
             <button
+              type="button"
               className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
               onClick={() => setOpen(isOpen ? null : i)}
               aria-expanded={isOpen}
@@ -30,6 +42,7 @@ export default function FAQ() {
                 }`}
               />
             </button>
+
             {isOpen && (
               <p className="px-6 pb-6 text-[15px] leading-relaxed text-ink-soft">
                 {f.a}

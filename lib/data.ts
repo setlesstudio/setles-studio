@@ -2,7 +2,7 @@
 export const site = {
   name: "SetlesStudio",
   url: "https://www.setlesstudio.com",
-  tagline: "Hyper-realistic AI fashion photography for ecommerce brands.",
+  tagline: "Hyper realistic AI fashion photography for ecommerce brands.",
   email: "setlesstudio@gmail.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
@@ -98,15 +98,15 @@ export const services: Service[] = [
     number: "05",
     title: "Realistic AI Video Ads & UGC Content",
     short:
-      "Hyper realistic AI video ads, authentic UGC-style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
-    long: "Create hyper realistic AI video ads, authentic UGC-style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, eCommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
+      "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
+    long: "Create hyper realistic AI video ads, authentic UGC-style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
     image: "",
     deliverables: [
-      "Hyper-realistic AI video ads with natural model movement",
+      "Hyper realistic AI video ads with natural model movement",
       "Authentic UGC style videos that build trust and increase conversions",
       "Optimized for TikTok, Instagram Reels, Facebook, YouTube Shorts, and Shopify",
       "High converting videos for paid ads, product launches, and social media marketing",
-      "Commercial-ready HD & 4K videos in vertical, square, and landscape formats",
+      "Commercial ready HD & 4K videos in vertical, square, and landscape formats",
     ],
   },
   {

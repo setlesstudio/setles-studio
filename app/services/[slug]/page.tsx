@@ -13,6 +13,7 @@ import ServiceProcess, { type ProcessStep } from "@/components/ServiceProcess";
 import CTABand from "@/components/CTABand";
 import Reveal from "@/components/Reveal";
 import { site } from "@/lib/data";
+import FAQ from "@/components/FAQ";
 
 type ServiceData = {
   meta: { title: string; description: string };
@@ -117,7 +118,7 @@ const services: Record<string, ServiceData> = {
     },
     faqs: [
       { q: "Can you create AI studio photos from my apparel images?", a: "Yes, we transform flat lays, ghost mannequin photos, and product images into realistic AI studio photography while preserving garment details and colors." },
-      { q: "Are your AI fashion models realistic?", a: "Yes, we create hyper-realistic AI fashion models designed for apparel brands, Ecommerce stores, and fashion marketing campaigns." },
+      { q: "Are your AI fashion models realistic?", a: "Yes, we create hyper realistic AI fashion models designed for apparel brands, Ecommerce stores, and fashion marketing campaigns." },
       { q: "Are the images suitable for Shopify and online stores?", a: "Absolutely. Our AI studio photography is optimized for Shopify, Amazon, Etsy, WooCommerce, and apparel brand websites." },
     ],
   },
@@ -308,9 +309,9 @@ const services: Record<string, ServiceData> = {
     },
     hero: {
       eyebrow: "AI Video Ads & UGC",
-      titlePrefix: "Realistic AI Video Ads &",
-      titleHighlight: "UGC Content",
-      subtitle: "High Converting AI Video Ads That Look 100% Real",
+      titlePrefix: "Realistic AI Video & Advertising for",
+      titleHighlight: "Ecommerce Brands",
+      subtitle: "High Converting Realistic AI Video Ads That Drive More Sales",
       imageAlt: "AI video ads and UGC content creation",
       video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto/v1782991084/video-ad_bvo5xc.mp4",
       waText: "Hi, I'd like to discuss an AI video ads project.",
@@ -318,45 +319,48 @@ const services: Record<string, ServiceData> = {
       secondary: { href: "/pricing", label: "See Our Pricing" },
     },
     beforeAfter: {
+      // before: "/images/female-shirt-product.jpg",
       before: "",
       beforeAlt: "",
       after: "",
+      // after: "/images/female-trouser-product.jpg",
       afterAlt: "",
       after2: "",
       after2Alt: "",
     },     
     description: {
-      titleHighlight: "Realistic AI Video Ads & UGC Content",
+      titleHighlight: "Realistic AI Video and Advertising",
       titleSuffix: "for Ecommerce Brands",
       paragraphs: [
-        "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling.",
-        "Perfect for Shopify stores, Ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
+        "Bring your products to life with Realistic AI Video & Advertising services designed for modern Ecommerce brands. We create premium AI powered video ads, realistic AI UGC videos, product demonstrations, social media commercials, and brand storytelling videos that capture attention and increase conversions.",
+        "Whether you sell apparel, footwear, jewelry, beauty products, or accessories, our realistic AI videos help you market your products faster without expensive production teams, actors, or studio shoots.",
       ],
     },
     features: {
-      heading: "Why Ecommerce Brands Choose Our AI Video Production",
+      heading: "Why Choose Our Realistic AI Video & Advertising Services?",
       subheading: "Realistic AI Video Ads & UGC Content",
       items: [
-        { number: "01", icon: Play,       title: "Hyper Realistic AI Video Ads With Natural Model Movement", description: "AI models move naturally in your product videos, creating authentic and engaging content." },
-        { number: "02", icon: Users,      title: "Authentic UGC Style Videos That Build Trust",             description: "Creator style content designed to feel genuine and perform in paid and organic feeds." },
-        { number: "03", icon: Globe,      title: "Optimized for TikTok, Instagram, Facebook & YouTube",     description: "Every video is cut and formatted to the exact specs of each major social platform." },
-        { number: "04", icon: TrendingUp, title: "High Converting Videos for Paid Ads & Launches",          description: "Video content engineered around direct response principles to maximize ad performance." },
-        { number: "05", icon: Camera,     title: "Commercial Ready HD & 4K in All Format Options",          description: "Delivered in vertical, square, and landscape formats in HD and 4K resolution." },
-        { number: "06", icon: Zap,        title: "Faster & More Affordable Than Traditional Production",     description: "Professional video content produced at a fraction of traditional studio production costs." },
+        { number: "01", icon: Play,       title: "Realistic AI Video Production", description: "Create natural looking AI videos that showcase your products with professional quality and authentic movement." },
+        { number: "02", icon: Users,      title: "High Converting AI UGC Ads", description: "Generate user generated content style videos that build trust and increase sales." },
+        { number: "03", icon: Globe,      title: "Premium AI Product Videos",     description: "Turn product photos into engaging marketing videos for your website and social media." },
+        { number: "04", icon: TrendingUp, title: "Optimized for paid Advertising", description: "Perfect for facebook Ads, Instagram Reels, Tiktok Ads, Youtube Shorts, Pinterest, and Google Ads." },
+        { number: "05", icon: Camera,     title: "Fast and Cost Effective", description: "Launch Professional advertising campaigns without hiring influencers, videographers or production crews." },
+        { number: "06", icon: Zap,        title: "Commercial Ready", description: "Videos are optimized for websites, product launches, paid advertising, email marketing and social media." },
       ],
     },
     ctaBanner: {
-      image: "/images/home-page-last-section-image.jpeg",
+      image: "/images/female-long-green-dress.jpeg",
       imageAlt: "AI video ads production banner",
-      title: "Ready to launch high-converting AI video ads for your brand?",
-      text: "Launch high converting AI video ads and UGC content that stops the scroll and drives real results for your brand.",
+      title: "Ready to Launch High Converting AI Video Ads & UGC Content?",
+      text: "Create realistic AI video ads, authentic UGC videos, and engaging social media content that helps your brand increase visibility, build trust, and drive more sales across TikTok, Instagram, Facebook, YouTube, and Shopify.",
       waText: "Hi, I'd like to discuss an AI video ads project.",
     },
     faqs: [
-      { q: "What video lengths and formats do you produce?", a: "We produce 6 to 30 second cuts for paid social platforms and longer formats up to 60 seconds for YouTube and website use. We deliver vertical, square, and landscape exports in every order." },
-      { q: "Can you create UGC style videos that look authentic?", a: "Yes. Our UGC content is designed to match the organic feel of real creator content. It builds trust with audiences and performs well in paid campaigns." },
-      { q: "Which platforms are the videos optimised for?", a: "We optimise for TikTok, Instagram Reels, Facebook, YouTube Shorts, and Shopify product pages. Each platform has specific aspect ratios and pacing requirements that we apply." },
-      { q: "How long does video production take?", a: "Standard video projects are delivered within 5 to 7 business days. Rush delivery is available for product launches and time sensitive campaigns." },
+      { q: "What is Realistic AI Video & Advertising?", a: "Realistic AI Video & Advertising uses advanced AI to create professional product videos, video ads, and marketing content for brands and Ecommerce businesses." },
+      { q: "Can you create Realistic AI UGC videos for my brand?", a: "Yes, we create realistic AI UGC videos that look authentic and are perfect for TikTok, Instagram Reels, Facebook Ads, and YouTube Shorts." },
+      { q: "Can you turn product photos into AI video ads?", a: "Yes, we transform product images into high converting AI video ads for Shopify, Amazon, Ecommerce stores, and social media campaigns." },
+      { q: "Are your AI video ads suitable for paid advertising?", a: "Absolutely. Our realistic AI video ads are optimized for Meta Ads, TikTok Ads, Google Ads, Instagram, and YouTube advertising" },
+      { q: "Which businesses can benefit from Realistic AI Video & Advertising?", a: "We create AI video ads and UGC content for fashion brands, footwear companies, beauty brands, jewelry businesses, and Ecommerce stores" },
     ],
   },
 
@@ -490,9 +494,9 @@ export default function ServiceSlugPage({
       {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
       
 
-      <section className="bg-brand-soft py-14 md:py-20">
+      <section className="bg-brand-soft py-14 md:py-20 rounded-3xl">
         <Reveal>
-          <div className="container-site text-center">
+          <div className="container-site text-center ">
             <h2 className="font-display text-2xl font-bold leading-snug md:text-3xl">
               <span className="text-brand">{svc.description.titleHighlight}</span>{" "}
               <span className="text-ink">{svc.description.titleSuffix}</span>
@@ -523,22 +527,10 @@ export default function ServiceSlugPage({
             Frequently Asked Questions
           </h2>
         </Reveal>
-        <div className="mx-auto mt-10 max-w-3xl space-y-3">
-          {svc.faqs.map((f) => (
-            <Reveal key={f.q}>
-              <details className="group card overflow-hidden">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
-                  <span className="font-semibold">{f.q}</span>
-                  <ChevronDown
-                    size={18}
-                    className="shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
-                  />
-                </summary>
-                <p className="px-6 pb-6 text-[15px] leading-relaxed text-ink-soft">{f.a}</p>
-              </details>
-            </Reveal>
-          ))}
-        </div>
+
+        <Reveal className="mt-10">
+          <FAQ faqs={svc.faqs} className="max-w-3xl" />
+        </Reveal>
       </section>
     </>
   );

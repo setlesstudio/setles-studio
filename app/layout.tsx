@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | SetlesStudio",
   },
   description:
-    "Hyper-realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
+    "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
   openGraph: {
     siteName: "SetlesStudio",
     type: "website",

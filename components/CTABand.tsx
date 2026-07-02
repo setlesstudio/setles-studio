@@ -23,7 +23,7 @@ export default function CTABand({
   return (
     <section className="container-site py-16">
       <Reveal>
-        <div className={`relative overflow-hidden rounded-4xl bg-ink text-center sm:px-16 ${image ? "flex min-h-[420px] flex-col justify-end px-6 pb-10 pt-6 sm:px-16 sm:pb-14 sm:pt-8" : "px-8 py-28"}`}>
+        <div className={`relative overflow-hidden rounded-4xl bg-ink text-center sm:px-16 ${image ? "flex min-h-[420px] flex-col justify-end px-6 pb-10 pt-6 sm:px-16 sm:pt-8" : "px-8 py-28"}`}>
           {image ? (
             <>
               {imageMobile && (
@@ -57,7 +57,7 @@ export default function CTABand({
             <h2 className="mx-auto max-w-5xl font-display text-xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-1 max-w-xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
+            <p className="mx-auto mt-1 max-w-2xl text-sm text-white/65 sm:mt-4 sm:text-base">{text}</p>
             <div className="mt-1 flex flex-wrap items-center justify-center gap-3 sm:mt-4 sm:gap-4">
               {/^https?:\/\//.test(primary.href) ? (
                 <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary">
