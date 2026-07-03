@@ -78,7 +78,8 @@ export default function HomePage() {
                 After
               </span>
               <Image
-                src="/images/after-walk.jpg"
+                src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg"
+                // src="/images/after-walk.jpg"
                 alt="Model wearing the navy activewear set walking outdoors"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -92,7 +93,8 @@ export default function HomePage() {
                 After
               </span>
               <Image
-                src="/images/after-window.jpg"
+                // src="/images/after-window.jpg"
+                src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg"
                 alt="Model wearing the navy activewear set reading by a window"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
