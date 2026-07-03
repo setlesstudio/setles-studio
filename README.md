@@ -16,7 +16,7 @@ npm run build    # production build
 | Route | Page |
 |---|---|
 | `/` | Home — hero with draggable before/after slider, free sample, 7 services, process, testimonials |
-| `/services` | All 7 services, detailed alternating sections (anchor links: `/services#footwear-photography` etc.) |
+| `/services` | All 6 services, detailed alternating sections (anchor links: `/services#footwear-photography` etc.) |
 | `/services/[slug]` | Single service page |
 | `/portfolio` | Before/after comparison + filterable masonry gallery |
 | `/pricing` | 3 tiers, custom quote band, FAQ accordion |
