@@ -434,13 +434,9 @@ const services: Record<string, ServiceData> = {
 
 };
 
-/* ─── Static params ──────────────────────────────────────────── */
-
 export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
 }
-
-/* ─── Metadata ───────────────────────────────────────────────── */
 
 export async function generateMetadata({
   params,
@@ -451,8 +447,6 @@ export async function generateMetadata({
   if (!svc) return {};
   return { title: svc.meta.title, description: svc.meta.description };
 }
-
-/* ─── Page ───────────────────────────────────────────────────── */
 
 export default function ServiceSlugPage({
   params,
@@ -490,8 +484,7 @@ export default function ServiceSlugPage({
 
       {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
       
-
-      <section className="bg-brand-soft py-14 md:py-20 rounded-3xl">
+      <section className="bg-cream py-14 md:py-20 rounded-3xl">
         <Reveal>
           <div className="container-site text-center ">
             <h2 className="font-display text-2xl font-bold leading-snug md:text-3xl">

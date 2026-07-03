@@ -28,14 +28,7 @@ export default function FreeSampleBanner() {
         transition={{ duration: 0.7, ease: [0.21, 0.6, 0.35, 1] }}
         className="relative overflow-hidden rounded-4xl bg-cream px-8 py-12 text-center sm:px-16"
       >
-        {/* <div className="pointer-events-none absolute -left-20 -top-12 h-80 w-80 animate-pulse rounded-full bg-brand/15 blur-3xl" /> */}
-        {/* <div
-          className="pointer-events-none absolute -bottom-12 -right-20 h-80 w-80 animate-pulse rounded-full bg-brand/10 blur-3xl"
-          style={{ animationDelay: "1.3s" }}
-        /> */}
-
         <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
-          {/* Icon — floating + slow-spinning dashed ring */}
           <motion.div variants={fadeUp} className="relative mx-auto w-fit">
             <span className="pointer-events-none absolute -inset-3 animate-spin rounded-3xl border border-dashed border-brand/35 [animation-duration:9s]" />
             <span className="relative mx-auto grid h-16 w-16 animate-float place-items-center rounded-2xl bg-brand text-white">

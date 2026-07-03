@@ -46,7 +46,7 @@ export default function AboutPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <ImageSlot
-              src="/images/about-story.png"
+              src="/images/about-story.jpg"
               alt="SetlesStudio team working on AI fashion content"
               label="Our story image"
               className="aspect-[4/3] w-full rounded-4xl"
