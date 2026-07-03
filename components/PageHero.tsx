@@ -56,6 +56,8 @@ export default function PageHero({
           fill
           priority
           sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
           className="object-cover object-top md:hidden"
         />
       )}
@@ -66,6 +68,7 @@ export default function PageHero({
         priority
         sizes="100vw"
         loading="eager"
+        fetchPriority="high"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
       />
       {overlays}
