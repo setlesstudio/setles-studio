@@ -66,7 +66,7 @@ export default function PageHero({
         alt={imageAlt}
         fill
         priority
-        sizes="100vw"
+        sizes="(min-width: 1440px) 1440px, 100vw"
         loading="eager"
         fetchPriority="high"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}

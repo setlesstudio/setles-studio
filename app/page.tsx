@@ -10,8 +10,9 @@ import {
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import TrustedBy from "@/components/TrustedBy";
-import Testimonials from "@/components/Testimonials";
+import dynamic from "next/dynamic";
+const TrustedBy = dynamic(() => import("@/components/TrustedBy"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
 import CTABand from "@/components/CTABand";
 import ImageSlot from "@/components/ImageSlot";
 import FreeSampleBanner from "@/components/FreeSampleBanner";
