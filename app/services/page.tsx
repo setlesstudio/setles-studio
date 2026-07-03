@@ -59,6 +59,7 @@ export default function ServicesPage() {
                       muted
                       loop
                       playsInline
+                      preload="none"
                       className="h-full w-full object-cover object-top"
                     >
                       <source src={s.video} type="video/mp4" />

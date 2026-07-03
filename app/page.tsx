@@ -145,16 +145,16 @@ export default function HomePage() {
                   className="card group flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10"
                 >
                   {s.video ? (
-                    <div className="hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="h-full w-full object-cover object-top"
-                      >
-                        <source src={s.video} type="video/mp4" />
-                      </video>
+                    <div className="relative hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block">
+                      <Image
+                        src={s.video
+                          .replace("/video/upload/", "/video/upload/q_auto,w_320,so_0/")
+                          .replace(".mp4", ".jpg")}
+                        alt={s.title}
+                        fill
+                        sizes="128px"
+                        className="object-cover object-top"
+                      />
                     </div>
                   ) : (
                     <ImageSlot
