@@ -14,6 +14,7 @@ import CTABand from "@/components/CTABand";
 import Reveal from "@/components/Reveal";
 import { site } from "@/lib/data";
 import FAQ from "@/components/FAQ";
+import SectionHeading from "@/components/SectionHeading";
 
 type ServiceData = {
   meta: { title: string; description: string };
@@ -511,16 +512,13 @@ export default function ServiceSlugPage({
         primary={{ href: waCtaHref, label: "Get Started Today" }}
       />
 
-      <section className="container-site py-16 md:py-24">
-        <Reveal className="text-center">
-          <h2 className="font-display text-2xl font-bold md:text-3xl">
-            Frequently Asked Questions
-          </h2>
-        </Reveal>
-
-        <Reveal className="mt-10">
-          <FAQ faqs={svc.faqs} className="max-w-3xl" />
-        </Reveal>
+      <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
+              <div className="container-site">
+                <SectionHeading eyebrow="FAQ" title="Frequently Asked questions" />
+                <div className="mt-12">
+                  <FAQ faqs={svc.faqs}/>
+                </div>
+              </div>
       </section>
     </>
   );
