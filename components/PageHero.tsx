@@ -55,7 +55,6 @@ export default function PageHero({
           alt={imageAlt}
           fill
           priority
-          unoptimized
           sizes="100vw"
           className="object-cover object-top md:hidden"
         />
@@ -65,7 +64,6 @@ export default function PageHero({
         alt={imageAlt}
         fill
         priority
-        unoptimized
         sizes="100vw"
         loading="eager"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
