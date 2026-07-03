@@ -51,14 +51,28 @@ export default function ServicesPage() {
               id={s.id}
               className="grid scroll-mt-28 items-stretch gap-10 md:grid-cols-[1.5fr_3fr] md:gap-10"
             >
-              <Reveal className="md:h-full md:min-h-[380px] xl:min-h-[480px]">
-                <ImageSlot
-                  src={s.image}
-                  alt={s.title}
-                  label={s.title}
-                  className="aspect-[3/4] w-full rounded-4xl bg-cream md:aspect-auto md:h-full"
-                  imageClassName="object-contain object-center"
-                />
+              <Reveal className="md:h-full md:min-h-[380px] xl:min-h-[480px] xl:max-h-[550px]">
+                {s.video ? (
+                  <div className="aspect-[3/4] w-full overflow-hidden rounded-4xl bg-ink md:aspect-auto md:h-full">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="h-full w-full object-cover object-top"
+                    >
+                      <source src={s.video} type="video/mp4" />
+                    </video>
+                  </div>
+                ) : (
+                  <ImageSlot
+                    src={s.image}
+                    alt={s.title}
+                    label={s.title}
+                    className="aspect-[3/4] w-full rounded-4xl bg-cream md:aspect-auto md:h-full"
+                    imageClassName="object-contain object-center"
+                  />
+                )}
               </Reveal>
               <Reveal delay={0.1} className="flex flex-col justify-between">
                 <span className="font-display text-4xl font-semibold text-brand/20 xl:text-5xl">

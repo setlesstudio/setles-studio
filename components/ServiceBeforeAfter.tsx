@@ -4,8 +4,9 @@ import Reveal from "@/components/Reveal";
 type Props = {
   before: string;
   beforeAlt: string;
-  after: string;
+  after?: string;
   afterAlt: string;
+  afterVideo?: string;
   after2?: string;
   after2Alt?: string;
 };
@@ -15,6 +16,7 @@ export default function ServiceBeforeAfter({
   beforeAlt,
   after,
   afterAlt,
+  afterVideo,
   after2,
   after2Alt,
 }: Props) {
@@ -22,14 +24,14 @@ export default function ServiceBeforeAfter({
 
   return (
     <section className="container-site py-8 md:py-12">
-      <div className={`grid gap-4 ${hasTwo ? "md:grid-cols-[0.8fr_1fr_1fr]" : "md:grid-cols-[0.8fr_1fr]"}`}>
+      <div className={`grid gap-4 ${hasTwo ? "md:grid-cols-[0.8fr_1fr_1fr]" : afterVideo ? "md:grid-cols-[1fr_0.45fr]" : "md:grid-cols-[0.8fr_1fr]"} ${afterVideo ? "md:grid-rows-[480px] xl:grid-rows-[540px]" : ""}`}>
         {/* Before */}
-        <Reveal>
-          <div className="card flex flex-col gap-3 p-5">
+        <Reveal className={afterVideo ? "h-full" : ""}>
+          <div className={`card flex flex-col gap-3 p-5 ${afterVideo ? "h-full" : ""}`}>
             <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
               Before
             </span>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl md:max-h-[320px] xl:max-h-none">
+            <div className={`relative overflow-hidden rounded-2xl ${afterVideo ? "aspect-[3/4] md:aspect-auto md:flex-1" : `aspect-[3/4] md:max-h-[320px] ${hasTwo ? "xl:max-h-none" : "xl:max-h-[400px]"}`}`}>
               <Image
                 src={before}
                 alt={beforeAlt}
@@ -41,19 +43,31 @@ export default function ServiceBeforeAfter({
           </div>
         </Reveal>
 
-        {/* After 1 */}
-        <Reveal delay={0.1}>
-          <div className="relative h-full min-h-[280px] overflow-hidden rounded-3xl md:min-h-0">
+        {/* After 1 — video or image */}
+        <Reveal delay={0.1} className={afterVideo ? "h-full" : ""}>
+          <div className={`relative overflow-hidden rounded-3xl ${afterVideo ? "h-full" : "h-full min-h-[280px] md:min-h-0"}`}>
             <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
               After
             </span>
-            <Image
-              src={after}
-              alt={afterAlt}
-              fill
-              sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover object-top"
-            />
+            {afterVideo ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover object-top"
+              >
+                <source src={afterVideo} type="video/mp4" />
+              </video>
+            ) : after ? (
+              <Image
+                src={after}
+                alt={afterAlt}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover object-top"
+              />
+            ) : null}
           </div>
         </Reveal>
 

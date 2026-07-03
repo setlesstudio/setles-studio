@@ -28,6 +28,7 @@ export type Service = {
   short: string;
   long: string;
   image: string; // "" = placeholder slot
+  video?: string;
   deliverables: string[];
 };
 
@@ -99,8 +100,9 @@ export const services: Service[] = [
     title: "Realistic AI Video Ads & UGC Content",
     short:
       "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
-    long: "Create hyper realistic AI video ads, authentic UGC-style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
+    long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
     image: "",
+    video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto,w_1280,ac_none/v1783056368/video-ad-service-1_px1iey.mp4",
     deliverables: [
       "Hyper realistic AI video ads with natural model movement",
       "Authentic UGC style videos that build trust and increase conversions",

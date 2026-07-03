@@ -142,13 +142,27 @@ export default function HomePage() {
                   href={`/services/${s.id}`}
                   className="card group flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10"
                 >
-                  <ImageSlot
-                    src={s.image}
-                    alt={s.title}
-                    label={s.title}
-                    className="hidden aspect-[3/4] w-32 shrink-0 rounded-2xl sm:block"
-                    sizes="160px"
-                  />
+                  {s.video ? (
+                    <div className="hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="h-full w-full object-cover object-top"
+                      >
+                        <source src={s.video} type="video/mp4" />
+                      </video>
+                    </div>
+                  ) : (
+                    <ImageSlot
+                      src={s.image}
+                      alt={s.title}
+                      label={s.title}
+                      className="hidden aspect-[3/4] w-32 shrink-0 rounded-2xl sm:block"
+                      sizes="160px"
+                    />
+                  )}
                   <div className="flex flex-col py-1">
                     <span className="font-display text-sm font-semibold text-brand">
                       {s.number}.

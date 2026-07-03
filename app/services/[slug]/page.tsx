@@ -33,8 +33,9 @@ type ServiceData = {
   beforeAfter: {
     before: string;
     beforeAlt: string;
-    after: string;
+    after?: string;
     afterAlt: string;
+    afterVideo?: string;
     after2?: string;
     after2Alt?: string;
   };
@@ -319,15 +320,11 @@ const services: Record<string, ServiceData> = {
       secondary: { href: "/pricing", label: "See Our Pricing" },
     },
     beforeAfter: {
-      // before: "/images/female-shirt-product.jpg",
-      before: "",
-      beforeAlt: "",
-      after: "",
-      // after: "/images/female-trouser-product.jpg",
-      afterAlt: "",
-      after2: "",
-      after2Alt: "",
-    },     
+      before: "/images/female-shirt-trousers-image.webp",
+      beforeAlt: "Flat product photo of female shirt and trouser set",
+      afterVideo: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto/v1783056218/video-ad-2_xcibfp.mp4",
+      afterAlt: "AI video ad showing the female outfit in action",
+    },
     description: {
       titleHighlight: "Realistic AI Video and Advertising",
       titleSuffix: "for Ecommerce Brands",
@@ -467,7 +464,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
-  const hasBeforeAfter = Boolean(svc.beforeAfter.before && svc.beforeAfter.after);
+  const hasBeforeAfter = Boolean(svc.beforeAfter.before && (svc.beforeAfter.after || svc.beforeAfter.afterVideo));
 
   return (
     <>
