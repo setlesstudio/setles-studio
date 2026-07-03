@@ -59,7 +59,7 @@ body {
 }
 
 .animate-hero-reveal {
-  animation: heroReveal 2s ease-out forwards;
+  animation: heroReveal 1s ease-out forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
