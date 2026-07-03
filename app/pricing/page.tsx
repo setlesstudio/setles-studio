@@ -110,7 +110,7 @@ export default function PricingPage() {
               <div className="mt-5 min-w-0 flex-1 animate-float sm:mt-6 sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:0.6s]">
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
-                    src="/images/lifestyle-red-dress-nyc-2.jpeg"
+                    src="/images/lifestyle-red-dress-nyc-2.jpg"
                     alt="Model in red dress walking in New York"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
@@ -121,7 +121,7 @@ export default function PricingPage() {
               <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:1.2s]">
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
-                    src="/images/lifestyle-pink-outfit-cafe.jpeg"
+                    src="/images/lifestyle-pink-outfit-cafe.jpg"
                     alt="Model in pink outfit outside a café"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
@@ -230,7 +230,7 @@ export default function PricingPage() {
               </a>
             </div>
             <ImageSlot
-              src="/images/lifestyle-orange-activewear.jpeg"
+              src="/images/lifestyle-orange-activewear.jpg"
               alt="Lifestyle fashion model in orange activewear"
               label="Custom quote image"
               className="hidden lg:block lg:min-h-[300px]"

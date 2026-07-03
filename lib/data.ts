@@ -445,8 +445,8 @@ export const learnIncluded = [
 ];
 
 export const team = [
-  { name: "Team Member", role: "Creative Director & Fashion Designer", image: "/images/team-creative-director.jpeg" },
-  { name: "Team Member", role: "Content Specialist & Fashion Designer", image: "/images/team-content-specialist.png" },
-  { name: "Team Member", role: "Client Success Manager", image: "/images/team-client-success.png" },
+  { name: "Team Member", role: "Creative Director & Fashion Designer", image: "/images/team-creative-director.jpg" },
+  { name: "Team Member", role: "Content Specialist & Fashion Designer", image: "/images/team-content-specialist.jpg" },
+  { name: "Team Member", role: "Client Success Manager", image: "/images/team-client-success.jpg" },
   { name: "Team Member", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
 ]

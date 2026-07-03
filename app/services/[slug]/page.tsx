@@ -145,7 +145,7 @@ const services: Record<string, ServiceData> = {
       beforeAlt: "Flat lay product photo of red rose dress before AI processing",
       after: "/images/lifestyle-red-dress-nyc-1-service.jpg",
       afterAlt: "AI lifestyle photo — red rose dress on model in NYC street",
-      after2: "/images/lifestyle-red-dress-nyc-2.jpeg",
+      after2: "/images/lifestyle-red-dress-nyc-2.jpg",
       after2Alt: "AI lifestyle photo — red rose dress on model in NYC street second look",
     },
     description: {
