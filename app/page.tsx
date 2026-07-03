@@ -22,7 +22,6 @@ const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 export default function HomePage() {
   return (
     <>
-      {/* ------------------------------------------------ Hero */}
       <PageHero
         eyebrow="Realistic AI Fashion Content Studio"
         title={
@@ -31,8 +30,7 @@ export default function HomePage() {
           </>
         }
         text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
-        // image="/images/luxury-stairs-wide.jpg"
-        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg"
+        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg"
         imageAlt="Fashion model on luxury stairs"
         animateReveal
       >
@@ -53,7 +51,6 @@ export default function HomePage() {
         </p>
       </PageHero>
 
-      {/* ------------------------------------ From product to campaign */}
       <section className="container-site py-10">
         <SectionHeading
           eyebrow="Before / After"
@@ -106,12 +103,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ------------------------------------------- Free sample */}
       <FreeSampleBanner />
 
       <TrustedBy />
 
-      {/* ----------------------------------------------- Why us */}
       <section className="container-site py-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {valueProps.map((v, i) => {
@@ -133,7 +128,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------------------------------------------- Services */}
       <section className="bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading
@@ -180,7 +174,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ----------------------------------------------- Process */}
       <section className="container-site py-14">
         <SectionHeading
           eyebrow="Our process"
@@ -207,7 +200,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ------------------------------------------ Testimonials */}
       <section className="bg-cream py-14 rounded-3xl">
         <div className="container-site">
           <SectionHeading
