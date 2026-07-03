@@ -8,7 +8,7 @@ Built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # production build (needs internet once, for Google Fonts)
+npm run build    # production build
 ```
 
 ## Pages
@@ -17,6 +17,7 @@ npm run build    # production build (needs internet once, for Google Fonts)
 |---|---|
 | `/` | Home — hero with draggable before/after slider, free sample, 7 services, process, testimonials |
 | `/services` | All 7 services, detailed alternating sections (anchor links: `/services#footwear-photography` etc.) |
+| `/services/[slug]` | Single service page |
 | `/portfolio` | Before/after comparison + filterable masonry gallery |
 | `/pricing` | 3 tiers, custom quote band, FAQ accordion |
 | `/learn` | Educational products (dark + gold look from the Learn design) |
@@ -48,4 +49,4 @@ so you can see exactly where images are still missing:
 
 ## Notes
 - Brand tokens (orange `#F26A1B`, ink, cream, gold) are in `tailwind.config.ts`.
-- Fonts: Fraunces (display) + Manrope (body) via `next/font/google`.
+- Fonts: DM Sans (display) + Manrope (body) via `next/font/google`.
