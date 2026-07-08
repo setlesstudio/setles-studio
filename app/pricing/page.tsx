@@ -99,7 +99,7 @@ export default function PricingPage() {
               <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44">
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
-                    src="/images/lifestyle-red-dress-nyc-1.jpeg"
+                    src="/images/lifestyle-red-dress-nyc-1.jpg"
                     alt="Model in red dress on NYC street"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"

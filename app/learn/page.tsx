@@ -219,7 +219,7 @@ export default function LearnPage() {
         <Reveal>
           <a href="#resources" aria-label="Browse all learn resources" className="block overflow-hidden rounded-4xl">
             <Image
-              src="/images/laern-page-last-section-full.jpeg"
+              src="/images/learn-page-last-section-full.jpeg"
               alt="Start Learning. Start Creating. — SetlesStudio learn resources"
               width={1440}
               height={576}
@@ -242,14 +242,14 @@ export default function LearnPage() {
               className="object-cover object-center lg:hidden"
               priority
             />
-            <Image
+            {/* <Image
               src="/images/books-image.png"
               alt="SetlesStudio books and course materials"
               fill
               sizes="100vw"
               className="hidden object-cover object-center lg:block"
               priority
-            />
+            /> */}
 
             <div className="relative z-10 flex min-h-[480px] flex-col justify-center lg:min-h-[460px]">
               <div className="pointer-events-none absolute inset-0 bg-ink/60 lg:hidden" />

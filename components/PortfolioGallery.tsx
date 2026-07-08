@@ -42,7 +42,7 @@ const items: Item[] = [
   { src: "/images/studio-long-coat-man.jpg", alt: "Man in long coat, studio product shot", category: "Studio" },
   { src: "/images/lifestyle-beach-pink-dress.jpg", alt: "Pink dress, beach lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-beach-pink-dress-1.jpg", alt: "Pink dress, beach lifestyle scene", category: "Lifestyle" },
-  { src: "/images/studio-white-shirt-gray-shorts-man.jpg", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
+  { src: "/images/studio-white-shirt-gray-shorts-man.jpeg", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
   { src: "/images/studio-white-shirt-gray-shorts-man-1.jpg", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
   { src: "/images/studio-white-shirt-gray-shorts-man-2.jpg", alt: "Man in white shirt and gray shorts, studio shot", category: "Studio" },
   { src: "/images/multiple-models-environment.jpg", alt: "Multiple models in outdoor environment, campaign shoot", category: "Campaign", tall: true },
