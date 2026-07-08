@@ -79,7 +79,8 @@ export default function HomePage() {
                 After
               </span>
               <Image
-                src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg"
+                src="/images/after-window.webp"
+                // src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg"
                 alt="Model wearing the navy activewear set walking outdoors"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -93,7 +94,8 @@ export default function HomePage() {
                 After
               </span>
               <Image
-                src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg"
+                // src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg"
+                src="/images/after-walk.webp"
                 alt="Model wearing the navy activewear set reading by a window"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -232,7 +234,7 @@ export default function HomePage() {
         text="Take your brand to new heights and boost your sales 10x."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started Today" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
-        image="/images/home-page-last-section-image.jpeg"
+        image="/images/home-page-last-section-image.jpg"
       />
     </>
   );
