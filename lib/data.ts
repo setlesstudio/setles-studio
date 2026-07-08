@@ -205,7 +205,7 @@ export const testimonials = [
       "Muhammad continues to deliver on every project I send to him. He seems to know exactly the looks that I want just from a little guidance and usually perfect the first time. I will definitely continue to send him projects.",
     name: "John Davies",
     role: "UK",
-    image: "/images/clients/client-john-davies.png",
+    image: "/images/clients/client-john-davies.jpg",
   },
   {
     quote:
