@@ -79,7 +79,7 @@ export default function PageHero({
     <section className={`relative flex ${fullHeight ? "min-h-screen" : "min-h-[560px]"} flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white`}>
       {videoBlock}
       {animateReveal && imageBlock ? (
-        <div className="absolute inset-0 animate-hero-reveal">
+        <div className="absolute inset-0">
           {imageBlock}
         </div>
       ) : imageBlock}
