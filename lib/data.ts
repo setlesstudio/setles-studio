@@ -3,7 +3,7 @@ export const site = {
   name: "SetlesStudio",
   url: "https://www.setlesstudio.com",
   tagline: "Hyper realistic AI fashion photography for ecommerce brands.",
-  email: "setlesstudio@gmail.com",
+  email: "contact@setlesstudio.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
   phone: "+92 301 7281412",
