@@ -40,13 +40,6 @@ team, Learn products, and blog posts. Edit that one file to change copy or price
 Any slot with an empty `""` path renders a **labelled placeholder** on the page,
 so you can see exactly where images are still missing:
 
-- Learn page: hero, 4 product covers, CTA image
-- About page: story image, 4 team portraits, 1 gallery slot
-- Pricing page: custom-quote image
-- Blog: 3 post covers
-- Services: Video Ad Creation image
-- Portfolio: 4 extra gallery slots
-
 ## Notes
 - Brand tokens (orange `#F26A1B`, ink, cream, gold) are in `tailwind.config.ts`.
 - Fonts: DM Sans (display) + Manrope (body) via `next/font/google`.
