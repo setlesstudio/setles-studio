@@ -266,16 +266,16 @@ const services: Record<string, ServiceData> = {
       before: "/images/heels-product.jpg",
       beforeAlt: "Flat lay product photo of heels before AI processing",
       after: "/images/heels-image-model.jpeg",
-      afterAlt: "AI footwear photo — heels on model in lifestyle setting",
+      afterAlt: "AI footwear photo, heels on model in lifestyle setting",
       after2: "/images/heels-image-model-1.jpg",
-      after2Alt: "AI footwear photo — heels on model, second lifestyle look",
+      after2Alt: "AI footwear photo, heels on model, second lifestyle look",
     },  
     description: {
       titleHighlight: "Footwear Realistic AI Photography",
       titleSuffix: "for Ecommerce Brands",
       paragraphs: [
         "Transform your footwear products into luxury fashion campaign imagery that elevates your brand and drives sales. Our Luxury AI Footwear Campaign Photography service creates premium advertising visuals for sneakers, designer shoes, luxury footwear, boots, and fashion collections using hyperrealistic AI models, editorial styling, and luxury locations. ",
-        "Whether you're launching a new collection, creating a lookbook, or running advertising campaigns, we deliver high-end fashion imagery designed to increase brand value,engagement, and conversions.",
+        "Whether you're launching a new collection, creating a lookbook, or running advertising campaigns, we deliver high end fashion imagery designed to increase brand value,engagement, and conversions.",
       ],
     },
     features: {
@@ -485,15 +485,15 @@ export default function ServiceSlugPage({
 
       {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
       
-      <section className="bg-cream py-14 md:py-20 rounded-3xl">
+      <section className="container-site py-8">
         <Reveal>
-          <div className="container-site text-center ">
-            <h2 className="font-display text-2xl font-bold leading-snug md:text-3xl">
+          <div className="rounded-4xl bg-cream px-10 py-12 sm:px-16 sm:py-14">
+            <h2 className="text-center font-display text-3xl font-bold sm:text-4xl">
               <span className="text-brand">{svc.description.titleHighlight}</span>{" "}
               <span className="text-ink">{svc.description.titleSuffix}</span>
             </h2>
             {svc.description.paragraphs.map((p, i) => (
-              <p key={i} className={`leading-relaxed text-ink-soft ${i === 0 ? "mt-5" : "mt-4"}`}>
+              <p key={i} className={`text-justify leading-relaxed text-ink-soft ${i === 0 ? "mt-5" : "mt-4"}`}>
                 {p}
               </p>
             ))}

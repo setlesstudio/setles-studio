@@ -9,9 +9,11 @@ export const site = {
   phone: "+92 301 7281412",
   address: "Office 1243, 1st Floor, Street No. 13, Gulberg, Lahore, Pakistan",
   social: {
-    instagram: "https://instagram.com/",
-    linkedin: "https://linkedin.com/",
-    upwork: "https://upwork.com/",
+    instagram: "https://www.instagram.com/setlesstudio/",
+    linkedin: "https://www.linkedin.com/in/setles-studio-b71545416/",
+    facebook: "https://www.facebook.com/profile.php?id=61590854368537",
+    x: "https://x.com/SetlesStudio",
+    pinterest: "https://www.pinterest.com/pin/1126322188128557386/",
   },
 };
 
