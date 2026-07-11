@@ -1,4 +1,4 @@
-# SetlesStudio
+# SetlesStudio Website
 
 Premium marketing + lead-gen website for SetlesStudio (AI fashion content agency).
 Built with **Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion + Swiper**.
