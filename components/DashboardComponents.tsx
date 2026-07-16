@@ -175,3 +175,34 @@ export function CharacterCounterInput({
     </div>
   );
 }
+
+// 6. Parse Brackets to Brand Highlights & Newlines to Line Breaks
+export function parseHeroTitle(text: string): React.ReactNode {
+  if (!text) return "";
+  
+  // Split by brackets [ ] to extract highlights
+  const parts = text.split(/(\[[^\]]+\])/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("[") && part.endsWith("]")) {
+          return (
+            <span key={i} className="text-brand">
+              {part.slice(1, -1)}
+            </span>
+          );
+        }
+        // Handle line breaks \n
+        if (part.includes("\n")) {
+          return part.split("\n").map((line, idx) => (
+            <React.Fragment key={idx}>
+              {idx > 0 && <br />}
+              {line}
+            </React.Fragment>
+          ));
+        }
+        return part;
+      })}
+    </>
+  );
+}

@@ -21,6 +21,7 @@ import ImageSlot from "@/components/ImageSlot";
 import FreeSampleBanner from "@/components/FreeSampleBanner";
 import { process, services, site, valueProps } from "@/lib/data";
 import { getStoredPages, getStoredServices, getStoredValueProps } from "@/lib/dashboard-store";
+import { parseHeroTitle } from "@/components/DashboardComponents";
 
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
@@ -50,7 +51,7 @@ export default function HomePage() {
     return () => window.removeEventListener("setles_db_update", handleUpdate);
   }, []);
 
-  const heroTitle = pageData?.heroTitle || "Realistic AI Fashion Photography for Ecommerce Brands";
+  const heroTitle = pageData?.heroTitle || "Realistic [AI Fashion] Photography \n for Ecommerce Brands";
   const heroText = pageData?.heroText || "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
   const heroImage = pageData?.heroImage || "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg";
 
@@ -61,7 +62,7 @@ export default function HomePage() {
     <>
       <PageHero
         eyebrow="Realistic AI Fashion Content Studio"
-        title={heroTitle}
+        title={parseHeroTitle(heroTitle)}
         text={heroText}
         image={heroImage}
         imageAlt="Fashion model on luxury stairs"

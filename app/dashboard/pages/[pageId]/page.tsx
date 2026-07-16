@@ -36,7 +36,7 @@ import {
   TestimonialTile,
   ValuePropTile
 } from "@/lib/dashboard-store";
-import { CharacterCounterInput } from "@/components/DashboardComponents";
+import { CharacterCounterInput, parseHeroTitle } from "@/components/DashboardComponents";
 
 export default function PageEditorPage() {
   const router = useRouter();
@@ -532,7 +532,7 @@ export default function PageEditorPage() {
                     {page.title.toUpperCase()}
                   </p>
                   <h2 className="mt-2 font-display text-2xl sm:text-4xl font-bold leading-tight tracking-tight">
-                    {heroTitle || "Hero Title Placeholder"}
+                    {parseHeroTitle(heroTitle) || "Hero Title Placeholder"}
                   </h2>
                   <p className="mt-4 text-xs sm:text-sm text-white/70 leading-relaxed max-w-xl">
                     {heroText || "Hero text caption description placeholder."}

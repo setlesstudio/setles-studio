@@ -14,6 +14,7 @@ import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
 import { pricingTiers as defaultTiers, site, valueProps, faqs } from "@/lib/data";
 import { getStoredPages, getStoredPricing, PricingTile } from "@/lib/dashboard-store";
+import { parseHeroTitle } from "@/components/DashboardComponents";
 
 export default function PricingPage() {
   const [pageData, setPageData] = useState<any>(null);
@@ -36,7 +37,7 @@ export default function PricingPage() {
     return () => window.removeEventListener("setles_db_update", handleUpdate);
   }, []);
 
-  const heroTitle = pageData?.heroTitle || "Premium hyper realistic AI fashion content for every brand size";
+  const heroTitle = pageData?.heroTitle || "Premium hyper realistic AI fashion content [for every brand size]";
   const heroText = pageData?.heroText || "From product launches to global campaigns, choose the level of content production your brand needs.";
   const heroImage = pageData?.heroImage || "/images/pricing-hero.jpeg";
 
@@ -46,7 +47,7 @@ export default function PricingPage() {
     <>
       <PageHero
         eyebrow="Pricing"
-        title={heroTitle}
+        title={parseHeroTitle(heroTitle)}
         text={heroText}
         image={heroImage}
         imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
