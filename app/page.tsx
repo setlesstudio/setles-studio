@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,21 +20,50 @@ import CTABand from "@/components/CTABand";
 import ImageSlot from "@/components/ImageSlot";
 import FreeSampleBanner from "@/components/FreeSampleBanner";
 import { process, services, site, valueProps } from "@/lib/data";
+import { getStoredPages, getStoredServices, getStoredValueProps } from "@/lib/dashboard-store";
 
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
 export default function HomePage() {
+  const [pageData, setPageData] = useState<any>(null);
+  const [localServices, setLocalServices] = useState<any[]>([]);
+  const [localValueProps, setLocalValueProps] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Set initial storage content
+    const pages = getStoredPages();
+    const home = pages.find((p) => p.pageId === "home");
+    if (home) setPageData(home);
+
+    setLocalServices(getStoredServices());
+    setLocalValueProps(getStoredValueProps());
+
+    const handleUpdate = () => {
+      const updatedPages = getStoredPages();
+      const updatedHome = updatedPages.find((p) => p.pageId === "home");
+      if (updatedHome) setPageData(updatedHome);
+      setLocalServices(getStoredServices());
+      setLocalValueProps(getStoredValueProps());
+    };
+
+    window.addEventListener("setles_db_update", handleUpdate);
+    return () => window.removeEventListener("setles_db_update", handleUpdate);
+  }, []);
+
+  const heroTitle = pageData?.heroTitle || "Realistic AI Fashion Photography for Ecommerce Brands";
+  const heroText = pageData?.heroText || "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
+  const heroImage = pageData?.heroImage || "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg";
+
+  const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
+  const currentServices = localServices.length > 0 ? localServices : services;
+
   return (
     <>
       <PageHero
         eyebrow="Realistic AI Fashion Content Studio"
-        title={
-          <>
-            Realistic <span className="text-brand">AI Fashion</span> Photography <br/>for Ecommerce Brands
-          </>
-        }
-        text="Create studio, lifestyle, and editorial content for your brand in days instead of weeks"
-        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg"
+        title={heroTitle}
+        text={heroText}
+        image={heroImage}
         imageAlt="Fashion model on luxury stairs"
         animateReveal
       >
@@ -80,7 +112,6 @@ export default function HomePage() {
               </span>
               <Image
                 src="/images/after-window.webp"
-                // src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg"
                 alt="Model wearing the navy activewear set walking outdoors"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
@@ -94,7 +125,6 @@ export default function HomePage() {
                 After
               </span>
               <Image
-                // src="https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg"
                 src="/images/after-walk.webp"
                 alt="Model wearing the navy activewear set reading by a window"
                 fill
@@ -112,7 +142,7 @@ export default function HomePage() {
 
       <section className="container-site py-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {valueProps.map((v, i) => {
+          {currentValueProps.map((v, i) => {
             const Icon = fastIcons[i % fastIcons.length];
             return (
               <Reveal key={v.title} delay={i * 0.08}>
@@ -139,7 +169,7 @@ export default function HomePage() {
             text="From ecommerce product imagery to full scale marketing campaigns, we create high quality visual content that helps fashion brands launch faster, sell more, and stay consistent across every channel."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {services.map((s, i) => (
+            {currentServices.map((s, i) => (
               <Reveal key={s.id} delay={(i % 2) * 0.08}>
                 <Link
                   href={`/services/${s.id}`}

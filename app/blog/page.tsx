@@ -1,69 +1,61 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { type SanityDocument } from "next-sanity";
 import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import CTABand from "@/components/CTABand";
-import { client, urlFor } from "@/sanity/client";
 import { site } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Insights on AI fashion content, ecommerce visual strategy, and the production techniques behind realistic brand imagery.",
-};
-
-const POSTS_QUERY = `{
-  "featured": *[_type == "blogSettings"][0].featuredPost-> {
-    _id, title, "slug": slug.current, excerpt, publishedAt, category, readTime, image
-  },
-  "posts": *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
-    _id, title, "slug": slug.current, excerpt, publishedAt, category, readTime, image
-  }
-}`;
+import { getStoredBlogs, BlogPost, getStoredPages } from "@/lib/dashboard-store";
 
 function formatDate(d: string) {
-  return new Date(d).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  try {
+    return new Date(d).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } catch (e) {
+    return d;
+  }
 }
 
-export default async function BlogPage() {
-  const { featured: pinnedPost, posts } = await client.fetch<{
-    featured: SanityDocument | null;
-    posts: SanityDocument[];
-  }>(POSTS_QUERY, {}, { next: { revalidate: 60 } });
+export default function BlogPage() {
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [pageData, setPageData] = useState<any>(null);
 
-  // Use pinned featured post, or fall back to the most recent
-  const featured = pinnedPost ?? posts[0] ?? null;
-  const rest = featured ? posts.filter((p) => p._id !== featured._id) : posts.slice(1);
+  useEffect(() => {
+    setBlogs(getStoredBlogs().filter((b) => b.status === "Published"));
+    const pages = getStoredPages();
+    const blogPage = pages.find((p) => p.pageId === "blog") || pages.find((p) => p.pageId === "home");
+    if (blogPage) setPageData(blogPage);
+  }, []);
+
+  // Use the first blog as featured, or fall back to null
+  const featured = blogs[0] || null;
+  const rest = blogs.slice(1);
+
+  const heroTitle = pageData?.heroTitle || "Insights on AI fashion content and ecommerce strategy";
+  const heroText = pageData?.heroText || "Production techniques, industry breakdowns, and the thinking behind content that converts.";
+  const heroImage = pageData?.heroImage || "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg";
 
   return (
     <>
       <PageHero
         eyebrow="Blog"
-        title={
-          <>
-            Insights on <span className="text-brand">AI fashion content</span>{" "}
-            and ecommerce strategy
-          </>
-        }
-        text="Production techniques, industry breakdowns, and the thinking behind content that converts."
-        image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg"
-        // image="/images/blog-page-banner-picture.jpeg"
+        title={heroTitle}
+        text={heroText}
+        image={heroImage}
         imageMobile="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg"
-        // imageMobile="/images/blog-page-banner-picture-mobile.jpeg"
         imageAlt="outdoor-model-image"
         animateReveal
       />
 
       <section className="container-site py-24">
         {/* Featured */}
-        {featured && (
+        {featured ? (
           <Reveal>
             <Link
               href={`/blog/${featured.slug}`}
@@ -71,12 +63,10 @@ export default async function BlogPage() {
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5 lg:aspect-auto lg:min-h-[420px]">
                 {featured.image ? (
-                  <Image
-                    src={urlFor(featured.image).width(800).height(560).url()}
+                  <img
+                    src={featured.image}
                     alt={featured.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
                   <div className="flex h-full min-h-[280px] items-center justify-center text-sm text-ink/30">
@@ -93,7 +83,7 @@ export default async function BlogPage() {
                 <h2 className="mt-4 font-display text-2xl font-semibold leading-snug group-hover:text-brand sm:text-3xl">
                   {featured.title}
                 </h2>
-                <p className="mt-4 leading-relaxed text-ink-soft">
+                <p className="mt-4 leading-relaxed text-ink-soft text-sm sm:text-base">
                   {featured.excerpt}
                 </p>
                 <p className="mt-6 text-sm text-ink-soft/70">
@@ -109,25 +99,27 @@ export default async function BlogPage() {
               </div>
             </Link>
           </Reveal>
+        ) : (
+          <div className="text-center py-10 bg-cream/30 rounded-3xl border border-ink/[0.05]">
+            <p className="text-ink-soft font-bold">No published blogs found.</p>
+          </div>
         )}
 
         {/* Grid */}
         {rest.length > 0 && (
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {rest.map((post, i) => (
-              <Reveal key={post._id} delay={i * 0.08}>
+              <Reveal key={post.id} delay={i * 0.08}>
                 <Link
                   href={`/blog/${post.slug}`}
                   className="card group flex h-full flex-col overflow-hidden"
                 >
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-ink/5">
                     {post.image ? (
-                      <Image
-                        src={urlFor(post.image).width(600).height(338).url()}
+                      <img
+                        src={post.image}
                         alt={post.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center text-sm text-ink/30">

@@ -1,12 +1,14 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
-import { testimonials } from "@/lib/data";
+import { testimonials as defaultTestimonials } from "@/lib/data";
+import { getStoredTestimonials, TestimonialTile } from "@/lib/dashboard-store";
 
-type Testimonial = (typeof testimonials)[number];
-
-function TestimonialCard({ t }: { t: Testimonial }) {
+function TestimonialCard({ t }: { t: TestimonialTile }) {
   return (
-    <figure className="card w-[85vw] shrink-0 p-6 sm:w-[340px]">
+    <figure className="card w-[85vw] shrink-0 p-6 sm:w-[340px] text-left">
       <span className="font-display text-5xl leading-none text-brand">&ldquo;</span>
       <blockquote className="mt-1 text-[15px] leading-relaxed text-ink-soft">
         {t.quote}
@@ -15,15 +17,15 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         <div className="flex items-center gap-3">
           {t.image ? (
             <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
-              <Image src={t.image} alt={t.name} fill sizes="36px" className="object-cover" />
+              <img src={t.image} alt={t.name} className="h-9 w-9 object-cover rounded-full" />
             </div>
           ) : (
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand text-xs">
               {t.name.charAt(0)}
             </span>
           )}
           <div>
-            <p className="text-sm font-bold">{t.name}</p>
+            <p className="text-sm font-bold text-ink">{t.name}</p>
             <p className="text-xs text-ink-soft/70">{t.role}</p>
           </div>
         </div>
@@ -38,8 +40,21 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 }
 
 export default function Testimonials() {
-  const row1 = [...testimonials, ...testimonials];
-  const row2 = [...[...testimonials].reverse(), ...[...testimonials].reverse()];
+  const [list, setList] = useState<TestimonialTile[]>([]);
+
+  useEffect(() => {
+    setList(getStoredTestimonials());
+
+    const handleUpdate = () => {
+      setList(getStoredTestimonials());
+    };
+    window.addEventListener("setles_db_update", handleUpdate);
+    return () => window.removeEventListener("setles_db_update", handleUpdate);
+  }, []);
+
+  const items = list.length > 0 ? list : defaultTestimonials;
+  const row1 = [...items, ...items];
+  const row2 = [...[...items].reverse(), ...[...items].reverse()];
 
   return (
     <div className="space-y-4">

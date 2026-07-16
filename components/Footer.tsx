@@ -142,7 +142,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
           <p>© {new Date().getFullYear()} SetlesStudio. All rights reserved.</p>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5">
             <Link href="/privacy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
@@ -151,6 +151,9 @@ export default function Footer() {
             </Link>
             <Link href="/terms#refund" className="transition-colors hover:text-white">
               Refund Policy
+            </Link>
+            <Link href="/login" className="transition-colors hover:text-white font-medium text-brand">
+              Admin Login
             </Link>
           </div>
           <p>Top Rated Plus on Upwork · 4+ years of industry experience</p>

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const display = DM_Sans({
   subsets: ["latin"],
@@ -44,17 +42,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
       </head>
       <body className="font-sans">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

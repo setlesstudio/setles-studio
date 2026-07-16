@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Check, ArrowRight, CircleDollarSign, Clock, Infinity, Layers } from "lucide-react";
@@ -10,27 +12,43 @@ import Reveal from "@/components/Reveal";
 import FAQ from "@/components/FAQ";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
-import { pricingTiers, site, valueProps, faqs } from "@/lib/data";
-
-export const metadata: Metadata = {
-  title: "Pricing",
-  description:
-    "Simple, transparent, flexible pricing. Starter $299, Growth $799, Premium $1,999+. Premium hyper realistic AI fashion content for every brand size.",
-};
+import { pricingTiers as defaultTiers, site, valueProps, faqs } from "@/lib/data";
+import { getStoredPages, getStoredPricing, PricingTile } from "@/lib/dashboard-store";
 
 export default function PricingPage() {
+  const [pageData, setPageData] = useState<any>(null);
+  const [tiers, setTiers] = useState<PricingTile[]>([]);
+
+  useEffect(() => {
+    const pages = getStoredPages();
+    const pricing = pages.find((p) => p.pageId === "pricing");
+    if (pricing) setPageData(pricing);
+
+    setTiers(getStoredPricing());
+
+    const handleUpdate = () => {
+      const updatedPages = getStoredPages();
+      const updatedPricing = updatedPages.find((p) => p.pageId === "pricing");
+      if (updatedPricing) setPageData(updatedPricing);
+      setTiers(getStoredPricing());
+    };
+    window.addEventListener("setles_db_update", handleUpdate);
+    return () => window.removeEventListener("setles_db_update", handleUpdate);
+  }, []);
+
+  const heroTitle = pageData?.heroTitle || "Premium hyper realistic AI fashion content for every brand size";
+  const heroText = pageData?.heroText || "From product launches to global campaigns, choose the level of content production your brand needs.";
+  const heroImage = pageData?.heroImage || "/images/pricing-hero.jpeg";
+
+  const currentTiers = tiers.length > 0 ? tiers : defaultTiers;
+
   return (
     <>
       <PageHero
         eyebrow="Pricing"
-        title={
-          <>
-            Premium hyper realistic AI fashion content{" "}
-            <span className="text-brand">for every brand size</span>
-          </>
-        }
-        text="From product launches to global campaigns, choose the level of content production your brand needs."
-        image="/images/pricing-hero.jpeg"
+        title={heroTitle}
+        text={heroText}
+        image={heroImage}
         imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
         animateReveal
       >
@@ -57,7 +75,7 @@ export default function PricingPage() {
         <div className="container-site">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-brand">
             {valueProps.map((v, i) => {
-              const Icon = valueIcons[i];
+              const Icon = valueIcons[i % valueIcons.length];
               return (
                 <div key={v.title} className="flex items-center gap-4 px-6 py-8">
                   <Icon size={40} strokeWidth={1.5} className="shrink-0 text-brand" />
@@ -141,7 +159,7 @@ export default function PricingPage() {
           title="Simple. Transparent. Flexible."
         />
         <div className="mt-8 grid items-start gap-5 lg:grid-cols-3">
-          {pricingTiers.map((t, i) => (
+          {currentTiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
               <div
                 className={`relative flex h-full flex-col rounded-4xl p-6 ${
@@ -197,7 +215,7 @@ export default function PricingPage() {
                   href={t.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${t.featured ? "btn-primary" : "btn-dark"} mt-6 w-full`}
+                  className={`${t.featured ? "btn-primary" : "btn-dark"} mt-6 w-full text-center py-3.5 rounded-full text-xs font-bold uppercase tracking-wider`}
                 >
                   {t.cta}
                 </a>
