@@ -38,7 +38,7 @@ export default function LoginPage() {
 
     // Simulate login delay
     setTimeout(() => {
-      if (email === "admin@setlesstudio.com" && password === "admin123") {
+      if (email === "admin@setlesstudio.com" && password === "admin@&1122") {
         setLoginStatus(true);
         router.push("/dashboard");
       } else {
