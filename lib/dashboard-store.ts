@@ -1,6 +1,7 @@
 "use client";
 
 import { services, pricingTiers, valueProps, testimonials, site } from "./data";
+import { hashPassword, generateSalt } from "./crypto";
 
 export interface BlogPost {
   id: string;
@@ -349,4 +350,41 @@ export function setLoginStatus(status: boolean) {
   } else {
     localStorage.removeItem("setles_logged_in");
   }
+}
+
+const DEFAULT_SALT = "8f9a2e3b1c4d5e6f7a8b9c0d1e2f3a4b";
+const DEFAULT_HASH = "bf63cf06b289ad5ce36596f7e949db1624c69b9a04a3919bd8b90370ec8fe5dc";
+
+export function getStoredCredentials(): { salt: string; hash: string } {
+  if (!isClient()) return { salt: DEFAULT_SALT, hash: DEFAULT_HASH };
+  
+  let salt = localStorage.getItem("setles_admin_salt");
+  let hash = localStorage.getItem("setles_admin_hash");
+  
+  if (!salt || !hash) {
+    localStorage.setItem("setles_admin_salt", DEFAULT_SALT);
+    localStorage.setItem("setles_admin_hash", DEFAULT_HASH);
+    return { salt: DEFAULT_SALT, hash: DEFAULT_HASH };
+  }
+  
+  return { salt, hash };
+}
+
+export function saveStoredCredentials(hash: string, salt: string) {
+  if (!isClient()) return;
+  localStorage.setItem("setles_admin_salt", salt);
+  localStorage.setItem("setles_admin_hash", hash);
+}
+
+export async function verifyCredentials(email: string, entered: string): Promise<boolean> {
+  if (email !== "admin@setlesstudio.com") return false;
+  const { salt, hash } = getStoredCredentials();
+  const computedHash = await hashPassword(entered, salt);
+  return computedHash === hash;
+}
+
+export async function updateStoredPassword(enteredNew: string) {
+  const newSalt = generateSalt();
+  const newHash = await hashPassword(enteredNew, newSalt);
+  saveStoredCredentials(newHash, newSalt);
 }

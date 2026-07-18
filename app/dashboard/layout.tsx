@@ -63,6 +63,12 @@ export default function DashboardLayout({
       icon: Grid,
       active: pathname?.startsWith("/dashboard/pages"),
     },
+    {
+      label: "Settings",
+      href: "/dashboard/settings",
+      icon: Settings,
+      active: pathname === "/dashboard/settings",
+    },
   ];
 
   if (!authorized) {

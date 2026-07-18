@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, Lock, Mail, Loader2, Sparkles } from "lucide-react";
 import Logo from "@/components/Logo";
-import { setLoginStatus, checkIsLoggedIn } from "@/lib/dashboard-store";
+import { setLoginStatus, checkIsLoggedIn, verifyCredentials } from "@/lib/dashboard-store";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function LoginPage() {
     }
   }, [router]);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
@@ -36,16 +36,21 @@ export default function LoginPage() {
 
     setLoading(true);
 
-    // Simulate login delay
-    setTimeout(() => {
-      if (email === "admin@setlesstudio.com" && password === "admin@&1122") {
-        setLoginStatus(true);
-        router.push("/dashboard");
-      } else {
-        setLoading(false);
-        setError("Invalid email or password. Access denied.");
-      }
-    }, 900);
+    try {
+      const isValid = await verifyCredentials(email, password);
+      setTimeout(() => {
+        if (isValid) {
+          setLoginStatus(true);
+          router.push("/dashboard");
+        } else {
+          setLoading(false);
+          setError("Invalid email or password. Access denied.");
+        }
+      }, 700);
+    } catch (err) {
+      setLoading(false);
+      setError("Authentication system error. Please try again.");
+    }
   };
 
   return (
