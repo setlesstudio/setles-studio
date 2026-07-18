@@ -152,9 +152,6 @@ export default function Footer() {
             <Link href="/terms#refund" className="transition-colors hover:text-white">
               Refund Policy
             </Link>
-            <Link href="/login" className="transition-colors hover:text-white font-medium text-brand">
-              Admin Login
-            </Link>
           </div>
           <p>Top Rated Plus on Upwork · 4+ years of industry experience</p>
         </div>

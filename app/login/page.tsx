@@ -9,8 +9,8 @@ import { setLoginStatus, checkIsLoggedIn } from "@/lib/dashboard-store";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("admin@setlesstudio.com");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -38,8 +38,13 @@ export default function LoginPage() {
 
     // Simulate login delay
     setTimeout(() => {
-      setLoginStatus(true);
-      router.push("/dashboard");
+      if (email === "admin@setlesstudio.com" && password === "admin123") {
+        setLoginStatus(true);
+        router.push("/dashboard");
+      } else {
+        setLoading(false);
+        setError("Invalid email or password. Access denied.");
+      }
     }, 900);
   };
 
@@ -134,12 +139,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Quick instructions */}
-          <div className="mt-3 pt-3 border-t border-ink/[0.06] text-center">
-            <p className="text-xs text-ink-soft mt-2.5 leading-relaxed">
-              Any credentials will work for preview. Press the button above to login.
-            </p>
-          </div>
+
         </div>
 
         {/* Footer */}
