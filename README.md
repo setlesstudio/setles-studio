@@ -25,7 +25,7 @@ npm run build    # production build
 | `/blog` | Blog listing (featured + grid) |
 | `/blog/[slug]` | Single post (statically generated) |
 | `/contact` | Form with intent / package / service pre-fill via URL params |
-| `/login` | Admin login page (glassmorphic authentication layout) |
+| `/login` | Admin login page (glassmorphic authentication layout; hidden from public footers for security) |
 | `/dashboard` | Interactive visual CMS workspace for blogs, page contents, and SEO tags |
 
 ## Editing Content (Visual CMS Dashboard)
@@ -33,11 +33,11 @@ npm run build    # production build
 While the default fallback mock data resides in `lib/data.ts`, administrators can edit all site content visually using the built-in **CMS Admin Dashboard**!
 
 ### Accessing the CMS Dashboard:
-1. Navigate to the footer of the website and click the **Admin Login** link (or visit `/login` directly).
+1. Visit `/login` directly in your browser's address bar (this route is not linked on the public website to keep it hidden).
 2. Authenticate using the pre-seeded credentials:
    * **Email:** `admin@setlesstudio.com`
-   * **Password:** `admin123`
-   *(Any custom credentials will also bypass authentication for preview/demo mode).*
+   * **Password:** `admin@&1122`
+   *(Only these credentials or those customized in Settings are authorized).*
 3. You will be redirected to the control portal at `/dashboard`.
 
 ### Dashboard Functionality:
@@ -46,6 +46,7 @@ While the default fallback mock data resides in `lib/data.ts`, administrators ca
 * **Pages & Tiles Configurator**: Modify landing page headers and customize grid list components including **Value Propositions**, **Services Preview**, **Pricing Packages**, and **Client Testimonials**.
 * **Visual Live Previews**: Form inputs display side-by-side with a simulated visual layout mockup of the webpage, allowing you to preview formatting updates before saving.
 * **Google SERP Simulator**: Displays real-time search engine result previews for blogs and pages with visual progress bars indicating optimal Meta Title (40–60 chars) and Meta Description (120–160 chars) lengths.
+* **Security Settings Panel**: Update your login credentials dynamically. Password changes generate a unique cryptographic salt and compute a secure SHA-256 digest via native Web Crypto APIs before saving.
 
 ## Data Persistence & Hydration
 
