@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 
@@ -26,6 +27,9 @@ export const metadata: Metadata = {
     siteName: "SetlesStudio",
     type: "website",
   },
+  verification: {
+    google: "AUEEMLzfMyYEr6U1XmCJCcIIAz9TqlmlAVtWV1NwNvU",
+  },
   icons: {
     icon: [
       { url: "/images/logo_favicon/favicon.ico",        type: "image/x-icon" },
@@ -49,6 +53,20 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
+        <meta name="google-site-verification" content="AUEEMLzfMyYEr6U1XmCJCcIIAz9TqlmlAVtWV1NwNvU" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9T4N04VXYS"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9T4N04VXYS');
+          `}
+        </Script>
       </head>
       <body className="font-sans">
         <LayoutWrapper>{children}</LayoutWrapper>
