@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { getStoredBlogs, saveBlogs, BlogPost } from "@/lib/dashboard-store";
 import { CharacterCounterInput } from "@/components/DashboardComponents";
+import { parseMarkdownToHtml } from "@/lib/markdown";
 
 export default function BlogEditorPage() {
   const router = useRouter();
@@ -355,24 +356,11 @@ export default function BlogEditorPage() {
 
               <article className="prose prose-sm sm:prose-base max-w-none pt-4 text-ink-soft leading-relaxed space-y-4">
                 {body ? (
-                  body.split("\n\n").map((para, i) => {
-                    if (para.startsWith("### ")) {
-                      return <h3 key={i} className="font-display font-semibold text-lg text-ink mt-6 mb-2">{para.replace("### ", "")}</h3>;
-                    }
-                    if (para.startsWith("## ")) {
-                      return <h2 key={i} className="font-display font-semibold text-xl text-ink mt-8 mb-3">{para.replace("## ", "")}</h2>;
-                    }
-                    if (para.startsWith("1. ") || para.startsWith("- ")) {
-                      return (
-                        <ul key={i} className="list-disc pl-5 space-y-1 my-2">
-                          {para.split("\n").map((li, idx) => (
-                            <li key={idx}>{li.replace(/^[0-9.-]\s*/, "")}</li>
-                          ))}
-                        </ul>
-                      );
-                    }
-                    return <p key={i}>{para}</p>;
-                  })
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: parseMarkdownToHtml(body),
+                    }}
+                  />
                 ) : (
                   <p className="italic text-ink-soft/40">Article body is empty. Compose some content to preview.</p>
                 )}

@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import CTABand from "@/components/CTABand";
 import { site } from "@/lib/data";
 import { getStoredBlogs, BlogPost } from "@/lib/dashboard-store";
+import { parseMarkdownToHtml } from "@/lib/markdown";
 
 function formatDate(d: string) {
   try {
@@ -32,7 +33,12 @@ export default function BlogPostPage({
   useEffect(() => {
     if (slug) {
       const blogs = getStoredBlogs().filter((b) => b.status === "Published");
-      const current = blogs.find((b) => b.slug === slug);
+      const cleanSlug = decodeURIComponent(slug).toLowerCase().trim();
+      const current = blogs.find(
+        (b) =>
+          b.slug?.toLowerCase().trim() === cleanSlug ||
+          b.id?.toLowerCase().trim() === cleanSlug
+      );
       if (current) {
         setPost(current);
         const index = blogs.indexOf(current);
@@ -108,24 +114,11 @@ export default function BlogPostPage({
         <div className="container-site mt-14 max-w-5xl pb-24">
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl leading-relaxed space-y-4">
             {post.body ? (
-              post.body.split("\n\n").map((para, i) => {
-                if (para.startsWith("### ")) {
-                  return <h3 key={i} className="font-display font-semibold text-xl text-ink mt-8 mb-3">{para.replace("### ", "")}</h3>;
-                }
-                if (para.startsWith("## ")) {
-                  return <h2 key={i} className="font-display font-semibold text-2xl text-ink mt-10 mb-4">{para.replace("## ", "")}</h2>;
-                }
-                if (para.startsWith("1. ") || para.startsWith("- ")) {
-                  return (
-                    <ul key={i} className="list-disc pl-6 space-y-1.5 my-3 text-ink-soft">
-                      {para.split("\n").map((li, idx) => (
-                        <li key={idx}>{li.replace(/^[0-9.-]\s*/, "")}</li>
-                      ))}
-                    </ul>
-                  );
-                }
-                return <p key={i}>{para}</p>;
-              })
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: parseMarkdownToHtml(post.body),
+                }}
+              />
             ) : (
               <p className="italic text-ink-soft/40">This article has no content.</p>
             )}
