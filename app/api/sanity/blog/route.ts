@@ -1,17 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeClient } from "@/sanity/client";
+import { writeClient, client } from "@/sanity/client";
+
+// GET — fetch all blogs from Sanity for dashboard
+export async function GET() {
+  try {
+    const blogs = await client.fetch(
+      `*[_type == "blog"] | order(publishedAt desc) {
+        _id, title, slug, excerpt, category, readTime, publishedAt, image, metaTitle, metaDescription, status
+      }`
+    );
+    return NextResponse.json(blogs);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
+}
 
 // POST — create or update a blog document in Sanity
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { id, title, slug, excerpt, category, readTime, publishedAt, image, bodyContent, metaTitle, metaDescription, status } = body;
+    const { title, slug, excerpt, category, readTime, publishedAt, image, bodyContent, metaTitle, metaDescription, status } = body;
 
     if (!title || !slug) {
       return NextResponse.json({ error: "title and slug are required" }, { status: 400 });
     }
 
-    // Use a deterministic Sanity document ID based on the slug
     const docId = `blog-${slug.replace(/[^a-z0-9]/gi, "-")}`;
 
     const doc = {
@@ -30,7 +43,6 @@ export async function POST(req: NextRequest) {
       status: status || "Published",
     };
 
-    // createOrReplace upserts the document
     const result = await writeClient.createOrReplace(doc);
     return NextResponse.json({ success: true, id: result._id });
   } catch (err: any) {
@@ -39,15 +51,25 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// DELETE — remove a blog document from Sanity by slug
+// DELETE — find blog by slug then delete by actual _id
 export async function DELETE(req: NextRequest) {
   try {
     const { slug } = await req.json();
     if (!slug) {
       return NextResponse.json({ error: "slug is required" }, { status: 400 });
     }
+
+    // First try deterministic ID
     const docId = `blog-${slug.replace(/[^a-z0-9]/gi, "-")}`;
-    await writeClient.delete(docId);
+
+    // Also query Sanity to find the actual _id by slug
+    const found = await client.fetch(
+      `*[_type == "blog" && slug.current == $slug][0]{ _id }`,
+      { slug }
+    );
+
+    const idToDelete = found?._id || docId;
+    await writeClient.delete(idToDelete);
     return NextResponse.json({ success: true });
   } catch (err: any) {
     console.error("Sanity delete error:", err);
