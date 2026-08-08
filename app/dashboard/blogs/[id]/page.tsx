@@ -14,7 +14,6 @@ import {
   HelpCircle,
   FileText
 } from "lucide-react";
-import { getStoredBlogs, saveBlogs, BlogPost } from "@/lib/dashboard-store";
 import { CharacterCounterInput } from "@/components/DashboardComponents";
 import { parseMarkdownToHtml } from "@/lib/markdown";
 
@@ -36,28 +35,42 @@ export default function BlogEditorPage() {
   const [metaDescription, setMetaDescription] = useState("");
   const [status, setStatus] = useState<"Draft" | "Published">("Published");
 
+  const [publishedAt, setPublishedAt] = useState("");
   const [savedAlert, setSavedAlert] = useState(false);
   const [previewTab, setPreviewTab] = useState<"editor" | "preview">("editor");
+  const [loading, setLoading] = useState(!isNew);
 
-  // Load existing blog if editing
+  // Load existing blog from Sanity
   useEffect(() => {
     if (!isNew) {
-      const blogs = getStoredBlogs();
-      const existing = blogs.find((b) => b.id === id);
-      if (existing) {
-        setTitle(existing.title);
-        setSlug(existing.slug);
-        setCategory(existing.category);
-        setReadTime(existing.readTime);
-        setExcerpt(existing.excerpt);
-        setImage(existing.image || "");
-        setBody(existing.body || "");
-        setMetaTitle(existing.metaTitle || "");
-        setMetaDescription(existing.metaDescription || "");
-        setStatus(existing.status);
-      } else {
-        router.push("/dashboard/blogs");
-      }
+      fetch("/api/sanity/blog")
+        .then((r) => r.json())
+        .then((blogs) => {
+          const existing = blogs.find(
+            (b: any) =>
+              (typeof b.slug === "string" ? b.slug : b.slug?.current) === id
+          );
+          if (existing) {
+            setTitle(existing.title || "");
+            setSlug(typeof existing.slug === "string" ? existing.slug : existing.slug?.current || "");
+            setCategory(existing.category || "AI Fashion");
+            setReadTime(existing.readTime || "5 min read");
+            setExcerpt(existing.excerpt || "");
+            setImage(existing.image || "");
+            setBody(existing.body || "");
+            setMetaTitle(existing.metaTitle || "");
+            setMetaDescription(existing.metaDescription || "");
+            setStatus(existing.status || "Published");
+            setPublishedAt(existing.publishedAt || "");
+          } else {
+            router.push("/dashboard/blogs");
+          }
+          setLoading(false);
+        })
+        .catch(() => {
+          setLoading(false);
+          router.push("/dashboard/blogs");
+        });
     }
   }, [id, isNew, router]);
 
@@ -84,62 +97,32 @@ export default function BlogEditorPage() {
       return;
     }
 
-    const blogs = getStoredBlogs();
-    const blogId = isNew ? slug || Date.now().toString() : id;
-    const publishedAt = isNew
-      ? new Date().toISOString()
-      : (blogs.find((b) => b.id === id)?.publishedAt || new Date().toISOString());
+    const finalPublishedAt = publishedAt || new Date().toISOString();
+    const finalImage = image || "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg";
 
-    const payload: BlogPost = {
-      id: blogId,
-      title,
-      slug,
-      category,
-      readTime,
-      excerpt,
-      image: image || "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg",
-      body,
-      metaTitle: metaTitle || title,
-      metaDescription: metaDescription || excerpt,
-      status,
-      publishedAt,
-    };
-
-    if (isNew && blogs.some((b) => b.id === blogId)) {
-      alert("An article with this slug/ID already exists. Please choose a unique title.");
-      return;
-    }
-
-    // 1. Save to localStorage (dashboard list)
-    const updatedList = isNew
-      ? [payload, ...blogs]
-      : blogs.map((b) => (b.id === id ? payload : b));
-    saveBlogs(updatedList);
-
-    // 2. Save to Sanity (public website + SEO)
+    // Save to Sanity only
     try {
       const res = await fetch("/api/sanity/blog", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id: blogId,
           title,
           slug,
           excerpt,
           category,
           readTime,
-          publishedAt,
-          image: payload.image,
+          publishedAt: finalPublishedAt,
+          image: finalImage,
           bodyContent: body,
-          metaTitle: payload.metaTitle,
-          metaDescription: payload.metaDescription,
+          metaTitle: metaTitle || title,
+          metaDescription: metaDescription || excerpt,
           status,
         }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Sanity save failed");
     } catch (err: any) {
-      alert(`Warning: Blog saved locally but failed to sync to Sanity: ${err.message}`);
+      alert(`Failed to save: ${err.message}`);
       return;
     }
 
@@ -148,13 +131,6 @@ export default function BlogEditorPage() {
       setSavedAlert(false);
       router.push("/dashboard/blogs");
     }, 800);
-  };
-
-  // SEO Helpers
-  const getSEOIndicatorColor = (length: number, min: number, max: number) => {
-    if (length === 0) return "bg-ink/10";
-    if (length >= min && length <= max) return "bg-emerald-500";
-    return "bg-amber-500";
   };
 
   const getSEOAdvice = () => {
@@ -170,6 +146,14 @@ export default function BlogEditorPage() {
   };
 
   const adviceList = getSEOAdvice();
+
+  if (loading) {
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-brand border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">

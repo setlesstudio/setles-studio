@@ -15,6 +15,7 @@ const otherLinks = [
   { href: "/learn",     label: "Learn" },
   { href: "/about",     label: "About" },
   { href: "/blog",      label: "Blog" },
+  { href: "/contact",   label: "Contact Us" },
 ];
 
 const validServiceSlugs = [

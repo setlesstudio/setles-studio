@@ -159,24 +159,28 @@ export const valueProps = [
 
 export type TrustedBrand = { name: string; logo: string };
 
-export const trustedBy: TrustedBrand[] = [
-  { name: "Ralph Lauren",       logo: "/images/logos/Ralph-lauren-logo.png" },
-  { name: "Boohoo",             logo: "/images/logos/boohoo-png.webp" },
-  { name: "Columbia",           logo: "/images/logos/columbia-sportswear-company-logo.png" },
-  { name: "Diesel",             logo: "/images/logos/diesel-logo.png" },
+export const trustedByRow1: TrustedBrand[] = [
+  { name: "Mersino",            logo: "/images/logos/mersino.png" },
+  { name: "Greatly",            logo: "/images/logos/greatly.png" },
+  { name: "Xanderlocket",       logo: "/images/logos/xanderlocket.png" },
   { name: "HardTail",           logo: "/images/logos/HardTail.avif" },
   { name: "Swim Zip",           logo: "/images/logos/Swim-zip-logo.png" },
+  { name: "Peachi",             logo: "/images/logos/peachi.png" },
+  { name: "Knct",               logo: "/images/logos/knct.png" },
+];
+
+export const trustedByRow2: TrustedBrand[] = [
+  { name: "Loungees",           logo: "/images/logos/loungees.png" },
   { name: "SALTY.",             logo: "/images/logos/salty..webp" },
   { name: "BASICBEIGE",         logo: "/images/logos/basicbeige-png.webp" },
-  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR-logo.png" },
-  { name: "Marni",              logo: "/images/logos/marni-logo.png" },
-  { name: "Mulberry",           logo: "/images/logos/Mulberry-png.png" },
-  { name: "Nanushka",           logo: "/images/logos/nanushka-logo.png" },
-  { name: "Paco Rabanne",       logo: "/images/logos/paco-rabanne-logo-png.png" },
   { name: "Wonder",             logo: "/images/logos/Logo-wonder.png" },
   { name: "Winter Green",       logo: "/images/logos/winter-green-png.png" },
   { name: "BH",                 logo: "/images/logos/BH-logo.png" },
+  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR-logo.png" },
 ];
+
+/** @deprecated use trustedByRow1 / trustedByRow2 */
+export const trustedBy: TrustedBrand[] = [...trustedByRow1, ...trustedByRow2];
 
 export const process = [
   {

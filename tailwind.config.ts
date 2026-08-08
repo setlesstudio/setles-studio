@@ -47,8 +47,8 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: "marquee 28s linear infinite",
-        "marquee-reverse": "marquee-reverse 32s linear infinite",
+        marquee: "marquee 60s linear infinite",
+        "marquee-reverse": "marquee-reverse 70s linear infinite",
         float: "float 4s ease-in-out infinite",
         "float-reverse": "float-reverse 4s ease-in-out infinite",
       },

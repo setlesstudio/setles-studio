@@ -12,9 +12,13 @@ export default function PageHero({
   video,
   fullHeight = true,
   animateReveal = false,
+  containerClassName = "",
+  isContactPage = false,
 }: {
   eyebrow: string;
   title: React.ReactNode;
+  titleClassName?: string;
+  textClassName?: string;
   text?: string;
   children?: React.ReactNode;
   image?: string;
@@ -23,6 +27,8 @@ export default function PageHero({
   video?: string;
   fullHeight?: boolean;
   animateReveal?: boolean;
+  containerClassName?: string;
+  isContactPage?: boolean;
 }) {
   const overlays = (
     <>
@@ -89,16 +95,26 @@ export default function PageHero({
       />
       <div className="container-site relative">
         <Reveal delay={animateReveal ? 0.7 : 0}>
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
-            {title}
-          </h1>
-          {text && (
-            <p className="mt-5 max-w-2xl text-sm sm:text-lg leading-relaxed text-white/65">
-              {text}
-            </p>
-          )}
-          {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
+          <div
+            className={isContactPage ? "" : ""}
+            style={isContactPage ? {
+              marginTop: '-20px !important',
+              position: 'relative',
+              top: '-180px',
+              left: '-40px'
+            } : {}}
+          >
+            <p className="eyebrow">{eyebrow}</p>
+            <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
+              {title}
+            </h1>
+            {text && (
+              <p className="mt-5 max-w-2xl text-sm sm:text-lg leading-relaxed text-white/65">
+                {text}
+              </p>
+            )}
+            {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
+          </div>
         </Reveal>
       </div>
     </section>
