@@ -65,3 +65,4 @@ Any slot with an empty `""` path renders a **labelled placeholder** on the page,
 - Brand tokens (orange `#F26A1B`, ink, cream, gold) are in `tailwind.config.ts`.
 - Fonts: DM Sans (display) + Manrope (body) via `next/font/google`.
 - SEO optimization: Dynamic routes compile cleanly to static assets (`public/robots.txt` and `public/sitemap.xml`) to eliminate build-time timeouts.
+ 
