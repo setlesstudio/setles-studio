@@ -13,12 +13,9 @@ export default function PageHero({
   fullHeight = true,
   animateReveal = false,
   containerClassName = "",
-  isContactPage = false,
 }: {
   eyebrow: string;
   title: React.ReactNode;
-  titleClassName?: string;
-  textClassName?: string;
   text?: string;
   children?: React.ReactNode;
   image?: string;
@@ -29,6 +26,8 @@ export default function PageHero({
   animateReveal?: boolean;
   containerClassName?: string;
   isContactPage?: boolean;
+  titleClassName?: string;
+  textClassName?: string;
 }) {
   const overlays = (
     <>
@@ -95,15 +94,7 @@ export default function PageHero({
       />
       <div className="container-site relative">
         <Reveal delay={animateReveal ? 0.7 : 0}>
-          <div
-            className={isContactPage ? "" : ""}
-            style={isContactPage ? {
-              marginTop: '-20px !important',
-              position: 'relative',
-              top: '-180px',
-              left: '-40px'
-            } : {}}
-          >
+          <div>
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
               {title}
