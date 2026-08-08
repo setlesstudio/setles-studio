@@ -261,21 +261,18 @@ export default function ContactPageClient() {
     <>
 
       <PageHero
-          eyebrow="Contact Us"
-          title={
-            <>
-              Send us one product.{" "}
-              <span className="text-brand">We&apos;ll shoot it free.</span>
-            </>
-          }
-          titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold"
-          text="One product image is all we need. You'll get it back on a model in 2 days — no cost."
-          textClassName="text-lg md:text-xl lg:text-2xl"
-          image="/images/project_image.jpeg"
-          imageMobile="/images/project_image.jpeg"
-          animateReveal
-          isContactPage={true}
-        />
+        eyebrow="Contact Us"
+        title={
+          <>
+            Send us one product.{" "}
+            <span className="text-brand">We&apos;ll shoot it free.</span>
+          </>
+        }
+        text="One product image is all we need. You'll get it back on a model in 2 days — no cost."
+        image="/images/project_image.jpeg"
+        imageMobile="/images/project_image.jpeg"
+        animateReveal
+      />
 
       {/* Form + Contact Info */}
       <section className="container-site grid gap-12 py-24 lg:grid-cols-[1fr_1.6fr]">
