@@ -61,6 +61,7 @@ export default function PageHero({
           fill
           priority
           sizes="100vw"
+          quality={100}
           loading="eager"
           fetchPriority="high"
           className="object-cover object-top md:hidden"
@@ -71,7 +72,8 @@ export default function PageHero({
         alt={imageAlt}
         fill
         priority
-        sizes="(min-width: 1440px) 1440px, 100vw"
+        sizes="(min-width: 1920px) 1920px, (min-width: 1440px) 1440px, 100vw"
+        quality={100}
         loading="eager"
         fetchPriority="high"
         className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}

@@ -223,7 +223,7 @@ const DEFAULT_PAGES: PageSEO[] = [
     metaDescription: "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
     heroTitle: "Realistic [AI Fashion] Photography \n for Ecommerce Brands",
     heroText: "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
-    heroImage: "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1782022576/luxury-stairs-wide_pj21rk.jpg",
+    heroImage: "/images/luxury-stairs-wide.jpeg",
   },
   {
     pageId: "about",

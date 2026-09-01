@@ -53,7 +53,7 @@ export default function HomePage() {
 
   const heroTitle = pageData?.heroTitle || "Realistic [AI Fashion] Photography \n for Ecommerce Brands";
   const heroText = pageData?.heroText || "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
-  const heroImage = pageData?.heroImage ||"/images/luxury-stairs-wide.jpg";
+  const heroImage = "/images/luxury-stairs-wide.jpeg";
 
   const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
   const currentServices = localServices.length > 0 ? localServices : services;
