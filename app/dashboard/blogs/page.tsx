@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Plus, Search, Filter, Edit2, Trash2, Sparkles, FileText } from "lucide-react";
+import { Plus, Search, Filter, Edit2, Trash2, Sparkles, FileText, AlertTriangle, X } from "lucide-react";
 import { DashboardHeader, SEOStatusBadge } from "@/components/DashboardComponents";
 
 interface BlogPost {
@@ -24,6 +24,8 @@ export default function BlogManagerPage() {
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [categories, setCategories] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [confirmBlog, setConfirmBlog] = useState<BlogPost | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const loadBlogs = async () => {
     setLoading(true);
@@ -46,9 +48,10 @@ export default function BlogManagerPage() {
   const getSlugString = (slug: any) =>
     typeof slug === "string" ? slug : slug?.current || "";
 
-  const handleDelete = async (blog: BlogPost) => {
-    if (!confirm("Are you sure you want to delete this blog post?")) return;
-    const slug = getSlugString(blog.slug);
+  const handleDelete = async () => {
+    if (!confirmBlog) return;
+    const slug = getSlugString(confirmBlog.slug);
+    setDeleting(true);
     try {
       const res = await fetch("/api/sanity/blog", {
         method: "DELETE",
@@ -57,9 +60,12 @@ export default function BlogManagerPage() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Delete failed");
-      setBlogs((prev) => prev.filter((b) => b._id !== blog._id));
+      setBlogs((prev) => prev.filter((b) => b._id !== confirmBlog._id));
     } catch (err: any) {
       alert(`Delete failed: ${err.message}`);
+    } finally {
+      setDeleting(false);
+      setConfirmBlog(null);
     }
   };
 
@@ -79,6 +85,40 @@ export default function BlogManagerPage() {
 
   return (
     <div className="space-y-6">
+      {/* Custom Delete Confirmation Modal */}
+      {confirmBlog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl border border-ink/[0.06] p-8 max-w-sm w-full mx-4 space-y-5">
+            <div className="flex items-start gap-4">
+              <div className="h-11 w-11 shrink-0 rounded-2xl bg-red-50 flex items-center justify-center">
+                <AlertTriangle size={20} className="text-red-500" />
+              </div>
+              <div>
+                <h3 className="font-display text-base font-bold text-ink">Delete Article?</h3>
+                <p className="text-xs text-ink-soft mt-1 leading-relaxed">
+                  <span className="font-semibold text-ink">&ldquo;{confirmBlog.title}&rdquo;</span> will be permanently deleted and cannot be recovered.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 pt-1">
+              <button
+                onClick={() => setConfirmBlog(null)}
+                className="flex-1 py-2.5 rounded-xl border border-ink/10 text-xs font-bold text-ink-soft hover:bg-cream/40 transition-all cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                className="flex-1 py-2.5 rounded-xl bg-red-500 hover:bg-red-600 text-white text-xs font-bold transition-all cursor-pointer disabled:opacity-60"
+              >
+                {deleting ? "Deleting..." : "Yes, Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <DashboardHeader
         title="Blog Manager"
         description="Write, modify, and optimize SEO tags for articles in SetlesStudio."
@@ -190,7 +230,7 @@ export default function BlogManagerPage() {
                             <Edit2 size={14} />
                           </Link>
                           <button
-                            onClick={() => handleDelete(blog)}
+                            onClick={() => setConfirmBlog(blog)}
                             className="p-2 hover:bg-red-50 rounded-xl text-ink-soft hover:text-red-600 border border-transparent hover:border-red-100 transition-all cursor-pointer"
                             title="Delete Article"
                           >
