@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const blogs = await client.fetch(
       `*[_type == "blog"] | order(publishedAt desc) {
-        _id, title, slug, excerpt, category, readTime, publishedAt, image, metaTitle, metaDescription, status
+        _id, title, slug, excerpt, category, readTime, publishedAt, image, body, metaTitle, metaDescription, status
       }`
     );
     return NextResponse.json(blogs);
@@ -62,8 +62,8 @@ export async function DELETE(req: NextRequest) {
     // First try deterministic ID
     const docId = `blog-${slug.replace(/[^a-z0-9]/gi, "-")}`;
 
-    // Also query Sanity to find the actual _id by slug
-    const found = await client.fetch(
+    // Use writeClient (authenticated) to reliably find the actual _id by slug
+    const found = await writeClient.fetch(
       `*[_type == "blog" && slug.current == $slug][0]{ _id }`,
       { slug }
     );
