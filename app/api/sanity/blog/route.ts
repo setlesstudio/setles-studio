@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeClient, client } from "@/sanity/client";
 
+export const dynamic = "force-dynamic";
+
 // GET — fetch all blogs from Sanity for dashboard
 export async function GET() {
   try {
