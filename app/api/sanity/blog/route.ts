@@ -4,7 +4,7 @@ import { writeClient, client } from "@/sanity/client";
 // GET — fetch all blogs from Sanity for dashboard
 export async function GET() {
   try {
-    const blogs = await client.fetch(
+    const blogs = await writeClient.fetch(
       `*[_type == "blog"] | order(publishedAt desc) {
         _id, title, slug, excerpt, category, readTime, publishedAt, image, body, metaTitle, metaDescription, status
       }`
