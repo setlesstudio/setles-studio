@@ -97,7 +97,7 @@ export default async function BlogPostPage({
         )}
 
         <div className="container-site mt-14 max-w-5xl pb-24">
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl leading-relaxed space-y-4">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl prose-img:mx-auto prose-img:max-h-[60vh] sm:prose-img:max-h-[75vh] prose-img:object-contain leading-relaxed space-y-4 [&_.flex:has(img)]:flex-col sm:[&_.flex:has(img)]:flex-row [&_.grid:has(img)]:grid-cols-1 sm:[&_.grid:has(img)]:grid-cols-2 [&_.flex:has(img)]:gap-6 [&_.grid:has(img)]:gap-6 [&_.flex_img]:w-full sm:[&_.flex_img]:w-auto [&_.flex_img]:h-auto [&_.grid_img]:w-full sm:[&_.grid_img]:w-auto [&_.grid_img]:h-auto">
             {post.body ? (
               <div
                 dangerouslySetInnerHTML={{

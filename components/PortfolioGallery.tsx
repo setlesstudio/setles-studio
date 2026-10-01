@@ -135,7 +135,9 @@ export default function PortfolioGallery() {
                   alt={item.alt}
                   label={item.alt}
                   className={`w-full ${item.tall ? "aspect-[3/4]" : "aspect-square"}`}
-                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  quality={60}
+                  priority={index < 4}
                 />
               </motion.div>
               <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">

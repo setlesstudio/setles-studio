@@ -15,6 +15,8 @@ export default function ImageSlot({
   imageClassName = "",
   sizes = "(min-width: 1024px) 50vw, 100vw",
   priority = false,
+  quality = 75,
+  loading,
 }: {
   src: string;
   alt: string;
@@ -23,6 +25,8 @@ export default function ImageSlot({
   imageClassName?: string;
   sizes?: string;
   priority?: boolean;
+  quality?: number;
+  loading?: "lazy" | "eager";
 }) {
   if (!src) {
     return (
@@ -48,6 +52,8 @@ export default function ImageSlot({
         fill
         sizes={sizes}
         priority={priority}
+        quality={quality}
+        loading={priority ? undefined : loading ?? "lazy"}
         className={`object-cover ${imageClassName}`}
       />
     </div>
