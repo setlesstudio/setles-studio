@@ -18,11 +18,11 @@ const sans = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
   title: {
-    default: "SetlesStudio | Premium Hyper Realistic AI Fashion Content for Ecommerce Brands",
+    default: "SetlesStudio | Hyper Realistic AI Fashion Photography",
     template: "%s | SetlesStudio",
   },
   description:
-    "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
+    "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
   alternates: {
     canonical: "./",
   },
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SetlesStudio | Premium Hyper Realistic AI Fashion Content for Ecommerce Brands",
+    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
     description:
-      "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
+      "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
     url: "https://www.setlesstudio.com",
     siteName: "SetlesStudio",
     images: [
       {
-        url: "/images/portfolio-page-banner.jpeg",
+        url: "https://www.setlesstudio.com/images/og-default.jpg",
         width: 1200,
         height: 630,
         alt: "SetlesStudio AI Fashion Photography",
@@ -56,12 +56,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SetlesStudio | Premium Hyper Realistic AI Fashion Content",
+    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
     description:
-      "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks.",
+      "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
-    images: ["/images/portfolio-page-banner.jpeg"],
+    images: ["https://www.setlesstudio.com/images/og-default.jpg"],
   },
   verification: {
     google: "AUEEMLzfMyYEr6U1XmCJCcIIAz9TqlmlAVtWV1NwNvU",
