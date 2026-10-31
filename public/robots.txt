@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /contact
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /api/
+
 Sitemap: https://www.setlesstudio.com/sitemap.xml
