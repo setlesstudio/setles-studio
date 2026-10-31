@@ -132,7 +132,7 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-  { value: "1100+", label: "Projects Completed" },
+  { value: "500+", label: "Projects Completed" },
   { value: "100+", label: "Happy Fashion Brands" },
   { value: "30+", label: "Countries Served" },
   { value: "98%", label: "Client Satisfaction" },
@@ -451,8 +451,8 @@ export const learnIncluded = [
 ];
 
 export const team = [
-  { name: "Team Member", role: "Creative Director & Fashion Designer", image: "/images/team-creative-director.jpg" },
-  { name: "Team Member", role: "Content Specialist & Fashion Designer", image: "/images/team-content-specialist.jpg" },
-  { name: "Team Member", role: "Client Success Manager", image: "/images/team-client-success.jpg" },
-  { name: "Team Member", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
+  { name: "Shahid", role: "Creative Director & Fashion Designer", image: "/images/team-creative-director.jpg" },
+  { name: "Anqia", role: "Content Specialist & Fashion Designer", image: "/images/team-content-specialist.jpg" },
+  { name: "Javed", role: "Client Success Manager", image: "/images/team-client-success.jpg" },
+  { name: "Azeem", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
 ]
