@@ -8,9 +8,37 @@ import CTABand from "@/components/CTABand";
 import { services, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "AI Fashion Content Services | SetlesStudio",
   description:
     "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+  alternates: {
+    canonical: "https://www.setlesstudio.com/services",
+  },
+  openGraph: {
+    title: "AI Fashion Content Services | SetlesStudio",
+    description:
+      "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+    url: "https://www.setlesstudio.com/services",
+    siteName: "SetlesStudio",
+    images: [
+      {
+        url: "https://www.setlesstudio.com/images/studio-service-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "SetlesStudio AI Fashion Content Services",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Fashion Content Services | SetlesStudio",
+    description:
+      "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+    site: "@SetlesStudio",
+    creator: "@SetlesStudio",
+    images: ["https://www.setlesstudio.com/images/studio-service-banner.png"],
+  },
 };
 
 export default function ServicesPage() {

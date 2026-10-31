@@ -21,13 +21,41 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const post = await getBlogBySlug(params.slug);
   if (!post) return {};
+
+  const canonicalUrl = `https://www.setlesstudio.com/blog/${params.slug}`;
+  const blogImage = post.image || "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg";
+  const title = post.metaTitle || post.title;
+  const description = post.metaDescription || post.excerpt;
+
   return {
-    title: post.metaTitle || post.title,
-    description: post.metaDescription || post.excerpt,
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: post.metaTitle || post.title,
-      description: post.metaDescription || post.excerpt,
-      images: post.image ? [{ url: post.image }] : [],
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "SetlesStudio",
+      images: [
+        {
+          url: blogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "article",
+      publishedTime: post.publishedAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      site: "@SetlesStudio",
+      creator: "@SetlesStudio",
+      images: [blogImage],
     },
   };
 }

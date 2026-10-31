@@ -24,9 +24,37 @@ import Testimonials from "@/components/Testimonials";
 import { learnIncluded, learnProducts, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Learn",
+  title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
   description:
     "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+  alternates: {
+    canonical: "https://www.setlesstudio.com/learn",
+  },
+  openGraph: {
+    title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
+    description:
+      "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+    url: "https://www.setlesstudio.com/learn",
+    siteName: "SetlesStudio",
+    images: [
+      {
+        url: "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Learn AI Fashion Photography",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
+    description:
+      "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+    site: "@SetlesStudio",
+    creator: "@SetlesStudio",
+    images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
+  },
 };
 
 const promises = [

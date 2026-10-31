@@ -5,9 +5,12 @@ import { legal, site } from "@/lib/data";
 const WA_TERMS = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your terms of service.")}`;
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms of Service | SetlesStudio",
   description:
     "Terms of Service for SetlesStudio. Understand the conditions governing your use of our AI fashion content services, payment terms, deliverables, and intellectual property.",
+  alternates: {
+    canonical: "https://www.setlesstudio.com/terms",
+  },
 };
 
 const EFFECTIVE_DATE = legal.effectiveDate;

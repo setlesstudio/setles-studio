@@ -16,16 +16,52 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://setlesstudio.com"),
+  metadataBase: new URL("https://www.setlesstudio.com"),
   title: {
     default: "SetlesStudio | Premium Hyper Realistic AI Fashion Content for Ecommerce Brands",
     template: "%s | SetlesStudio",
   },
   description:
     "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
+  alternates: {
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
+    title: "SetlesStudio | Premium Hyper Realistic AI Fashion Content for Ecommerce Brands",
+    description:
+      "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable than traditional photoshoots.",
+    url: "https://www.setlesstudio.com",
     siteName: "SetlesStudio",
+    images: [
+      {
+        url: "/images/portfolio-page-banner.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "SetlesStudio AI Fashion Photography",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SetlesStudio | Premium Hyper Realistic AI Fashion Content",
+    description:
+      "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks.",
+    site: "@SetlesStudio",
+    creator: "@SetlesStudio",
+    images: ["/images/portfolio-page-banner.jpeg"],
   },
   verification: {
     google: "AUEEMLzfMyYEr6U1XmCJCcIIAz9TqlmlAVtWV1NwNvU",

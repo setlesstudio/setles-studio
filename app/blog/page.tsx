@@ -10,9 +10,40 @@ export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await getPageSEO("blog");
+  const title = pageData?.metaTitle || "Blog | AI Fashion Content & Ecommerce Strategy | SetlesStudio";
+  const description =
+    pageData?.metaDescription ||
+    "Insights on AI fashion content, hyper-realistic product visuals, photoshoot cost reduction, and ecommerce growth strategy.";
+
   return {
-    title: pageData?.metaTitle || "Blog | SetlesStudio",
-    description: pageData?.metaDescription || "Insights on AI fashion content and ecommerce strategy.",
+    title,
+    description,
+    alternates: {
+      canonical: "https://www.setlesstudio.com/blog",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://www.setlesstudio.com/blog",
+      siteName: "SetlesStudio",
+      images: [
+        {
+          url: "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg",
+          width: 1200,
+          height: 630,
+          alt: "SetlesStudio Blog",
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      site: "@SetlesStudio",
+      creator: "@SetlesStudio",
+      images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
+    },
   };
 }
 

@@ -446,7 +446,44 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const svc = services[params.slug];
   if (!svc) return {};
-  return { title: svc.meta.title, description: svc.meta.description };
+
+  const canonicalUrl = `https://www.setlesstudio.com/services/${params.slug}`;
+  const bannerImage = svc.hero.image
+    ? svc.hero.image.startsWith("http")
+      ? svc.hero.image
+      : `https://www.setlesstudio.com${svc.hero.image}`
+    : "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg";
+
+  return {
+    title: svc.meta.title,
+    description: svc.meta.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: svc.meta.title,
+      description: svc.meta.description,
+      url: canonicalUrl,
+      siteName: "SetlesStudio",
+      images: [
+        {
+          url: bannerImage,
+          width: 1200,
+          height: 630,
+          alt: svc.hero.imageAlt || svc.meta.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: svc.meta.title,
+      description: svc.meta.description,
+      site: "@SetlesStudio",
+      creator: "@SetlesStudio",
+      images: [bannerImage],
+    },
+  };
 }
 
 export default function ServiceSlugPage({

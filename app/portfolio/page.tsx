@@ -6,9 +6,37 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
   description:
     "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+  alternates: {
+    canonical: "https://www.setlesstudio.com/portfolio",
+  },
+  openGraph: {
+    title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
+    description:
+      "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+    url: "https://www.setlesstudio.com/portfolio",
+    siteName: "SetlesStudio",
+    images: [
+      {
+        url: "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "SetlesStudio AI Fashion Photography Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
+    description:
+      "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+    site: "@SetlesStudio",
+    creator: "@SetlesStudio",
+    images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
+  },
 };
 
 export default function PortfolioPage() {

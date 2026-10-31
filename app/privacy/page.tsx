@@ -5,9 +5,12 @@ import { legal, site } from "@/lib/data";
 const WA_PRIVACY = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your privacy policy.")}`;
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | SetlesStudio",
   description:
     "Privacy Policy for SetlesStudio. Learn how we collect, use, and protect your personal data when you use our AI fashion content services.",
+  alternates: {
+    canonical: "https://www.setlesstudio.com/privacy",
+  },
 };
 
 const EFFECTIVE_DATE = legal.effectiveDate;
