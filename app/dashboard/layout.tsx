@@ -207,6 +207,10 @@ export default function DashboardLayout({
 
         {/* Dashboard Main Content */}
         <main className="flex-1 p-6 lg:p-8 overflow-y-auto max-w-7xl w-full mx-auto">
+          <p role="status" className="mb-6 rounded-2xl border border-brand/20 bg-white p-4 text-sm text-ink-soft">
+            Manage published articles in Sanity Studio. Website blog editing is temporarily disabled while secure sign-in is added.
+            Other content changes in this dashboard are saved only in this browser and do not update the public website.
+          </p>
           {children}
         </main>
       </div>

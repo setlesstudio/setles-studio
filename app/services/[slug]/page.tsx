@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import StructuredData from "@/components/StructuredData";
+import { breadcrumbData } from "@/lib/seo";
 import { notFound } from "next/navigation";
 import {
   Camera, Gem, Globe, Package, ShoppingBag, ShoppingCart,
@@ -500,6 +502,19 @@ export default function ServiceSlugPage({
 
   return (
     <>
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: svc.hero.eyebrow,
+        description: svc.meta.description,
+        url: `${site.url}/services/${params.slug}`,
+        provider: { "@id": `${site.url}/#organization` },
+      }} />
+      <StructuredData data={breadcrumbData([
+        { name: "Home", path: "/" },
+        { name: "Services", path: "/services" },
+        { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
+      ])} />
       <PageHero
         eyebrow={svc.hero.eyebrow}
         title={<>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}

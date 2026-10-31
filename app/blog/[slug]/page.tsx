@@ -6,6 +6,8 @@ import { getAllBlogs, getBlogBySlug } from "@/lib/sanity-queries";
 import { parseMarkdownToHtml } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import StructuredData from "@/components/StructuredData";
+import { blogTitle, breadcrumbData } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -20,11 +22,11 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const post = await getBlogBySlug(params.slug);
-  if (!post) return {};
+  if (!post || post.status !== "Published") notFound();
 
   const canonicalUrl = `https://www.setlesstudio.com/blog/${params.slug}`;
   const blogImage = post.image || "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg";
-  const title = post.metaTitle || post.title;
+  const title = blogTitle(post.title, post.metaTitle);
   const description = post.metaDescription || post.excerpt;
 
   return {
@@ -88,6 +90,23 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.metaDescription || post.excerpt,
+        image: post.image || `${site.url}/images/og-default.jpg`,
+        datePublished: post.publishedAt,
+        dateModified: post._updatedAt || post.publishedAt,
+        author: { "@type": "Organization", name: "SetlesStudio Team", url: `${site.url}/about` },
+        publisher: { "@id": `${site.url}/#organization` },
+        mainEntityOfPage: `${site.url}/blog/${params.slug}`,
+      }} />
+      <StructuredData data={breadcrumbData([
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+        { name: post.title, path: `/blog/${params.slug}` },
+      ])} />
       <article className="pt-36">
         <header className="container-site max-w-5xl">
           <Link

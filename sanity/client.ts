@@ -10,7 +10,8 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true,
+  // Next.js caches public queries for 60 seconds; avoid a second stale CDN layer.
+  useCdn: false,
 });
 
 // Write client for dashboard API routes (server-side only, uses secret token)

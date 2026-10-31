@@ -5,6 +5,7 @@ import CTABand from "@/components/CTABand";
 import { site } from "@/lib/data";
 import { getAllBlogs, getPageSEO } from "@/lib/sanity-queries";
 import type { Metadata } from "next";
+import { brandedTitle } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "Insights on AI fashion content, hyper-realistic product visuals, photoshoot cost reduction, and ecommerce growth strategy.";
 
   return {
-    title,
+    title: brandedTitle(title),
     description,
     alternates: {
       canonical: "https://www.setlesstudio.com/blog",

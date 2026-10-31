@@ -170,7 +170,7 @@ function ProjectForm() {
   }
 
   return (
-    <form className="card grid gap-5 p-8 sm:p-10" onSubmit={handleSubmit} noValidate>
+    <form className="card grid gap-5 p-8 sm:p-10" onSubmit={handleSubmit}>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Full Name" required htmlFor="name">
           <input id="name" name="name" required placeholder="Jane Smith" className={inputCls} />
@@ -194,9 +194,9 @@ function ProjectForm() {
       </Field>
 
       <Field label="Service Required" required htmlFor="service">
-        <select id="service" name="service" required defaultValue="Select a service" className={inputCls}>
+        <select id="service" name="service" required defaultValue="" className={inputCls}>
           {SERVICE_OPTIONS.map((s) => (
-            <option key={s} value={s} disabled={s === "Select a service"}>
+            <option key={s} value={s === "Select a service" ? "" : s} disabled={s === "Select a service"}>
               {s}
             </option>
           ))}
@@ -228,7 +228,7 @@ function ProjectForm() {
       </Field>
 
       {status === "error" && (
-        <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{errorMsg}</p>
+        <p role="alert" className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{errorMsg}</p>
       )}
 
       <button
@@ -290,7 +290,7 @@ export default function ContactPageClient() {
 
           {/* Contact cards */}
           {[
-            { icon: Mail,  label: "Email",         value: "setlesstudio@gmail.com", href: "mailto:setlesstudio@gmail.com" },
+            { icon: Mail,  label: "Email",         value: site.email, href: `mailto:${site.email}` },
             { icon: Clock, label: "Response Time", value: "Within 24 Hours",        href: null },
             { icon: Globe, label: "Availability",  value: "Worldwide",              href: null },
           ].map(({ icon: Icon, label, value, href }) => (
