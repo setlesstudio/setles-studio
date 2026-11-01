@@ -9,16 +9,14 @@ import CTABand from "@/components/CTABand";
 import { process, site, stats, team } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About Us | SetlesStudio",
-  description:
-    "SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results. Meet the team behind the work.",
+  title: "About Our AI Fashion Studio | SetlesStudio",
+  description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
   alternates: {
     canonical: "https://www.setlesstudio.com/about",
   },
   openGraph: {
-    title: "About Us | SetlesStudio",
-    description:
-      "SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results. Meet the team behind the work.",
+    title: "About Our AI Fashion Studio | SetlesStudio",
+    description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
     url: "https://www.setlesstudio.com/about",
     siteName: "SetlesStudio",
     images: [
@@ -33,9 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | SetlesStudio",
-    description:
-      "SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results.",
+    title: "About Our AI Fashion Studio | SetlesStudio",
+    description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],

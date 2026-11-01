@@ -23,7 +23,7 @@ export function parseMarkdownToHtml(markdownText: string): string {
     }
     if (trimmed.startsWith("# ")) {
       const title = processInlineFormatting(trimmed.substring(2));
-      return `<h1 class="font-display font-bold text-3xl text-ink mt-10 mb-4 leading-tight">${title}</h1>`;
+      return `<h2 class="font-display font-bold text-3xl text-ink mt-10 mb-4 leading-tight">${title}</h2>`;
     }
 
     // 2. Unordered or Ordered Lists

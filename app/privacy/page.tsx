@@ -6,8 +6,7 @@ const WA_PRIVACY = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SetlesStudio",
-  description:
-    "Privacy Policy for SetlesStudio. Learn how we collect, use, and protect your personal data when you use our AI fashion content services.",
+  description: "Read how SetlesStudio collects, uses, and handles personal information when you browse the website or enquire about our services.",
   alternates: {
     canonical: "https://www.setlesstudio.com/privacy",
   },

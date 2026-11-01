@@ -2,16 +2,14 @@ import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact Us | SetlesStudio",
-  description:
-    "Get in touch with Setles Studio for realistic AI fashion photography, product visuals, UGC content, and AI-powered creative solutions for your brand.",
+  title: "Contact Our AI Fashion Studio | SetlesStudio",
+  description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
   alternates: {
     canonical: "https://www.setlesstudio.com/contact",
   },
   openGraph: {
-    title: "Contact Us | SetlesStudio",
-    description:
-      "Get in touch with Setles Studio for realistic AI fashion photography, product visuals, UGC content, and AI-powered creative solutions for your brand.",
+    title: "Contact Our AI Fashion Studio | SetlesStudio",
+    description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
     url: "https://www.setlesstudio.com/contact",
     siteName: "SetlesStudio",
     images: [
@@ -26,9 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | SetlesStudio",
-    description:
-      "Get in touch with Setles Studio for realistic AI fashion photography, product visuals, UGC content, and AI-powered creative solutions for your brand.",
+    title: "Contact Our AI Fashion Studio | SetlesStudio",
+    description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],

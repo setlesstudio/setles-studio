@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing & Packages | Transparent AI Fashion Content | SetlesStudio",
-  description:
-    "Explore transparent pricing packages for hyper-realistic AI fashion photography, studio lookbooks, and campaigns. Simple per-image and bulk tiers.",
+  title: "AI Fashion Photography Pricing | SetlesStudio",
+  description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
   alternates: {
     canonical: "https://www.setlesstudio.com/pricing",
   },
   openGraph: {
-    title: "Pricing & Packages | SetlesStudio",
-    description:
-      "Explore transparent pricing packages for hyper-realistic AI fashion photography, studio lookbooks, and campaigns. Simple per-image and bulk tiers.",
+    title: "AI Fashion Photography Pricing | SetlesStudio",
+    description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
     url: "https://www.setlesstudio.com/pricing",
     siteName: "SetlesStudio",
     images: [
@@ -25,9 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing & Packages | SetlesStudio",
-    description:
-      "Explore transparent pricing packages for hyper-realistic AI fashion photography, studio lookbooks, and campaigns.",
+    title: "AI Fashion Photography Pricing | SetlesStudio",
+    description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],

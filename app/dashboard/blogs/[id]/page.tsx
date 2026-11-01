@@ -85,7 +85,7 @@ export default function BlogEditorPage() {
       setSlug(autoSlug);
 
       // Populate meta title draft
-      setMetaTitle(val.length > 50 ? val.substring(0, 50) : `${val} | SetlesStudio`);
+      setMetaTitle(`${val.trim()} | SetlesStudio`);
     }
   };
 

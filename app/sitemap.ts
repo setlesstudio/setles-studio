@@ -21,13 +21,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
   }));
 
   // 2. Dynamic Service Pages
   const serviceRoutes = services.map((service) => ({
     url: `${baseUrl}/services/${service.id}`,
-    lastModified: new Date(),
   }));
 
   // 3. Dynamic Blog Pages (from Sanity CMS - only published articles)
@@ -43,10 +41,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         )
         .map((post: any) => {
           const slug = post.slug?.current || post.slug;
-          const date = post.publishedAt ? new Date(post.publishedAt) : new Date();
+          const date = new Date(post._updatedAt || post.publishedAt);
           return {
             url: `${baseUrl}/blog/${slug}`,
-            lastModified: date,
+            ...(Number.isFinite(date.getTime()) ? { lastModified: date } : {}),
           };
         });
     }

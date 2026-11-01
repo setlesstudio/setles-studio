@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 export default function PageHero({
@@ -52,32 +52,23 @@ export default function PageHero({
     </>
   ) : null;
 
-  const imageBlock = !video && image ? (
+  const imageOptions = {
+    alt: imageAlt,
+    fill: true as const,
+    sizes: "100vw",
+    quality: 85,
+    loading: "eager" as const,
+    className: "object-cover object-top",
+  };
+  const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
+  const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
+
+  const imageBlock = !video && desktopProps ? (
     <>
-      {imageMobile && (
-        <Image
-          src={imageMobile}
-          alt={imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          quality={100}
-          loading="eager"
-          fetchPriority="high"
-          className="object-cover object-top md:hidden"
-        />
-      )}
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="(min-width: 1920px) 1920px, (min-width: 1440px) 1440px, 100vw"
-        quality={100}
-        loading="eager"
-        fetchPriority="high"
-        className={`object-cover object-top ${imageMobile ? "hidden md:block" : ""}`}
-      />
+      <picture>
+        {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet} sizes={mobileProps.sizes} />}
+        <img {...desktopProps} {...{ fetchpriority: "high" }} alt={imageAlt} />
+      </picture>
       {overlays}
     </>
   ) : null;

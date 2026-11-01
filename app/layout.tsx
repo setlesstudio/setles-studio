@@ -3,6 +3,8 @@ import { DM_Sans, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
+import StructuredData from "@/components/StructuredData";
+import { site } from "@/lib/data";
 
 const display = DM_Sans({
   subsets: ["latin"],
@@ -15,14 +17,15 @@ const sans = Manrope({
   variable: "--font-sans",
 });
 
+const homeDescription = "Turn product photos into realistic on-model studio, lifestyle, and campaign images for your ecommerce brand. Explore our work and request a free sample.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
   title: {
-    default: "SetlesStudio | Hyper Realistic AI Fashion Photography",
-    template: "%s | SetlesStudio",
+    default: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    template: "%s",
   },
-  description:
-    "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
+  description: homeDescription,
   alternates: {
     canonical: "./",
   },
@@ -38,9 +41,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
-    description:
-      "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
+    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    description: homeDescription,
     url: "https://www.setlesstudio.com",
     siteName: "SetlesStudio",
     images: [
@@ -56,9 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
-    description:
-      "Hyper realistic AI fashion photography for ecommerce brands. Studio and lifestyle campaigns in days, 10x more affordable than traditional shoots.",
+    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    description: homeDescription,
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/og-default.jpg"],
@@ -89,7 +90,6 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
-        <meta name="google-site-verification" content="AUEEMLzfMyYEr6U1XmCJCcIIAz9TqlmlAVtWV1NwNvU" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9T4N04VXYS"
           strategy="afterInteractive"
@@ -105,6 +105,16 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="font-sans">
+        <StructuredData data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": `${site.url}/#organization`,
+          name: site.name,
+          url: site.url,
+          email: site.email,
+          telephone: site.phone,
+          sameAs: Object.values(site.social),
+        }} />
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

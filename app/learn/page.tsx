@@ -24,16 +24,14 @@ import Testimonials from "@/components/Testimonials";
 import { learnIncluded, learnProducts, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
-  description:
-    "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+  title: "Learn AI Fashion Photography | SetlesStudio",
+  description: "Explore AI fashion photography workflows, prompts, practice files, and learning resources for creating realistic apparel and product imagery.",
   alternates: {
     canonical: "https://www.setlesstudio.com/learn",
   },
   openGraph: {
-    title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
-    description:
-      "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+    title: "Learn AI Fashion Photography | SetlesStudio",
+    description: "Explore AI fashion photography workflows, prompts, practice files, and learning resources for creating realistic apparel and product imagery.",
     url: "https://www.setlesstudio.com/learn",
     siteName: "SetlesStudio",
     images: [
@@ -48,9 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Learn AI Fashion Photography & Workflows | SetlesStudio",
-    description:
-      "Learn the process behind premium AI fashion content. Workflows, practice files, prompt collections, and creative techniques used for brands worldwide.",
+    title: "Learn AI Fashion Photography | SetlesStudio",
+    description: "Explore AI fashion photography workflows, prompts, practice files, and learning resources for creating realistic apparel and product imagery.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
@@ -308,7 +305,7 @@ export default function LearnPage() {
                 { Icon: Award,   title: "Top Rated Plus",  sub: "on Upwork" },
                 { Icon: Star,    title: "Top 1% Talented", sub: "Professional" },
                 { Icon: Globe,   title: "Worked With",     sub: "Global Brands" },
-                { Icon: Package, title: "5,000+ Projects", sub: "Delivered Successfully" },
+                { Icon: Package, title: "500+ Projects", sub: "Delivered Successfully" },
                 { Icon: Clock,   title: "4+ Years",        sub: "Industry Experience" },
               ].map(({ Icon, title, sub }) => (
                 <div key={title} className="flex items-center gap-3 sm:px-5">

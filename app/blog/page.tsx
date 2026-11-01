@@ -5,18 +5,17 @@ import CTABand from "@/components/CTABand";
 import { site } from "@/lib/data";
 import { getAllBlogs, getPageSEO } from "@/lib/sanity-queries";
 import type { Metadata } from "next";
+import { brandedTitle } from "@/lib/seo";
 
 export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await getPageSEO("blog");
-  const title = pageData?.metaTitle || "Blog | AI Fashion Content & Ecommerce Strategy | SetlesStudio";
-  const description =
-    pageData?.metaDescription ||
-    "Insights on AI fashion content, hyper-realistic product visuals, photoshoot cost reduction, and ecommerce growth strategy.";
+  const title = pageData?.metaTitle && !/^Blog(?: \|.*)?$/i.test(pageData.metaTitle) ? pageData.metaTitle : "AI Fashion Photography Guides & Tips | SetlesStudio";
+  const description = pageData?.metaDescription && pageData.metaDescription !== "Insights on AI fashion content, hyper-realistic product visuals, photoshoot cost reduction, and ecommerce growth strategy." ? pageData.metaDescription : "Read practical guides to AI fashion photography, garment accuracy, production costs, and ecommerce product imagery from SetlesStudio.";
 
   return {
-    title,
+    title: brandedTitle(title),
     description,
     alternates: {
       canonical: "https://www.setlesstudio.com/blog",

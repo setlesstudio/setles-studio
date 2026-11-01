@@ -6,16 +6,14 @@ import PortfolioGallery from "@/components/PortfolioGallery";
 import { site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
-  description:
-    "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+  title: "AI Fashion Photography Portfolio | SetlesStudio",
+  description: "See AI fashion photography examples and before-and-after transformations across studio, lifestyle, footwear, handbag, and campaign projects.",
   alternates: {
     canonical: "https://www.setlesstudio.com/portfolio",
   },
   openGraph: {
-    title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
-    description:
-      "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+    title: "AI Fashion Photography Portfolio | SetlesStudio",
+    description: "See AI fashion photography examples and before-and-after transformations across studio, lifestyle, footwear, handbag, and campaign projects.",
     url: "https://www.setlesstudio.com/portfolio",
     siteName: "SetlesStudio",
     images: [
@@ -30,9 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | AI Fashion Photography & Transformations | SetlesStudio",
-    description:
-      "Before/after transformations and selected work. Studio, lifestyle, luxury campaigns, footwear, and bag photography for fashion ecommerce brands.",
+    title: "AI Fashion Photography Portfolio | SetlesStudio",
+    description: "See AI fashion photography examples and before-and-after transformations across studio, lifestyle, footwear, handbag, and campaign projects.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
