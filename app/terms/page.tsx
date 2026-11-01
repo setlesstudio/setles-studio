@@ -6,8 +6,7 @@ const WA_TERMS = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, 
 
 export const metadata: Metadata = {
   title: "Terms of Service | SetlesStudio",
-  description:
-    "Terms of Service for SetlesStudio. Understand the conditions governing your use of our AI fashion content services, payment terms, deliverables, and intellectual property.",
+  description: "Review SetlesStudio terms covering projects, payment, deliverables, revisions, cancellations, and use of our website and services.",
   alternates: {
     canonical: "https://www.setlesstudio.com/terms",
   },

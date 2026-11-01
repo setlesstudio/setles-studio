@@ -17,12 +17,12 @@ const sans = Manrope({
   variable: "--font-sans",
 });
 
-const homeDescription = "AI fashion photography for ecommerce brands. Turn product photos into realistic studio, lifestyle, and campaign imagery. Explore our work and request a free sample.";
+const homeDescription = "Turn product photos into realistic on-model studio, lifestyle, and campaign images for your ecommerce brand. Explore our work and request a free sample.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
   title: {
-    default: "SetlesStudio | Hyper Realistic AI Fashion Photography",
+    default: "AI Fashion Photography for Ecommerce | SetlesStudio",
     template: "%s",
   },
   description: homeDescription,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
+    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
     description: homeDescription,
     url: "https://www.setlesstudio.com",
     siteName: "SetlesStudio",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SetlesStudio | Hyper Realistic AI Fashion Photography",
+    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
     description: homeDescription,
     site: "@SetlesStudio",
     creator: "@SetlesStudio",

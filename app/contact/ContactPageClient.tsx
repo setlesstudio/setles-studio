@@ -222,7 +222,7 @@ function ProjectForm() {
           name="message"
           rows={5}
           required
-          placeholder="Tell us about your products, goals, style references, and anything else that helps us understand your project…"
+          placeholder="Tell us about your products and goals. For a sample, paste a link to your product photo here."
           className={inputCls}
         />
       </Field>

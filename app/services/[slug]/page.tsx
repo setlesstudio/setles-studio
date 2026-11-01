@@ -70,8 +70,8 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-studio-photography": {
     meta: {
-      title: "Realistic AI Studio Photography for Apparel Brands | SetlesStudio",
-      description: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit.",
+      title: "AI Studio Photography for Apparel | SetlesStudio",
+      description: "Create consistent on-model apparel images from product photos. Explore AI studio photography for ecommerce product pages, catalogs, and clothing collections.",
     },
     hero: {
       eyebrow: "AI Studio Photography",
@@ -129,8 +129,8 @@ const services: Record<string, ServiceData> = {
 
   "lifestyle-realistic-ai-photography": {
     meta: {
-      title: "Realistic AI Lifestyle Photography for Fashion Brands | SetlesStudio",
-      description: "Real life lifestyle scenes for your fashion brand. We transform flat product photos into realistic on model lifestyle imagery for social media, ads, and Ecommerce.",
+      title: "AI Lifestyle Fashion Photography | SetlesStudio",
+      description: "Create on-model lifestyle fashion images from product photos, with scenes tailored to your brand for ecommerce, social media, and advertising.",
     },
     hero: {
       eyebrow: "AI Lifestyle Photography",
@@ -188,8 +188,8 @@ const services: Record<string, ServiceData> = {
 
   "luxury-fashion-ai-campaign": {
     meta: {
-      title: "Luxury Fashion Hyper Realistic AI Campaign | SetlesStudio",
-      description: "Create hyper realistic AI fashion campaign photography inspired by luxury fashion houses and premium editorial magazines.",
+      title: "AI Fashion Campaign Photography | SetlesStudio",
+      description: "Create editorial-style AI fashion campaign imagery for collection launches, lookbooks, and advertising, with creative direction tailored to your brand.",
     },
     hero: {
       eyebrow: "AI Fashion Campaign",
@@ -249,8 +249,8 @@ const services: Record<string, ServiceData> = {
 
   "footwear-realistic-ai-photography": {
     meta: {
-      title: "Footwear Realistic AI Photography | SetlesStudio",
-      description: "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on foot fit. Perfect for Ecommerce, marketplaces, and brand campaigns.",
+      title: "AI Footwear Photography for Ecommerce | SetlesStudio",
+      description: "Create AI footwear images for ecommerce and campaigns. Explore on-foot and styled visuals that showcase shoe materials, details, and brand identity.",
     },
     hero: {
       eyebrow: "AI Footwear Photography",
@@ -308,8 +308,8 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-video-ads-ugc": {
     meta: {
-      title: "Realistic AI Video Ads & UGC Content | SetlesStudio",
-      description: "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
+      title: "AI Fashion Video Ads & UGC-Style Content | SetlesStudio",
+      description: "Turn fashion product photos into AI video ads and UGC-style content for social campaigns. Discuss your creative brief, formats, and delivery needs.",
     },
     hero: {
       eyebrow: "AI Video Ads & UGC",
@@ -366,8 +366,8 @@ const services: Record<string, ServiceData> = {
 
   "bags-accessories-realistic-ai-photography": {
     meta: {
-      title: "Women's Handbag Realistic AI Photography | SetlesStudio",
-      description: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, Ecommerce, and luxury brands.",
+      title: "AI Handbag Photography for Ecommerce | SetlesStudio",
+      description: "Create AI handbag imagery for product pages, lifestyle campaigns, and social content, with attention to materials, hardware, color, and brand style.",
     },
     hero: {
       eyebrow: "Handbag AI Photography",

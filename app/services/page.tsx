@@ -8,16 +8,14 @@ import CTABand from "@/components/CTABand";
 import { services, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "AI Fashion Content Services | SetlesStudio",
-  description:
-    "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+  title: "AI Fashion Photography Services | SetlesStudio",
+  description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
   alternates: {
     canonical: "https://www.setlesstudio.com/services",
   },
   openGraph: {
-    title: "AI Fashion Content Services | SetlesStudio",
-    description:
-      "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+    title: "AI Fashion Photography Services | SetlesStudio",
+    description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
     url: "https://www.setlesstudio.com/services",
     siteName: "SetlesStudio",
     images: [
@@ -32,9 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Fashion Content Services | SetlesStudio",
-    description:
-      "Studio product photography, lifestyle imagery, luxury campaigns, footwear, bags, and video ads. Six AI content services for modern apparel brands.",
+    title: "AI Fashion Photography Services | SetlesStudio",
+    description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/studio-service-banner.png"],
