@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import { site } from "@/lib/data";
+import { services, site } from "@/lib/data";
 import Logo from "./Logo";
 
 const socialIcons: Record<string, { label: string; path: string; bg: string; bgStyle?: CSSProperties; iconColor: string }> = {
@@ -48,14 +48,7 @@ const cols = [
   },
   {
     title: "Services",
-    links: [
-      { href: "/services/realistic-ai-studio-photography", label: "Realistic AI Studio Photography" },
-      { href: "/services/lifestyle-realistic-ai-photography", label: "Lifestyle AI Photography" },
-      { href: "/services/luxury-fashion-ai-campaign",         label: "Luxury AI Campaign" },
-      { href: "/services/footwear-realistic-ai-photography",          label: "Footwear AI Photography" },
-      { href: "/services/realistic-ai-video-ads-ugc",               label: "AI Video Ads & UGC" },
-      { href: "/services/bags-accessories-realistic-ai-photography", label: "Bags & Accessories AI Photography" },
-    ],
+    links: services.map(service => ({ href: `/services/${service.id}`, label: service.title })),
   },
   {
     title: "Resources",
