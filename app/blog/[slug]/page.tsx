@@ -6,7 +6,7 @@ import { getAllBlogs, getBlogBySlug } from "@/lib/sanity-queries";
 import { parseMarkdownToHtml } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { articleSeo } from "@/lib/article-seo";
+import { articleHeading, articleSeo } from "@/lib/article-seo";
 import StructuredData from "@/components/StructuredData";
 import { blogTitle, breadcrumbData } from "@/lib/seo";
 
@@ -92,6 +92,7 @@ export default async function BlogPostPage({
   const post = await getBlogBySlug(params.slug);
   if (!post || post.status !== "Published") notFound();
 
+  const heading = articleHeading(params.slug, post.title);
   const allBlogs = await getAllBlogs();
   const index = allBlogs.findIndex(
     (b: any) => (b.slug?.current || b.slug) === params.slug
@@ -102,14 +103,14 @@ export default async function BlogPostPage({
     "ai-fashion-fabric-texture-fix-guide": { href: "/services/realistic-ai-studio-photography", title: "Explore studio photography for apparel" },
   };
   const nextPost = allBlogs[index + 1];
-  const related = relatedPages[params.slug] || (nextPost && { href: "/blog/" + (nextPost.slug?.current || nextPost.slug), title: nextPost.title });
+  const related = relatedPages[params.slug] || (nextPost && { href: "/blog/" + (nextPost.slug?.current || nextPost.slug), title: articleHeading(nextPost.slug?.current || nextPost.slug, nextPost.title) });
 
   return (
     <>
       <StructuredData data={{
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        headline: post.title,
+        headline: heading,
         description: articleDescription(params.slug, post),
         image: post.image || `${site.url}/images/og-default.jpg`,
         datePublished: post.publishedAt,
@@ -121,7 +122,7 @@ export default async function BlogPostPage({
       <StructuredData data={breadcrumbData([
         { name: "Home", path: "/" },
         { name: "Blog", path: "/blog" },
-        { name: post.title, path: `/blog/${params.slug}` },
+        { name: heading, path: `/blog/${params.slug}` },
       ])} />
       <article className="pt-36">
         <header className="container-site max-w-5xl">
@@ -137,7 +138,7 @@ export default async function BlogPostPage({
             <span className="text-ink-soft/70">{post.readTime}</span>
           </div>
           <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            {post.title}
+            {heading}
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
             {post.excerpt}

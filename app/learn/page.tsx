@@ -86,8 +86,8 @@ export default function LearnPage() {
         eyebrow="SetlesStudio Learn"
         title={
           <>
-            Learn the process behind premium {" "}
-            <span className="text-brand">hyper realistic AI </span>fashion content
+            Learn AI Fashion{" "}
+            <span className="text-brand">Photography</span>
           </>
         }
         text="Access the same workflows, practice files, prompt collections, and creative techniques used to create realistic fashion content for brands worldwide."

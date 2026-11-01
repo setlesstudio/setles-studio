@@ -53,8 +53,8 @@ export default function AboutPage() {
         eyebrow="About us"
         title={
           <>
-            Creating premium hyper realistic AI fashion content{" "}
-            <span className="text-brand">for modern apparel brands</span>
+            About{" "}
+            <span className="text-brand">SetlesStudio</span>
           </>
         }
         text="SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results."
