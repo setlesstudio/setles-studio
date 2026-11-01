@@ -51,7 +51,7 @@ export default function HomePage() {
     return () => window.removeEventListener("setles_db_update", handleUpdate);
   }, []);
 
-  const heroTitle = pageData?.heroTitle || "Realistic [AI Fashion] Photography \n for Ecommerce Brands";
+  const heroTitle = pageData?.heroTitle && pageData.heroTitle !== "Realistic [AI Fashion] Photography \n for Ecommerce Brands" ? pageData.heroTitle : "[AI Fashion] Photography for Ecommerce Brands";
   const heroText = pageData?.heroText || "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
   const heroImage = "/images/luxury-stairs-wide.jpeg";
 

@@ -5,6 +5,7 @@ import CTABand from "@/components/CTABand";
 import { site } from "@/lib/data";
 import { getAllBlogs, getPageSEO } from "@/lib/sanity-queries";
 import type { Metadata } from "next";
+import { articleHeading } from "@/lib/article-seo";
 import { brandedTitle } from "@/lib/seo";
 
 export const revalidate = 60;
@@ -67,7 +68,7 @@ export default async function BlogPage() {
   const featured = blogs[0] || null;
   const rest = blogs.slice(1);
 
-  const heroTitle = pageData?.heroTitle || "Insights on AI fashion content and ecommerce strategy";
+  const heroTitle = pageData?.heroTitle && pageData.heroTitle !== "Insights on AI fashion content and ecommerce strategy" ? pageData.heroTitle : "AI Fashion Photography Guides and Tips";
   const heroText = pageData?.heroText || "Production techniques, industry breakdowns, and the thinking behind content that converts.";
   const heroImage = pageData?.heroImage || "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg";
 
@@ -93,7 +94,7 @@ export default async function BlogPage() {
               {featured.image ? (
                 <img
                   src={featured.image}
-                  alt={featured.title}
+                  alt={articleHeading(featured.slug?.current || featured.slug, featured.title)}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
@@ -109,7 +110,7 @@ export default async function BlogPage() {
                 <span className="text-ink-soft/70">{featured.readTime}</span>
               </div>
               <h2 className="mt-4 font-display text-2xl font-semibold leading-snug group-hover:text-brand sm:text-3xl">
-                {featured.title}
+                {articleHeading(featured.slug?.current || featured.slug, featured.title)}
               </h2>
               <p className="mt-4 leading-relaxed text-ink-soft text-sm sm:text-base">
                 {featured.excerpt}
@@ -141,7 +142,7 @@ export default async function BlogPage() {
                   {post.image ? (
                     <img
                       src={post.image}
-                      alt={post.title}
+                      alt={articleHeading(post.slug?.current || post.slug, post.title)}
                       className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
@@ -157,7 +158,7 @@ export default async function BlogPage() {
                     <span className="text-ink-soft/70">{post.readTime}</span>
                   </div>
                   <h3 className="mt-3 font-display text-xl font-semibold leading-snug group-hover:text-brand">
-                    {post.title}
+                    {articleHeading(post.slug?.current || post.slug, post.title)}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                     {post.excerpt}

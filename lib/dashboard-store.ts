@@ -221,7 +221,7 @@ const DEFAULT_PAGES: PageSEO[] = [
     title: "Home Page",
     metaTitle: "SetlesStudio | Premium Hyper Realistic AI Fashion Content",
     metaDescription: "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
-    heroTitle: "Realistic [AI Fashion] Photography \n for Ecommerce Brands",
+    heroTitle: "[AI Fashion] Photography for Ecommerce Brands",
     heroText: "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
     heroImage: "/images/luxury-stairs-wide.jpeg",
   },

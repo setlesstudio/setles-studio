@@ -264,8 +264,8 @@ export default function ContactPageClient() {
         eyebrow="Contact Us"
         title={
           <>
-            Send us one product.{" "}
-            <span className="text-brand">We&apos;ll shoot it free.</span>
+            Request an AI Fashion{" "}
+            <span className="text-brand">Photography Sample</span>
           </>
         }
         text="One product image is all we need. You'll get it back on a model in 2 days — no cost."
