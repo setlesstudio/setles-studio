@@ -166,8 +166,8 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
-            title="Hyper realistic AI fashion services for modern apparel brands"
-            text="From ecommerce product imagery to full scale marketing campaigns, we create high quality visual content that helps fashion brands launch faster, sell more, and stay consistent across every channel."
+            title="AI Fashion Photography and Video Services"
+            text="Choose a service for your next shoot, from on-model apparel photos for your catalog to short video ads for a collection launch."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {currentServices.map((s, i) => (

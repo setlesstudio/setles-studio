@@ -40,7 +40,7 @@ export const services: Service[] = [
     number: "01",
     title: "AI Studio Photography for Apparel Brands",
     short:
-      "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images for product pages, catalogs, Shopify, and Amazon.",
+      "Turn flat-lay garment photos into on-model studio images with a consistent background for your product pages and apparel catalog.",
     long: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit ready for product pages, catalogs, Shopify stores, Amazon, and eCommerce websites.",
     image: "/images/studio-pink.png",
     deliverables: [
@@ -55,7 +55,7 @@ export const services: Service[] = [
     number: "02",
     title: "AI Lifestyle Fashion Photography",
     short:
-      "Real life lifestyle scenes from city streets, cafés, homes, and beaches. AI fashion imagery that builds emotional context for social media, ads, and brand storytelling.",
+      "Show your collection in everyday settings, from city streets to cafés. Use the images on your storefront, in social posts, or in ads.",
     long: "Real life scenes that make your products feel lived in: city streets, cafés, homes, beaches. Lifestyle imagery builds the emotional context that studio shots can't, perfect for social media, ads, and homepage storytelling.",
     image: "/images/lifestyle-men.png",
     deliverables: [
@@ -70,7 +70,7 @@ export const services: Service[] = [
     number: "03",
     title: "AI Fashion Campaign Photography",
     short:
-      "Hyper realistic AI campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, advertising, and seasonal brand storytelling.",
+      "Build a collection launch around one editorial concept. Carry the same styling and lighting through your lookbook and campaign images.",
     long: "Create hyper realistic AI fashion campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, fashion advertising, eCommerce campaigns, social media, and seasonal brand storytelling with a high end luxury look.",
     image: "/images/campaign-desert-knit-dress-2.jpeg",
     deliverables: [
@@ -86,7 +86,7 @@ export const services: Service[] = [
     number: "04",
     title: "AI Footwear Photography for Ecommerce Brands",
     short:
-      "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on-foot fit. Perfect for eCommerce, marketplaces, and brand campaigns.",
+      "Show sneakers, heels, or boots on foot and in close-up. Give shoppers a clear view of the silhouette, sole, materials, and stitching.",
     long: "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on foot fit. Every image preserves the sole, material, stitching, texture, and product details with a 100% realistic look.",
     image: "/images/footwear-heels.png",
     deliverables: [
@@ -101,7 +101,7 @@ export const services: Service[] = [
     number: "05",
     title: "AI Video Ads for Fashion Brands",
     short:
-      "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
+      "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
     long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
     image: "",
     video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto,w_1024,ac_none/v1783056368/video-ad-service-1_px1iey.mp4",
@@ -118,7 +118,7 @@ export const services: Service[] = [
     number: "06",
     title: "AI Handbag Photography for Ecommerce Brands",
     short:
-      "Hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, and social media.",
+      "Show a handbag on the shoulder to convey scale, then use detail shots to highlight its texture, stitching, and hardware.",
     long: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, catalogs, and social media marketing.",
     image: "/images/bags-shoot-with-model.jpeg",
     deliverables: [
