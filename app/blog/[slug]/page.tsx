@@ -12,6 +12,14 @@ import { blogTitle, breadcrumbData } from "@/lib/seo";
 
 export const revalidate = 60;
 
+function articleDescription(slug: string, post: { metaDescription?: string; excerpt?: string }) {
+  const approved = articleSeo[slug];
+  const current = post.metaDescription?.trim();
+  return approved && (!current || current === approved.oldDescription)
+    ? approved.description
+    : current || post.excerpt;
+}
+
 export async function generateStaticParams() {
   const blogs = await getAllBlogs();
   return blogs.map((b: any) => ({ slug: b.slug?.current || b.slug }));
@@ -29,7 +37,7 @@ export async function generateMetadata({
   const blogImage = post.image || "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg";
   const approved = articleSeo[params.slug];
   const title = approved && (!post.metaTitle || post.metaTitle.trim() === approved.oldTitle) ? approved.title : blogTitle(post.title, post.metaTitle);
-  const description = approved && (!post.metaDescription || post.metaDescription.trim() === approved.oldDescription) ? approved.description : post.metaDescription || post.excerpt;
+  const description = articleDescription(params.slug, post);
 
   return {
     title,
@@ -102,7 +110,7 @@ export default async function BlogPostPage({
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: post.title,
-        description: post.metaDescription || post.excerpt,
+        description: articleDescription(params.slug, post),
         image: post.image || `${site.url}/images/og-default.jpg`,
         datePublished: post.publishedAt,
         dateModified: post._updatedAt || post.publishedAt,

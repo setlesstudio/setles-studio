@@ -43,12 +43,12 @@ export default function PortfolioPage() {
         eyebrow="Our work speaks"
         title={
           <>
-            Creating visuals that <span className="text-brand">build brands</span>
+            AI fashion photography <span className="text-brand">portfolio</span>
           </>
         }
-        text="We combine creativity, strategy, and attention to detail to deliver content that connects and converts."
+        text="Explore studio, lifestyle, and campaign images for apparel, footwear, and handbag brands."
         image="/images/portfolio-page-banner.jpeg"
-        imageAlt="multiple-models-outdoor"
+        imageAlt="Models photographed outdoors"
         animateReveal
       />
 
