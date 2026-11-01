@@ -248,7 +248,7 @@ const DEFAULT_PAGES: PageSEO[] = [
     title: "Pricing Page",
     metaTitle: "Simple Pricing Packages | SetlesStudio AI Photography",
     metaDescription: "Clear pricing tiers for fashion brands of all sizes. Choose Starter, Growth, or Premium packages with fast turnaround and high resolution.",
-    heroTitle: "Premium hyper realistic AI fashion content [for every brand size]",
+    heroTitle: "AI fashion photography [pricing and packages]",
     heroText: "From product launches to global campaigns, choose the level of content production your brand needs.",
     heroImage: "/images/pricing-hero.jpeg",
   },

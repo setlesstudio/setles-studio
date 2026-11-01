@@ -79,7 +79,7 @@ export default async function BlogPage() {
         text={heroText}
         image={heroImage}
         imageMobile="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg"
-        imageAlt="outdoor-model-image"
+        imageAlt="Fashion model outdoors"
         animateReveal
       />
 

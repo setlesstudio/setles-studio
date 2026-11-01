@@ -262,7 +262,7 @@ export default function HomePage() {
 
       <CTABand
         title="Let's create something realistic together."
-        text="Take your brand to new heights and boost your sales 10x."
+        text="Send a product photo to discuss studio images, lifestyle scenes, or a fashion campaign for your brand."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started Today" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
         image="/images/home-page-last-section-image.jpg"

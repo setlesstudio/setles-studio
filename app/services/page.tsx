@@ -45,14 +45,14 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title={
           <>
-            Premium AI content for every visual your&nbsp;
-            <span className="text-brand">fashion brand needs</span>
+            AI fashion photography&nbsp;
+            <span className="text-brand">services</span>
           </>
         }
         text="From ecommerce product imagery to full scale marketing campaigns. Every service is built around accuracy, realism, and consistency."
         image="/images/service-page-banner.jpeg"
         imageMobile="/images/service-page-banner-mobile.jpeg"
-        imageAlt="business-model-sitting"
+        imageAlt="Seated model in a fashion shoot"
         animateReveal
       >
         <Link href="/pricing" className="btn-primary">

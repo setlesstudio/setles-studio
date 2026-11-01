@@ -37,7 +37,7 @@ export default function PricingPage() {
     return () => window.removeEventListener("setles_db_update", handleUpdate);
   }, []);
 
-  const heroTitle = pageData?.heroTitle || "Premium hyper realistic AI fashion content [for every brand size]";
+  const heroTitle = pageData?.heroTitle && pageData.heroTitle !== "Premium hyper realistic AI fashion content [for every brand size]" ? pageData.heroTitle : "AI fashion photography [pricing and packages]";
   const heroText = pageData?.heroText || "From product launches to global campaigns, choose the level of content production your brand needs.";
   const heroImage = pageData?.heroImage || "/images/pricing-hero.jpeg";
 

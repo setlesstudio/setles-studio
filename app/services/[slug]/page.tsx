@@ -277,7 +277,7 @@ const services: Record<string, ServiceData> = {
       titleSuffix: "for Ecommerce Brands",
       paragraphs: [
         "Transform your footwear products into luxury fashion campaign imagery that elevates your brand and drives sales. Our Luxury AI Footwear Campaign Photography service creates premium advertising visuals for sneakers, designer shoes, luxury footwear, boots, and fashion collections using hyperrealistic AI models, editorial styling, and luxury locations. ",
-        "Whether you're launching a new collection, creating a lookbook, or running advertising campaigns, we deliver high end fashion imagery designed to increase brand value,engagement, and conversions.",
+        "Whether you're launching a new collection, creating a lookbook, or running advertising campaigns, we create footwear images for your product pages, lookbooks, and campaign ads.",
       ],
     },
     features: {
@@ -296,7 +296,7 @@ const services: Record<string, ServiceData> = {
       image: "/images/footwear-cta-image.jpg",
       imageAlt: "Footwear AI photography CTA",
       title: "Ready to Showcase Your Footwear Professionally?",
-      text: "that helps your brand stand out and sell more online. Transform your footwear collection into realistic AI product photography",
+      text: "Turn your footwear product photos into on-foot and studio images for your next collection.",
       waText: "Hi, I'd like to start a footwear photography project.",
     },
     faqs: [
