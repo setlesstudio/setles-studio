@@ -308,17 +308,54 @@ export function savePages(pages: PageSEO[]) {
   window.dispatchEvent(new Event("setles_db_update"));
 }
 
-export function getStoredServices(): ServiceTile[] {
-  if (!isClient()) return services as unknown as ServiceTile[];
-  const data = localStorage.getItem("setles_services");
-  if (!data) {
-    localStorage.setItem("setles_services", JSON.stringify(services));
-    return services as unknown as ServiceTile[];
+// Previous public copy can still be present in a returning visitor’s saved cards.
+const previousServiceCopy: Record<string, { title: string; short: string }> = {
+  "realistic-ai-studio-photography": {
+    "title": "Realistic AI Studio Photography for Apparel Brands",
+    "short": "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images for product pages, catalogs, Shopify, and Amazon."
+  },
+  "lifestyle-realistic-ai-photography": {
+    "title": "Lifestyle Fashion Realistic AI Photography",
+    "short": "Real life lifestyle scenes from city streets, cafés, homes, and beaches. AI fashion imagery that builds emotional context for social media, ads, and brand storytelling."
+  },
+  "luxury-fashion-ai-campaign": {
+    "title": "Luxury Fashion Hyper Realistic AI Campaign",
+    "short": "Hyper realistic AI campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, advertising, and seasonal brand storytelling."
+  },
+  "footwear-realistic-ai-photography": {
+    "title": "Footwear Realistic AI Photography",
+    "short": "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on-foot fit. Perfect for eCommerce, marketplaces, and brand campaigns."
+  },
+  "realistic-ai-video-ads-ugc": {
+    "title": "Realistic AI Video Ads & UGC Content",
+    "short": "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube."
+  },
+  "bags-accessories-realistic-ai-photography": {
+    "title": "Women's Handbag Realistic AI Photography",
+    "short": "Hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, and social media."
   }
+};
+
+export function getStoredServices(): ServiceTile[] {
+  const defaults = services as unknown as ServiceTile[];
+  if (!isClient()) return defaults;
+  const data = localStorage.getItem("setles_services");
+  if (!data) return defaults;
   try {
-    return JSON.parse(data);
-  } catch (e) {
-    return services as unknown as ServiceTile[];
+    const saved: ServiceTile[] = JSON.parse(data);
+    if (!Array.isArray(saved)) return defaults;
+    return saved.map(card => {
+      const previous = previousServiceCopy[card.id];
+      const current = defaults.find(service => service.id === card.id);
+      if (!previous || !current) return card;
+      return {
+        ...card,
+        title: card.title === previous.title ? current.title : card.title,
+        short: card.short === previous.short ? current.short : card.short,
+      };
+    });
+  } catch {
+    return defaults;
   }
 }
 
