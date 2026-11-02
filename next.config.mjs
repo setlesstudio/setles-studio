@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/services/footwear-photography",
+        destination: "/services/footwear-realistic-ai-photography",
+        permanent: true,
+      },
+      {
+        source: "/services/lifestyle-photography",
+        destination: "/services/lifestyle-realistic-ai-photography",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
