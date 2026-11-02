@@ -9,6 +9,7 @@ type Item = {
   alt: string;
   category: "Studio" | "Lifestyle" | "Campaign" | "Footwear" | "Bags";
   tall?: boolean;
+  example?: { caption: string; service: string; href: string };
 };
 
 const items: Item[] = [
@@ -25,7 +26,7 @@ const items: Item[] = [
   { src: "/images/footwear-heels-3.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
   { src: "/images/heels-product.jpg", alt: "Black heels flat lay product photo before AI processing", category: "Footwear" },
   { src: "/images/heels-image-model-1.jpg", alt: "Black heels on AI model, second editorial look", category: "Footwear" },
-  { src: "/images/heels-image-model.jpeg", alt: "Black heels on AI model in lifestyle setting", category: "Footwear" },
+  { src: "/images/heels-image-model.jpeg", alt: "Black heels on AI model in lifestyle setting", category: "Footwear" , example: {"caption":"From a flat lay of black heels to an on-foot lifestyle shot.","service":"AI Footwear Photography","href":"/services/footwear-realistic-ai-photography"} },
   { src: "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg", alt: "Navy activewear set, window lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-men.png", alt: "Menswear knit set, café lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/bags-dress.png", alt: "Straw handbag with embroidered dress", category: "Bags" },
@@ -34,7 +35,7 @@ const items: Item[] = [
   { src: "/images/bags-shoot-2.jpeg", alt: "Luxury bag styled shoot", category: "Bags" },
   { src: "/images/bags-shoot-1.jpeg", alt: "Luxury bag product shoot", category: "Bags" },
   { src: "/images/bags-shoot-with-model.jpeg", alt: "Women's luxury handbag styled with AI model", category: "Bags", tall: true },
-  { src: "/images/environment-handbag-image.jpg", alt: "Women's luxury handbag on AI model in editorial environment", category: "Bags" },
+  { src: "/images/environment-handbag-image.jpg", alt: "Women's luxury handbag on AI model in editorial environment", category: "Bags" , example: {"caption":"From a flat-lay handbag photo to a styled shot showing how it looks when carried.","service":"AI Handbag Photography","href":"/services/bags-accessories-realistic-ai-photography"} },
   { src: "/images/environment-handbag-image-1.jpg", alt: "Women's luxury handbag on AI model, editorial lifestyle setting", category: "Bags", tall: true },
   { src: "/images/female-model-with-bag.jpg", alt: "AI female model carrying designer handbag outdoors", category: "Bags", tall: true },
   { src: "/images/handbag-female-image.jpg", alt: "Women's luxury handbag styled on AI female model", category: "Bags", tall: true },
@@ -140,11 +141,12 @@ export default function PortfolioGallery() {
                   priority={index < 4}
                 />
               </motion.div>
-              <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              <figcaption className={`${item.example ? "group-focus-within:opacity-100 group-focus-within:translate-y-0 [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-y-0" : "pointer-events-none"} absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/80 to-transparent p-4 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100`}>
                 <span className="text-xs font-bold uppercase tracking-widest text-brand">
                   {item.category}
                 </span>
-                <p className="text-sm font-semibold text-white">{item.alt}</p>
+                <p className="text-sm font-semibold text-white">{item.example?.caption ?? item.alt}</p>
+                {item.example && <a href={item.example.href} className="text-sm font-semibold text-white underline">{item.example.service}</a>}
               </figcaption>
             </motion.figure>
           ))}

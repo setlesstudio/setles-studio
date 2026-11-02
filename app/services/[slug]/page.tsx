@@ -105,19 +105,19 @@ const services: Record<string, ServiceData> = {
       heading: "Why Choose Our AI Fashion Photography Services?",
       subheading: "Realistic AI Studio Photography",
       items: [
-        { number: "01", icon: Star,         title: "Highly Realistic",       description: "Our AI technology creates photorealistic images that look 100% real and natural." },
+        { number: "01", icon: Star,         title: "Garment Detail Review",       description: "Compare the finished image with your original photo to check garment color, stitching, and logo placement." },
         { number: "02", icon: Users,        title: "Consistent Models",      description: "Use the same AI model across your entire collection for consistency." },
         { number: "03", icon: Lightbulb,    title: "Professional Lighting",  description: "Studio-quality lighting setups for premium fashion presentation." },
         { number: "04", icon: Rocket,       title: "Fast Turnaround",        description: "Get your images delivered quickly and launch your products faster." },
-        { number: "05", icon: Coins,        title: "Cost Effective",         description: "Save up to 70% compared to traditional photoshoots without compromising quality." },
+        { number: "05", icon: Coins,        title: "Product Photo Input",         description: "Start with a flat lay, mannequin photo, or product shot of the garment you want shown on a model." },
         { number: "06", icon: MonitorCheck, title: "High Resolution",        description: "High-resolution images perfect for web, print, and advertising." },
       ],
     },
     ctaBanner: {
       image: "/images/studio-service-cta.jpg",
       imageAlt: "AI studio fashion photography banner",
-      title: "Create stunning, photorealistic fashion imagery that sells your apparel instantly.",
-      text: "Showcase your apparel with commercial quality studio imagery designed to attract customers, build trust, and increase conversions.",
+      title: "See your garment in a studio image.",
+      text: "Send a product photo and tell us which details you want to highlight in your catalog.",
       waText: "Hi, I'd like to start a studio product photography project.",
     },
     faqs: [
