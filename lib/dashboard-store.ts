@@ -413,7 +413,12 @@ export function getStoredValueProps(): ValuePropTile[] {
     return valueProps as ValuePropTile[];
   }
   try {
-    return JSON.parse(data);
+    const saved: ValuePropTile[] = JSON.parse(data);
+    return saved.map(item => ({
+      ...item,
+      title: item.title === "10x More Affordable" ? valueProps[0].title : item.title,
+      text: item.text === "High end content without high end production costs." ? valueProps[0].text : item.text,
+    }));
   } catch (e) {
     return valueProps as ValuePropTile[];
   }

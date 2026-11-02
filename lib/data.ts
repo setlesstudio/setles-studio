@@ -140,8 +140,8 @@ export const stats = [
 
 export const valueProps = [
   {
-    title: "10x More Affordable",
-    text: "High end content without high end production costs.",
+    title: "Per-project Pricing",
+    text: "Compare each package by price, image count, and included services.",
   },
   {
     title: "7 Day Average Delivery",
