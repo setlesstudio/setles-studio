@@ -245,7 +245,7 @@ export default function LearnPage() {
           <a href="#resources" aria-label="Browse all learn resources" className="block overflow-hidden rounded-4xl">
             <Image
               src="/images/learn-page-last-section-full.jpeg"
-              alt="Start Learning. Start Creating. — SetlesStudio learn resources"
+              alt="Browse SetlesStudio fashion photography resources"
               width={1440}
               height={576}
               className="w-full h-auto"
@@ -261,7 +261,7 @@ export default function LearnPage() {
           <div className="relative overflow-hidden rounded-4xl text-white">
             <Image
               src="/images/book-image-small.png"
-              alt="SetlesStudio books and course materials"
+              alt="SetlesStudio guidebook and digital edition"
               fill
               sizes="100vw"
               className="object-cover object-center lg:hidden"
@@ -269,7 +269,7 @@ export default function LearnPage() {
             />
             {/* <Image
               src="/images/books-image.png"
-              alt="SetlesStudio books and course materials"
+              alt="SetlesStudio guidebook and digital edition"
               fill
               sizes="100vw"
               className="hidden object-cover object-center lg:block"
