@@ -17,7 +17,16 @@ type Item = {
 const items: Item[] = [
   { src: "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg", alt: "Navy activewear set, lifestyle street scene", category: "Lifestyle", tall: true },
   { src: "/images/studio-pink.png", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
-  { src: "/images/studio-black-two-piece.jpg", alt: "Woman in black two-piece set, studio shot", category: "Studio" },
+  {
+    src: "/images/black-sports-bra-biker-shorts.jpg",
+    alt: "Model wearing a black sports bra and matching biker shorts",
+    category: "Studio",
+    example: {
+      caption: "AI activewear photography shows the fit of this matching workout set for an ecommerce product page.",
+      service: "AI studio photography",
+      href: "/services/realistic-ai-studio-photography",
+    },
+  },
   { src: "/images/studio-pink-2.jpeg", alt: "Pink SALTY activewear set, studio shot", category: "Studio" },
   { src: "/images/studio-black-dress-female.jpg", alt: "Woman in black mini dress, studio shot", category: "Studio" },
   { src: "/images/luxury-stairs.webp", alt: "Fuchsia two piece campaign on stairs", category: "Campaign", tall: true },

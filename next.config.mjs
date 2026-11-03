@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [{ source: "/images/studio-black-two-piece.jpg", destination: "/images/black-sports-bra-biker-shorts.jpg" }];
+  },
   async redirects() {
     return [
       {

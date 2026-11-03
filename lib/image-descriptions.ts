@@ -13,7 +13,6 @@ const descriptions: Record<string, string> = {
   "/images/service-page-banner.jpeg": "Burgundy dress outside a building",
   "/images/portfolio-page-banner.jpeg": "Model beneath flowering vines on a walkway",
   "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061426/after-walk_jgjfsx.jpg": "Navy activewear outdoors",
-  "/images/studio-black-two-piece.jpg": "Black sports bra and shorts in the studio",
   "/images/studio-pink-2.jpeg": "Back view of a pink sports bra and shorts",
   "/images/studio-black-dress-female.jpg": "Black mini dress in the studio",
   "/images/luxury-stairs.webp": "Fuchsia outfit on garden steps",
