@@ -1,3 +1,4 @@
+import { coverSizes, imageDescription } from "@/lib/image-descriptions";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import CTABand from "@/components/CTABand";
@@ -153,7 +154,8 @@ export default async function BlogPostPage({
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-4xl border border-ink/5 bg-cream">
               <img
                 src={post.image}
-                alt={post.title}
+                  {...coverSizes(post.image, "(min-width: 1024px) 960px, 100vw")}
+                alt={imageDescription(post.image, post.title)}
                 className="object-cover w-full h-full"
               />
             </div>

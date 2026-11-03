@@ -72,7 +72,7 @@ export default function AboutPage() {
           <Reveal>
             <ImageSlot
               src="/images/about-story.jpg"
-              alt="SetlesStudio team working on AI fashion content"
+              alt="Woman using a laptop on a sofa"
               label="Our story image"
               className="aspect-[4/3] w-full rounded-4xl"
               imageClassName=""

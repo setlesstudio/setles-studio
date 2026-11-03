@@ -1,3 +1,4 @@
+import { imageDescription } from "@/lib/image-descriptions";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
@@ -34,7 +35,7 @@ export default function ServiceBeforeAfter({
             <div className={`relative overflow-hidden rounded-2xl ${afterVideo ? "aspect-[3/4] md:aspect-auto md:flex-1" : `aspect-[3/4] md:max-h-[320px] ${hasTwo ? "xl:max-h-none" : "xl:max-h-[400px]"}`}`}>
               <Image
                 src={before}
-                alt={beforeAlt}
+                alt={imageDescription(before, beforeAlt)}
                 fill
                 sizes="100vw"
                 className="object-contain p-4"
@@ -62,7 +63,7 @@ export default function ServiceBeforeAfter({
             ) : after ? (
               <Image
                 src={after}
-                alt={afterAlt}
+                alt={imageDescription(after, afterAlt)}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover object-top"
@@ -80,7 +81,7 @@ export default function ServiceBeforeAfter({
               </span>
               <Image
                 src={after2!}
-                alt={after2Alt ?? ""}
+                alt={imageDescription(after2, after2Alt ?? "")}
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover object-top"

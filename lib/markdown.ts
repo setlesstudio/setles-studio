@@ -1,3 +1,5 @@
+import { imageDescription } from "@/lib/image-descriptions";
+
 /**
  * Utility to parse Markdown and raw HTML content into formatted HTML strings for blog posts.
  * Supports HTML links (<a href="...">...</a>), Markdown links ([text](url)), bold, italic, headings, lists, and tables.
@@ -65,7 +67,13 @@ export function parseMarkdownToHtml(markdownText: string): string {
     return `<p class="text-ink-soft leading-relaxed my-4">${paraHtml}</p>`;
   });
 
-  return htmlBlocks.filter(Boolean).join("");
+  return htmlBlocks.filter(Boolean).join("").replace(/<img\b[^>]*>/gi, tag => {
+    const src = tag.match(/\ssrc=["']([^"']+)["']/i)?.[1];
+    const label = imageDescription(src, "");
+    if (!label) return tag;
+    const cleanTag = tag.replace(/\salt=(?:"[^"]*"|'[^']*')/gi, "");
+    return cleanTag.replace(/^<img/i, `<img alt="${label}"`);
+  });
 }
 
 function processInlineFormatting(text: string): string {

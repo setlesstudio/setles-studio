@@ -99,7 +99,7 @@ export default function HomePage() {
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
                 src="/images/product-image.png"
-                alt="Navy tank top flat product photo"
+                alt="Navy tank and shorts laid flat"
                 fill
                 sizes="33vw"
                 className="object-contain p-3"
@@ -113,7 +113,7 @@ export default function HomePage() {
               </span>
               <Image
                 src="/images/after-window.webp"
-                alt="Model wearing the navy activewear set walking outdoors"
+                alt="Navy activewear outside a building"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover object-top"
@@ -127,7 +127,7 @@ export default function HomePage() {
               </span>
               <Image
                 src="/images/after-walk.webp"
-                alt="Model wearing the navy activewear set reading by a window"
+                alt="Model reading in navy activewear"
                 fill
                 sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover object-top"
@@ -182,7 +182,7 @@ export default function HomePage() {
                         src={s.video
                           .replace("/video/upload/", "/video/upload/q_auto,w_320,so_0/")
                           .replace(".mp4", ".jpg")}
-                        alt={s.title}
+                        alt=""
                         fill
                         sizes="128px"
                         className="object-cover object-top"

@@ -1,3 +1,4 @@
+import { imageDescription } from "@/lib/image-descriptions";
 import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
@@ -53,7 +54,7 @@ export default function PageHero({
   ) : null;
 
   const imageOptions = {
-    alt: imageAlt,
+    alt: imageDescription(image, imageAlt),
     fill: true as const,
     sizes: "100vw",
     quality: 85,
@@ -67,7 +68,7 @@ export default function PageHero({
     <>
       <picture>
         {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet} sizes={mobileProps.sizes} />}
-        <img {...desktopProps} {...{ fetchpriority: "high" }} alt={imageAlt} />
+        <img {...desktopProps} {...{ fetchpriority: "high" }} />
       </picture>
       {overlays}
     </>

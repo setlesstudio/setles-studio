@@ -41,13 +41,14 @@ async function main() {
   const json = JSON.parse(script.replace(/^<script[^>]*>/, "").replace(/<\/script>$/, ""));
   assert.equal(json.name, "</script><img src=x>");
 
-  const PageHero = load("components/PageHero.tsx", { "./Reveal": ({ children }) => children }).default;
+  const imageCopy = load("lib/image-descriptions.ts");
+  const PageHero = load("components/PageHero.tsx", { "@/lib/image-descriptions": imageCopy, "./Reveal": ({ children }) => children }).default;
   const hero = renderToStaticMarkup(React.createElement(PageHero, { eyebrow: "Service", title: "Photography", image: "/desktop.jpg", imageMobile: "/mobile.jpg", imageAlt: "Fashion model" }));
   assert.equal((hero.match(/<img\b/g) || []).length, 1);
   assert.match(hero, /<source media="\(max-width: 767px\)"/);
   assert.match(hero, /q=85/);
 
-  const markdown = load("lib/markdown.ts");
+  const markdown = load("lib/markdown.ts", { "@/lib/image-descriptions": imageCopy });
   assert.doesNotMatch(markdown.parseMarkdownToHtml("# An article section"), /<h1/);
 
   const sitemap = load("app/sitemap.ts", {

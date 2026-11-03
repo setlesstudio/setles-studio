@@ -22,7 +22,7 @@ export default function TrustedBy() {
                 className={`flex shrink-0 items-center justify-center ${brand.name === "Xanderlocket" ? "h-28 w-64" : "h-20 w-52"}`}
               >
                 <div className="relative h-full w-full">
-                  <Image src={brand.logo} alt={brand.name} fill unoptimized sizes="256px" className="object-contain" />
+                  <Image src={brand.logo} alt={i < trustedByRow1.length ? brand.name : ""} fill sizes="256px" className="object-contain" />
                 </div>
               </div>
             ))}
@@ -39,7 +39,7 @@ export default function TrustedBy() {
                 className="flex h-20 w-52 shrink-0 items-center justify-center"
               >
                 <div className="relative h-full w-full">
-                  <Image src={brand.logo} alt={brand.name} fill unoptimized sizes="208px" className="object-contain" />
+                  <Image src={brand.logo} alt={i < trustedByRow2.length ? brand.name : ""} fill sizes="208px" className="object-contain" />
                 </div>
               </div>
             ))}
