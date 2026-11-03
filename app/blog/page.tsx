@@ -1,3 +1,4 @@
+import { coverSizes, imageDescription } from "@/lib/image-descriptions";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
@@ -94,7 +95,8 @@ export default async function BlogPage() {
               {featured.image ? (
                 <img
                   src={featured.image}
-                  alt={articleHeading(featured.slug?.current || featured.slug, featured.title)}
+                  {...coverSizes(featured.image, "(min-width: 1024px) 50vw, 100vw")}
+                  alt={imageDescription(featured.image, featured.title)}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
@@ -142,7 +144,9 @@ export default async function BlogPage() {
                   {post.image ? (
                     <img
                       src={post.image}
-                      alt={articleHeading(post.slug?.current || post.slug, post.title)}
+                  {...coverSizes(post.image, "(min-width: 1024px) 33vw, 100vw")}
+                      loading="lazy"
+                      alt={imageDescription(post.image, post.title)}
                       className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (

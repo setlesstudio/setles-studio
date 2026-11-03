@@ -17,7 +17,7 @@ function TestimonialCard({ t }: { t: TestimonialTile }) {
         <div className="flex items-center gap-3">
           {t.image ? (
             <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
-              <img src={t.image} alt={t.name} className="h-9 w-9 object-cover rounded-full" />
+              <img src={t.image} alt="" loading="lazy" width={36} height={36} className="h-9 w-9 object-cover rounded-full" />
             </div>
           ) : (
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand text-xs">
@@ -53,8 +53,11 @@ export default function Testimonials() {
   }, []);
 
   const items = list.length > 0 ? list : defaultTestimonials;
-  const row1 = [...items, ...items];
-  const row2 = [...[...items].reverse(), ...[...items].reverse()];
+  const split = Math.ceil(items.length / 2);
+  const first = items.slice(0, split);
+  const second = items.length > 1 ? items.slice(split).reverse() : first;
+  const row1 = [...first, ...first];
+  const row2 = [...second, ...second];
 
   return (
     <div className="space-y-4">

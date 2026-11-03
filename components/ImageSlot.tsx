@@ -1,3 +1,4 @@
+import { imageDescription } from "@/lib/image-descriptions";
 import Image from "next/image";
 import { ImageIcon } from "lucide-react";
 
@@ -48,7 +49,7 @@ export default function ImageSlot({
     <div className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
-        alt={alt}
+        alt={alt ? imageDescription(src, alt) : ""}
         fill
         sizes={sizes}
         priority={priority}

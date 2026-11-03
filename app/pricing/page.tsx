@@ -119,7 +119,7 @@ export default function PricingPage() {
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
                     src="/images/lifestyle-red-dress-nyc-1-service.jpg"
-                    alt="Model in red dress on NYC street"
+                    alt="Red mini dress, front view"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
@@ -130,7 +130,7 @@ export default function PricingPage() {
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
                     src="/images/lifestyle-red-dress-nyc-2.jpg"
-                    alt="Model in red dress walking in New York"
+                    alt="Red mini dress, side view"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
@@ -141,7 +141,7 @@ export default function PricingPage() {
                 <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
                   <Image
                     src="/images/lifestyle-pink-outfit-cafe.webp"
-                    alt="Model in pink outfit outside a café"
+                    alt="Fuchsia outfit outside a café"
                     fill
                     sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
@@ -250,7 +250,7 @@ export default function PricingPage() {
             </div>
             <ImageSlot
               src="/images/lifestyle-orange-activewear.jpg"
-              alt="Lifestyle fashion model in orange activewear"
+              alt="Orange activewear in sunlight"
               label="Custom quote image"
               className="hidden lg:block lg:min-h-[300px]"
               imageClassName="object-top"

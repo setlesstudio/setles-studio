@@ -1,5 +1,6 @@
 "use client";
 
+import { imageDescription } from "@/lib/image-descriptions";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageSlot from "./ImageSlot";
@@ -145,7 +146,7 @@ export default function PortfolioGallery() {
                 <span className="text-xs font-bold uppercase tracking-widest text-brand">
                   {item.category}
                 </span>
-                <p className="text-sm font-semibold text-white">{item.example?.caption ?? item.alt}</p>
+                <p className="text-sm font-semibold text-white">{item.example?.caption ?? imageDescription(item.src, item.alt)}</p>
                 {item.example && <a href={item.example.href} className="text-sm font-semibold text-white underline">{item.example.service}</a>}
               </figcaption>
             </motion.figure>

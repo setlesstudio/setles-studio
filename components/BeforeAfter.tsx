@@ -1,5 +1,6 @@
 "use client";
 
+import { imageDescription } from "@/lib/image-descriptions";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { ChevronsLeftRight } from "lucide-react";
@@ -44,7 +45,7 @@ export default function BeforeAfter({
     >
       <Image
         src={after}
-        alt={afterAlt}
+        alt={imageDescription(after, afterAlt)}
         fill
         sizes="(min-width: 1024px) 50vw, 100vw"
         priority
@@ -58,7 +59,7 @@ export default function BeforeAfter({
         <div className="absolute inset-0 bg-cream">
           <Image
             src={before}
-            alt={beforeAlt}
+            alt={imageDescription(before, beforeAlt)}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
             priority
