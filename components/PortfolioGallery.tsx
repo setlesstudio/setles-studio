@@ -10,6 +10,7 @@ type Item = {
   alt: string;
   category: "Studio" | "Lifestyle" | "Campaign" | "Footwear" | "Bags";
   tall?: boolean;
+  caption?: string;
   example?: { caption: string; service: string; href: string };
 };
 
@@ -21,9 +22,9 @@ const items: Item[] = [
   { src: "/images/studio-black-dress-female.jpg", alt: "Woman in black mini dress, studio shot", category: "Studio" },
   { src: "/images/luxury-stairs.webp", alt: "Fuchsia two piece campaign on stairs", category: "Campaign", tall: true },
   { src: "/images/lifestyle-pink-outfit-cafe.webp", alt: "Fuchsia pink outfit campaign", category: "Campaign", tall: true },
-  { src: "/images/heels-product.jpeg", alt: "Black heels editorial product shot", category: "Footwear" },
+  { src: "/images/heels-product.jpeg", alt: "Black heels editorial product shot", category: "Footwear", caption: "The original product photo shows the pointed toes and red lining." },
   { src: "/images/footwear-heels.png", alt: "Black heels editorial product shot", category: "Footwear" },
-  { src: "/images/footwear-heels-2.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
+  { src: "/images/footwear-heels-2.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear", example: { caption: "The on-foot shot pairs the black pumps with white trousers.", service: "AI Footwear Photography", href: "/services/footwear-realistic-ai-photography" } },
   { src: "/images/footwear-heels-3.jpeg", alt: "Closeup Black heels editorial product shot", category: "Footwear" },
   { src: "/images/heels-product.jpg", alt: "Black heels flat lay product photo before AI processing", category: "Footwear" },
   { src: "/images/heels-image-model-1.jpg", alt: "Black heels on AI model, second editorial look", category: "Footwear" },
@@ -31,12 +32,12 @@ const items: Item[] = [
   { src: "https://res.cloudinary.com/dlfb8yn1x/image/upload/f_auto,q_auto/v1783061417/after-window_bpn6g6.jpg", alt: "Navy activewear set, window lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-men.png", alt: "Menswear knit set, café lifestyle scene", category: "Lifestyle", tall: true },
   { src: "/images/bags-dress.png", alt: "Straw handbag with embroidered dress", category: "Bags" },
-  { src: "/images/bag-image.png", alt: "Women's handbag flat lay product photo before AI processing", category: "Bags" },
+  { src: "/images/bag-image.png", alt: "Women's handbag flat lay product photo before AI processing", category: "Bags", caption: "The original handbag photo shows the tote’s shape and long handles against white." },
   { src: "/images/bags-shoot.jpeg", alt: "Luxury bag editorial shoot", category: "Bags" },
   { src: "/images/bags-shoot-2.jpeg", alt: "Luxury bag styled shoot", category: "Bags" },
   { src: "/images/bags-shoot-1.jpeg", alt: "Luxury bag product shoot", category: "Bags" },
   { src: "/images/bags-shoot-with-model.jpeg", alt: "Women's luxury handbag styled with AI model", category: "Bags", tall: true },
-  { src: "/images/environment-handbag-image.jpg", alt: "Women's luxury handbag on AI model in editorial environment", category: "Bags" , example: {"caption":"From a flat-lay handbag photo to a styled shot showing how it looks when carried.","service":"AI Handbag Photography","href":"/services/bags-accessories-realistic-ai-photography"} },
+  { src: "/images/environment-handbag-image.jpg", alt: "Women's luxury handbag on AI model in editorial environment", category: "Bags", example: { caption: "The finished terrace shot shows the tote at the model’s side.", service: "AI Handbag Photography", href: "/services/bags-accessories-realistic-ai-photography" } },
   { src: "/images/environment-handbag-image-1.jpg", alt: "Women's luxury handbag on AI model, editorial lifestyle setting", category: "Bags", tall: true },
   { src: "/images/female-model-with-bag.jpg", alt: "AI female model carrying designer handbag outdoors", category: "Bags", tall: true },
   { src: "/images/handbag-female-image.jpg", alt: "Women's luxury handbag styled on AI female model", category: "Bags", tall: true },
@@ -68,7 +69,7 @@ const items: Item[] = [
   { src: "/images/studio-black-mini-dress-1.jpg", alt: "Woman in black strapless mini dress, studio shot", category: "Studio", tall: true },
   { src: "/images/studio-white-cutout-maxi.jpg", alt: "Woman in white one shoulder cutout maxi dress, side pose", category: "Studio", tall: true },
   { src: "/images/studio-white-cutout-maxi-1.jpg", alt: "Woman in white one shoulder cutout maxi dress, side pose", category: "Studio", tall: true },
-  { src: "/images/studio-white-cutout-maxi-2.jpg", alt: "Woman in white one shoulder cutout maxi dress, front pose", category: "Studio", tall: true },
+  { src: "/images/studio-white-cutout-maxi-2.jpg", alt: "Woman in white one shoulder cutout maxi dress, front pose", category: "Studio", tall: true, example: { caption: "The studio shot shows the cutout detail and the full length of the dress.", service: "AI Fashion Photography", href: "/services/realistic-ai-studio-photography" } },
   { src: "/images/lifestyle-kids-pink-dress-1.jpg", alt: "Little girl in pink embroidered dress twirling in garden", category: "Lifestyle" },
   { src: "/images/lifestyle-kids-pink-dress-2.jpg", alt: "Little girl in pink embroidered dress standing in garden", category: "Lifestyle", tall: true },
   { src: "/images/lifestyle-kids-pink-dress-3.jpg", alt: "Little girl in pink embroidered dress running in garden", category: "Lifestyle" },
@@ -146,7 +147,7 @@ export default function PortfolioGallery() {
                 <span className="text-xs font-bold uppercase tracking-widest text-brand">
                   {item.category}
                 </span>
-                <p className="text-sm font-semibold text-white">{item.example?.caption ?? imageDescription(item.src, item.alt)}</p>
+                <p className="text-sm font-semibold text-white">{item.example?.caption ?? item.caption ?? imageDescription(item.src, item.alt)}</p>
                 {item.example && <a href={item.example.href} className="text-sm font-semibold text-white underline">{item.example.service}</a>}
               </figcaption>
             </motion.figure>
