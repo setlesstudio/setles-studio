@@ -35,6 +35,8 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 64, 128, 256, 384],
     remotePatterns: [
+      { protocol: "https", hostname: "i.ibb.co" },
+      { protocol: "https", hostname: "img.magnific.com", pathname: "/free-photo/**" },
       { protocol: "https", hostname: "cdn.sanity.io" },
       { protocol: "https", hostname: "res.cloudinary.com" },
     ],

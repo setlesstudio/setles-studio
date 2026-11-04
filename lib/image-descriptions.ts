@@ -136,11 +136,18 @@ export function imageDescription(src: string | undefined, fallback: string) {
 
 
 export function coverSizes(src: string, sizes: string) {
-  if (!/^https:\/\/(?:images\.pexels\.com|(?:images|plus)\.unsplash\.com)\//.test(src)) return {};
-  const url = new URL(src);
-  const srcSet = [384, 640, 960, 1280].map(width => {
+  const cdn = /^https:\/\/(?:images\.pexels\.com|(?:images|plus)\.unsplash\.com)\//.test(src);
+  const proxy = /^https:\/\/(?:i\.ibb\.co|img\.magnific\.com)\//.test(src);
+  if (!cdn && !proxy) return {};
+
+  const url = new URL(src.replaceAll("&amp;", "&"));
+  const candidates = [384, 640, 828, 1080].map(width => {
+    if (proxy) {
+      return `/_next/image?url=${encodeURIComponent(url.href)}&w=${width}&q=75 ${width}w`;
+    }
     url.searchParams.set("w", String(width));
+    url.searchParams.set("fm", "webp");
     return `${url.href} ${width}w`;
-  }).join(", ");
-  return { srcSet, sizes };
+  });
+  return { srcSet: candidates.join(", "), sizes };
 }

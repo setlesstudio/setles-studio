@@ -1,4 +1,4 @@
-import { imageDescription } from "@/lib/image-descriptions";
+import { coverSizes, imageDescription } from "@/lib/image-descriptions";
 
 /**
  * Utility to parse Markdown and raw HTML content into formatted HTML strings for blog posts.
@@ -73,9 +73,16 @@ export function parseMarkdownToHtml(markdownText: string): string {
   return htmlBlocks.filter(Boolean).join("").replace(/<img\b[^>]*>/gi, tag => {
     const src = tag.match(/\ssrc=["']([^"']+)["']/i)?.[1];
     const label = imageDescription(src, "");
-    if (!label) return tag;
-    const cleanTag = tag.replace(/\salt=(?:"[^"]*"|'[^']*')/gi, "");
-    return cleanTag.replace(/^<img/i, `<img alt="${label}"`);
+    let image = tag;
+    if (label) {
+      image = image.replace(/\salt=(?:"[^"]*"|'[^']*')/gi, "");
+      image = image.replace(/^<img/i, `<img alt="${label}"`);
+    }
+    if (!src || /\ssrcset=/i.test(image)) return image;
+    const { srcSet, sizes } = coverSizes(src, "(min-width: 1024px) 768px, 100vw");
+    if (!srcSet) return image;
+    const escaped = srcSet.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
+    return image.replace(/^<img/i, `<img srcset="${escaped}" sizes="${sizes}"`);
   });
 }
 
