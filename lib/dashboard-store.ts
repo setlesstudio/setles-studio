@@ -364,7 +364,8 @@ export function getStoredServices(): ServiceTile[] {
       if (!previous || !current) return card;
       return {
         ...card,
-        title: card.title === previous.title ? current.title : card.title,
+        title: card.title === previous.title || (card.id === "realistic-ai-studio-photography" && card.title === "AI Studio Photography for Apparel Brands")
+          ? current.title : card.title,
         short: card.short === previous.short ? current.short : card.short,
       };
     });

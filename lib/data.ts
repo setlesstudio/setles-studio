@@ -38,7 +38,7 @@ export const services: Service[] = [
   {
     id: "realistic-ai-studio-photography",
     number: "01",
-    title: "AI Studio Photography for Apparel Brands",
+    title: "AI Fashion Photography for Clothing Brands",
     short:
       "Turn flat-lay garment photos into on-model studio images with a consistent background for your product pages and apparel catalog.",
     long: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit ready for product pages, catalogs, Shopify stores, Amazon, and eCommerce websites.",
