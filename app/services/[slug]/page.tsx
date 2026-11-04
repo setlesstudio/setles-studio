@@ -101,21 +101,21 @@ const services: Record<string, ServiceData> = {
       after2Alt: "AI studio photo — white cutout maxi dress on model, second studio look",
     },
     description: {
-      titleHighlight: "From flat lay",
-      titleSuffix: "to on-model apparel images",
+      titleHighlight: "AI Fashion Photography",
+      titleSuffix: "for Clothing Brands",
       paragraphs: [
-        "A flat lay shows the garment on its own. An on-model studio image shows shoppers how the neckline, length, and silhouette look when worn. For the white dress above, compare the cutout in the original photo with the same detail in the side view.",
-        "For a clothing catalog, choose one model and lighting setup across the collection. For an ecommerce product page, pair a full-length image with a second angle that shows a detail shoppers might otherwise miss.",
+        "Transform your apparel products into professional, studio quality fashion images without expensive photoshoots. Our realistic AI models create photorealistic fashion visuals of models wearing your apparel while maintaining accurate garment details, fabric textures, logos, colors, and fit.",
+        "Every image is carefully refined to achieve a realistic commercial look suitable for Ecommerce stores, advertising campaigns, social media marketing, and fashion.",
       ],
     },
     features: {
-      heading: "What can you specify for your apparel shoot?",
-      subheading: "AI clothing photography",
+      heading: "Why Choose Our AI Fashion Photography Services?",
+      subheading: "Realistic AI Studio Photography",
       items: [
         { number: "01", icon: Star,         title: "Garment Detail Review",       description: "Compare the finished image with your original photo to check garment color, stitching, and logo placement." },
         { number: "02", icon: Users,        title: "Consistent Models",      description: "Use the same AI model across your entire collection for consistency." },
         { number: "03", icon: Lightbulb,    title: "Professional Lighting",  description: "Studio-quality lighting setups for premium fashion presentation." },
-        { number: "04", icon: Rocket,       title: "Product Page Views",     description: "Choose front, side, or detail views to show the features shoppers look for." },
+        { number: "04", icon: Rocket,       title: "Fast Turnaround",        description: "Get your images delivered quickly and launch your products faster." },
         { number: "05", icon: Coins,        title: "Product Photo Input",         description: "Start with a flat lay, mannequin photo, or product shot of the garment you want shown on a model." },
         { number: "06", icon: MonitorCheck, title: "High Resolution",        description: "High-resolution images perfect for web, print, and advertising." },
       ],
