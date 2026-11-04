@@ -214,6 +214,11 @@ By implementing these 15 product photography strategies, your online store will 
   }
 ];
 
+export const homeHero = {
+  heroTitle: "[AI Fashion] Photography for Clothing Brands",
+  heroText: "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content.",
+};
+
 // Initial page defaults
 const DEFAULT_PAGES: PageSEO[] = [
   {
@@ -221,8 +226,7 @@ const DEFAULT_PAGES: PageSEO[] = [
     title: "Home Page",
     metaTitle: "SetlesStudio | Premium Hyper Realistic AI Fashion Content",
     metaDescription: "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
-    heroTitle: "[AI Fashion] Photography for Ecommerce Brands",
-    heroText: "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
+    ...homeHero,
     heroImage: "/images/luxury-stairs-wide.jpeg",
   },
   {
@@ -296,7 +300,17 @@ export function getStoredPages(): PageSEO[] {
     return DEFAULT_PAGES;
   }
   try {
-    return JSON.parse(data);
+    const pages: PageSEO[] = JSON.parse(data);
+    return pages.map(page => {
+      if (page.pageId !== "home") return page;
+      const oldTitles = ["[AI Fashion] Photography for Ecommerce Brands", "Realistic [AI Fashion] Photography \n for Ecommerce Brands"];
+      const oldText = "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
+      return {
+        ...page,
+        heroTitle: oldTitles.includes(page.heroTitle) ? homeHero.heroTitle : page.heroTitle,
+        heroText: [oldText, oldText + ", 10x more affordable than traditional photoshoots."].includes(page.heroText) ? homeHero.heroText : page.heroText,
+      };
+    });
   } catch (e) {
     return DEFAULT_PAGES;
   }
