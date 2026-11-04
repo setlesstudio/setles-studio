@@ -9,6 +9,7 @@ export function parseMarkdownToHtml(markdownText: string): string {
 
   // Split into block paragraphs by double linebreaks
   const blocks = markdownText
+    .replaceAll("https://i.ibb.co/1GSLsR77/2321.jpg", "/images/cream-knit-sweater-front.webp")
     .replaceAll("https://i.ibb.co/rf3tj7XG/3r3.jpg", "/images/rust-jacket-side-view.webp")
     .replaceAll("https://i.ibb.co/rGHkPcBY/Whats-App-Image-2026-09-11-at-4-04-21-P31-M.jpg", "/images/cream-sweater-back-view.webp")
     .split(/\n\n+/);

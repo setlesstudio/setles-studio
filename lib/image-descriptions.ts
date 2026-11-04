@@ -124,7 +124,7 @@ const descriptions: Record<string, string> = {
   "https://images.unsplash.com/photo-1653582482481-b8b34d824629": "Camera operator filming indoors",
   "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg": "Model seated on a desert rock in a cream dress",
   "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg": "Model seated on a desert rock in a cream dress",
-  "https://i.ibb.co/1GSLsR77/2321.jpg": "Light knit sweater on a dress form",
+  "/images/cream-knit-sweater-front.webp": "Light knit sweater on a dress form",
   "https://i.ibb.co/xt84fB1K/123213213.jpg": "Three-quarter view of a light knit sweater on a dress form"
 };
 
