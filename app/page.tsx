@@ -1,5 +1,6 @@
 "use client";
 
+import ComparisonFigure from "@/components/ComparisonFigure";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -92,48 +93,54 @@ export default function HomePage() {
           text="From a flat-lay product photo to an AI model wearing the navy workout set."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
-          <Reveal className="card flex flex-col gap-3 p-5">
-            <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
-              Before
-            </span>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-              <Image
-                src="/images/product-image.png"
-                alt="Navy tank and shorts laid flat"
-                fill
-                sizes="33vw"
-                className="object-contain p-3"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
-              <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                After
+          <ComparisonFigure caption="Send a flat lay of the navy tank and matching shorts so both pieces are visible.">
+            <Reveal className="card flex flex-col gap-3 p-5">
+              <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
+                Before
               </span>
-              <Image
-                src="/images/after-window.webp"
-                alt="Navy activewear outside a building"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
-              <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                After
-              </span>
-              <Image
-                src="/images/after-walk.webp"
-                alt="Model reading in navy activewear"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
-          </Reveal>
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/product-image.png"
+                  alt="Navy tank and shorts laid flat"
+                  fill
+                  sizes="33vw"
+                  className="object-contain p-3"
+                />
+              </div>
+            </Reveal>
+          </ComparisonFigure>
+          <ComparisonFigure caption="SetlesStudio shows the navy set on an AI model outdoors, with the tank and shorts visible together.">
+            <Reveal delay={0.1} className="flex-1">
+              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                  After
+                </span>
+                <Image
+                  src="/images/after-window.webp"
+                  alt="Navy activewear outside a building"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            </Reveal>
+          </ComparisonFigure>
+          <ComparisonFigure caption="The second shot shows the AI model reading by a window in the same set.">
+            <Reveal delay={0.2} className="flex-1">
+              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                  After
+                </span>
+                <Image
+                  src="/images/after-walk.webp"
+                  alt="Model reading in navy activewear"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            </Reveal>
+          </ComparisonFigure>
         </div>
       </section>
 

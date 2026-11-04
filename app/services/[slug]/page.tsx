@@ -36,6 +36,9 @@ type ServiceData = {
   beforeAfter: {
     before: string;
     beforeAlt: string;
+    beforeCaption: string;
+    afterCaption: string;
+    after2Caption?: string;
     after?: string;
     afterAlt: string;
     afterVideo?: string;
@@ -87,6 +90,9 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/white-dress-product-image.jpg",
+      beforeCaption: "Send a product photo that shows the white dress and its side cutout.",
+      afterCaption: "SetlesStudio shows the dress on an AI model in profile so you can see the cutout.",
+      after2Caption: "A second studio pose shows the full-length skirt with the model’s hand on her hip.",
       beforeAlt: "Flat lay product photo of white dress before AI studio processing",
       after: "/images/studio-white-cutout-maxi.jpg",
       afterAlt: "AI studio photo — white cutout maxi dress on model, clean studio background",
@@ -145,6 +151,9 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/lifestyle-before-rose-dress-product.png",
+      beforeCaption: "Send a flat lay showing the red dress and its rose texture.",
+      afterCaption: "SetlesStudio places the dress on an AI model for a front view on a city street.",
+      after2Caption: "A side view shows how the textured skirt looks from another angle.",
       beforeAlt: "Flat lay product photo of red rose dress before AI processing",
       after: "/images/lifestyle-red-dress-nyc-1-service.jpg",
       afterAlt: "AI lifestyle photo — red rose dress on model in NYC street",
@@ -205,6 +214,9 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/campaign-desert-knit-dress-product.jpg",
+      beforeCaption: "Send a product photo that shows the halter neckline and length of the dress.",
+      afterCaption: "SetlesStudio styles the dress on a seated AI model against desert rocks.",
+      after2Caption: "A standing pose shows the full silhouette in the same desert setting.",
       beforeAlt: "Flat lay product photo of desert knit dress before AI processing",
       after: "/images/campaign-desert-knit-dress-1.jpeg",
       afterAlt: "AI luxury campaign photo — desert knit dress on model in editorial setting",
@@ -266,6 +278,9 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/heels-product.jpg",
+      beforeCaption: "Send a clear product photo showing the black pumps from above.",
+      afterCaption: "SetlesStudio shows the pumps on a seated AI model on outdoor steps.",
+      after2Caption: "A second pose pairs the heels with a white blouse by the doorway.",
       beforeAlt: "Flat lay product photo of heels before AI processing",
       after: "/images/heels-image-model.jpeg",
       afterAlt: "AI footwear photo, heels on model in lifestyle setting",
@@ -324,6 +339,8 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/female-shirt-trousers-image.webp",
+      beforeCaption: "Send a flat lay of the navy shirt and matching trousers together.",
+      afterCaption: "SetlesStudio turns the outfit reference into a video ad showing the look in motion.",
       beforeAlt: "Flat product photo of female shirt and trouser set",
       afterVideo: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto/v1783056218/video-ad-2_xcibfp.mp4",
       afterAlt: "AI video ad showing the female outfit in action",
@@ -383,6 +400,9 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       before: "/images/bag-image-product.png",
+      beforeCaption: "Send a front-facing product photo showing the brown tote and both handles.",
+      afterCaption: "SetlesStudio styles the tote with an AI model beside an arched doorway.",
+      after2Caption: "A second shot places the tote beside a seated model on a terrace.",
       beforeAlt: "Flat lay product photo of women's handbag before AI processing",
       after: "/images/environment-handbag-image-1.jpg",
       afterAlt: "AI handbag photo — women's luxury bag styled on model in editorial environment",
