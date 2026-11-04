@@ -3,6 +3,7 @@ import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 export default function PageHero({
+  lightStudio = false,
   eyebrow,
   title,
   text,
@@ -15,6 +16,7 @@ export default function PageHero({
   animateReveal = false,
   containerClassName = "",
 }: {
+  lightStudio?: boolean;
   eyebrow: string;
   title: React.ReactNode;
   text?: string;
@@ -59,42 +61,43 @@ export default function PageHero({
     sizes: "100vw",
     quality: 85,
     loading: "eager" as const,
-    className: "object-cover object-top",
+    unoptimized: lightStudio,
+    className: lightStudio ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
 
   const imageBlock = !video && desktopProps ? (
     <>
-      <picture>
-        {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet} sizes={mobileProps.sizes} />}
+      <picture className={lightStudio ? "relative block h-[40svh] max-h-[460px] w-full md:absolute md:inset-x-0 md:bottom-5 md:top-24 md:h-auto md:max-h-none" : undefined}>
+        {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} sizes={mobileProps.sizes} />}
         <img {...desktopProps} {...{ fetchpriority: "high" }} />
       </picture>
-      {overlays}
+      {!lightStudio && overlays}
     </>
   ) : null;
 
   return (
-    <section className={`relative flex ${fullHeight ? "min-h-screen" : "min-h-[560px]"} flex-col justify-end overflow-hidden bg-ink pb-20 pt-28 text-white`}>
+    <section className={`relative flex ${lightStudio ? "gap-6 bg-white pb-12 pt-24 text-ink md:min-h-screen md:pb-20" : `${fullHeight ? "min-h-screen" : "min-h-[560px]"} bg-ink pb-20 pt-28 text-white`} flex-col justify-end overflow-hidden`}>
       {videoBlock}
       {animateReveal && imageBlock ? (
         <div className="absolute inset-0">
           {imageBlock}
         </div>
       ) : imageBlock}
-      <div
+      {!lightStudio && <div
         className="pointer-events-none absolute -right-28 -top-28 h-80 w-80 rounded-full bg-brand/20 blur-3xl"
         aria-hidden
-      />
+      />}
       <div className="container-site relative">
         <Reveal delay={animateReveal ? 0.7 : 0}>
-          <div>
+          <div className={lightStudio ? "md:max-w-[62%]" : undefined}>
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
               {title}
             </h1>
             {text && (
-              <p className="mt-5 max-w-2xl text-sm sm:text-lg leading-relaxed text-white/65">
+              <p className={`mt-5 max-w-2xl text-sm sm:text-lg leading-relaxed ${lightStudio ? "text-ink-soft" : "text-white/65"}`}>
                 {text}
               </p>
             )}
