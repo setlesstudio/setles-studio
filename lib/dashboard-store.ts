@@ -216,7 +216,7 @@ By implementing these 15 product photography strategies, your online store will 
 
 export const homeHero = {
   heroTitle: "[AI Fashion] Photography for Clothing Brands",
-  heroText: "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content.",
+  heroText: "We create realistic AI fashion and ecommerce visuals, from model photography and lifestyle campaigns to product images and video ads, without costly photoshoots.",
 };
 
 // Initial page defaults
@@ -308,7 +308,7 @@ export function getStoredPages(): PageSEO[] {
       return {
         ...page,
         heroTitle: oldTitles.includes(page.heroTitle) ? homeHero.heroTitle : page.heroTitle,
-        heroText: [oldText, oldText + ", 10x more affordable than traditional photoshoots."].includes(page.heroText) ? homeHero.heroText : page.heroText,
+        heroText: [oldText, oldText + ", 10x more affordable than traditional photoshoots.", "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content."].includes(page.heroText) ? homeHero.heroText : page.heroText,
       };
     });
   } catch (e) {
