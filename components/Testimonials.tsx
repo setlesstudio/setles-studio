@@ -17,7 +17,7 @@ function TestimonialCard({ t }: { t: TestimonialTile }) {
         <div className="flex items-center gap-3">
           {t.image ? (
             <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
-              <img src={t.image} alt="" loading="lazy" width={36} height={36} className="h-9 w-9 object-cover rounded-full" />
+              <Image src={t.image} alt="" unoptimized={!t.image.startsWith("/images/")} width={36} height={36} className="h-9 w-9 object-cover rounded-full" />
             </div>
           ) : (
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-soft font-display font-semibold text-brand text-xs">
