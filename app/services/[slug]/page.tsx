@@ -62,6 +62,7 @@ type ServiceData = {
     text: string;
     waText: string;
   };
+  faqTitle?: string;
   faqs: Array<{ q: string; a: string }>;
   process?: {
     heading: string;
@@ -73,14 +74,14 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-studio-photography": {
     meta: {
-      title: "AI Studio Photography for Apparel | SetlesStudio",
-      description: "Create consistent on-model apparel images from product photos. Explore AI studio photography for ecommerce product pages, catalogs, and clothing collections.",
+      title: "AI Fashion Photography for Clothing Brands | SetlesStudio",
+      description: "Turn flat lays into on-model apparel images with SetlesStudio. Explore AI fashion photography for clothing brands, from ecommerce product pages to collection catalogs.",
     },
     hero: {
-      eyebrow: "AI Studio Photography",
-      titlePrefix: "AI Studio Photography",
-      titleHighlight: "for Apparel Brands",
-      subtitle: "Send flat product photos to create consistent on-model apparel images for your catalog.",
+      eyebrow: "AI CLOTHING & ON MODEL PHOTOGRAPHY",
+      titlePrefix: "AI Fashion Photography",
+      titleHighlight: "for Clothing Brands",
+      subtitle: "Turn your flat lay product photos into realistic on model apparel images. We create consistent studio photography for ecommerce stores, clothing catalogs, and fashion campaigns.",
       image: "/images/studio-service-banner.png",
       mobileImage: "/images/studio-service-banner-mobile.png",
       imageAlt: "AI studio on-model fashion photography",
@@ -100,21 +101,21 @@ const services: Record<string, ServiceData> = {
       after2Alt: "AI studio photo — white cutout maxi dress on model, second studio look",
     },
     description: {
-      titleHighlight: "Realistic AI Studio Photography",
-      titleSuffix: "for Apparel Brands",
+      titleHighlight: "From flat lay",
+      titleSuffix: "to on-model apparel images",
       paragraphs: [
-        "Transform your apparel products into professional, studio quality fashion images without expensive photoshoots. Our realistic AI models create photorealistic fashion visuals of models wearing your apparel while maintaining accurate garment details, fabric textures, logos, colors, and fit.",
-        "Every image is carefully refined to achieve a realistic commercial look suitable for Ecommerce stores, advertising campaigns, social media marketing, and fashion.",
+        "A flat lay shows the garment on its own. An on-model studio image shows shoppers how the neckline, length, and silhouette look when worn. For the white dress above, compare the cutout in the original photo with the same detail in the side view.",
+        "For a clothing catalog, choose one model and lighting setup across the collection. For an ecommerce product page, pair a full-length image with a second angle that shows a detail shoppers might otherwise miss.",
       ],
     },
     features: {
-      heading: "Why Choose Our AI Fashion Photography Services?",
-      subheading: "Realistic AI Studio Photography",
+      heading: "What can you specify for your apparel shoot?",
+      subheading: "AI clothing photography",
       items: [
         { number: "01", icon: Star,         title: "Garment Detail Review",       description: "Compare the finished image with your original photo to check garment color, stitching, and logo placement." },
         { number: "02", icon: Users,        title: "Consistent Models",      description: "Use the same AI model across your entire collection for consistency." },
         { number: "03", icon: Lightbulb,    title: "Professional Lighting",  description: "Studio-quality lighting setups for premium fashion presentation." },
-        { number: "04", icon: Rocket,       title: "Fast Turnaround",        description: "Get your images delivered quickly and launch your products faster." },
+        { number: "04", icon: Rocket,       title: "Product Page Views",     description: "Choose front, side, or detail views to show the features shoppers look for." },
         { number: "05", icon: Coins,        title: "Product Photo Input",         description: "Start with a flat lay, mannequin photo, or product shot of the garment you want shown on a model." },
         { number: "06", icon: MonitorCheck, title: "High Resolution",        description: "High-resolution images perfect for web, print, and advertising." },
       ],
@@ -122,14 +123,18 @@ const services: Record<string, ServiceData> = {
     ctaBanner: {
       image: "/images/studio-service-cta.jpg",
       imageAlt: "AI studio fashion photography banner",
-      title: "See your garment in a studio image.",
+      title: "See your clothing on an AI model.",
       text: "Send a product photo and tell us which details you want to highlight in your catalog.",
       waText: "Hi, I'd like to start a studio product photography project.",
     },
+    faqTitle: "AI clothing photography FAQs",
     faqs: [
-      { q: "Can you create AI studio photos from my apparel images?", a: "Yes, we transform flat lays, ghost mannequin photos, and product images into realistic AI studio photography while preserving garment details and colors." },
-      { q: "Are your AI fashion models realistic?", a: "Yes, we create hyper realistic AI fashion models designed for apparel brands, Ecommerce stores, and fashion marketing campaigns." },
-      { q: "Are the images suitable for Shopify and online stores?", a: "Absolutely. Our AI studio photography is optimized for Shopify, Amazon, Etsy, WooCommerce, and apparel brand websites." },
+      { q: "What is AI fashion photography for clothing brands?", a: "SetlesStudio uses your garment photo as a reference to create images of an AI model wearing that item. You choose the studio look and poses for your product pages, catalog, or campaign." },
+      { q: "What product photos should I send?", a: "Start with a well-lit flat lay, mannequin photo, or clear product shot. Include a back view if you need the back shown and close-ups of details such as embroidery, prints, or logos." },
+      { q: "What does a finished on-model apparel image look like?", a: "The white dress example on this page starts with a product photo. One finished studio image shows the side cutout in profile. A second pose shows the length of the skirt." },
+      { q: "Can my collection use the same AI model and studio background?", a: "Yes. Specify the model, background, lighting, and views you want to repeat across the collection. A consistent setup helps shoppers compare garments and colorways." },
+      { q: "How do you check that the finished image matches my garment?", a: "We compare the finished image with your reference photo for color, stitching, print placement, and visible details. If an important feature is hidden in the reference, send another angle so we can check it." },
+      { q: "Can I use the images on Shopify product pages and in clothing catalogs?", a: "Yes. Tell us where the images will appear and which crops you need. A full-length view can show the silhouette in a catalog, while a closer crop can show a neckline or fabric detail on a product page." },
     ],
   },
 
@@ -586,7 +591,7 @@ export default function ServiceSlugPage({
 
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
               <div className="container-site">
-                <SectionHeading eyebrow="FAQ" title="Frequently Asked questions" />
+                <SectionHeading eyebrow="FAQ" title={svc.faqTitle ?? "Frequently Asked questions"} />
                 <div className="mt-12">
                   <FAQ faqs={svc.faqs}/>
                 </div>
