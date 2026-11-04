@@ -82,22 +82,22 @@ const services: Record<string, ServiceData> = {
       titlePrefix: "AI Fashion Photography",
       titleHighlight: "for Clothing Brands",
       subtitle: "Turn your flat lay product photos into realistic on model apparel images. We create consistent studio photography for ecommerce stores, clothing catalogs, and fashion campaigns.",
-      image: "/images/plum-set-studio-banner.webp",
-      mobileImage: "/images/plum-set-on-model.webp",
+      image: "/images/plum-set-studio-banner-white.webp",
+      mobileImage: "/images/plum-set-on-model-white.webp",
       imageAlt: "AI model wearing a plum scalloped top and matching leggings",
       waText: "Hi, I'd like to start a studio product photography project.",
       primaryLabel: "Start My Studio Project",
       secondary: { href: "/portfolio", label: "View Our Work" },
     },
     beforeAfter: {
-      before: "/images/plum-set-product.webp",
+      before: "/images/plum-set-product-white.webp",
       beforeCaption: "Send a product photo showing the scalloped neckline and the matching plum leggings.",
       afterCaption: "SetlesStudio shows the plum set on an AI model in a full-length studio shot.",
       after2Caption: "A closer studio view shows how the scalloped neckline sits across one shoulder.",
       beforeAlt: "Plum scalloped long-sleeve top and matching leggings on a light background",
-      after: "/images/plum-set-on-model.webp",
+      after: "/images/plum-set-on-model-white.webp",
       afterAlt: "Full-length AI model in a plum top and leggings with white sneakers",
-      after2: "/images/plum-set-neckline-detail.webp",
+      after2: "/images/plum-set-neckline-detail-white.webp",
       after2Alt: "Close-up of the plum top’s asymmetric scalloped neckline on an AI model",
     },
     description: {
@@ -121,7 +121,7 @@ const services: Record<string, ServiceData> = {
       ],
     },
     ctaBanner: {
-      image: "/images/plum-set-studio-banner.webp",
+      image: "/images/plum-set-studio-banner-white.webp",
       imageAlt: "AI model in a plum top and leggings against a light studio background",
       title: "See your clothing on an AI model.",
       text: "Send a product photo and tell us which details you want to highlight in your catalog.",
@@ -523,6 +523,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
+  const lightStudio = params.slug === "realistic-ai-studio-photography";
   const hasBeforeAfter = Boolean(svc.beforeAfter.before && (svc.beforeAfter.after || svc.beforeAfter.afterVideo));
 
   return (
@@ -541,6 +542,7 @@ export default function ServiceSlugPage({
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
       <PageHero
+        lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
         title={<>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
         text={svc.hero.subtitle}
@@ -554,13 +556,13 @@ export default function ServiceSlugPage({
         </a>
         <a
           href={svc.hero.secondary.href}
-          className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          className={lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
         >
           {svc.hero.secondary.label}
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -583,6 +585,7 @@ export default function ServiceSlugPage({
       {svc.process && <ServiceProcess {...svc.process} />}
 
       <CTABand
+        lightStudio={lightStudio}
         title={svc.ctaBanner.title}
         text={svc.ctaBanner.text}
         image={svc.ctaBanner.image}

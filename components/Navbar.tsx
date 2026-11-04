@@ -58,7 +58,7 @@ export default function Navbar() {
     pathname === "/blog" ||
     pathname === "/contact";
 
-  const opaque = scrolled || open || !hasDarkHero;
+  const opaque = scrolled || open || !hasDarkHero || pathname === "/services/realistic-ai-studio-photography";
 
   const isServicesActive =
     pathname === "/services" ||
