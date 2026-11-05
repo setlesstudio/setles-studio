@@ -76,10 +76,10 @@ export default function PageHero({
             <img {...desktopProps} {...{ fetchpriority: "high" }} />
           </picture>
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
-            <div className="md:ml-[10%] md:w-[58%]">
+            <div className="md:ml-[10%] md:w-[58%] md:-translate-y-6 lg:-translate-y-24">
               <p className="eyebrow">{eyebrow}</p>
               <h1 className="mt-3 font-display text-3xl font-semibold leading-[1.1] tracking-tight lg:text-5xl">{title}</h1>
-              {text && <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-soft lg:text-lg">{text}</p>}
+              {text && <p className="mt-5 text-sm leading-relaxed text-ink-soft lg:text-base">{text}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
             </div>
           </div>
