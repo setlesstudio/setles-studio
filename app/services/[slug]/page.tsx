@@ -25,7 +25,7 @@ type ServiceData = {
     eyebrow: string;
     titlePrefix: string;
     titleHighlight: string;
-    subtitle: string;
+    subtitle: React.ReactNode;
     image?: string;
     mobileImage?: string;
     imageAlt: string;
@@ -35,6 +35,11 @@ type ServiceData = {
     secondary: { href: string; label: string };
   };
   beforeAfter: {
+    heading?: string;
+    introduction?: string;
+    beforeLabel?: string;
+    afterLabel?: string;
+    portfolioLabel?: string;
     before: string;
     beforeAlt: string;
     beforeCaption: string;
@@ -56,7 +61,9 @@ type ServiceData = {
     subheading: string;
     items: FeatureItem[];
   };
+  details?: Array<{ title: string; intro?: string; items?: string[]; paragraphs: string[] }>;
   ctaBanner: {
+    buttonLabel?: string;
     image: string;
     imageAlt: string;
     title: string;
@@ -142,20 +149,25 @@ const services: Record<string, ServiceData> = {
   "lifestyle-realistic-ai-photography": {
     meta: {
       title: "AI Lifestyle Fashion Photography | SetlesStudio",
-      description: "Create on-model lifestyle fashion images from product photos, with scenes tailored to your brand for ecommerce, social media, and advertising.",
+      description: "Turn clothing product photos into AI lifestyle fashion photography. Explore on-model images for ecommerce, lookbooks and social media with SetlesStudio.",
     },
     hero: {
       eyebrow: "AI Lifestyle Photography",
-      titlePrefix: "AI Lifestyle",
-      titleHighlight: "Fashion Photography",
-      subtitle: "Show your clothing on a model in scenes that suit your brand, from city streets to interiors.",
+      titlePrefix: "AI Lifestyle Fashion Photography",
+      titleHighlight: "for Clothing Brands",
+      subtitle: <>Show your collection on realistic AI models in settings that suit your brand—from city streets and cafés to coastal scenes and modern interiors.<br /><br />SetlesStudio turns your clothing product photographs into lifestyle images for ecommerce, lookbooks and social media, using your garments and creative references to guide the result.</>,
       image: "/images/lifestyle-service-banner.jpg",
       imageAlt: "Realistic AI lifestyle fashion photography on model in city",
       waText: "Hi, I'd like to start a lifestyle photography project.",
-      primaryLabel: "Start My Lifestyle Shoot",
-      secondary: { href: "/portfolio", label: "View Portfolio" },
+      primaryLabel: "Get a Photoshoot Quote",
+      secondary: { href: "/portfolio", label: "View Our Portfolio" },
     },
     beforeAfter: {
+      heading: "From Product Photograph to Lifestyle Scene",
+      introduction: "Compare the original clothing photograph with the finished AI-generated images. Look at how the garment is represented, how the model is styled and how the setting supports the collection.",
+      beforeLabel: "Original Clothing Photograph",
+      afterLabel: "AI-Generated Lifestyle Image",
+      portfolioLabel: "Explore Our Fashion Portfolio",
       before: "/images/lifestyle-before-rose-dress-product.png",
       beforeCaption: "Send a flat lay showing the red dress and its rose texture.",
       afterCaption: "SetlesStudio places the dress on an AI model for a front view on a city street.",
@@ -167,38 +179,110 @@ const services: Record<string, ServiceData> = {
       after2Alt: "AI lifestyle photo — red rose dress on model in NYC street second look",
     },
     description: {
-      titleHighlight: "Realistic AI Lifestyle Photography",
-      titleSuffix: "for Apparel Brands",
+      titleHighlight: "Turn Your Clothing Photos",
+      titleSuffix: "into Lifestyle Images",
       paragraphs: [
-        "Transform your apparel products into photorealistic lifestyle fashion images without expensive photoshoots. Our realistic AI models showcase your clothing in natural environments such as city streets, cafes, beaches, and modern interiors while preserving accurate garment details, fabric textures, colors, logos, and fit.",
-        "Create high converting AI lifestyle photography for Ecommerce, social media marketing, fashion advertising, and apparel brand campaigns.",
-      ],
+        "You already have the clothing. We help you show it in a setting that gives customers more context.",
+        "Starting with flat lays, mannequin photographs or existing on-model images, SetlesStudio creates AI fashion photography around your collection’s style. Share your preferred model appearance, location, poses and lighting to guide the creative direction.",
+        "Your original photographs provide the reference for garment shape, colors, fabric texture, prints and logo placement. Clear images from multiple angles help us represent these details more accurately.",
+        "Use the finished imagery alongside your product photographs on ecommerce pages, in seasonal lookbooks, across website banners or in social media campaigns."
+],
     },
     features: {
-      heading: "Why Apparel Brands Choose Our AI Fashion Photography",
-      subheading: "Lifestyle AI Fashion Photography",
+      heading: "What You Can Customize",
+      subheading: "AI Lifestyle Fashion Photography",
       items: [
-        { number: "01", icon: Users,      title: "100% Realistic AI Fashion Models or Custom Models",    description: "Diverse, natural looking AI models styled to match your brand's target audience and aesthetic." },
-        { number: "02", icon: Package,    title: "Accurate Garment Details, Colors & Fit",               description: "Colors, patterns, logos, and garment fit are preserved accurately in every lifestyle image." },
-        { number: "03", icon: MapPin,     title: "Real Lifestyle Locations, Not Fake AI Places",         description: "We use real world photographs as location references, not computer-generated environments." },
-        { number: "04", icon: Zap,        title: "Faster & More Affordable Than Traditional Shoots",     description: "Get lifestyle imagery at a fraction of traditional production costs with no shoot day required." },
-        { number: "05", icon: Camera,     title: "High Resolution Images for Ecommerce & Ads",           description: "Delivered in all formats for web, social media, and paid advertising campaigns." },
-        { number: "06", icon: TrendingUp, title: "Commercial Quality Results That Increase Conversions", description: "Images designed to perform in product listings, ads, and brand content that drives sales." },
+        { number: "01", icon: Users, title: "Model Appearance and Styling", description: "Share references for the model’s appearance, hairstyle, pose and styling. These choices help shape images that suit your collection and intended audience." },
+        { number: "02", icon: Package, title: "Garment Details", description: "Provide clear photographs of colors, prints, fastenings, logos and fabric textures. Your references guide how the clothing is represented in each image." },
+        { number: "03", icon: MapPin, title: "Lifestyle Locations", description: "Choose a creative direction built around streets, cafés, beaches, gardens or interiors. Location references help communicate the atmosphere you want." },
+        { number: "04", icon: Zap, title: "Lighting and Mood", description: "Guide the look with references for soft daylight, warm interiors or a more dramatic editorial style. Coordinated lighting helps connect images across a collection." },
+        { number: "05", icon: Camera, title: "Image Dimensions and Crops", description: "Tell us where the images will appear. We can discuss compositions and formats for product listings, website banners, lookbooks, social posts and digital advertising." },
+        { number: "06", icon: TrendingUp, title: "Collection Consistency", description: "Use shared model references, styling and backgrounds across multiple garments to support a cohesive visual identity." },
       ],
     },
+    details: [
+      {
+            "title": "What to Send for Your Photoshoot",
+            "intro": "To help us assess your collection and prepare a quote, share:",
+            "items": [
+                  "Clear front-and-back photographs of each garment.",
+                  "Close-ups of prints, logos, embroidery and distinctive fabric details.",
+                  "The number of products and images you need.",
+                  "Model, pose and background references.",
+                  "Your intended image placements and required dimensions.",
+                  "Your preferred delivery date."
+            ],
+            "paragraphs": [
+                  "If your available photographs are incomplete, send what you have so we can review whether additional references are needed."
+            ]
+      },
+      {
+            "title": "A Note on Product Accuracy",
+            "paragraphs": [
+                  "AI-generated fashion images can closely represent clothing, but exact reproduction is not guaranteed. Fine lettering, intricate patterns, sheer fabrics and complex layering can be challenging.",
+                  "Use detailed product references and compare the finished images with the actual garment before publishing. Lifestyle imagery works best alongside clear product and detail photographs that help customers understand what they are buying."
+            ]
+      }
+],
     ctaBanner: {
       image: "/images/lifestyle-service-cta-banner.jpg",
       imageAlt: "Lifestyle fashion AI photography CTA",
-      title: "Ready to bring your clothing to life with AI lifestyle photography?",
-      text: "Showcase your apparel with commercial quality lifestyle imagery designed to attract customers, build trust, and increase conversions.",
+      title: "Discuss Your Next Clothing Collection",
+      text: "Share your product photographs and the look you want to create. We’ll review the garments and discuss suitable models, settings, image requirements and project scope.",
       waText: "Hi, I'd like to start a lifestyle photography project.",
+      buttonLabel: "Get a Quote for Your Collection",
     },
+    faqTitle: "AI Lifestyle Fashion Photography FAQs",
     faqs: [
-      { q: "Can you create AI fashion photos from my clothing images?", a: "Yes. We can transform flat lays, mannequin photos, ghost mannequin images, or existing product photos into realistic AI fashion photography." },
-      { q: "Can you use the same AI model for my entire collection?", a: "Yes. We can maintain a consistent AI model across all products to create a professional and cohesive brand identity." },
-      { q: "Are the images suitable for Shopify and Ecommerce stores?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, WooCommerce, and fashion brand websites." },
-      { q: "What types of clothing can you work with?", a: "We can create AI fashion photography for activewear, sportswear, casual wear, streetwear, luxury fashion, swimwear, dresses, and more." },
-    ],
+      {
+            "q": "What is AI lifestyle fashion photography?",
+            "a": "AI lifestyle fashion photography creates images of clothing on AI-generated models in styled environments, such as streets, cafés and interiors. At SetlesStudio, your product photographs guide the garment’s appearance, while creative references guide the model, lighting and setting."
+      },
+      {
+            "q": "Can you create AI model photos from flat-lay clothing images?",
+            "a": "Yes. Flat lays, mannequin photographs, ghost mannequin images and existing on-model photographs can serve as starting references. Send clear views of the complete garment so we can assess its construction and visible details before confirming the project."
+      },
+      {
+            "q": "What photographs should I provide?",
+            "a": "Provide well-lit front-and-back photographs, plus close-ups of logos, prints, embroidery, buttons and textures. Avoid filters that alter colors. Additional angles are useful for garments with unusual cuts, layered construction or details hidden in the main photographs."
+      },
+      {
+            "q": "Will the images preserve my clothing’s colors, prints and logos?",
+            "a": "Your references guide these details, but exact reproduction is not guaranteed. Results depend on garment complexity and reference quality. Fine text, detailed embroidery and intricate patterns may need additional refinement. Compare finished images with the product before using them in listings."
+      },
+      {
+            "q": "Can you use the same AI model across my collection?",
+            "a": "Yes. We can work with a shared model reference across multiple products. Agreeing on the model’s appearance, hairstyle, styling and lighting at the start helps maintain consistency, although some visual variation can occur between AI-generated images."
+      },
+      {
+            "q": "Can I choose the background and poses?",
+            "a": "Yes. Share examples of your preferred locations, poses, lighting and styling. These references help us understand your direction and plan imagery that complements your clothing and brand."
+      },
+      {
+            "q": "Are the images suitable for Shopify and ecommerce websites?",
+            "a": "Yes. We can prepare images using your agreed dimensions and crops for Shopify and other ecommerce websites. Use lifestyle imagery alongside product and detail photographs, and check the finished garment representation before publishing."
+      },
+      {
+            "q": "Can you create fashion lookbooks and social media images?",
+            "a": "Yes. We can create coordinated imagery for collection launches, fashion lookbooks, website banners and social media. Share the intended placements before production so we can discuss suitable framing and aspect ratios."
+      },
+      {
+            "q": "What is the difference between studio and lifestyle fashion photography?",
+            "a": "Studio fashion photography typically uses a clean or controlled background to focus attention on the garment. Lifestyle fashion photography adds a styled environment and mood, helping show the collection in a context suited to the brand."
+      },
+      {
+            "q": "What types of clothing can you work with?",
+            "a": "We work with dresses, shirts, T-shirts, streetwear, activewear, sportswear, modest fashion and other apparel categories. Send examples for assessment, particularly if your garments include sheer materials, complex layering or intricate embellishments."
+      },
+      {
+            "q": "How much does an AI lifestyle photoshoot cost?",
+            "a": "Pricing depends on the number of garments, images per garment, model variations, backgrounds and product complexity. Send your photographs, image requirements and creative references to request a quote based on your project."
+      },
+      {
+            "q": "How long will my project take?",
+            "a": "Turnaround depends on collection size, garment complexity, creative requirements and the review process. Include your preferred deadline when requesting a quote so we can assess the scope and confirm the schedule before production begins."
+      }
+],
   },
 
   "luxury-fashion-ai-campaign": {
@@ -590,13 +674,26 @@ export default function ServiceSlugPage({
 
       {svc.process && <ServiceProcess {...svc.process} />}
 
+      {svc.details?.map((section) => (
+        <section key={section.title} className="container-site py-8">
+          <Reveal>
+            <div className="rounded-4xl bg-cream px-10 py-12 sm:px-16 sm:py-14">
+              <h2 className="font-display text-3xl font-bold text-brand sm:text-4xl">{section.title}</h2>
+              {section.intro && <p className="mt-5 leading-relaxed text-ink-soft">{section.intro}</p>}
+              {section.items && <ul className="mt-4 list-disc space-y-2 pl-6 text-ink-soft">{section.items.map(item => <li key={item}>{item}</li>)}</ul>}
+              {section.paragraphs.map(paragraph => <p key={paragraph} className="mt-4 leading-relaxed text-ink-soft">{paragraph}</p>)}
+            </div>
+          </Reveal>
+        </section>
+      ))}
+
       <CTABand
         lightStudio={lightStudio}
         title={svc.ctaBanner.title}
         text={svc.ctaBanner.text}
         image={svc.ctaBanner.image}
         imageAlt={svc.ctaBanner.imageAlt}
-        primary={{ href: waCtaHref, label: "Get Started Today" }}
+        primary={{ href: waCtaHref, label: svc.ctaBanner.buttonLabel ?? "Get Started Today" }}
       />
 
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">

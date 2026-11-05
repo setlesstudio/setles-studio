@@ -19,7 +19,7 @@ export default function PageHero({
   lightStudio?: boolean;
   eyebrow: string;
   title: React.ReactNode;
-  text?: string;
+  text?: React.ReactNode;
   children?: React.ReactNode;
   image?: string;
   imageMobile?: string;
