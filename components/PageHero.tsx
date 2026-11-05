@@ -62,10 +62,31 @@ export default function PageHero({
     quality: 85,
     loading: "eager" as const,
     unoptimized: lightStudio,
-    className: lightStudio ? "object-contain mix-blend-multiply" : "object-cover object-top",
+    className: lightStudio ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
+
+  if (lightStudio && desktopProps) {
+    return (
+      <section className="bg-[#f7f7f5] pt-20 text-ink md:pt-24">
+        <div className="relative">
+          <picture className="relative mx-auto block h-[420px] w-full md:h-auto md:aspect-[2752/1536]">
+            {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} />}
+            <img {...desktopProps} {...{ fetchpriority: "high" }} />
+          </picture>
+          <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
+            <div className="md:ml-[10%] md:w-[58%]">
+              <p className="eyebrow">{eyebrow}</p>
+              <h1 className="mt-3 font-display text-3xl font-semibold leading-[1.1] tracking-tight lg:text-5xl">{title}</h1>
+              {text && <p className="mt-5 max-w-2xl text-sm leading-relaxed text-ink-soft lg:text-lg">{text}</p>}
+              {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const imageBlock = !video && desktopProps ? (
     <>
