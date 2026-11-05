@@ -30,6 +30,29 @@ export default function ServiceBeforeAfter({
   after2,
   after2Alt,
 }: Props) {
+  if (lightStudio && after && after2) {
+    const photos = [
+      { src: before, alt: beforeAlt, caption: beforeCaption, label: "Before" },
+      { src: after, alt: afterAlt, caption: afterCaption, label: "After" },
+      { src: after2, alt: after2Alt ?? "", caption: after2Caption ?? "", label: "After" },
+    ];
+    return (
+      <section className="container-site py-8 md:py-12">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 md:grid-cols-3">
+          {photos.map((photo) => (
+            <ComparisonFigure key={photo.src} caption={photo.caption}>
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-[380px] overflow-hidden rounded-3xl bg-[#f7f7f5]" data-studio-frame>
+                <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill unoptimized
+                  sizes="(min-width: 768px) 33vw, 100vw" className="object-contain" />
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{photo.label}</span>
+              </div>
+            </ComparisonFigure>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   const hasTwo = Boolean(after2);
   const studioFrame = "relative mx-auto h-[clamp(245px,52vw,390px)] w-full max-w-[320px] overflow-hidden rounded-3xl bg-[#f7f7f5]";
 
