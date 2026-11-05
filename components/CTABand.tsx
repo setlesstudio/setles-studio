@@ -25,7 +25,7 @@ export default function CTABand({
   return (
     <section className="container-site py-16">
       <Reveal>
-        <div className={`relative overflow-hidden rounded-4xl ${lightStudio ? "bg-white text-ink" : "bg-ink"} text-center sm:px-16 ${image ? "flex min-h-[420px] flex-col justify-end px-6 pb-10 pt-6 sm:px-16 sm:pt-8" : "px-8 py-28"}`}>
+        <div className={`relative overflow-hidden rounded-4xl ${lightStudio ? "bg-[#f7f7f5] text-ink" : "bg-ink"} text-center sm:px-16 ${image ? "flex min-h-[420px] flex-col justify-end px-6 pb-10 pt-6 sm:px-16 sm:pt-8" : "px-8 py-28"}`}>
           {image ? (
             <>
               {imageMobile && (
@@ -43,7 +43,7 @@ export default function CTABand({
                 alt=""
                 fill
                 sizes="100vw"
-                className={`${lightStudio ? "object-contain max-md:!relative max-md:!h-[190px]" : "object-cover object-top"} ${imageMobile ? "hidden md:block" : ""}`}
+                className={`${lightStudio ? "object-contain mix-blend-multiply max-md:!relative max-md:!h-[190px]" : "object-cover object-top"} ${imageMobile ? "hidden md:block" : ""}`}
               />
               {!lightStudio && <div className="pointer-events-none absolute inset-0 bg-ink/25" />}
               {!lightStudio && <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent" />}

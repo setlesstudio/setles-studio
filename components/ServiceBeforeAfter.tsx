@@ -31,7 +31,7 @@ export default function ServiceBeforeAfter({
   after2Alt,
 }: Props) {
   const hasTwo = Boolean(after2);
-  const studioFrame = "relative mx-auto h-[clamp(245px,52vw,390px)] w-full max-w-[320px] overflow-hidden rounded-3xl bg-white";
+  const studioFrame = "relative mx-auto h-[clamp(245px,52vw,390px)] w-full max-w-[320px] overflow-hidden rounded-3xl bg-[#f7f7f5]";
 
   return (
     <section className="container-site py-8 md:py-12">
@@ -39,7 +39,7 @@ export default function ServiceBeforeAfter({
         {/* Before */}
         <ComparisonFigure caption={beforeCaption}>
           <Reveal className={afterVideo ? "md:h-[480px] xl:h-[540px]" : "flex-1"}>
-            <div className={`card ${lightStudio ? "shadow-none" : ""} flex flex-col gap-3 p-5 ${afterVideo ? "h-full" : ""}`}>
+            <div className={`card ${lightStudio ? "shadow-none !bg-[#f7f7f5]" : ""} flex flex-col gap-3 p-5 ${afterVideo ? "h-full" : ""}`}>
               <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
                 Before
               </span>
@@ -50,7 +50,7 @@ export default function ServiceBeforeAfter({
                   unoptimized={lightStudio}
                   fill
                   sizes="100vw"
-                  className="object-contain p-4"
+                  className={`object-contain p-4 ${lightStudio ? "mix-blend-multiply" : ""}`}
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function ServiceBeforeAfter({
                   unoptimized={lightStudio}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className={lightStudio ? "object-contain p-2" : "object-cover object-top"}
+                  className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
                 />
               ) : null}
             </div>
@@ -102,7 +102,7 @@ export default function ServiceBeforeAfter({
                   unoptimized={lightStudio}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className={lightStudio ? "object-contain p-2" : "object-cover object-top"}
+                  className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
                 />
               </div>
             </Reveal>
