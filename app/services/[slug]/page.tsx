@@ -149,13 +149,13 @@ const services: Record<string, ServiceData> = {
   "lifestyle-realistic-ai-photography": {
     meta: {
       title: "AI Lifestyle Fashion Photography | SetlesStudio",
-      description: "Turn clothing product photos into AI lifestyle fashion photography. Explore on-model images for ecommerce, lookbooks and social media with SetlesStudio.",
+      description: "Turn clothing product photos into AI lifestyle fashion photography. Explore on model images for ecommerce, lookbooks and social media with SetlesStudio.",
     },
     hero: {
       eyebrow: "AI Lifestyle Photography",
       titlePrefix: "AI Lifestyle Fashion Photography",
       titleHighlight: "for Clothing Brands",
-      subtitle: <>Show your collection on realistic AI models in settings that suit your brand—from city streets and cafés to coastal scenes and modern interiors.<br /><br />SetlesStudio turns your clothing product photographs into lifestyle images for ecommerce, lookbooks and social media, using your garments and creative references to guide the result.</>,
+      subtitle: "SetlesStudio turns your clothing product photographs into lifestyle images for ecommerce, lookbooks and social media, using your garments and creative references to guide the result.",
       image: "/images/lifestyle-service-banner.jpg",
       imageAlt: "Realistic AI lifestyle fashion photography on model in city",
       waText: "Hi, I'd like to start a lifestyle photography project.",
@@ -166,7 +166,7 @@ const services: Record<string, ServiceData> = {
       heading: "From Product Photograph to Lifestyle Scene",
       introduction: "Compare the original clothing photograph with the finished AI-generated images. Look at how the garment is represented, how the model is styled and how the setting supports the collection.",
       beforeLabel: "Original Clothing Photograph",
-      afterLabel: "AI-Generated Lifestyle Image",
+      afterLabel: "AI Generated Lifestyle Image",
       portfolioLabel: "Explore Our Fashion Portfolio",
       before: "/images/lifestyle-before-rose-dress-product.png",
       beforeCaption: "Send a flat lay showing the red dress and its rose texture.",
@@ -182,8 +182,7 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "Turn Your Clothing Photos",
       titleSuffix: "into Lifestyle Images",
       paragraphs: [
-        "You already have the clothing. We help you show it in a setting that gives customers more context.",
-        "Starting with flat lays, mannequin photographs or existing on-model images, SetlesStudio creates AI fashion photography around your collection’s style. Share your preferred model appearance, location, poses and lighting to guide the creative direction.",
+        "Starting with flat lays, mannequin photographs or existing on model images, SetlesStudio creates AI fashion photography around your collection’s style. Share your preferred model appearance, location, poses and lighting to guide the creative direction.",
         "Your original photographs provide the reference for garment shape, colors, fabric texture, prints and logo placement. Clear images from multiple angles help us represent these details more accurately.",
         "Use the finished imagery alongside your product photographs on ecommerce pages, in seasonal lookbooks, across website banners or in social media campaigns."
 ],
@@ -219,7 +218,7 @@ const services: Record<string, ServiceData> = {
       {
             "title": "A Note on Product Accuracy",
             "paragraphs": [
-                  "AI-generated fashion images can closely represent clothing, but exact reproduction is not guaranteed. Fine lettering, intricate patterns, sheer fabrics and complex layering can be challenging.",
+                  "AI generated fashion images can closely represent clothing, but exact reproduction is not guaranteed. Fine lettering, intricate patterns, sheer fabrics and complex layering can be challenging.",
                   "Use detailed product references and compare the finished images with the actual garment before publishing. Lifestyle imagery works best alongside clear product and detail photographs that help customers understand what they are buying."
             ]
       }
@@ -236,15 +235,15 @@ const services: Record<string, ServiceData> = {
     faqs: [
       {
             "q": "What is AI lifestyle fashion photography?",
-            "a": "AI lifestyle fashion photography creates images of clothing on AI-generated models in styled environments, such as streets, cafés and interiors. At SetlesStudio, your product photographs guide the garment’s appearance, while creative references guide the model, lighting and setting."
+            "a": "AI lifestyle fashion photography creates images of clothing on AI generated models in styled environments, such as streets, cafés and interiors. At SetlesStudio, your product photographs guide the garment’s appearance, while creative references guide the model, lighting and setting."
       },
       {
-            "q": "Can you create AI model photos from flat-lay clothing images?",
-            "a": "Yes. Flat lays, mannequin photographs, ghost mannequin images and existing on-model photographs can serve as starting references. Send clear views of the complete garment so we can assess its construction and visible details before confirming the project."
+            "q": "Can you create AI model photos from flat lay clothing images?",
+            "a": "Yes. Flat lays, mannequin photographs, ghost mannequin images and existing on model photographs can serve as starting references. Send clear views of the complete garment so we can assess its construction and visible details before confirming the project."
       },
       {
             "q": "What photographs should I provide?",
-            "a": "Provide well-lit front-and-back photographs, plus close-ups of logos, prints, embroidery, buttons and textures. Avoid filters that alter colors. Additional angles are useful for garments with unusual cuts, layered construction or details hidden in the main photographs."
+            "a": "Provide well lit front and back photographs, plus close ups of logos, prints, embroidery, buttons and textures. Avoid filters that alter colors. Additional angles are useful for garments with unusual cuts, layered construction or details hidden in the main photographs."
       },
       {
             "q": "Will the images preserve my clothing’s colors, prints and logos?",
@@ -252,7 +251,7 @@ const services: Record<string, ServiceData> = {
       },
       {
             "q": "Can you use the same AI model across my collection?",
-            "a": "Yes. We can work with a shared model reference across multiple products. Agreeing on the model’s appearance, hairstyle, styling and lighting at the start helps maintain consistency, although some visual variation can occur between AI-generated images."
+            "a": "Yes. We can work with a shared model reference across multiple products. Agreeing on the model’s appearance, hairstyle, styling and lighting at the start helps maintain consistency, although some visual variation can occur between AI generated images."
       },
       {
             "q": "Can I choose the background and poses?",
@@ -272,7 +271,7 @@ const services: Record<string, ServiceData> = {
       },
       {
             "q": "What types of clothing can you work with?",
-            "a": "We work with dresses, shirts, T-shirts, streetwear, activewear, sportswear, modest fashion and other apparel categories. Send examples for assessment, particularly if your garments include sheer materials, complex layering or intricate embellishments."
+            "a": "We work with dresses, shirts, T shirts, streetwear, activewear, sportswear, modest fashion and other apparel categories. Send examples for assessment, particularly if your garments include sheer materials, complex layering or intricate embellishments."
       },
       {
             "q": "How much does an AI lifestyle photoshoot cost?",
