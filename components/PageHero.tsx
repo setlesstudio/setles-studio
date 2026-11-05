@@ -78,7 +78,7 @@ export default function PageHero({
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
             <div className="md:ml-[10%] md:w-[58%] md:-translate-y-6 lg:-translate-y-24">
               <p className="eyebrow">{eyebrow}</p>
-              <h1 className="mt-3 font-display text-3xl font-semibold leading-[1.1] tracking-tight lg:text-5xl">{title}</h1>
+              <h1 className="mt-3 font-display text-3xl font-semibold leading-[1.1] tracking-tight md:whitespace-nowrap md:text-[2.3vw]">{title}</h1>
               {text && <p className="mt-5 text-sm leading-relaxed text-ink-soft lg:text-base">{text}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
             </div>

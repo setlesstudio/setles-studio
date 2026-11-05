@@ -544,7 +544,7 @@ export default function ServiceSlugPage({
       <PageHero
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
-        title={lightStudio ? <><span className="block md:whitespace-nowrap">{svc.hero.titlePrefix}</span><span className="block text-brand">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
+        title={lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
         text={svc.hero.subtitle}
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
