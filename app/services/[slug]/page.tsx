@@ -121,8 +121,8 @@ const services: Record<string, ServiceData> = {
       ],
     },
     ctaBanner: {
-      image: "/images/plum-set-studio-banner-white.webp",
-      imageAlt: "AI model in a plum top and leggings against a light studio background",
+      image: "/images/plum-ai-model-banner.webp",
+      imageAlt: "AI model reclining in a plum scalloped top and matching leggings",
       title: "See your clothing on an AI model.",
       text: "Send a product photo and tell us which details you want to highlight in your catalog.",
       waText: "Hi, I'd like to start a studio product photography project.",
@@ -589,6 +589,7 @@ export default function ServiceSlugPage({
         title={svc.ctaBanner.title}
         text={svc.ctaBanner.text}
         image={svc.ctaBanner.image}
+        imageAlt={svc.ctaBanner.imageAlt}
         primary={{ href: waCtaHref, label: "Get Started Today" }}
       />
 
