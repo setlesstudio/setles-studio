@@ -13,6 +13,7 @@ export default function CTABand({
   lightStudio = false,
   image = "",
   imageMobile = "",
+  imageAlt = "",
 }: {
   title?: string;
   text?: string;
@@ -21,7 +22,26 @@ export default function CTABand({
   secondary?: { href: string; label: string };
   image?: string;
   imageMobile?: string;
+  imageAlt?: string;
 }) {
+  if (lightStudio && image) {
+    return (
+      <section className="container-site py-16">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-4xl bg-[#f7f7f5]">
+            <Image src={image} alt={imageAlt} width={2200} height={1228}
+              sizes="(min-width: 1280px) 1280px, 100vw" quality={90}
+              className="h-auto w-full" />
+            <div className="relative px-6 py-8 text-center text-ink md:absolute md:left-[18%] md:top-[48%] md:w-[70%] md:rounded-3xl md:bg-black/45 md:px-8 md:py-6 md:text-white">
+              <h2 className="font-display text-2xl font-semibold leading-tight lg:text-4xl">{title}</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed lg:text-base">{text}</p>
+              <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">{primary.label}</a>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+    );
+  }
   return (
     <section className="container-site py-16">
       <Reveal>

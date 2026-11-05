@@ -78,7 +78,7 @@ export default function PageHero({
   ) : null;
 
   return (
-    <section className={`relative flex ${lightStudio ? "gap-6 bg-[#f7f7f5] pb-12 pt-24 text-ink md:min-h-screen md:pb-20" : `${fullHeight ? "min-h-screen" : "min-h-[560px]"} bg-ink pb-20 pt-28 text-white`} flex-col justify-end overflow-hidden`}>
+    <section className={`relative flex ${lightStudio ? "gap-6 bg-[#f7f7f5] pb-12 pt-24 text-ink md:min-h-screen md:justify-center md:pb-20" : `${fullHeight ? "min-h-screen" : "min-h-[560px]"} bg-ink pb-20 pt-28 text-white`} flex-col justify-end overflow-hidden`}>
       {videoBlock}
       {animateReveal && imageBlock ? (
         <div className="absolute inset-0">
@@ -91,7 +91,7 @@ export default function PageHero({
       />}
       <div className="container-site relative">
         <Reveal delay={animateReveal ? 0.7 : 0}>
-          <div className={lightStudio ? "md:max-w-[62%]" : undefined}>
+          <div className={lightStudio ? "md:ml-[10%] md:max-w-[58%]" : undefined}>
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
               {title}
