@@ -5,6 +5,7 @@ import Reveal from "./Reveal";
 export default function PageHero({
   lightStudio = false,
   lifestylePhotos = false,
+  campaignPhotos = false,
   eyebrow,
   title,
   text,
@@ -19,6 +20,7 @@ export default function PageHero({
 }: {
   lightStudio?: boolean;
   lifestylePhotos?: boolean;
+  campaignPhotos?: boolean;
   eyebrow: string;
   title: React.ReactNode;
   text?: React.ReactNode;
@@ -63,11 +65,28 @@ export default function PageHero({
     sizes: "100vw",
     quality: 85,
     loading: "eager" as const,
-    unoptimized: lightStudio || lifestylePhotos,
+    unoptimized: lightStudio || lifestylePhotos || campaignPhotos,
     className: lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
+
+  if (campaignPhotos && image) {
+    return (
+      <section className="bg-ink pt-20 text-white md:pt-24">
+        <div className="relative">
+          <img src={image} alt={imageAlt} width={2912} height={1440} {...{ fetchpriority: "high" }} className="h-auto w-full" />
+          <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/70 via-black/20 to-transparent md:block" />
+          <div className="relative px-6 py-10 md:absolute md:inset-y-0 md:left-[5%] md:flex md:w-[44%] md:flex-col md:justify-center md:p-0">
+            <p className="eyebrow">{eyebrow}</p>
+            <h1 className="mt-3 font-display text-3xl font-semibold leading-tight lg:text-5xl">{title}</h1>
+            {text && <p className="mt-5 text-sm leading-relaxed text-white/90 lg:text-lg">{text}</p>}
+            {children && <div className="mt-6 flex flex-wrap gap-3">{children}</div>}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if ((lightStudio || lifestylePhotos) && desktopProps) {
     return (
