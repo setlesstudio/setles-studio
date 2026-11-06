@@ -613,6 +613,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
+  const lifestylePhotos = params.slug === "lifestyle-realistic-ai-photography";
   const lightStudio = params.slug === "realistic-ai-studio-photography";
   const hasBeforeAfter = Boolean(svc.beforeAfter.before && (svc.beforeAfter.after || svc.beforeAfter.afterVideo));
 
@@ -632,6 +633,7 @@ export default function ServiceSlugPage({
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
       <PageHero
+        lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
         title={lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
@@ -652,7 +654,7 @@ export default function ServiceSlugPage({
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter containedPhotos={lifestylePhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -688,6 +690,7 @@ export default function ServiceSlugPage({
       ))}
 
       <CTABand
+        fullImage={lifestylePhotos}
         lightStudio={lightStudio}
         title={svc.ctaBanner.title}
         text={svc.ctaBanner.text}

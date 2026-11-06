@@ -4,6 +4,7 @@ import Reveal from "./Reveal";
 
 export default function PageHero({
   lightStudio = false,
+  lifestylePhotos = false,
   eyebrow,
   title,
   text,
@@ -17,6 +18,7 @@ export default function PageHero({
   containerClassName = "",
 }: {
   lightStudio?: boolean;
+  lifestylePhotos?: boolean;
   eyebrow: string;
   title: React.ReactNode;
   text?: React.ReactNode;
@@ -61,15 +63,15 @@ export default function PageHero({
     sizes: "100vw",
     quality: 85,
     loading: "eager" as const,
-    unoptimized: lightStudio,
-    className: lightStudio ? "object-contain" : "object-cover object-top",
+    unoptimized: lightStudio || lifestylePhotos,
+    className: lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
 
-  if (lightStudio && desktopProps) {
+  if ((lightStudio || lifestylePhotos) && desktopProps) {
     return (
-      <section className="bg-[#f7f7f5] pt-20 text-ink md:pt-24">
+      <section className={lifestylePhotos ? "bg-ink pt-20 text-white md:pt-24" : "bg-[#f7f7f5] pt-20 text-ink md:pt-24"}>
         <div className="relative">
           <picture className="relative mx-auto block h-[420px] w-full md:h-auto md:aspect-[2752/1536]">
             {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} />}
@@ -78,8 +80,8 @@ export default function PageHero({
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
             <div className="md:ml-[10%] md:w-[58%] md:-translate-y-6 lg:-translate-y-24">
               <p className="eyebrow">{eyebrow}</p>
-              <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:whitespace-nowrap md:text-[3.15vw]">{title}</h1>
-              {text && <p className="mt-5 text-base leading-relaxed text-ink-soft lg:text-lg">{text}</p>}
+              <h1 className={lifestylePhotos ? "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[2.6vw]" : "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:whitespace-nowrap md:text-[3.15vw]"}>{title}</h1>
+              {text && <p className={`mt-5 text-base leading-relaxed lg:text-lg ${lifestylePhotos ? "text-white/90" : "text-ink-soft"}`}>{text}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
             </div>
           </div>
