@@ -11,6 +11,7 @@ type Props = {
   afterLabel?: string;
   portfolioLabel?: string;
   lightStudio?: boolean;
+  containedPhotos?: boolean;
   before: string;
   beforeAlt: string;
   beforeCaption: string;
@@ -30,6 +31,7 @@ export default function ServiceBeforeAfter({
   afterLabel = "After",
   portfolioLabel,
   lightStudio = false,
+  containedPhotos = false,
   before,
   beforeAlt,
   beforeCaption,
@@ -41,14 +43,16 @@ export default function ServiceBeforeAfter({
   after2,
   after2Alt,
 }: Props) {
-  if (lightStudio && after && after2) {
+  if ((lightStudio || containedPhotos) && after && after2) {
     const photos = [
-      { src: before, alt: beforeAlt, caption: beforeCaption, label: "Before" },
-      { src: after, alt: afterAlt, caption: afterCaption, label: "After" },
-      { src: after2, alt: after2Alt ?? "", caption: after2Caption ?? "", label: "After" },
+      { src: before, alt: beforeAlt, caption: beforeCaption, label: beforeLabel },
+      { src: after, alt: afterAlt, caption: afterCaption, label: afterLabel },
+      { src: after2, alt: after2Alt ?? "", caption: after2Caption ?? "", label: afterLabel },
     ];
     return (
       <section className="container-site py-8 md:py-12">
+        {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand sm:text-4xl">{heading}</h2>}
+        {introduction && <p className="mx-auto mb-8 max-w-3xl text-center leading-relaxed text-ink-soft">{introduction}</p>}
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 md:grid-cols-3">
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
@@ -60,6 +64,7 @@ export default function ServiceBeforeAfter({
             </ComparisonFigure>
           ))}
         </div>
+        {portfolioLabel && <div className="mt-8 text-center"><Link href="/portfolio" className="btn-primary">{portfolioLabel}</Link></div>}
       </section>
     );
   }

@@ -11,6 +11,7 @@ export default function CTABand({
   primary = { href: WA_DEFAULT, label: "Get Started Today" },
   secondary,
   lightStudio = false,
+  fullImage = false,
   image = "",
   imageMobile = "",
   imageAlt = "",
@@ -19,11 +20,28 @@ export default function CTABand({
   text?: string;
   primary?: { href: string; label: string };
   lightStudio?: boolean;
+  fullImage?: boolean;
   secondary?: { href: string; label: string };
   image?: string;
   imageMobile?: string;
   imageAlt?: string;
 }) {
+  if (fullImage && image) {
+    return (
+      <section className="container-site py-16">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-4xl bg-ink text-white">
+            <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="h-auto w-full" />
+            <div className="relative px-6 py-8 text-center md:absolute md:inset-x-0 md:bottom-0 md:bg-gradient-to-t md:from-black/90 md:via-black/60 md:to-transparent md:px-8 md:pt-16">
+              <h2 className="font-display text-2xl font-semibold leading-tight lg:text-4xl">{title}</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed lg:text-base">{text}</p>
+              <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">{primary.label}</a>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+    );
+  }
   if (lightStudio && image) {
     return (
       <section className="container-site py-16">
