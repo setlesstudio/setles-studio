@@ -60,7 +60,7 @@ export default function CTABand({
               <Image
                 unoptimized={lightStudio}
                 src={image}
-                alt={image === "/images/footwear-cta-image.jpg" ? imageAlt : ""}
+                alt={image === "/images/footwear-cta-image.jpg" || image === "/images/pink-outfit-lifestyle-cta.webp" ? imageAlt : ""}
                 fill
                 sizes="100vw"
                 className={`${lightStudio ? "object-contain mix-blend-multiply max-md:!relative max-md:!h-[190px]" : "object-cover object-top"} ${imageMobile ? "hidden md:block" : ""}`}
