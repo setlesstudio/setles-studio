@@ -286,68 +286,158 @@ const services: Record<string, ServiceData> = {
   },
 
   "luxury-fashion-ai-campaign": {
-    meta: {
-      title: "AI Fashion Campaign Photography | SetlesStudio",
-      description: "Create editorial-style AI fashion campaign imagery for collection launches, lookbooks, and advertising, with creative direction tailored to your brand.",
-    },
-    hero: {
-      eyebrow: "AI Fashion Campaign",
-      titlePrefix: "AI Fashion",
-      titleHighlight: "Campaign Photography",
-      subtitle: "Create a coordinated set of editorial images for your collection launch, lookbook, or campaign.",
-      image: "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg",
-      mobileImage: "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg",
-      imageAlt: "Luxury fashion AI campaign editorial photography",
-      waText: "Hi, I'd like to discuss a luxury fashion campaign project.",
-      primaryLabel: "Get a Campaign Quote",
-      secondary: { href: "/portfolio", label: "View Portfolio" },
-    },
-    beforeAfter: {
-      before: "/images/campaign-desert-knit-dress-product.jpg",
-      beforeCaption: "Send a product photo that shows the halter neckline and length of the dress.",
-      afterCaption: "SetlesStudio styles the dress on a seated AI model against desert rocks.",
-      after2Caption: "A standing pose shows the full silhouette in the same desert setting.",
-      beforeAlt: "Flat lay product photo of desert knit dress before AI processing",
-      after: "/images/campaign-desert-knit-dress-1.jpeg",
-      afterAlt: "AI luxury campaign photo — desert knit dress on model in editorial setting",
-      after2: "/images/campaign-desert-knit-dress-2.jpeg",
-      after2Alt: "AI luxury campaign photo — desert knit dress on model, second editorial look",
-    },
-    description: {
-      titleHighlight: "Luxury Fashion AI Campaign Photography",
-      titleSuffix: "for Premium Brands",
-      paragraphs: [
-        "Transform your apparel products into high end luxury fashion campaign imagery without the cost of traditional photoshoots. Our hyper realistic AI models showcase your clothing in premium locations, luxury interiors, upscale city environments, resorts, and editorial style settings while preserving accurate garment details, fabric textures, colors, logos, and fit.",
-        "Create luxury fashion campaign photography for Ecommerce brands, fashion advertising, social media marketing, lookbooks, product launches, and premium brand campaigns.",
-      ],
-    },
-    features: {
-      heading: "Why Apparel Brands choose our luxury AI Fashion Campaign Photography",
-      subheading: "Luxury AI Fashion Campaigns",
-      items: [
-        { number: "01", icon: Crown,       title: "Luxury Campaign Quality",       description: "Premium fashion imagery that matches luxury brand standards." },
-        { number: "02", icon: Users,      title: "Hyper Realistic AI Models",     description: "Natural looking AI models with authentic poses, expressions, and styling." },
-        { number: "03", icon: MapPin,     title: "Premium Locations",             description: "Luxury hotels, designer interiors, resorts, and exclusive urban settings." },
-        { number: "04", icon: Layers,     title: "Consistent Brand Identity",     description: "Same AI model, style, and aesthetic across your entire collection." },
-        { number: "05", icon: Zap,        title: "Fast & Cost Effective",         description: "Launch campaigns faster without expensive photoshoots." },
-        { number: "06", icon: TrendingUp, title: "Boost Conversions",             description: "High converting visuals that build trust and increase sales." },
-      ],
-    },
-    ctaBanner: {
-      image: "/images/black-dress-model-luxury-service-cta.jpg",
-      imageAlt: "Luxury fashion campaign banner",
-      title: "Ready to create your luxury fashion campaign",
-      text: "Transform your apparel collection into premium fashion advertising imagery without expensive photoshoots, models or production teams. Get luxury AI Fashion Campaign Image Today",
-      waText: "Hi, I'd like to discuss a luxury fashion campaign project.",
-    },
-    faqs: [
-      { q: "Can you create AI fashion images from my product photos?", a: "Yes, we can transform product photos, flat lays, or ghost mannequin images into luxury fashion campaign visuals." },
-      { q: "Are the AI models realistic?", a: "Yes, we create hyper realistic AI fashion models that look natural and professional." },
-      { q: "Can you use the same model across my collection?", a: "Yes, we can maintain a consistent AI model and style for your entire campaign." },
-      { q: "Are the images suitable for Shopify and Ecommerce?", a: "Absolutely. Our images are optimized for Shopify, Amazon, Etsy, and fashion websites." },
-      { q: "What types of clothing can you work with?", a: "We create AI fashion photography for luxury fashion, streetwear, activewear, swimwear, dresses, and more." },
-    ],
+  "meta": {
+    "title": "AI Fashion Campaign Photography for Apparel Brands | SetlesStudio",
+    "description": "Create realistic AI fashion campaign photography for apparel brands. Get professional model images, campaign visuals and fashion advertising content with SetlesStudio."
   },
+  "hero": {
+    "eyebrow": "AI Fashion Campaign Photography",
+    "titlePrefix": "AI Fashion Campaign Photography",
+    "titleHighlight": "for Apparel Brands",
+    "subtitle": "Create professional AI fashion campaign images for clothing brands without the complexity of traditional photoshoots. SetlesStudio transforms your apparel product photos into realistic fashion model imagery, creative campaign visuals and advertising content.",
+    "image": "/images/ai-fashion-campaign-photography.webp",
+    "mobileImage": "/images/ai-fashion-model-photography.webp",
+    "imageAlt": "AI model wearing a white halter knit dress seated on a desert rock",
+    "waText": "Hi, I'd like a fashion campaign quote.",
+    "primaryLabel": "Get a Campaign Quote",
+    "secondary": {
+      "href": "/portfolio",
+      "label": "View Our Portfolio"
+    }
+  },
+  "beforeAfter": {
+    "heading": "Turn Apparel Product Photos into Fashion Campaign Images",
+    "introduction": "Transform simple clothing product images into professional fashion campaign photography. We use your original product references to create realistic AI fashion models, natural poses and carefully selected campaign backgrounds while focusing on accurate garment colors, fit, fabric textures and design details.",
+    "before": "/images/campaign-desert-knit-dress-product.jpg",
+    "beforeCaption": "Original product photograph of the white halter knit dress with black trim.",
+    "beforeAlt": "White halter knit dress with black trim shown as a product reference",
+    "after": "/images/ai-fashion-model-photography.webp",
+    "afterAlt": "AI model wearing a white halter knit maxi dress and sunglasses in the desert",
+    "afterCaption": "SetlesStudio presents the white knit dress on an AI model in a desert campaign scene.",
+    "after2": "/images/ai-apparel-lifestyle-campaign.webp",
+    "after2Alt": "AI model in a white knit dress posing beside a rock in the desert",
+    "after2Caption": "A second campaign pose shows the dress from the side beside a desert rock."
+  },
+  "description": {
+    "titleHighlight": "AI Fashion Campaign Photography",
+    "titleSuffix": "for Clothing Brands",
+    "paragraphs": [
+      "From fashion startups to established clothing labels, we help brands create consistent, high-quality visuals for product launches, websites and social media marketing.",
+      "SetlesStudio provides AI fashion campaign photography for apparel brands looking to create professional marketing visuals without arranging traditional photoshoots.",
+      "We create realistic fashion model images and campaign scenes from your existing clothing product photographs, helping you showcase your collections across different marketing platforms."
+    ]
+  },
+  "features": {
+    "heading": "Why Choose SetlesStudio for AI Fashion Campaigns?",
+    "subheading": "AI Fashion Campaign Photography",
+    "items": [
+      {
+        "number": "01",
+        "icon": Users,
+        "title": "Realistic Fashion Models",
+        "description": "Create natural-looking AI fashion models with realistic skin textures, expressions and professional poses."
+      },
+      {
+        "number": "02",
+        "icon": Package,
+        "title": "Accurate Clothing Details",
+        "description": "Focus on original garment colors, fabric textures, patterns, stitching, logos and clothing proportions."
+      },
+      {
+        "number": "03",
+        "icon": MapPin,
+        "title": "Creative Campaign Backgrounds",
+        "description": "Showcase apparel in studio settings, lifestyle locations, outdoor environments and editorial-inspired scenes."
+      },
+      {
+        "number": "04",
+        "icon": Layers,
+        "title": "Consistent Campaign Visuals",
+        "description": "Maintain coordinated styling, model appearance and visual direction across your collection."
+      },
+      {
+        "number": "05",
+        "icon": Zap,
+        "title": "Flexible Content Production",
+        "description": "Create campaign images without organizing a traditional photoshoot for every collection."
+      },
+      {
+        "number": "06",
+        "icon": TrendingUp,
+        "title": "Ready for Marketing",
+        "description": "Prepare fashion visuals for ecommerce websites, collection launches, social media and digital advertising."
+      }
+    ]
+  },
+  "details": [
+    {
+      "title": "Our AI Fashion Campaign Services Include:",
+      "items": [
+        "AI fashion model photography",
+        "Apparel lifestyle campaign images",
+        "Fashion editorial photography",
+        "AI clothing advertising creatives",
+        "Fashion lookbook photography",
+        "Seasonal collection campaign visuals",
+        "Social media fashion campaign images"
+      ],
+      "paragraphs": [
+        "Every project is developed around your brand's creative direction, product references and visual identity."
+      ]
+    },
+    {
+      "title": "AI Fashion Campaign Photography for Different Apparel Brands",
+      "intro": "We work with:",
+      "items": [
+        "Clothing and apparel brands",
+        "Fashion startups and emerging designers",
+        "DTC fashion and ecommerce businesses",
+        "Streetwear and casualwear brands",
+        "Activewear and sportswear brands",
+        "Women's and men's fashion labels",
+        "Swimwear and lifestyle apparel brands"
+      ],
+      "paragraphs": [
+        "Our goal is to help apparel businesses present their collections through professional, consistent and engaging campaign imagery."
+      ]
+    }
+  ],
+  "ctaBanner": {
+    "image": "/images/ai-fashion-editorial-photography.webp",
+    "imageAlt": "AI fashion campaign model in a white knit dress against desert mountains",
+    "title": "Create Your Next Fashion Campaign with SetlesStudio",
+    "text": "Ready to create professional fashion campaign images for your clothing brand? Share your product photos, creative references and campaign requirements. SetlesStudio will help you develop realistic AI fashion photography tailored to your brand.",
+    "waText": "Hi, I'd like a fashion campaign quote.",
+    "buttonLabel": "Get Your Fashion Campaign Quote"
+  },
+  "faqTitle": "Frequently Asked Questions About AI Fashion Campaign Photography",
+  "faqs": [
+    {
+      "q": "What is AI fashion campaign photography?",
+      "a": "AI fashion campaign photography uses artificial intelligence to create fashion model images, editorial visuals and advertising campaigns from clothing product references."
+    },
+    {
+      "q": "Can you create AI fashion campaigns from my clothing product photos?",
+      "a": "Yes. We use your existing product photos, flat lays or ghost mannequin images to create realistic fashion campaign visuals featuring AI-generated models and creative backgrounds."
+    },
+    {
+      "q": "How much does AI fashion campaign photography cost?",
+      "a": "Pricing depends on the number of outfits, images, model requirements and campaign complexity. Contact SetlesStudio for a customized quote."
+    },
+    {
+      "q": "Can you create consistent AI models for my clothing brand?",
+      "a": "Yes. We can create coordinated campaign images featuring consistent model appearances, styling and visual direction across multiple clothing products."
+    },
+    {
+      "q": "What types of apparel brands do you work with?",
+      "a": "We work with fashion startups, clothing labels, streetwear brands, activewear businesses, swimwear companies and ecommerce apparel brands."
+    },
+    {
+      "q": "Where can I use AI fashion campaign images?",
+      "a": "You can use campaign images for ecommerce websites, Shopify stores, fashion lookbooks, collection launches, Instagram, Facebook, Pinterest and digital advertising, subject to your agreed usage rights."
+    }
+  ]
+},
 
   "footwear-realistic-ai-photography": {
     meta: {
@@ -613,6 +703,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
+  const campaignPhotos = params.slug === "luxury-fashion-ai-campaign";
   const lifestylePhotos = params.slug === "lifestyle-realistic-ai-photography";
   const lightStudio = params.slug === "realistic-ai-studio-photography";
   const hasBeforeAfter = Boolean(svc.beforeAfter.before && (svc.beforeAfter.after || svc.beforeAfter.afterVideo));
@@ -633,6 +724,7 @@ export default function ServiceSlugPage({
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
       <PageHero
+        campaignPhotos={campaignPhotos}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
@@ -654,7 +746,7 @@ export default function ServiceSlugPage({
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter containedPhotos={lifestylePhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter containedPhotos={lifestylePhotos || campaignPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -690,7 +782,7 @@ export default function ServiceSlugPage({
       ))}
 
       <CTABand
-        fullImage={lifestylePhotos}
+        fullImage={lifestylePhotos || campaignPhotos}
         lightStudio={lightStudio}
         title={svc.ctaBanner.title}
         text={svc.ctaBanner.text}
