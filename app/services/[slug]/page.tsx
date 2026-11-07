@@ -740,13 +740,13 @@ export default function ServiceSlugPage({
         </a>
         <a
           href={svc.hero.secondary.href}
-          className={lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
+          className={campaignPhotos ? "rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink lg:border-white/40 lg:text-white" : lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
         >
           {svc.hero.secondary.label}
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter containedPhotos={lifestylePhotos || campaignPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -782,6 +782,7 @@ export default function ServiceSlugPage({
       ))}
 
       <CTABand
+        campaignBanner={campaignPhotos}
         fullImage={lifestylePhotos || campaignPhotos}
         lightStudio={lightStudio}
         title={svc.ctaBanner.title}
@@ -793,7 +794,7 @@ export default function ServiceSlugPage({
 
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
               <div className="container-site">
-                <SectionHeading eyebrow="FAQ" title={svc.faqTitle ?? "Frequently Asked questions"} />
+                {campaignPhotos ? <div className="mx-auto max-w-4xl text-center"><p className="eyebrow">FAQ</p><h2 className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-[28px]">{svc.faqTitle}</h2></div> : <SectionHeading eyebrow="FAQ" title={svc.faqTitle ?? "Frequently Asked questions"} />}
                 <div className="mt-12">
                   <FAQ faqs={svc.faqs}/>
                 </div>

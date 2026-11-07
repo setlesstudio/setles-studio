@@ -12,6 +12,7 @@ export default function CTABand({
   secondary,
   lightStudio = false,
   fullImage = false,
+  campaignBanner = false,
   image = "",
   imageMobile = "",
   imageAlt = "",
@@ -21,11 +22,26 @@ export default function CTABand({
   primary?: { href: string; label: string };
   lightStudio?: boolean;
   fullImage?: boolean;
+  campaignBanner?: boolean;
   secondary?: { href: string; label: string };
   image?: string;
   imageMobile?: string;
   imageAlt?: string;
 }) {
+  if (campaignBanner && image) {
+    return (
+      <section className="my-12 bg-cream">
+        <div className="relative">
+          <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="block h-auto w-full" />
+          <div className="relative px-6 py-8 text-center text-ink lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-gradient-to-t lg:from-black/75 lg:to-transparent lg:px-10 lg:pb-10 lg:pt-20 lg:text-white">
+            <h2 className="mx-auto max-w-4xl font-display text-2xl font-semibold leading-tight lg:text-3xl">{title}</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed lg:text-base">{text}</p>
+            <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary mt-5">{primary.label}</a>
+          </div>
+        </div>
+      </section>
+    );
+  }
   if (fullImage && image) {
     return (
       <section className="container-site py-16">
