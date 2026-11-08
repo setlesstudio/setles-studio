@@ -3,6 +3,7 @@ import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 export default function PageHero({
+  footwearPhotos = false,
   preserveImageQuality = false,
   lightStudio = false,
   lifestylePhotos = false,
@@ -19,6 +20,7 @@ export default function PageHero({
   animateReveal = false,
   containerClassName = "",
 }: {
+  footwearPhotos?: boolean;
   preserveImageQuality?: boolean;
   lightStudio?: boolean;
   lifestylePhotos?: boolean;
@@ -38,6 +40,22 @@ export default function PageHero({
   titleClassName?: string;
   textClassName?: string;
 }) {
+
+  if (footwearPhotos && image) {
+    return (
+      <section className="bg-[#f7f7f7] pt-24 text-ink">
+        <div className="relative">
+          <img src={image} alt={imageAlt} width={2752} height={1536} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
+          <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[42%] lg:flex-col lg:justify-center lg:px-0 lg:py-6">
+            <p className="eyebrow">{eyebrow}</p>
+            <h1 className="mt-3 font-display text-3xl font-semibold leading-tight xl:text-5xl">{title}</h1>
+            {text && <p className="mt-5 text-sm leading-relaxed text-ink-soft xl:text-lg">{text}</p>}
+            {children && <div className="mt-6 flex flex-wrap gap-3">{children}</div>}
+          </div>
+        </div>
+      </section>
+    );
+  }
   const overlays = (
     <>
       <div className="absolute top-0 left-0 right-0 h-[22%] bg-gradient-to-b from-ink/70 to-transparent" />
@@ -153,5 +171,6 @@ export default function PageHero({
     </section>
   );
 }
+
 
 
