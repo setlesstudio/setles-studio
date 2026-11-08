@@ -729,7 +729,7 @@ export default function ServiceSlugPage({
         { name: "Services", path: "/services" },
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
-      <PageHero
+      <PageHero footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos}
         campaignPhotos={campaignPhotos}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
@@ -787,7 +787,7 @@ export default function ServiceSlugPage({
         </section>
       ))}
 
-      <CTABand
+      <CTABand footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos}
         campaignBanner={campaignPhotos}
         fullImage={lifestylePhotos || campaignPhotos}
         lightStudio={lightStudio}
