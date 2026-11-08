@@ -10,6 +10,7 @@ export default function CTABand({
   text = "Take your brand to new heights, and boost your sales 10x.",
   primary = { href: WA_DEFAULT, label: "Get Started Today" },
   secondary,
+  footwearPhotos = false,
   preserveImageQuality = false,
   lightStudio = false,
   fullImage = false,
@@ -21,6 +22,7 @@ export default function CTABand({
   title?: string;
   text?: string;
   primary?: { href: string; label: string };
+  footwearPhotos?: boolean;
   preserveImageQuality?: boolean;
   lightStudio?: boolean;
   fullImage?: boolean;
@@ -30,6 +32,21 @@ export default function CTABand({
   imageMobile?: string;
   imageAlt?: string;
 }) {
+
+  if (footwearPhotos && image) {
+    return (
+      <section className="container-site py-16">
+        <div className="overflow-hidden rounded-4xl bg-[#f7f7f7] text-center text-ink">
+          <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="block h-auto w-full" />
+          <div className="px-6 py-8 md:px-12 md:py-10">
+            <h2 className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-tight md:text-3xl">{title}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft md:text-base">{text}</p>
+            <a href={primary.href} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6">{primary.label}</a>
+          </div>
+        </div>
+      </section>
+    );
+  }
   if (campaignBanner && image) {
     return (
       <section className="my-12 bg-cream">
@@ -143,3 +160,4 @@ export default function CTABand({
     </section>
   );
 }
+
