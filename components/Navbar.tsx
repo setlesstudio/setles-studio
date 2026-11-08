@@ -72,7 +72,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        opaque
+        opaque && !(pathname === "/services/footwear-realistic-ai-photography" && !scrolled && !open)
           ? "bg-white/90 shadow-[0_1px_0_rgba(28,24,20,0.06)] backdrop-blur-md"
           : "bg-transparent"
       }`}
@@ -153,7 +153,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`grid h-10 w-10 place-items-center rounded-xl border transition-all duration-300 lg:hidden ${
-            opaque || pathname === "/services/luxury-fashion-ai-campaign" ? "border-ink/20 text-ink" : "border-white/30 bg-white/15 text-white"
+            opaque && !(pathname === "/services/footwear-realistic-ai-photography" && !scrolled && !open) || pathname === "/services/luxury-fashion-ai-campaign" ? "border-ink/20 text-ink" : "border-white/30 bg-white/15 text-white"
           }`}
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open ? "true" : "false"}
