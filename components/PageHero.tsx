@@ -43,7 +43,7 @@ export default function PageHero({
 
   if (footwearPhotos && image) {
     return (
-      <section className="bg-[#f7f7f7] pt-24 text-ink">
+      <section className="bg-[#f7f7f7] pt-[72px] text-ink lg:pt-0">
         <div className="relative">
           <img src={image} alt={imageAlt} width={2752} height={1536} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[42%] lg:flex-col lg:justify-center lg:px-0 lg:py-6">
