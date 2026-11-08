@@ -54,7 +54,7 @@ export default function HomePage() {
 
   const heroTitle = pageData?.heroTitle || homeHero.heroTitle;
   const heroText = pageData?.heroText || homeHero.heroText;
-  const heroImage = "/images/luxury-stairs-wide.jpeg";
+  const heroImage = "/images/navy-activewear-banner.webp";
 
   const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
   const currentServices = localServices.length > 0 ? localServices : services;
@@ -62,11 +62,12 @@ export default function HomePage() {
   return (
     <>
       <PageHero
+        preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
         title={parseHeroTitle(heroTitle)}
         text={heroText}
         image={heroImage}
-        imageAlt="Fashion model on luxury stairs"
+        imageAlt="AI model wearing a navy tank and shorts beside a wooden doorway"
         animateReveal
       >
         <Link href="/portfolio" className="btn-primary">
@@ -116,8 +117,9 @@ export default function HomePage() {
                   After
                 </span>
                 <Image
-                  src="/images/after-window.webp"
-                  alt="Navy activewear outside a building"
+                  unoptimized
+                  src="/images/navy-activewear-outdoors.webp"
+                  alt="AI model wearing a navy tank and matching shorts with a brown tote outside a building"
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-cover object-top"
@@ -132,8 +134,9 @@ export default function HomePage() {
                   After
                 </span>
                 <Image
-                  src="/images/after-walk.webp"
-                  alt="Model reading in navy activewear"
+                  unoptimized
+                  src="/images/navy-activewear-reading.webp"
+                  alt="AI model in navy activewear reading a book beside an open garden door"
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className="object-cover object-top"
@@ -272,7 +275,9 @@ export default function HomePage() {
         text="Send a product photo to discuss studio images, lifestyle scenes, or a fashion campaign for your brand."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started Today" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
-        image="/images/home-page-last-section-image.jpg"
+        preserveImageQuality
+        image="/images/navy-activewear-green-juice.webp"
+        imageAlt="AI model in a navy workout set holding green juice beside outdoor steps and palms"
       />
     </>
   );
