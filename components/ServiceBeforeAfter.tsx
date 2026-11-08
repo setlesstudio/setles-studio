@@ -5,6 +5,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 type Props = {
+  preserveImageQuality?: boolean;
   heading?: string;
   introduction?: string;
   beforeLabel?: string;
@@ -26,6 +27,7 @@ type Props = {
 };
 
 export default function ServiceBeforeAfter({
+  preserveImageQuality = false,
   heading,
   introduction,
   beforeLabel = "Before",
@@ -90,7 +92,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={before}
                   alt={imageDescription(before, beforeAlt)}
-                  unoptimized={lightStudio}
+                  unoptimized={preserveImageQuality || lightStudio}
                   fill
                   sizes="100vw"
                   className={`object-contain p-4 ${lightStudio ? "mix-blend-multiply" : ""}`}
@@ -121,7 +123,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={after}
                   alt={imageDescription(after, afterAlt)}
-                  unoptimized={lightStudio}
+                  unoptimized={preserveImageQuality || lightStudio}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
@@ -142,7 +144,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={after2!}
                   alt={imageDescription(after2, after2Alt ?? "")}
-                  unoptimized={lightStudio}
+                  unoptimized={preserveImageQuality || lightStudio}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
@@ -156,3 +158,4 @@ export default function ServiceBeforeAfter({
     </section>
   );
 }
+

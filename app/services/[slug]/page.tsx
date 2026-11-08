@@ -441,68 +441,73 @@ const services: Record<string, ServiceData> = {
 
   "footwear-realistic-ai-photography": {
     meta: {
-      title: "AI Footwear Product Photography for Ecommerce Brands | SetlesStudio",
-      description: "Get realistic AI footwear product photography for ecommerce brands. Create premium shoe images, on-foot model shots, studio packshots and lifestyle campaigns without traditional photoshoots.",
+      title: "AI Footwear Photography for Ecommerce Brands | SetlesStudio",
+      description: "Create realistic AI footwear photography for sneakers, shoes, boots and heels. Get professional product, on foot and lifestyle images for ecommerce brands.",
     },
     hero: {
-      eyebrow: "AI FOOTWEAR PRODUCT PHOTOGRAPHY",
-      titlePrefix: "AI Footwear Product Photography",
+      eyebrow: "AI FOOTWEAR PHOTOGRAPHY",
+      titlePrefix: "AI Footwear Photography",
       titleHighlight: "for Ecommerce Brands",
-      subtitle: "Turn your product photos into realistic shoe images, on-foot model shots, studio packshots, and lifestyle campaigns for your footwear brand.",
-      image: "/images/footwear-ai-photography-service-banner.jpg",
-      mobileImage: "/images/footwear-ai-photography-service-banner-mobile.jpg",
-      imageAlt: "AI model wearing black pointed pumps beside wood paneling",
-      waText: "Hi, I'd like to start a footwear photography project.",
-      primaryLabel: "Start My Footwear Project",
-      secondary: { href: "/portfolio", label: "View Footwear Examples" },
+      subtitle: "Create realistic AI footwear photography for your ecommerce brand with SetlesStudio. We transform your existing shoe product images into professional studio, on-foot, lifestyle, and advertising visuals without the expense of traditional photoshoots.",
+      image: "/images/ai-footwear-photography.webp",
+      mobileImage: "/images/ai-footwear-photography.webp",
+      imageAlt: "AI model wearing lime-green pointed heels with an orange top and green shorts",
+      waText: "Hi, I'd like a free AI footwear photography sample. I can share my product image and preferred reference.",
+      primaryLabel: "Get a Free Sample",
+      secondary: { href: "/portfolio", label: "View Our Portfolio" },
     },
     beforeAfter: {
-      before: "/images/heels-product.jpg",
-      beforeCaption: "Send a clear product photo showing your shoes, including their shape, color, and visible details.",
-      afterCaption: "SetlesStudio creates an on-foot image of the black pumps on a seated AI model.",
-      after2Caption: "A second pose shows the pointed toe and red heel in the same lifestyle setting.",
-      beforeAlt: "Top view of black pointed pumps with red lining on a white background",
-      after: "/images/heels-image-model.jpeg",
-      afterAlt: "Seated AI model wearing black pointed pumps on stone steps",
-      after2: "/images/heels-image-model-1.jpg",
-      after2Alt: "AI model crossing her legs to show black pumps with red heels",
+      before: "/images/green-heels-product.webp",
+      beforeCaption: "Send your original footwear photos, showing the shoe shape, color, materials, and heel details.",
+      afterCaption: "SetlesStudio creates an AI model wearing the lime-green heels in a kneeling studio pose.",
+      after2Caption: "A seated studio pose presents the same green pointed heels with coordinated styling.",
+      beforeAlt: "Front and back views of lime-green pointed-toe stiletto heels on a white background",
+      after: "/images/ai-green-heels-kneeling.webp",
+      afterAlt: "Kneeling AI model wearing lime-green stiletto heels and an orange cropped top",
+      after2: "/images/ai-green-heels-seated.webp",
+      after2Alt: "Seated AI model showing lime-green pointed heels with matching shorts",
     },
     description: {
-      titleHighlight: "AI Footwear Photography",
-      titleSuffix: "for Ecommerce Brands",
+      titleHighlight: "How It Works",
+      titleSuffix: "",
       paragraphs: [
-        "Whether you are launching a new footwear collection or updating an existing online store, SetlesStudio helps you create consistent product imagery for your digital platforms.",
-        <>Our footwear visuals can be prepared for Shopify, WooCommerce, Amazon, Etsy, ecommerce product pages, digital catalogs, and social media advertising. From clean studio product images to <Link href="/services/lifestyle-realistic-ai-photography">AI lifestyle photography</Link>, we help footwear brands build a consistent visual identity across their marketing channels. Explore our <Link href="/pricing">AI photography pricing</Link> for your next project.</>,
+        "Get professional footwear photography for your online store, product listings, and marketing campaigns.",
+        <><strong>01. Share Your Products:</strong> Send your original footwear images and visual references.</>,
+        <><strong>02. Choose Your Style:</strong> Select studio, on-foot, lifestyle, or campaign photography.</>,
+        <><strong>03. Image Creation:</strong> We create realistic footwear visuals following your product details and brand direction.</>,
+        <><strong>04. Review and Delivery:</strong> Review the images, request agreed refinements, and receive your final high-quality files.</>,
       ],
     },
     features: {
-      heading: "Why Choose SetlesStudio for AI Footwear Photography?",
-      subheading: "Product images, on-foot model shots, and lifestyle visuals",
+      heading: "Why Choose SetlesStudio?",
+      subheading: "AI footwear photography for ecommerce brands",
       items: [
-        { number: "01", icon: Camera, title: "Realistic On-Foot Images", description: "Show your shoes on AI models in poses and settings suited to your collection." },
-        { number: "02", icon: Aperture, title: "Clear Lighting & Angles", description: "Choose views that highlight the shoe shape, materials, sole, and stitching." },
-        { number: "03", icon: Tag, title: "Consistent Branding & Style", description: "Keep backgrounds, lighting, and styling consistent across your footwear range." },
-        { number: "04", icon: Infinity, title: "Footwear Detail Review", description: "Compare final images with your references for logos, colors, materials, and sole shape." },
-        { number: "05", icon: ShoppingCart, title: "Prepared for Ecommerce", description: "Request image sizes and crops for product pages, catalogs, and marketplace placements." },
-        { number: "06", icon: TrendingUp, title: "Campaign-Ready Visuals", description: "Create coordinated shoe imagery for collection launches, social content, and advertising." },
+        { number: "01", icon: Camera, title: "Fashion-Focused Expertise", description: "Fashion-focused creative expertise for your footwear collection." },
+        { number: "02", icon: Aperture, title: "Realistic Footwear Photography", description: "Realistic AI footwear photography for product, on-foot, and lifestyle images." },
+        { number: "03", icon: Tag, title: "Original Product Details", description: "Attention to original shoe shape, colors, materials, stitching, and logos." },
+        { number: "04", icon: Infinity, title: "Consistent Collection Visuals", description: "Consistent visuals across collections, with coordinated lighting and styling." },
+        { number: "05", icon: ShoppingCart, title: "Flexible Creative Direction", description: "Flexible creative direction for ecommerce brands." },
+        { number: "06", icon: TrendingUp, title: "Website and Advertising Images", description: "Professional images for websites, product listings, and advertising." },
       ],
     },
     ctaBanner: {
-      image: "/images/footwear-cta-image.jpg",
-      imageAlt: "AI footwear photography campaign example",
-      title: "Ready to Showcase Your Footwear Professionally?",
-      text: "Send your shoe product photos and tell us which studio, on-foot, or lifestyle images you need.",
-      waText: "Hi, I'd like to start a footwear photography project.",
+      image: "/images/ai-footwear-studio-banner.webp",
+      imageAlt: "AI model sitting on a chair and adjusting lime-green pointed heels in a white studio",
+      title: "Get Professional AI Footwear Photography for Your Brand",
+      text: "Ready to upgrade your footwear product images? Share your products and creative references with SetlesStudio. Let's create realistic footwear photography that presents your collection professionally.",
+      buttonLabel: "Contact SetlesStudio",
+      waText: "Hi, I'd like to start an AI footwear photography project.",
     },
-    faqTitle: "AI Footwear Product Photography FAQs",
+    faqTitle: "Frequently Asked Questions",
     faqs: [
-      { q: "What is AI footwear product photography?", a: "AI footwear product photography uses artificial intelligence and professional editing techniques to create realistic shoe product images, studio packshots, on-foot model photography, and lifestyle visuals from existing product references." },
-      { q: "Can you create AI shoe photography from existing product images?", a: "Yes. We can use your existing footwear product photos, catalog images, and design references to create new studio, lifestyle, and on-foot product visuals." },
-      { q: "Can you create realistic AI footwear images with models?", a: "Yes. We create realistic footwear photography featuring custom AI-generated models wearing your shoes in different poses, outfits, and environments." },
-      { q: "Do you offer AI sneaker and sports shoe photography?", a: "Yes. We create product and lifestyle photography for sneakers, trainers, running shoes, athletic footwear, boots, sandals, heels, and other footwear collections." },
-      { q: "Can you preserve original shoe logos, colors, and details?", a: "We carefully work to maintain the original footwear design, including logos, stitching, materials, colors, sole shapes, and other important product details. Final images are checked against the supplied references." },
-      { q: "Are AI footwear images suitable for Shopify and ecommerce websites?", a: "Yes. We create footwear product imagery for Shopify, WooCommerce, ecommerce websites, online catalogs, and marketing campaigns. Marketplace requirements should be checked for each image placement." },
-      { q: "How much does AI footwear photography cost?", a: "Pricing depends on the number of footwear designs, image variations, model requirements, and creative direction. Contact SetlesStudio for a customized project quote." },
+      { q: "What is AI footwear photography?", a: "AI footwear photography uses artificial intelligence and creative editing to produce professional shoe product images, model photography, lifestyle visuals, and advertising content from existing product photos." },
+      { q: "Can you create realistic shoe photography from my product images?", a: "Yes. We use your original footwear images and references to create realistic product, studio, on-foot, and lifestyle photography." },
+      { q: "Can you create AI shoe photography with models?", a: "Yes. We create realistic AI-generated models wearing your footwear in different poses, outfits, and environments." },
+      { q: "Can you maintain the original shoe design and logo?", a: "We carefully work to preserve the original shoe shape, colors, materials, stitching, logos, and other important product details." },
+      { q: "What types of footwear do you photograph?", a: "We create visuals for sneakers, running shoes, boots, heels, sandals, formal shoes, casual footwear, and designer collections." },
+      { q: "Are your footwear images suitable for ecommerce websites?", a: "Yes. Our images can be prepared for Shopify, WooCommerce, and other ecommerce platforms according to your image requirements." },
+      { q: "How much does AI footwear photography cost?", a: "Pricing depends on the number of products, images, creative direction, and complexity. Contact us for a customized quote." },
+      { q: "Can I get a free sample before starting?", a: "Yes. Share your footwear product image and preferred reference. We can create a free sample for you to review." },
     ],
   },
 
@@ -703,6 +708,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
+  const footwearPhotos = params.slug === "footwear-realistic-ai-photography";
   const campaignPhotos = params.slug === "luxury-fashion-ai-campaign";
   const lifestylePhotos = params.slug === "lifestyle-realistic-ai-photography";
   const lightStudio = params.slug === "realistic-ai-studio-photography";
@@ -746,7 +752,7 @@ export default function ServiceSlugPage({
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter preserveImageQuality={footwearPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -803,3 +809,4 @@ export default function ServiceSlugPage({
     </>
   );
 }
+
