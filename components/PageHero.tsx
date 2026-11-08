@@ -48,8 +48,8 @@ export default function PageHero({
           <img src={image} alt={imageAlt} width={2752} height={1536} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[42%] lg:flex-col lg:justify-center lg:px-0 lg:py-6">
             <p className="eyebrow">{eyebrow}</p>
-            <h1 className="mt-3 font-display text-3xl font-semibold leading-tight xl:text-5xl">{title}</h1>
-            {text && <p className="mt-5 text-sm leading-relaxed text-ink-soft xl:text-lg">{text}</p>}
+            <h1 className="mt-3 font-display text-[clamp(1.3rem,5.5vw,2rem)] font-semibold leading-tight lg:text-[3.2vw]">{title}</h1>
+            {text && <p className="mt-5 text-sm leading-relaxed text-ink-soft lg:text-[1.1vw]">{text}</p>}
             {children && <div className="mt-6 flex flex-wrap gap-3">{children}</div>}
           </div>
         </div>

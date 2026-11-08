@@ -448,7 +448,7 @@ const services: Record<string, ServiceData> = {
       eyebrow: "AI FOOTWEAR PHOTOGRAPHY",
       titlePrefix: "AI Footwear Photography",
       titleHighlight: "for Ecommerce Brands",
-      subtitle: "Create realistic AI footwear photography for your ecommerce brand with SetlesStudio. We transform your existing shoe product images into professional studio, on-foot, lifestyle, and advertising visuals without the expense of traditional photoshoots.",
+      subtitle: <><span className="lg:block lg:whitespace-nowrap">Turn your shoe photos into realistic AI footwear images. </span><span className="lg:block lg:whitespace-nowrap">Create studio, on foot, and lifestyle visuals for ecommerce. </span><span className="lg:block lg:whitespace-nowrap">Professional results without traditional photoshoots.</span></>,
       image: "/images/ai-footwear-photography.webp",
       mobileImage: "/images/ai-footwear-photography.webp",
       imageAlt: "AI model wearing lime-green pointed heels with an orange top and green shorts",
@@ -473,7 +473,7 @@ const services: Record<string, ServiceData> = {
       paragraphs: [
         "Get professional footwear photography for your online store, product listings, and marketing campaigns.",
         <><strong>01. Share Your Products:</strong> Send your original footwear images and visual references.</>,
-        <><strong>02. Choose Your Style:</strong> Select studio, on-foot, lifestyle, or campaign photography.</>,
+        <><strong>02. Choose Your Style:</strong> Select studio, on foot, lifestyle, or campaign photography.</>,
         <><strong>03. Image Creation:</strong> We create realistic footwear visuals following your product details and brand direction.</>,
         <><strong>04. Review and Delivery:</strong> Review the images, request agreed refinements, and receive your final high-quality files.</>,
       ],
@@ -483,7 +483,7 @@ const services: Record<string, ServiceData> = {
       subheading: "AI footwear photography for ecommerce brands",
       items: [
         { number: "01", icon: Camera, title: "Fashion-Focused Expertise", description: "Fashion-focused creative expertise for your footwear collection." },
-        { number: "02", icon: Aperture, title: "Realistic Footwear Photography", description: "Realistic AI footwear photography for product, on-foot, and lifestyle images." },
+        { number: "02", icon: Aperture, title: "Realistic Footwear Photography", description: "Realistic AI footwear photography for product, on foot, and lifestyle images." },
         { number: "03", icon: Tag, title: "Original Product Details", description: "Attention to original shoe shape, colors, materials, stitching, and logos." },
         { number: "04", icon: Infinity, title: "Consistent Collection Visuals", description: "Consistent visuals across collections, with coordinated lighting and styling." },
         { number: "05", icon: ShoppingCart, title: "Flexible Creative Direction", description: "Flexible creative direction for ecommerce brands." },
@@ -501,7 +501,7 @@ const services: Record<string, ServiceData> = {
     faqTitle: "Frequently Asked Questions",
     faqs: [
       { q: "What is AI footwear photography?", a: "AI footwear photography uses artificial intelligence and creative editing to produce professional shoe product images, model photography, lifestyle visuals, and advertising content from existing product photos." },
-      { q: "Can you create realistic shoe photography from my product images?", a: "Yes. We use your original footwear images and references to create realistic product, studio, on-foot, and lifestyle photography." },
+      { q: "Can you create realistic shoe photography from my product images?", a: "Yes. We use your original footwear images and references to create realistic product, studio, on foot, and lifestyle photography." },
       { q: "Can you create AI shoe photography with models?", a: "Yes. We create realistic AI-generated models wearing your footwear in different poses, outfits, and environments." },
       { q: "Can you maintain the original shoe design and logo?", a: "We carefully work to preserve the original shoe shape, colors, materials, stitching, logos, and other important product details." },
       { q: "What types of footwear do you photograph?", a: "We create visuals for sneakers, running shoes, boots, heels, sandals, formal shoes, casual footwear, and designer collections." },
@@ -734,7 +734,7 @@ export default function ServiceSlugPage({
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
-        title={lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
+        title={footwearPhotos ? <><span className="block">{svc.hero.titlePrefix}</span><span className="block text-brand">{svc.hero.titleHighlight}</span></> : lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
         text={svc.hero.subtitle}
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
