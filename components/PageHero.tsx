@@ -3,6 +3,7 @@ import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 export default function PageHero({
+  preserveImageQuality = false,
   lightStudio = false,
   lifestylePhotos = false,
   campaignPhotos = false,
@@ -18,6 +19,7 @@ export default function PageHero({
   animateReveal = false,
   containerClassName = "",
 }: {
+  preserveImageQuality?: boolean;
   lightStudio?: boolean;
   lifestylePhotos?: boolean;
   campaignPhotos?: boolean;
@@ -65,7 +67,7 @@ export default function PageHero({
     sizes: "100vw",
     quality: 85,
     loading: "eager" as const,
-    unoptimized: lightStudio || lifestylePhotos || campaignPhotos,
+    unoptimized: preserveImageQuality || lightStudio || lifestylePhotos || campaignPhotos,
     className: lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;

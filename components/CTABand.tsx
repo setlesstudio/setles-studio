@@ -10,6 +10,7 @@ export default function CTABand({
   text = "Take your brand to new heights, and boost your sales 10x.",
   primary = { href: WA_DEFAULT, label: "Get Started Today" },
   secondary,
+  preserveImageQuality = false,
   lightStudio = false,
   fullImage = false,
   campaignBanner = false,
@@ -20,6 +21,7 @@ export default function CTABand({
   title?: string;
   text?: string;
   primary?: { href: string; label: string };
+  preserveImageQuality?: boolean;
   lightStudio?: boolean;
   fullImage?: boolean;
   campaignBanner?: boolean;
@@ -92,9 +94,9 @@ export default function CTABand({
                 />
               )}
               <Image
-                unoptimized={lightStudio}
+                unoptimized={preserveImageQuality || lightStudio}
                 src={image}
-                alt={image === "/images/footwear-cta-image.jpg" || image === "/images/pink-outfit-lifestyle-cta.webp" ? imageAlt : ""}
+                alt={preserveImageQuality || image === "/images/footwear-cta-image.jpg" || image === "/images/pink-outfit-lifestyle-cta.webp" ? imageAlt : ""}
                 fill
                 sizes="100vw"
                 className={`${lightStudio ? "object-contain mix-blend-multiply max-md:!relative max-md:!h-[190px]" : "object-cover object-top"} ${imageMobile ? "hidden md:block" : ""}`}
