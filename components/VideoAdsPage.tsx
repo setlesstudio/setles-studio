@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
 import { breadcrumbData } from "@/lib/seo";
