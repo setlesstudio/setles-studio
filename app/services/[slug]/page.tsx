@@ -572,78 +572,151 @@ const services: Record<string, ServiceData> = {
   },
 
   "bags-accessories-realistic-ai-photography": {
-    meta: {
-      title: "AI Handbag Photography for Ecommerce | SetlesStudio",
-      description: "Create AI handbag imagery for product pages, lifestyle campaigns, and social content, with attention to materials, hardware, color, and brand style.",
-    },
-    hero: {
-      eyebrow: "Handbag AI Photography",
-      titlePrefix: "AI Handbag Photography",
-      titleHighlight: "for Ecommerce Brands",
-      subtitle: "Show a bag’s shape, hardware, and materials in studio images and styled lifestyle scenes.",
-      image: "/images/handbag-service-banner.jpg",
-      mobileImage: "/images/handbag-service-banner-mobile.jpg",
-      imageAlt: "Women's handbag realistic AI photography on model",
-      waText: "Hi, I'd like to start a handbag and accessories photography project.",
-      primaryLabel: "Start My Handbag Shoot",
-      secondary: { href: "/portfolio", label: "View Portfolio" },
-    },
-    beforeAfter: {
-      before: "/images/bag-image-product.png",
-      beforeCaption: "Send a front-facing product photo showing the brown tote and both handles.",
-      afterCaption: "SetlesStudio styles the tote with an AI model beside an arched doorway.",
-      after2Caption: "A second shot places the tote beside a seated model on a terrace.",
-      beforeAlt: "Flat lay product photo of women's handbag before AI processing",
-      after: "/images/environment-handbag-image-1.jpg",
-      afterAlt: "AI handbag photo — women's luxury bag styled on model in editorial environment",
-      after2: "/images/environment-handbag-image.jpg",
-      after2Alt: "AI handbag photo — women's luxury bag on model, second editorial look",
-    },  
-    description: {
-      titleHighlight: "Women's Handbag Realistic AI Photography",
-      titleSuffix: "for Ecommerce & Luxury Brands",
-      paragraphs: [
-        "Showcase your women's handbags with premium, hyper realistic AI photography that looks indistinguishable from a professional studio photoshoot. Using advanced AI-generated fashion models, we create luxury quality images with natural lighting, authentic poses, and flawless details.",
-        "The examples below demonstrate the realistic quality we deliver for fashion brands, Ecommerce businesses, and luxury retailers worldwide.",
-      ],
-    },
-    features: {
-      heading: "Why Handbag Brands Choose Our AI Photography",
-      subheading: "Women's Handbag Realistic AI Photography",
-      items: [
-        { number: "01", icon: Users,       title: "Hyper Realistic AI Models Showcasing Women's Handbags",       description: "Natural looking AI models carry and style your bags with realistic weight and positioning." },
-        { number: "02", icon: Package,     title: "Accurate Leather Texture, Stitching, Hardware & Colors",      description: "Every material detail including grain, zipper, clasp, and stitching is accurately rendered." },
-        { number: "03", icon: Gem,         title: "Luxury Lifestyle & Professional Studio AI Photography",        description: "Both editorial lifestyle and clean studio options available for every bag style." },
-        { number: "04", icon: ShoppingBag, title: "Perfect for All Types of Bags, Wallets & Accessories",        description: "From totes and crossbodies to wallets, clutches, and all fashion accessories." },
-        { number: "05", icon: Camera,      title: "High Resolution Images for Shopify, Amazon & Ecommerce",      description: "Delivered at the specifications required by major Ecommerce platforms and marketplaces." },
-        { number: "06", icon: TrendingUp,  title: "Premium Campaign & Catalog Photography With Consistent Branding", description: "Maintain visual consistency across your full range for a polished, professional catalog." },
-      ],
-    },
-    ctaBanner: {
-      image: "/images/handbag-service-cta.jpg",
-      imageAlt: "Handbag AI photography CTA banner",
-      title: "Ready to elevate your handbag brand?",
-      text: "Get stunning, realistic AI handbag images that help you sell more.",
-      waText: "Hi, I'd like to start a handbag and accessories photography project.",
-    },
-    faqs: [
-      { q: "What is Women's Handbags AI Photography?", a: "Women's Handbags AI Photography uses advanced AI to create realistic handbag images with AI-generated models, professional lighting, and premium backgrounds for Ecommerce, marketing, and fashion brands." },
-      { q: "Can you create Women's Handbags AI Photography from my product photos?", a: "Yes. We can transform your handbag product photos into premium Women's Handbags AI Photography using realistic AI models while preserving every product detail." },
-      { q: " Is Women's Handbags AI Photography suitable for Ecommerce?", a: "Absolutely. Our Women's Handbags AI Photography is perfect for Shopify, Amazon, Etsy, websites, social media, online stores, advertising, and luxury fashion lookbooks" },
-      { q: "Can you match my brand style in Women's Handbags AI Photography?", a: "Yes. We customize every Women's Handbags AI Photography project to match your brand's colors, style, lighting, backgrounds, and overall visual identity." },
-      { q: "Why choose Women's Handbags AI Photography instead of a traditional photoshoot?", a: "Women's Handbags AI Photography provides realistic, high quality commercial images at a lower cost and faster turnaround than traditional photography, making it ideal for fashion and Ecommerce brands." },
-    ],
-    process: {
-      heading: "Our Simple Process",
-      steps: [
-        { number: "01", icon: MessageSquare, title: "Share Your Requirements",  description: "Send us product images & details" },
-        { number: "02", icon: ImageIcon,     title: "AI Image Creation",        description: "We create realistic AI handbag images" },
-        { number: "03", icon: ClipboardList, title: "Review & Request Changes", description: "Review images & request any changes" },
-        { number: "04", icon: Download,      title: "Final Delivery",           description: "Receive high-resolution images ready to use" },
-        { number: "05", icon: Rocket,        title: "Boost Your Sales",         description: "Use stunning images to attract more customers" },
-      ],
-    },
+  "meta": {
+    "title": "AI Product Photography for Bags | SetlesStudio",
+    "description": "Realistic AI product photography for bags and handbags. Create premium studio, lifestyle and model photos for Shopify, ecommerce and fashion brands."
   },
+  "hero": {
+    "eyebrow": "AI Handbag Photography",
+    "titlePrefix": "AI Product Photography",
+    "titleHighlight": "for Bags & Handbags",
+    "subtitle": "Transform your handbag product photos into premium, photorealistic AI photography. SetlesStudio creates realistic studio, lifestyle, and on-model bag images for ecommerce brands, Shopify stores, and advertising campaigns. We focus on accurate leather textures, stitching, logos, colors, and product details.",
+    "image": "/images/ai-handbag-photography-banner.webp",
+    "imageAlt": "AI model carrying a coral tote bag among tropical leaves and red flowers",
+    "waText": "Hi, I'd like to request a free sample of AI handbag photography.",
+    "primaryLabel": "Get a Free Sample",
+    "secondary": {
+      "href": "/portfolio",
+      "label": "View Portfolio"
+    }
+  },
+  "beforeAfter": {
+    "heading": "From Product Photo to AI Handbag Photography",
+    "introduction": "An original coral tote product photo transformed into two studio images with an AI model.",
+    "before": "/images/coral-tote-product.webp",
+    "beforeAlt": "Coral tote bag with two handles and a round silver badge on a white background",
+    "beforeCaption": "Original product photo: a coral tote showing its handles, trim, and front badge.",
+    "after": "/images/ai-handbag-seated-model.webp",
+    "afterAlt": "Seated AI model in a green cardigan with a coral tote bag in front of her",
+    "afterCaption": "SetlesStudio result: an AI model seated with the coral tote in a white studio.",
+    "after2": "/images/ai-handbag-standing-model.webp",
+    "after2Alt": "Standing AI model in a green cardigan carrying a coral tote on her arm",
+    "after2Caption": "SetlesStudio result: a standing AI model carrying the tote to show its scale and styling."
+  },
+  "description": {
+    "titleHighlight": "Professional AI Handbag Photography",
+    "titleSuffix": "",
+    "paragraphs": [
+      "Create beautiful, realistic bag product images without expensive traditional photoshoots. From luxury handbags to tote bags, shoulder bags, and crossbody bags, we deliver professional visuals with consistent styling and natural photographic details."
+    ]
+  },
+  "features": {
+    "heading": "Why Choose SetlesStudio?",
+    "subheading": "AI product photography for bags, tailored to your collection.",
+    "items": [
+      {
+        "number": "01",
+        "icon": Camera,
+        "title": "Photorealistic Images",
+        "description": "Realistic AI handbag images for your collection."
+      },
+      {
+        "number": "02",
+        "icon": Package,
+        "title": "Product Detail Review",
+        "description": "Attention to bag shapes, leather textures, stitching, hardware, and colors."
+      },
+      {
+        "number": "03",
+        "icon": Users,
+        "title": "Consistent Styling",
+        "description": "Consistent models and backgrounds across your images."
+      },
+      {
+        "number": "04",
+        "icon": MonitorCheck,
+        "title": "High Resolution",
+        "description": "Ecommerce-ready images prepared for your requirements."
+      },
+      {
+        "number": "05",
+        "icon": Lightbulb,
+        "title": "Custom Concepts",
+        "description": "Studio, lifestyle, and campaign concepts for your brand."
+      },
+      {
+        "number": "06",
+        "icon": Aperture,
+        "title": "No Photoshoot Required",
+        "description": "Start with your existing handbag product photos."
+      }
+    ]
+  },
+  "process": {
+    "heading": "Our AI Bag Photography Services",
+    "steps": [
+      {
+        "number": "01",
+        "icon": Camera,
+        "title": "AI Studio Photography",
+        "description": "Clean white, neutral, and luxury studio backgrounds for ecommerce product listings."
+      },
+      {
+        "number": "02",
+        "icon": Globe,
+        "title": "AI Lifestyle Photography",
+        "description": "Realistic handbag photography in cafés, streets, hotels, and premium lifestyle settings."
+      },
+      {
+        "number": "03",
+        "icon": Users,
+        "title": "AI Model Photography",
+        "description": "Natural-looking fashion models holding or wearing your actual handbag designs."
+      },
+      {
+        "number": "04",
+        "icon": Gem,
+        "title": "Luxury Bag Campaigns",
+        "description": "Premium editorial and advertising photography for fashion and accessories brands."
+      }
+    ]
+  },
+  "ctaBanner": {
+    "image": "/images/ai-handbag-lifestyle-banner.webp",
+    "imageAlt": "AI model holding a coral tote bag in a tropical garden",
+    "title": "Ready to Elevate Your Handbag Photography?",
+    "text": "Create premium, realistic bag product images for your ecommerce brand.",
+    "waText": "Hi, I'd like to request a free sample of AI handbag photography.",
+    "buttonLabel": "Request a Free Sample"
+  },
+  "faqTitle": "Frequently Asked Questions",
+  "faqs": [
+    {
+      "q": "What is AI product photography for bags?",
+      "a": "AI product photography for bags creates realistic handbag images using artificial intelligence and existing product references, including studio, lifestyle, and model photography."
+    },
+    {
+      "q": "Can AI create realistic photos of my handbags?",
+      "a": "Yes. SetlesStudio creates photorealistic handbag images while focusing on accurate product colors, shapes, leather textures, stitching, and hardware."
+    },
+    {
+      "q": "Can you create AI models holding my handbags?",
+      "a": "Yes. We create realistic fashion models holding, carrying, or wearing your handbags in customized studio and lifestyle environments."
+    },
+    {
+      "q": "Is AI bag photography suitable for Shopify?",
+      "a": "Yes. Our handbag product images can be prepared for Shopify, ecommerce websites, social media, and advertising campaigns."
+    },
+    {
+      "q": "How much does AI handbag photography cost?",
+      "a": "Pricing depends on the number of bags, images, styles, and custom requirements. Contact SetlesStudio for a personalized quote."
+    },
+    {
+      "q": "Can I get a free sample?",
+      "a": "Yes. Contact SetlesStudio to request a free sample for a suitable handbag photography project."
+    }
+  ]
+},
 
 };
 
@@ -660,10 +733,11 @@ export async function generateMetadata({
   if (!svc) return {};
 
   const canonicalUrl = `https://www.setlesstudio.com/services/${params.slug}`;
-  const bannerImage = svc.hero.image
-    ? svc.hero.image.startsWith("http")
-      ? svc.hero.image
-      : `https://www.setlesstudio.com${svc.hero.image}`
+  const shareImage = params.slug === "bags-accessories-realistic-ai-photography" ? "/images/ai-handbag-studio-chair.webp" : svc.hero.image;
+  const bannerImage = shareImage
+    ? shareImage.startsWith("http")
+      ? shareImage
+      : `https://www.setlesstudio.com${shareImage}`
     : "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg";
 
   return {
@@ -680,9 +754,9 @@ export async function generateMetadata({
       images: [
         {
           url: bannerImage,
-          width: 1200,
-          height: 630,
-          alt: svc.hero.imageAlt || svc.meta.title,
+          width: params.slug === "bags-accessories-realistic-ai-photography" ? 2752 : 1200,
+          height: params.slug === "bags-accessories-realistic-ai-photography" ? 1536 : 630,
+          alt: params.slug === "bags-accessories-realistic-ai-photography" ? "AI model seated on a chair holding a coral tote bag in a white studio" : svc.hero.imageAlt || svc.meta.title,
         },
       ],
       type: "website",
@@ -708,6 +782,7 @@ export default function ServiceSlugPage({
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
+  const handbagPhotos = params.slug === "bags-accessories-realistic-ai-photography";
   const footwearPhotos = params.slug === "footwear-realistic-ai-photography";
   const campaignPhotos = params.slug === "luxury-fashion-ai-campaign";
   const lifestylePhotos = params.slug === "lifestyle-realistic-ai-photography";
@@ -729,7 +804,7 @@ export default function ServiceSlugPage({
         { name: "Services", path: "/services" },
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
-      <PageHero footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos}
+      <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos || handbagPhotos}
         campaignPhotos={campaignPhotos}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
@@ -746,13 +821,13 @@ export default function ServiceSlugPage({
         </a>
         <a
           href={svc.hero.secondary.href}
-          className={footwearPhotos ? "btn-outline" : campaignPhotos ? "rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink lg:border-white/40 lg:text-white" : lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
+          className={footwearPhotos ? "btn-outline" : campaignPhotos || handbagPhotos ? "rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink lg:border-white/40 lg:text-white" : lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
         >
           {svc.hero.secondary.label}
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter preserveImageQuality={footwearPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -770,7 +845,7 @@ export default function ServiceSlugPage({
         </Reveal>
       </section>
 
-      {!svc.process && <ServiceFeatures {...svc.features} />}
+      {(!svc.process || handbagPhotos) && <ServiceFeatures {...svc.features} />}
 
       {svc.process && <ServiceProcess {...svc.process} />}
 
@@ -788,7 +863,7 @@ export default function ServiceSlugPage({
       ))}
 
       <CTABand footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos}
-        campaignBanner={campaignPhotos}
+        campaignBanner={campaignPhotos || handbagPhotos}
         fullImage={lifestylePhotos || campaignPhotos}
         lightStudio={lightStudio}
         title={svc.ctaBanner.title}
@@ -800,7 +875,7 @@ export default function ServiceSlugPage({
 
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
               <div className="container-site">
-                {campaignPhotos ? <div className="mx-auto max-w-4xl text-center"><p className="eyebrow">FAQ</p><h2 className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-[28px]">{svc.faqTitle}</h2></div> : <SectionHeading eyebrow="FAQ" title={svc.faqTitle ?? "Frequently Asked questions"} />}
+                {campaignPhotos || handbagPhotos ? <div className="mx-auto max-w-4xl text-center"><p className="eyebrow">FAQ</p><h2 className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-[28px]">{svc.faqTitle}</h2></div> : <SectionHeading eyebrow="FAQ" title={svc.faqTitle ?? "Frequently Asked questions"} />}
                 <div className="mt-12">
                   <FAQ faqs={svc.faqs}/>
                 </div>
@@ -809,4 +884,5 @@ export default function ServiceSlugPage({
     </>
   );
 }
+
 
