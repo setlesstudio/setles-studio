@@ -153,7 +153,7 @@ export default function Navbar() {
         <button
           type="button"
           className={`grid h-10 w-10 place-items-center rounded-xl border transition-all duration-300 lg:hidden ${
-            opaque && !(pathname === "/services/footwear-realistic-ai-photography" && !scrolled && !open) || pathname === "/services/luxury-fashion-ai-campaign" ? "border-ink/20 text-ink" : "border-white/30 bg-white/15 text-white"
+            opaque || pathname === "/services/luxury-fashion-ai-campaign" ? "border-ink/20 text-ink" : "border-white/30 bg-white/15 text-white"
           }`}
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open ? "true" : "false"}
@@ -235,4 +235,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 
