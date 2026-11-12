@@ -3,6 +3,7 @@ import { getImageProps } from "next/image";
 import Reveal from "./Reveal";
 
 export default function PageHero({
+  handbagPhotos = false,
   footwearPhotos = false,
   preserveImageQuality = false,
   lightStudio = false,
@@ -20,6 +21,7 @@ export default function PageHero({
   animateReveal = false,
   containerClassName = "",
 }: {
+  handbagPhotos?: boolean;
   footwearPhotos?: boolean;
   preserveImageQuality?: boolean;
   lightStudio?: boolean;
@@ -91,11 +93,11 @@ export default function PageHero({
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
 
-  if (campaignPhotos && image) {
+  if ((campaignPhotos || handbagPhotos) && image) {
     return (
       <section className="bg-cream text-ink lg:text-white">
         <div className="relative pt-20 lg:pt-0">
-          <img src={image} alt={imageAlt} width={2912} height={1440} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
+          <img src={image} alt={imageAlt} width={handbagPhotos ? 2752 : 2912} height={handbagPhotos ? 1536 : 1440} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
           <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/65 via-black/15 to-transparent lg:block" />
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 bg-gradient-to-b from-black/50 to-transparent lg:block" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[44%] lg:flex-col lg:justify-center lg:pb-8 lg:pt-24">
@@ -171,6 +173,7 @@ export default function PageHero({
     </section>
   );
 }
+
 
 
 
