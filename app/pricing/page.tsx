@@ -19,7 +19,10 @@ export default function PricingPage() {
     const updatePricing = () => setTiers(getStoredPricing());
     updatePricing();
     window.addEventListener("setles_db_update", updatePricing);
-    const valueProps = [
+    return () => window.removeEventListener("setles_db_update", updatePricing);
+  }, []);
+
+  const valueProps = [
     { title: "Clear package scope", text: "Compare final image counts and included services." },
     { title: "Plan your launch", text: "Confirm your delivery schedule before production." },
     { title: "Your creative direction", text: "Choose references, model styling, and settings." },
@@ -39,9 +42,6 @@ export default function PricingPage() {
     { q: "Can I get a custom quote for footwear or handbag photography?", a: "Yes. Send your footwear or handbag product photos, the image count you need, and your preferred studio, on foot, on model, or lifestyle references. We will recommend a package or quote a custom scope for your collection." },
     { q: "How can I compare AI photography offers fairly?", a: "Compare the number of finished images, product and model variations, editing, revision rounds, delivery time, file formats, and usage terms. Review examples alongside the price so you can choose the service that matches your product and brand requirements." },
   ];
-
-  return () => window.removeEventListener("setles_db_update", updatePricing);
-  }, []);
 
   const currentTiers = tiers.length > 0 ? tiers : defaultTiers;
 
@@ -245,4 +245,3 @@ export default function PricingPage() {
     </>
   );
 }
-
