@@ -62,9 +62,9 @@ export default function ServiceBeforeAfter({
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 md:grid-cols-3">
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
-              <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[3/4] max-w-[380px] bg-[#f7f7f5]"}`} data-studio-frame>
+              <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[3/4] max-w-[380px] bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
                 <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill unoptimized
-                  sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 bg-white" : "object-contain"} />
+                  sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 mix-blend-multiply" : "object-contain"} />
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{photo.label}</span>
               </div>
             </ComparisonFigure>

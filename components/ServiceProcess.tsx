@@ -9,11 +9,12 @@ export type ProcessStep = {
 };
 
 type Props = {
+  centeredFour?: boolean;
   heading: string;
   steps: ProcessStep[];
 };
 
-export default function ServiceProcess({ heading, steps }: Props) {
+export default function ServiceProcess({ heading, steps, centeredFour = false }: Props) {
   return (
     <section className="py-14 md:py-20">
       <div className="container-site">
@@ -21,7 +22,7 @@ export default function ServiceProcess({ heading, steps }: Props) {
           <h2 className="font-display text-2xl font-bold text-brand md:text-3xl">{heading}</h2>
         </Reveal>
 
-        <div className="mt-10 grid auto-rows-fr grid-cols-2 gap-4 md:gap-5 lg:grid-cols-5">
+        <div className={centeredFour ? "mx-auto mt-10 grid max-w-6xl auto-rows-fr grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" : "mt-10 grid auto-rows-fr grid-cols-2 gap-4 md:gap-5 lg:grid-cols-5"}>
           {steps.map((step, i) => (
             <Reveal key={step.number} delay={i * 0.08} className="h-full">
               <div className="relative flex h-full flex-col items-center rounded-3xl bg-cream p-5 text-center transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10 md:p-6">
@@ -43,3 +44,4 @@ export default function ServiceProcess({ heading, steps }: Props) {
     </section>
   );
 }
+

@@ -102,8 +102,8 @@ export default function PageHero({
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 bg-gradient-to-b from-black/50 to-transparent lg:block" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[44%] lg:flex-col lg:justify-center lg:pb-8 lg:pt-24">
             <p className="eyebrow">{eyebrow}</p>
-            <h1 className="mt-3 font-display text-3xl font-semibold leading-tight xl:text-5xl">{title}</h1>
-            {text && <p className="mt-4 text-sm leading-relaxed text-ink-soft lg:text-white/90 xl:text-lg">{text}</p>}
+            <h1 className={handbagPhotos ? "mt-3 font-display text-3xl font-semibold leading-tight lg:text-[3.2vw]" : "mt-3 font-display text-3xl font-semibold leading-tight xl:text-5xl"}>{title}</h1>
+            {text && <p className={handbagPhotos ? "mt-4 text-sm leading-relaxed text-ink-soft lg:text-[1.15vw] lg:text-white/90" : "mt-4 text-sm leading-relaxed text-ink-soft lg:text-white/90 xl:text-lg"}>{text}</p>}
             {children && <div className="mt-6 flex flex-wrap gap-3">{children}</div>}
           </div>
         </div>
