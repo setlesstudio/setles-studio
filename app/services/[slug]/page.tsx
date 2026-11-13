@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import VideoAdsPage from "@/components/VideoAdsPage";
 import Link from "next/link";
 import StructuredData from "@/components/StructuredData";
 import { breadcrumbData } from "@/lib/seo";
@@ -513,8 +514,8 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-video-ads-ugc": {
     meta: {
-      title: "AI Fashion Video Ads & UGC-Style Content | SetlesStudio",
-      description: "Turn fashion product photos into AI video ads and UGC-style content for social campaigns. Discuss your creative brief, formats, and delivery needs.",
+      title: "AI Video Ads for Fashion Brands | SetlesStudio",
+      description: "Realistic AI fashion video ads, product videos and UGC-style creative for clothing and accessories brands. Explore SetlesStudio video work.",
     },
     hero: {
       eyebrow: "AI Video Ads & UGC",
@@ -807,6 +808,7 @@ export default function ServiceSlugPage({
 }) {
   const svc = services[params.slug];
   if (!svc) notFound();
+  if (params.slug === "realistic-ai-video-ads-ugc") return <VideoAdsPage />;
 
   const waCtaHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.ctaBanner.waText)}`;
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
