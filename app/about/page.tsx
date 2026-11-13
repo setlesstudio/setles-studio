@@ -1,41 +1,41 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Heart, Gem, Zap, Users } from "lucide-react";
-import PageHero from "@/components/PageHero";
+import Link from "next/link";
+import FAQ from "@/components/FAQ";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
-import CTABand from "@/components/CTABand";
 import { process, site, stats, team } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About Our AI Fashion Studio | SetlesStudio",
-  description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
+  title: "About SetlesStudio | AI Product Photography Studio",
+  description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
   alternates: {
     canonical: "https://www.setlesstudio.com/about",
   },
   openGraph: {
-    title: "About Our AI Fashion Studio | SetlesStudio",
-    description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
+    title: "About SetlesStudio | AI Product Photography Studio",
+    description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
     url: "https://www.setlesstudio.com/about",
     siteName: "SetlesStudio",
     images: [
       {
-        url: "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "About SetlesStudio Team",
+        url: "https://www.setlesstudio.com/images/about-setlesstudio.webp",
+        width: 2752,
+        height: 1536,
+        alt: "Man seated in a bright office with plants and laptops",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Our AI Fashion Studio | SetlesStudio",
-    description: "Meet SetlesStudio, an AI fashion content studio helping apparel brands create studio, lifestyle, and campaign imagery for ecommerce and advertising.",
+    title: "About SetlesStudio | AI Product Photography Studio",
+    description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
-    images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
+    images: ["https://www.setlesstudio.com/images/about-setlesstudio.webp"],
   },
 };
 
@@ -46,37 +46,68 @@ const values = [
   { icon: Users, label: "Client First" },
 ];
 
+const aboutFaqs = [
+  {
+    "q": "What does SetlesStudio do?",
+    "a": "SetlesStudio is a creative studio offering AI product photography, fashion imagery, lifestyle campaigns, and video ads for ecommerce brands. Our team works from your product photos and creative references to prepare visuals for your store and marketing."
+  },
+  {
+    "q": "What is AI product photography?",
+    "a": "AI product photography combines artificial intelligence with creative editing to produce product visuals from existing photographs. It can show a product against a studio background, in a lifestyle setting, or with an AI model."
+  },
+  {
+    "q": "Which products can SetlesStudio create images for?",
+    "a": "We work with clothing, footwear, handbags, accessories, and jewelry. Share your product photos and the type of image you need so we can confirm the best approach for your project."
+  },
+  {
+    "q": "What photos should I send to start a project?",
+    "a": "Send clear product photos showing the front, back, and important details, such as logos, stitching, texture, and hardware. Include your preferred backgrounds, model references, image sizes, and intended use."
+  },
+  {
+    "q": "How do you check product details in AI images?",
+    "a": "Our team compares the created images with your supplied references, paying attention to product shape, color, material, logos, and other visible details. You review the results and request the refinements agreed for your project."
+  },
+  {
+    "q": "Can you turn flat lay clothing photos into model images?",
+    "a": "Yes. We use your clothing photos to create AI model images for studio, lifestyle, and campaign settings. Clear garment references help us present the design consistently across the requested shots."
+  },
+  {
+    "q": "Can I use the images for my ecommerce store?",
+    "a": "Images can be prepared for product pages, catalogs, social media, and advertising. Tell us your required dimensions and platform before production. Marketplace image rules should be checked for each intended placement."
+  },
+  {
+    "q": "How much does AI product photography cost?",
+    "a": "The cost depends on the products, number of images, backgrounds, model requirements, and editing complexity. Review our pricing page or send your brief for a quote covering deliverables and agreed revisions."
+  },
+  {
+    "q": "How long does an AI photography project take?",
+    "a": "Timing depends on the size and complexity of your brief and the review rounds required. We confirm the delivery schedule with you before production begins."
+  },
+  {
+    "q": "How do I choose an AI product photography studio?",
+    "a": "Compare examples with their original product photos. Check whether colors, logos, proportions, and textures remain consistent. Ask what files, revisions, usage terms, and delivery dates are included before choosing a studio."
+  }
+];
+
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About us"
-        title={
-          <>
-            About{" "}
-            <span className="text-brand">SetlesStudio</span>
-          </>
-        }
-        text="SetlesStudio helps fashion brands create high quality visual content that inspires, connects, and drives real results."
-        image="/images/about-page-banner-image.webp"
-        // image="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1781977997/about-page-banner-image_x2evxr.jpg"
-        // imageMobile="/images/about-page-banner-image-mobile.jpeg"
-        imageMobile="https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1781978820/about-page-banner-image-mobile_qwlmsu.jpg"
-        imageAlt="SetlesStudio fashion content studio"
-        animateReveal
-      />
+      <section className="relative bg-ink pt-20 text-white lg:pt-0" aria-labelledby="about-heading">
+        <Image src="/images/about-setlesstudio.webp" alt="Man in a blue polo seated in an office with plants and laptops" width={2752} height={1536} priority unoptimized className="h-auto w-full" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/75 via-black/35 to-transparent lg:block" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 bg-gradient-to-b from-black/65 to-transparent lg:block" />
+        <div className="relative px-6 py-10 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[48%] lg:flex-col lg:justify-center lg:px-0 lg:pb-8 lg:pt-24">
+          <p className="eyebrow text-brand">About SetlesStudio</p>
+          <h1 id="about-heading" className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl xl:text-5xl">Your creative studio for <span className="text-brand">AI product photography</span></h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 xl:text-lg">We turn product photos into realistic studio, lifestyle, and model imagery for fashion and ecommerce brands.</p>
+        </div>
+      </section>
 
       {/* Story */}
       <section className="container-site py-12">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <ImageSlot
-              src="/images/about-story.jpg"
-              alt="Woman using a laptop on a sofa"
-              label="Our story image"
-              className="aspect-[4/3] w-full rounded-4xl"
-              imageClassName=""
-            />
+            <Image src="/images/setlesstudio-creative-work.webp" alt="Man in a blue polo working on a laptop in a plant-filled office" width={1792} height={2400} unoptimized className="mx-auto h-auto w-full max-w-md rounded-4xl" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="eyebrow">Our story</p>
@@ -84,14 +115,10 @@ export default function AboutPage() {
               Built on passion. Driven by creativity.
             </h2>
             <p className="mt-5 leading-relaxed text-ink-soft">
-              SetlesStudio was created to help apparel brands produce premium
-              content with the power of AI, without the limitations of
-              traditional photoshoots and high production costs.
+              SetlesStudio helps fashion and ecommerce brands create AI product photography from existing product images. We bring together creative direction, image production, and editing to build a consistent visual style for each collection.
             </p>
             <p className="mt-4 leading-relaxed text-ink-soft">
-              We combine creativity, fashion expertise, and advanced hyper realistic AI
-              production techniques to deliver visuals that look real, feel
-              premium, and perform across every platform.
+              From apparel on AI models to footwear and handbag photography, we plan each project around your products, references, and intended use. Our team reviews the finished visuals against your supplied images before delivery.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {values.map((v) => (
@@ -242,12 +269,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTABand
-        title="Ready to elevate your brand with premium fashion content?"
-        text="Let's create something amazing together."
-        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`, label: "Start Your Project" }}
-        image={'/images/about-last-banner-picture.jpg'}
-      />
+      <section className="container-site py-14" aria-labelledby="about-faq-heading">
+        <h2 id="about-faq-heading" className="mb-8 text-center font-display text-2xl font-semibold sm:text-3xl">Questions about our AI product photography studio</h2>
+        <FAQ faqs={aboutFaqs} />
+        <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand underline">portfolio</Link>, and <Link href="/pricing" className="text-brand underline">pricing</Link>.</p>
+      </section>
+      <section className="bg-cream px-6 py-16 text-center">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Let’s create your next <span className="text-brand">product images</span></h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-ink-soft">Share your product photos, creative references, and image requirements. We’ll help you plan AI product photography for your collection, online store, or next campaign.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to discuss AI product photography with SetlesStudio.")}`} className="btn-primary">Discuss Your Project</a>
+            <Link href="/portfolio" className="inline-flex items-center justify-center rounded-full border border-black/15 bg-white px-7 py-3 font-semibold text-ink">View Our Work</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
