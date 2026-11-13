@@ -58,7 +58,7 @@ export default function Navbar() {
     pathname === "/blog" ||
     pathname === "/contact";
 
-  const opaque = scrolled || open || !hasDarkHero || pathname === "/services/realistic-ai-studio-photography" || pathname === "/services/footwear-realistic-ai-photography";
+  const opaque = scrolled || open || pathname === "/pricing" || !hasDarkHero || pathname === "/services/realistic-ai-studio-photography" || pathname === "/services/footwear-realistic-ai-photography";
 
   const isServicesActive =
     pathname === "/services" ||
@@ -235,6 +235,7 @@ export default function Navbar() {
     </header>
   );
 }
+
 
 
 

@@ -6,70 +6,61 @@ import Image from "next/image";
 import { Check, ArrowRight, CircleDollarSign, Clock, Infinity, Layers } from "lucide-react";
 
 const valueIcons = [CircleDollarSign, Clock, Infinity, Layers];
-import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import FAQ from "@/components/FAQ";
-import ImageSlot from "@/components/ImageSlot";
-import CTABand from "@/components/CTABand";
-import { pricingTiers as defaultTiers, site, valueProps, faqs } from "@/lib/data";
-import { getStoredPages, getStoredPricing, PricingTile } from "@/lib/dashboard-store";
-import { parseHeroTitle } from "@/components/DashboardComponents";
+import { pricingTiers as defaultTiers, site } from "@/lib/data";
+import { getStoredPricing, PricingTile } from "@/lib/dashboard-store";
+
 
 export default function PricingPage() {
-  const [pageData, setPageData] = useState<any>(null);
   const [tiers, setTiers] = useState<PricingTile[]>([]);
-
   useEffect(() => {
-    const pages = getStoredPages();
-    const pricing = pages.find((p) => p.pageId === "pricing");
-    if (pricing) setPageData(pricing);
+    const updatePricing = () => setTiers(getStoredPricing());
+    updatePricing();
+    window.addEventListener("setles_db_update", updatePricing);
+    const valueProps = [
+    { title: "Clear package scope", text: "Compare final image counts and included services." },
+    { title: "Plan your launch", text: "Confirm your delivery schedule before production." },
+    { title: "Your creative direction", text: "Choose references, model styling, and settings." },
+    { title: "Room to grow", text: "Start with a collection or request a custom brief." },
+  ];
+  const faqs = [
+    { q: "How much does AI product photography cost?", a: "SetlesStudio offers project packages with different final image counts and services. Compare the current prices above, then share your product photos and brief to confirm which package fits. Custom work is quoted according to product count, image variations, and creative requirements." },
+    { q: "Which AI fashion photography package should I choose?", a: "Choose Starter for studio and model images for a smaller collection. Growth adds lifestyle photography, multiple models, and social media content. Premium brings together a larger image collection, fashion and footwear visuals, and AI video and advertising. The cards above show each package’s included services." },
+    { q: "Does an image package cover products or final images?", a: "Packages are based on the number of final images, not the number of products. Several poses, angles, or backgrounds for one product use multiple images. Send your product list and desired views so we can agree on the image allocation before starting." },
+    { q: "What do I need to send for an AI photography quote?", a: "Send clear product photos, the number of products, the final image count you need, and examples of your preferred style. Include close-ups of logos, stitching, materials, and any details that must stay accurate. Tell us where the images will be used and your target launch date." },
+    { q: "Can you turn flat lay clothing photos into model images?", a: "Yes. We use your clothing photos and references to create AI model images in studio or lifestyle settings. Clear front and back views and detail photos help us review garment colors, logos, and construction against the originals." },
+    { q: "Can I combine studio and lifestyle photography?", a: "Growth includes studio and lifestyle photography. If you need a different mix of product shots, model images, campaign visuals, or video, request a custom quote and we will confirm the scope with you." },
+    { q: "How long does an AI photography project take?", a: "Starter lists delivery in three business days. Growth includes priority delivery, while Premium includes fast turnaround and priority support. Confirm the start date, review stages, and final delivery date when your product photos and creative brief are agreed." },
+    { q: "Are revisions included in the package price?", a: "Ask us to confirm the number of revision rounds and what they cover in your project quote before ordering. Product-detail corrections and a new creative direction can require different amounts of work, so the agreed scope should be clear from the start." },
+    { q: "Can I use the images on Shopify and other ecommerce stores?", a: "We can prepare final images for your ecommerce store, product listings, and marketing channels. Share the dimensions and file formats you need. Each marketplace has its own image requirements, so confirm the intended placement before production." },
+    { q: "Are AI videos included in every package?", a: "AI Video & Advertising is listed in Premium. Video is not listed as part of Starter or Growth. For a separate video brief, ask for a quote and confirm the clip count, duration, format, and included revisions." },
+    { q: "Can I get a custom quote for footwear or handbag photography?", a: "Yes. Send your footwear or handbag product photos, the image count you need, and your preferred studio, on foot, on model, or lifestyle references. We will recommend a package or quote a custom scope for your collection." },
+    { q: "How can I compare AI photography offers fairly?", a: "Compare the number of finished images, product and model variations, editing, revision rounds, delivery time, file formats, and usage terms. Review examples alongside the price so you can choose the service that matches your product and brand requirements." },
+  ];
 
-    setTiers(getStoredPricing());
-
-    const handleUpdate = () => {
-      const updatedPages = getStoredPages();
-      const updatedPricing = updatedPages.find((p) => p.pageId === "pricing");
-      if (updatedPricing) setPageData(updatedPricing);
-      setTiers(getStoredPricing());
-    };
-    window.addEventListener("setles_db_update", handleUpdate);
-    return () => window.removeEventListener("setles_db_update", handleUpdate);
+  return () => window.removeEventListener("setles_db_update", updatePricing);
   }, []);
-
-  const heroTitle = pageData?.heroTitle && pageData.heroTitle !== "Premium hyper realistic AI fashion content [for every brand size]" ? pageData.heroTitle : "AI fashion photography [pricing and packages]";
-  const heroText = pageData?.heroText || "From product launches to global campaigns, choose the level of content production your brand needs.";
-  const heroImage = pageData?.heroImage || "/images/pricing-hero.jpeg";
 
   const currentTiers = tiers.length > 0 ? tiers : defaultTiers;
 
   return (
     <>
-      <PageHero
-        eyebrow="Pricing"
-        title={parseHeroTitle(heroTitle)}
-        text={heroText}
-        image={heroImage}
-        imageAlt="AI fashion model in pink outfit, SetlesStudio lifestyle photography"
-        animateReveal
-      >
-        <a
-          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to start a project with SetlesStudio.")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary"
-        >
-          Start Project
-        </a>
-        <a
-          href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your pricing.")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-ghost-light"
-        >
-          Contact Us
-        </a>
-      </PageHero>
+      <section className="relative bg-[#f7f7f7] pt-20" aria-labelledby="pricing-heading">
+        <Image src="/images/ai-photography-pricing-banner.webp" alt="AI fashion model wearing a burgundy top, white pleated skirt, and matching burgundy accessories" width={2752} height={1536} priority unoptimized className="block h-auto w-full" />
+        <div className="container-site pb-12 pt-8 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:py-0">
+          <div className="max-w-xl lg:max-w-[53%]">
+            <p className="eyebrow">AI photography packages</p>
+            <h1 id="pricing-heading" className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl xl:text-6xl">AI Product Photography<br /><span className="text-brand">Pricing &amp; Packages</span></h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">Turn your product photos into a coordinated collection of studio, model, and lifestyle images. Compare packages for your next launch, online store, or fashion campaign.</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="#packages" className="btn-primary">Compare Packages</a>
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-ink/20 bg-white px-7 py-3 font-semibold">Help Me Choose</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Value strip */}
       <section className="bg-white mt-6">
@@ -99,11 +90,11 @@ export default function PricingPage() {
             <div className="shrink-0 lg:max-w-md">
               <p className="eyebrow">Our Work Speaks</p>
               <h2 className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
-                Creating Visuals That Build Brands
+                One collection. More ways to show it.
               </h2>
               <p className="mt-4 text-ink-soft">
-                We combine creativity, strategy, and attention to detail to
-                deliver content that connects and converts.
+                See how a coordinated outfit can work across different poses and
+                lifestyle settings. Explore our portfolio to find a direction for your own collection.
               </p>
               <Link
                 href="/portfolio"
@@ -113,52 +104,29 @@ export default function PricingPage() {
               </Link>
             </div>
 
-            {/* Images */}
-            <div className="mt-8 flex gap-3 lg:mt-0 lg:flex-1 lg:justify-end md:justify-center">
-              <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44">
-                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
-                  <Image
-                    src="/images/lifestyle-red-dress-nyc-1-service.jpg"
-                    alt="Red mini dress, front view"
-                    fill
-                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-              <div className="mt-5 min-w-0 flex-1 animate-float sm:mt-6 sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:0.6s]">
-                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
-                  <Image
-                    src="/images/lifestyle-red-dress-nyc-2.jpg"
-                    alt="Red mini dress, side view"
-                    fill
-                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-              <div className="min-w-0 flex-1 animate-float sm:w-44 sm:flex-none sm:shrink-0 lg:w-32 xl:w-44 [animation-delay:1.2s]">
-                <div className="group relative h-52 overflow-hidden rounded-2xl will-change-transform sm:h-64">
-                  <Image
-                    src="/images/lifestyle-pink-outfit-cafe.webp"
-                    alt="Fuchsia outfit outside a café"
-                    fill
-                    sizes="(min-width: 1280px) 176px, (min-width: 640px) 128px, 33vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
+            <div className="mt-8 grid min-w-0 grid-cols-3 items-start gap-3 lg:mt-0 lg:flex-1">
+              {[
+                { src: "burgundy-outfit-flower-shop", alt: "Model in a burgundy top and white pleated skirt outside a flower shop", label: "Lifestyle setting" },
+                { src: "burgundy-outfit-doorway", alt: "Model wearing a burgundy top and white skirt beside a green doorway", label: "Front view" },
+                { src: "burgundy-handbag-fashion-model", alt: "Model carrying a burgundy shoulder bag with a matching top and heels", label: "Styled accessories" },
+              ].map((item) => (
+                <figure key={item.src}>
+                  <Image src={`/images/${item.src}.webp`} alt={item.alt} width={1000} height={1339} unoptimized className="h-auto w-full rounded-2xl" />
+                  <figcaption className="mt-3 text-center text-xs text-ink-soft">{item.label}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </Reveal>
       </section>
 
       {/* Tiers */}
-      <section className="container-site py-8">
+      <section id="packages" className="container-site scroll-mt-24 py-8">
         <SectionHeading
           eyebrow="Choose your package"
-          title="Simple. Transparent. Flexible."
+          title="Choose the content your next launch needs"
         />
+        <p className="mx-auto mt-4 max-w-2xl text-center text-ink-soft">Compare final image counts and creative options. Choose a focused studio package, add lifestyle content, or plan a complete campaign.</p>
         <div className="mt-8 grid items-start gap-5 lg:grid-cols-3">
           {currentTiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.08}>
@@ -171,7 +139,7 @@ export default function PricingPage() {
               >
                 {t.badge && (
                   <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
-                    {t.badge}
+                    {t.badge === "Most Popular" ? "Studio + Lifestyle" : t.badge}
                   </span>
                 )}
                 <h3 className="font-display text-lg font-semibold text-brand">
@@ -182,7 +150,7 @@ export default function PricingPage() {
                     t.featured ? "text-white/60" : "text-ink-soft"
                   }`}
                 >
-                  {t.description}
+                  {t.name === "Starter" ? "Launch a smaller collection with studio and model images." : t.name === "Growth" ? "Build a versatile image collection for your store and social channels." : t.name === "Premium" ? "Bring fashion, footwear, and video together for a larger campaign." : t.description}
                 </p>
                 <p className="mt-4">
                   <span className="font-display text-4xl font-semibold tracking-tight">
@@ -218,7 +186,7 @@ export default function PricingPage() {
                   rel="noopener noreferrer"
                   className={`${t.featured ? "btn-primary" : "btn-dark"} mt-6 w-full text-center py-3.5 rounded-full text-xs font-bold uppercase tracking-wider`}
                 >
-                  {t.cta}
+                  {t.name === "Starter" ? "Start My Collection" : t.name === "Growth" ? "Plan My Content" : t.name === "Premium" ? "Discuss My Campaign" : t.cta}
                 </a>
               </div>
             </Reveal>
@@ -229,15 +197,15 @@ export default function PricingPage() {
       {/* Custom quote */}
       <section className="container-site pb-24">
         <Reveal>
-          <div className="grid overflow-hidden rounded-4xl bg-cream lg:grid-cols-[1.3fr_1fr]">
+          <div className="overflow-hidden rounded-4xl bg-cream">
             <div className="p-10 sm:p-14">
               <p className="eyebrow">Need something custom?</p>
               <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">
-                Let&apos;s build something extraordinary
+                Build a package around your collection
               </h2>
               <p className="mt-4 max-w-lg text-ink-soft">
-                Have a big project, monthly content needs, or specific
-                requirements? We&apos;ll create a custom solution for you.
+                Need a different image count or a mix of services? Send your product list,
+                visual references, and launch date. We will help you define the deliverables before you book.
               </p>
               <a
                 href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in a custom AI fashion photography package for my brand. Can we discuss my requirements?")}`}
@@ -248,13 +216,12 @@ export default function PricingPage() {
                 Request Custom Quote
               </a>
             </div>
-            <ImageSlot
-              src="/images/lifestyle-orange-activewear.jpg"
-              alt="Orange activewear in sunlight"
-              label="Custom quote image"
-              className="hidden lg:block lg:min-h-[300px]"
-              imageClassName="object-top"
-            />
+            <div className="px-10 pb-10 sm:px-14 sm:pb-14 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-brand">
+              <Link href="/services/realistic-ai-studio-photography">AI fashion photography</Link>
+              <Link href="/services/lifestyle-realistic-ai-photography">AI lifestyle photography</Link>
+              <Link href="/services/footwear-realistic-ai-photography">AI footwear photography</Link>
+              <Link href="/services/bags-accessories-realistic-ai-photography">AI handbag photography</Link>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -262,18 +229,20 @@ export default function PricingPage() {
       {/* FAQ */}
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
         <div className="container-site">
-          <SectionHeading eyebrow="FAQ" title="Frequently Asked questions" />
+          <SectionHeading eyebrow="FAQ" title="AI photography pricing questions" />
           <div className="mt-12">
             <FAQ faqs={faqs}/>
           </div>
         </div>
       </section>
 
-      <CTABand
-        title="Let's create content that takes your brand further."
-        primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to get started with SetlesStudio.")}`, label: "Get Started" }}
-        image="/images/pricing-page-last-section.jpeg"
-      />
+      <section className="container-site py-16 text-center">
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Your next collection starts with a clear brief</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-ink-soft">Tell us what you sell, how many images you need, and the look you want. We will help you choose a package with a scope you can review before starting.</p>
+        <Link href="/contact" className="btn-primary mt-7">Let’s Plan Your Images</Link>
+        <p className="mt-5 text-sm text-ink-soft">Review our <Link href="/terms" className="underline">terms</Link> and <Link href="/terms#refund" className="underline">refund policy</Link> before booking.</p>
+      </section>
     </>
   );
 }
+

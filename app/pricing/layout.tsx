@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Fashion Photography Pricing | SetlesStudio",
-  description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
+  title: "AI Product Photography Pricing & Packages | SetlesStudio",
+  description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
   alternates: {
     canonical: "https://www.setlesstudio.com/pricing",
   },
   openGraph: {
-    title: "AI Fashion Photography Pricing | SetlesStudio",
-    description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
+    title: "AI Product Photography Pricing & Packages | SetlesStudio",
+    description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
     url: "https://www.setlesstudio.com/pricing",
     siteName: "SetlesStudio",
     images: [
       {
-        url: "https://www.setlesstudio.com/images/portfolio-page-banner.jpeg",
-        width: 1200,
-        height: 630,
+        url: "https://www.setlesstudio.com/images/ai-photography-pricing-banner.webp",
+        width: 2752,
+        height: 1536,
         alt: "SetlesStudio Pricing & Packages",
       },
     ],
@@ -23,14 +23,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Fashion Photography Pricing | SetlesStudio",
-    description: "Compare AI fashion photography packages, image quantities, deliverables, and turnaround options. Find the right package or request a custom quote.",
+    title: "AI Product Photography Pricing & Packages | SetlesStudio",
+    description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
-    images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
+    images: ["https://www.setlesstudio.com/images/ai-photography-pricing-banner.webp"],
   },
 };
 
 export default function PricingLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
+
