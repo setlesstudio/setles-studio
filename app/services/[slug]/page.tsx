@@ -714,7 +714,35 @@ const services: Record<string, ServiceData> = {
     {
       "q": "Can I get a free sample?",
       "a": "Yes. Contact SetlesStudio to request a free sample for a suitable handbag photography project."
-    }
+    },
+{
+  "q": "What product photos should I send for an AI bag photoshoot?",
+  "a": "Send clear front, back, and side views of the bag, plus close-ups of its logo, stitching, handles, straps, and hardware. Include a size reference and your preferred visual style so the team can understand the product before creating images."
+},
+{
+  "q": "Can you keep my handbag logo, color, and stitching consistent?",
+  "a": "We use your product references to guide the bag shape, color, logo, materials, and hardware. Clear detail photos help the review process. Check the finished images against your original product before publishing them."
+},
+{
+  "q": "Can you create both white-background product images and lifestyle photos?",
+  "a": "Yes. You can request clean studio images for product listings and styled lifestyle or model images for campaigns. Share the backgrounds, poses, and settings you want when requesting a quote."
+},
+{
+  "q": "Which types of bags can be used for AI product photography?",
+  "a": "Projects can include tote bags, shoulder bags, crossbody bags, clutches, and luxury handbags. Send your product photos so we can review the design and the images you need."
+},
+{
+  "q": "Do I need to ship my handbag for the photoshoot?",
+  "a": "The AI photography process starts with your existing product photos and visual references. Contact SetlesStudio with those files to confirm whether they provide enough detail for your project."
+},
+{
+  "q": "Can I use the same AI model across a handbag collection?",
+  "a": "Consistent models and styling can be included in your project brief. Share the full collection and preferred model references before work begins so the team can plan a consistent set of images."
+},
+{
+  "q": "What image sizes should I request for my online store?",
+  "a": "Share the image dimensions, aspect ratios, file formats, and background requirements of your store or advertising platform. Product listings, website banners, and social ads often need different versions."
+}
   ]
 },
 
@@ -809,8 +837,8 @@ export default function ServiceSlugPage({
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
-        title={footwearPhotos ? <><span className="block">{svc.hero.titlePrefix}</span><span className="block text-brand">{svc.hero.titleHighlight}</span></> : lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
-        text={svc.hero.subtitle}
+        title={handbagPhotos ? <><span className="block lg:whitespace-nowrap">{svc.hero.titlePrefix}</span><span className="block text-brand lg:whitespace-nowrap">{svc.hero.titleHighlight}</span></> : footwearPhotos ? <><span className="block">{svc.hero.titlePrefix}</span><span className="block text-brand">{svc.hero.titleHighlight}</span></> : lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
+        text={handbagPhotos ? <><span className="lg:block">Turn your bag photos into realistic AI images.</span>{" "}<span className="lg:block">Create studio, lifestyle, and model photography.</span>{" "}<span className="lg:block">Made for ecommerce stores and fashion brands.</span></> : svc.hero.subtitle}
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
         imageAlt={svc.hero.imageAlt}
@@ -847,7 +875,7 @@ export default function ServiceSlugPage({
 
       {(!svc.process || handbagPhotos) && <ServiceFeatures {...svc.features} />}
 
-      {svc.process && <ServiceProcess {...svc.process} />}
+      {svc.process && <ServiceProcess centeredFour={handbagPhotos} {...svc.process} />}
 
       {svc.details?.map((section) => (
         <section key={section.title} className="container-site py-8">
