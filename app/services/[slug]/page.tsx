@@ -827,7 +827,7 @@ export default function ServiceSlugPage({
         </a>
       </PageHero>
 
-      {hasBeforeAfter && <ServiceBeforeAfter preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter compactProduct={handbagPhotos} preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
