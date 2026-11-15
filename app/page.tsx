@@ -24,6 +24,25 @@ import { process, services, site, valueProps } from "@/lib/data";
 import { homeHero, getStoredPages, getStoredServices, getStoredValueProps } from "@/lib/dashboard-store";
 import { parseHeroTitle } from "@/components/DashboardComponents";
 
+const homeServiceImages: Record<string, { src: string; alt: string }> = {
+  "realistic-ai-studio-photography": {
+    "src": "/images/ai-fashion-burgundy-outfit.webp",
+    "alt": "AI fashion model wearing a burgundy scalloped top and matching trousers"
+  },
+  "lifestyle-realistic-ai-photography": {
+    "src": "/images/ai-lifestyle-pink-tracksuit.webp",
+    "alt": "AI fashion model in a pink tracksuit beside a brown leather chair"
+  },
+  "footwear-realistic-ai-photography": {
+    "src": "/images/ai-footwear-lime-green-heels.webp",
+    "alt": "AI footwear model wearing lime green pointed heels with an orange top"
+  },
+  "bags-accessories-realistic-ai-photography": {
+    "src": "/images/ai-handbag-coral-tote.webp",
+    "alt": "AI handbag model holding a coral tote bag while wearing a green cardigan"
+  }
+};
+
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
 export default function HomePage() {
@@ -200,8 +219,8 @@ export default function HomePage() {
                     </div>
                   ) : (
                     <ImageSlot
-                      src={s.image}
-                      alt={s.title}
+                      src={homeServiceImages[s.id]?.src ?? s.image}
+                      alt={homeServiceImages[s.id]?.alt ?? s.title}
                       label={s.title}
                       className="hidden aspect-[3/4] w-32 shrink-0 rounded-2xl sm:block"
                       sizes="160px"
