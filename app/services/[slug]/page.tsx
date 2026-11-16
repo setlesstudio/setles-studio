@@ -759,7 +759,6 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "& Fragrance Photography",
       subtitle: "Create premium product-led visuals for skincare, sun care, cosmetics and fragrance brands. SetlesStudio combines your product references with considered styling, realistic AI models and commercial art direction for ecommerce, launches and advertising.",
       image: "/images/beauty-sunscreen-hero.webp",
-      mobileImage: "/images/beauty-sunscreen-lifestyle.webp",
       imageAlt: "Model presenting a sunscreen product in a tropical beauty campaign",
       waText: "Hi, I'd like to discuss AI beauty, skincare or fragrance photography for my brand.",
       primaryLabel: "Discuss a Beauty Project",
@@ -837,7 +836,7 @@ const services: Record<string, ServiceData> = {
       },
     ],
     ctaBanner: {
-      image: "/images/beauty-fragrance-product.webp",
+      image: "",
       imageAlt: "Amber perfume bottle in a warm, floral product campaign scene",
       title: "Create a Consistent Beauty Campaign",
       text: "Share your skincare, sunscreen, cosmetics or fragrance products and the look you want to achieve. We’ll review the references and discuss a suitable visual direction for your collection.",
@@ -956,7 +955,7 @@ export default function ServiceSlugPage({
         { name: "Services", path: "/services" },
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
-      <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} preserveImageQuality={footwearPhotos || handbagPhotos}
+      <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} productPhotography={beautyPhotos} preserveImageQuality={footwearPhotos || handbagPhotos}
         campaignPhotos={campaignPhotos}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
@@ -997,8 +996,8 @@ export default function ServiceSlugPage({
                   src="/images/beauty-sunscreen-lifestyle.webp"
                   alt="Model presenting a sunscreen product in a tropical setting"
                   label="Sunscreen lifestyle photography"
-                  className="aspect-[4/5] rounded-4xl bg-cream"
-                  imageClassName="object-cover"
+                  className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
+                  imageClassName="object-contain p-3 sm:p-4"
                 />
                 <h3 className="mt-4 font-display text-xl font-semibold">On-model sun care visuals</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">Lifestyle compositions that bring the product into a natural, campaign-ready setting.</p>
@@ -1008,8 +1007,8 @@ export default function ServiceSlugPage({
                   src="/images/beauty-sunscreen-detail.webp"
                   alt="Close-up beauty campaign image with a model presenting sunscreen"
                   label="Skincare campaign photography"
-                  className="aspect-[4/5] rounded-4xl bg-cream"
-                  imageClassName="object-cover"
+                  className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
+                  imageClassName="object-contain p-3 sm:p-4"
                 />
                 <h3 className="mt-4 font-display text-xl font-semibold">Coordinated campaign angles</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">Create complementary views for product pages, social campaigns and collection launches.</p>
@@ -1019,7 +1018,7 @@ export default function ServiceSlugPage({
         </section>
       )}
 
-      {hasBeforeAfter && <ServiceBeforeAfter compactProduct={handbagPhotos} preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && <ServiceBeforeAfter compactProduct={handbagPhotos} preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos || beautyPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>

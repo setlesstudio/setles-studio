@@ -124,6 +124,11 @@ const descriptions: Record<string, string> = {
   "https://images.unsplash.com/photo-1653582482481-b8b34d824629": "Camera operator filming indoors",
   "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture-mobile_aatqie.jpg": "Model seated on a desert rock in a cream dress",
   "https://res.cloudinary.com/dlfb8yn1x/image/upload/q_auto/f_auto/v1782022435/blog-page-banner-picture_thkuwm.jpg": "Model seated on a desert rock in a cream dress",
+  "/images/beauty-sunscreen-hero.webp": "AI beauty campaign model holding a yellow sunscreen tube in a tropical garden",
+  "/images/beauty-sunscreen-lifestyle.webp": "Model presenting sunscreen beneath tropical palm leaves in a bright outdoor beauty campaign",
+  "/images/beauty-sunscreen-detail.webp": "Close-up beauty campaign portrait of a model presenting a yellow sunscreen tube",
+  "/images/beauty-fragrance-product.webp": "Amber perfume bottle styled in a warm orange fragrance product still life",
+  "/images/beauty-fragrance-model.webp": "AI model in a burgundy outfit presenting an amber perfume bottle",
   "/images/cream-knit-sweater-front.webp": "Light knit sweater on a dress form",
   "https://i.ibb.co/xt84fB1K/123213213.jpg": "Three-quarter view of a light knit sweater on a dress form"
 };

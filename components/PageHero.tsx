@@ -9,6 +9,7 @@ export default function PageHero({
   lightStudio = false,
   lifestylePhotos = false,
   campaignPhotos = false,
+  productPhotography = false,
   eyebrow,
   title,
   text,
@@ -27,6 +28,7 @@ export default function PageHero({
   lightStudio?: boolean;
   lifestylePhotos?: boolean;
   campaignPhotos?: boolean;
+  productPhotography?: boolean;
   eyebrow: string;
   title: React.ReactNode;
   text?: React.ReactNode;
@@ -88,10 +90,35 @@ export default function PageHero({
     quality: 85,
     loading: "eager" as const,
     unoptimized: preserveImageQuality || lightStudio || lifestylePhotos || campaignPhotos,
-    className: lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
+    className: productPhotography || lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
   const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
+
+  if (productPhotography && desktopProps) {
+    return (
+      <section className="bg-[#f7f7f5] pt-20 text-ink md:pt-24">
+        <div className="container-site py-8 md:py-12">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] xl:gap-12">
+            <div className="max-w-2xl">
+              <p className="eyebrow">{eyebrow}</p>
+              <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl xl:text-[3.5rem]">
+                {title}
+              </h1>
+              {text && <p className="mt-5 text-base leading-relaxed text-ink-soft sm:text-lg">{text}</p>}
+              {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
+            </div>
+            <div className="relative overflow-hidden rounded-3xl bg-white ring-1 ring-ink/10 shadow-[0_12px_40px_rgba(25,25,25,0.07)]">
+              <picture className="relative mx-auto block aspect-[4/5] w-full sm:aspect-[16/11] lg:aspect-[4/5] xl:aspect-[16/11]">
+                {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} sizes={mobileProps.sizes} />}
+                <img {...desktopProps} {...{ fetchpriority: "high" }} />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if ((campaignPhotos || handbagPhotos) && image) {
     return (
