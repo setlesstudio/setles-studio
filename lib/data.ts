@@ -129,6 +129,21 @@ export const services: Service[] = [
       "Premium AI handbag photography for ads, catalogs, and brand campaigns",
     ],
   },
+
+  {
+    id: "ai-beauty-skincare-photography",
+    number: "07",
+    title: "AI Beauty, Skincare & Fragrance Photography",
+    short: "Create polished product and on-model visuals for skincare, sunscreen, cosmetics and perfume collections.",
+    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, on-model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
+    image: "/images/beauty-sunscreen-hero.webp",
+    deliverables: [
+      "Product-led photography for skincare, sunscreen, cosmetics and fragrance",
+      "On-model beauty and lifestyle campaign visuals",
+      "Coordinated backgrounds, lighting and styling across collections",
+      "Ecommerce, website, social media and advertising-ready image formats",
+    ],
+  },
 ];
 
 export const stats = [
