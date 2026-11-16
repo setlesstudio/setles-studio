@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
 import SectionHeading from "@/components/SectionHeading";
 import PortfolioGallery from "@/components/PortfolioGallery";
@@ -10,7 +10,7 @@ import { site } from "@/lib/data";
 const faqs = [
   {
     q: "What can I see in the SetlesStudio AI photography portfolio?",
-    a: "The portfolio presents selected AI-assisted fashion, handbag, footwear, lifestyle and campaign imagery. Collections are arranged as original product or outfit references followed by the corresponding AI model and lifestyle results.",
+    a: "The portfolio presents selected AI-assisted fashion, handbag, footwear, activewear, lifestyle and campaign imagery. Collections begin with the original product or outfit reference, followed by model and lifestyle results.",
   },
   {
     q: "Can SetlesStudio turn my flat-lay product photo into an AI model photo?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Does SetlesStudio offer AI beauty and skincare product photography?",
-    a: "Beauty and skincare product photography is a new service category. Contact SetlesStudio to discuss serum, sunscreen, cosmetics and packaging visuals and to check the current examples and project requirements.",
+    a: "Yes. SetlesStudio offers AI-assisted beauty and skincare product photography for products such as serums, sunscreen, cosmetics and packaging. Contact the studio to discuss the product and creative direction.",
   },
   {
     q: "How do I order AI product photography for my brand?",
@@ -46,7 +46,7 @@ const faqSchema = {
 
 export const metadata: Metadata = {
   title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-  description: "Explore SetlesStudio AI fashion, handbag, footwear, lifestyle and campaign photography. See original product references paired with AI model results for ecommerce brands.",
+  description: "Explore SetlesStudio AI fashion, handbag, footwear, activewear, lifestyle and campaign photography. See original product references paired with AI model results for ecommerce brands.",
   alternates: { canonical: "https://www.setlesstudio.com/portfolio" },
   keywords: [
     "AI fashion photography portfolio",
@@ -54,15 +54,16 @@ export const metadata: Metadata = {
     "AI model photography for ecommerce",
     "AI handbag photography",
     "AI footwear photography",
+    "AI activewear photography",
     "AI lifestyle product photography",
     "AI beauty and skincare product photography",
   ],
   openGraph: {
     title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "See original product references transformed into AI-assisted fashion, handbag, footwear and lifestyle imagery.",
+    description: "Explore curated original product references paired with AI model and lifestyle photography for ecommerce brands.",
     url: "https://www.setlesstudio.com/portfolio",
     siteName: "SetlesStudio",
-    images: [{ url: "https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp", width: 1600, height: 900, alt: "AI handbag lifestyle photography portfolio by SetlesStudio" }],
+    images: [{ url: "https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp", width: 2752, height: 1536, alt: "AI fashion model showcasing a coral tote bag in a lush lifestyle setting" }],
     type: "website",
   },
   twitter: {
@@ -76,41 +77,62 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Selected work · SetlesStudio"
-        title={<>From product photo to <span className="text-brand">brand-ready imagery</span></>}
-        text="Explore curated AI-assisted fashion and product photography. Each collection starts with the original product or outfit reference, followed by model and lifestyle results created for ecommerce and marketing."
-        image="/images/ai-handbag-lifestyle-banner.webp"
-        imageAlt="AI fashion model showcasing a coral tote bag in a lush lifestyle setting"
-        animateReveal
-      >
-        <Link href="/contact" className="btn-primary">Start Your Project</Link>
-        <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I viewed your portfolio and would like to discuss AI product photography for my brand.")}`} target="_blank" rel="noopener noreferrer" className="btn-ghost-light">Request a Free Sample</a>
-      </PageHero>
-
-      <section className="bg-cream py-14 sm:py-20">
+      <section className="overflow-hidden bg-[#1e201b] pb-10 pt-24 text-white sm:pb-14 sm:pt-28">
         <div className="container-site">
-          <SectionHeading
-            eyebrow="Curated by category"
-            title="Real products. Carefully styled AI results."
-            text="Browse each project in sequence: original product or outfit first, then the matching AI model and lifestyle photography."
-          />
-          <div className="mt-10"><PortfolioGallery /></div>
-          <div className="mt-12 grid gap-4 rounded-3xl border border-ink/10 bg-white p-6 sm:grid-cols-3 sm:p-8">
-            <div><p className="font-semibold">01 · Start with your product</p><p className="mt-1 text-sm text-ink-soft">We review your source image, colour, shape and important details.</p></div>
-            <div><p className="font-semibold">02 · Create the visual direction</p><p className="mt-1 text-sm text-ink-soft">Choose a studio, model or lifestyle look that suits your brand.</p></div>
-            <div><p className="font-semibold">03 · Prepare content for use</p><p className="mt-1 text-sm text-ink-soft">Receive polished imagery for product pages, catalogs and campaigns.</p></div>
+          <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+            <div className="max-w-xl">
+              <p className="eyebrow text-white/65">Selected work · SetlesStudio</p>
+              <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl xl:text-[3.7rem]">
+                From product photo to <span className="text-[#d8b994]">brand-ready imagery</span>
+              </h1>
+              <p className="mt-5 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
+                Explore carefully curated AI-assisted fashion and product photography. See the original product first, then the matching model and lifestyle results.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/contact" className="btn-primary">Start Your Project</Link>
+                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I viewed your portfolio and would like to discuss AI product photography for my brand.")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Request a Free Sample</a>
+              </div>
+              <p className="mt-5 text-xs tracking-wide text-white/45">Fashion · Handbags · Footwear · Activewear · Lifestyle</p>
+            </div>
+            <div className="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
+              <Image
+                src="/images/ai-handbag-lifestyle-banner.webp"
+                alt="Fashion model showcasing a coral tote bag in a lush tropical lifestyle setting"
+                width={2752}
+                height={1536}
+                priority
+                quality={88}
+                sizes="(min-width: 1024px) 62vw, 100vw"
+                className="block h-auto w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="container-site py-16 sm:py-20">
-        <SectionHeading eyebrow="Common questions" title="AI product photography portfolio FAQs" text="Practical answers about the examples, product accuracy, available categories and ordering." />
-        <div className="mt-8"><FAQ faqs={faqs} /></div>
+      <section className="bg-[#f4f1ec] py-12 sm:py-16">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow="Browse selected projects"
+            title="Original products. Elevated AI photography."
+            text="Every collection is arranged to show the starting product or outfit first, followed by the finished model and lifestyle imagery."
+          />
+          <div className="mt-8 sm:mt-10"><PortfolioGallery /></div>
+          <div className="mt-10 grid gap-3 rounded-3xl border border-ink/10 bg-white p-5 sm:grid-cols-3 sm:p-7">
+            <div><p className="text-sm font-semibold">01 · Share your product</p><p className="mt-1 text-sm leading-relaxed text-ink-soft">Send a clear product photo and the details that matter to your brand.</p></div>
+            <div><p className="text-sm font-semibold">02 · Choose the visual direction</p><p className="mt-1 text-sm leading-relaxed text-ink-soft">Select studio, model or lifestyle imagery that suits your audience.</p></div>
+            <div><p className="text-sm font-semibold">03 · Create your image set</p><p className="mt-1 text-sm leading-relaxed text-ink-soft">Build consistent visuals for product pages, catalogs and campaigns.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-site py-14 sm:py-18">
+        <SectionHeading eyebrow="Common questions" title="AI product photography FAQs" text="Answers about portfolio examples, product accuracy, services and ordering." />
+        <div className="mt-7"><FAQ faqs={faqs} /></div>
       </section>
 
       <CTABand
-        title="Ready to create product images that make people stop and look?"
+        title="Ready to make your products stand out?"
         text="Send us one clear product photo and tell us where you plan to use the images. We’ll review your brief and help you choose a suitable direction."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free AI product photography sample for my brand.")}`, label: "Request a Free Sample" }}
         secondary={{ href: "/pricing", label: "Explore Pricing" }}
