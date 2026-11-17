@@ -1,61 +1,71 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
-import { portfolioCollections } from "@/lib/portfolio-collections";
+import { services } from "@/lib/data";
 
-const filters = ["All projects", "Beauty & skincare", "Handbags", "Footwear", "Fashion", "Activewear", "Lifestyle"] as const;
-type Category = typeof filters[number];
+const serviceBanners: Record<string, { src: string; alt: string; description: string; cta?: string }> = {
+  "realistic-ai-studio-photography": {
+    src: "/images/plum-studio-original-banner.webp",
+    alt: "AI model wearing a plum scalloped top and matching leggings in a white studio",
+    description: "Explore studio model images, outfit references and clothing details.",
+  },
+  "ai-beauty-skincare-photography": {
+    src: "/images/ai-skincare-sunscreen-banner.webp",
+    alt: "AI beauty model holding yellow Solaris sunscreen among tropical palm leaves",
+    description: "See sunscreen, skincare and perfume product images, model portraits and campaigns.",
+  },
+  "lifestyle-realistic-ai-photography": {
+    src: "/images/pink-outfit-lifestyle-banner.webp",
+    alt: "AI model in a pink hoodie and trousers seated in a brown armchair",
+    description: "Discover fashion imagery styled in natural, everyday settings.",
+  },
+  "luxury-fashion-ai-campaign": {
+    src: "/images/ai-fashion-campaign-photography.webp",
+    alt: "AI fashion model wearing a white halter knit dress seated on a desert rock",
+    description: "View editorial fashion concepts and coordinated campaign imagery.",
+  },
+  "footwear-realistic-ai-photography": {
+    src: "/images/ai-footwear-photography.webp",
+    alt: "AI model wearing lime-green pointed heels with an orange top and green shorts",
+    description: "Explore footwear product references, styling and on-model views.",
+  },
+  "realistic-ai-video-ads-ugc": {
+    src: "https://res.cloudinary.com/dlfb8yn1x/video/upload/so_0,f_webp,q_auto,w_1200/v1782991084/video-ad_bvo5xc.webp",
+    alt: "Preview frame from the AI fashion video featured on the video ads service page",
+    description: "Watch fashion video ads and product-focused motion examples.",
+    cta: "View Video Examples",
+  },
+  "bags-accessories-realistic-ai-photography": {
+    src: "/images/ai-handbag-photography-banner.webp",
+    alt: "AI model carrying a coral tote bag among tropical leaves and red flowers",
+    description: "See handbag product photography, model styling and lifestyle scenes.",
+  },
+};
 
 export default function PortfolioGallery() {
-  const [active, setActive] = useState<Category>("All projects");
-  const visible = portfolioCollections.filter(collection => active === "All projects" || collection.category === active);
-  const imageCount = visible.reduce((count, collection) => count + collection.images.length, 0);
-
   return (
-    <div>
-      <div className="mb-6 flex flex-wrap justify-center gap-2" role="group" aria-label="Filter portfolio by category">
-        {filters.map(filter => (
-          <button key={filter} type="button" aria-pressed={active === filter} onClick={() => setActive(filter)}
-            className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${active === filter ? "border-ink bg-ink text-white" : "border-ink/10 bg-white text-ink-soft hover:border-brand/50 hover:text-brand"}`}>
-            {filter}
-          </button>
-        ))}
-      </div>
-      <p className="mb-8 text-center text-xs tracking-wide text-ink-soft" role="status" aria-live="polite">
-        {visible.length} collections · {imageCount} images · Product references first
-      </p>
-      <div className="space-y-8" data-portfolio-collections>
-        {visible.map(collection => (
-          <section key={collection.id} className="rounded-3xl border border-ink/10 bg-[#fbfaf8] p-4 sm:p-6 lg:p-7" aria-labelledby={`collection-${collection.id}`} data-collection={collection.id}>
-            <div className="mx-auto mb-5 flex max-w-5xl flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="eyebrow">{collection.category}</p>
-                <h3 id={`collection-${collection.id}`} className="mt-2 font-display text-xl font-semibold sm:text-2xl">{collection.title}</h3>
-                <p className="mt-2 text-sm text-ink-soft">Product reference, followed by model styling and campaign imagery.</p>
-              </div>
-              <Link href={collection.href} className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-brand hover:text-ink">
-                Explore this service <ArrowUpRight size={16} aria-hidden="true" />
-              </Link>
+    <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2" data-service-banners>
+      {services.map((service, index) => {
+        const banner = serviceBanners[service.id];
+        if (!banner) return null;
+        return (
+          <Link key={service.id} href={`/services/${service.id}`} prefetch={false}
+            aria-label={`${banner.cta ?? "View Gallery"}: ${service.title}`}
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-white transition-shadow hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+            <div className="relative aspect-video overflow-hidden bg-[#f3f1ed]">
+              <Image src={banner.src} alt={banner.alt} fill sizes="(min-width: 1200px) 560px, (min-width: 768px) 46vw, 94vw" quality={80} loading={index < 2 ? "eager" : "lazy"} className="object-contain" />
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-4 md:gap-x-4" data-project-grid>
-              {collection.images.map(image => (
-                <figure key={image.src} data-reference={image.reference}>
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-[#f4f3f0] ring-1 ring-ink/10">
-                    <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 250px, 44vw" quality={82} loading="lazy" className="object-contain" />
-                  </div>
-                  <figcaption className="mt-2 flex items-start gap-2 text-xs leading-relaxed text-ink-soft">
-                    {image.reference && <span className="shrink-0 rounded bg-ink px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white">Product</span>}
-                    <span>{image.caption}</span>
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <h3 className="font-display text-xl font-semibold leading-snug text-ink group-hover:text-brand">{service.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">{banner.description}</p>
+              <span className="mt-auto flex items-center justify-between gap-3 pt-6 text-sm font-semibold text-brand">
+                {banner.cta ?? "View Gallery"}
+                <ArrowUpRight size={20} aria-hidden="true" className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </span>
             </div>
-          </section>
-        ))}
-      </div>
+          </Link>
+        );
+      })}
     </div>
   );
 }

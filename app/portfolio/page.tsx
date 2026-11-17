@@ -9,7 +9,7 @@ import { site } from "@/lib/data";
 const faqs = [
   {
     q: "What can I see in the SetlesStudio AI photography portfolio?",
-    a: "The portfolio presents selected AI-assisted beauty, skincare, perfume, fashion, handbag, footwear, activewear and lifestyle imagery. Collections begin with the original product or outfit reference, followed by model and lifestyle results.",
+    a: "Choose a service banner to open its dedicated page. Each photography page contains relevant product, model or campaign examples, and the video ads page includes video examples.",
   },
   {
     q: "Can SetlesStudio turn my flat-lay product photo into an AI model photo?",
@@ -45,7 +45,7 @@ const faqSchema = {
 
 export const metadata: Metadata = {
   title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-  description: "Explore AI beauty, skincare, perfume, fashion, handbag and footwear photography. Browse product references, model portraits and lifestyle campaigns.",
+  description: "Browse AI fashion, beauty, skincare, footwear and handbag photography. Select a service banner to view its image gallery or video examples.",
   alternates: { canonical: "https://www.setlesstudio.com/portfolio" },
   keywords: [
     "AI fashion photography portfolio",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Explore curated original product references paired with AI model and lifestyle photography for ecommerce brands.",
+    description: "Explore our photography and video services. Select a banner to view the full gallery on its service page.",
     url: "https://www.setlesstudio.com/portfolio",
     siteName: "SetlesStudio",
     images: [{ url: "https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp", width: 2752, height: 1536, alt: "AI fashion model showcasing a coral tote bag in a lush lifestyle setting" }],
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Original product references paired with AI model and lifestyle photography for ecommerce brands.",
+    description: "Explore AI photography galleries and video examples by service.",
     images: ["https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp"],
   },
 };
@@ -80,11 +80,11 @@ export default function PortfolioPage() {
         <div className="container-site">
           <div className="max-w-4xl">
             <p className="eyebrow text-white/65">Selected work · SetlesStudio</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">AI product photography,<br className="hidden sm:block" /> <span className="text-[#d8b994]">from reference to campaign.</span></h1>
-            <p className="mt-5 max-w-2xl leading-relaxed text-white/75">Explore beauty, skincare, fashion and accessory collections. Each story starts with the product reference, followed by model portraits, studio styling and lifestyle scenes.</p>
+            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Explore our work,<br className="hidden sm:block" /> <span className="text-[#d8b994]">one service at a time.</span></h1>
+            <p className="mt-5 max-w-2xl leading-relaxed text-white/75">Choose a service below to see its full image gallery or video examples. From fashion and skincare to footwear and handbags, find the work that fits your brand.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">Start Your Project</Link>
-              <a href="#portfolio-work" className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">Browse the Collections</a>
+              <a href="#portfolio-work" className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">Browse Service Galleries</a>
             </div>
           </div>
         </div>
@@ -92,11 +92,11 @@ export default function PortfolioPage() {
 
       <section id="portfolio-work" className="scroll-mt-24 bg-[#f4f1ec] py-12 sm:py-16">
         <div className="container-site">
-          <SectionHeading
-            eyebrow="Browse selected projects"
-            title="Original products. Elevated AI photography."
-            text="Browse eight coordinated collections, with product references first and each image shown once."
-          />
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Portfolio by service</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">Choose a service. View the gallery.</h2>
+            <p className="mt-4 text-ink-soft">Click any banner or View Gallery link to explore the related service page and its examples.</p>
+          </div>
           <div className="mt-8 sm:mt-10"><PortfolioGallery /></div>
           <div className="mt-10 grid gap-3 rounded-3xl border border-ink/10 bg-white p-5 sm:grid-cols-3 sm:p-7">
             <div><p className="text-sm font-semibold">01 · Share your product</p><p className="mt-1 text-sm leading-relaxed text-ink-soft">Send a clear product photo and the details that matter to your brand.</p></div>
