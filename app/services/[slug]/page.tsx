@@ -749,114 +749,183 @@ const services: Record<string, ServiceData> = {
 
 
   "ai-beauty-skincare-photography": {
-    meta: {
-      title: "AI Beauty, Skincare & Fragrance Photography | SetlesStudio",
-      description: "Create polished AI beauty product photography for skincare, sunscreen, cosmetics and perfume brands. Product-led ecommerce imagery, lifestyle visuals and campaign content by SetlesStudio.",
-    },
-    hero: {
-      eyebrow: "AI BEAUTY, SKINCARE & FRAGRANCE PHOTOGRAPHY",
-      titlePrefix: "AI Beauty, Skincare",
-      titleHighlight: "& Fragrance Photography",
-      subtitle: "Create premium product-led visuals for skincare, sun care, cosmetics and fragrance brands. SetlesStudio combines your product references with considered styling, realistic AI models and commercial art direction for ecommerce, launches and advertising.",
-      image: "/images/beauty-sunscreen-hero.webp",
-      imageAlt: "Model presenting a sunscreen product in a tropical beauty campaign",
-      waText: "Hi, I'd like to discuss AI beauty, skincare or fragrance photography for my brand.",
-      primaryLabel: "Discuss a Beauty Project",
-      secondary: { href: "/portfolio", label: "View Our Portfolio" },
-    },
-    beforeAfter: {
-      heading: "From Fragrance Product Still Life to On-Model Campaign",
-      introduction: "Show the product clearly, then build a more human campaign image around it. These fragrance visuals demonstrate how a bottle can be presented in a styled product scene and in an on-model photograph.",
-      beforeLabel: "Styled Fragrance Product",
-      afterLabel: "On-Model Fragrance Visual",
-      portfolioLabel: "Explore Beauty and Fragrance Photography",
-      before: "/images/beauty-fragrance-product.webp",
-      beforeAlt: "A perfume bottle displayed on a pedestal with warm amber lighting and floral styling",
-      beforeCaption: "A styled product composition gives the fragrance bottle a distinctive campaign setting.",
-      after: "/images/beauty-fragrance-model.webp",
-      afterAlt: "Beauty model in a burgundy outfit holding an amber perfume bottle",
-      afterCaption: "An on-model visual introduces the product in a personal, editorial context.",
-    },
-    description: {
-      titleHighlight: "Beauty Product Photography",
-      titleSuffix: "for Ecommerce and Campaigns",
-      paragraphs: [
-        "SetlesStudio creates AI beauty, skincare and fragrance photography using your real product photographs as the visual reference. We develop clean product imagery, on-model compositions and styled campaign scenes for sunscreen, serums, moisturisers, cosmetics, perfume and other beauty products.",
-        "Your packaging, bottle shape, colours, label placement and product proportions guide the creative process. Share clear reference photographs and the visual direction you want; we plan the model, setting, lighting and composition around your product.",
-        "Use coordinated visuals across ecommerce product pages, launch campaigns, website banners, digital advertising and social media. SetlesStudio is based in Lahore, Pakistan, and works from digital product references supplied by brands and ecommerce teams.",
-      ],
-    },
-    features: {
-      heading: "AI Beauty Photography Built Around Your Product",
-      subheading: "What We Can Create",
-      items: [
-        { number: "01", icon: Package, title: "Product-Led Composition", description: "Present bottles, jars, tubes and packaging with considered framing, clean backgrounds and clear product visibility." },
-        { number: "02", icon: Users, title: "On-Model Beauty Visuals", description: "Show skincare and fragrance products with AI models in natural, editorial or campaign-led poses." },
-        { number: "03", icon: Camera, title: "Lifestyle and Campaign Scenes", description: "Build visual settings around your brand direction, from fresh daylight skincare scenes to warm, premium fragrance campaigns." },
-        { number: "04", icon: Layers, title: "Collection Consistency", description: "Coordinate backgrounds, lighting, styling and image crops across multiple products in the same collection." },
-        { number: "05", icon: Star, title: "Detail-Focused Refinement", description: "Review product shape, colour, visible label placement and key packaging details against your supplied references." },
-        { number: "06", icon: MonitorCheck, title: "Ecommerce-Ready Formats", description: "Plan imagery for product listings, category pages, website banners, social posts and digital advertising placements." },
-      ],
-    },
-    details: [
-      {
-        title: "Beauty and Fragrance Categories",
-        intro: "We can plan product photography for a range of beauty and personal-care collections, including:",
-        items: [
-          "Skincare: cleansers, serums, moisturisers, face creams and treatment products.",
-          "Sun care: sunscreen, SPF products and sun-protection ranges.",
-          "Cosmetics: makeup, beauty tools and selected cosmetic collections.",
-          "Fragrance: perfumes, eau de parfum, body mists and scent collections.",
-          "Beauty launches: coordinated product, model and lifestyle visuals for new releases.",
-        ],
-        paragraphs: [
-          "Send the product range and the number of images you need so we can recommend a suitable visual direction and scope.",
-        ],
-      },
-      {
-        title: "How We Keep Product Details in Focus",
-        paragraphs: [
-          "Your supplied product photographs guide the packaging, colour, bottle silhouette, cap, visible label and overall proportions. Clear front, back and detail views help us assess the product before creating the final visual.",
-          "AI image generation can introduce small differences in fine lettering, intricate logos, reflections and complex packaging. We review the output against the references, but exact reproduction of every printed detail is not guaranteed. Always check the final artwork against the physical product before publishing.",
-        ],
-      },
-      {
-        title: "What to Send for a Beauty Photoshoot",
-        intro: "For a useful project assessment, share:",
-        items: [
-          "Clear front-facing product photographs and additional angles where available.",
-          "Close-ups of the logo, label, cap, applicator and distinctive packaging details.",
-          "The number of products and finished images required.",
-          "References for the model, background, lighting, styling and campaign mood.",
-          "The intended placements, image dimensions and preferred delivery date.",
-        ],
-        paragraphs: [
-          "If you only have basic product photographs, send those first. We can review the references and discuss what additional views would help.",
-        ],
-      },
-    ],
-    ctaBanner: {
-      image: "",
-      imageAlt: "Amber perfume bottle in a warm, floral product campaign scene",
-      title: "Create a Consistent Beauty Campaign",
-      text: "Share your skincare, sunscreen, cosmetics or fragrance products and the look you want to achieve. We’ll review the references and discuss a suitable visual direction for your collection.",
-      waText: "Hi, I'd like a quote for AI beauty, skincare or fragrance photography.",
-      buttonLabel: "Get a Beauty Photography Quote",
-    },
-    faqTitle: "AI Beauty, Skincare & Fragrance Photography FAQs",
-    faqs: [
-      { q: "What is AI beauty product photography?", a: "AI beauty product photography uses product references and AI-assisted creative production to create commercial images for skincare, cosmetics, sunscreen and fragrance brands. The visuals can include product-only compositions, on-model scenes and lifestyle campaigns." },
-      { q: "Can you create AI skincare photography from my product photos?", a: "Yes. Clear photographs of your skincare packaging can guide product-led scenes and on-model visuals. Front, back and close-up views help us understand the bottle or jar, colour, label and other visible details." },
-      { q: "Do you create sunscreen and SPF product photography?", a: "Yes. Sunscreen and sun-care products can be presented in clean studio compositions, fresh outdoor settings or on-model lifestyle scenes, depending on your brand and campaign direction." },
-      { q: "Can you create AI perfume and fragrance photography?", a: "Yes. Fragrance visuals can include styled bottle still lifes, luxury product scenes and on-model campaign images. Share the bottle photographs and references for the lighting, background and mood you want." },
-      { q: "Will my product packaging and logo remain accurate?", a: "Your original photographs guide packaging shape, colour and visible label placement. Fine lettering, intricate logos, reflections and complex details can vary in AI-generated images, so we review the result against your references. Final artwork should be checked against the physical product before publication." },
-      { q: "Can you use the same model and background across a product range?", a: "Yes. We can plan a shared model direction, lighting setup, background and composition across a collection. Consistent references help the images feel like one coordinated campaign." },
-      { q: "Where can I use the finished beauty images?", a: "Depending on the agreed format, finished visuals can be prepared for ecommerce product pages, category pages, website banners, digital advertising, social media and product-launch campaigns." },
-      { q: "What product photographs should I provide?", a: "Send clear front-facing product photographs, extra angles and close-ups of logos, labels, caps and applicators. Add references for models, backgrounds, lighting, image crops and the intended placement." },
-      { q: "How much does AI beauty photography cost?", a: "Pricing depends on the number of products and images, creative complexity, model requirements, backgrounds and output formats. Share your product references and image requirements to request a project-specific quote." },
-      { q: "Can you work with beauty brands outside Pakistan?", a: "Yes. The project can be briefed and planned using digital product photographs and creative references. SetlesStudio is based in Lahore, Pakistan; share your requirements remotely to discuss the project scope." },
-    ],
+  "meta": {
+    "title": "AI Product Photography for Beauty & Skincare | SetlesStudio",
+    "description": "Turn beauty and skincare product photos into realistic AI model, studio and lifestyle images for ecommerce and campaigns. Get a SetlesStudio project quote."
   },
+  "hero": {
+    "eyebrow": "AI BEAUTY & SKINCARE PHOTOGRAPHY",
+    "titlePrefix": "AI Product Photography",
+    "titleHighlight": "for Beauty & Skincare Brands",
+    "subtitle": "Turn your product photos into realistic skincare visuals. We create studio images, on-model photography and lifestyle campaigns for beauty brands, online stores and product launches.",
+    "image": "/images/ai-skincare-sunscreen-banner.webp",
+    "imageAlt": "AI beauty model holding a yellow Solaris sunscreen tube among tropical palm leaves",
+    "waText": "Hi, I'd like a quote for AI product photography for my beauty or skincare brand.",
+    "primaryLabel": "Get My Skincare Photography Quote",
+    "secondary": {
+      "href": "/pricing",
+      "label": "View Pricing"
+    }
+  },
+  "beforeAfter": {
+    "heading": "From Product Reference to Skincare Campaign",
+    "introduction": "Explore a sunscreen product reference alongside an AI model presentation. The yellow tube and tropical styling connect the examples across this page.",
+    "beforeLabel": "Product reference",
+    "afterLabel": "AI model example",
+    "portfolioLabel": "View More Photography",
+    "before": "/images/skincare-sunscreen-product-reference.webp",
+    "beforeAlt": "Yellow Solaris Sun Expert sunscreen tube on a white background",
+    "beforeCaption": "Product reference: the yellow tube, front label and cap shown on white.",
+    "after": "/images/ai-skincare-sunscreen-model.webp",
+    "afterAlt": "AI model in an orange floral dress holding a yellow sunscreen tube beside her face",
+    "afterCaption": "Model example: sunscreen presented by an AI model against green palm leaves."
+  },
+  "description": {
+    "titleHighlight": "Beauty Product Photography",
+    "titleSuffix": "Built Around Your Brand",
+    "paragraphs": [
+      "SetlesStudio creates AI product photography for beauty and skincare brands using your existing product photos and creative brief. From a clean product listing to a sunlit campaign, we plan the setting, model and composition around the product you want shoppers to notice.",
+      "Create a coordinated image set for serums, moisturisers, cleansers, sunscreen and cosmetics. Use product-focused images on ecommerce pages, model portraits for launches and lifestyle visuals for website banners and social media.",
+      "Our process combines AI image creation with editing and review. Clear packaging references help us assess shape, colour, logos and labels, while your brand guidelines guide the overall style."
+    ]
+  },
+  "features": {
+    "heading": "Skincare Images for Every Customer Touchpoint",
+    "subheading": "Plan the visuals your brand needs",
+    "items": [
+      {
+        "number": "01",
+        "icon": Package,
+        "title": "Studio Product Images",
+        "description": "Clean compositions that keep bottles, jars, tubes and packaging clearly visible."
+      },
+      {
+        "number": "02",
+        "icon": Users,
+        "title": "On-Model Photography",
+        "description": "Show your product in hand with model styling and poses chosen for your brand."
+      },
+      {
+        "number": "03",
+        "icon": Camera,
+        "title": "Lifestyle Campaigns",
+        "description": "Build a setting around your product, from tropical sun care to everyday skincare routines."
+      },
+      {
+        "number": "04",
+        "icon": Layers,
+        "title": "Consistent Collections",
+        "description": "Coordinate lighting, backgrounds and colours across your product range."
+      },
+      {
+        "number": "05",
+        "icon": Star,
+        "title": "Packaging Detail Review",
+        "description": "Compare product shape, label placement and visible details with your supplied references."
+      },
+      {
+        "number": "06",
+        "icon": MonitorCheck,
+        "title": "Formats for Your Store",
+        "description": "Plan square, portrait and landscape images for product pages, banners and social placements."
+      }
+    ]
+  },
+  "details": [
+    {
+      "title": "How Your AI Skincare Photoshoot Works",
+      "items": [
+        "Send your product photos, brand guidelines and intended image placements.",
+        "Agree on the model, setting, image count and creative direction.",
+        "Review the proposed visuals and check packaging details against your references.",
+        "Receive the agreed final images in the sizes and formats planned for your campaign."
+      ],
+      "paragraphs": [
+        "Start with a focused brief for one product or plan a coordinated collection. Your quote confirms the deliverables, revision scope and delivery schedule before work begins."
+      ]
+    },
+    {
+      "title": "What to Send for an Accurate Product Brief",
+      "items": [
+        "Clear front, back and side views of each product.",
+        "Close-ups or artwork for labels, logos, caps and applicators.",
+        "A size reference and accurate product colours.",
+        "Examples of your preferred backgrounds, models and lighting.",
+        "Your image count, required dimensions and launch date."
+      ],
+      "paragraphs": [
+        "Fine print, reflective packaging and intricate logos need particular attention. We review these details against your references; your final approval should include a packaging and label check."
+      ]
+    },
+    {
+      "title": "Plan Images for Ecommerce, Launches and Ads",
+      "paragraphs": [
+        "A product page needs clear packaging views. A launch campaign may need model portraits, lifestyle scenes and a wide website banner. Sharing the intended use helps us plan useful compositions from the start.",
+        "These sunscreen examples show a consistent visual direction across different poses. They illustrate creative presentation, rather than measured product performance or skincare results."
+      ]
+    }
+  ],
+  "ctaBanner": {
+    "image": "",
+    "imageAlt": "",
+    "title": "Give Your Skincare Collection a Consistent Look",
+    "text": "Send your product photos and the images you need. We will review your brief and prepare a quote for your beauty or skincare campaign.",
+    "waText": "Hi, I'd like a quote for AI beauty and skincare product photography.",
+    "buttonLabel": "Request My Project Quote"
+  },
+  "faqTitle": "AI Beauty & Skincare Product Photography FAQs",
+  "faqs": [
+    {
+      "q": "What is AI product photography for beauty and skincare brands?",
+      "a": "AI product photography combines your product photographs with AI-assisted image creation and professional editing to produce beauty and skincare visuals. SetlesStudio creates product-only images, model portraits and lifestyle scenes for ecommerce stores and campaigns."
+    },
+    {
+      "q": "Can you create skincare images from my existing product photos?",
+      "a": "Yes. Send clear photographs of your product, including its front label, packaging and additional angles. We use those references to plan the product shape, colours and presentation in studio or lifestyle images."
+    },
+    {
+      "q": "Which beauty products can you photograph with AI?",
+      "a": "Projects can include sunscreen, serums, moisturisers, cleansers, face creams and cosmetics. Share your product range so we can review packaging details and recommend suitable compositions for each item."
+    },
+    {
+      "q": "Can AI models hold my sunscreen or skincare product?",
+      "a": "Yes. We can create model images showing your product held near the face, in hand or within a styled setting. The brief should specify the model direction, product scale, pose and background you want."
+    },
+    {
+      "q": "Will my packaging, logo and label stay accurate?",
+      "a": "Your reference photos guide the packaging, colours and label placement. Small lettering and intricate logos may need manual refinement. Supply clear label artwork where available and review the final images against your actual product before publishing."
+    },
+    {
+      "q": "Can I use the images on Shopify and in social media ads?",
+      "a": "Images can be prepared for Shopify product pages, website banners, social posts and advertising. Tell us the required dimensions and placements before production. Marketplace listings and ad platforms may have their own image requirements."
+    },
+    {
+      "q": "Do I need to ship my skincare products?",
+      "a": "Our AI photography process starts with digital product photos and creative references. Send your files first so we can confirm whether they show enough detail or whether additional photographs are needed."
+    },
+    {
+      "q": "How much does AI skincare product photography cost?",
+      "a": "The cost depends on the number of products and finished images, scene complexity, model requirements and delivery formats. Review our pricing page for package information, then send your brief for a skincare project quote."
+    },
+    {
+      "q": "How long does a beauty photography project take?",
+      "a": "Delivery depends on the number of images, creative direction and revisions. Share your launch date when requesting a quote so we can confirm a schedule before production begins."
+    },
+    {
+      "q": "Can you create consistent images across a skincare collection?",
+      "a": "Yes. We can plan a shared model, background, lighting style and colour palette across a collection. Providing the full product range and brand guidelines at the start helps keep the campaign consistent."
+    },
+    {
+      "q": "Can AI skincare images demonstrate product results?",
+      "a": "These images illustrate product presentation and campaign styling. They do not demonstrate tested skincare results, SPF performance or changes to a person's skin. Use substantiated product information for any performance claims."
+    },
+    {
+      "q": "Do you work with beauty brands outside Pakistan?",
+      "a": "Yes. SetlesStudio is based in Lahore, Pakistan, and works with brands remotely using digital product photos and briefs. Share your target market, preferred visual style and delivery requirements when you contact us."
+    }
+  ]
+},
+
 
 };
 
@@ -894,8 +963,8 @@ export async function generateMetadata({
       images: [
         {
           url: bannerImage,
-          width: params.slug === "bags-accessories-realistic-ai-photography" ? 2752 : 1200,
-          height: params.slug === "bags-accessories-realistic-ai-photography" ? 1536 : 630,
+          width: params.slug === "ai-beauty-skincare-photography" ? 1600 : params.slug === "bags-accessories-realistic-ai-photography" ? 2752 : 1200,
+          height: params.slug === "ai-beauty-skincare-photography" ? 893 : params.slug === "bags-accessories-realistic-ai-photography" ? 1536 : 630,
           alt: params.slug === "bags-accessories-realistic-ai-photography" ? "AI model seated on a chair holding a coral tote bag in a white studio" : svc.hero.imageAlt || svc.meta.title,
         },
       ],
@@ -936,7 +1005,7 @@ export default function ServiceSlugPage({
         "@context": "https://schema.org",
         "@type": "Service",
         name: svc.hero.eyebrow,
-        serviceType: beautyPhotos ? "AI Beauty, Skincare & Fragrance Photography" : svc.hero.eyebrow,
+        serviceType: beautyPhotos ? "AI Product Photography for Beauty & Skincare Brands" : svc.hero.eyebrow,
         description: svc.meta.description,
         url: `${site.url}/services/${params.slug}`,
         provider: { "@id": `${site.url}/#organization` },
@@ -955,8 +1024,8 @@ export default function ServiceSlugPage({
         { name: "Services", path: "/services" },
         { name: svc.hero.eyebrow, path: `/services/${params.slug}` },
       ])} />
-      <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} productPhotography={beautyPhotos} preserveImageQuality={footwearPhotos || handbagPhotos}
-        campaignPhotos={campaignPhotos}
+      <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} productPhotography={false} preserveImageQuality={footwearPhotos || handbagPhotos}
+        campaignPhotos={campaignPhotos || beautyPhotos}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
@@ -972,7 +1041,7 @@ export default function ServiceSlugPage({
         </a>
         <a
           href={svc.hero.secondary.href}
-          className={footwearPhotos ? "btn-outline" : campaignPhotos || handbagPhotos ? "rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink lg:border-white/40 lg:text-white" : lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
+          className={footwearPhotos ? "btn-outline" : campaignPhotos || handbagPhotos || beautyPhotos ? "rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink lg:border-white/40 lg:text-white" : lightStudio ? "btn-outline" : "rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"}
         >
           {svc.hero.secondary.label}
         </a>
@@ -993,8 +1062,8 @@ export default function ServiceSlugPage({
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <ImageSlot
-                  src="/images/beauty-sunscreen-lifestyle.webp"
-                  alt="Model presenting a sunscreen product in a tropical setting"
+                  src="/images/ai-skincare-sunscreen-sunlit.webp"
+                  alt="AI beauty model with orange flower earrings holding a sunscreen tube beside her shoulder"
                   label="Sunscreen lifestyle photography"
                   className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
                   imageClassName="object-contain p-3 sm:p-4"
@@ -1004,8 +1073,8 @@ export default function ServiceSlugPage({
               </div>
               <div>
                 <ImageSlot
-                  src="/images/beauty-sunscreen-detail.webp"
-                  alt="Close-up beauty campaign image with a model presenting sunscreen"
+                  src="/images/ai-skincare-sunscreen-portrait.webp"
+                  alt="AI skincare model holding a yellow sunscreen tube with her face tilted toward sunlight"
                   label="Skincare campaign photography"
                   className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
                   imageClassName="object-contain p-3 sm:p-4"
