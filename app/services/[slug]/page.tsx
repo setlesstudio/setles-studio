@@ -756,7 +756,7 @@ const services: Record<string, ServiceData> = {
   "hero": {
     "eyebrow": "AI BEAUTY & SKINCARE PHOTOGRAPHY",
     "titlePrefix": "AI Product Photography",
-    "titleHighlight": "for Beauty & Skincare Brands",
+    "titleHighlight": "for Beauty and Skincare Brands",
     "subtitle": "Turn your product photos into realistic skincare visuals. We create studio images, on-model photography and lifestyle campaigns for beauty brands, online stores and product launches.",
     "image": "/images/ai-skincare-sunscreen-banner.webp",
     "imageAlt": "AI beauty model holding a yellow Solaris sunscreen tube among tropical palm leaves",
@@ -785,7 +785,7 @@ const services: Record<string, ServiceData> = {
     "titleSuffix": "Built Around Your Brand",
     "paragraphs": [
       "SetlesStudio creates AI product photography for beauty and skincare brands using your existing product photos and creative brief. From a clean product listing to a sunlit campaign, we plan the setting, model and composition around the product you want shoppers to notice.",
-      "Create a coordinated image set for serums, moisturisers, cleansers, sunscreen and cosmetics. Use product-focused images on ecommerce pages, model portraits for launches and lifestyle visuals for website banners and social media.",
+      "Create a coordinated image set for serums, moisturisers, cleansers, sunscreen, cosmetics and perfume. Use product-focused images on ecommerce pages, model portraits for launches and lifestyle visuals for website banners and social media.",
       "Our process combines AI image creation with editing and review. Clear packaging references help us assess shape, colour, logos and labels, while your brand guidelines guide the overall style."
     ]
   },
@@ -809,7 +809,7 @@ const services: Record<string, ServiceData> = {
         "number": "03",
         "icon": Camera,
         "title": "Lifestyle Campaigns",
-        "description": "Build a setting around your product, from tropical sun care to everyday skincare routines."
+        "description": "Build a setting around your product, from tropical sun care to floral perfume campaigns and everyday skincare routines."
       },
       {
         "number": "04",
@@ -861,7 +861,7 @@ const services: Record<string, ServiceData> = {
       "title": "Plan Images for Ecommerce, Launches and Ads",
       "paragraphs": [
         "A product page needs clear packaging views. A launch campaign may need model portraits, lifestyle scenes and a wide website banner. Sharing the intended use helps us plan useful compositions from the start.",
-        "These sunscreen examples show a consistent visual direction across different poses. They illustrate creative presentation, rather than measured product performance or skincare results."
+        "The sunscreen and perfume examples show how product references can inform coordinated model portraits, packaging close-ups and styled campaign scenes. They illustrate creative presentation, rather than measured product performance or skincare results."
       ]
     }
   ],
@@ -885,7 +885,7 @@ const services: Record<string, ServiceData> = {
     },
     {
       "q": "Which beauty products can you photograph with AI?",
-      "a": "Projects can include sunscreen, serums, moisturisers, cleansers, face creams and cosmetics. Share your product range so we can review packaging details and recommend suitable compositions for each item."
+      "a": "Projects can include sunscreen, serums, moisturisers, cleansers, face creams, cosmetics and fragrances. Share your product range so we can review packaging details and recommend suitable compositions for each item."
     },
     {
       "q": "Can AI models hold my sunscreen or skincare product?",
@@ -981,6 +981,74 @@ export async function generateMetadata({
   };
 }
 
+const beautyGallery = [
+  {
+    "src": "/images/skincare-sunscreen-product-reference.webp",
+    "alt": "Solaris sunscreen tube on a clean white background",
+    "caption": "Sunscreen product reference"
+  },
+  {
+    "src": "/images/ai-skincare-sunscreen-model.webp",
+    "alt": "AI model in an orange floral dress holding Solaris sunscreen beside her face among palm leaves",
+    "caption": "Sunscreen with model"
+  },
+  {
+    "src": "/images/ai-skincare-sunscreen-sunlit.webp",
+    "alt": "AI model with orange flower earrings holding a yellow sunscreen tube at her shoulder in sunlight",
+    "caption": "Sunlit skincare campaign"
+  },
+  {
+    "src": "/images/ai-skincare-sunscreen-portrait.webp",
+    "alt": "AI model holding sunscreen with her face tilted toward the sun against tropical greenery",
+    "caption": "Sunscreen lifestyle portrait"
+  },
+  {
+    "src": "/images/beauty-perfume-product-reference.webp",
+    "alt": "Aetherea Mystic Amber perfume bottle with a black cap on a white background",
+    "caption": "Perfume product reference"
+  },
+  {
+    "src": "/images/ai-beauty-perfume-model-cheek.webp",
+    "alt": "AI model in a burgundy coat holding Mystic Amber perfume beside her cheek",
+    "caption": "Perfume beauty portrait"
+  },
+  {
+    "src": "/images/ai-beauty-perfume-model-front.webp",
+    "alt": "Front-facing AI model holding an amber perfume bottle against a white studio background",
+    "caption": "Studio fragrance portrait"
+  },
+  {
+    "src": "/images/ai-perfume-amber-shadow-campaign.webp",
+    "alt": "Mystic Amber perfume bottle surrounded by dark botanical shadows on an amber background",
+    "caption": "Amber shadow campaign"
+  },
+  {
+    "src": "/images/ai-beauty-perfume-model-studio.webp",
+    "alt": "AI model in a burgundy jacket presenting a perfume bottle with both hands",
+    "caption": "On-model perfume photography"
+  },
+  {
+    "src": "/images/ai-beauty-perfume-model-profile.webp",
+    "alt": "Side profile of an AI beauty model holding Mystic Amber perfume near her face",
+    "caption": "Fragrance profile portrait"
+  },
+  {
+    "src": "/images/ai-perfume-lily-product-campaign.webp",
+    "alt": "Amber perfume bottle on a pedestal surrounded by white lilies and golden mist",
+    "caption": "Floral perfume campaign"
+  },
+  {
+    "src": "/images/ai-perfume-fashion-campaign.webp",
+    "alt": "AI model wearing sunglasses behind an oversized perfume bottle in an orange studio set",
+    "caption": "Creative fragrance campaign"
+  },
+  {
+    "src": "/images/ai-perfume-bottle-hands-detail.webp",
+    "alt": "Hands with burgundy nails holding an amber perfume bottle against a white background",
+    "caption": "Perfume packaging detail"
+  }
+];
+
 export default function ServiceSlugPage({
   params,
 }: {
@@ -1005,7 +1073,7 @@ export default function ServiceSlugPage({
         "@context": "https://schema.org",
         "@type": "Service",
         name: svc.hero.eyebrow,
-        serviceType: beautyPhotos ? "AI Product Photography for Beauty & Skincare Brands" : svc.hero.eyebrow,
+        serviceType: beautyPhotos ? "AI Product Photography for Beauty and Skincare Brands" : svc.hero.eyebrow,
         description: svc.meta.description,
         url: `${site.url}/services/${params.slug}`,
         provider: { "@id": `${site.url}/#organization` },
@@ -1048,46 +1116,28 @@ export default function ServiceSlugPage({
       </PageHero>
 
       {beautyPhotos && (
-        <section className="container-site py-10">
-          <Reveal>
-            <div className="mb-8 max-w-3xl">
-              <p className="eyebrow">Skincare and sun care</p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">
-                Fresh, product-led skincare imagery
-              </h2>
-              <p className="mt-4 leading-relaxed text-ink-soft">
-                Build a visual story around your skincare and sunscreen range, with clear product presentation and natural lifestyle styling.
-              </p>
+        <section id="beauty-gallery" className="container-site py-10">
+          <div>
+            <div className="mb-6 max-w-3xl">
+              <p className="eyebrow">Beauty, skincare and fragrance</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-ink">From product photos to brand campaigns</h2>
+              <p className="mt-3 leading-relaxed text-ink-soft">Explore sunscreen product photography, AI model portraits and perfume campaign images. Start with a clear product reference, then build a coordinated collection of studio and lifestyle visuals.</p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <ImageSlot
-                  src="/images/ai-skincare-sunscreen-sunlit.webp"
-                  alt="AI beauty model with orange flower earrings holding a sunscreen tube beside her shoulder"
-                  label="Sunscreen lifestyle photography"
-                  className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
-                  imageClassName="object-contain p-3 sm:p-4"
-                />
-                <h3 className="mt-4 font-display text-xl font-semibold">On-model sun care visuals</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">Lifestyle compositions that bring the product into a natural, campaign-ready setting.</p>
-              </div>
-              <div>
-                <ImageSlot
-                  src="/images/ai-skincare-sunscreen-portrait.webp"
-                  alt="AI skincare model holding a yellow sunscreen tube with her face tilted toward sunlight"
-                  label="Skincare campaign photography"
-                  className="aspect-[4/5] rounded-4xl bg-[#f7f7f5] ring-1 ring-ink/10"
-                  imageClassName="object-contain p-3 sm:p-4"
-                />
-                <h3 className="mt-4 font-display text-xl font-semibold">Coordinated campaign angles</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">Create complementary views for product pages, social campaigns and collection launches.</p>
-              </div>
+            <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+              {beautyGallery.map((photo) => (
+                <figure key={photo.src}>
+                  <ImageSlot src={photo.src} alt={photo.alt} label={photo.caption}
+                    className="aspect-[3/4] rounded-xl bg-[#f7f7f5] ring-1 ring-ink/10"
+                    imageClassName="object-contain" sizes="(min-width: 768px) 250px, 46vw" quality={80} />
+                  <figcaption className="mt-2 text-xs leading-relaxed text-ink-soft">{photo.caption}</figcaption>
+                </figure>
+              ))}
             </div>
-          </Reveal>
+          </div>
         </section>
       )}
 
-      {hasBeforeAfter && <ServiceBeforeAfter compactProduct={handbagPhotos} preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos || beautyPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
+      {hasBeforeAfter && !beautyPhotos && <ServiceBeforeAfter compactProduct={handbagPhotos} preserveImageQuality={footwearPhotos || handbagPhotos} campaignFrames={campaignPhotos} containedPhotos={lifestylePhotos || campaignPhotos || footwearPhotos || handbagPhotos || beautyPhotos} lightStudio={lightStudio} {...svc.beforeAfter} />}
       
       <section className="container-site py-8">
         <Reveal>
@@ -1144,5 +1194,7 @@ export default function ServiceSlugPage({
     </>
   );
 }
+
+
 
 
