@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
 
 type Category = "All projects" | "Fashion" | "Handbags" | "Footwear" | "Activewear" | "Lifestyle" | "Campaigns" | "Beauty & skincare";
@@ -17,7 +17,7 @@ type GalleryImage = {
 type Collection = {
   id: string;
   title: string;
-  category: Exclude<Category, "All projects" | "Beauty & skincare">;
+  category: Exclude<Category, "All projects">;
   summary: string;
   service: string;
   href: string;
@@ -25,6 +25,120 @@ type Collection = {
 };
 
 const collections: Collection[] = [
+{
+  "id": "beauty-skincare",
+  "title": "AI Product Photography for Beauty and Skincare Brands",
+  "category": "Beauty & skincare",
+  "summary": "Sunscreen product references, model portraits and perfume campaigns, arranged in the same order as our beauty and skincare service gallery.",
+  "service": "Explore beauty and skincare photography",
+  "href": "/services/ai-beauty-skincare-photography",
+  "images": [
+    {
+      "src": "/images/skincare-sunscreen-product-reference.webp",
+      "alt": "Solaris sunscreen tube on a clean white background",
+      "caption": "Sunscreen product reference",
+      "role": "Original product",
+      "width": 560,
+      "height": 560
+    },
+    {
+      "src": "/images/ai-skincare-sunscreen-model.webp",
+      "alt": "AI model in an orange floral dress holding Solaris sunscreen beside her face among palm leaves",
+      "caption": "Sunscreen with model",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-skincare-sunscreen-sunlit.webp",
+      "alt": "AI model with orange flower earrings holding a yellow sunscreen tube at her shoulder in sunlight",
+      "caption": "Sunlit skincare campaign",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-skincare-sunscreen-portrait.webp",
+      "alt": "AI model holding sunscreen with her face tilted toward the sun against tropical greenery",
+      "caption": "Sunscreen lifestyle portrait",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/beauty-perfume-product-reference.webp",
+      "alt": "Aetherea Mystic Amber perfume bottle with a black cap on a white background",
+      "caption": "Perfume product reference",
+      "role": "Original product",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-beauty-perfume-model-cheek.webp",
+      "alt": "AI model in a burgundy coat holding Mystic Amber perfume beside her cheek",
+      "caption": "Perfume beauty portrait",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-beauty-perfume-model-front.webp",
+      "alt": "Front-facing AI model holding an amber perfume bottle against a white studio background",
+      "caption": "Studio fragrance portrait",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-perfume-amber-shadow-campaign.webp",
+      "alt": "Mystic Amber perfume bottle surrounded by dark botanical shadows on an amber background",
+      "caption": "Amber shadow campaign",
+      "role": "AI lifestyle result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-beauty-perfume-model-studio.webp",
+      "alt": "AI model in a burgundy jacket presenting a perfume bottle with both hands",
+      "caption": "On-model perfume photography",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-beauty-perfume-model-profile.webp",
+      "alt": "Side profile of an AI beauty model holding Mystic Amber perfume near her face",
+      "caption": "Fragrance profile portrait",
+      "role": "AI model result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-perfume-lily-product-campaign.webp",
+      "alt": "Amber perfume bottle on a pedestal surrounded by white lilies and golden mist",
+      "caption": "Floral perfume campaign",
+      "role": "AI lifestyle result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-perfume-fashion-campaign.webp",
+      "alt": "AI model wearing sunglasses behind an oversized perfume bottle in an orange studio set",
+      "caption": "Creative fragrance campaign",
+      "role": "AI lifestyle result",
+      "width": 560,
+      "height": 750
+    },
+    {
+      "src": "/images/ai-perfume-bottle-hands-detail.webp",
+      "alt": "Hands with burgundy nails holding an amber perfume bottle against a white background",
+      "caption": "Perfume packaging detail",
+      "role": "AI lifestyle result",
+      "width": 560,
+      "height": 750
+    }
+  ]
+},
   {
     id: "coral-tote",
     title: "Coral tote, reimagined for a fashion campaign",
@@ -110,6 +224,21 @@ const collections: Collection[] = [
 const filters: Category[] = ["All projects", "Fashion", "Handbags", "Footwear", "Activewear", "Lifestyle", "Campaigns", "Beauty & skincare"];
 
 function ProjectGallery({ images, projectId }: { images: GalleryImage[]; projectId: string }) {
+  if (projectId === "beauty-skincare") {
+    return (
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-4" data-beauty-gallery>
+        {images.map((image) => (
+          <figure key={image.src}>
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl bg-[#f7f7f5] ring-1 ring-ink/10">
+              <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 250px, 46vw" quality={80} loading="lazy" className="object-contain" />
+            </div>
+            <figcaption className="mt-2 text-xs leading-relaxed text-ink-soft">{image.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="columns-1 gap-4 sm:columns-2 xl:columns-3">
       {images.map((image, index) => (
@@ -163,19 +292,6 @@ export default function PortfolioGallery() {
         </div>
       </div>
 
-      {active === "Beauty & skincare" ? (
-        <section className="mx-auto flex max-w-5xl flex-col gap-6 rounded-3xl border border-ink/10 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-9">
-          <div className="flex items-start gap-4">
-            <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#f4eee7] text-[#8a624b]"><Sparkles size={22} /></div>
-            <div>
-              <p className="eyebrow">New service</p>
-              <h3 className="mt-1 font-display text-xl font-semibold sm:text-2xl">AI beauty & skincare product photography</h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">Product-led imagery for skincare, sunscreen, serums and cosmetics. Share your packaging and creative direction to discuss a tailored visual set.</p>
-            </div>
-          </div>
-          <a href="/contact" className="btn-primary inline-flex shrink-0 items-center justify-center gap-2">Discuss a beauty project <ArrowUpRight size={16} /></a>
-        </section>
-      ) : (
         <div className="space-y-10">
           {visible.map((collection, index) => (
             <motion.section
@@ -204,7 +320,7 @@ export default function PortfolioGallery() {
             </motion.section>
           ))}
         </div>
-      )}
     </div>
   );
 }
+
