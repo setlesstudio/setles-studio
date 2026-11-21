@@ -30,7 +30,7 @@ const SERVICE_OPTIONS = [
   "Lifestyle Campaigns",
   "Editorial Photography",
   "Footwear Photography",
-  "UGC Video Production",
+  "AI Fashion Ads and UGC Videos",
   "AI Influencer/Models",
   "Social Media Ad Creatives",
 ];
