@@ -208,8 +208,8 @@ export default function HomePage() {
               <Reveal key={s.id} delay={(i % 2) * 0.08}>
                 <article className="card group relative flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10">
                   {s.video ? (
-                    <div className="relative z-10 aspect-[9/16] w-[32%] max-w-48 shrink-0 self-center overflow-hidden rounded-2xl bg-ink">
-                      <ServiceFilm src={s.video} poster={s.image} title={s.title} />
+                    <div className="relative z-10 hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block [&_img]:object-cover">
+                      <div className="absolute inset-0"><ServiceFilm src={s.video} poster={s.image} title={s.title} /></div>
                     </div>
                   ) : (
                     <ImageSlot
