@@ -1,0 +1,48 @@
+name: Check published fashion ad players
+on:
+  push:
+    branches: [check-four-ad-players]
+permissions: {}
+jobs:
+  playback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save playwright-core@1.55.0
+      - name: Play every ad on desktop and mobile
+        run: |
+          node --input-type=module <<'JS'
+          import { chromium } from 'playwright-core';
+          import assert from 'node:assert/strict';
+          const url = 'https://www.setlesstudio.com/services/realistic-ai-video-ads-ugc';
+          const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome', args:['--no-sandbox','--autoplay-policy=no-user-gesture-required']});
+          try {
+            for (const width of [390, 1366]) {
+              const page = await browser.newPage({viewport:{width,height:844},isMobile:width===390,hasTouch:width===390});
+              let mediaRequests = 0;
+              page.on('request', r=>{if(r.url().includes('/videos/fashion-ads/') && r.url().includes('.mp4')) mediaRequests++;});
+              for(let attempt=0; attempt<24; attempt++){
+                await page.goto(url+'?verify=four-ads-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.locator('#video-examples figure').count()===4) break;
+                await page.waitForTimeout(5000);
+              }
+              const cards=page.locator('#video-examples figure');
+              assert.equal(await cards.count(),4);
+              assert.equal(mediaRequests,0);
+              for(let i=0;i<4;i++){
+                const card=cards.nth(i);
+                await card.scrollIntoViewIfNeeded();
+                await card.locator('img').evaluate(img=>img.decode());
+                await card.getByRole('button').click();
+                await page.waitForFunction(()=>{const v=document.querySelector('#video-examples video');return v && v.currentTime>0.1 && v.videoWidth>0;},null,{timeout:20000});
+                assert.equal(await page.locator('#video-examples video').count(),1);
+                console.log(width,i+1,await card.locator('video').evaluate(v=>[v.currentSrc,v.videoWidth,v.videoHeight,v.duration]));
+              }
+              for(const name of ['Get a Video Quote','Send My Product Photo']) assert.match(await page.getByRole('link',{name,exact:true}).getAttribute('href'),/^https:\/\/wa\.me\/923017281412/);
+              await page.close();
+            }
+          } finally {await browser.close();}
+          JS
