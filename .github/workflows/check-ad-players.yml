@@ -22,80 +22,39 @@ jobs:
           try {
             for (const width of [390, 1366]) {
               const page = await browser.newPage({viewport:{width,height:844},isMobile:width===390,hasTouch:width===390});
-              let mediaRequests = 0;
-              page.on('request', r=>{if(r.url().includes('/videos/fashion-ads/') && r.url().includes('.mp4')) mediaRequests++;});
-              for(let attempt=0; attempt<48; attempt++){
-                await page.goto(url+'?verify=full-portrait-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.locator('#video-examples img[src="/videos/fashion-ads/ad-1.webp"]').count()===1) break;
-                await page.waitForTimeout(5000);
-              }
-              const cards=page.locator('#video-examples figure');
-              assert.equal(await cards.count(),4);
-              assert.equal(mediaRequests,0);
-              const hero=page.locator('section').filter({has:page.locator('h1')}).first();
-              assert.equal(await hero.locator('img,video,picture').count(),0);
-              assert.equal(await hero.evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(242, 106, 27)');
-              const products=page.locator('section').filter({has:page.getByRole('heading',{name:'Choose your video format.'})}).locator('article');
-              assert.equal(await products.count(),6);
-              const filmTops=await cards.evaluateAll(els=>new Set(els.map(e=>Math.round(e.getBoundingClientRect().top))).size);
-              assert.equal(filmTops,1);
-              const cardRows=await products.evaluateAll(els=>new Set(els.map(e=>Math.round(e.getBoundingClientRect().top))).size);
-              assert.equal(cardRows,width===390?3:1);
-              assert(await products.evaluateAll(els=>els.every(e=>getComputedStyle(e).backgroundColor==='rgb(255, 255, 255)')));
-              assert.equal(await page.locator('h1').count(),1);
-              assert((await page.title()).includes('AI Fashion Ads and UGC Videos'));
-              const questions=page.locator('details').filter({has:page.locator('summary')});
-              assert.equal(await page.locator('section:has(h2:text("ad FAQs.")) details').count(),9);
-              const faq=page.locator('summary').filter({hasText:'Where is SetlesStudio based'});
-              await faq.click();
-              assert(await page.getByText('SetlesStudio is based in Lahore, Pakistan.',{exact:false}).first().isVisible());
-              assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
-              const schema=await page.locator('script[type="application/ld+json"]').allTextContents();
-              assert(schema.some(x=>JSON.parse(x)['@type']==='FAQPage' && JSON.parse(x).mainEntity.length===9));
-              for(let i=0;i<4;i++){
-                const card=cards.nth(i);
-                await card.scrollIntoViewIfNeeded();
-                await card.locator('img').evaluate(img=>img.decode());
-                assert(await card.locator('img').evaluate(img=>img.naturalHeight>img.naturalWidth && getComputedStyle(img).objectFit==='contain'));
-                await card.getByRole('button').click();
-                await page.waitForFunction(()=>{const v=document.querySelector('#video-examples video');return v && v.currentTime>0.1 && v.videoWidth>0;},null,{timeout:20000});
-                assert.equal(await page.locator('#video-examples video').count(),1);
-                assert(await card.locator('video').evaluate(v=>v.videoHeight>v.videoWidth && Math.abs(v.clientWidth/v.clientHeight-v.videoWidth/v.videoHeight)<0.01 && getComputedStyle(v).objectFit==='contain' && !v.currentSrc.includes('/square/')));
-                console.log(width,i+1,await card.locator('video').evaluate(v=>[v.currentSrc,v.videoWidth,v.videoHeight,v.duration]));
-              }
-              for(const name of ['Get a video quote','Send my product photo']) assert.match(await page.getByRole('link',{name,exact:true}).getAttribute('href'),/^https:\/\/wa\.me\/923017281412/);
-              const title='AI Fashion Ads and UGC Videos';
-              const sample='Play '+title+' sample';
               for(let attempt=0;attempt<48;attempt++){
-                await page.goto('https://www.setlesstudio.com/?verify=matching-slot-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.locator('article div.z-10.w-32').count()) break;
+                await page.goto('https://www.setlesstudio.com/?verify=glass-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.locator('form[aria-labelledby="project-brief-heading"]').count()) break;
                 await page.waitForTimeout(5000);
               }
-              const tile=page.locator('article').filter({has:page.getByRole('heading',{name:title,exact:true})});
-              assert.equal(await tile.count(),1);
-              assert.equal(await tile.locator('video').count(),0);
-              const slot=tile.locator('div.z-10.w-32');
-              const photoSlots=page.locator('article div.w-32:not(.z-10)').filter({has:page.locator('img')});
-              if(width===390){
-                assert(await slot.isHidden() && await photoSlots.first().isHidden());
-              } else {
-                const sameRow=await slot.evaluate(el=>{
-                  const row=el.closest('article').getBoundingClientRect().top;
-                  const pic=[...document.querySelectorAll('article div.w-32:not(.z-10)')].find(p=>Math.abs(p.closest('article').getBoundingClientRect().top-row)<1);
-                  const a=el.getBoundingClientRect(), b=pic.getBoundingClientRect();
-                  return a.width===b.width && Math.abs(a.height-b.height)<1 && a.top===b.top;
-                });
-                assert(sameRow);
-                await tile.getByRole('button',{name:sample}).click();
-              await page.waitForFunction(()=>{const v=document.querySelector('article video');return v && v.currentTime>0.1 && v.videoHeight>v.videoWidth;});
-              assert((await tile.locator('video').getAttribute('src')).endsWith('/ad-1.mp4'));
-              }
-              await tile.getByRole('link',{name:title}).click();
-              await page.waitForURL('**/services/realistic-ai-video-ads-ugc');
-              for(const route of ['/services','/portfolio','/pricing']){
-                await page.goto('https://www.setlesstudio.com'+route,{waitUntil:'domcontentloaded'});
-                assert(await page.locator('main').getByText(title,{exact:true}).count()>0,route);
-              }
+              const form=page.locator('form[aria-labelledby="project-brief-heading"]');
+              assert.equal(await form.count(),1);
+              assert(await form.evaluate(el=>el.getBoundingClientRect().right<=innerWidth && getComputedStyle(el).backdropFilter.includes('blur')));
+              const hero=page.locator('section').filter({has:form}).first();
+              assert(!(await hero.innerText()).includes('We create realistic'));
+              const compare=page.locator('section').filter({has:page.getByRole('heading',{name:'From product photo to campaign ready content'})}).first();
+              const group=compare.locator('div.grid').first();
+              const box=await group.boundingBox();
+              assert(box.width<=1161 && box.width<width*.92);
+              assert.equal(await group.locator('img').count(),3);
+              let requests=0;
+              await page.route('**/api/contact',async route=>{
+                requests++;
+                const data=route.request().postDataJSON();
+                assert.equal(data.message,'Test launch');
+                assert.equal(data.service,'Homepage project brief');
+                await route.fulfill({status:requests===1?500:200,json:requests===1?{error:'Test error'}:{success:true}});
+              });
+              await form.getByRole('button').click();
+              assert.equal(requests,0);
+              await form.getByLabel('Name',{exact:true}).fill('Test');
+              await form.getByLabel('Email',{exact:true}).fill('test@example.com');
+              await form.getByLabel('What are you launching?').fill('Test launch');
+              await form.getByRole('button').click();
+              await form.getByText(/couldn’t be sent/).waitFor();
+              await form.getByRole('button').click();
+              await form.getByText(/Your brief has been sent/).waitFor();
+              assert.equal(requests,2);
               await page.close();
             }
           } finally {await browser.close();}
