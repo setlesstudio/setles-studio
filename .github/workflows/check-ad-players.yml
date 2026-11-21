@@ -25,8 +25,8 @@ jobs:
               let mediaRequests = 0;
               page.on('request', r=>{if(r.url().includes('/videos/fashion-ads/') && r.url().includes('.mp4')) mediaRequests++;});
               for(let attempt=0; attempt<48; attempt++){
-                await page.goto(url+'?verify=orange-studio-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.getByRole('heading',{name:'Choose your video format.'}).count()===1) break;
+                await page.goto(url+'?verify=fashion-ugc-heading-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.getByRole('heading',{name:'AI Fashion Ads and UGC Videos',exact:true}).count()===1) break;
                 await page.waitForTimeout(5000);
               }
               const cards=page.locator('#video-examples figure');
@@ -43,6 +43,7 @@ jobs:
               assert.equal(cardRows,width===390?3:1);
               assert(await products.evaluateAll(els=>els.every(e=>getComputedStyle(e).backgroundColor==='rgb(255, 255, 255)')));
               assert.equal(await page.locator('h1').count(),1);
+              assert((await page.title()).includes('AI Fashion Ads and UGC Videos'));
               const questions=page.locator('details').filter({has:page.locator('summary')});
               assert.equal(await page.locator('section:has(h2:text("ad FAQs.")) details').count(),9);
               const faq=page.locator('summary').filter({hasText:'Where is SetlesStudio based'});
