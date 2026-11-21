@@ -67,16 +67,29 @@ jobs:
               const title='AI Fashion Ads and UGC Videos';
               const sample='Play '+title+' sample';
               for(let attempt=0;attempt<48;attempt++){
-                await page.goto('https://www.setlesstudio.com/?verify=listing-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.getByRole('button',{name:sample}).count()) break;
+                await page.goto('https://www.setlesstudio.com/?verify=matching-slot-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.locator('article div.z-10.w-32').count()) break;
                 await page.waitForTimeout(5000);
               }
               const tile=page.locator('article').filter({has:page.getByRole('heading',{name:title,exact:true})});
               assert.equal(await tile.count(),1);
               assert.equal(await tile.locator('video').count(),0);
-              await tile.getByRole('button',{name:sample}).click();
+              const slot=tile.locator('div.z-10.w-32');
+              const photoSlots=page.locator('article div.w-32:not(.z-10)').filter({has:page.locator('img')});
+              if(width===390){
+                assert(await slot.isHidden() && await photoSlots.first().isHidden());
+              } else {
+                const sameRow=await slot.evaluate(el=>{
+                  const row=el.closest('article').getBoundingClientRect().top;
+                  const pic=[...document.querySelectorAll('article div.w-32:not(.z-10)')].find(p=>Math.abs(p.closest('article').getBoundingClientRect().top-row)<1);
+                  const a=el.getBoundingClientRect(), b=pic.getBoundingClientRect();
+                  return a.width===b.width && Math.abs(a.height-b.height)<1 && a.top===b.top;
+                });
+                assert(sameRow);
+                await tile.getByRole('button',{name:sample}).click();
               await page.waitForFunction(()=>{const v=document.querySelector('article video');return v && v.currentTime>0.1 && v.videoHeight>v.videoWidth;});
               assert((await tile.locator('video').getAttribute('src')).endsWith('/ad-1.mp4'));
+              }
               await tile.getByRole('link',{name:title}).click();
               await page.waitForURL('**/services/realistic-ai-video-ads-ugc');
               for(const route of ['/services','/portfolio','/pricing']){
