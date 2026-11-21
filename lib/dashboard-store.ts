@@ -358,7 +358,10 @@ export function getStoredServices(): ServiceTile[] {
   try {
     const saved: ServiceTile[] = JSON.parse(data);
     if (!Array.isArray(saved)) return defaults;
-    return saved.map(card => {
+    const updated = saved.map(card => {
+      if (card.id === "ai-beauty-skincare-photography") {
+        return defaults.find(service => service.id === card.id) ?? card;
+      }
       const previous = previousServiceCopy[card.id];
       const current = defaults.find(service => service.id === card.id);
       if (!previous || !current) return card;
@@ -369,6 +372,10 @@ export function getStoredServices(): ServiceTile[] {
         short: card.short === previous.short ? current.short : card.short,
       };
     });
+    const beauty = defaults.find(service => service.id === "ai-beauty-skincare-photography");
+    const ordered = updated.filter(card => card.id !== beauty?.id);
+    if (beauty) ordered.splice(Math.min(1, ordered.length), 0, beauty);
+    return ordered.map((card, index) => ({ ...card, number: String(index + 1).padStart(2, "0") }));
   } catch {
     return defaults;
   }
@@ -515,3 +522,4 @@ export async function updateStoredPassword(enteredNew: string) {
   const newHash = await hashPassword(enteredNew, newSalt);
   saveStoredCredentials(newHash, newSalt);
 }
+

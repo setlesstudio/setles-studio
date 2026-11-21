@@ -25,6 +25,10 @@ import { homeHero, getStoredPages, getStoredServices, getStoredValueProps } from
 import { parseHeroTitle } from "@/components/DashboardComponents";
 
 const homeServiceImages: Record<string, { src: string; alt: string }> = {
+  "ai-beauty-skincare-photography": {
+    src: "/images/ai-skincare-sunscreen-model.webp",
+    alt: "AI beauty model holding Solaris sunscreen among tropical palm leaves",
+  },
   "realistic-ai-studio-photography": {
     "src": "/images/ai-fashion-burgundy-outfit.webp",
     "alt": "AI fashion model wearing a burgundy scalloped top and matching trousers"
@@ -195,8 +199,8 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
-            title="AI Fashion Photography and Video Services"
-            text="Choose a service for your next shoot, from on-model apparel photos for your catalog to short video ads for a collection launch."
+            title="AI Fashion, Beauty and Video Services"
+            text="Explore our seven services, from fashion and beauty product photography to skincare campaigns and short video ads."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {currentServices.map((s, i) => (
@@ -301,3 +305,4 @@ export default function HomePage() {
     </>
   );
 }
+

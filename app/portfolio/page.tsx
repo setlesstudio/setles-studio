@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import CTABand from "@/components/CTABand";
 import SectionHeading from "@/components/SectionHeading";
@@ -10,7 +9,7 @@ import { site } from "@/lib/data";
 const faqs = [
   {
     q: "What can I see in the SetlesStudio AI photography portfolio?",
-    a: "The portfolio presents selected AI-assisted fashion, handbag, footwear, activewear, lifestyle and campaign imagery. Collections begin with the original product or outfit reference, followed by model and lifestyle results.",
+    a: "Choose a service banner to open its dedicated page. Each photography page contains relevant product, model or campaign examples, and the video ads page includes video examples.",
   },
   {
     q: "Can SetlesStudio turn my flat-lay product photo into an AI model photo?",
@@ -46,7 +45,7 @@ const faqSchema = {
 
 export const metadata: Metadata = {
   title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-  description: "Explore SetlesStudio AI fashion, handbag, footwear, activewear, lifestyle and campaign photography. See original product references paired with AI model results for ecommerce brands.",
+  description: "Browse AI fashion, beauty, skincare, footwear and handbag photography. Select a service banner to view its image gallery or video examples.",
   alternates: { canonical: "https://www.setlesstudio.com/portfolio" },
   keywords: [
     "AI fashion photography portfolio",
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Explore curated original product references paired with AI model and lifestyle photography for ecommerce brands.",
+    description: "Explore our photography and video services. Select a banner to view the full gallery on its service page.",
     url: "https://www.setlesstudio.com/portfolio",
     siteName: "SetlesStudio",
     images: [{ url: "https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp", width: 2752, height: 1536, alt: "AI fashion model showcasing a coral tote bag in a lush lifestyle setting" }],
@@ -69,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Original product references paired with AI model and lifestyle photography for ecommerce brands.",
+    description: "Explore AI photography galleries and video examples by service.",
     images: ["https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp"],
   },
 };
@@ -77,46 +76,27 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="overflow-hidden bg-[#1e201b] pb-10 pt-24 text-white sm:pb-14 sm:pt-28">
+      <section className="bg-[#1e201b] pb-12 pt-28 text-white sm:pb-16 sm:pt-32">
         <div className="container-site">
-          <div className="grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
-            <div className="max-w-xl">
-              <p className="eyebrow text-white/65">Selected work · SetlesStudio</p>
-              <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl xl:text-[3.7rem]">
-                From product photo to <span className="text-[#d8b994]">brand-ready imagery</span>
-              </h1>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
-                Explore carefully curated AI-assisted fashion and product photography. See the original product first, then the matching model and lifestyle results.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/contact" className="btn-primary">Start Your Project</Link>
-                <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I viewed your portfolio and would like to discuss AI product photography for my brand.")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">Request a Free Sample</a>
-              </div>
-              <p className="mt-5 text-xs tracking-wide text-white/45">Fashion · Handbags · Footwear · Activewear · Lifestyle</p>
-            </div>
-            <div className="overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10">
-              <Image
-                src="/images/ai-handbag-lifestyle-banner.webp"
-                alt="Fashion model showcasing a coral tote bag in a lush tropical lifestyle setting"
-                width={2752}
-                height={1536}
-                priority
-                quality={88}
-                sizes="(min-width: 1024px) 62vw, 100vw"
-                className="block h-auto w-full"
-              />
+          <div className="max-w-4xl">
+            <p className="eyebrow text-white/65">Selected work · SetlesStudio</p>
+            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Explore our work,<br className="hidden sm:block" /> <span className="text-[#d8b994]">one service at a time.</span></h1>
+            <p className="mt-5 max-w-2xl leading-relaxed text-white/75">Choose a service below to see its full image gallery or video examples. From fashion and skincare to footwear and handbags, find the work that fits your brand.</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link href="/contact" className="btn-primary">Start Your Project</Link>
+              <a href="#portfolio-work" className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">Browse Service Galleries</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f4f1ec] py-12 sm:py-16">
+      <section id="portfolio-work" className="scroll-mt-24 bg-[#f4f1ec] py-12 sm:py-16">
         <div className="container-site">
-          <SectionHeading
-            eyebrow="Browse selected projects"
-            title="Original products. Elevated AI photography."
-            text="Every collection is arranged to show the starting product or outfit first, followed by the finished model and lifestyle imagery."
-          />
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow">Portfolio by service</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">Choose a service. View the gallery.</h2>
+            <p className="mt-4 text-ink-soft">Click any banner or View Gallery link to explore the related service page and its examples.</p>
+          </div>
           <div className="mt-8 sm:mt-10"><PortfolioGallery /></div>
           <div className="mt-10 grid gap-3 rounded-3xl border border-ink/10 bg-white p-5 sm:grid-cols-3 sm:p-7">
             <div><p className="text-sm font-semibold">01 · Share your product</p><p className="mt-1 text-sm leading-relaxed text-ink-soft">Send a clear product photo and the details that matter to your brand.</p></div>
@@ -136,10 +116,11 @@ export default function PortfolioPage() {
         text="Send us one clear product photo and tell us where you plan to use the images. We’ll review your brief and help you choose a suitable direction."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to request a free AI product photography sample for my brand.")}`, label: "Request a Free Sample" }}
         secondary={{ href: "/pricing", label: "Explore Pricing" }}
-        image="/images/portfolio-last-section-banner.jpeg"
+
       />
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
     </>
   );
 }
+

@@ -51,8 +51,22 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "lifestyle-realistic-ai-photography",
+    id: "ai-beauty-skincare-photography",
     number: "02",
+    title: "AI Product Photography for Beauty and Skincare Brands",
+    short: "Create polished product and on-model visuals for skincare, sunscreen, cosmetics and perfume collections.",
+    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, on-model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
+    image: "/images/ai-skincare-sunscreen-model.webp",
+    deliverables: [
+      "Product-led photography for skincare, sunscreen, cosmetics and fragrance",
+      "On-model beauty and lifestyle campaign visuals",
+      "Coordinated backgrounds, lighting and styling across collections",
+      "Ecommerce, website, social media and advertising-ready image formats",
+    ],
+  },
+  {
+    id: "lifestyle-realistic-ai-photography",
+    number: "03",
     title: "AI Lifestyle Fashion Photography",
     short:
       "Show your collection in everyday settings, from city streets to cafés. Use the images on your storefront, in social posts, or in ads.",
@@ -67,7 +81,7 @@ export const services: Service[] = [
   },
   {
     id: "luxury-fashion-ai-campaign",
-    number: "03",
+    number: "04",
     title: "AI Fashion Campaign Photography",
     short:
       "Build a collection launch around one editorial concept. Carry the same styling and lighting through your lookbook and campaign images.",
@@ -83,7 +97,7 @@ export const services: Service[] = [
   },
   {
     id: "footwear-realistic-ai-photography",
-    number: "04",
+    number: "05",
     title: "AI Footwear Photography for Ecommerce Brands",
     short:
       "Show sneakers, heels, or boots on foot and in close-up. Give shoppers a clear view of the silhouette, sole, materials, and stitching.",
@@ -98,7 +112,7 @@ export const services: Service[] = [
   },
   {
     id: "realistic-ai-video-ads-ugc",
-    number: "05",
+    number: "06",
     title: "AI Video Ads for Fashion Brands",
     short:
       "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
@@ -115,7 +129,7 @@ export const services: Service[] = [
   },
   {
     id: "bags-accessories-realistic-ai-photography",
-    number: "06",
+    number: "07",
     title: "AI Handbag Photography for Ecommerce Brands",
     short:
       "Show a handbag on the shoulder to convey scale, then use detail shots to highlight its texture, stitching, and hardware.",
@@ -456,3 +470,4 @@ export const team = [
   { name: "Javed", role: "Client Success Manager", image: "/images/team-client-success.jpg" },
   { name: "Azeem", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
 ]
+

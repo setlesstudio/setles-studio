@@ -1,35 +1,31 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Play } from "lucide-react";
 
-const clips = ["generation (3)", "generation (16)", "generation (53)", "hf_20261101_160947_503dfc19-9b3f-46b1-b7a2-5bff8f2d67ce"];
+const titles = [
+  "Burgundy handbag on a city doorstep",
+  "Graphic tee and gold-print skirt on the street",
+  "Burgundy coat and knee-high boots at the crosswalk",
+  "Black biker jacket in the studio",
+];
 
 export default function AdGallery() {
-  const [opened, setOpened] = useState<number[]>([]);
-  const [failed, setFailed] = useState<number[]>([]);
-  const stage = useRef<HTMLDivElement>(null);
-  return <div ref={stage} className="grid gap-5 sm:grid-cols-2">
-    {clips.map((name, index) => {
-      const label = `Fashion video ad ${index + 1}`;
-      const base = "/videos/fashion-ads/" + encodeURIComponent(name);
-      return <figure key={name} className="overflow-hidden rounded-2xl bg-cream">
-        <div className="relative grid aspect-[4/5] place-items-center bg-black">
-          {opened.includes(index) ? <video controls playsInline autoPlay preload="none" aria-label={label}
-            className="h-full w-full object-contain" src={base + ".mp4"} poster={base + ".webp"}
-            onError={() => setFailed(previous => [...previous, index])}
-            onPlay={event => {
-              const current = event.currentTarget;
-              stage.current?.querySelectorAll("video").forEach(video => { if (video !== current) video.pause(); });
-            }} /> :
-            <button type="button" onClick={() => setOpened(previous => [...previous, index])} aria-label={"Play " + label}
+  const [active, setActive] = useState<number | null>(null);
+  return <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+    {titles.map((title, index) => {
+      const base = "/videos/fashion-ads/ad-" + (index + 1);
+      return <figure key={base} className="overflow-hidden rounded-2xl bg-cream">
+        <div className="relative aspect-[9/16] bg-black">
+          {active === index ? <video className="h-full w-full object-contain" src={base + ".mp4"}
+            poster={base + ".webp"} controls autoPlay playsInline aria-label={title} /> :
+            <button type="button" aria-label={"Play " + title} onClick={() => setActive(index)}
               className="relative grid h-full w-full place-items-center">
-              <img alt="" loading="lazy" src={base + ".webp"} className="absolute inset-0 h-full w-full object-contain" />
+              <img loading="lazy" src={base + ".webp"} alt="" width={640} height={1138} className="absolute inset-0 h-full w-full object-contain" />
               <span className="relative grid h-14 w-14 place-items-center rounded-full bg-white text-black"><Play aria-hidden="true" /></span>
             </button>}
-          {failed.includes(index) && <p role="status" className="absolute rounded-lg bg-black px-4 py-2 text-white">This video could not load.</p>}
         </div>
-        <figcaption className="px-5 py-3 font-medium">{label}</figcaption>
+        <figcaption className="px-5 py-3 font-medium">{title}</figcaption>
       </figure>;
     })}
   </div>;
