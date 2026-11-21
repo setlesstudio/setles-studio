@@ -9,7 +9,7 @@ import {
   ChevronDown, Users, MapPin, TrendingUp, Layers, Star, Lightbulb, Coins, MonitorCheck,
   MessageSquare, Image as ImageIcon, ClipboardList, Download, Rocket,
 } from "lucide-react";
-import AdGallery from "@/components/AdGallery";
+import FashionAds from "@/components/FashionAds";
 import PageHero from "@/components/PageHero";
 import ServiceBeforeAfter from "@/components/ServiceBeforeAfter";
 import ServiceFeatures, { type FeatureItem } from "@/components/ServiceFeatures";
@@ -1064,29 +1064,7 @@ export default function ServiceSlugPage({
     return <>
       <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Video Ads for Fashion Brands", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
       <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Video Ads", path: "/services/" + params.slug}])} />
-      <section className="container-site pb-8 pt-16 sm:pt-24">
-        <h1 className="max-w-4xl font-display text-5xl font-bold text-ink sm:text-7xl">AI Video Ads <span className="text-brand">for Fashion Brands</span></h1>
-        <p className="mt-5 max-w-2xl text-lg text-ink-soft">Show shoppers how your outfit looks in motion. SetlesStudio turns product photos into short fashion ads, product demos, and UGC-style videos for social feeds and Shopify product pages.</p>
-        <div className="mt-7 flex flex-wrap gap-4"><a href={waHeroHref} className="btn-primary">Get a Video Quote</a><a href="#video-examples" className="btn-outline">Watch the Videos</a></div>
-      </section>
-      <section id="video-examples" className="container-site scroll-mt-24 py-8">
-        <h2 className="mb-6 font-display text-3xl font-bold">Watch Our AI Video Ads</h2>
-        <AdGallery />
-      </section>
-      <section className="container-site max-w-4xl py-12">
-        <h2 className="mb-6 font-display text-3xl font-bold">Frequently Asked Questions</h2>
-        {[
-          ["Can you turn my clothing photos into a video ad?", "Yes. Send a clear flat lay or product photo. Include close-ups of any print, embroidery, or fabric detail you want shoppers to see."],
-          ["What is a UGC-style AI video?", "It’s a brand-created ad presented like a social post. A virtual model can introduce an outfit, turn to show its fit, and draw attention to a design detail."],
-          ["Can I use the video on Instagram, TikTok, and Shopify?", "Yes. Tell us where you plan to publish it. A vertical edit suits Reels and TikTok. For Shopify, we can match the crop to your product-page layout."],
-          ["How do I get a quote?", "Send SetlesStudio your product photos, preferred video length, and intended platform. Include a reference ad if you have a particular style in mind."]
-        ].map(([q,a]) => <details key={q} className="border-b border-ink/20 py-4"><summary className="cursor-pointer font-semibold">{q}</summary><p className="mt-3 text-ink-soft">{a}</p></details>)}
-      </section>
-      <section className="bg-cream py-12"><div className="container-site">
-        <h2 className="font-display text-3xl font-bold">What would you like to show in motion?</h2>
-        <p className="my-4">Send us one product photo and tell us where the ad will run.</p>
-        <a href={waCtaHref} className="btn-primary">Send My Product Photo</a>
-      </div></section>
+      <FashionAds quote={waHeroHref} send={waCtaHref} />
     </>;
   }
   const handbagPhotos = params.slug === "bags-accessories-realistic-ai-photography";
