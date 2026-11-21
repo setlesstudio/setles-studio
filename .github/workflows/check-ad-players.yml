@@ -24,14 +24,23 @@ jobs:
               const page = await browser.newPage({viewport:{width,height:844},isMobile:width===390,hasTouch:width===390});
               let mediaRequests = 0;
               page.on('request', r=>{if(r.url().includes('/videos/fashion-ads/') && r.url().includes('.mp4')) mediaRequests++;});
-              for(let attempt=0; attempt<24; attempt++){
-                await page.goto(url+'?verify=four-ads-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.locator('#video-examples figure').count()===4) break;
+              for(let attempt=0; attempt<48; attempt++){
+                await page.goto(url+'?verify=square-portfolio-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.getByRole('heading',{name:'Fashion in motion.'}).count()===1) break;
                 await page.waitForTimeout(5000);
               }
               const cards=page.locator('#video-examples figure');
               assert.equal(await cards.count(),4);
               assert.equal(mediaRequests,0);
+              assert.equal(await page.locator('h1').count(),1);
+              const questions=page.locator('details').filter({has:page.locator('summary')});
+              assert.equal(await page.locator('section:has(h2:text("ad FAQs.")) details').count(),9);
+              const faq=page.getByText('Where is SetlesStudio based, and how do I brief you remotely?',{exact:true});
+              await faq.click();
+              assert(await page.getByText('SetlesStudio is based in Lahore, Pakistan.',{exact:false}).first().isVisible());
+              assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
+              const schema=await page.locator('script[type="application/ld+json"]').allTextContents();
+              assert(schema.some(x=>JSON.parse(x)['@type']==='FAQPage' && JSON.parse(x).mainEntity.length===9));
               for(let i=0;i<4;i++){
                 const card=cards.nth(i);
                 await card.scrollIntoViewIfNeeded();
@@ -39,9 +48,10 @@ jobs:
                 await card.getByRole('button').click();
                 await page.waitForFunction(()=>{const v=document.querySelector('#video-examples video');return v && v.currentTime>0.1 && v.videoWidth>0;},null,{timeout:20000});
                 assert.equal(await page.locator('#video-examples video').count(),1);
+                assert(await card.locator('video').evaluate(v=>v.videoWidth===v.videoHeight && Math.abs(v.clientHeight-v.clientWidth)<=1));
                 console.log(width,i+1,await card.locator('video').evaluate(v=>[v.currentSrc,v.videoWidth,v.videoHeight,v.duration]));
               }
-              for(const name of ['Get a Video Quote','Send My Product Photo']) assert.match(await page.getByRole('link',{name,exact:true}).getAttribute('href'),/^https:\/\/wa\.me\/923017281412/);
+              for(const name of ['Get a video quote','Send my product photo']) assert.match(await page.getByRole('link',{name,exact:true}).getAttribute('href'),/^https:\/\/wa\.me\/923017281412/);
               await page.close();
             }
           } finally {await browser.close();}
