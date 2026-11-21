@@ -35,7 +35,7 @@ jobs:
               assert.equal(await page.locator('h1').count(),1);
               const questions=page.locator('details').filter({has:page.locator('summary')});
               assert.equal(await page.locator('section:has(h2:text("ad FAQs.")) details').count(),9);
-              const faq=page.getByText('Where is SetlesStudio based, and how do I brief you remotely?',{exact:true});
+              const faq=page.locator('summary').filter({hasText:'Where is SetlesStudio based'});
               await faq.click();
               assert(await page.getByText('SetlesStudio is based in Lahore, Pakistan.',{exact:false}).first().isVisible());
               assert(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
