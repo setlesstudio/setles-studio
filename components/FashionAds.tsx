@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Clapperboard, Image as Photo, Layers } from "lucide-react";
+import { ArrowUpRight, Clapperboard, Image as Photo, Layers, ShoppingBag, Shirt, Smartphone } from "lucide-react";
 import StructuredData from "@/components/StructuredData";
 import AdGallery from "@/components/AdGallery";
 import styles from "./FashionAds.module.css";
@@ -16,9 +16,12 @@ const questions = [
 ];
 
 const services = [
-  {Icon: Clapperboard, title: "Campaign films", copy: "Build a collection launch around one look. A full outfit, a change of angle and a detail shot give the edit a beginning, middle and finish."},
-  {Icon: Photo, title: "Product demos", copy: "Bring the camera closer to the product. Show the clasp on a bag, the texture of a sleeve or the way a skirt moves as the model walks."},
-  {Icon: Layers, title: "UGC-style ads", copy: "Introduce a product in a conversational format. A try-on, styling tip or outfit reveal gives a short social ad a clear point of view."},
+  { Icon: Clapperboard, title: "Campaign films", copy: "Introduce a collection with a hero look, a setting and a final detail shot that ties the story together." },
+  { Icon: Shirt, title: "On-model styling", copy: "Turn a flat lay into a styled outfit. Show how the pieces pair and how the silhouette reads in motion." },
+  { Icon: ShoppingBag, title: "Product demos", copy: "Show the clasp opening, the strap in hand or the drape of a sleeve. Give shoppers a closer look." },
+  { Icon: Smartphone, title: "UGC-style ads", copy: "Introduce a product through a try-on, a styling tip or a quick outfit reveal made for a social feed." },
+  { Icon: Photo, title: "Storefront videos", copy: "Give a Shopify product page a short loop that complements its still photos and fits the gallery layout." },
+  { Icon: Layers, title: "Ad variations", copy: "Test a detail-first opening against a full-look reveal. Tailor the crop and pacing to each placement." },
 ];
 
 export default function FashionAds({quote, send}: {quote: string; send: string}) {
@@ -26,19 +29,17 @@ export default function FashionAds({quote, send}: {quote: string; send: string})
     <StructuredData data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:questions.map(([name,text])=>({"@type":"Question",name,acceptedAnswer:{"@type":"Answer",text}}))}} />
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
-        <p className={styles.kicker}>SetlesStudio / Motion portfolio</p>
         <h1>AI video ads<br/><em>for fashion brands.</em></h1>
-        <p className={styles.intro}>Turn a flat lay, a lookbook shot or a product close-up into a fashion film for your next launch, social ad or Shopify collection.</p>
-        <div className={styles.actions}><a className={styles.primary} href={quote}>Get a video quote <ArrowUpRight size={17}/></a><a className={styles.watch} href="#video-examples">Explore the films <ArrowDown size={15}/></a></div>
+        <p className={styles.intro}>Turn your product photos into campaign films, on-model demos and UGC-style ads for social feeds and Shopify stores.</p>
+        <div className={styles.actions}><a className={styles.primary} href={quote}>Get a video quote</a><a className={styles.watch} href="#video-examples">Watch the four films</a></div>
       </div>
-      <div className={styles.heroArt}><img width="640" height="1138" src="/videos/fashion-ads/ad-4.webp" alt="Model wearing a black biker jacket against a warm studio backdrop" fetchPriority="high" /><span>Studio editorial <i/> The biker jacket</span></div>
     </section>
     <section id="video-examples" className={styles.section}>
       <div className={styles.head}><div><p className={styles.label}>Selected work</p><h2>Fashion in motion.</h2></div><p>Four square films, from street styling to studio close-ups. Select a frame to play the edit.</p></div>
       <AdGallery />
     </section>
-    <section className={styles.dark}><div className={styles.section}>
-      <div className={styles.head}><div><p className={styles.label}>Production services</p><h2>Choose your ad style.</h2></div><p>Start with the job the video needs to do, whether that’s introducing a collection or showing one detail shoppers might miss.</p></div>
+    <section className={styles.serviceBand}><div className={styles.section}>
+      <div className={styles.head}><div><p className={styles.label}>Production services</p><h2>Choose your video format.</h2></div><p>Pick a format for your launch, your product page or your next round of ad testing.</p></div>
       <div className={styles.services}>{services.map(({Icon,title,copy})=><article key={title}><Icon size={28} strokeWidth={1.5}/><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </div></section>
     <section className={styles.section}><div className={styles.brief}>
