@@ -25,13 +25,23 @@ jobs:
               let mediaRequests = 0;
               page.on('request', r=>{if(r.url().includes('/videos/fashion-ads/') && r.url().includes('.mp4')) mediaRequests++;});
               for(let attempt=0; attempt<48; attempt++){
-                await page.goto(url+'?verify=square-portfolio-'+attempt,{waitUntil:'domcontentloaded'});
-                if(await page.getByRole('heading',{name:'Fashion in motion.'}).count()===1) break;
+                await page.goto(url+'?verify=orange-studio-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.getByRole('heading',{name:'Choose your video format.'}).count()===1) break;
                 await page.waitForTimeout(5000);
               }
               const cards=page.locator('#video-examples figure');
               assert.equal(await cards.count(),4);
               assert.equal(mediaRequests,0);
+              const hero=page.locator('section').filter({has:page.locator('h1')}).first();
+              assert.equal(await hero.locator('img,video,picture').count(),0);
+              assert.equal(await hero.evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(242, 106, 27)');
+              const products=page.locator('section').filter({has:page.getByRole('heading',{name:'Choose your video format.'})}).locator('article');
+              assert.equal(await products.count(),6);
+              const filmTops=await cards.evaluateAll(els=>new Set(els.map(e=>Math.round(e.getBoundingClientRect().top))).size);
+              assert.equal(filmTops,1);
+              const cardRows=await products.evaluateAll(els=>new Set(els.map(e=>Math.round(e.getBoundingClientRect().top))).size);
+              assert.equal(cardRows,width===390?3:1);
+              assert(await products.evaluateAll(els=>els.every(e=>getComputedStyle(e).backgroundColor==='rgb(255, 255, 255)')));
               assert.equal(await page.locator('h1').count(),1);
               const questions=page.locator('details').filter({has:page.locator('summary')});
               assert.equal(await page.locator('section:has(h2:text("ad FAQs.")) details').count(),9);
