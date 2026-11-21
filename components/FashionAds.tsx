@@ -35,7 +35,7 @@ export default function FashionAds({quote, send}: {quote: string; send: string})
       </div>
     </section>
     <section id="video-examples" className={styles.section}>
-      <div className={styles.head}><div><p className={styles.label}>Selected work</p><h2>Fashion in motion.</h2></div><p>Four square films, from street styling to studio close-ups. Select a frame to play the edit.</p></div>
+      <div className={styles.head}><div><p className={styles.label}>Selected work</p><h2>Fashion in motion.</h2></div><p>Four portrait films, from street styling to studio close-ups. Select a frame to play the edit.</p></div>
       <AdGallery />
     </section>
     <section className={styles.serviceBand}><div className={styles.section}>

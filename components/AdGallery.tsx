@@ -15,12 +15,12 @@ export default function AdGallery() {
   const [active, setActive] = useState<number | null>(null);
   return <div className={styles.gallery}>
     {films.map(({title, category, description}, index) => {
-      const base = "/videos/fashion-ads/square/ad-" + (index + 1);
+      const base = "/videos/fashion-ads/ad-" + (index + 1);
       return <figure className={styles.film} key={base}>
         <div className={styles.frame}>
           {active === index ? <video src={base + ".mp4"} poster={base + ".webp"} controls autoPlay playsInline aria-label={title} /> :
             <button className={styles.poster} aria-label={"Play " + title} onClick={() => setActive(index)}>
-              <img loading="lazy" src={base + ".webp"} alt="" width="640" height="640" />
+              <img loading="lazy" src={base + ".webp"} alt="" width="640" height="1138" />
               <span className={styles.play}><Play size={20} fill="currentColor" aria-hidden="true" /></span>
             </button>}
         </div>
