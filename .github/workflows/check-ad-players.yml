@@ -64,6 +64,25 @@ jobs:
                 console.log(width,i+1,await card.locator('video').evaluate(v=>[v.currentSrc,v.videoWidth,v.videoHeight,v.duration]));
               }
               for(const name of ['Get a video quote','Send my product photo']) assert.match(await page.getByRole('link',{name,exact:true}).getAttribute('href'),/^https:\/\/wa\.me\/923017281412/);
+              const title='AI Fashion Ads and UGC Videos';
+              const sample='Play '+title+' sample';
+              for(let attempt=0;attempt<48;attempt++){
+                await page.goto('https://www.setlesstudio.com/?verify=listing-'+attempt,{waitUntil:'domcontentloaded'});
+                if(await page.getByRole('button',{name:sample}).count()) break;
+                await page.waitForTimeout(5000);
+              }
+              const tile=page.locator('article').filter({has:page.getByRole('heading',{name:title,exact:true})});
+              assert.equal(await tile.count(),1);
+              assert.equal(await tile.locator('video').count(),0);
+              await tile.getByRole('button',{name:sample}).click();
+              await page.waitForFunction(()=>{const v=document.querySelector('article video');return v && v.currentTime>0.1 && v.videoHeight>v.videoWidth;});
+              assert((await tile.locator('video').getAttribute('src')).endsWith('/ad-1.mp4'));
+              await tile.getByRole('link',{name:title}).click();
+              await page.waitForURL('**/services/realistic-ai-video-ads-ugc');
+              for(const route of ['/services','/portfolio','/pricing']){
+                await page.goto('https://www.setlesstudio.com'+route,{waitUntil:'domcontentloaded'});
+                assert(await page.locator('main').getByText(title,{exact:true}).count()>0,route);
+              }
               await page.close();
             }
           } finally {await browser.close();}
