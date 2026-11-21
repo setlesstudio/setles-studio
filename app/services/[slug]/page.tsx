@@ -515,7 +515,7 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-video-ads-ugc": {
     meta: {
-      title: "AI Video Ads & UGC-Style Videos for Fashion Brands | SetlesStudio",
+      title: "AI Fashion Ads and UGC Videos | SetlesStudio",
       description: "Turn clothing and product photos into AI video ads for Reels, TikTok, and Shopify. Watch four SetlesStudio examples and request a video for your brand.",
     },
     hero: {
@@ -1062,7 +1062,7 @@ export default function ServiceSlugPage({
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
   if (params.slug === "realistic-ai-video-ads-ugc") {
     return <>
-      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Video Ads for Fashion Brands", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
+      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Fashion Ads and UGC Videos", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
       <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Video Ads", path: "/services/" + params.slug}])} />
       <FashionAds quote={waHeroHref} send={waCtaHref} />
     </>;

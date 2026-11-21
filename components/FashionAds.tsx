@@ -29,7 +29,7 @@ export default function FashionAds({quote, send}: {quote: string; send: string})
     <StructuredData data={{"@context":"https://schema.org","@type":"FAQPage",mainEntity:questions.map(([name,text])=>({"@type":"Question",name,acceptedAnswer:{"@type":"Answer",text}}))}} />
     <section className={styles.hero}>
       <div className={styles.heroCopy}>
-        <h1>AI video ads<br/><em>for fashion brands.</em></h1>
+        <h1>AI Fashion Ads <br/><em>and UGC Videos</em></h1>
         <p className={styles.intro}>Turn your product photos into campaign films, on-model demos and UGC-style ads for social feeds and Shopify stores.</p>
         <div className={styles.actions}><a className={styles.primary} href={quote}>Get a video quote</a><a className={styles.watch} href="#video-examples">Watch the four films</a></div>
       </div>
