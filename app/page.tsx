@@ -1,6 +1,7 @@
 "use client";
 
 import ServiceFilm from "@/components/ServiceFilm";
+import HomeProjectBrief from "@/components/HomeProjectBrief";
 import ComparisonFigure from "@/components/ComparisonFigure";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -77,7 +78,6 @@ export default function HomePage() {
   }, []);
 
   const heroTitle = pageData?.heroTitle || homeHero.heroTitle;
-  const heroText = pageData?.heroText || homeHero.heroText;
   const heroImage = "/images/navy-activewear-banner.webp";
 
   const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
@@ -89,13 +89,13 @@ export default function HomePage() {
         preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
         title={parseHeroTitle(heroTitle)}
-        text={heroText}
         image={heroImage}
         imageAlt="AI model wearing a navy tank and shorts beside a wooden doorway"
         animateReveal
       >
-        <Link href="/portfolio" className="btn-primary">
-          View Our Work <ArrowRight size={16} />
+        <div className="w-full"><HomeProjectBrief /></div>
+        <Link href="/portfolio" className="btn-ghost-light">
+          View Portfolio <ArrowRight size={16} />
         </Link>
         <a
           href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`}
@@ -103,7 +103,7 @@ export default function HomePage() {
           rel="noopener noreferrer"
           className="btn-ghost-light"
         >
-          Book a Free Consultation
+          Message us on WhatsApp
         </a>
         <p className="w-full text-sm text-white/50">
           7-day average delivery · 500+ projects completed · Top Rated Plus on
@@ -117,7 +117,7 @@ export default function HomePage() {
           title="From product photo to campaign ready content"
           text="From a flat-lay product photo to an AI model wearing the navy workout set."
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
+        <div className="mx-auto mt-7 grid w-[90%] max-w-[1160px] gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
           <ComparisonFigure caption="Send a flat lay of the navy tank and matching shorts so both pieces are visible.">
             <Reveal className="card flex flex-col gap-3 p-5">
               <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
@@ -136,7 +136,7 @@ export default function HomePage() {
           </ComparisonFigure>
           <ComparisonFigure caption="SetlesStudio shows the navy set on an AI model outdoors, with the tank and shorts visible together.">
             <Reveal delay={0.1} className="flex-1">
-              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+              <div className="relative h-full min-h-[300px] overflow-hidden rounded-3xl">
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                   After
                 </span>
@@ -153,7 +153,7 @@ export default function HomePage() {
           </ComparisonFigure>
           <ComparisonFigure caption="The second shot shows the AI model reading by a window in the same set.">
             <Reveal delay={0.2} className="flex-1">
-              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
+              <div className="relative h-full min-h-[300px] overflow-hidden rounded-3xl">
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                   After
                 </span>
