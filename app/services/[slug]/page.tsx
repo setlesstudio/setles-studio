@@ -519,7 +519,7 @@ const services: Record<string, ServiceData> = {
       description: "Turn clothing and product photos into AI video ads for Reels, TikTok, and Shopify. Watch four SetlesStudio examples and request a video for your brand.",
     },
     hero: {
-      eyebrow: "AI Video Ads & UGC",
+      eyebrow: "AI Fashion Ads and UGC Videos",
       titlePrefix: "AI Video Ads",
       titleHighlight: "for Fashion Brands",
       subtitle: "Turn product photos into short social ads, product demonstrations, and UGC-style videos.",
@@ -1063,7 +1063,7 @@ export default function ServiceSlugPage({
   if (params.slug === "realistic-ai-video-ads-ugc") {
     return <>
       <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Fashion Ads and UGC Videos", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
-      <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Video Ads", path: "/services/" + params.slug}])} />
+      <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Fashion Ads and UGC Videos", path: "/services/" + params.slug}])} />
       <FashionAds quote={waHeroHref} send={waCtaHref} />
     </>;
   }

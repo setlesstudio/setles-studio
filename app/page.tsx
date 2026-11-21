@@ -1,5 +1,6 @@
 "use client";
 
+import ServiceFilm from "@/components/ServiceFilm";
 import ComparisonFigure from "@/components/ComparisonFigure";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -205,21 +206,10 @@ export default function HomePage() {
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {currentServices.map((s, i) => (
               <Reveal key={s.id} delay={(i % 2) * 0.08}>
-                <Link
-                  href={`/services/${s.id}`}
-                  className="card group flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10"
-                >
+                <article className="card group relative flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10">
                   {s.video ? (
-                    <div className="relative hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block">
-                      <Image
-                        src={s.video
-                          .replace("/video/upload/", "/video/upload/q_auto,w_320,so_0/")
-                          .replace(".mp4", ".jpg")}
-                        alt=""
-                        fill
-                        sizes="128px"
-                        className="object-cover object-top"
-                      />
+                    <div className="relative z-10 aspect-[9/16] w-[32%] max-w-48 shrink-0 self-center overflow-hidden rounded-2xl bg-ink">
+                      <ServiceFilm src={s.video} poster={s.image} title={s.title} />
                     </div>
                   ) : (
                     <ImageSlot
@@ -235,7 +225,7 @@ export default function HomePage() {
                       {s.number}.
                     </span>
                     <h3 className="mt-1 font-display text-xl font-semibold group-hover:text-brand">
-                      {s.title}
+                      <Link href={`/services/${s.id}`} className="after:absolute after:inset-0">{s.title}</Link>
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                       {s.short}
@@ -248,7 +238,7 @@ export default function HomePage() {
                       />
                     </span>
                   </div>
-                </Link>
+                </article>
               </Reveal>
             ))}
           </div>

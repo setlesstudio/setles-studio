@@ -30,8 +30,8 @@ const serviceBanners: Record<string, { src: string; alt: string; description: st
     description: "Explore footwear product references, styling and on-model views.",
   },
   "realistic-ai-video-ads-ugc": {
-    src: "https://res.cloudinary.com/dlfb8yn1x/video/upload/so_0,f_webp,q_auto,w_1200/v1782991084/video-ad_bvo5xc.webp",
-    alt: "Preview frame from the AI fashion video featured on the video ads service page",
+    src: "/videos/fashion-ads/ad-1.webp",
+    alt: "Model holding a burgundy handbag on a city doorstep",
     description: "Watch fashion video ads and product-focused motion examples.",
     cta: "View Video Examples",
   },

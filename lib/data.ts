@@ -113,12 +113,12 @@ export const services: Service[] = [
   {
     id: "realistic-ai-video-ads-ugc",
     number: "06",
-    title: "AI Video Ads for Fashion Brands",
+    title: "AI Fashion Ads and UGC Videos",
     short:
       "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
     long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
-    image: "",
-    video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto,w_1024,ac_none/v1783056368/video-ad-service-1_px1iey.mp4",
+    image: "/videos/fashion-ads/ad-1.webp",
+    video: "/videos/fashion-ads/ad-1.mp4",
     deliverables: [
       "Hyper realistic AI video ads with natural model movement",
       "Authentic UGC style videos that build trust and increase conversions",
@@ -349,7 +349,7 @@ export const pricingTiers: Tier[] = [
       "Luxury Fashion Images",
       "Lifestyle Photography",
       "Footwear Photography",
-      "AI Video & Advertising",
+      "AI Fashion Ads and UGC Videos",
       "Dedicated Project Manager",
       "Fast Turnaround",
       "Priority Support",
@@ -398,7 +398,7 @@ export const faqs = [
   },
   {
     q: "Do you create videos?",
-    a: "Yes, short form video ads, product motion clips, and website banner loops are part of our AI Video & Advertising service, included in the Premium plan or available as an add-on.",
+    a: "Yes, short form video ads, product motion clips, and website banner loops are part of our AI Fashion Ads and UGC Videos service, included in the Premium plan or available as an add-on.",
   },
 ];
 

@@ -29,6 +29,7 @@ export interface PageSEO {
 }
 
 export interface ServiceTile {
+  video?: string;
   id: string;
   number: string;
   title: string;
@@ -365,6 +366,10 @@ export function getStoredServices(): ServiceTile[] {
       const previous = previousServiceCopy[card.id];
       const current = defaults.find(service => service.id === card.id);
       if (!previous || !current) return card;
+      if (card.id === "realistic-ai-video-ads-ugc") {
+        return { ...card, title: current.title, image: current.image, video: current.video,
+          short: card.short === previous.short ? current.short : card.short };
+      }
       return {
         ...card,
         title: card.title === previous.title || (card.id === "realistic-ai-studio-photography" && card.title === "AI Studio Photography for Apparel Brands")
@@ -395,7 +400,9 @@ export function getStoredPricing(): PricingTile[] {
     return pricingTiers as PricingTile[];
   }
   try {
-    return JSON.parse(data);
+    const saved: PricingTile[] = JSON.parse(data);
+    return saved.map(tier => ({ ...tier, features: tier.features.map(feature =>
+      feature === "AI Video & Advertising" ? "AI Fashion Ads and UGC Videos" : feature) }));
   } catch (e) {
     return pricingTiers as PricingTile[];
   }

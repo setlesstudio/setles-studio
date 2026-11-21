@@ -1,3 +1,4 @@
+import ServiceFilm from "@/components/ServiceFilm";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
@@ -78,17 +79,8 @@ export default function ServicesPage() {
             >
               <Reveal className="md:h-full md:min-h-[380px] xl:min-h-[480px] xl:max-h-[550px]">
                 {s.video ? (
-                  <div className="aspect-[3/4] w-full overflow-hidden rounded-4xl bg-ink md:aspect-auto md:h-full">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="none"
-                      className="h-full w-full object-cover object-top"
-                    >
-                      <source src={s.video} type="video/mp4" />
-                    </video>
+                  <div className="mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-4xl bg-ink">
+                    <ServiceFilm src={s.video} poster={s.image} title={s.title} />
                   </div>
                 ) : (
                   <ImageSlot
@@ -106,10 +98,10 @@ export default function ServicesPage() {
                 </span>
                 <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl xl:mt-0">
                   {s.title}
+                </h2>
                 <p className="mt-3 text-base font-light leading-relaxed text-ink-soft xl:mt-4 xl:text-lg">
                   {s.long}
                 </p>
-                </h2>
                 <ul className="mt-5 space-y-2 xl:mt-0 xl:space-y-3">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-start gap-3 text-sm xl:text-[15px]">

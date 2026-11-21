@@ -100,7 +100,7 @@ export default async function BlogPostPage({
   );
   const relatedPages: Record<string, { href: string; title: string }> = {
     "ai-fashion-photography-cuts-ecommerce-content-costs": { href: "/pricing", title: "Compare AI fashion photography packages" },
-    "ai-video-ads-for-fashion-brands": { href: "/services/realistic-ai-video-ads-ugc", title: "Explore our AI video ad service" },
+    "ai-video-ads-for-fashion-brands": { href: "/services/realistic-ai-video-ads-ugc", title: "AI Fashion Ads and UGC Videos" },
     "ai-fashion-fabric-texture-fix-guide": { href: "/services/realistic-ai-studio-photography", title: "Explore studio photography for apparel" },
   };
   const nextPost = allBlogs[index + 1];
