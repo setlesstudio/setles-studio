@@ -93,7 +93,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative bg-ink pt-20 text-white lg:pt-0" aria-labelledby="about-heading">
-        <Image src="/images/about-setlesstudio.webp" alt="Man in a blue polo seated in an office with plants and laptops" width={2752} height={1536} priority unoptimized className="h-auto w-full" />
+        <Image src="/images/about-setlesstudio.webp" alt="Man in a blue polo seated in an office with plants and laptops" width={2752} height={1536} priority sizes="100vw" quality={92} className="h-auto w-full" />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/75 via-black/35 to-transparent lg:block" />
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 bg-gradient-to-b from-black/65 to-transparent lg:block" />
         <div className="relative px-6 py-10 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[48%] lg:flex-col lg:justify-center lg:px-0 lg:pb-8 lg:pt-24">
@@ -107,7 +107,7 @@ export default function AboutPage() {
       <section className="container-site py-12">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <Image src="/images/setlesstudio-creative-work.webp" alt="Man in a blue polo working on a laptop in a plant-filled office" width={1792} height={2400} unoptimized className="mx-auto h-auto w-full max-w-md rounded-4xl" />
+            <Image src="/images/setlesstudio-creative-work.webp" alt="Man in a blue polo working on a laptop in a plant-filled office" width={1792} height={2400} sizes="(min-width: 640px) 448px, 100vw" quality={92} className="mx-auto h-auto w-full max-w-md rounded-4xl" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="eyebrow">Our story</p>

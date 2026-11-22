@@ -63,7 +63,7 @@ export default function ServiceBeforeAfter({
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
               <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[3/4] max-w-[380px] bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
-                <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill unoptimized
+                <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
                   sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 mix-blend-multiply" : "object-contain"} />
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{photo.label}</span>
               </div>
@@ -94,7 +94,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={before}
                   alt={imageDescription(before, beforeAlt)}
-                  unoptimized={preserveImageQuality || lightStudio}
+                  quality={preserveImageQuality || lightStudio ? 92 : 85}
                   fill
                   sizes="100vw"
                   className={`object-contain p-4 ${lightStudio ? "mix-blend-multiply" : ""}`}
@@ -125,7 +125,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={after}
                   alt={imageDescription(after, afterAlt)}
-                  unoptimized={preserveImageQuality || lightStudio}
+                  quality={preserveImageQuality || lightStudio ? 92 : 85}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
@@ -146,7 +146,7 @@ export default function ServiceBeforeAfter({
                 <Image
                   src={after2!}
                   alt={imageDescription(after2, after2Alt ?? "")}
-                  unoptimized={preserveImageQuality || lightStudio}
+                  quality={preserveImageQuality || lightStudio ? 92 : 85}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className={lightStudio ? "object-contain p-2 mix-blend-multiply" : "object-cover object-top"}
