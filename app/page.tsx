@@ -86,6 +86,8 @@ export default function HomePage() {
         title={parseHeroTitle(heroTitle)}
         text={heroText}
         image={heroImage}
+        imageMobile="/images/navy-activewear-banner-mobile.webp"
+        mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
         imageAlt="AI model wearing a navy tank and shorts beside a wooden doorway"
         animateReveal
       >

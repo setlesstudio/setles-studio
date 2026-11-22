@@ -15,6 +15,7 @@ export default function PageHero({
   children,
   image,
   imageMobile,
+  mobileMedia = "(max-width: 767px)",
   imageAlt = "",
   video,
   fullHeight = true,
@@ -33,6 +34,7 @@ export default function PageHero({
   children?: React.ReactNode;
   image?: string;
   imageMobile?: string;
+  mobileMedia?: string;
   imageAlt?: string;
   video?: string;
   fullHeight?: boolean;
@@ -116,7 +118,7 @@ export default function PageHero({
       <section className={lifestylePhotos ? "bg-ink pt-20 text-white md:pt-24" : "bg-[#f7f7f5] pt-20 text-ink md:pt-24"}>
         <div className="relative">
           <picture className="relative mx-auto block h-[420px] w-full md:h-auto md:aspect-[2752/1536]">
-            {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} />}
+            {mobileProps && <source media={mobileMedia} srcSet={mobileProps.srcSet ?? mobileProps.src} />}
             <img {...desktopProps} {...{ fetchpriority: "high" }} />
           </picture>
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
@@ -135,7 +137,7 @@ export default function PageHero({
   const imageBlock = !video && desktopProps ? (
     <>
       <picture className={lightStudio ? "relative block h-[40svh] max-h-[460px] w-full md:absolute md:inset-x-0 md:bottom-5 md:top-24 md:h-auto md:max-h-none" : undefined}>
-        {mobileProps && <source media="(max-width: 767px)" srcSet={mobileProps.srcSet ?? mobileProps.src} sizes={mobileProps.sizes} />}
+        {mobileProps && <source media={mobileMedia} srcSet={mobileProps.srcSet ?? mobileProps.src} sizes={mobileProps.sizes} />}
         <img {...desktopProps} {...{ fetchpriority: "high" }} />
       </picture>
       {!lightStudio && overlays}
