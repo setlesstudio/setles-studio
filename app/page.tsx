@@ -49,6 +49,59 @@ const homeServiceImages: Record<string, { src: string; alt: string }> = {
   }
 };
 
+const homeComparisonExamples = [
+  {
+    name: "Navy activewear",
+    photos: [
+      {
+        src: "/images/product-image.png",
+        alt: "Product flat lay of a navy workout tank and matching shorts",
+        caption: "Original flat lay of the navy tank and shorts.",
+      },
+      {
+        src: "/images/navy-activewear-outdoors.webp",
+        alt: "AI fashion model in a navy tank and matching shorts carrying a brown tote outdoors",
+        caption: "Front view of the navy set styled with a brown tote.",
+      },
+      {
+        src: "/images/navy-activewear-reading.webp",
+        alt: "AI model in navy activewear reading a book beside an open garden door",
+        caption: "Side view of the set in a sunlit lifestyle scene.",
+      },
+      {
+        src: "/images/navy-activewear-produce-market.webp",
+        alt: "Back view of an AI model in a navy tank and shorts shopping at a produce market",
+        caption: "Back view showing the fit and seams at a produce stall.",
+      },
+    ],
+  },
+  {
+    name: "Magenta embroidered outfit",
+    photos: [
+      {
+        src: "/images/magenta-embroidered-dress-product-photo.webp",
+        alt: "Original product photo of a magenta dress with floral embroidery and a gold-trimmed dupatta",
+        caption: "Original product photo showing the floral embroidery and dupatta.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-ai-model.webp",
+        alt: "Full-length AI fashion model wearing a magenta embroidered dress and gold-trimmed dupatta",
+        caption: "Full-length portrait showing the dress and matching dupatta.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-ai-model-walking.webp",
+        alt: "AI fashion model walking in the magenta embroidered dress with its gold-trimmed dupatta",
+        caption: "Walking pose showing how the dress and dupatta drape.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-neckline-detail.webp",
+        alt: "Close-up of the magenta dress on an AI model showing the embroidered neckline and dupatta border",
+        caption: "Closer view of the neckline embroidery and gold border.",
+      },
+    ],
+  },
+];
+
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
 export default function HomePage() {
@@ -115,59 +168,36 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Before / After"
           title="From product photo to campaign ready content"
-          text="From a flat-lay product photo to an AI model wearing the navy workout set."
+          text="See how original product photos become on-model campaign images for activewear and embroidered occasionwear."
         />
-        <div className="mx-auto mt-7 grid w-[90%] max-w-[1160px] gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
-          <ComparisonFigure caption="Send a flat lay of the navy tank and matching shorts so both pieces are visible.">
-            <Reveal className="card flex flex-col gap-3 p-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
-                Before
-              </span>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-                <Image
-                  src="/images/product-image.png"
-                  alt="Navy tank and shorts laid flat"
-                  fill
-                  sizes="33vw"
-                  className="object-contain p-3"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
-          <ComparisonFigure caption="SetlesStudio shows the navy set on an AI model outdoors, with the tank and shorts visible together.">
-            <Reveal delay={0.1} className="flex-1">
-              <div className="relative h-full min-h-[300px] overflow-hidden rounded-3xl">
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  After
-                </span>
-                <Image
-                  unoptimized
-                  src="/images/navy-activewear-outdoors.webp"
-                  alt="AI model wearing a navy tank and matching shorts with a brown tote outside a building"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
-          <ComparisonFigure caption="The second shot shows the AI model reading by a window in the same set.">
-            <Reveal delay={0.2} className="flex-1">
-              <div className="relative h-full min-h-[300px] overflow-hidden rounded-3xl">
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  After
-                </span>
-                <Image
-                  unoptimized
-                  src="/images/navy-activewear-reading.webp"
-                  alt="AI model in navy activewear reading a book beside an open garden door"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
+        <div className="mx-auto mt-7 max-w-[1160px] space-y-9">
+          {homeComparisonExamples.map(({ name, photos }) => (
+            <div key={name} role="group" aria-label={name} className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {photos.map(({ src, alt, caption }, index) => {
+                const isBefore = index === 0;
+
+                return (
+                  <ComparisonFigure key={src} caption={caption}>
+                    <Reveal delay={index * 0.08}>
+                      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-ink/10 bg-cream sm:rounded-3xl">
+                        <span className={`absolute left-2 top-2 z-10 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:left-4 sm:top-4 sm:px-3 sm:text-xs ${isBefore ? "bg-white text-ink" : "bg-brand text-white"}`}>
+                          {isBefore ? "Before" : "After"}
+                        </span>
+                        <Image
+                          src={src}
+                          alt={alt}
+                          fill
+                          sizes="(min-width: 1280px) 278px, (min-width: 1024px) 24vw, 47vw"
+                          loading="lazy"
+                          className="object-contain"
+                        />
+                      </div>
+                    </Reveal>
+                  </ComparisonFigure>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </section>
 

@@ -17,7 +17,7 @@ const sans = Manrope({
   variable: "--font-sans",
 });
 
-const homeDescription = "Turn product photos into realistic on-model studio, lifestyle, and campaign images for your ecommerce brand. Explore our work and request a free sample.";
+const homeDescription = "AI fashion photography for clothing brands. See before-and-after activewear and embroidered outfit examples, and request a free sample for your brand.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
