@@ -1159,6 +1159,14 @@ export default function ServiceSlugPage({
                 {p}
               </p>
             ))}
+            {lightStudio && (
+              <p className="mt-4 leading-relaxed text-ink-soft">
+                Working on a skincare collection? See our{" "}
+                <Link href="/services/ai-beauty-skincare-photography" className="font-medium text-brand underline">
+                  beauty and skincare product photography examples
+                </Link>.
+              </p>
+            )}
           </div>
         </Reveal>
       </section>
