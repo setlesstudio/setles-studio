@@ -95,7 +95,7 @@ export default function PageHero({
     className: productPhotography || lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
-  const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile, unoptimized: preserveImageQuality }).props : null;
+  const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile, unoptimized: !imageMobile.startsWith("/") }).props : null;
 
   if (productPhotography && desktopProps) {
     return (
