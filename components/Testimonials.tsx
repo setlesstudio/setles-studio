@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 import { testimonials as defaultTestimonials } from "@/lib/data";
-import { getStoredTestimonials, TestimonialTile } from "@/lib/dashboard-store";
+
+type TestimonialTile = { quote: string; name: string; role: string; image: string };
+
 
 function TestimonialCard({ t }: { t: TestimonialTile }) {
   return (
@@ -40,16 +42,20 @@ function TestimonialCard({ t }: { t: TestimonialTile }) {
 }
 
 export default function Testimonials() {
-  const [list, setList] = useState<TestimonialTile[]>([]);
+  const [list, setList] = useState<TestimonialTile[]>(defaultTestimonials);
 
   useEffect(() => {
-    setList(getStoredTestimonials());
-
-    const handleUpdate = () => {
-      setList(getStoredTestimonials());
+    const readTestimonials = () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem("setles_testimonials") || "null");
+        setList(Array.isArray(saved) && saved.length ? saved : defaultTestimonials);
+      } catch {
+        setList(defaultTestimonials);
+      }
     };
-    window.addEventListener("setles_db_update", handleUpdate);
-    return () => window.removeEventListener("setles_db_update", handleUpdate);
+    readTestimonials();
+    window.addEventListener("setles_db_update", readTestimonials);
+    return () => window.removeEventListener("setles_db_update", readTestimonials);
   }, []);
 
   const items = list.length > 0 ? list : defaultTestimonials;
