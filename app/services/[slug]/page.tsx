@@ -85,7 +85,7 @@ const services: Record<string, ServiceData> = {
   "realistic-ai-studio-photography": {
     meta: {
       title: "AI Fashion Photography for Clothing Brands | SetlesStudio",
-      description: "Turn flat lays into on-model apparel images with SetlesStudio. Explore AI fashion photography for clothing brands, from ecommerce product pages to collection catalogs.",
+      description: "AI fashion photography for clothing brands. Turn flat lays into realistic on-model apparel images for ecommerce pages, catalogs and collections.",
     },
     hero: {
       eyebrow: "AI CLOTHING & ON MODEL PHOTOGRAPHY",
@@ -289,8 +289,8 @@ const services: Record<string, ServiceData> = {
 
   "luxury-fashion-ai-campaign": {
   "meta": {
-    "title": "AI Fashion Campaign Photography for Apparel Brands | SetlesStudio",
-    "description": "Create realistic AI fashion campaign photography for apparel brands. Get professional model images, campaign visuals and fashion advertising content with SetlesStudio."
+    "title": "AI Fashion Campaign Photography | SetlesStudio",
+    "description": "Create AI fashion campaign photography for apparel brands. SetlesStudio produces realistic on-model images for lookbooks, ads and collection launches."
   },
   "hero": {
     "eyebrow": "AI Fashion Campaign Photography",
@@ -1065,6 +1065,15 @@ export default function ServiceSlugPage({
       <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Fashion Ads and UGC Videos", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
       <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Fashion Ads and UGC Videos", path: "/services/" + params.slug}])} />
       <FashionAds quote={waHeroHref} send={waCtaHref} />
+      <div className="container-site pb-10">
+        <p className="leading-relaxed text-ink-soft">
+          Planning a campaign? Our{" "}
+          <Link href="/blog/ai-video-ads-for-fashion-brands" className="font-medium text-brand underline">
+            guide to AI video ads for fashion brands
+          </Link>{" "}
+          covers production costs, creative testing, and platform disclosure.
+        </p>
+      </div>
     </>;
   }
   const handbagPhotos = params.slug === "bags-accessories-realistic-ai-photography";
@@ -1160,12 +1169,34 @@ export default function ServiceSlugPage({
               </p>
             ))}
             {lightStudio && (
-              <p className="mt-4 leading-relaxed text-ink-soft">
-                Working on a skincare collection? See our{" "}
-                <Link href="/services/ai-beauty-skincare-photography" className="font-medium text-brand underline">
-                  beauty and skincare product photography examples
-                </Link>.
-              </p>
+              <>
+                <p className="mt-4 leading-relaxed text-ink-soft">
+                  Working on a skincare collection? See our{" "}
+                  <Link href="/services/ai-beauty-skincare-photography" className="font-medium text-brand underline">
+                    beauty and skincare product photography examples
+                  </Link>.
+                </p>
+                <p className="mt-4 leading-relaxed text-ink-soft">
+                  Prepping a catalog shoot? Read our{" "}
+                  <Link href="/blog/clothing-photography-guide-shoot-like-a-pro-studio" className="font-medium text-brand underline">
+                    clothing photography guide
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/blog/ecommerce-product-photography-tips-2026-increase-sales" className="font-medium text-brand underline">
+                    ecommerce product photography tips
+                  </Link>.
+                </p>
+                <p className="mt-4 leading-relaxed text-ink-soft">
+                  Considering AI for your next collection? See how to{" "}
+                  <Link href="/blog/ai-fashion-fabric-texture-fix-guide" className="font-medium text-brand underline">
+                    improve AI fabric texture
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/blog/ai-fashion-photography-cuts-ecommerce-content-costs" className="font-medium text-brand underline">
+                    compare AI and traditional photography costs
+                  </Link>.
+                </p>
+              </>
             )}
           </div>
         </Reveal>
