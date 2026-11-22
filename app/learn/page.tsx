@@ -120,9 +120,9 @@ export default function LearnPage() {
                 <p.icon size={30} />
               </span>
               <div>
-                <h3 className="text-sm font-bold uppercase tracking-wide">
+                <h2 className="text-sm font-bold uppercase tracking-wide">
                   {p.title}
-                </h3>
+                </h2>
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">
                   {p.text}
                 </p>
