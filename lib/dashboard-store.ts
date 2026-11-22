@@ -392,6 +392,14 @@ export function saveServices(items: ServiceTile[]) {
   window.dispatchEvent(new Event("setles_db_update"));
 }
 
+const pricingVersionKey = "setles_pricing_version";
+const pricingVersion = "2";
+const previousDefaultPrices: Record<string, string> = {
+  Starter: "$299",
+  Growth: "$799",
+  Premium: "$1,999+",
+};
+
 export function getStoredPricing(): PricingTile[] {
   if (!isClient()) return pricingTiers as PricingTile[];
   const data = localStorage.getItem("setles_pricing");
@@ -401,8 +409,18 @@ export function getStoredPricing(): PricingTile[] {
   }
   try {
     const saved: PricingTile[] = JSON.parse(data);
-    return saved.map(tier => ({ ...tier, features: tier.features.map(feature =>
-      feature === "AI Video & Advertising" ? "AI Fashion Ads and UGC Videos" : feature) }));
+    const hasLegacyPrices = localStorage.getItem(pricingVersionKey) !== pricingVersion;
+    return saved.map(tier => {
+      const currentDefault = hasLegacyPrices && tier.price === previousDefaultPrices[tier.name]
+        ? pricingTiers.find(current => current.name === tier.name)
+        : undefined;
+      return {
+        ...tier,
+        price: currentDefault?.price ?? tier.price,
+        features: tier.features.map(feature =>
+          feature === "AI Video & Advertising" ? "AI Fashion Ads and UGC Videos" : feature),
+      };
+    });
   } catch (e) {
     return pricingTiers as PricingTile[];
   }
@@ -411,6 +429,7 @@ export function getStoredPricing(): PricingTile[] {
 export function savePricing(items: PricingTile[]) {
   if (!isClient()) return;
   localStorage.setItem("setles_pricing", JSON.stringify(items));
+  localStorage.setItem(pricingVersionKey, pricingVersion);
   window.dispatchEvent(new Event("setles_db_update"));
 }
 
