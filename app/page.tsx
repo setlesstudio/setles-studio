@@ -179,18 +179,20 @@ export default function HomePage() {
                 return (
                   <ComparisonFigure key={src} caption={caption}>
                     <Reveal delay={index * 0.08}>
-                      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-ink/10 bg-cream sm:rounded-3xl">
-                        <span className={`absolute left-2 top-2 z-10 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:left-4 sm:top-4 sm:px-3 sm:text-xs ${isBefore ? "bg-white text-ink" : "bg-brand text-white"}`}>
+                      <div className="flex aspect-[3/4] flex-col items-start gap-2 rounded-2xl border border-ink/10 bg-white p-2 sm:rounded-3xl sm:p-3">
+                        <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-white"}`}>
                           {isBefore ? "Before" : "After"}
                         </span>
-                        <Image
-                          src={src}
-                          alt={alt}
-                          fill
-                          sizes="(min-width: 1280px) 278px, (min-width: 1024px) 24vw, 47vw"
-                          loading="lazy"
-                          className="object-contain"
-                        />
+                        <div className="relative min-h-0 w-full flex-1">
+                          <Image
+                            src={src}
+                            alt={alt}
+                            fill
+                            sizes="(min-width: 1280px) 252px, (min-width: 1024px) 22vw, 44vw"
+                            loading="lazy"
+                            className="object-contain"
+                          />
+                        </div>
                       </div>
                     </Reveal>
                   </ComparisonFigure>
