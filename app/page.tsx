@@ -1,53 +1,21 @@
-"use client";
-
-import ServiceFilm from "@/components/ServiceFilm";
 import HomeProjectBrief from "@/components/HomeProjectBrief";
+import HomeHeroTitle from "@/components/HomeHeroTitle";
+import HomeServices from "@/components/HomeServices";
+import HomeValueProps from "@/components/HomeValueProps";
 import ComparisonFigure from "@/components/ComparisonFigure";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  Rocket,
-  Layers,
-  CircleDollarSign,
-  Clock,
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import dynamic from "next/dynamic";
-const TrustedBy = dynamic(() => import("@/components/TrustedBy"));
-const Testimonials = dynamic(() => import("@/components/Testimonials"));
+import TrustedBy from "@/components/TrustedBy";
+import Testimonials from "@/components/Testimonials";
 import CTABand from "@/components/CTABand";
-import ImageSlot from "@/components/ImageSlot";
 import FreeSampleBanner from "@/components/FreeSampleBanner";
-import { process, services, site, valueProps } from "@/lib/data";
-import { homeHero, getStoredPages, getStoredServices, getStoredValueProps } from "@/lib/dashboard-store";
-import { parseHeroTitle } from "@/components/DashboardComponents";
-
-const homeServiceImages: Record<string, { src: string; alt: string }> = {
-  "ai-beauty-skincare-photography": {
-    src: "/images/ai-skincare-sunscreen-model.webp",
-    alt: "AI beauty model holding Solaris sunscreen among tropical palm leaves",
-  },
-  "realistic-ai-studio-photography": {
-    "src": "/images/ai-fashion-burgundy-outfit.webp",
-    "alt": "AI fashion model wearing a burgundy scalloped top and matching trousers"
-  },
-  "lifestyle-realistic-ai-photography": {
-    "src": "/images/ai-lifestyle-pink-tracksuit.webp",
-    "alt": "AI fashion model in a pink tracksuit beside a brown leather chair"
-  },
-  "footwear-realistic-ai-photography": {
-    "src": "/images/ai-footwear-lime-green-heels.webp",
-    "alt": "AI footwear model wearing lime green pointed heels with an orange top"
-  },
-  "bags-accessories-realistic-ai-photography": {
-    "src": "/images/ai-handbag-coral-tote.webp",
-    "alt": "AI handbag model holding a coral tote bag while wearing a green cardigan"
-  }
-};
+import { process, site } from "@/lib/data";
 
 const homeComparisonExamples = [
   {
@@ -118,32 +86,8 @@ const homeComparisonExamples = [
   },
 ];
 
-const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
-
 export default function HomePage() {
-  const [pageData, setPageData] = useState<any>(null);
-  const [localServices, setLocalServices] = useState<any[]>([]);
-  const [localValueProps, setLocalValueProps] = useState<any[]>([]);
-
-  useEffect(() => {
-    // Set initial storage content
-    const pages = getStoredPages();
-    const home = pages.find((p) => p.pageId === "home");
-    if (home) setPageData(home);
-
-    setLocalServices(getStoredServices());
-    setLocalValueProps(getStoredValueProps());
-
-    const handleUpdate = () => {
-      const updatedPages = getStoredPages();
-      const updatedHome = updatedPages.find((p) => p.pageId === "home");
-      if (updatedHome) setPageData(updatedHome);
-      setLocalServices(getStoredServices());
-      setLocalValueProps(getStoredValueProps());
-    };
-
-    window.addEventListener("setles_db_update", handleUpdate);
-    return () => window.removeEventListener("setles_db_update", handleUpdate);
+  return () => window.removeEventListener("setles_db_update", handleUpdate);
   }, []);
 
   const heroTitle = pageData?.heroTitle || homeHero.heroTitle;
@@ -157,7 +101,7 @@ export default function HomePage() {
       <PageHero
         preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
-        title={parseHeroTitle(heroTitle)}
+        title={<HomeHeroTitle />}
         image={heroImage}
         imageMobile="/images/navy-activewear-banner-mobile.webp"
         mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
@@ -237,75 +181,9 @@ export default function HomePage() {
 
       <TrustedBy />
 
-      <section className="container-site py-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {currentValueProps.map((v, i) => {
-            const Icon = fastIcons[i % fastIcons.length];
-            return (
-              <Reveal key={v.title} delay={i * 0.08}>
-                <div className="card h-full p-7 transition-shadow duration-300 hover:shadow-xl hover:shadow-ink/10">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-soft text-brand">
-                    <Icon size={20} />
-                  </span>
-                  <h3 className="mt-4 font-bold">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    {v.text}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
-      </section>
+      <HomeValueProps />
 
-      <section className="bg-cream py-14 rounded-3xl">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="What we do"
-            title="AI Fashion, Beauty and Video Services"
-            text="Explore our seven services, from fashion and beauty product photography to skincare campaigns and short video ads."
-          />
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {currentServices.map((s, i) => (
-              <Reveal key={s.id} delay={(i % 2) * 0.08}>
-                <article className="card group relative flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10">
-                  {s.video ? (
-                    <div className="relative z-10 hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block [&_img]:object-cover">
-                      <div className="absolute inset-0"><ServiceFilm src={s.video} poster={s.image} title={s.title} /></div>
-                    </div>
-                  ) : (
-                    <ImageSlot
-                      src={homeServiceImages[s.id]?.src ?? s.image}
-                      alt={homeServiceImages[s.id]?.alt ?? s.title}
-                      label={s.title}
-                      className="hidden aspect-[3/4] w-32 shrink-0 rounded-2xl sm:block"
-                      sizes="160px"
-                    />
-                  )}
-                  <div className="flex flex-col py-1">
-                    <span className="font-display text-sm font-semibold text-brand">
-                      {s.number}.
-                    </span>
-                    <h3 className="mt-1 font-display text-xl font-semibold group-hover:text-brand">
-                      <Link href={`/services/${s.id}`} className="after:absolute after:inset-0">{s.title}</Link>
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                      {s.short}
-                    </p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-brand">
-                      Learn more{" "}
-                      <ArrowRight
-                        size={14}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
-                    </span>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeServices />
 
       <section className="container-site py-14">
         <SectionHeading
