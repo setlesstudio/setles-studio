@@ -87,22 +87,13 @@ const homeComparisonExamples = [
 ];
 
 export default function HomePage() {
-  return () => window.removeEventListener("setles_db_update", handleUpdate);
-  }, []);
-
-  const heroTitle = pageData?.heroTitle || homeHero.heroTitle;
-  const heroImage = "/images/navy-activewear-banner.webp";
-
-  const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
-  const currentServices = localServices.length > 0 ? localServices : services;
-
   return (
     <>
       <PageHero
         preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
         title={<HomeHeroTitle />}
-        image={heroImage}
+        image="/images/navy-activewear-banner.webp"
         imageMobile="/images/navy-activewear-banner-mobile.webp"
         mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
         imageAlt="AI model wearing a navy tank and shorts beside a wooden doorway"
