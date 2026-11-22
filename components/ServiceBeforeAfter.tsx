@@ -49,22 +49,22 @@ export default function ServiceBeforeAfter({
   after2,
   after2Alt,
 }: Props) {
-  if ((lightStudio || containedPhotos) && after && after2) {
+  if ((lightStudio || containedPhotos) && after) {
     const photos = [
       { src: before, alt: beforeAlt, caption: beforeCaption, label: beforeLabel },
       { src: after, alt: afterAlt, caption: afterCaption, label: afterLabel },
-      { src: after2, alt: after2Alt ?? "", caption: after2Caption ?? "", label: afterLabel },
+      ...(after2 ? [{ src: after2, alt: after2Alt ?? "", caption: after2Caption ?? "", label: afterLabel }] : []),
     ];
     return (
       <section className="container-site py-8 md:py-12">
         {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand sm:text-4xl">{heading}</h2>}
         {introduction && <p className="mx-auto mb-8 max-w-3xl text-center leading-relaxed text-ink-soft">{introduction}</p>}
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 md:grid-cols-3">
+        <div className={`mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 ${photos.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
-              <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[3/4] max-w-[380px] bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
+              <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[4/5] max-w-[460px] bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
                 <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
-                  sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 mix-blend-multiply" : "object-contain"} />
+                  sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 mix-blend-multiply" : "object-contain p-3 sm:p-4"} />
                 <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{photo.label}</span>
               </div>
             </ComparisonFigure>

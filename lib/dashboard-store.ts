@@ -29,6 +29,7 @@ export interface PageSEO {
 }
 
 export interface ServiceTile {
+  video?: string;
   id: string;
   number: string;
   title: string;
@@ -358,10 +359,17 @@ export function getStoredServices(): ServiceTile[] {
   try {
     const saved: ServiceTile[] = JSON.parse(data);
     if (!Array.isArray(saved)) return defaults;
-    return saved.map(card => {
+    const updated = saved.map(card => {
+      if (card.id === "ai-beauty-skincare-photography") {
+        return defaults.find(service => service.id === card.id) ?? card;
+      }
       const previous = previousServiceCopy[card.id];
       const current = defaults.find(service => service.id === card.id);
       if (!previous || !current) return card;
+      if (card.id === "realistic-ai-video-ads-ugc") {
+        return { ...card, title: current.title, image: current.image, video: current.video,
+          short: card.short === previous.short ? current.short : card.short };
+      }
       return {
         ...card,
         title: card.title === previous.title || (card.id === "realistic-ai-studio-photography" && card.title === "AI Studio Photography for Apparel Brands")
@@ -369,6 +377,10 @@ export function getStoredServices(): ServiceTile[] {
         short: card.short === previous.short ? current.short : card.short,
       };
     });
+    const beauty = defaults.find(service => service.id === "ai-beauty-skincare-photography");
+    const ordered = updated.filter(card => card.id !== beauty?.id);
+    if (beauty) ordered.splice(Math.min(1, ordered.length), 0, beauty);
+    return ordered.map((card, index) => ({ ...card, number: String(index + 1).padStart(2, "0") }));
   } catch {
     return defaults;
   }
@@ -380,6 +392,14 @@ export function saveServices(items: ServiceTile[]) {
   window.dispatchEvent(new Event("setles_db_update"));
 }
 
+const pricingVersionKey = "setles_pricing_version";
+const pricingVersion = "2";
+const previousDefaultPrices: Record<string, string> = {
+  Starter: "$299",
+  Growth: "$799",
+  Premium: "$1,999+",
+};
+
 export function getStoredPricing(): PricingTile[] {
   if (!isClient()) return pricingTiers as PricingTile[];
   const data = localStorage.getItem("setles_pricing");
@@ -388,7 +408,19 @@ export function getStoredPricing(): PricingTile[] {
     return pricingTiers as PricingTile[];
   }
   try {
-    return JSON.parse(data);
+    const saved: PricingTile[] = JSON.parse(data);
+    const hasLegacyPrices = localStorage.getItem(pricingVersionKey) !== pricingVersion;
+    return saved.map(tier => {
+      const currentDefault = hasLegacyPrices && tier.price === previousDefaultPrices[tier.name]
+        ? pricingTiers.find(current => current.name === tier.name)
+        : undefined;
+      return {
+        ...tier,
+        price: currentDefault?.price ?? tier.price,
+        features: tier.features.map(feature =>
+          feature === "AI Video & Advertising" ? "AI Fashion Ads and UGC Videos" : feature),
+      };
+    });
   } catch (e) {
     return pricingTiers as PricingTile[];
   }
@@ -397,6 +429,7 @@ export function getStoredPricing(): PricingTile[] {
 export function savePricing(items: PricingTile[]) {
   if (!isClient()) return;
   localStorage.setItem("setles_pricing", JSON.stringify(items));
+  localStorage.setItem(pricingVersionKey, pricingVersion);
   window.dispatchEvent(new Event("setles_db_update"));
 }
 
@@ -515,3 +548,4 @@ export async function updateStoredPassword(enteredNew: string) {
   const newHash = await hashPassword(enteredNew, newSalt);
   saveStoredCredentials(newHash, newSalt);
 }
+

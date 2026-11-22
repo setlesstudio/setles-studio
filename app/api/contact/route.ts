@@ -2,11 +2,20 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return /^[^\s@<>,;:"\\]+@[^\s@<>,;:"\\]+\.[^\s@<>,;:"\\]+$/.test(email);
 }
 
-function sanitize(val: unknown): string {
-  return typeof val === "string" ? val.trim().replace(/</g, "&lt;").replace(/>/g, "&gt;") : "";
+function isValidWhatsAppNumber(value: string) {
+  const digitCount = value.replace(/\D/g, "").length;
+  return /^\+?[\d ().-]+$/.test(value) && digitCount >= 7 && digitCount <= 15;
+}
+
+function readText(value: unknown): string {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function escapeHtml(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 export async function POST(req: NextRequest) {
@@ -17,28 +26,55 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const name = sanitize(body.name);
-  const email = sanitize(body.email);
-  const service = sanitize(body.service);
-  const message = sanitize(body.message);
-
-  if (!name || !email || !service || service === "Select a service" || !message) {
-    return NextResponse.json({ error: "Required fields are missing." }, { status: 400 });
-  }
-  if (!isValidEmail(email)) {
-    return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const company = sanitize(body.company);
-  const phone = sanitize(body.phone);
-  const website = sanitize(body.website);
-  const images = sanitize(body.images);
-  const deadline = sanitize(body.deadline);
-  const budget = sanitize(body.budget);
+  const brand = readText(body.brand);
+  const contact = readText(body.contact);
+  const name = readText(body.name);
+  const service = readText(body.service);
+  const message = readText(body.message);
+  let email = readText(body.email);
+  let phone = readText(body.phone);
+
+  if ("brand" in body || "contact" in body) {
+    if (!brand || !message) {
+      return NextResponse.json(
+        { error: "Enter your brand name or website URL and project details." },
+        { status: 400 },
+      );
+    }
+    if (isValidEmail(contact)) {
+      email = contact;
+      phone = "";
+    } else if (isValidWhatsAppNumber(contact)) {
+      email = "";
+      phone = contact;
+    } else {
+      return NextResponse.json(
+        { error: "Enter a valid email address or WhatsApp number." },
+        { status: 400 },
+      );
+    }
+  } else {
+    if (!name || !email || !service || service === "Select a service" || !message) {
+      return NextResponse.json({ error: "Required fields are missing." }, { status: 400 });
+    }
+    if (!isValidEmail(email)) {
+      return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
+    }
+  }
+
+  const company = readText(body.company);
+  const website = readText(body.website);
+  const images = readText(body.images);
+  const deadline = readText(body.deadline);
+  const budget = readText(body.budget);
 
   const row = (label: string, value: string) =>
     value
-      ? `<tr><td style="padding:6px 12px;font-weight:600;color:#1C1814;white-space:nowrap;vertical-align:top">${label}</td><td style="padding:6px 12px;color:#4A443D">${value}</td></tr>`
+      ? `<tr><td style="padding:6px 12px;font-weight:600;color:#1C1814;white-space:nowrap;vertical-align:top">${label}</td><td style="padding:6px 12px;color:#4A443D">${escapeHtml(value)}</td></tr>`
       : "";
 
   const html = `
@@ -53,6 +89,7 @@ export async function POST(req: NextRequest) {
     </div>
     <div style="padding:28px 32px">
       <table style="width:100%;border-collapse:collapse">
+        ${row("Brand Name or Website URL", brand)}
         ${row("Full Name", name)}
         ${row("Company", company)}
         ${row("Email", email)}
@@ -65,11 +102,11 @@ export async function POST(req: NextRequest) {
       </table>
       <div style="margin-top:20px;padding:16px;background:#FAF7F2;border-radius:10px">
         <p style="margin:0 0 6px;font-weight:600;color:#1C1814;font-size:14px">Project Details</p>
-        <p style="margin:0;color:#4A443D;font-size:14px;line-height:1.6;white-space:pre-wrap">${message}</p>
+        <p style="margin:0;color:#4A443D;font-size:14px;line-height:1.6;white-space:pre-wrap">${escapeHtml(message)}</p>
       </div>
     </div>
     <div style="padding:16px 32px;background:#FAF7F2;border-top:1px solid rgba(28,24,20,0.06)">
-      <p style="margin:0;font-size:12px;color:#9E9890">Reply directly to this email to respond to ${name}.</p>
+      <p style="margin:0;font-size:12px;color:#9E9890">${email ? "Reply directly to this email to respond." : "Use the WhatsApp number above to respond."}</p>
     </div>
   </div>
 </body>
@@ -89,7 +126,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `"Setles Studio Contact" <${process.env.SMTP_USER}>`,
       to: "setlesstudio@gmail.com",
-      replyTo: email,
+      replyTo: email || undefined,
       subject: "New Contact Form Inquiry - Setles Studio",
       html,
     });

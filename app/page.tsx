@@ -1,5 +1,7 @@
 "use client";
 
+import ServiceFilm from "@/components/ServiceFilm";
+import HomeProjectBrief from "@/components/HomeProjectBrief";
 import ComparisonFigure from "@/components/ComparisonFigure";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -25,6 +27,10 @@ import { homeHero, getStoredPages, getStoredServices, getStoredValueProps } from
 import { parseHeroTitle } from "@/components/DashboardComponents";
 
 const homeServiceImages: Record<string, { src: string; alt: string }> = {
+  "ai-beauty-skincare-photography": {
+    src: "/images/ai-skincare-sunscreen-model.webp",
+    alt: "AI beauty model holding Solaris sunscreen among tropical palm leaves",
+  },
   "realistic-ai-studio-photography": {
     "src": "/images/ai-fashion-burgundy-outfit.webp",
     "alt": "AI fashion model wearing a burgundy scalloped top and matching trousers"
@@ -42,6 +48,75 @@ const homeServiceImages: Record<string, { src: string; alt: string }> = {
     "alt": "AI handbag model holding a coral tote bag while wearing a green cardigan"
   }
 };
+
+const homeComparisonExamples = [
+  {
+    name: "Navy activewear",
+    photos: [
+      {
+        src: "/images/product-image.png",
+        width: 809,
+        height: 1833,
+        alt: "Product flat lay of a navy workout tank and matching shorts",
+        caption: "Original flat lay of the navy tank and shorts.",
+      },
+      {
+        src: "/images/navy-activewear-outdoors.webp",
+        width: 1792,
+        height: 2400,
+        alt: "AI fashion model in a navy tank and matching shorts carrying a brown tote outdoors",
+        caption: "Front view of the navy set styled with a brown tote.",
+      },
+      {
+        src: "/images/navy-activewear-reading.webp",
+        width: 1792,
+        height: 2400,
+        alt: "AI model in navy activewear reading a book beside an open garden door",
+        caption: "Side view of the set in a sunlit lifestyle scene.",
+      },
+      {
+        src: "/images/navy-activewear-produce-market.webp",
+        width: 900,
+        height: 1118,
+        alt: "Back view of an AI model in a navy tank and shorts shopping at a produce market",
+        caption: "Back view showing the fit and seams at a produce stall.",
+      },
+    ],
+  },
+  {
+    name: "Magenta embroidered outfit",
+    photos: [
+      {
+        src: "/images/magenta-embroidered-dress-product-photo.webp",
+        width: 701,
+        height: 1180,
+        alt: "Original product photo of a magenta dress with floral embroidery and a gold-trimmed dupatta",
+        caption: "Original product photo showing the floral embroidery and dupatta.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-ai-model.webp",
+        width: 881,
+        height: 1180,
+        alt: "Full-length AI fashion model wearing a magenta embroidered dress and gold-trimmed dupatta",
+        caption: "Full-length portrait showing the dress and matching dupatta.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-ai-model-walking.webp",
+        width: 881,
+        height: 1180,
+        alt: "AI fashion model walking in the magenta embroidered dress with its gold-trimmed dupatta",
+        caption: "Walking pose showing how the dress and dupatta drape.",
+      },
+      {
+        src: "/images/magenta-embroidered-dress-neckline-detail.webp",
+        width: 881,
+        height: 1180,
+        alt: "Close-up of the magenta dress on an AI model showing the embroidered neckline and dupatta border",
+        caption: "Closer view of the neckline embroidery and gold border.",
+      },
+    ],
+  },
+];
 
 const fastIcons = [Rocket, Layers, CircleDollarSign, Clock];
 
@@ -72,7 +147,6 @@ export default function HomePage() {
   }, []);
 
   const heroTitle = pageData?.heroTitle || homeHero.heroTitle;
-  const heroText = pageData?.heroText || homeHero.heroText;
   const heroImage = "/images/navy-activewear-banner.webp";
 
   const currentValueProps = localValueProps.length > 0 ? localValueProps : valueProps;
@@ -84,15 +158,15 @@ export default function HomePage() {
         preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
         title={parseHeroTitle(heroTitle)}
-        text={heroText}
         image={heroImage}
         imageMobile="/images/navy-activewear-banner-mobile.webp"
         mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
         imageAlt="AI model wearing a navy tank and shorts beside a wooden doorway"
         animateReveal
       >
-        <Link href="/portfolio" className="btn-primary">
-          View Our Work <ArrowRight size={16} />
+        <div className="w-full"><HomeProjectBrief /></div>
+        <Link href="/portfolio" className="btn-ghost-light">
+          View Portfolio <ArrowRight size={16} />
         </Link>
         <a
           href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`}
@@ -100,7 +174,7 @@ export default function HomePage() {
           rel="noopener noreferrer"
           className="btn-ghost-light"
         >
-          Book a Free Consultation
+          Message us on WhatsApp
         </a>
         <p className="w-full text-sm text-white/50">
           7-day average delivery · 500+ projects completed · Top Rated Plus on
@@ -112,59 +186,50 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Before / After"
           title="From product photo to campaign ready content"
-          text="From a flat-lay product photo to an AI model wearing the navy workout set."
+          text="See how original product photos become on-model campaign images for activewear and embroidered occasionwear."
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-[0.8fr_1fr_1fr]">
-          <ComparisonFigure caption="Send a flat lay of the navy tank and matching shorts so both pieces are visible.">
-            <Reveal className="card flex flex-col gap-3 p-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-ink-soft/60">
-                Before
-              </span>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
-                <Image
-                  src="/images/product-image.png"
-                  alt="Navy tank and shorts laid flat"
-                  fill
-                  sizes="(min-width: 768px) 30vw, 100vw"
-                  className="object-contain p-3"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
-          <ComparisonFigure caption="SetlesStudio shows the navy set on an AI model outdoors, with the tank and shorts visible together.">
-            <Reveal delay={0.1} className="flex-1">
-              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  After
-                </span>
-                <Image
-                  quality={92}
-                  src="/images/navy-activewear-outdoors.webp"
-                  alt="AI model wearing a navy tank and matching shorts with a brown tote outside a building"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
-          <ComparisonFigure caption="The second shot shows the AI model reading by a window in the same set.">
-            <Reveal delay={0.2} className="flex-1">
-              <div className="relative h-full min-h-[350px] overflow-hidden rounded-3xl">
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  After
-                </span>
-                <Image
-                  quality={92}
-                  src="/images/navy-activewear-reading.webp"
-                  alt="AI model in navy activewear reading a book beside an open garden door"
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-top"
-                />
-              </div>
-            </Reveal>
-          </ComparisonFigure>
+        <div className="mx-auto mt-7 max-w-[1160px] space-y-9">
+          {homeComparisonExamples.map(({ name, photos }) => (
+            <div key={name} role="group" aria-label={name} className="grid gap-4 lg:flex">
+              {[photos.slice(0, 2), photos.slice(2)].map((pair, pairIndex) => {
+                const ratios = pair.map(({ width, height }) => width / height);
+
+                return (
+                  <div
+                    key={pair[0].src}
+                    className="grid min-w-0 gap-4 lg:basis-4"
+                    style={{
+                      flexGrow: ratios.reduce((total, ratio) => total + ratio, 0),
+                      gridTemplateColumns: ratios.map((ratio) => `minmax(0, ${ratio}fr)`).join(" "),
+                    }}
+                  >
+                    {pair.map(({ src, width, height, alt, caption }, index) => {
+                      const isBefore = pairIndex === 0 && index === 0;
+
+                      return (
+                        <ComparisonFigure key={src} caption={caption}>
+                          <Reveal delay={(pairIndex * 2 + index) * 0.08} className="flex flex-col items-start gap-2">
+                            <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-white"}`}>
+                              {isBefore ? "Before" : "After"}
+                            </span>
+                            <Image
+                              src={src}
+                              width={width}
+                              height={height}
+                              alt={alt}
+                              sizes="(min-width: 1280px) 340px, (min-width: 1024px) 30vw, 63vw"
+                              loading="lazy"
+                              className="block h-auto w-full rounded-md bg-white ring-1 ring-ink/10"
+                            />
+                          </Reveal>
+                        </ComparisonFigure>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -197,27 +262,16 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
-            title="AI Fashion Photography and Video Services"
-            text="Choose a service for your next shoot, from on-model apparel photos for your catalog to short video ads for a collection launch."
+            title="AI Fashion, Beauty and Video Services"
+            text="Explore our seven services, from fashion and beauty product photography to skincare campaigns and short video ads."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {currentServices.map((s, i) => (
               <Reveal key={s.id} delay={(i % 2) * 0.08}>
-                <Link
-                  href={`/services/${s.id}`}
-                  className="card group flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10"
-                >
+                <article className="card group relative flex h-full gap-5 p-5 transition-shadow hover:shadow-xl hover:shadow-ink/10">
                   {s.video ? (
-                    <div className="relative hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block">
-                      <Image
-                        src={s.video
-                          .replace("/video/upload/", "/video/upload/q_auto,w_320,so_0/")
-                          .replace(".mp4", ".jpg")}
-                        alt=""
-                        fill
-                        sizes="128px"
-                        className="object-cover object-top"
-                      />
+                    <div className="relative z-10 hidden aspect-[3/4] w-32 shrink-0 overflow-hidden rounded-2xl bg-ink sm:block [&_img]:object-cover">
+                      <div className="absolute inset-0"><ServiceFilm src={s.video} poster={s.image} title={s.title} /></div>
                     </div>
                   ) : (
                     <ImageSlot
@@ -233,7 +287,7 @@ export default function HomePage() {
                       {s.number}.
                     </span>
                     <h3 className="mt-1 font-display text-xl font-semibold group-hover:text-brand">
-                      {s.title}
+                      <Link href={`/services/${s.id}`} className="after:absolute after:inset-0">{s.title}</Link>
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                       {s.short}
@@ -246,7 +300,7 @@ export default function HomePage() {
                       />
                     </span>
                   </div>
-                </Link>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -303,3 +357,4 @@ export default function HomePage() {
     </>
   );
 }
+

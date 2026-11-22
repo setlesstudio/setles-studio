@@ -51,8 +51,22 @@ export const services: Service[] = [
     ],
   },
   {
-    id: "lifestyle-realistic-ai-photography",
+    id: "ai-beauty-skincare-photography",
     number: "02",
+    title: "AI Product Photography for Beauty and Skincare Brands",
+    short: "Create polished product and on-model visuals for skincare, sunscreen, cosmetics and perfume collections.",
+    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, on-model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
+    image: "/images/ai-skincare-sunscreen-model.webp",
+    deliverables: [
+      "Product-led photography for skincare, sunscreen, cosmetics and fragrance",
+      "On-model beauty and lifestyle campaign visuals",
+      "Coordinated backgrounds, lighting and styling across collections",
+      "Ecommerce, website, social media and advertising-ready image formats",
+    ],
+  },
+  {
+    id: "lifestyle-realistic-ai-photography",
+    number: "03",
     title: "AI Lifestyle Fashion Photography",
     short:
       "Show your collection in everyday settings, from city streets to cafés. Use the images on your storefront, in social posts, or in ads.",
@@ -67,7 +81,7 @@ export const services: Service[] = [
   },
   {
     id: "luxury-fashion-ai-campaign",
-    number: "03",
+    number: "04",
     title: "AI Fashion Campaign Photography",
     short:
       "Build a collection launch around one editorial concept. Carry the same styling and lighting through your lookbook and campaign images.",
@@ -83,7 +97,7 @@ export const services: Service[] = [
   },
   {
     id: "footwear-realistic-ai-photography",
-    number: "04",
+    number: "05",
     title: "AI Footwear Photography for Ecommerce Brands",
     short:
       "Show sneakers, heels, or boots on foot and in close-up. Give shoppers a clear view of the silhouette, sole, materials, and stitching.",
@@ -98,13 +112,13 @@ export const services: Service[] = [
   },
   {
     id: "realistic-ai-video-ads-ugc",
-    number: "05",
-    title: "AI Video Ads for Fashion Brands",
+    number: "06",
+    title: "AI Fashion Ads and UGC Videos",
     short:
       "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
     long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
-    image: "",
-    video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto,w_1024,ac_none/v1783056368/video-ad-service-1_px1iey.mp4",
+    image: "/videos/fashion-ads/ad-1.webp",
+    video: "/videos/fashion-ads/ad-1.mp4",
     deliverables: [
       "Hyper realistic AI video ads with natural model movement",
       "Authentic UGC style videos that build trust and increase conversions",
@@ -115,7 +129,7 @@ export const services: Service[] = [
   },
   {
     id: "bags-accessories-realistic-ai-photography",
-    number: "06",
+    number: "07",
     title: "AI Handbag Photography for Ecommerce Brands",
     short:
       "Show a handbag on the shoulder to convey scale, then use detail shots to highlight its texture, stitching, and hardware.",
@@ -294,7 +308,7 @@ export const pricingTiers: Tier[] = [
   {
     name: "Starter",
     description: "Perfect for small brands and new collections",
-    price: "$299",
+    price: "$199",
     unit: "/ project",
     features: [
       "20 Premium Images",
@@ -311,7 +325,7 @@ export const pricingTiers: Tier[] = [
     name: "Growth",
     badge: "Most Popular",
     description: "Professional content for growing brands",
-    price: "$799",
+    price: "$499",
     unit: "/ project",
     features: [
       "50 Premium Images",
@@ -328,14 +342,14 @@ export const pricingTiers: Tier[] = [
   {
     name: "Premium",
     description: "Luxury campaigns for established brands",
-    price: "$1,999+",
+    price: "$1,799",
     unit: "/ project",
     features: [
       "180 Premium Images",
       "Luxury Fashion Images",
       "Lifestyle Photography",
       "Footwear Photography",
-      "AI Video & Advertising",
+      "AI Fashion Ads and UGC Videos",
       "Dedicated Project Manager",
       "Fast Turnaround",
       "Priority Support",
@@ -384,7 +398,7 @@ export const faqs = [
   },
   {
     q: "Do you create videos?",
-    a: "Yes, short form video ads, product motion clips, and website banner loops are part of our AI Video & Advertising service, included in the Premium plan or available as an add-on.",
+    a: "Yes, short form video ads, product motion clips, and website banner loops are part of our AI Fashion Ads and UGC Videos service, included in the Premium plan or available as an add-on.",
   },
 ];
 
@@ -456,3 +470,4 @@ export const team = [
   { name: "Javed", role: "Client Success Manager", image: "/images/team-client-success.jpg" },
   { name: "Azeem", role: "Production Expert", image: "/images/production-expert-team-member.jpeg" },
 ]
+

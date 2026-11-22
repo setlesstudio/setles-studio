@@ -1,3 +1,4 @@
+import ServiceFilm from "@/components/ServiceFilm";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
@@ -8,14 +9,14 @@ import CTABand from "@/components/CTABand";
 import { services, site } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "AI Fashion Photography Services | SetlesStudio",
-  description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
+  title: "AI Fashion & Beauty Photography Services | SetlesStudio",
+  description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
   alternates: {
     canonical: "https://www.setlesstudio.com/services",
   },
   openGraph: {
-    title: "AI Fashion Photography Services | SetlesStudio",
-    description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
+    title: "AI Fashion & Beauty Photography Services | SetlesStudio",
+    description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
     url: "https://www.setlesstudio.com/services",
     siteName: "SetlesStudio",
     images: [
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Fashion Photography Services | SetlesStudio",
-    description: "Explore AI studio photography, lifestyle images, luxury campaigns, footwear, handbag photography, and video ads for fashion and ecommerce brands.",
+    title: "AI Fashion & Beauty Photography Services | SetlesStudio",
+    description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/studio-service-banner.png"],
@@ -78,17 +79,8 @@ export default function ServicesPage() {
             >
               <Reveal className="md:h-full md:min-h-[380px] xl:min-h-[480px] xl:max-h-[550px]">
                 {s.video ? (
-                  <div className="aspect-[3/4] w-full overflow-hidden rounded-4xl bg-ink md:aspect-auto md:h-full">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="none"
-                      className="h-full w-full object-cover object-top"
-                    >
-                      <source src={s.video} type="video/mp4" />
-                    </video>
+                  <div className="mx-auto aspect-[9/16] w-full max-w-[340px] overflow-hidden rounded-4xl bg-ink">
+                    <ServiceFilm src={s.video} poster={s.image} title={s.title} />
                   </div>
                 ) : (
                   <ImageSlot
@@ -106,10 +98,10 @@ export default function ServicesPage() {
                 </span>
                 <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl xl:mt-0">
                   {s.title}
+                </h2>
                 <p className="mt-3 text-base font-light leading-relaxed text-ink-soft xl:mt-4 xl:text-lg">
                   {s.long}
                 </p>
-                </h2>
                 <ul className="mt-5 space-y-2 xl:mt-0 xl:space-y-3">
                   {s.deliverables.map((d) => (
                     <li key={d} className="flex items-start gap-3 text-sm xl:text-[15px]">

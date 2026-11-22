@@ -25,6 +25,7 @@ const validServiceSlugs = [
   "footwear-realistic-ai-photography",
   "realistic-ai-video-ads-ugc",
   "bags-accessories-realistic-ai-photography",
+  "ai-beauty-skincare-photography",
 ];
 
 export default function Navbar() {
