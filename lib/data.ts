@@ -308,7 +308,7 @@ export const pricingTiers: Tier[] = [
   {
     name: "Starter",
     description: "Perfect for small brands and new collections",
-    price: "$299",
+    price: "$199",
     unit: "/ project",
     features: [
       "20 Premium Images",
@@ -325,7 +325,7 @@ export const pricingTiers: Tier[] = [
     name: "Growth",
     badge: "Most Popular",
     description: "Professional content for growing brands",
-    price: "$799",
+    price: "$499",
     unit: "/ project",
     features: [
       "50 Premium Images",
@@ -342,7 +342,7 @@ export const pricingTiers: Tier[] = [
   {
     name: "Premium",
     description: "Luxury campaigns for established brands",
-    price: "$1,999+",
+    price: "$1,799",
     unit: "/ project",
     features: [
       "180 Premium Images",
