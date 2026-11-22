@@ -272,7 +272,7 @@ export default function AboutPage() {
       <section className="container-site py-14" aria-labelledby="about-faq-heading">
         <h2 id="about-faq-heading" className="mb-8 text-center font-display text-2xl font-semibold sm:text-3xl">Questions about our AI product photography studio</h2>
         <FAQ faqs={aboutFaqs} />
-        <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand underline">portfolio</Link>, and <Link href="/pricing" className="text-brand underline">pricing</Link>.</p>
+        <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand underline">portfolio</Link>, and <Link href="/pricing" className="text-brand underline">pricing</Link>. You can also <Link href="/contact" className="text-brand underline">request a photography sample</Link> for your collection.</p>
       </section>
       <section className="bg-cream px-6 py-16 text-center">
         <div className="mx-auto max-w-3xl">
