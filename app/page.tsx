@@ -55,21 +55,29 @@ const homeComparisonExamples = [
     photos: [
       {
         src: "/images/product-image.png",
+        width: 809,
+        height: 1833,
         alt: "Product flat lay of a navy workout tank and matching shorts",
         caption: "Original flat lay of the navy tank and shorts.",
       },
       {
         src: "/images/navy-activewear-outdoors.webp",
+        width: 1792,
+        height: 2400,
         alt: "AI fashion model in a navy tank and matching shorts carrying a brown tote outdoors",
         caption: "Front view of the navy set styled with a brown tote.",
       },
       {
         src: "/images/navy-activewear-reading.webp",
+        width: 1792,
+        height: 2400,
         alt: "AI model in navy activewear reading a book beside an open garden door",
         caption: "Side view of the set in a sunlit lifestyle scene.",
       },
       {
         src: "/images/navy-activewear-produce-market.webp",
+        width: 900,
+        height: 1118,
         alt: "Back view of an AI model in a navy tank and shorts shopping at a produce market",
         caption: "Back view showing the fit and seams at a produce stall.",
       },
@@ -80,21 +88,29 @@ const homeComparisonExamples = [
     photos: [
       {
         src: "/images/magenta-embroidered-dress-product-photo.webp",
+        width: 701,
+        height: 1180,
         alt: "Original product photo of a magenta dress with floral embroidery and a gold-trimmed dupatta",
         caption: "Original product photo showing the floral embroidery and dupatta.",
       },
       {
         src: "/images/magenta-embroidered-dress-ai-model.webp",
+        width: 881,
+        height: 1180,
         alt: "Full-length AI fashion model wearing a magenta embroidered dress and gold-trimmed dupatta",
         caption: "Full-length portrait showing the dress and matching dupatta.",
       },
       {
         src: "/images/magenta-embroidered-dress-ai-model-walking.webp",
+        width: 881,
+        height: 1180,
         alt: "AI fashion model walking in the magenta embroidered dress with its gold-trimmed dupatta",
         caption: "Walking pose showing how the dress and dupatta drape.",
       },
       {
         src: "/images/magenta-embroidered-dress-neckline-detail.webp",
+        width: 881,
+        height: 1180,
         alt: "Close-up of the magenta dress on an AI model showing the embroidered neckline and dupatta border",
         caption: "Closer view of the neckline embroidery and gold border.",
       },
@@ -172,30 +188,42 @@ export default function HomePage() {
         />
         <div className="mx-auto mt-7 max-w-[1160px] space-y-9">
           {homeComparisonExamples.map(({ name, photos }) => (
-            <div key={name} role="group" aria-label={name} className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-              {photos.map(({ src, alt, caption }, index) => {
-                const isBefore = index === 0;
+            <div key={name} role="group" aria-label={name} className="grid gap-4 lg:flex">
+              {[photos.slice(0, 2), photos.slice(2)].map((pair, pairIndex) => {
+                const ratios = pair.map(({ width, height }) => width / height);
 
                 return (
-                  <ComparisonFigure key={src} caption={caption}>
-                    <Reveal delay={index * 0.08}>
-                      <div className="flex aspect-[3/4] flex-col items-start gap-2 rounded-2xl border border-ink/10 bg-white p-2 sm:rounded-3xl sm:p-3">
-                        <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-white"}`}>
-                          {isBefore ? "Before" : "After"}
-                        </span>
-                        <div className="relative min-h-0 w-full flex-1">
-                          <Image
-                            src={src}
-                            alt={alt}
-                            fill
-                            sizes="(min-width: 1280px) 252px, (min-width: 1024px) 22vw, 44vw"
-                            loading="lazy"
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
-                    </Reveal>
-                  </ComparisonFigure>
+                  <div
+                    key={pair[0].src}
+                    className="grid min-w-0 gap-4 lg:basis-4"
+                    style={{
+                      flexGrow: ratios.reduce((total, ratio) => total + ratio, 0),
+                      gridTemplateColumns: ratios.map((ratio) => `minmax(0, ${ratio}fr)`).join(" "),
+                    }}
+                  >
+                    {pair.map(({ src, width, height, alt, caption }, index) => {
+                      const isBefore = pairIndex === 0 && index === 0;
+
+                      return (
+                        <ComparisonFigure key={src} caption={caption}>
+                          <Reveal delay={(pairIndex * 2 + index) * 0.08} className="flex flex-col items-start gap-2">
+                            <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-white"}`}>
+                              {isBefore ? "Before" : "After"}
+                            </span>
+                            <Image
+                              src={src}
+                              width={width}
+                              height={height}
+                              alt={alt}
+                              sizes="(min-width: 1280px) 340px, (min-width: 1024px) 30vw, 63vw"
+                              loading="lazy"
+                              className="block h-auto w-full bg-white ring-1 ring-ink/10"
+                            />
+                          </Reveal>
+                        </ComparisonFigure>
+                      );
+                    })}
+                  </div>
                 );
               })}
             </div>
