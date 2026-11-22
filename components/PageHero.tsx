@@ -1,6 +1,6 @@
 import { imageDescription } from "@/lib/image-descriptions";
 import { getImageProps } from "next/image";
-import Reveal from "./Reveal";
+import Image from "next/image";
 
 export default function PageHero({
   handbagPhotos = false,
@@ -49,7 +49,7 @@ export default function PageHero({
     return (
       <section className="bg-[#f7f7f7] pt-[72px] text-ink lg:pt-0">
         <div className="relative">
-          <img src={image} alt={imageAlt} width={2752} height={1536} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
+          <Image priority sizes="100vw" quality={92} src={image} alt={imageAlt} width={2752} height={1536} className="block h-auto w-full" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[42%] lg:flex-col lg:justify-center lg:px-0 lg:py-6">
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="mt-3 font-display text-[clamp(1.3rem,5.5vw,2rem)] font-semibold leading-tight lg:text-[3.2vw]">{title}</h1>
@@ -87,19 +87,19 @@ export default function PageHero({
     alt: imageDescription(image, imageAlt),
     fill: true as const,
     sizes: "100vw",
-    quality: 85,
+    quality: preserveImageQuality ? 94 : 90,
     loading: "eager" as const,
-    unoptimized: preserveImageQuality || lightStudio || lifestylePhotos || campaignPhotos,
+    unoptimized: Boolean(image && !image.startsWith("/") && preserveImageQuality),
     className: lightStudio || lifestylePhotos ? "object-contain" : "object-cover object-top",
   };
   const desktopProps = image ? getImageProps({ ...imageOptions, src: image }).props : null;
-  const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile }).props : null;
+  const mobileProps = imageMobile ? getImageProps({ ...imageOptions, src: imageMobile, unoptimized: preserveImageQuality }).props : null;
 
   if ((campaignPhotos || handbagPhotos) && image) {
     return (
       <section className="bg-cream text-ink lg:text-white">
         <div className="relative pt-20 lg:pt-0">
-          <img src={image} alt={imageAlt} width={handbagPhotos ? 2752 : 2912} height={handbagPhotos ? 1536 : 1440} {...{ fetchpriority: "high" }} className="block h-auto w-full" />
+          <Image priority sizes="100vw" quality={92} src={image} alt={imageAlt} width={handbagPhotos ? 2752 : 2912} height={handbagPhotos ? 1536 : 1440} className="block h-auto w-full" />
           <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/65 via-black/15 to-transparent lg:block" />
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 bg-gradient-to-b from-black/50 to-transparent lg:block" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[44%] lg:flex-col lg:justify-center lg:pb-8 lg:pt-24">
@@ -124,7 +124,7 @@ export default function PageHero({
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
             <div className="md:ml-[10%] md:w-[58%] md:-translate-y-6 lg:-translate-y-24">
               <p className="eyebrow">{eyebrow}</p>
-              <h1 className={lifestylePhotos ? "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[2.6vw]" : "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:whitespace-nowrap md:text-[3.15vw]"}>{title}</h1>
+              <h1 className={lifestylePhotos ? "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[2.6vw]" : "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[3.15vw]"}>{title}</h1>
               {text && <p className={`mt-5 text-base leading-relaxed lg:text-lg ${lifestylePhotos ? "text-white/90" : "text-ink-soft"}`}>{text}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
             </div>
@@ -157,7 +157,6 @@ export default function PageHero({
         aria-hidden
       />}
       <div className="container-site relative">
-        <Reveal delay={animateReveal ? 0.7 : 0}>
           <div className={lightStudio ? "md:ml-[10%] md:max-w-[58%]" : undefined}>
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
@@ -170,7 +169,6 @@ export default function PageHero({
             )}
             {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
           </div>
-        </Reveal>
       </div>
     </section>
   );

@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { DM_Sans, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import StructuredData from "@/components/StructuredData";
 import { site } from "@/lib/data";
 
-const display = DM_Sans({
-  subsets: ["latin"],
+const display = localFont({
+  src: "./fonts/dmsans.woff2",
   variable: "--font-display",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: "100 1000",
+  display: "swap",
 });
 
-const sans = Manrope({
-  subsets: ["latin"],
+const sans = localFont({
+  src: "./fonts/manrope.woff2",
   variable: "--font-sans",
+  weight: "200 800",
+  display: "swap",
 });
 
 const homeDescription = "Turn product photos into realistic on-model studio, lifestyle, and campaign images for your ecommerce brand. Explore our work and request a free sample.";
@@ -92,7 +95,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9T4N04VXYS"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

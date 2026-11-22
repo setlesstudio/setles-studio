@@ -48,7 +48,7 @@ export default function PricingPage() {
   return (
     <>
       <section className="relative bg-[#f7f7f7] pt-20" aria-labelledby="pricing-heading">
-        <Image src="/images/ai-photography-pricing-banner.webp" alt="AI fashion model wearing a burgundy top, white pleated skirt, and matching burgundy accessories" width={2752} height={1536} priority unoptimized className="block h-auto w-full" />
+        <Image src="/images/ai-photography-pricing-banner.webp" alt="AI fashion model wearing a burgundy top, white pleated skirt, and matching burgundy accessories" width={2752} height={1536} priority sizes="100vw" quality={92} className="block h-auto w-full" />
         <div className="container-site pb-12 pt-8 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:py-0">
           <div className="max-w-xl lg:max-w-[53%]">
             <p className="eyebrow">AI photography packages</p>
@@ -111,7 +111,7 @@ export default function PricingPage() {
                 { src: "burgundy-handbag-fashion-model", alt: "Model carrying a burgundy shoulder bag with a matching top and heels", label: "Styled accessories" },
               ].map((item) => (
                 <figure key={item.src}>
-                  <Image src={`/images/${item.src}.webp`} alt={item.alt} width={1000} height={1339} unoptimized className="h-auto w-full rounded-2xl" />
+                  <Image src={`/images/${item.src}.webp`} alt={item.alt} width={1000} height={1339} sizes="(min-width: 768px) 33vw, 100vw" quality={92} className="h-auto w-full rounded-2xl" />
                   <figcaption className="mt-3 text-center text-xs text-ink-soft">{item.label}</figcaption>
                 </figure>
               ))}

@@ -1,23 +1,28 @@
 import { client } from "@/sanity/client";
 
+const apparelArticleSlug = "apparel-photography-stop-losing-sales-to-bad-photos";
+const legacyApparelSlug = `${apparelArticleSlug}-`;
+
 export async function getAllBlogs() {
   return client.fetch(
     `*[_type == "blog" && status == "Published"] | order(publishedAt desc) {
-      _id, _updatedAt, title, slug, excerpt, category, readTime, publishedAt, image, metaTitle, metaDescription, status
+      _id, _updatedAt, title, "slug": slug{..., "current": select(current == $legacy => $clean, current)}, excerpt, category, readTime, publishedAt, image, metaTitle, metaDescription, status
     }`,
-    {},
+    { legacy: legacyApparelSlug, clean: apparelArticleSlug },
     { next: { revalidate: 60 } }
   );
 }
 
 export async function getBlogBySlug(slug: string) {
-  return client.fetch(
+  const fetchPost = (value: string) => client.fetch(
     `*[_type == "blog" && status == "Published" && slug.current == $slug][0] {
       _id, _updatedAt, title, slug, excerpt, category, readTime, publishedAt, image, body, metaTitle, metaDescription, status
     }`,
-    { slug },
+    { slug: value },
     { next: { revalidate: 60 } }
   );
+  const post = await fetchPost(slug);
+  return !post && slug === apparelArticleSlug ? fetchPost(legacyApparelSlug) : post;
 }
 
 export async function getPageSEO(pageId: string) {
