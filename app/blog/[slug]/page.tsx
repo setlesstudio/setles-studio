@@ -13,6 +13,16 @@ import { blogTitle, breadcrumbData } from "@/lib/seo";
 
 export const revalidate = 60;
 
+const furtherReading: Record<string, Array<{ slug: string; title: string }>> = {
+  "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand": [
+    { slug: "ai-fashion-photography-cuts-ecommerce-content-costs", title: "How much AI fashion photography costs" },
+  ],
+  "ai-fashion-photography-for-clothing-brands-2026-guide": [
+    { slug: "ai-fashion-fabric-texture-fix-guide", title: "How to fix unrealistic fabric textures in AI images" },
+    { slug: "ai-video-ads-for-fashion-brands", title: "How to plan AI video ads for a fashion brand" },
+  ],
+};
+
 function articleDescription(slug: string, post: { metaDescription?: string; excerpt?: string }) {
   const approved = articleSeo[slug];
   const current = post.metaDescription?.trim();
@@ -106,6 +116,14 @@ export default async function BlogPostPage({
   const nextPost = allBlogs[index + 1];
   const related = relatedPages[params.slug] || (nextPost && { href: "/blog/" + (nextPost.slug?.current || nextPost.slug), title: articleHeading(nextPost.slug?.current || nextPost.slug, nextPost.title) });
 
+  const recommended = (furtherReading[params.slug] ?? [])
+    .filter(({ slug }) => allBlogs.some((blog: { slug: string | { current?: string } }) =>
+      (typeof blog.slug === "string" ? blog.slug : blog.slug?.current) === slug))
+    .map(({ slug, title }) => ({ href: `/blog/${slug}`, title }));
+  const readingLinks = related
+    ? [related, ...recommended.filter(({ href }) => href !== related.href)]
+    : recommended;
+
   return (
     <>
       <StructuredData data={{
@@ -179,17 +197,18 @@ export default async function BlogPostPage({
 
           <hr className="my-14 border-ink/10" />
 
-          {related && (
+          {readingLinks.map(({ href, title }) => (
             <Link
-              href={related.href}
-              className="card group flex items-center justify-between gap-6 p-7"
+              key={href}
+              href={href}
+              className="card group mb-4 flex items-center justify-between gap-6 p-7 last:mb-0"
             >
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-brand">
                   Explore next
                 </p>
                 <p className="mt-2 font-display text-lg font-semibold leading-snug group-hover:text-brand">
-                  {related.title}
+                  {title}
                 </p>
               </div>
               <ArrowRight
@@ -197,7 +216,7 @@ export default async function BlogPostPage({
                 className="shrink-0 text-brand transition-transform group-hover:translate-x-1"
               />
             </Link>
-          )}
+          ))}
         </div>
       </article>
 
