@@ -14,13 +14,15 @@ export async function getAllBlogs() {
 }
 
 export async function getBlogBySlug(slug: string) {
-  return client.fetch(
-    `*[_type == "blog" && status == "Published" && slug.current in [$slug, $fallback]] | order(slug.current == $slug desc)[0] {
+  const fetchPost = (value: string) => client.fetch(
+    `*[_type == "blog" && status == "Published" && slug.current == $slug][0] {
       _id, _updatedAt, title, slug, excerpt, category, readTime, publishedAt, image, body, metaTitle, metaDescription, status
     }`,
-    { slug, fallback: slug === apparelArticleSlug ? legacyApparelSlug : slug },
+    { slug: value },
     { next: { revalidate: 60 } }
   );
+  const post = await fetchPost(slug);
+  return !post && slug === apparelArticleSlug ? fetchPost(legacyApparelSlug) : post;
 }
 
 export async function getPageSEO(pageId: string) {
