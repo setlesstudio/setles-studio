@@ -23,18 +23,6 @@ import { site } from "@/lib/data";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const SERVICE_OPTIONS = [
-  "Select a service",
-  "AI Fashion Photography",
-  "Product Photography",
-  "Lifestyle Campaigns",
-  "Editorial Photography",
-  "Footwear Photography",
-  "AI Fashion Ads and UGC Videos",
-  "AI Influencer/Models",
-  "Social Media Ad Creatives",
-];
-
 const WHY_ITEMS = [
   { icon: ImageIcon,   title: "Ultra-realistic AI Images",  text: "Indistinguishable from traditional photoshoots — every fabric, texture, and detail perfected." },
   { icon: ShieldCheck, title: "Commercial Usage",           text: "Full commercial rights included. Use your visuals anywhere, on any platform, without restrictions." },
@@ -124,11 +112,12 @@ function ProjectForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (status === "loading") return;
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
     setStatus("loading");
     setErrorMsg("");
-
-    const fd = new FormData(e.currentTarget);
-    const data = Object.fromEntries(fd.entries());
 
     try {
       const res = await fetch("/api/contact", {
@@ -137,8 +126,8 @@ function ProjectForm() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
+        form.reset();
         setStatus("success");
-        (e.target as HTMLFormElement).reset();
       } else {
         const json = await res.json().catch(() => ({}));
         setErrorMsg(json.error || "Something went wrong while sending your inquiry. Please try again.");
@@ -171,58 +160,36 @@ function ProjectForm() {
 
   return (
     <form className="card grid gap-5 p-8 sm:p-10" onSubmit={handleSubmit}>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Full Name" required htmlFor="name">
-          <input id="name" name="name" required placeholder="Jane Smith" className={inputCls} />
-        </Field>
-        <Field label="Company Name" htmlFor="company">
-          <input id="company" name="company" placeholder="Your Brand Co." className={inputCls} />
-        </Field>
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Email Address" required htmlFor="email">
-          <input id="email" name="email" type="email" required placeholder="jane@brand.com" className={inputCls} />
-        </Field>
-        <Field label="Phone / WhatsApp Number" htmlFor="phone">
-          <input id="phone" name="phone" type="tel" placeholder="+1 234 567 8900" className={inputCls} />
-        </Field>
-      </div>
-
-      <Field label="Brand / Website URL" htmlFor="website">
-        <input id="website" name="website" type="url" placeholder="https://yourbrand.com" className={inputCls} />
+      <Field label="Brand Name or Website URL" required htmlFor="brand">
+        <input
+          id="brand"
+          name="brand"
+          autoComplete="organization"
+          required
+          placeholder="Your brand name or yourbrand.com"
+          className={inputCls}
+        />
       </Field>
 
-      <Field label="Service Required" required htmlFor="service">
-        <select id="service" name="service" required defaultValue="" className={inputCls}>
-          {SERVICE_OPTIONS.map((s) => (
-            <option key={s} value={s === "Select a service" ? "" : s} disabled={s === "Select a service"}>
-              {s}
-            </option>
-          ))}
-        </select>
+      <Field label="Email or WhatsApp Number" required htmlFor="contact">
+        <input
+          id="contact"
+          name="contact"
+          autoCapitalize="none"
+          spellCheck={false}
+          required
+          placeholder="you@yourbrand.com or +1 234 567 8900"
+          className={inputCls}
+        />
       </Field>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Number of Images Needed" htmlFor="images">
-          <input id="images" name="images" placeholder="e.g. 50 images" className={inputCls} />
-        </Field>
-        <Field label="Deadline" htmlFor="deadline">
-          <input id="deadline" name="deadline" placeholder="e.g. 2 weeks" className={inputCls} />
-        </Field>
-      </div>
-
-      <Field label="Budget Range" htmlFor="budget">
-        <input id="budget" name="budget" placeholder="e.g. $500 – $1,000" className={inputCls} />
-      </Field>
-
-      <Field label="Project Details / Message" required htmlFor="message">
+      <Field label="Project Details" required htmlFor="message">
         <textarea
           id="message"
           name="message"
           rows={5}
           required
-          placeholder="Tell us about your products and goals. For a sample, paste a link to your product photo here."
+          placeholder="Tell us what you need. You can include a product photo link for a sample."
           className={inputCls}
         />
       </Field>
