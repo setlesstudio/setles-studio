@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { homeHero } from "@/lib/data";
+
+const defaultHeroTitle = "[AI Fashion] Photography for Clothing Brands";
 
 function formatTitle(value: string) {
   return value.split(/(\[[^\]]+\])/g).map((part, index) => {
@@ -18,21 +19,21 @@ function formatTitle(value: string) {
 }
 
 export default function HomeHeroTitle() {
-  const [title, setTitle] = useState(homeHero.heroTitle);
+  const [title, setTitle] = useState(defaultHeroTitle);
 
   useEffect(() => {
     const readTitle = () => {
       try {
         const pages = JSON.parse(localStorage.getItem("setles_pages") || "[]");
         const home = Array.isArray(pages) ? pages.find((page: { pageId?: string }) => page.pageId === "home") : null;
-        const value = typeof home?.heroTitle === "string" ? home.heroTitle : homeHero.heroTitle;
+        const value = typeof home?.heroTitle === "string" ? home.heroTitle : defaultHeroTitle;
         const legacy = [
           "[AI Fashion] Photography for Ecommerce Brands",
           "Realistic [AI Fashion] Photography \n for Ecommerce Brands",
         ];
-        setTitle(legacy.includes(value) ? homeHero.heroTitle : value);
+        setTitle(legacy.includes(value) ? defaultHeroTitle : value);
       } catch {
-        setTitle(homeHero.heroTitle);
+        setTitle(defaultHeroTitle);
       }
     };
 
