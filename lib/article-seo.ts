@@ -48,7 +48,7 @@ export const articleSeo: Record<string, {title: string; description: string; old
     "oldTitle": "Clothing Photography Guide: Shoot Like a Pro Studi",
     "oldDescription": "Learn professional clothing photography — equipment, flat lay vs ghost mannequin vs model shots, lighting setup, workflow, and ecommerce image requirements"
   },
-  "apparel-photography-stop-losing-sales-to-bad-photos-": {
+  "apparel-photography-stop-losing-sales-to-bad-photos": {
     "heading": "Apparel Product Photography: A Catalog Quality Guide",
     "oldHeading": "Apparel Photography: Stop Losing Sales to Bad Photos",
     "title": "Apparel Product Photography Guide | SetlesStudio",

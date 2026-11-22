@@ -37,7 +37,7 @@ export default function CTABand({
     return (
       <section className="container-site py-16">
         <div className="overflow-hidden rounded-4xl bg-[#f7f7f7] text-center text-ink">
-          <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="block h-auto w-full" />
+          <Image src={image} alt={imageAlt} width={2752} height={1536} sizes="100vw" quality={92} className="block h-auto w-full" />
           <div className="px-6 py-8 md:px-12 md:py-10">
             <h2 className="mx-auto max-w-3xl font-display text-2xl font-semibold leading-tight md:text-3xl">{title}</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft md:text-base">{text}</p>
@@ -51,7 +51,7 @@ export default function CTABand({
     return (
       <section className="my-12 bg-cream">
         <div className="relative">
-          <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="block h-auto w-full" />
+          <Image src={image} alt={imageAlt} width={2752} height={1536} sizes="100vw" quality={92} className="block h-auto w-full" />
           <div className="relative px-6 py-8 text-center text-ink lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-gradient-to-t lg:from-black/75 lg:to-transparent lg:px-10 lg:pb-10 lg:pt-20 lg:text-white">
             <h2 className="mx-auto max-w-4xl font-display text-2xl font-semibold leading-tight lg:text-3xl">{title}</h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed lg:text-base">{text}</p>
@@ -66,7 +66,7 @@ export default function CTABand({
       <section className="container-site py-16">
         <Reveal>
           <div className="relative overflow-hidden rounded-4xl bg-ink text-white">
-            <Image src={image} alt={imageAlt} width={2752} height={1536} unoptimized className="h-auto w-full" />
+            <Image src={image} alt={imageAlt} width={2752} height={1536} sizes="100vw" quality={92} className="h-auto w-full" />
             <div className="relative px-6 py-8 text-center md:absolute md:inset-x-0 md:bottom-0 md:bg-gradient-to-t md:from-black/90 md:via-black/60 md:to-transparent md:px-8 md:pt-16">
               <h2 className="font-display text-2xl font-semibold leading-tight lg:text-4xl">{title}</h2>
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed lg:text-base">{text}</p>
@@ -111,7 +111,7 @@ export default function CTABand({
                 />
               )}
               <Image
-                unoptimized={preserveImageQuality || lightStudio}
+                quality={preserveImageQuality ? 94 : 90}
                 src={image}
                 alt={preserveImageQuality || image === "/images/footwear-cta-image.jpg" || image === "/images/pink-outfit-lifestyle-cta.webp" ? imageAlt : ""}
                 fill

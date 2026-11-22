@@ -6,6 +6,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/blog/apparel-photography-stop-losing-sales-to-bad-photos-",
+        destination: "/blog/apparel-photography-stop-losing-sales-to-bad-photos",
+        permanent: true,
+      },
+      {
         source: "/services/footwear-photography",
         destination: "/services/footwear-realistic-ai-photography",
         permanent: true,

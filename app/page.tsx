@@ -125,7 +125,7 @@ export default function HomePage() {
                   src="/images/product-image.png"
                   alt="Navy tank and shorts laid flat"
                   fill
-                  sizes="33vw"
+                  sizes="(min-width: 768px) 30vw, 100vw"
                   className="object-contain p-3"
                 />
               </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
                   After
                 </span>
                 <Image
-                  unoptimized
+                  quality={92}
                   src="/images/navy-activewear-outdoors.webp"
                   alt="AI model wearing a navy tank and matching shorts with a brown tote outside a building"
                   fill
@@ -155,7 +155,7 @@ export default function HomePage() {
                   After
                 </span>
                 <Image
-                  unoptimized
+                  quality={92}
                   src="/images/navy-activewear-reading.webp"
                   alt="AI model in navy activewear reading a book beside an open garden door"
                   fill

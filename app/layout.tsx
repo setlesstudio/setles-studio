@@ -92,7 +92,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9T4N04VXYS"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
