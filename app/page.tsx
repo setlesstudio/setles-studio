@@ -217,7 +217,7 @@ export default function HomePage() {
                               alt={alt}
                               sizes="(min-width: 1280px) 340px, (min-width: 1024px) 30vw, 63vw"
                               loading="lazy"
-                              className="block h-auto w-full bg-white ring-1 ring-ink/10"
+                              className="block h-auto w-full rounded-md bg-white ring-1 ring-ink/10"
                             />
                           </Reveal>
                         </ComparisonFigure>
