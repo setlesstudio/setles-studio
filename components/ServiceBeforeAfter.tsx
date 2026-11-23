@@ -62,9 +62,16 @@ export default function ServiceBeforeAfter({
         <div className={`mx-auto grid max-w-[240px] grid-cols-1 items-start gap-4 md:gap-5 ${photos.length === 3 ? "md:max-w-[820px] md:grid-cols-3" : "md:max-w-[540px] md:grid-cols-2"}`}>
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
-              <div className={`relative mx-auto aspect-[3/4] w-full overflow-hidden rounded-2xl ${campaignFrames ? "bg-white" : "bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
-                <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
-                  sizes="(min-width: 768px) 260px, 240px" className={compactProduct && photo.src === before ? "object-contain mix-blend-multiply" : "object-contain"} />
+              <div className={`relative mx-auto aspect-[3/4] w-full overflow-hidden rounded-2xl ${campaignFrames ? "grid place-items-center bg-white" : "bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
+                {campaignFrames ? (
+                  <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)}
+                    width={1856} height={2304} quality={92} sizes="(min-width: 768px) 260px, 240px"
+                    className="h-auto max-h-full w-auto max-w-full rounded-2xl"
+                    style={{ outline: "1px solid rgb(0 0 0 / 6%)", outlineOffset: "-1px" }} />
+                ) : (
+                  <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
+                    sizes="(min-width: 768px) 260px, 240px" className={compactProduct && photo.src === before ? "object-contain mix-blend-multiply" : "object-contain"} />
+                )}
                 <span className="absolute left-2 top-2 z-10 max-w-[calc(100%-1rem)] rounded-full bg-brand px-2 py-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-white">{photo.label}</span>
               </div>
             </ComparisonFigure>
