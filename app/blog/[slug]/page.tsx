@@ -1,4 +1,5 @@
 import { coverSizes, imageDescription } from "@/lib/image-descriptions";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import CTABand from "@/components/CTABand";
@@ -13,8 +14,10 @@ import { blogTitle, breadcrumbData } from "@/lib/seo";
 
 export const revalidate = 60;
 
+const comparisonSlug = "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand";
+
 const furtherReading: Record<string, Array<{ slug: string; title: string }>> = {
-  "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand": [
+  [comparisonSlug]: [
     { slug: "ai-fashion-photography-cuts-ecommerce-content-costs", title: "How much AI fashion photography costs" },
   ],
   "ai-fashion-photography-for-clothing-brands-2026-guide": [
@@ -181,6 +184,32 @@ export default async function BlogPostPage({
         )}
 
         <div className="container-site mt-14 max-w-5xl pb-24">
+          {params.slug === comparisonSlug && (
+            <section aria-labelledby="studio-shoot-question" className="mb-12 space-y-5 text-ink-soft">
+              <h2 id="studio-shoot-question" className="font-display text-2xl font-semibold text-ink sm:text-3xl">
+                Can an AI fashion photoshoot replace a traditional studio shoot?
+              </h2>
+              <p>For catalog images, often yes. A clear flat lay can give you enough detail to create an on-model front view and a lifestyle image for a collection launch. Book a physical shoot when the buying decision depends on how a skirt moves, how sheer a blouse looks in daylight, or where a hem falls on someone wearing a particular size.</p>
+              <h3 className="font-display text-xl font-semibold text-ink">One navy workout set, three ways to see it</h3>
+              <p>Start with the tank and shorts on their own. In the outdoor front view, follow the neckline and compare the length of the shorts with the original. In the reading scene, notice how the seated pose changes what you can see of the waistband. The front view helps a shopper inspect the design. The seated image gives the same outfit a setting for a campaign.</p>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[
+                  { src: "/images/product-image.png", alt: "Navy workout tank and matching shorts laid flat", caption: "Original flat lay" },
+                  { src: "/images/navy-activewear-outdoors.webp", alt: "AI model wearing the navy set outdoors with a brown tote", caption: "On-model front view" },
+                  { src: "/images/navy-activewear-reading.webp", alt: "Seated AI model reading beside a garden door in the navy set", caption: "Lifestyle campaign view" },
+                ].map(({ src, alt, caption }) => (
+                  <figure key={src}>
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-cream">
+                      <Image src={src} alt={alt} fill sizes="(min-width: 1024px) 300px, (min-width: 640px) 30vw, 92vw" className="object-contain" />
+                    </div>
+                    <figcaption className="mt-2 text-sm">{caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p>For your first test, choose one garment with a detail a customer would recognize immediately, such as an asymmetrical strap or an embroidered logo. Send a close-up of that detail with the flat lay. Compare both references with the finished image before approving the rest of the collection. For sizing questions, use measurements from the actual garment.</p>
+              <Link className="inline-block font-semibold text-brand underline" href="/services/realistic-ai-studio-photography">See our on-model photography for clothing brands</Link>
+            </section>
+          )}
           <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl prose-img:mx-auto prose-img:max-h-[60vh] sm:prose-img:max-h-[75vh] prose-img:object-contain leading-relaxed space-y-4 [&_.flex:has(img)]:flex-col sm:[&_.flex:has(img)]:flex-row [&_.grid:has(img)]:grid-cols-1 sm:[&_.grid:has(img)]:grid-cols-2 [&_.flex:has(img)]:gap-6 [&_.grid:has(img)]:gap-6 [&_.flex_img]:w-full sm:[&_.flex_img]:w-auto [&_.flex_img]:h-auto [&_.grid_img]:w-full sm:[&_.grid_img]:w-auto [&_.grid_img]:h-auto">
             {post.body ? (
               <div
