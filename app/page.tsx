@@ -93,6 +93,7 @@ export default function HomePage() {
         preserveImageQuality
         eyebrow="Realistic AI Fashion Content Studio"
         title={<HomeHeroTitle />}
+        text="Send us a flat lay or product photo. We’ll turn it into on-model shots for your product pages and lifestyle images for your next campaign."
         image="/images/navy-activewear-banner.webp"
         imageMobile="/images/navy-activewear-banner-mobile.webp"
         mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
