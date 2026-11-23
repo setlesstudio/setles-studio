@@ -2,6 +2,10 @@ import { client } from "@/sanity/client";
 
 import plumGuide from "@/content/plum-outfit-guide.json";
 
+import burgundyGuide from "@/content/burgundy-look.json";
+
+const studioGuides = [plumGuide, burgundyGuide];
+
 const apparelArticleSlug = "apparel-photography-stop-losing-sales-to-bad-photos";
 const legacyApparelSlug = `${apparelArticleSlug}-`;
 
@@ -13,8 +17,9 @@ export async function getAllBlogs() {
     { legacy: legacyApparelSlug, clean: apparelArticleSlug },
     { next: { revalidate: 60 } }
   );
-  if (posts.some((post: { slug?: { current?: string } }) => post.slug?.current === plumGuide.slug.current)) return posts;
-  return [...posts, plumGuide].sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  const publishedSlugs = new Set(posts.map((post: { slug?: { current?: string } }) => post.slug?.current));
+  const additional = studioGuides.filter(guide => !publishedSlugs.has(guide.slug.current));
+  return [...posts, ...additional].sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
 export async function getBlogBySlug(slug: string) {
@@ -26,7 +31,8 @@ export async function getBlogBySlug(slug: string) {
     { next: { revalidate: 60 } }
   );
   const post = await fetchPost(slug);
-  if (!post && slug === plumGuide.slug.current) return plumGuide;
+  const guide = studioGuides.find(item => item.slug.current === slug);
+  if (!post && guide) return guide;
   return !post && slug === apparelArticleSlug ? fetchPost(legacyApparelSlug) : post;
 }
 
