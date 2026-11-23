@@ -50,7 +50,7 @@ export default function ServicesPage() {
             <span className="text-brand">services</span>
           </>
         }
-        text="From ecommerce product imagery to full scale marketing campaigns. Every service is built around accuracy, realism, and consistency."
+        text="SetlesStudio creates on-model photos, product images and short video ads for ecommerce brands. Send a garment flat lay or product photo, tell us where the visuals will run, and choose a studio or lifestyle setting."
         image="/images/service-page-banner.jpeg"
         imageMobile="/images/service-page-banner-mobile.jpeg"
         imageAlt="Seated model in a fashion shoot"

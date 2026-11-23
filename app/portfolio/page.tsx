@@ -95,7 +95,7 @@ export default function PortfolioPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">Portfolio by service</p>
             <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">Choose a service. View the gallery.</h2>
-            <p className="mt-4 text-ink-soft">Click any banner or View Gallery link to explore the related service page and its examples.</p>
+            <p className="mt-4 text-ink-soft">Compare a <Link className="underline" href="/blog/how-to-photograph-clothing-for-an-ai-model-shoot">plum outfit with its original flat lay</Link>, or see <Link className="underline" href="/blog/ai-fashion-product-photography-studio-or-lifestyle">one burgundy look in eight product and campaign images</Link>. The service galleries below show more examples.</p>
           </div>
           <div className="mt-8 sm:mt-10"><PortfolioGallery /></div>
           <div className="mt-10 grid gap-3 rounded-3xl border border-ink/10 bg-white p-5 sm:grid-cols-3 sm:p-7">

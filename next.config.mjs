@@ -6,6 +6,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "setles-studio-dvhz\\.vercel\\.app" }],
+        destination: "https://www.setlesstudio.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/blog/apparel-photography-stop-losing-sales-to-bad-photos-",
         destination: "/blog/apparel-photography-stop-losing-sales-to-bad-photos",
         permanent: true,

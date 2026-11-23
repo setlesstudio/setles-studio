@@ -31,6 +31,13 @@ export async function getBlogBySlug(slug: string) {
     { next: { revalidate: 60 } }
   );
   const post = await fetchPost(slug);
+  if (slug === "ai-fashion-photography-for-clothing-brands-2026-guide" && post?.body?.includes("(Note: swap the placeholder paths above")) {
+    const body = post.body.replace(
+      /AI fashion photography works best as part of a broader photography strategy,[\s\S]*?\(Note: swap the placeholder paths above[^)]*\)/,
+      "Start with a clear front and back view of each garment. Our [clothing reference photo guide](/blog/how-to-photograph-clothing-for-an-ai-model-shoot) shows what to send for a neckline, seam or embroidered detail. Choose [on-model studio photography](/services/realistic-ai-studio-photography) for product pages or [lifestyle fashion photography](/services/lifestyle-realistic-ai-photography) for a collection launch."
+    );
+    return { ...post, body };
+  }
   const guide = studioGuides.find(item => item.slug.current === slug);
   if (!post && guide) return guide;
   return !post && slug === apparelArticleSlug ? fetchPost(legacyApparelSlug) : post;
