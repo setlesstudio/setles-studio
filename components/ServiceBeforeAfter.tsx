@@ -59,13 +59,13 @@ export default function ServiceBeforeAfter({
       <section className="container-site py-8 md:py-12">
         {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand sm:text-4xl">{heading}</h2>}
         {introduction && <p className="mx-auto mb-8 max-w-3xl text-center leading-relaxed text-ink-soft">{introduction}</p>}
-        <div className={`mx-auto grid max-w-6xl grid-cols-1 items-start gap-6 ${photos.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+        <div className={`mx-auto grid max-w-[240px] grid-cols-1 items-start gap-4 md:gap-5 ${photos.length === 3 ? "md:max-w-[820px] md:grid-cols-3" : "md:max-w-[540px] md:grid-cols-2"}`}>
           {photos.map((photo) => (
             <ComparisonFigure key={photo.src} caption={photo.caption}>
-              <div className={`relative mx-auto w-full overflow-hidden rounded-3xl ${campaignFrames ? "aspect-[1856/2304] bg-white" : "aspect-[4/5] max-w-[460px] bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
+              <div className={`relative mx-auto aspect-[3/4] w-full overflow-hidden rounded-2xl ${campaignFrames ? "bg-white" : "bg-[#f7f7f5]"}`} style={compactProduct ? { backgroundColor: "#eeefed" } : undefined} data-studio-frame>
                 <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
-                  sizes="(min-width: 768px) 33vw, 100vw" className={compactProduct && photo.src === before ? "object-contain p-10 md:p-12 mix-blend-multiply" : "object-contain p-3 sm:p-4"} />
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">{photo.label}</span>
+                  sizes="(min-width: 768px) 260px, 240px" className={compactProduct && photo.src === before ? "object-contain mix-blend-multiply" : "object-contain"} />
+                <span className="absolute left-2 top-2 z-10 max-w-[calc(100%-1rem)] rounded-full bg-brand px-2 py-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-white">{photo.label}</span>
               </div>
             </ComparisonFigure>
           ))}
