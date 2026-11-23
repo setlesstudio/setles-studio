@@ -121,7 +121,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Before / After"
           title="From product photo to campaign ready content"
-          text="See how original product photos become on-model campaign images for activewear and embroidered occasionwear."
+          text="Explore our AI fashion & product photography for ecommerce brands. Compare the original flat lays with the finished images, from the seams on a workout set to the embroidery on a dress."
         />
         <div className="mx-auto mt-7 max-w-[1160px] space-y-9">
           {homeComparisonExamples.map(({ name, photos }) => (
@@ -179,7 +179,7 @@ export default function HomePage() {
       <section className="container-site py-14">
         <SectionHeading
           eyebrow="Our process"
-          title="Simple. Clear. Effective."
+          title="How we create AI fashion & product photography for ecommerce brands"
         />
         <div className="relative mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div

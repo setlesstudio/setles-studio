@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const defaultHeroTitle = "[AI Fashion] Photography for Clothing Brands";
+const defaultHeroTitle = "[AI Fashion & Product Photography] for Ecommerce Brands";
 
 function formatTitle(value: string) {
   return value.split(/(\[[^\]]+\])/g).map((part, index) => {
@@ -28,6 +28,7 @@ export default function HomeHeroTitle() {
         const home = Array.isArray(pages) ? pages.find((page: { pageId?: string }) => page.pageId === "home") : null;
         const value = typeof home?.heroTitle === "string" ? home.heroTitle : defaultHeroTitle;
         const legacy = [
+          "[AI Fashion] Photography for Clothing Brands",
           "[AI Fashion] Photography for Ecommerce Brands",
           "Realistic [AI Fashion] Photography \n for Ecommerce Brands",
         ];
