@@ -1,16 +1,20 @@
 import { client } from "@/sanity/client";
 
+import plumGuide from "@/content/plum-outfit-guide.json";
+
 const apparelArticleSlug = "apparel-photography-stop-losing-sales-to-bad-photos";
 const legacyApparelSlug = `${apparelArticleSlug}-`;
 
 export async function getAllBlogs() {
-  return client.fetch(
+  const posts = await client.fetch(
     `*[_type == "blog" && status == "Published"] | order(publishedAt desc) {
       _id, _updatedAt, title, "slug": slug{..., "current": select(current == $legacy => $clean, current)}, excerpt, category, readTime, publishedAt, image, metaTitle, metaDescription, status
     }`,
     { legacy: legacyApparelSlug, clean: apparelArticleSlug },
     { next: { revalidate: 60 } }
   );
+  if (posts.some((post: { slug?: { current?: string } }) => post.slug?.current === plumGuide.slug.current)) return posts;
+  return [...posts, plumGuide].sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
 export async function getBlogBySlug(slug: string) {
@@ -22,6 +26,7 @@ export async function getBlogBySlug(slug: string) {
     { next: { revalidate: 60 } }
   );
   const post = await fetchPost(slug);
+  if (!post && slug === plumGuide.slug.current) return plumGuide;
   return !post && slug === apparelArticleSlug ? fetchPost(legacyApparelSlug) : post;
 }
 

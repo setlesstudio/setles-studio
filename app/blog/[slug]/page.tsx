@@ -134,7 +134,7 @@ export default async function BlogPostPage({
         image: post.image || `${site.url}/images/og-default.jpg`,
         datePublished: post.publishedAt,
         dateModified: post._updatedAt || post.publishedAt,
-        author: { "@type": "Organization", name: "SetlesStudio Team", url: `${site.url}/about` },
+        author: post.author ? { "@type": "Person", name: post.author.split(",")[0], url: `${site.url}/about` } : { "@type": "Organization", name: "SetlesStudio Team", url: `${site.url}/about` },
         publisher: { "@id": `${site.url}/#organization` },
         mainEntityOfPage: `${site.url}/blog/${params.slug}`,
       }} />
@@ -163,7 +163,7 @@ export default async function BlogPostPage({
             {post.excerpt}
           </p>
           <p className="mt-6 text-sm text-ink-soft/70">
-            {formatDate(post.publishedAt)} · SetlesStudio Team
+            {formatDate(post.publishedAt)} · {post.author || "SetlesStudio Team"}
           </p>
         </header>
 
