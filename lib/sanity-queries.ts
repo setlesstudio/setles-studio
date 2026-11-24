@@ -4,6 +4,15 @@ import plumGuide from "@/content/plum-outfit-guide.json";
 
 import burgundyGuide from "@/content/burgundy-look.json";
 
+import comparison from "@/content/fashion-shoot-comparison.json";
+
+const comparisonSlug = "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand";
+const comparisonPublishedAt = "2026-11-24T18:48:05.421Z";
+
+function revisedComparison(post: { slug?: { current?: string }; _updatedAt?: string } | null) {
+  return post?.slug?.current === comparisonSlug && post._updatedAt && post._updatedAt <= comparisonPublishedAt;
+}
+
 const studioGuides = [plumGuide, burgundyGuide];
 
 const apparelArticleSlug = "apparel-photography-stop-losing-sales-to-bad-photos";
@@ -19,7 +28,8 @@ export async function getAllBlogs() {
   );
   const publishedSlugs = new Set(posts.map((post: { slug?: { current?: string } }) => post.slug?.current));
   const additional = studioGuides.filter(guide => !publishedSlugs.has(guide.slug.current));
-  return [...posts, ...additional].sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+  const revisedPosts = posts.map((post: typeof posts[number]) => revisedComparison(post) ? { ...post, title: comparison.title, excerpt: comparison.excerpt, image: comparison.image, metaTitle: comparison.metaTitle, metaDescription: comparison.metaDescription } : post);
+  return [...revisedPosts, ...additional].sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
 }
 
 export async function getBlogBySlug(slug: string) {
@@ -31,6 +41,7 @@ export async function getBlogBySlug(slug: string) {
     { next: { revalidate: 60 } }
   );
   const post = await fetchPost(slug);
+  if (revisedComparison(post)) return { ...post, ...comparison };
   if (slug === "ai-fashion-photography-for-clothing-brands-2026-guide" && post?.body?.includes("(Note: swap the placeholder paths above")) {
     const body = post.body.replace(
       /AI fashion photography works best as part of a broader photography strategy,[\s\S]*?\(Note: swap the placeholder paths above[^)]*\)/,
