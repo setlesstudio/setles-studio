@@ -115,7 +115,6 @@ export default function RootLayout({
           name: site.name,
           url: site.url,
           email: site.email,
-          telephone: site.phone,
           sameAs: Object.values(site.social),
         }} />
         <LayoutWrapper>{children}</LayoutWrapper>
