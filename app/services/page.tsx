@@ -9,6 +9,7 @@ import CTABand from "@/components/CTABand";
 import { services, site } from "@/lib/data";
 import FAQ from "@/components/FAQ";
 import StructuredData from "@/components/StructuredData";
+import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "AI Fashion & Product Photography Services | SetlesStudio",
