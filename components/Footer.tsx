@@ -86,9 +86,8 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-sm text-white/60 hover:text-white"
             >
-              {site.phone}
+              Message us on WhatsApp
             </a>
-            <p className="text-sm text-white/40">{site.address}</p>
           </div>
           <div className="mt-5 flex gap-3">
             {Object.entries(site.social)
