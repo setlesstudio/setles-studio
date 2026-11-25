@@ -70,8 +70,9 @@ export default function Footer() {
            
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Premium hyper realistic AI fashion content for modern apparel brands.
-            Studio, lifestyle, and editorial visuals delivered in days, not weeks.
+            Professional, done-for-you AI fashion and product photography for clothing,
+            beauty and ecommerce brands. Studio, on-model, lifestyle and campaign visuals
+            delivered remotely for US and international clients.
           </p>
           <div className="mt-5 flex flex-col gap-1.5">
             <a
