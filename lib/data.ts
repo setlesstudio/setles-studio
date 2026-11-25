@@ -2,7 +2,7 @@
 export const site = {
   name: "SetlesStudio",
   url: "https://www.setlesstudio.com",
-  tagline: "Hyper realistic AI fashion photography for ecommerce brands.",
+  tagline: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands.",
   email: "contact@setlesstudio.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
@@ -38,7 +38,7 @@ export const services: Service[] = [
     number: "01",
     title: "AI Fashion Photography for Clothing Brands",
     short:
-      "Turn flat-lay garment photos into on-model studio images with a consistent background for your product pages and apparel catalog.",
+      "Turn your garment references into realistic on-model studio and lifestyle images for apparel product pages, catalogs and campaigns.",
     long: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit ready for product pages, catalogs, Shopify stores, Amazon, and eCommerce websites.",
     image: "/images/studio-pink.png",
     deliverables: [
@@ -52,7 +52,7 @@ export const services: Service[] = [
     id: "ai-beauty-skincare-photography",
     number: "02",
     title: "AI Product Photography for Beauty and Skincare Brands",
-    short: "Create polished product and on-model visuals for skincare, sunscreen, cosmetics and perfume collections.",
+    short: "Create product-led and on-model visuals for skincare, cosmetics and fragrance collections, with styling aligned to your brand.",
     long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, on-model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
     image: "/images/ai-skincare-sunscreen-model.webp",
     deliverables: [
@@ -65,9 +65,9 @@ export const services: Service[] = [
   {
     id: "lifestyle-realistic-ai-photography",
     number: "03",
-    title: "AI Lifestyle Fashion Photography",
+    title: "AI Lifestyle Photography for Fashion Brands",
     short:
-      "Show your collection in everyday settings, from city streets to cafés. Use the images on your storefront, in social posts, or in ads.",
+      "Show your apparel in carefully art-directed lifestyle scenes for ecommerce storytelling, social content and paid campaigns.",
     long: "Real life scenes that make your products feel lived in: city streets, cafés, homes, beaches. Lifestyle imagery builds the emotional context that studio shots can't, perfect for social media, ads, and homepage storytelling.",
     image: "/images/lifestyle-men.png",
     deliverables: [
@@ -80,9 +80,9 @@ export const services: Service[] = [
   {
     id: "luxury-fashion-ai-campaign",
     number: "04",
-    title: "AI Fashion Campaign Photography",
+    title: "AI Fashion Campaign Photography Services",
     short:
-      "Build a collection launch around one editorial concept. Carry the same styling and lighting through your lookbook and campaign images.",
+      "Build cohesive campaign imagery for collection launches, lookbooks and seasonal advertising, with consistent styling across the set.",
     long: "Create hyper realistic AI fashion campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, fashion advertising, eCommerce campaigns, social media, and seasonal brand storytelling with a high end luxury look.",
     image: "/images/campaign-desert-knit-dress-2.jpeg",
     deliverables: [
@@ -98,7 +98,7 @@ export const services: Service[] = [
     number: "05",
     title: "AI Footwear Photography for Ecommerce Brands",
     short:
-      "Show sneakers, heels, or boots on foot and in close-up. Give shoppers a clear view of the silhouette, sole, materials, and stitching.",
+      "Create on-foot and product-focused visuals that show the shape, materials, sole, stitching and fit of your footwear.",
     long: "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on foot fit. Every image preserves the sole, material, stitching, texture, and product details with a 100% realistic look.",
     image: "/images/footwear-heels.png",
     deliverables: [
@@ -111,9 +111,9 @@ export const services: Service[] = [
   {
     id: "realistic-ai-video-ads-ugc",
     number: "06",
-    title: "AI Fashion Ads and UGC Videos",
+    title: "AI Fashion Video Ads & UGC Production",
     short:
-      "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
+      "Produce short-form fashion and product video ads for ecommerce campaigns, social media and collection launches.",
     long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
     image: "/videos/fashion-ads/ad-1.webp",
     video: "/videos/fashion-ads/ad-1.mp4",
@@ -128,9 +128,9 @@ export const services: Service[] = [
   {
     id: "bags-accessories-realistic-ai-photography",
     number: "07",
-    title: "AI Handbag Photography for Ecommerce Brands",
+    title: "AI Handbag & Accessories Photography",
     short:
-      "Show a handbag on the shoulder to convey scale, then use detail shots to highlight its texture, stitching, and hardware.",
+      "Showcase handbags and accessories with model-led, studio and lifestyle imagery that highlights shape, materials, hardware and details.",
     long: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, catalogs, and social media marketing.",
     image: "/images/bags-shoot-with-model.jpeg",
     deliverables: [
@@ -152,20 +152,20 @@ export const stats = [
 
 export const valueProps = [
   {
-    title: "Per-project Pricing",
-    text: "Compare each package by price, image count, and included services.",
+    title: "Brand-led creative direction",
+    text: "We plan model styling, settings and image concepts around your references, audience and campaign goals.",
   },
   {
-    title: "7 Day Average Delivery",
-    text: "Fast turnaround without compromising quality.",
+    title: "Product-detail review",
+    text: "We review colours, fabric, patterns, logos and construction against the product photos and references you provide.",
   },
   {
-    title: "Unlimited Creativity",
-    text: "Unlimited ideas, concepts, and creative possibilities.",
+    title: "Flexible image production",
+    text: "Combine studio, on-model, lifestyle and campaign visuals for product pages, launches and advertising.",
   },
   {
-    title: "Flexible Production",
-    text: "Studio, lifestyle, editorial, and advertising content.",
+    title: "Clear project delivery",
+    text: "Agree the image count, deliverables, review stages and timeline before production begins.",
   },
 ];
 
@@ -197,23 +197,23 @@ export const trustedBy: TrustedBrand[] = [...trustedByRow1, ...trustedByRow2];
 export const process = [
   {
     step: "01",
-    title: "Understand",
-    text: "We understand your brand, goals, products and target audience.",
+    title: "Share your brief",
+    text: "Send product photos, close-up details, brand assets and a short description of what you need.",
   },
   {
     step: "02",
-    title: "Plan",
-    text: "We plan the creative direction, content style and production strategy.",
+    title: "Plan the visual direction",
+    text: "We align model styling, poses, lighting, backgrounds and formats with your brand.",
   },
   {
     step: "03",
-    title: "Create",
-    text: "Our team creates premium visual content tailored to your brand.",
+    title: "Produce and refine",
+    text: "Our team creates AI-assisted model and product images, then reviews key product details.",
   },
   {
     step: "04",
-    title: "Deliver",
-    text: "We deliver high quality, ready to use content on time, every time.",
+    title: "Approve and receive",
+    text: "Review the agreed deliverables and receive final files for ecommerce, campaigns and social media.",
   },
 ];
 
