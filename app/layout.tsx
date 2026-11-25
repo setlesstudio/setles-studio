@@ -20,12 +20,12 @@ const sans = localFont({
   display: "swap",
 });
 
-const homeDescription = "AI fashion photography for clothing brands. See before-and-after activewear and embroidered outfit examples, and request a free sample for your brand.";
+const homeDescription = "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States and worldwide. Request a project sample.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
   title: {
-    default: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    default: "AI Fashion & Product Photography Services | SetlesStudio",
     template: "%s",
   },
   description: homeDescription,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    title: "AI Fashion & Product Photography Services | SetlesStudio",
     description: homeDescription,
     url: "https://www.setlesstudio.com",
     siteName: "SetlesStudio",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Fashion Photography for Ecommerce | SetlesStudio",
+    title: "AI Fashion & Product Photography Services | SetlesStudio",
     description: homeDescription,
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
@@ -115,6 +115,25 @@ export default function RootLayout({
           name: site.name,
           url: site.url,
           email: site.email,
+          description: "Professional, done-for-you AI-assisted fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide.",
+          areaServed: [
+            { "@type": "Country", name: "United States" },
+            { "@type": "Place", name: "Worldwide" },
+          ],
+          knowsAbout: [
+            "AI fashion photography services",
+            "AI product photography",
+            "On-model apparel photography",
+            "Ecommerce product imagery",
+            "Fashion campaign photography",
+            "Beauty and skincare product photography",
+          ],
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: site.email,
+            contactType: "customer service",
+            availableLanguage: ["English"],
+          },
           sameAs: Object.values(site.social),
         }} />
         <LayoutWrapper>{children}</LayoutWrapper>

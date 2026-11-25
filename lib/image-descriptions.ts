@@ -5,7 +5,7 @@ const descriptions: Record<string, string> = {
   "/images/after-walk.webp": "Model reading in navy activewear",
   "/images/studio-pink.png": "Pink sports bra and shorts",
   "/images/lifestyle-men.png": "Model in a striped shirt at a café",
-  "/images/campaign-desert-knit-dress-2.jpeg": "Model in a cream halter dress on desert rocks",
+  "/images/campaign-desert-knit-dress-2.jpeg": "AI fashion model wearing a cream knit halter dress in a desert editorial campaign setting",
   "/images/footwear-heels.png": "Black pointed heels with white trousers",
   "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto,w_320,so_0/q_auto,w_1024,ac_none/v1783056368/video-ad-service-1_px1iey.jpg": "Navy activewear video still",
   "/images/bags-shoot-with-model.jpeg": "Model holding brown and black tote bags",

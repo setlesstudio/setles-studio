@@ -153,19 +153,19 @@ export const stats = [
 export const valueProps = [
   {
     title: "Brand-led creative direction",
-    text: "We plan model styling, settings and image concepts around your references, audience and campaign goals.",
+    text: "We turn your product photos, brand references and brief into a clear visual plan for model styling, locations, lighting and image formats.",
   },
   {
     title: "Product-detail review",
-    text: "We review colours, fabric, patterns, logos and construction against the product photos and references you provide.",
+    text: "We review finished visuals against your references, checking colour, fabric texture, prints, stitching, shape, packaging and logos.",
   },
   {
-    title: "Flexible image production",
-    text: "Combine studio, on-model, lifestyle and campaign visuals for product pages, launches and advertising.",
+    title: "Consistent model-led imagery",
+    text: "Create coordinated studio, on-model and lifestyle images across product ranges, collections and campaigns.",
   },
   {
-    title: "Clear project delivery",
-    text: "Agree the image count, deliverables, review stages and timeline before production begins.",
+    title: "Remote project delivery",
+    text: "Work with our team online from the United States or elsewhere, with agreed image counts, review stages, revisions and delivery dates.",
   },
 ];
 
@@ -197,23 +197,23 @@ export const trustedBy: TrustedBrand[] = [...trustedByRow1, ...trustedByRow2];
 export const process = [
   {
     step: "01",
-    title: "Share your brief",
-    text: "Send product photos, close-up details, brand assets and a short description of what you need.",
+    title: "Share your product photos and brief",
+    text: "Send product images, close-up details, logos, patterns and a short brief describing your audience and intended use.",
   },
   {
     step: "02",
-    title: "Plan the visual direction",
-    text: "We align model styling, poses, lighting, backgrounds and formats with your brand.",
+    title: "Agree the creative direction",
+    text: "We plan model styling, poses, lighting, backgrounds, image quantities and formats around your brand.",
   },
   {
     step: "03",
-    title: "Produce and refine",
-    text: "Our team creates AI-assisted model and product images, then reviews key product details.",
+    title: "Create and review the images",
+    text: "Our team produces the agreed on-model, product and lifestyle visuals, then checks key details against your references.",
   },
   {
     step: "04",
-    title: "Approve and receive",
-    text: "Review the agreed deliverables and receive final files for ecommerce, campaigns and social media.",
+    title: "Approve and receive final files",
+    text: "Review the agreed deliverables and receive finished images for ecommerce product pages, campaigns and social media.",
   },
 ];
 

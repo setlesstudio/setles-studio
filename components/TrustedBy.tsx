@@ -11,7 +11,7 @@ export default function TrustedBy() {
         Trusted by brands worldwide
       </p>
       <p className="mx-auto mt-3 max-w-3xl px-6 text-center text-sm leading-relaxed text-ink-soft">
-        We provide remote photography services for clothing, beauty and ecommerce businesses across the United States and other markets.
+        We provide remote photography services for clothing, beauty and ecommerce brands across the United States and worldwide.
       </p>
 
       <div className="mt-8 space-y-8">

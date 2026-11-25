@@ -217,7 +217,7 @@ By implementing these 15 product photography strategies, your online store will 
 
 export const homeHero = {
   heroTitle: "[AI Fashion & Product Photography]",
-  heroText: "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. Share your product photos and creative brief; our team creates, refines and delivers realistic model, product and campaign images.",
+  heroText: "Done-for-you AI-assisted fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide. Share your product photos and brief; our team plans, creates and reviews realistic on-model, product and campaign imagery.",
 };
 
 // Initial page defaults
@@ -225,8 +225,8 @@ const DEFAULT_PAGES: PageSEO[] = [
   {
     pageId: "home",
     title: "Home Page",
-    metaTitle: "AI Fashion & Product Photography Services | SetlesStudio",
-    metaDescription: "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images.",
+    metaTitle: "AI Fashion & Product Photography Services for US Brands | SetlesStudio",
+    metaDescription: "Professional, done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Realistic on-model, product and campaign imagery.",
     ...homeHero,
     heroImage: "/images/luxury-stairs-wide.jpeg",
   },
@@ -314,10 +314,12 @@ export function getStoredPages(): PageSEO[] {
         "Create studio, lifestyle, and editorial content for your brand in days instead of weeks",
         "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
         "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content.",
+        "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. Share your product photos and creative brief; our team creates, refines and delivers realistic model, product and campaign images.",
       ];
-      const oldMetaTitles = ["SetlesStudio | Premium Hyper Realistic AI Fashion Content"];
+      const oldMetaTitles = ["SetlesStudio | Premium Hyper Realistic AI Fashion Content", "AI Fashion & Product Photography Services | SetlesStudio"];
       const oldMetaDescriptions = [
         "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
+        "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images.",
       ];
       return {
         ...page,
@@ -502,10 +504,10 @@ export function getStoredValueProps(): ValuePropTile[] {
   try {
     const saved: ValuePropTile[] = JSON.parse(data);
     const previousDefaults = [
-      { title: "Per-project Pricing", text: "Compare each package by price, image count, and included services." },
-      { title: "7 Day Average Delivery", text: "Fast turnaround without compromising quality." },
-      { title: "Unlimited Creativity", text: "Unlimited ideas, concepts, and creative possibilities." },
-      { title: "Flexible Production", text: "Studio, lifestyle, editorial, and advertising content." },
+      { title: "Brand-led creative direction", text: "We plan model styling, settings and image concepts around your references, audience and campaign goals." },
+      { title: "Product-detail review", text: "We review colours, fabric, patterns, logos and construction against the product photos and references you provide." },
+      { title: "Flexible image production", text: "Combine studio, on-model, lifestyle and campaign visuals for product pages, launches and advertising." },
+      { title: "Clear project delivery", text: "Agree the image count, deliverables, review stages and timeline before production begins." },
     ];
     return saved.map((item, index) => {
       const previous = previousDefaults[index];

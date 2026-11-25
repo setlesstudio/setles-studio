@@ -26,6 +26,10 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
     src: "/images/ai-footwear-lime-green-heels.webp",
     alt: "AI fashion model wearing lime-green pointed heels with an orange outfit in a footwear campaign",
   },
+  "luxury-fashion-ai-campaign": {
+    src: "/images/campaign-desert-knit-dress-2.jpeg",
+    alt: "AI fashion model wearing a cream knit halter dress in a desert editorial campaign setting",
+  },
   "bags-accessories-realistic-ai-photography": {
     src: "/images/ai-handbag-coral-tote.webp",
     alt: "AI fashion model carrying a coral tote bag while wearing a green cardigan in a handbag campaign",
@@ -46,9 +50,9 @@ export default function HomeServices() {
     <section className="bg-cream py-14 rounded-3xl">
       <div className="container-site">
         <SectionHeading
-          eyebrow="What we do"
-          title="Done-for-You AI Fashion & Product Photography Services"
-          text="We provide managed photography production for US clothing, beauty and ecommerce brands. Share your product photos and creative brief; our team creates realistic on-model, product and campaign visuals for your store and marketing."
+          eyebrow="Done-for-You Photography Services"
+          title="AI Fashion & Product Photography Services for US Brands"
+          text="SetlesStudio is a professional, done-for-you AI-assisted photography service provider for clothing, beauty, footwear and ecommerce brands across the United States and worldwide. Share your product photos and creative brief; our team plans and produces realistic on-model, product and campaign visuals for ecommerce, launches and advertising."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((service, index) => (
