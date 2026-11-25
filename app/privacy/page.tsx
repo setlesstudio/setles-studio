@@ -287,7 +287,7 @@ export default function PrivacyPage() {
               <p>
                 <strong>SetlesStudio</strong>
               </p>
-              <p>{site.address}</p>
+              <p>Available worldwide — remote photography services.</p>
               <p>
                 Email:{" "}
                 <a
@@ -305,7 +305,7 @@ export default function PrivacyPage() {
                   rel="noopener noreferrer"
                   className="text-brand hover:underline"
                 >
-                  {site.phone}
+                  Message us on WhatsApp
                 </a>
               </p>
             </address>
