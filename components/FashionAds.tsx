@@ -15,7 +15,7 @@ const questions = [
 
 const services = [
   { Icon: Clapperboard, title: "Campaign films", copy: "Introduce a collection with a hero look, a setting and a final detail shot that ties the story together." },
-  { Icon: Shirt, title: "On-model styling", copy: "Turn a flat lay into a styled outfit. Show how the pieces pair and how the silhouette reads in motion." },
+  { Icon: Shirt, title: "On model styling", copy: "Turn a flat lay into a styled outfit. Show how the pieces pair and how the silhouette reads in motion." },
   { Icon: ShoppingBag, title: "Product demos", copy: "Show the clasp opening, the strap in hand or the drape of a sleeve. Give shoppers a closer look." },
   { Icon: Smartphone, title: "UGC style ads", copy: "Introduce a product through a try-on, a styling tip or a quick outfit reveal made for a social feed." },
   { Icon: Photo, title: "Storefront videos", copy: "Give a Shopify product page a short loop that complements its still photos and fits the gallery layout." },

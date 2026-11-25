@@ -121,8 +121,8 @@ const homeComparisonExamples = [
         src: "/images/magenta-embroidered-dress-neckline-detail.webp",
         width: 881,
         height: 1180,
-        alt: "Close-up of an AI fashion model wearing a magenta embroidered dress, showing the neckline and dupatta border",
-        caption: "Close-up of the neckline embroidery and gold dupatta border.",
+        alt: "Close up of an AI fashion model wearing a magenta embroidered dress, showing the neckline and dupatta border",
+        caption: "Close up of the neckline embroidery and gold dupatta border.",
       },
     ],
   },
@@ -190,7 +190,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Before / After"
           title="From Product Photos to AI Model Fashion Photography"
-          text="See how our photography team turns product references into realistic model-led visuals for fashion and ecommerce brands. Compare the original garments with finished images that show fit, fabric, embroidery and styling."
+          text="See how our photography team turns product references into realistic model focused visuals for fashion and ecommerce brands. Compare the original garments with finished images that show fit, fabric, embroidery and styling."
         />
         <div className="mx-auto mt-7 max-w-[1160px] space-y-9">
           {homeComparisonExamples.map(({ name, photos }) => (

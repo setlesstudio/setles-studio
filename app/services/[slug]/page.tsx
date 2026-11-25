@@ -106,9 +106,9 @@ const services: Record<string, ServiceData> = {
       after2Caption: "A closer studio view shows how the scalloped neckline sits across one shoulder.",
       beforeAlt: "Plum scalloped long-sleeve top and matching leggings on a light background",
       after: "/images/plum-studio-original-model.webp",
-      afterAlt: "Full-length AI model in a plum top and leggings with white sneakers",
+      afterAlt: "Full length AI model in a plum top and leggings with white sneakers",
       after2: "/images/plum-studio-original-detail.webp",
-      after2Alt: "Close-up of the plum top’s asymmetric scalloped neckline on an AI model",
+      after2Alt: "Close up of the plum top’s asymmetric scalloped neckline on an AI model",
     },
     description: {
       titleHighlight: "AI Fashion Photography",
@@ -127,7 +127,7 @@ const services: Record<string, ServiceData> = {
         { number: "03", icon: Lightbulb,    title: "Professional Lighting",  description: "Studio-quality lighting setups for premium fashion presentation." },
         { number: "04", icon: Rocket,       title: "Fast Turnaround",        description: "Get your images delivered quickly and launch your products faster." },
         { number: "05", icon: Coins,        title: "Product Photo Input",         description: "Start with a flat lay, mannequin photo, or product shot of the garment you want shown on a model." },
-        { number: "06", icon: MonitorCheck, title: "High Resolution",        description: "High-resolution images perfect for web, print, and advertising." },
+        { number: "06", icon: MonitorCheck, title: "High Resolution",        description: "High resolution images perfect for web, print, and advertising." },
       ],
     },
     ctaBanner: {
@@ -229,7 +229,7 @@ const services: Record<string, ServiceData> = {
             "intro": "To help us assess your collection and prepare a quote, share:",
             "items": [
                   "Clear front-and-back photographs of each garment.",
-                  "Close-ups of prints, logos, embroidery and distinctive fabric details.",
+                  "Close ups of prints, logos, embroidery and distinctive fabric details.",
                   "The number of products and images you need.",
                   "Model, pose and background references.",
                   "Your intended image placements and required dimensions.",
@@ -823,7 +823,7 @@ const services: Record<string, ServiceData> = {
       {
         "number": "02",
         "icon": Users,
-        "title": "On-Model Photography",
+        "title": "On Model Photography",
         "description": "Show your product in hand with model styling and poses chosen for your brand."
       },
       {
@@ -869,7 +869,7 @@ const services: Record<string, ServiceData> = {
       "title": "What to Send for an Accurate Product Brief",
       "items": [
         "Clear front, back and side views of each product.",
-        "Close-ups or artwork for labels, logos, caps and applicators.",
+        "Close ups or artwork for labels, logos, caps and applicators.",
         "A size reference and accurate product colours.",
         "Examples of your preferred backgrounds, models and lighting.",
         "Your image count, required dimensions and launch date."
@@ -1030,7 +1030,7 @@ const beautyGallery = [
   {
     "src": "/images/ai-beauty-perfume-model-studio.webp",
     "alt": "AI model in a burgundy jacket presenting a perfume bottle with both hands",
-    "caption": "On-model perfume photography"
+    "caption": "On model perfume photography"
   },
   {
     "src": "/images/ai-beauty-perfume-model-profile.webp",
@@ -1066,8 +1066,8 @@ export default function ServiceSlugPage({
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
   if (params.slug === "realistic-ai-video-ads-ugc") {
     return <>
-      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Fashion Ads and UGC Videos", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
-      <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Fashion Ads and UGC Videos", path: "/services/" + params.slug}])} />
+      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Video Ads and UGC Style Videos for Fashion Brands", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
+      <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Video Ads and UGC Style Videos for Fashion Brands", path: "/services/" + params.slug}])} />
       <FashionAds quote={waHeroHref} send={waCtaHref} />
       <div className="container-site pb-10">
         <p className="leading-relaxed text-ink-soft">
