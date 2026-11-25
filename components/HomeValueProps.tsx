@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Rocket, Layers, CircleDollarSign, Clock } from "lucide-react";
 import { valueProps } from "@/lib/data";
+import { getStoredValueProps } from "@/lib/dashboard-store";
 
 const icons = [Rocket, Layers, CircleDollarSign, Clock];
 
@@ -10,26 +11,10 @@ export default function HomeValueProps() {
   const [items, setItems] = useState(valueProps);
 
   useEffect(() => {
-    const readItems = () => {
-      try {
-        const saved = JSON.parse(localStorage.getItem("setles_value_props") || "null");
-        if (Array.isArray(saved) && saved.length) {
-          setItems(saved.map((item) => ({
-            ...item,
-            title: item.title === "10x More Affordable" ? valueProps[0].title : item.title,
-            text: item.text === "High end content without high end production costs." ? valueProps[0].text : item.text,
-          })));
-        } else {
-          setItems(valueProps);
-        }
-      } catch {
-        setItems(valueProps);
-      }
-    };
-
-    readItems();
-    window.addEventListener("setles_db_update", readItems);
-    return () => window.removeEventListener("setles_db_update", readItems);
+    const update = () => setItems(getStoredValueProps());
+    update();
+    window.addEventListener("setles_db_update", update);
+    return () => window.removeEventListener("setles_db_update", update);
   }, []);
 
   return (
