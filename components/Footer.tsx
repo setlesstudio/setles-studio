@@ -88,6 +88,9 @@ export default function Footer() {
             >
               Message us on WhatsApp
             </a>
+            <p className="text-sm text-white/40">
+              Available worldwide — remote photography services.
+            </p>
           </div>
           <div className="mt-5 flex gap-3">
             {Object.entries(site.social)
