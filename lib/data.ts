@@ -42,11 +42,63 @@ export const services: Service[] = [
   { id: "bags-accessories-realistic-ai-photography", number: "07", title: "AI Handbag and Accessories Photography for Ecommerce Brands", short: "Studio, model and lifestyle imagery that highlights bag shape, materials, hardware and details.", long: "Professional AI handbag and accessories photography for fashion and ecommerce brands. We create studio, model and lifestyle images from your product photos and work remotely with clients across the United States and worldwide.", image: "/images/bags-shoot-with-model.jpeg", deliverables: ["AI model imagery featuring handbags and accessories", "Attention to materials, stitching, hardware and colour", "Studio and lifestyle scenes for product collections", "Images for ecommerce, catalogs and campaigns"] },
 ];
 
+export const stats = [
+  { value: "500+", label: "Projects Completed" },
+  { value: "100+", label: "Happy Fashion Brands" },
+  { value: "30+", label: "Countries Served" },
+  { value: "98%", label: "Client Satisfaction" },
+];
+
+export const valueProps = [
+  {
+    title: "Brand focused creative direction",
+    text: "We turn your product photos, brand references and brief into a clear visual plan for model styling, locations, lighting and image formats.",
+  },
+  {
+    title: "Product detail review",
+    text: "We review finished visuals against your references, checking colour, fabric texture, prints, stitching, shape, packaging and logos.",
+  },
+  {
+    title: "Consistent model focused imagery",
+    text: "Create coordinated studio, model and lifestyle images across product ranges, collections and campaigns.",
+  },
+  {
+    title: "Remote project delivery",
+    text: "Work with our team online from the United States or elsewhere, with agreed image counts, review stages, revisions and delivery dates.",
+  },
+];
+
+export type TrustedBrand = { name: string; logo: string };
+
+export const trustedByRow1: TrustedBrand[] = [
+  { name: "Mersino",            logo: "/images/logos/mersino.png" },
+  { name: "Greatly",            logo: "/images/logos/greatly.png" },
+  { name: "Xanderlocket",       logo: "/images/logos/xanderlocket.png" },
+  { name: "HardTail",           logo: "/images/logos/HardTail.avif" },
+  { name: "Swim Zip",           logo: "/images/logos/Swim-zip-logo.png" },
+  { name: "Peachi",             logo: "/images/logos/peachi.png" },
+  { name: "Knct",               logo: "/images/logos/knct.png" },
+];
+
+export const trustedByRow2: TrustedBrand[] = [
+  { name: "Loungees",           logo: "/images/logos/loungees.png" },
+  { name: "SALTY.",             logo: "/images/logos/salty..webp" },
+  { name: "BASICBEIGE",         logo: "/images/logos/basicbeige-png.webp" },
+  { name: "Wonder",             logo: "/images/logos/Logo-wonder.png" },
+  { name: "Winter Green",       logo: "/images/logos/winter-green-png.png" },
+  { name: "BH",                 logo: "/images/logos/BH-logo.png" },
+  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR-logo.png" },
+];
+
+/** @deprecated use trustedByRow1 / trustedByRow2 */
+export const trustedBy: TrustedBrand[] = [...trustedByRow1, ...trustedByRow2];
+
+
 export const process = [
   {
     step: "01",
     title: "Share your product photos and brief",
-    text: "Send product images, close-up details, logos, patterns and a short brief describing your audience and intended use.",
+    text: "Send product images, close up details, logos, patterns and a short brief describing your audience and intended use.",
   },
   {
     step: "02",
