@@ -20,7 +20,7 @@ import HomeFAQs from "@/components/HomeFAQs";
 import StructuredData from "@/components/StructuredData";
 import { process, site } from "@/lib/data";
 const homeMetaTitle = "AI Fashion & Product Photography Services for US Brands | SetlesStudio";
-const homeMetaDescription = "Professional, done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Realistic on-model, product and campaign imagery.";
+const homeMetaDescription = "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns.";
 
 export const metadata: Metadata = {
   title: homeMetaTitle,
@@ -75,7 +75,7 @@ const homeComparisonExamples = [
         width: 1792,
         height: 2400,
         alt: "AI fashion model wearing a navy activewear tank and matching shorts while carrying a brown tote outdoors",
-        caption: "On-model view of the navy set styled with a brown tote.",
+        caption: "Model view of the navy set styled with a brown tote.",
       },
       {
         src: "/images/navy-activewear-reading.webp",
@@ -100,21 +100,21 @@ const homeComparisonExamples = [
         src: "/images/magenta-embroidered-dress-product-photo.webp",
         width: 701,
         height: 1180,
-        alt: "Original product photograph of a magenta dress with floral embroidery and a gold-trimmed dupatta",
+        alt: "Original product photograph of a magenta dress with floral embroidery and a gold trimmed dupatta",
         caption: "Original product photo showing the floral embroidery and dupatta.",
       },
       {
         src: "/images/magenta-embroidered-dress-ai-model.webp",
         width: 881,
         height: 1180,
-        alt: "Full-length AI fashion model wearing a magenta embroidered dress with a gold-trimmed dupatta",
-        caption: "Full-length on-model view of the embroidered dress and matching dupatta.",
+        alt: "Full length AI fashion model wearing a magenta embroidered dress with a gold trimmed dupatta",
+        caption: "Full length model view of the embroidered dress and matching dupatta.",
       },
       {
         src: "/images/magenta-embroidered-dress-ai-model-walking.webp",
         width: 881,
         height: 1180,
-        alt: "AI fashion model walking in a magenta embroidered dress and matching gold-trimmed dupatta",
+        alt: "AI fashion model walking in a magenta embroidered dress and matching gold trimmed dupatta",
         caption: "Walking pose showing how the dress and dupatta drape on the model.",
       },
       {
@@ -144,7 +144,7 @@ export default function HomePage() {
           mainEntity: {
             "@type": "Service",
             name: "AI Fashion & Product Photography Services",
-            serviceType: "Done-for-you AI-assisted fashion and product photography",
+            serviceType: "AI fashion and product photography services",
             provider: { "@id": "https://www.setlesstudio.com/#organization" },
             areaServed: [
               { "@type": "Country", name: "United States" },
@@ -161,7 +161,7 @@ export default function HomePage() {
         preserveImageQuality
         eyebrow="Professional Photography Services for US & Global Brands"
         title={<HomeHeroTitle />}
-        text="SetlesStudio provides done-for-you AI-assisted fashion and product photography for clothing, beauty and ecommerce brands across the United States and worldwide. Share your product photos and creative brief; our team plans, produces and refines realistic on-model, product and campaign imagery for your store and marketing."
+        text="Professional AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. We create realistic AI model photography, product images and commercial campaigns for growing brands."
         image="/images/navy-activewear-banner.webp"
         imageMobile="/images/navy-activewear-banner-mobile.webp"
         mobileMedia="(max-width: 767px) and (max-aspect-ratio: 25/32)"
@@ -181,7 +181,7 @@ export default function HomePage() {
           Message us on WhatsApp
         </a>
         <p className="w-full text-sm text-white/50">
-          7-day average delivery · 500+ projects completed · Top Rated Plus on
+          7 day average delivery · 500+ projects completed · Top Rated Plus on
           Upwork
         </p>
       </PageHero>
@@ -189,7 +189,7 @@ export default function HomePage() {
       <section className="container-site py-10">
         <SectionHeading
           eyebrow="Before / After"
-          title="From Product Photos to On-Model Fashion Photography"
+          title="From Product Photos to AI Model Fashion Photography"
           text="See how our photography team turns product references into realistic model-led visuals for fashion and ecommerce brands. Compare the original garments with finished images that show fit, fabric, embroidery and styling."
         />
         <div className="mx-auto mt-7 max-w-[1160px] space-y-9">

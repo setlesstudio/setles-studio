@@ -38,7 +38,7 @@ export const services: Service[] = [
     number: "01",
     title: "AI Fashion Photography for Clothing Brands",
     short:
-      "Turn your garment references into realistic on-model studio and lifestyle images for apparel product pages, catalogs and campaigns.",
+      "Turn your garment references into realistic model studio and lifestyle images for apparel product pages, catalogs and campaigns.",
     long: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit ready for product pages, catalogs, Shopify stores, Amazon, and eCommerce websites.",
     image: "/images/studio-pink.png",
     deliverables: [
@@ -52,12 +52,12 @@ export const services: Service[] = [
     id: "ai-beauty-skincare-photography",
     number: "02",
     title: "AI Product Photography for Beauty and Skincare Brands",
-    short: "Create product-led and on-model visuals for skincare, cosmetics and fragrance collections, with styling aligned to your brand.",
-    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, on-model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
+    short: "Create product-led and model visuals for skincare, cosmetics and fragrance collections, with styling aligned to your brand.",
+    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
     image: "/images/ai-skincare-sunscreen-model.webp",
     deliverables: [
       "Product-led photography for skincare, sunscreen, cosmetics and fragrance",
-      "On-model beauty and lifestyle campaign visuals",
+      "AI model beauty and lifestyle campaign visuals",
       "Coordinated backgrounds, lighting and styling across collections",
       "Ecommerce, website, social media and advertising-ready image formats",
     ],
@@ -98,7 +98,7 @@ export const services: Service[] = [
     number: "05",
     title: "AI Footwear Photography for Ecommerce Brands",
     short:
-      "Create on-foot and product-focused visuals that show the shape, materials, sole, stitching and fit of your footwear.",
+      "Create on foot and product-focused visuals that show the shape, materials, sole, stitching and fit of your footwear.",
     long: "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on foot fit. Every image preserves the sole, material, stitching, texture, and product details with a 100% realistic look.",
     image: "/images/footwear-heels.png",
     deliverables: [
@@ -130,7 +130,7 @@ export const services: Service[] = [
     number: "07",
     title: "AI Handbag & Accessories Photography",
     short:
-      "Showcase handbags and accessories with model-led, studio and lifestyle imagery that highlights shape, materials, hardware and details.",
+      "Showcase handbags and accessories with model focused, studio and lifestyle imagery that highlights shape, materials, hardware and details.",
     long: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, catalogs, and social media marketing.",
     image: "/images/bags-shoot-with-model.jpeg",
     deliverables: [
@@ -152,16 +152,16 @@ export const stats = [
 
 export const valueProps = [
   {
-    title: "Brand-led creative direction",
+    title: "Brand focused creative direction",
     text: "We turn your product photos, brand references and brief into a clear visual plan for model styling, locations, lighting and image formats.",
   },
   {
-    title: "Product-detail review",
+    title: "Product detail review",
     text: "We review finished visuals against your references, checking colour, fabric texture, prints, stitching, shape, packaging and logos.",
   },
   {
-    title: "Consistent model-led imagery",
-    text: "Create coordinated studio, on-model and lifestyle images across product ranges, collections and campaigns.",
+    title: "Consistent model focused imagery",
+    text: "Create coordinated studio, model and lifestyle images across product ranges, collections and campaigns.",
   },
   {
     title: "Remote project delivery",
@@ -208,7 +208,7 @@ export const process = [
   {
     step: "03",
     title: "Create and review the images",
-    text: "Our team produces the agreed on-model, product and lifestyle visuals, then checks key details against your references.",
+    text: "Our team produces the agreed model, product and lifestyle visuals, then checks key details against your references.",
   },
   {
     step: "04",

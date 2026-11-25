@@ -69,7 +69,7 @@ const DEFAULT_BLOGS: BlogPost[] = [
     id: "future-of-ai-fashion-photography",
     title: "The Future of AI Fashion Photography in eCommerce",
     slug: "future-of-ai-fashion-photography",
-    excerpt: "How apparel brands are leveraging hyper-realistic AI models to scale content, reduce photoshoot costs by 90%, and launch seasonal campaigns in days instead of weeks.",
+    excerpt: "How apparel brands are leveraging highly realistic AI models to scale content, reduce photoshoot costs by 90%, and launch seasonal campaigns in days instead of weeks.",
     category: "AI Tech",
     readTime: "5 min read",
     publishedAt: "2026-07-10T12:00:00Z",
@@ -78,7 +78,7 @@ const DEFAULT_BLOGS: BlogPost[] = [
 
 Traditional fashion photoshoots are slow, expensive, and logistically painful. You have to hire models, photographers, makeup artists, book studios, rent equipment, and wait weeks for editing. If you realize a fabric looks off or need a different angle later, your only option is to book another shoot.
 
-AI Fashion Photography is changing this paradigm. By utilizing hyper-realistic AI workflows, brands can now transform simple flat product photos into gorgeous, on-model lifestyle and studio imagery in days.
+AI Fashion Photography is changing this paradigm. By utilizing highly realistic AI workflows, brands can now transform simple flat product photos into gorgeous, model lifestyle and studio imagery in days.
 
 ### Key Benefits for Ecommerce Brands:
 1. **Unprecedented Speed**: Launch new collections within days of receiving apparel samples.
@@ -89,7 +89,7 @@ AI Fashion Photography is changing this paradigm. By utilizing hyper-realistic A
 ### The Role of Custom Textures and Fit
 A major hurdle in early generative AI was keeping product details accurate. With advanced control pipelines, we now preserve the exact stitch patterns, fabric texture, reflections, and wrinkles of the original apparel. The result is visual output that is not only realistic but completely faithful to the physical product.`,
     metaTitle: "The Future of AI Fashion Photography | SetlesStudio Blog",
-    metaDescription: "Learn how apparel brands are leveraging hyper-realistic AI models to scale product catalogs, reduce photoshoot costs by 90%, and boost sales.",
+    metaDescription: "Learn how apparel brands are leveraging highly realistic AI models to scale product catalogs, reduce photoshoot costs by 90%, and boost sales.",
     status: "Published",
   },
   {
@@ -140,7 +140,7 @@ As social media ads and catalogs require fresh visual content almost weekly, the
 ### The Verdict
 For flagship brand campaigns, high-end traditional photography still holds space. However, for continuous eCommerce catalog updates, social media ads, A/B testing, and rapid line launches, AI workflows offer a 10x cost advantage and speed that traditional photography simply cannot match.`,
     metaTitle: "Traditional Photoshoots vs. AI Workflows | SetlesStudio",
-    metaDescription: "A direct cost-benefit analysis between traditional fashion photography and hyper-realistic AI workflows. Compare price, turnaround, and adaptability.",
+    metaDescription: "A direct cost-benefit analysis between traditional fashion photography and highly realistic AI workflows. Compare price, turnaround, and adaptability.",
     status: "Published",
   },
   {
@@ -161,10 +161,10 @@ Below are 15 actionable eCommerce product photography tips designed to help fash
 ---
 
 ### 1. Leverage Hyper-Realistic AI Studio & Lifestyle Models
-Instead of spending thousands on traditional photoshoots, leading fashion brands utilize <a href="/services">AI Fashion Photography Services</a> to create on-model imagery in days. You can showcase garments on diverse models across multiple ethnicities and sizes without re-booking studio time.
+Instead of spending thousands on traditional photoshoots, leading fashion brands utilize <a href="/services">AI Fashion Photography Services</a> to create model imagery in days. You can showcase garments on diverse models across multiple ethnicities and sizes without booking studio time.
 
 ### 2. Standardize High-Resolution PDP Images
-Ensure every Product Detail Page (PDP) includes at least 5–7 high-res shots: front, back, side profile, fabric close-up, and lifestyle context. Check out our <a href="/portfolio">Portfolio Showcase</a> for examples of high-converting image ratios.
+Ensure every Product Detail Page (PDP) includes at least 5 to 7 high-res shots: front, back, side profile, fabric close-up, and lifestyle context. Check out our <a href="/portfolio">Portfolio Showcase</a> for examples of high-converting image ratios.
 
 ### 3. Maintain Consistent Color Accuracy & White Balance
 Color discrepancies are a leading cause of e-commerce returns. Use calibrated lighting and sRGB color profiles to ensure the apparel color on screen matches the physical product in hand.
@@ -179,7 +179,7 @@ While clean white backgrounds are ideal for catalog browsing, contextual lifesty
 Slow-loading product photos destroy conversion rates. Compress images using WebP formats and responsive image attributes without sacrificing visual crispness.
 
 ### 7. Showcase Apparel Movement & Natural Draping
-Static flat-lays can fail to convey fit. On-model imagery displays how fabric drapes, stretches, and moves naturally on the body.
+Static flat lays can fail to convey fit. AI model imagery displays how fabric drapes, stretches, and moves naturally on the body.
 
 ### 8. Use Structured Internal Linking Across Content
 Enhance SEO authority by interlinking related blog guides, service pages, and pricing plans. For instance, compare options in our <a href="/pricing">Pricing Packages</a> to find the best production tier for your catalog size.
@@ -200,7 +200,7 @@ Avoid harsh shadows that obscure clothing details. Soft, diffused lighting ensur
 Over 70% of e-commerce traffic occurs on mobile devices. Ensure your image gallery supports smooth pinch-to-zoom gestures on iOS and Android.
 
 ### 14. Add Search Engine Optimized Alt Tags & File Names
-Name image files descriptively (e.g., \`navy-activewear-set-on-model.jpg\`) and include targeted alt text to improve Google Image Search rankings.
+Name image files descriptively (e.g., \`navy-activewear-set-model.jpg\`) and include targeted alt text to improve Google Image Search rankings.
 
 ### 15. Request Custom AI Samples Before Scaling Production
 Want to test how your apparel looks with realistic AI models? You can <a href="/contact">Book a Free Consultation</a> and receive a free sample using your own product images.
@@ -216,8 +216,8 @@ By implementing these 15 product photography strategies, your online store will 
 ];
 
 export const homeHero = {
-  heroTitle: "[AI Fashion & Product Photography]",
-  heroText: "Done-for-you AI-assisted fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide. Share your product photos and brief; our team plans, creates and reviews realistic on-model, product and campaign imagery.",
+  heroTitle: "[AI Fashion & Product Photography] Services for US Brands",
+  heroText: "Professional AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. We create realistic AI model photography, product images and commercial campaigns for growing brands.",
 };
 
 // Initial page defaults
@@ -226,7 +226,7 @@ const DEFAULT_PAGES: PageSEO[] = [
     pageId: "home",
     title: "Home Page",
     metaTitle: "AI Fashion & Product Photography Services for US Brands | SetlesStudio",
-    metaDescription: "Professional, done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Realistic on-model, product and campaign imagery.",
+    metaDescription: "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns.",
     ...homeHero,
     heroImage: "/images/luxury-stairs-wide.jpeg",
   },
@@ -314,17 +314,17 @@ export function getStoredPages(): PageSEO[] {
         "Create studio, lifestyle, and editorial content for your brand in days instead of weeks",
         "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
         "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content.",
-        "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. Share your product photos and creative brief; our team creates, refines and delivers realistic model, product and campaign images.",
+        "Professional AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. We create realistic AI model photography, product images and commercial campaigns for growing brands.",
       ];
       const oldMetaTitles = ["SetlesStudio | Premium Hyper Realistic AI Fashion Content", "AI Fashion & Product Photography Services | SetlesStudio"];
       const oldMetaDescriptions = [
         "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
-        "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images.",
+        "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns.",
       ];
       return {
         ...page,
-        metaTitle: oldMetaTitles.includes(page.metaTitle) ? "AI Fashion & Product Photography Services | SetlesStudio" : page.metaTitle,
-        metaDescription: oldMetaDescriptions.includes(page.metaDescription) ? "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images." : page.metaDescription,
+        metaTitle: oldMetaTitles.includes(page.metaTitle) ? "AI Fashion & Product Photography Services for US Brands | SetlesStudio" : page.metaTitle,
+        metaDescription: oldMetaDescriptions.includes(page.metaDescription) ? "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns." : page.metaDescription,
         heroTitle: oldTitles.includes(page.heroTitle) ? homeHero.heroTitle : page.heroTitle,
         heroText: oldTexts.includes(page.heroText) ? homeHero.heroText : page.heroText,
       };
@@ -346,7 +346,7 @@ const previousServiceCopy: Record<string, { titles: string[]; shorts: string[] }
     titles: ["Realistic AI Studio Photography for Apparel Brands", "AI Studio Photography for Apparel Brands", "AI Fashion Photography for Clothing Brands"],
     shorts: [
       "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images for product pages, catalogs, Shopify, and Amazon.",
-      "Turn flat-lay garment photos into on-model studio images with a consistent background for your product pages and apparel catalog.",
+      "Turn flat lay garment photos into model studio images with a consistent background for your product pages and apparel catalog.",
     ],
   },
   "lifestyle-realistic-ai-photography": {
@@ -506,7 +506,7 @@ export function getStoredValueProps(): ValuePropTile[] {
     const previousDefaults = [
       { title: "Brand-led creative direction", text: "We plan model styling, settings and image concepts around your references, audience and campaign goals." },
       { title: "Product-detail review", text: "We review colours, fabric, patterns, logos and construction against the product photos and references you provide." },
-      { title: "Flexible image production", text: "Combine studio, on-model, lifestyle and campaign visuals for product pages, launches and advertising." },
+      { title: "Flexible image production", text: "Combine studio, model, lifestyle and campaign visuals for product pages, launches and advertising." },
       { title: "Clear project delivery", text: "Agree the image count, deliverables, review stages and timeline before production begins." },
     ];
     return saved.map((item, index) => {

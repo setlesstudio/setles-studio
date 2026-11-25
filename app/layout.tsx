@@ -20,7 +20,7 @@ const sans = localFont({
   display: "swap",
 });
 
-const homeDescription = "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States and worldwide. Request a project sample.";
+const homeDescription = "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.setlesstudio.com"),
@@ -115,7 +115,7 @@ export default function RootLayout({
           name: site.name,
           url: site.url,
           email: site.email,
-          description: "Professional, done-for-you AI-assisted fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide.",
+          description: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands in the United States and worldwide.",
           areaServed: [
             { "@type": "Country", name: "United States" },
             { "@type": "Place", name: "Worldwide" },
@@ -123,7 +123,7 @@ export default function RootLayout({
           knowsAbout: [
             "AI fashion photography services",
             "AI product photography",
-            "On-model apparel photography",
+            "AI model apparel photography",
             "Ecommerce product imagery",
             "Fashion campaign photography",
             "Beauty and skincare product photography",

@@ -70,9 +70,9 @@ export default function Footer() {
            
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Professional, done-for-you AI fashion and product photography for clothing,
-            beauty and ecommerce brands. Studio, on-model, lifestyle and campaign visuals
-            delivered remotely for US and international clients.
+            Professional AI fashion and product photography for clothing, beauty and
+            ecommerce brands. We create studio, model, lifestyle and campaign visuals
+            remotely for clients in the United States and worldwide.
           </p>
           <div className="mt-5 flex flex-col gap-1.5">
             <a
@@ -90,7 +90,7 @@ export default function Footer() {
               Message us on WhatsApp
             </a>
             <p className="text-sm text-white/40">
-              Available worldwide — remote photography services.
+              Available worldwide through remote photography services.
             </p>
           </div>
           <div className="mt-5 flex gap-3">
