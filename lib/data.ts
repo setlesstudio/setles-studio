@@ -6,8 +6,6 @@ export const site = {
   email: "contact@setlesstudio.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
-  phone: "+92 301 7281412",
-  address: "Office 1243, 1st Floor, Street No. 13, Gulberg, Lahore, Pakistan",
   social: {
     instagram: "https://www.instagram.com/setlesstudio/",
     linkedin: "https://www.linkedin.com/in/setles-studio-b71545416/",
