@@ -10,6 +10,9 @@ export default function TrustedBy() {
       <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-ink-soft/50">
         Trusted by brands worldwide
       </p>
+      <p className="mx-auto mt-3 max-w-3xl px-6 text-center text-sm leading-relaxed text-ink-soft">
+        We provide remote photography services for clothing, beauty and ecommerce businesses across the United States and other markets.
+      </p>
 
       <div className="mt-8 space-y-8">
         <div className="relative">
