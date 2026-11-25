@@ -216,8 +216,8 @@ By implementing these 15 product photography strategies, your online store will 
 ];
 
 export const homeHero = {
-  heroTitle: "[AI Fashion] Photography for Clothing Brands",
-  heroText: "We create realistic AI fashion and ecommerce visuals, from model photography and lifestyle campaigns to product images and video ads, without costly photoshoots.",
+  heroTitle: "[AI Fashion & Product Photography]",
+  heroText: "Professional, done-for-you AI fashion and product photography for clothing, beauty and ecommerce brands across the United States. Share your product photos and creative brief; our team creates, refines and delivers realistic model, product and campaign images.",
 };
 
 // Initial page defaults
@@ -225,8 +225,8 @@ const DEFAULT_PAGES: PageSEO[] = [
   {
     pageId: "home",
     title: "Home Page",
-    metaTitle: "SetlesStudio | Premium Hyper Realistic AI Fashion Content",
-    metaDescription: "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
+    metaTitle: "AI Fashion & Product Photography Services | SetlesStudio",
+    metaDescription: "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images.",
     ...homeHero,
     heroImage: "/images/luxury-stairs-wide.jpeg",
   },
@@ -304,12 +304,27 @@ export function getStoredPages(): PageSEO[] {
     const pages: PageSEO[] = JSON.parse(data);
     return pages.map(page => {
       if (page.pageId !== "home") return page;
-      const oldTitles = ["[AI Fashion] Photography for Ecommerce Brands", "Realistic [AI Fashion] Photography \n for Ecommerce Brands"];
-      const oldText = "Create studio, lifestyle, and editorial content for your brand in days instead of weeks";
+      const oldTitles = [
+        "[AI Fashion] Photography for Clothing Brands",
+        "[AI Fashion] Photography for Ecommerce Brands",
+        "[AI Fashion & Product Photography] for Ecommerce Brands",
+        "Realistic [AI Fashion] Photography \n for Ecommerce Brands",
+      ];
+      const oldTexts = [
+        "Create studio, lifestyle, and editorial content for your brand in days instead of weeks",
+        "Create studio, lifestyle, and editorial content for your brand in days instead of weeks, 10x more affordable than traditional photoshoots.",
+        "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content.",
+      ];
+      const oldMetaTitles = ["SetlesStudio | Premium Hyper Realistic AI Fashion Content"];
+      const oldMetaDescriptions = [
+        "Hyper realistic AI fashion photography for ecommerce brands. Studio, lifestyle, and editorial content in days instead of weeks, 10x more affordable.",
+      ];
       return {
         ...page,
+        metaTitle: oldMetaTitles.includes(page.metaTitle) ? "AI Fashion & Product Photography Services | SetlesStudio" : page.metaTitle,
+        metaDescription: oldMetaDescriptions.includes(page.metaDescription) ? "Done-for-you AI fashion and product photography for US clothing, beauty and ecommerce brands. Get realistic model, product and campaign images." : page.metaDescription,
         heroTitle: oldTitles.includes(page.heroTitle) ? homeHero.heroTitle : page.heroTitle,
-        heroText: [oldText, oldText + ", 10x more affordable than traditional photoshoots.", "Create realistic, high quality fashion and ecommerce visuals without traditional photoshoot costs. From AI model photography and lifestyle campaigns to product images and fashion video ads, we help clothing brands create professional visual content."].includes(page.heroText) ? homeHero.heroText : page.heroText,
+        heroText: oldTexts.includes(page.heroText) ? homeHero.heroText : page.heroText,
       };
     });
   } catch (e) {
@@ -324,31 +339,49 @@ export function savePages(pages: PageSEO[]) {
 }
 
 // Previous public copy can still be present in a returning visitor’s saved cards.
-const previousServiceCopy: Record<string, { title: string; short: string }> = {
+const previousServiceCopy: Record<string, { titles: string[]; shorts: string[] }> = {
   "realistic-ai-studio-photography": {
-    "title": "Realistic AI Studio Photography for Apparel Brands",
-    "short": "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images for product pages, catalogs, Shopify, and Amazon."
+    titles: ["Realistic AI Studio Photography for Apparel Brands", "AI Studio Photography for Apparel Brands", "AI Fashion Photography for Clothing Brands"],
+    shorts: [
+      "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images for product pages, catalogs, Shopify, and Amazon.",
+      "Turn flat-lay garment photos into on-model studio images with a consistent background for your product pages and apparel catalog.",
+    ],
   },
   "lifestyle-realistic-ai-photography": {
-    "title": "Lifestyle Fashion Realistic AI Photography",
-    "short": "Real life lifestyle scenes from city streets, cafés, homes, and beaches. AI fashion imagery that builds emotional context for social media, ads, and brand storytelling."
+    titles: ["Lifestyle Fashion Realistic AI Photography", "AI Lifestyle Fashion Photography"],
+    shorts: [
+      "Real life lifestyle scenes from city streets, cafés, homes, and beaches. AI fashion imagery that builds emotional context for social media, ads, and brand storytelling.",
+      "Show your collection in everyday settings, from city streets to cafés. Use the images on your storefront, in social posts, or in ads.",
+    ],
   },
   "luxury-fashion-ai-campaign": {
-    "title": "Luxury Fashion Hyper Realistic AI Campaign",
-    "short": "Hyper realistic AI campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, advertising, and seasonal brand storytelling."
+    titles: ["Luxury Fashion Hyper Realistic AI Campaign", "AI Fashion Campaign Photography"],
+    shorts: [
+      "Hyper realistic AI campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, advertising, and seasonal brand storytelling.",
+      "Build a collection launch around one editorial concept. Carry the same styling and lighting through your lookbook and campaign images.",
+    ],
   },
   "footwear-realistic-ai-photography": {
-    "title": "Footwear Realistic AI Photography",
-    "short": "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on-foot fit. Perfect for eCommerce, marketplaces, and brand campaigns."
+    titles: ["Footwear Realistic AI Photography", "AI Footwear Photography for Ecommerce Brands"],
+    shorts: [
+      "Hyper realistic AI footwear photography with accurate sole, material, stitching, and on-foot fit. Perfect for eCommerce, marketplaces, and brand campaigns.",
+      "Show sneakers, heels, or boots on foot and in close-up. Give shoppers a clear view of the silhouette, sole, materials, and stitching.",
+    ],
   },
   "realistic-ai-video-ads-ugc": {
-    "title": "Realistic AI Video Ads & UGC Content",
-    "short": "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube."
+    titles: ["Realistic AI Video Ads & UGC Content", "AI Fashion Ads and UGC Videos"],
+    shorts: [
+      "Hyper realistic AI video ads, authentic UGC style videos, and high converting social content for Shopify, TikTok, Instagram, Facebook, and YouTube.",
+      "Turn product photos into short AI video ads for TikTok and Instagram Reels, from product demonstrations to UGC-style clips.",
+    ],
   },
   "bags-accessories-realistic-ai-photography": {
-    "title": "Women's Handbag Realistic AI Photography",
-    "short": "Hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, and social media."
-  }
+    titles: ["Women's Handbag Realistic AI Photography", "AI Handbag Photography for Ecommerce Brands"],
+    shorts: [
+      "Hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, and social media.",
+      "Show a handbag on the shoulder to convey scale, then use detail shots to highlight its texture, stitching, and hardware.",
+    ],
+  },
 };
 
 export function getStoredServices(): ServiceTile[] {
@@ -366,15 +399,21 @@ export function getStoredServices(): ServiceTile[] {
       const previous = previousServiceCopy[card.id];
       const current = defaults.find(service => service.id === card.id);
       if (!previous || !current) return card;
+      const titleIsOld = previous.titles.includes(card.title);
+      const shortIsOld = previous.shorts.includes(card.short);
       if (card.id === "realistic-ai-video-ads-ugc") {
-        return { ...card, title: current.title, image: current.image, video: current.video,
-          short: card.short === previous.short ? current.short : card.short };
+        return {
+          ...card,
+          title: current.title,
+          image: current.image,
+          video: current.video,
+          short: shortIsOld ? current.short : card.short,
+        };
       }
       return {
         ...card,
-        title: card.title === previous.title || (card.id === "realistic-ai-studio-photography" && card.title === "AI Studio Photography for Apparel Brands")
-          ? current.title : card.title,
-        short: card.short === previous.short ? current.short : card.short,
+        title: titleIsOld ? current.title : card.title,
+        short: shortIsOld ? current.short : card.short,
       };
     });
     const beauty = defaults.find(service => service.id === "ai-beauty-skincare-photography");
@@ -462,11 +501,23 @@ export function getStoredValueProps(): ValuePropTile[] {
   }
   try {
     const saved: ValuePropTile[] = JSON.parse(data);
-    return saved.map(item => ({
-      ...item,
-      title: item.title === "10x More Affordable" ? valueProps[0].title : item.title,
-      text: item.text === "High end content without high end production costs." ? valueProps[0].text : item.text,
-    }));
+    const previousDefaults = [
+      { title: "Per-project Pricing", text: "Compare each package by price, image count, and included services." },
+      { title: "7 Day Average Delivery", text: "Fast turnaround without compromising quality." },
+      { title: "Unlimited Creativity", text: "Unlimited ideas, concepts, and creative possibilities." },
+      { title: "Flexible Production", text: "Studio, lifestyle, editorial, and advertising content." },
+    ];
+    return saved.map((item, index) => {
+      const previous = previousDefaults[index];
+      const current = valueProps[index];
+      return {
+        ...item,
+        title: item.title === "10x More Affordable" ? valueProps[0].title
+          : previous && current && item.title === previous.title ? current.title : item.title,
+        text: item.text === "High end content without high end production costs." ? valueProps[0].text
+          : previous && current && item.text === previous.text ? current.text : item.text,
+      };
+    });
   } catch (e) {
     return valueProps as ValuePropTile[];
   }
