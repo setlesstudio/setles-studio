@@ -20,8 +20,9 @@ export default function FreeSampleBanner() {
           See our quality before you invest
         </h2>
         <p className="mx-auto mt-4 max-w-5xl text-ink-soft">
-          Send us one product image and receive a free sample to evaluate our quality,
-          realism, and attention to detail before starting a project.
+          Share one product photo and your brand brief to request a sample. Review our
+          visual quality, styling and attention to product details before commissioning
+          a larger photography project.
         </p>
         <div className="mt-5">
           <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
