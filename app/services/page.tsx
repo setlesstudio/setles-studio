@@ -7,16 +7,18 @@ import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
 import CTABand from "@/components/CTABand";
 import { services, site } from "@/lib/data";
+import FAQ from "@/components/FAQ";
+import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "AI Fashion & Beauty Photography Services | SetlesStudio",
-  description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
+  title: "AI Fashion & Product Photography Services | SetlesStudio",
+  description: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide. Explore model, product, lifestyle and video services.",
   alternates: {
     canonical: "https://www.setlesstudio.com/services",
   },
   openGraph: {
-    title: "AI Fashion & Beauty Photography Services | SetlesStudio",
-    description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
+    title: "AI Fashion & Product Photography Services | SetlesStudio",
+    description: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide. Explore model, product, lifestyle and video services.",
     url: "https://www.setlesstudio.com/services",
     siteName: "SetlesStudio",
     images: [
@@ -31,26 +33,62 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Fashion & Beauty Photography Services | SetlesStudio",
-    description: "Explore AI studio and lifestyle photography, fashion campaigns, footwear, handbags, beauty, skincare, fragrance and video ads for ecommerce brands.",
+    title: "AI Fashion & Product Photography Services | SetlesStudio",
+    description: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide. Explore model, product, lifestyle and video services.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/studio-service-banner.png"],
   },
 };
 
+const serviceFaqs = [
+  {
+    "q": "What AI fashion and product photography services does SetlesStudio provide?",
+    "a": "SetlesStudio provides professional photography services for clothing, beauty, skincare, footwear, handbags and ecommerce brands. Our team creates AI model photography, product images, lifestyle visuals, fashion campaigns and short video ads."
+  },
+  {
+    "q": "Do you provide AI photography services for brands in the United States?",
+    "a": "Yes. We work remotely with businesses across the United States and worldwide. You can share your product photos, brand references and creative brief online."
+  },
+  {
+    "q": "Is SetlesStudio an AI image generator or a photography service provider?",
+    "a": "SetlesStudio is a professional AI fashion and product photography service provider, not a self service image generator. Our team plans the creative direction, creates the visuals and reviews them against your product references."
+  },
+  {
+    "q": "Which products can you create photography for?",
+    "a": "We work with clothing, activewear, footwear, handbags, accessories, skincare, cosmetics, sunscreen and fragrance. Send your product photos so we can review the requirements for your category."
+  },
+  {
+    "q": "What should I provide to start a photography project?",
+    "a": "Share clear product photos, front and back views where possible, close ups of important details, logos or artwork files, the number of images you need and examples of your preferred visual style."
+  },
+  {
+    "q": "How do you price AI fashion and product photography services?",
+    "a": "Pricing depends on the product category, number of final images, model and scene requirements, creative complexity and agreed deliverables. Review the packages or contact us for a quote based on your brief."
+  }
+];
+
 export default function ServicesPage() {
   return (
     <>
+      <StructuredData data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: serviceFaqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }} />
       <PageHero
-        eyebrow="Our services"
+        eyebrow="Professional Photography Services"
         title={
           <>
-            AI fashion photography&nbsp;
-            <span className="text-brand">services</span>
+            AI Fashion & Product Photography&nbsp;
+            <span className="text-brand">Services</span>
           </>
         }
-        text="SetlesStudio creates on-model photos, product images and short video ads for ecommerce brands. Send a garment flat lay or product photo, tell us where the visuals will run, and choose a studio or lifestyle setting."
+        text="SetlesStudio provides professional AI fashion and product photography services for clothing, beauty, footwear, handbags and ecommerce brands across the United States and worldwide. Our team plans, creates and reviews product, model, lifestyle and campaign visuals from your original product photos and creative brief."
         image="/images/service-page-banner.jpeg"
         imageMobile="/images/service-page-banner-mobile.jpeg"
         imageAlt="Seated model in a fashion shoot"
@@ -131,9 +169,16 @@ export default function ServicesPage() {
         </div>
       </div>
 
+      <section className="container-site py-14">
+        <SectionHeading eyebrow="Common questions" title="AI Fashion and Product Photography Services FAQs" text="Answers about our photography services, remote work with US brands, product references and project planning." />
+        <div className="mt-8">
+          <FAQ faqs={serviceFaqs} />
+        </div>
+      </section>
+
       <CTABand
-        title="Not Sure Which Hyper Realistic AI Visuals Fit Your Brand"
-        text="Let’s map out a custom hyper realistic AI photography strategy that preserves your garment’s exact drape, texture, and fit, no physical photoshoot required."
+        title="Not Sure Which AI Photography Service Fits Your Brand?"
+        text="Tell us about your products, audience and intended image use. Our team will help you choose a suitable photography service and discuss the project scope."
         primary={{ href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`, label: "Book a Free Consultation" }}
         secondary={{ href: "/portfolio", label: "View Our Work" }}
         image="/images/services-page-last-section-image.jpeg"

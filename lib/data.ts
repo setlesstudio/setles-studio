@@ -2,7 +2,7 @@
 export const site = {
   name: "SetlesStudio",
   url: "https://www.setlesstudio.com",
-  tagline: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands.",
+  tagline: "Professional AI fashion and product photography services for clothing, beauty and ecommerce brands across the United States and worldwide.",
   email: "contact@setlesstudio.com",
   bookingUrl: "/contact",
   whatsapp: "923017281412",
@@ -33,166 +33,14 @@ export type Service = {
 };
 
 export const services: Service[] = [
-  {
-    id: "realistic-ai-studio-photography",
-    number: "01",
-    title: "AI Fashion Photography for Clothing Brands",
-    short:
-      "Turn your garment references into realistic model studio and lifestyle images for apparel product pages, catalogs and campaigns.",
-    long: "Clean, consistent studio imagery built for conversion. We transform flat product photos into realistic on model studio images with accurate fabric texture, stitching, and fit ready for product pages, catalogs, Shopify stores, Amazon, and eCommerce websites.",
-    image: "/images/studio-pink.png",
-    deliverables: [
-      "Hyper realistic AI models wearing your apparel",
-      "Consistent backgrounds and models across your catalog",
-      "Custom AI models of your choice",
-      "High resolution, professionally retouched files",
-    ],
-  },
-  {
-    id: "ai-beauty-skincare-photography",
-    number: "02",
-    title: "AI Product Photography for Beauty and Skincare Brands",
-    short: "Create product-led and model visuals for skincare, cosmetics and fragrance collections, with styling aligned to your brand.",
-    long: "Create premium AI beauty photography for skincare, sun-care, cosmetics and fragrance brands. Develop product-led still lifes, model imagery and coordinated campaign visuals for ecommerce, launches and advertising.",
-    image: "/images/ai-skincare-sunscreen-model.webp",
-    deliverables: [
-      "Product-led photography for skincare, sunscreen, cosmetics and fragrance",
-      "AI model beauty and lifestyle campaign visuals",
-      "Coordinated backgrounds, lighting and styling across collections",
-      "Ecommerce, website, social media and advertising-ready image formats",
-    ],
-  },
-  {
-    id: "lifestyle-realistic-ai-photography",
-    number: "03",
-    title: "AI Lifestyle Photography for Fashion Brands",
-    short:
-      "Show your apparel in carefully art-directed lifestyle scenes for ecommerce storytelling, social content and paid campaigns.",
-    long: "Real life scenes that make your products feel lived in: city streets, cafés, homes, beaches. Lifestyle imagery builds the emotional context that studio shots can't, perfect for social media, ads, and homepage storytelling.",
-    image: "/images/lifestyle-men.png",
-    deliverables: [
-      "Real look places on each country based scenes matched to your brand",
-      "Natural looking, consistent hyper realistic AI models",
-      "Social ready vertical and square formats",
-      "Seasonal and campaign specific settings",
-    ],
-  },
-  {
-    id: "luxury-fashion-ai-campaign",
-    number: "04",
-    title: "AI Fashion Campaign Photography Services",
-    short:
-      "Build cohesive campaign imagery for collection launches, lookbooks and seasonal advertising, with consistent styling across the set.",
-    long: "Create hyper realistic AI fashion campaign photography inspired by luxury fashion houses and premium editorial magazines. Perfect for collection launches, fashion advertising, eCommerce campaigns, social media, and seasonal brand storytelling with a high end luxury look.",
-    image: "/images/campaign-desert-knit-dress-2.jpeg",
-    deliverables: [
-      "Hyper realistic editorial AI fashion photography",
-      "Luxury art direction and creative campaign concepts",
-      "Magazine quality lighting and premium composition",
-      "Cohesive multi image campaign collections",
-      "Print ready, billboard quality, high resolution images"
-    ],
-  },
-  {
-    id: "footwear-realistic-ai-photography",
-    number: "05",
-    title: "AI Footwear Photography for Ecommerce Brands",
-    short:
-      "Create on foot and product-focused visuals that show the shape, materials, sole, stitching and fit of your footwear.",
-    long: "Create hyper realistic AI footwear photography with AI models wearing your shoes in studio or lifestyle environments. We accurately showcase sneakers, heels, boots, sandals, and all types of footwear with perfect angles, natural poses, realistic reflections, and an accurate on foot fit. Every image preserves the sole, material, stitching, texture, and product details with a 100% realistic look.",
-    image: "/images/footwear-heels.png",
-    deliverables: [
-      "Hyper realistic AI models wearing your footwear with accurate product details",
-      "Accurate sole, material, texture, and stitching details",
-      "Consistent catalog angles for eCommerce and marketplaces",
-      "Campaign, social media, and website-ready high resolution images",
-    ],
-  },
-  {
-    id: "realistic-ai-video-ads-ugc",
-    number: "06",
-    title: "AI Fashion Video Ads & UGC Production",
-    short:
-      "Produce short-form fashion and product video ads for ecommerce campaigns, social media and collection launches.",
-    long: "Create hyper realistic AI video ads, authentic UGC style videos, and high converting social media content that showcases your products with natural AI models, realistic motion, and professional storytelling. Perfect for Shopify stores, ecommerce brands, product launches, and paid advertising across TikTok, Instagram, Facebook, YouTube, and other digital platforms.",
-    image: "/videos/fashion-ads/ad-1.webp",
-    video: "/videos/fashion-ads/ad-1.mp4",
-    deliverables: [
-      "Hyper realistic AI video ads with natural model movement",
-      "Authentic UGC style videos that build trust and increase conversions",
-      "Optimized for TikTok, Instagram Reels, Facebook, YouTube Shorts, and Shopify",
-      "High converting videos for paid ads, product launches, and social media marketing",
-      "Commercial ready HD & 4K videos in vertical, square, and landscape formats",
-    ],
-  },
-  {
-    id: "bags-accessories-realistic-ai-photography",
-    number: "07",
-    title: "AI Handbag & Accessories Photography",
-    short:
-      "Showcase handbags and accessories with model focused, studio and lifestyle imagery that highlights shape, materials, hardware and details.",
-    long: "Create hyper realistic AI handbag photography that showcases every detail with premium quality. Perfect for Shopify, Amazon, eCommerce stores, luxury brands, catalogs, and social media marketing.",
-    image: "/images/bags-shoot-with-model.jpeg",
-    deliverables: [
-      "Hyper realistic AI models showcasing women's handbags",
-      "Accurate leather texture, stitching, hardware, and colors",
-      "Luxury lifestyle and professional studio AI photography",
-      "High resolution images optimized for Shopify, Amazon, and eCommerce",
-      "Premium AI handbag photography for ads, catalogs, and brand campaigns",
-    ],
-  },
+  { id: "realistic-ai-studio-photography", number: "01", title: "AI Fashion Photography for Clothing Brands", short: "Realistic model and studio images created from your original garment photos for ecommerce, catalogs and fashion campaigns.", long: "Professional AI fashion photography for clothing and apparel brands. Our team creates model and studio images from your garment photos and creative brief. We work remotely with brands across the United States and worldwide.", image: "/images/studio-pink.png", deliverables: ["AI model images featuring your apparel", "Coordinated model and studio styling across a collection", "Creative direction based on your brand references", "High resolution files for ecommerce and marketing"] },
+  { id: "ai-beauty-skincare-photography", number: "02", title: "AI Product Photography for Beauty and Skincare Brands", short: "Product focused and model visuals for skincare, cosmetics and fragrance collections, with styling aligned to your brand.", long: "Professional AI product photography for beauty, skincare, cosmetics and fragrance brands. We create product images, model portraits and campaign visuals from your product references, serving brands remotely across the United States and worldwide.", image: "/images/ai-skincare-sunscreen-model.webp", deliverables: ["Product images for skincare, sunscreen, cosmetics and fragrance", "AI model and lifestyle campaign visuals", "Coordinated backgrounds, lighting and styling", "Image formats planned for ecommerce and advertising"] },
+  { id: "lifestyle-realistic-ai-photography", number: "03", title: "AI Lifestyle Photography for Fashion Brands", short: "Art directed lifestyle scenes for ecommerce storytelling, social content and paid campaigns.", long: "AI lifestyle photography for fashion brands, with model imagery in selected indoor and outdoor settings. We work from your clothing photos and creative references and serve brands across the United States and worldwide remotely.", image: "/images/lifestyle-men.png", deliverables: ["Lifestyle scenes selected to suit your brand", "Model styling guided by your references", "Social media image formats and campaign visuals", "Coordinated settings for seasonal collections"] },
+  { id: "luxury-fashion-ai-campaign", number: "04", title: "AI Fashion Campaign Photography for Apparel Brands", short: "Coordinated campaign imagery for collection launches, lookbooks and seasonal advertising.", long: "Professional AI fashion campaign photography for apparel brands. Our team plans model imagery, editorial scenes and coordinated visuals for collection launches and advertising, working remotely with US and worldwide clients.", image: "/images/campaign-desert-knit-dress-2.jpeg", deliverables: ["Fashion editorial and campaign imagery", "Creative concepts for collection launches", "Coordinated model styling and composition", "Images for websites, catalogs and advertising"] },
+  { id: "footwear-realistic-ai-photography", number: "05", title: "AI Footwear Photography for Ecommerce Brands", short: "Product and model visuals that show shoe shape, materials, soles, stitching and fit.", long: "AI footwear photography services for shoe and ecommerce brands. We create studio, model and lifestyle images from your original shoe photos, with attention to visible product details. Available remotely across the United States and worldwide.", image: "/images/footwear-heels.png", deliverables: ["AI model images featuring your footwear", "Attention to shoe shape, materials, soles and stitching", "Studio and lifestyle views for product collections", "Images for ecommerce, catalogs and advertising"] },
+  { id: "realistic-ai-video-ads-ugc", number: "06", title: "AI Video Ads and UGC Style Production for Fashion Brands", short: "Short fashion and product video ads for ecommerce campaigns, social media and collection launches.", long: "Professional AI video production for fashion, beauty and ecommerce brands. We create product videos, campaign films and UGC style advertising content from product photos and creative briefs for clients across the United States and worldwide.", image: "/videos/fashion-ads/ad-1.webp", video: "/videos/fashion-ads/ad-1.mp4", deliverables: ["AI video ads with planned product movement and scenes", "UGC style creative for brand advertising", "Video formats for TikTok, Instagram Reels and YouTube", "Product videos for launches, websites and social media"] },
+  { id: "bags-accessories-realistic-ai-photography", number: "07", title: "AI Handbag and Accessories Photography for Ecommerce Brands", short: "Studio, model and lifestyle imagery that highlights bag shape, materials, hardware and details.", long: "Professional AI handbag and accessories photography for fashion and ecommerce brands. We create studio, model and lifestyle images from your product photos and work remotely with clients across the United States and worldwide.", image: "/images/bags-shoot-with-model.jpeg", deliverables: ["AI model imagery featuring handbags and accessories", "Attention to materials, stitching, hardware and colour", "Studio and lifestyle scenes for product collections", "Images for ecommerce, catalogs and campaigns"] },
 ];
-
-export const stats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "100+", label: "Happy Fashion Brands" },
-  { value: "30+", label: "Countries Served" },
-  { value: "98%", label: "Client Satisfaction" },
-];
-
-export const valueProps = [
-  {
-    title: "Brand focused creative direction",
-    text: "We turn your product photos, brand references and brief into a clear visual plan for model styling, locations, lighting and image formats.",
-  },
-  {
-    title: "Product detail review",
-    text: "We review finished visuals against your references, checking colour, fabric texture, prints, stitching, shape, packaging and logos.",
-  },
-  {
-    title: "Consistent model focused imagery",
-    text: "Create coordinated studio, model and lifestyle images across product ranges, collections and campaigns.",
-  },
-  {
-    title: "Remote project delivery",
-    text: "Work with our team online from the United States or elsewhere, with agreed image counts, review stages, revisions and delivery dates.",
-  },
-];
-
-export type TrustedBrand = { name: string; logo: string };
-
-export const trustedByRow1: TrustedBrand[] = [
-  { name: "Mersino",            logo: "/images/logos/mersino.png" },
-  { name: "Greatly",            logo: "/images/logos/greatly.png" },
-  { name: "Xanderlocket",       logo: "/images/logos/xanderlocket.png" },
-  { name: "HardTail",           logo: "/images/logos/HardTail.avif" },
-  { name: "Swim Zip",           logo: "/images/logos/Swim-zip-logo.png" },
-  { name: "Peachi",             logo: "/images/logos/peachi.png" },
-  { name: "Knct",               logo: "/images/logos/knct.png" },
-];
-
-export const trustedByRow2: TrustedBrand[] = [
-  { name: "Loungees",           logo: "/images/logos/loungees.png" },
-  { name: "SALTY.",             logo: "/images/logos/salty..webp" },
-  { name: "BASICBEIGE",         logo: "/images/logos/basicbeige-png.webp" },
-  { name: "Wonder",             logo: "/images/logos/Logo-wonder.png" },
-  { name: "Winter Green",       logo: "/images/logos/winter-green-png.png" },
-  { name: "BH",                 logo: "/images/logos/BH-logo.png" },
-  { name: "Lil Cactus Reloved", logo: "/images/logos/LIL_CACTUS_RELOVED_LINEAR-logo.png" },
-];
-
-/** @deprecated use trustedByRow1 / trustedByRow2 */
-export const trustedBy: TrustedBrand[] = [...trustedByRow1, ...trustedByRow2];
 
 export const process = [
   {

@@ -84,14 +84,14 @@ const services: Record<string, ServiceData> = {
 
   "realistic-ai-studio-photography": {
     meta: {
-      title: "AI Fashion Photography for Clothing Brands | SetlesStudio",
-      description: "AI fashion photography for clothing brands. Turn flat lays into realistic on-model apparel images for ecommerce pages, catalogs and collections.",
+      title: "AI Fashion Photography for US Clothing Brands | SetlesStudio",
+      description: "Professional AI fashion photography for US clothing brands. Turn garment photos into realistic model images for ecommerce pages, catalogs and campaigns.",
     },
     hero: {
-      eyebrow: "AI CLOTHING & ON MODEL PHOTOGRAPHY",
+      eyebrow: "AI CLOTHING PHOTOGRAPHY SERVICES",
       titlePrefix: "AI Fashion Photography",
       titleHighlight: "for Clothing Brands",
-      subtitle: "Turn your flat lay product photos into realistic on model apparel images. We create consistent studio photography for ecommerce stores, clothing catalogs, and fashion campaigns.",
+      subtitle: "Professional AI fashion photography for clothing brands across the United States and worldwide. We create realistic model images from your garment photos for ecommerce product pages, catalogs and campaigns.",
       image: "/images/plum-studio-original-banner.webp",
       mobileImage: "/images/plum-studio-original-model.webp",
       imageAlt: "AI model wearing a plum scalloped top and matching leggings",
@@ -102,7 +102,7 @@ const services: Record<string, ServiceData> = {
     beforeAfter: {
       before: "/images/plum-product-grey.webp",
       beforeCaption: "Send a product photo showing the scalloped neckline and the matching plum leggings.",
-      afterCaption: "SetlesStudio shows the plum set on an AI model in a full-length studio shot.",
+      afterCaption: "SetlesStudio shows the plum set on an AI model in a full length studio shot.",
       after2Caption: "A closer studio view shows how the scalloped neckline sits across one shoulder.",
       beforeAlt: "Plum scalloped long-sleeve top and matching leggings on a light background",
       after: "/images/plum-studio-original-model.webp",
@@ -114,13 +114,13 @@ const services: Record<string, ServiceData> = {
       titleHighlight: "AI Fashion Photography",
       titleSuffix: "for Clothing Brands",
       paragraphs: [
-        "Transform your apparel products into professional, studio quality fashion images without expensive photoshoots. Our realistic AI models create photorealistic fashion visuals of models wearing your apparel while maintaining accurate garment details, fabric textures, logos, colors, and fit.",
-        "Every image is carefully refined to achieve a realistic commercial look suitable for Ecommerce stores, advertising campaigns, social media marketing, and fashion.",
-      ],
+  "SetlesStudio provides AI fashion photography services for clothing and apparel brands. Our team uses your flat lay, mannequin and product photos to create realistic model images for ecommerce product pages, catalogs and fashion campaigns.",
+  "We work remotely with clothing brands across the United States and worldwide. Share clear garment references and your creative brief so we can plan model styling, studio direction and image requirements around your collection."
+],
     },
     features: {
-      heading: "Why Choose Our AI Fashion Photography Services?",
-      subheading: "Realistic AI Studio Photography",
+      heading: "AI Fashion Photography Services for Clothing Brands",
+      subheading: "Studio and model imagery planned around your apparel collection",
       items: [
         { number: "01", icon: Star,         title: "Garment Detail Review",       description: "Compare the finished image with your original photo to check garment color, stitching, and logo placement." },
         { number: "02", icon: Users,        title: "Consistent Models",      description: "Use the same AI model across your entire collection for consistency." },
@@ -133,31 +133,53 @@ const services: Record<string, ServiceData> = {
     ctaBanner: {
       image: "/images/plum-ai-model-banner.webp",
       imageAlt: "AI model reclining in a plum scalloped top and matching leggings",
-      title: "See your clothing on an AI model.",
-      text: "Send a product photo and tell us which details you want to highlight in your catalog.",
+      title: "Create Professional Fashion Images for Your Clothing Brand",
+      text: "Share your garment photos and creative brief. Our team will review the references and discuss a suitable studio photography plan for your collection.",
       waText: "Hi, I'd like to start a studio product photography project.",
     },
-    faqTitle: "AI clothing photography FAQs",
+    faqTitle: "AI Fashion Photography FAQs for Clothing Brands",
     faqs: [
-      { q: "What is AI fashion photography for clothing brands?", a: "SetlesStudio uses your garment photo as a reference to create images of an AI model wearing that item. You choose the studio look and poses for your product pages, catalog, or campaign." },
-      { q: "What product photos should I send?", a: "Start with a well-lit flat lay, mannequin photo, or clear product shot. Include a back view if you need the back shown and close-ups of details such as embroidery, prints, or logos." },
-      { q: "What does a finished on-model apparel image look like?", a: "The plum outfit above starts with a product photo of the top and matching leggings. The full-length studio shot shows both pieces on an AI model. The closer view shows the scalloped neckline across one shoulder." },
-      { q: "Can my collection use the same AI model and studio background?", a: "Yes. Specify the model, background, lighting, and views you want to repeat across the collection. A consistent setup helps shoppers compare garments and colorways." },
-      { q: "How do you check that the finished image matches my garment?", a: "We compare the finished image with your reference photo for color, stitching, print placement, and visible details. If an important feature is hidden in the reference, send another angle so we can check it." },
-      { q: "Can I use the images on Shopify product pages and in clothing catalogs?", a: "Yes. Tell us where the images will appear and which crops you need. A full-length view can show the silhouette in a catalog, while a closer crop can show a neckline or fabric detail on a product page." },
-    ],
+  {
+    "q": "What AI fashion photography services does SetlesStudio provide for clothing brands?",
+    "a": "SetlesStudio is a professional AI fashion photography service provider. Our team creates realistic model images from your garment photos for ecommerce product pages, catalogs, lookbooks and advertising campaigns."
+  },
+  {
+    "q": "Do you provide AI fashion photography for clothing brands in the United States?",
+    "a": "Yes. We work remotely with clothing and apparel brands across the United States and worldwide. Share your product photos, brand references and creative brief online to discuss your project."
+  },
+  {
+    "q": "Can you create AI model images from flat lay or mannequin photos?",
+    "a": "Yes. Clear flat lay, mannequin and existing model photographs can be used as references. Front, back and close up views help us understand the garment shape, construction and details."
+  },
+  {
+    "q": "How do you review garment colours, fabric and logos?",
+    "a": "We compare the created images with the product references you provide, paying attention to visible colours, fabric texture, print, stitching and logo placement. Exact reproduction is not guaranteed, so detailed references and your final review are important."
+  },
+  {
+    "q": "Can you keep the same model and studio style across a clothing collection?",
+    "a": "Yes. We can plan a consistent model reference, background, lighting and styling across a collection. Some variation can occur between AI images, so we review the set together for visual consistency."
+  },
+  {
+    "q": "What should I send to start a clothing photography project?",
+    "a": "Send clear front and back garment photos, close ups of prints or embroidery, logos or artwork files, your image quantity, preferred model direction and where you plan to use the images."
+  },
+  {
+    "q": "How much does AI fashion photography for clothing brands cost?",
+    "a": "Pricing depends on the number of products and final images, model requirements, styling, backgrounds and review scope. Share your brief to receive a quote with the proposed deliverables and schedule."
+  }
+],
   },
 
   "lifestyle-realistic-ai-photography": {
     meta: {
-      title: "AI Lifestyle Fashion Photography | SetlesStudio",
-      description: "Turn clothing product photos into AI lifestyle fashion photography. Explore on model images for ecommerce, lookbooks and social media with SetlesStudio.",
+      title: "AI Lifestyle Photography for US Fashion Brands | SetlesStudio",
+      description: "Remote AI lifestyle photography for US fashion brands. Create model images for ecommerce, lookbooks, social media and clothing campaigns.",
     },
     hero: {
-      eyebrow: "AI Lifestyle Photography",
-      titlePrefix: "AI Lifestyle Fashion Photography",
-      titleHighlight: "for Clothing Brands",
-      subtitle: "SetlesStudio turns your clothing product photographs into lifestyle images for ecommerce, lookbooks and social media, using your garments and creative references to guide the result.",
+      eyebrow: "AI LIFESTYLE PHOTOGRAPHY SERVICES",
+      titlePrefix: "AI Lifestyle Photography",
+      titleHighlight: "for Fashion Brands",
+      subtitle: "Professional AI lifestyle photography for fashion brands across the United States and worldwide. We create model images in selected settings from your original clothing photos and creative references.",
       image: "/images/pink-outfit-lifestyle-banner.webp",
       mobileImage: "/images/pink-outfit-seated-model.webp",
       imageAlt: "AI model in a pink hoodie and trousers seated in a brown armchair",
@@ -167,7 +189,7 @@ const services: Record<string, ServiceData> = {
     },
     beforeAfter: {
       heading: "From Product Photograph to Lifestyle Scene",
-      introduction: "Compare the original clothing photograph with the finished AI-generated images. Look at how the garment is represented, how the model is styled and how the setting supports the collection.",
+      introduction: "Compare the original clothing photograph with the finished AI generated images. Look at how the garment is represented, how the model is styled and how the setting supports the collection.",
       beforeLabel: "Original Clothing Photograph",
       afterLabel: "AI Generated Lifestyle Image",
       portfolioLabel: "Explore Our Fashion Portfolio",
@@ -182,17 +204,16 @@ const services: Record<string, ServiceData> = {
       after2Alt: "AI model wearing a pink outfit and white sneakers in an armchair",
     },
     description: {
-      titleHighlight: "Turn Your Clothing Photos",
-      titleSuffix: "into Lifestyle Images",
+      titleHighlight: "AI Lifestyle Photography",
+      titleSuffix: "for Fashion Brands",
       paragraphs: [
-        "Starting with flat lays, mannequin photographs or existing on model images, SetlesStudio creates AI fashion photography around your collection’s style. Share your preferred model appearance, location, poses and lighting to guide the creative direction.",
-        "Your original photographs provide the reference for garment shape, colors, fabric texture, prints and logo placement. Clear images from multiple angles help us represent these details more accurately.",
-        "Use the finished imagery alongside your product photographs on ecommerce pages, in seasonal lookbooks, across website banners or in social media campaigns."
+  "SetlesStudio provides AI lifestyle photography services for fashion brands, creating model images in selected indoor and outdoor settings from your original clothing photos and creative references.",
+  "We work remotely with fashion brands across the United States and worldwide. Share your preferred locations, model direction, poses and intended image placements so our team can plan a cohesive set for ecommerce, lookbooks and social campaigns."
 ],
     },
     features: {
-      heading: "What You Can Customize",
-      subheading: "AI Lifestyle Fashion Photography",
+      heading: "Lifestyle Photography for Fashion Brands",
+      subheading: "Model styling, settings and visual direction built around your collection",
       items: [
         { number: "01", icon: Users, title: "Model Appearance and Styling", description: "Share references for the model’s appearance, hairstyle, pose and styling. These choices help shape images that suit your collection and intended audience." },
         { number: "02", icon: Package, title: "Garment Details", description: "Provide clear photographs of colors, prints, fastenings, logos and fabric textures. Your references guide how the clothing is represented in each image." },
@@ -229,76 +250,56 @@ const services: Record<string, ServiceData> = {
     ctaBanner: {
       image: "/images/pink-outfit-lifestyle-cta.webp",
       imageAlt: "Seated AI model wearing a pink sleeveless top and matching trousers",
-      title: "Discuss Your Next Clothing Collection",
-      text: "Share your product photographs and the look you want to create. We’ll review the garments and discuss suitable models, settings, image requirements and project scope.",
+      title: "Plan Lifestyle Photography for Your Next Collection",
+      text: "Share your clothing photos and preferred creative direction. We will review your references and discuss suitable models, settings and image requirements.",
       waText: "Hi, I'd like to start a lifestyle photography project.",
       buttonLabel: "Get a Quote for Your Collection",
     },
-    faqTitle: "AI Lifestyle Fashion Photography FAQs",
+    faqTitle: "AI Lifestyle Photography FAQs",
     faqs: [
-      {
-            "q": "What is AI lifestyle fashion photography?",
-            "a": "AI lifestyle fashion photography creates images of clothing on AI generated models in styled environments, such as streets, cafés and interiors. At SetlesStudio, your product photographs guide the garment’s appearance, while creative references guide the model, lighting and setting."
-      },
-      {
-            "q": "Can you create AI model photos from flat lay clothing images?",
-            "a": "Yes. Flat lays, mannequin photographs, ghost mannequin images and existing on model photographs can serve as starting references. Send clear views of the complete garment so we can assess its construction and visible details before confirming the project."
-      },
-      {
-            "q": "What photographs should I provide?",
-            "a": "Provide well lit front and back photographs, plus close ups of logos, prints, embroidery, buttons and textures. Avoid filters that alter colors. Additional angles are useful for garments with unusual cuts, layered construction or details hidden in the main photographs."
-      },
-      {
-            "q": "Will the images preserve my clothing’s colors, prints and logos?",
-            "a": "Your references guide these details, but exact reproduction is not guaranteed. Results depend on garment complexity and reference quality. Fine text, detailed embroidery and intricate patterns may need additional refinement. Compare finished images with the product before using them in listings."
-      },
-      {
-            "q": "Can you use the same AI model across my collection?",
-            "a": "Yes. We can work with a shared model reference across multiple products. Agreeing on the model’s appearance, hairstyle, styling and lighting at the start helps maintain consistency, although some visual variation can occur between AI generated images."
-      },
-      {
-            "q": "Can I choose the background and poses?",
-            "a": "Yes. Share examples of your preferred locations, poses, lighting and styling. These references help us understand your direction and plan imagery that complements your clothing and brand."
-      },
-      {
-            "q": "Are the images suitable for Shopify and ecommerce websites?",
-            "a": "Yes. We can prepare images using your agreed dimensions and crops for Shopify and other ecommerce websites. Use lifestyle imagery alongside product and detail photographs, and check the finished garment representation before publishing."
-      },
-      {
-            "q": "Can you create fashion lookbooks and social media images?",
-            "a": "Yes. We can create coordinated imagery for collection launches, fashion lookbooks, website banners and social media. Share the intended placements before production so we can discuss suitable framing and aspect ratios."
-      },
-      {
-            "q": "What is the difference between studio and lifestyle fashion photography?",
-            "a": "Studio fashion photography typically uses a clean or controlled background to focus attention on the garment. Lifestyle fashion photography adds a styled environment and mood, helping show the collection in a context suited to the brand."
-      },
-      {
-            "q": "What types of clothing can you work with?",
-            "a": "We work with dresses, shirts, T shirts, streetwear, activewear, sportswear, modest fashion and other apparel categories. Send examples for assessment, particularly if your garments include sheer materials, complex layering or intricate embellishments."
-      },
-      {
-            "q": "How much does an AI lifestyle photoshoot cost?",
-            "a": "Pricing depends on the number of garments, images per garment, model variations, backgrounds and product complexity. Send your photographs, image requirements and creative references to request a quote based on your project."
-      },
-      {
-            "q": "How long will my project take?",
-            "a": "Turnaround depends on collection size, garment complexity, creative requirements and the review process. Include your preferred deadline when requesting a quote so we can assess the scope and confirm the schedule before production begins."
-      }
+  {
+    "q": "What does an AI lifestyle photography service include?",
+    "a": "SetlesStudio creates fashion model images in selected lifestyle settings using your product photos and creative references. The project can include model styling, poses, backgrounds and coordinated images for ecommerce, lookbooks and social campaigns."
+  },
+  {
+    "q": "Do you work with US fashion brands remotely?",
+    "a": "Yes. We provide remote AI lifestyle photography services to fashion brands across the United States and worldwide. Product photos and creative briefs can be shared online."
+  },
+  {
+    "q": "Can you create lifestyle images from flat lay clothing photos?",
+    "a": "Yes. Flat lay, mannequin and existing model photographs can guide the garment appearance. Clear front, back and detail views help us assess the product before planning the lifestyle scene."
+  },
+  {
+    "q": "Can I choose the model, location, pose and lighting?",
+    "a": "Yes. Share model references and examples of the locations, poses, lighting and mood you prefer. Our team uses the brief to plan a visual direction that suits your clothing and brand."
+  },
+  {
+    "q": "How do you keep clothing details consistent in lifestyle images?",
+    "a": "We use your product photos and detail references to guide garment shape, colour, prints, fabric texture and logos. Fine details may vary in AI images, so we review the results against your references before delivery."
+  },
+  {
+    "q": "Can I use lifestyle images for Shopify, lookbooks and social media?",
+    "a": "Yes. We can plan image crops and formats for ecommerce product pages, website banners, lookbooks, Instagram, TikTok and other marketing placements. Share the intended platforms and dimensions in your brief."
+  },
+  {
+    "q": "How much does an AI lifestyle photography project cost?",
+    "a": "Pricing depends on the number of garments and images, model requirements, scene complexity and creative direction. Send your references and preferred image quantity for a project quote."
+  }
 ],
   },
 
   "luxury-fashion-ai-campaign": {
   "meta": {
-    "title": "AI Fashion Campaign Photography | SetlesStudio",
-    "description": "Create AI fashion campaign photography for apparel brands. SetlesStudio produces realistic on-model images for lookbooks, ads and collection launches."
+    "title": "AI Fashion Campaign Photography for US Apparel Brands | SetlesStudio",
+    "description": "Professional AI fashion campaign photography for US apparel brands. Create coordinated model images for launches, lookbooks, ecommerce and advertising."
   },
   "hero": {
-    "eyebrow": "AI Fashion Campaign Photography",
+    "eyebrow": "AI FASHION CAMPAIGN PHOTOGRAPHY",
     "titlePrefix": "AI Fashion Campaign Photography",
     "titleHighlight": "for Apparel Brands",
-    "subtitle": "Create professional AI fashion campaign images for clothing brands without the complexity of traditional photoshoots. SetlesStudio transforms your apparel product photos into realistic fashion model imagery, creative campaign visuals and advertising content.",
+    "subtitle": "Professional AI fashion campaign photography for apparel brands across the United States and worldwide. We create coordinated model imagery for collection launches, lookbooks and advertising using your product photos and campaign brief.",
     "image": "/images/ai-fashion-campaign-photography.webp",
-    "mobileImage": "/images/ai-fashion-model-photography.webp",
+    "mobileImage": "/images/ai-fashimodel-photography.webp",
     "imageAlt": "AI model wearing a white halter knit dress seated on a desert rock",
     "waText": "Hi, I'd like a fashion campaign quote.",
     "primaryLabel": "Get a Campaign Quote",
@@ -313,7 +314,7 @@ const services: Record<string, ServiceData> = {
     "before": "/images/campaign-desert-knit-dress-product.jpg",
     "beforeCaption": "Original product photograph of the white halter knit dress with black trim.",
     "beforeAlt": "White halter knit dress with black trim shown as a product reference",
-    "after": "/images/ai-fashion-model-photography.webp",
+    "after": "/images/ai-fashimodel-photography.webp",
     "afterAlt": "AI model wearing a white halter knit maxi dress and sunglasses in the desert",
     "afterCaption": "SetlesStudio presents the white knit dress on an AI model in a desert campaign scene.",
     "after2": "/images/ai-apparel-lifestyle-campaign.webp",
@@ -322,16 +323,15 @@ const services: Record<string, ServiceData> = {
   },
   "description": {
     "titleHighlight": "AI Fashion Campaign Photography",
-    "titleSuffix": "for Clothing Brands",
+    "titleSuffix": "for Apparel Brands",
     "paragraphs": [
-      "From fashion startups to established clothing labels, we help brands create consistent, high-quality visuals for product launches, websites and social media marketing.",
-      "SetlesStudio provides AI fashion campaign photography for apparel brands looking to create professional marketing visuals without arranging traditional photoshoots.",
-      "We create realistic fashion model images and campaign scenes from your existing clothing product photographs, helping you showcase your collections across different marketing platforms."
-    ]
+  "SetlesStudio creates AI fashion campaign photography for apparel brands, including model imagery, editorial scenes and coordinated visuals for collection launches, lookbooks and advertising.",
+  "Our team works remotely with clothing brands across the United States and worldwide. Share your product references, brand guidelines and campaign brief so we can plan the visual direction, image list and deliverables."
+]
   },
   "features": {
-    "heading": "Why Choose SetlesStudio for AI Fashion Campaigns?",
-    "subheading": "AI Fashion Campaign Photography",
+    "heading": "AI Fashion Campaign Photography Services",
+    "subheading": "Coordinated campaign visuals for apparel collections and launches",
     "items": [
       {
         "number": "01",
@@ -408,49 +408,53 @@ const services: Record<string, ServiceData> = {
     "image": "/images/ai-fashion-editorial-photography.webp",
     "imageAlt": "AI fashion campaign model in a white knit dress against desert mountains",
     "title": "Create Your Next Fashion Campaign with SetlesStudio",
-    "text": "Ready to create professional fashion campaign images for your clothing brand? Share your product photos, creative references and campaign requirements. SetlesStudio will help you develop realistic AI fashion photography tailored to your brand.",
+    "text": "Share your product photos, brand guidelines and campaign brief. Our team will review the scope and discuss model styling, creative direction and the images your launch needs.",
     "waText": "Hi, I'd like a fashion campaign quote.",
     "buttonLabel": "Get Your Fashion Campaign Quote"
   },
   "faqTitle": "Frequently Asked Questions About AI Fashion Campaign Photography",
   "faqs": [
-    {
-      "q": "What is AI fashion campaign photography?",
-      "a": "AI fashion campaign photography uses artificial intelligence to create fashion model images, editorial visuals and advertising campaigns from clothing product references."
-    },
-    {
-      "q": "Can you create AI fashion campaigns from my clothing product photos?",
-      "a": "Yes. We use your existing product photos, flat lays or ghost mannequin images to create realistic fashion campaign visuals featuring AI-generated models and creative backgrounds."
-    },
-    {
-      "q": "How much does AI fashion campaign photography cost?",
-      "a": "Pricing depends on the number of outfits, images, model requirements and campaign complexity. Contact SetlesStudio for a customized quote."
-    },
-    {
-      "q": "Can you create consistent AI models for my clothing brand?",
-      "a": "Yes. We can create coordinated campaign images featuring consistent model appearances, styling and visual direction across multiple clothing products."
-    },
-    {
-      "q": "What types of apparel brands do you work with?",
-      "a": "We work with fashion startups, clothing labels, streetwear brands, activewear businesses, swimwear companies and ecommerce apparel brands."
-    },
-    {
-      "q": "Where can I use AI fashion campaign images?",
-      "a": "You can use campaign images for ecommerce websites, Shopify stores, fashion lookbooks, collection launches, Instagram, Facebook, Pinterest and digital advertising, subject to your agreed usage rights."
-    }
-  ]
+  {
+    "q": "What is included in AI fashion campaign photography?",
+    "a": "A campaign project can include AI model photography, editorial style scenes, collection launch images, lookbook visuals and advertising creatives. The exact image list and creative direction are agreed in the project brief."
+  },
+  {
+    "q": "Do you provide fashion campaign photography for US apparel brands?",
+    "a": "Yes. SetlesStudio works remotely with apparel brands across the United States and worldwide. Share your product references, campaign goals and intended platforms to discuss a suitable scope."
+  },
+  {
+    "q": "Can you build a fashion campaign from my existing product photos?",
+    "a": "Yes. Clear garment photographs, flat lays and mannequin images can guide the clothing shown in the campaign. Additional angles and detail photos help us review the product design and visible features."
+  },
+  {
+    "q": "What campaign visuals can you create for a clothing collection?",
+    "a": "Depending on the brief, we can create model portraits, full outfit scenes, editorial images, lookbook visuals, website banners and social advertising creatives."
+  },
+  {
+    "q": "Can you keep model styling and visual direction consistent across a collection?",
+    "a": "Yes. We can plan shared model references, styling, lighting and backgrounds across the campaign. Some variation can occur in AI images, so we review the collection as a set."
+  },
+  {
+    "q": "How do you check garment details in campaign images?",
+    "a": "We compare visible garment details with your supplied references, including colours, fabric, prints, stitching and logos. Detailed reference photos help, but exact reproduction is not guaranteed."
+  },
+  {
+    "q": "How is fashion campaign photography priced and scheduled?",
+    "a": "Pricing and timing depend on the number of products, final images, scenes, model requirements and review stages. We confirm the project scope, quote and schedule before production begins."
+  }
+]
 },
 
   "footwear-realistic-ai-photography": {
     meta: {
-      title: "AI Footwear Photography for Ecommerce Brands | SetlesStudio",
-      description: "Create realistic AI footwear photography for sneakers, shoes, boots and heels. Get professional product, on foot and lifestyle images for ecommerce brands.",
+      title: "AI Footwear Photography for US Ecommerce Brands | SetlesStudio",
+      description: "AI footwear photography services for US shoe brands. Create studio, model and lifestyle images for sneakers, heels, boots and ecommerce listings.",
     },
     hero: {
-      eyebrow: "AI FOOTWEAR PHOTOGRAPHY",
+      eyebrow: "AI FOOTWEAR PHOTOGRAPHY SERVICES",
       titlePrefix: "AI Footwear Photography",
       titleHighlight: "for Ecommerce Brands",
-      subtitle: <><span className="lg:block lg:whitespace-nowrap">Turn your shoe photos into realistic AI footwear images. </span><span className="lg:block lg:whitespace-nowrap">Create studio, on foot, and lifestyle visuals for ecommerce. </span><span className="lg:block lg:whitespace-nowrap">Professional results without traditional photoshoots.</span></>,
+      subtitle: "Professional AI footwear photography for shoe brands across the United States and worldwide. We create studio, model and lifestyle images from your original shoe photos for ecommerce listings and campaigns.",
       image: "/images/ai-footwear-photography.webp",
       mobileImage: "/images/ai-footwear-photography.webp",
       imageAlt: "AI model wearing lime-green pointed heels with an orange top and green shorts",
@@ -470,19 +474,16 @@ const services: Record<string, ServiceData> = {
       after2Alt: "Seated AI model showing lime-green pointed heels with matching shorts",
     },
     description: {
-      titleHighlight: "How It Works",
-      titleSuffix: "",
+      titleHighlight: "AI Footwear Photography",
+      titleSuffix: "for Ecommerce Brands",
       paragraphs: [
-        "Get professional footwear photography for your online store, product listings, and marketing campaigns.",
-        <><strong>01. Share Your Products:</strong> Send your original footwear images and visual references.</>,
-        <><strong>02. Choose Your Style:</strong> Select studio, on foot, lifestyle, or campaign photography.</>,
-        <><strong>03. Image Creation:</strong> We create realistic footwear visuals following your product details and brand direction.</>,
-        <><strong>04. Review and Delivery:</strong> Review the images, request agreed refinements, and receive your final high-quality files.</>,
-      ],
+  "SetlesStudio provides AI footwear photography services for shoe and ecommerce brands. We create studio, model and lifestyle images from your original shoe photographs, with attention to shape, sole, material, stitching and other visible details.",
+  "We work remotely with footwear brands across the United States and worldwide. Share clear views of each shoe and your preferred image style so our team can plan product and campaign visuals for your store."
+],
     },
     features: {
-      heading: "Why Choose SetlesStudio?",
-      subheading: "AI footwear photography for ecommerce brands",
+      heading: "AI Footwear Photography Services",
+      subheading: "Studio, model and lifestyle images for shoe collections",
       items: [
         { number: "01", icon: Camera, title: "Fashion-Focused Expertise", description: "Fashion-focused creative expertise for your footwear collection." },
         { number: "02", icon: Aperture, title: "Realistic Footwear Photography", description: "Realistic AI footwear photography for product, on foot, and lifestyle images." },
@@ -496,33 +497,53 @@ const services: Record<string, ServiceData> = {
       image: "/images/ai-footwear-studio-banner.webp",
       imageAlt: "AI model sitting on a chair and adjusting lime-green pointed heels in a white studio",
       title: "Get Professional AI Footwear Photography for Your Brand",
-      text: "Ready to upgrade your footwear product images? Share your products and creative references with SetlesStudio. Let's create realistic footwear photography that presents your collection professionally.",
+      text: "Share your shoe photos and preferred visual references. Our team will review the product details and discuss suitable studio, model or lifestyle images.",
       buttonLabel: "Contact SetlesStudio",
       waText: "Hi, I'd like to start an AI footwear photography project.",
     },
-    faqTitle: "Frequently Asked Questions",
+    faqTitle: "AI Footwear Photography FAQs",
     faqs: [
-      { q: "What is AI footwear photography?", a: "AI footwear photography uses artificial intelligence and creative editing to produce professional shoe product images, model photography, lifestyle visuals, and advertising content from existing product photos." },
-      { q: "Can you create realistic shoe photography from my product images?", a: "Yes. We use your original footwear images and references to create realistic product, studio, on foot, and lifestyle photography." },
-      { q: "Can you create AI shoe photography with models?", a: "Yes. We create realistic AI-generated models wearing your footwear in different poses, outfits, and environments." },
-      { q: "Can you maintain the original shoe design and logo?", a: "We carefully work to preserve the original shoe shape, colors, materials, stitching, logos, and other important product details." },
-      { q: "What types of footwear do you photograph?", a: "We create visuals for sneakers, running shoes, boots, heels, sandals, formal shoes, casual footwear, and designer collections." },
-      { q: "Are your footwear images suitable for ecommerce websites?", a: "Yes. Our images can be prepared for Shopify, WooCommerce, and other ecommerce platforms according to your image requirements." },
-      { q: "How much does AI footwear photography cost?", a: "Pricing depends on the number of products, images, creative direction, and complexity. Contact us for a customized quote." },
-      { q: "Can I get a free sample before starting?", a: "Yes. Share your footwear product image and preferred reference. We can create a free sample for you to review." },
-    ],
+  {
+    "q": "What does your AI footwear photography service include?",
+    "a": "SetlesStudio creates product focused studio images, AI model photography and lifestyle visuals for footwear brands. The image plan is based on your shoe photos, creative brief and intended use."
+  },
+  {
+    "q": "Do you work with US shoe brands remotely?",
+    "a": "Yes. We provide remote AI footwear photography services to shoe and ecommerce brands across the United States and worldwide. You can send product photos and references online."
+  },
+  {
+    "q": "Can you create footwear images from my existing product photos?",
+    "a": "Yes. Share clear front, side, back and sole views where possible. These references help us understand the shoe shape, materials and construction before creating the images."
+  },
+  {
+    "q": "How do you preserve shoe shape, colour, material and logo?",
+    "a": "We compare the finished visuals with your supplied product photos and close ups. Clear references help us review shape, colour, sole details, stitching and logos, but exact reproduction is not guaranteed."
+  },
+  {
+    "q": "What types of footwear can you photograph?",
+    "a": "Projects can include sneakers, running shoes, boots, heels, sandals, flats, formal shoes and other footwear. Send your product examples so we can assess the image requirements."
+  },
+  {
+    "q": "Can footwear images be prepared for ecommerce listings and advertising?",
+    "a": "Yes. We can plan image dimensions and compositions for ecommerce product pages, catalogs, website banners and social advertising. Tell us the platforms and file requirements before production."
+  },
+  {
+    "q": "How much does AI footwear photography cost?",
+    "a": "Pricing depends on the number of shoe styles and final images, model requirements, scenes and creative complexity. Share your product photos and image list for a project quote."
+  }
+],
   },
 
   "realistic-ai-video-ads-ugc": {
     meta: {
-      title: "AI Fashion Ads and UGC Videos | SetlesStudio",
-      description: "Turn clothing and product photos into AI video ads for Reels, TikTok, and Shopify. Watch four SetlesStudio examples and request a video for your brand.",
+      title: "AI Video Ads for US Fashion Brands | SetlesStudio",
+      description: "Professional AI video ad production for US fashion and ecommerce brands. Create product videos and UGC style content for TikTok, Instagram and campaigns.",
     },
     hero: {
-      eyebrow: "AI Fashion Ads and UGC Videos",
+      eyebrow: "AI VIDEO ADS AND UGC STYLE PRODUCTION",
       titlePrefix: "AI Video Ads",
       titleHighlight: "for Fashion Brands",
-      subtitle: "Turn product photos into short social ads, product demonstrations, and UGC-style videos.",
+      subtitle: "Professional AI video production services for fashion and ecommerce brands across the United States and worldwide. Our team turns product photos and creative briefs into product videos, campaign films and UGC style ads for social media and ecommerce.",
       imageAlt: "AI video ads and UGC content creation",
       video: "https://res.cloudinary.com/dlfb8yn1x/video/upload/q_auto/v1782991084/video-ad_bvo5xc.mp4",
       waText: "Hi, I'd like to discuss an AI video ads project.",
@@ -538,16 +559,16 @@ const services: Record<string, ServiceData> = {
       afterAlt: "AI video ad showing the female outfit in action",
     },
     description: {
-      titleHighlight: "Realistic AI Video and Advertising",
+      titleHighlight: "AI Video Ads and UGC Style Production",
       titleSuffix: "for Ecommerce Brands",
       paragraphs: [
-        "Bring your products to life with Realistic AI Video & Advertising services designed for modern Ecommerce brands. We create premium AI powered video ads, realistic AI UGC videos, product demonstrations, social media commercials, and brand storytelling videos that capture attention and increase conversions.",
-        "Whether you sell apparel, footwear, jewelry, beauty products, or accessories, our realistic AI videos help you market your products faster without expensive production teams, actors, or studio shoots.",
-      ],
+  "SetlesStudio provides AI video ad production services for fashion, beauty and ecommerce brands. Our team turns product photos and creative briefs into short product videos, campaign films, demonstrations and UGC style advertising content.",
+  "We work remotely with brands across the United States and worldwide. Tell us which platforms you plan to use, the video formats you need and the product details that must remain clear."
+],
     },
     features: {
-      heading: "Why Choose Our Realistic AI Video & Advertising Services?",
-      subheading: "Realistic AI Video Ads & UGC Content",
+      heading: "AI Video Advertising Services for Fashion and Ecommerce",
+      subheading: "Product videos, campaign films and UGC style creative",
       items: [
         { number: "01", icon: Play,       title: "Realistic AI Video Production", description: "Create natural looking AI videos that showcase your products with professional quality and authentic movement." },
         { number: "02", icon: Users,      title: "High Converting AI UGC Ads", description: "Generate user generated content style videos that build trust and increase sales." },
@@ -560,29 +581,52 @@ const services: Record<string, ServiceData> = {
     ctaBanner: {
       image: "/images/female-long-green-dress.jpeg",
       imageAlt: "AI video ads production banner",
-      title: "Ready to Launch High Converting AI Video Ads & UGC Content?",
-      text: "Create realistic AI video ads, authentic UGC videos, and engaging social media content that helps your brand increase visibility, build trust, and drive more sales across TikTok, Instagram, Facebook, YouTube, and Shopify.",
+      title: "Plan AI Video Ads for Your Next Product Campaign",
+      text: "Share your product images, target platforms and creative brief. We will discuss video formats, scenes, deliverables and the project schedule before production.",
       waText: "Hi, I'd like to discuss an AI video ads project.",
     },
     faqs: [
-      { q: "What is Realistic AI Video & Advertising?", a: "Realistic AI Video & Advertising uses advanced AI to create professional product videos, video ads, and marketing content for brands and Ecommerce businesses." },
-      { q: "Can you create Realistic AI UGC videos for my brand?", a: "Yes, we create realistic AI UGC videos that look authentic and are perfect for TikTok, Instagram Reels, Facebook Ads, and YouTube Shorts." },
-      { q: "Can you turn product photos into AI video ads?", a: "Yes, we transform product images into high converting AI video ads for Shopify, Amazon, Ecommerce stores, and social media campaigns." },
-      { q: "Are your AI video ads suitable for paid advertising?", a: "Absolutely. Our realistic AI video ads are optimized for Meta Ads, TikTok Ads, Google Ads, Instagram, and YouTube advertising" },
-      { q: "Which businesses can benefit from Realistic AI Video & Advertising?", a: "We create AI video ads and UGC content for fashion brands, footwear companies, beauty brands, jewelry businesses, and Ecommerce stores" },
-    ],
+  {
+    "q": "What AI video ad services does SetlesStudio provide?",
+    "a": "SetlesStudio provides a professional AI video production service for fashion and ecommerce brands. Our team creates product videos, campaign films, demonstrations and UGC style advertising content from your product references and brief."
+  },
+  {
+    "q": "Do you create AI video ads for US fashion and ecommerce brands?",
+    "a": "Yes. We work remotely with fashion, beauty and ecommerce brands across the United States and worldwide. Share your product photos, target platforms and campaign brief online."
+  },
+  {
+    "q": "Can you turn product photos into short video ads?",
+    "a": "Yes. Product photos and creative references can be used to plan short videos, product demonstrations and campaign scenes. The brief should identify the product details and movements that matter most."
+  },
+  {
+    "q": "Are UGC style AI videos real customer testimonials?",
+    "a": "No. UGC style AI videos are brand produced creative that uses a casual, creator style presentation. They are not genuine customer testimonials or real customer experiences and should not be presented as such."
+  },
+  {
+    "q": "Which platforms and video formats can you prepare?",
+    "a": "We can discuss vertical videos for TikTok and Instagram Reels, square social videos and landscape formats for websites or other placements. Share the target platforms and specifications before production."
+  },
+  {
+    "q": "What product details do you need for an AI video project?",
+    "a": "Send clear product photos from useful angles, close ups of logos and materials, brand references, the intended message, target platforms and any scenes or actions you want the video to show."
+  },
+  {
+    "q": "How much do AI video ads cost and when are they delivered?",
+    "a": "Pricing and timing depend on video length, products, scenes, variations and output formats. We review the brief and confirm the deliverables, quote and schedule before production begins."
+  }
+],
   },
 
   "bags-accessories-realistic-ai-photography": {
   "meta": {
-    "title": "AI Product Photography for Bags | SetlesStudio",
-    "description": "Realistic AI product photography for bags and handbags. Create premium studio, lifestyle and model photos for Shopify, ecommerce and fashion brands."
+    "title": "AI Handbag Photography for US Ecommerce Brands | SetlesStudio",
+    "description": "AI handbag photography services for US fashion brands. Create studio, model and lifestyle images for bags, accessories, ecommerce and campaigns."
   },
   "hero": {
-    "eyebrow": "AI Handbag Photography",
-    "titlePrefix": "AI Product Photography",
-    "titleHighlight": "for Bags & Handbags",
-    "subtitle": "Transform your handbag product photos into premium, photorealistic AI photography. SetlesStudio creates realistic studio, lifestyle, and on-model bag images for ecommerce brands, Shopify stores, and advertising campaigns. We focus on accurate leather textures, stitching, logos, colors, and product details.",
+    "eyebrow": "AI HANDBAG AND ACCESSORIES PHOTOGRAPHY",
+    "titlePrefix": "AI Handbag Photography",
+    "titleHighlight": "for Ecommerce Brands",
+    "subtitle": "Professional AI handbag photography for fashion and ecommerce brands across the United States and worldwide. We create studio, model and lifestyle images from your product photos, with attention to bag shape, materials, stitching, hardware and logos.",
     "image": "/images/ai-handbag-photography-banner.webp",
     "imageAlt": "AI model carrying a coral tote bag among tropical leaves and red flowers",
     "waText": "Hi, I'd like to request a free sample of AI handbag photography.",
@@ -606,15 +650,16 @@ const services: Record<string, ServiceData> = {
     "after2Caption": "SetlesStudio result: a standing AI model carrying the tote to show its scale and styling."
   },
   "description": {
-    "titleHighlight": "Professional AI Handbag Photography",
-    "titleSuffix": "",
+    "titleHighlight": "AI Handbag and Accessories Photography",
+    "titleSuffix": "for Ecommerce Brands",
     "paragraphs": [
-      "Create beautiful, realistic bag product images without expensive traditional photoshoots. From luxury handbags to tote bags, shoulder bags, and crossbody bags, we deliver professional visuals with consistent styling and natural photographic details."
-    ]
+  "SetlesStudio provides AI handbag and accessories photography services for ecommerce and fashion brands. We create studio, model and lifestyle images from your product photos, focusing on bag shape, materials, stitching, hardware, logos and colour.",
+  "We work remotely with brands across the United States and worldwide. Share front, back and side views, close ups and your creative brief so we can plan a consistent image set for product pages and campaigns."
+]
   },
   "features": {
-    "heading": "Why Choose SetlesStudio?",
-    "subheading": "AI product photography for bags, tailored to your collection.",
+    "heading": "AI Handbag Photography Services",
+    "subheading": "Studio, model and lifestyle images for bags and accessories",
     "items": [
       {
         "number": "01",
@@ -686,79 +731,55 @@ const services: Record<string, ServiceData> = {
   "ctaBanner": {
     "image": "/images/ai-handbag-lifestyle-banner.webp",
     "imageAlt": "AI model holding a coral tote bag in a tropical garden",
-    "title": "Ready to Elevate Your Handbag Photography?",
-    "text": "Create premium, realistic bag product images for your ecommerce brand.",
+    "title": "Plan Professional Handbag Photography for Your Brand",
+    "text": "Share your handbag photos and creative references. Our team will review the bag details and discuss studio, model and lifestyle images for your collection.",
     "waText": "Hi, I'd like to request a free sample of AI handbag photography.",
     "buttonLabel": "Request a Free Sample"
   },
   "faqTitle": "Frequently Asked Questions",
   "faqs": [
-    {
-      "q": "What is AI product photography for bags?",
-      "a": "AI product photography for bags creates realistic handbag images using artificial intelligence and existing product references, including studio, lifestyle, and model photography."
-    },
-    {
-      "q": "Can AI create realistic photos of my handbags?",
-      "a": "Yes. SetlesStudio creates photorealistic handbag images while focusing on accurate product colors, shapes, leather textures, stitching, and hardware."
-    },
-    {
-      "q": "Can you create AI models holding my handbags?",
-      "a": "Yes. We create realistic fashion models holding, carrying, or wearing your handbags in customized studio and lifestyle environments."
-    },
-    {
-      "q": "Is AI bag photography suitable for Shopify?",
-      "a": "Yes. Our handbag product images can be prepared for Shopify, ecommerce websites, social media, and advertising campaigns."
-    },
-    {
-      "q": "How much does AI handbag photography cost?",
-      "a": "Pricing depends on the number of bags, images, styles, and custom requirements. Contact SetlesStudio for a personalized quote."
-    },
-    {
-      "q": "Can I get a free sample?",
-      "a": "Yes. Contact SetlesStudio to request a free sample for a suitable handbag photography project."
-    },
-{
-  "q": "What product photos should I send for an AI bag photoshoot?",
-  "a": "Send clear front, back, and side views of the bag, plus close-ups of its logo, stitching, handles, straps, and hardware. Include a size reference and your preferred visual style so the team can understand the product before creating images."
-},
-{
-  "q": "Can you keep my handbag logo, color, and stitching consistent?",
-  "a": "We use your product references to guide the bag shape, color, logo, materials, and hardware. Clear detail photos help the review process. Check the finished images against your original product before publishing them."
-},
-{
-  "q": "Can you create both white-background product images and lifestyle photos?",
-  "a": "Yes. You can request clean studio images for product listings and styled lifestyle or model images for campaigns. Share the backgrounds, poses, and settings you want when requesting a quote."
-},
-{
-  "q": "Which types of bags can be used for AI product photography?",
-  "a": "Projects can include tote bags, shoulder bags, crossbody bags, clutches, and luxury handbags. Send your product photos so we can review the design and the images you need."
-},
-{
-  "q": "Do I need to ship my handbag for the photoshoot?",
-  "a": "The AI photography process starts with your existing product photos and visual references. Contact SetlesStudio with those files to confirm whether they provide enough detail for your project."
-},
-{
-  "q": "Can I use the same AI model across a handbag collection?",
-  "a": "Consistent models and styling can be included in your project brief. Share the full collection and preferred model references before work begins so the team can plan a consistent set of images."
-},
-{
-  "q": "What image sizes should I request for my online store?",
-  "a": "Share the image dimensions, aspect ratios, file formats, and background requirements of your store or advertising platform. Product listings, website banners, and social ads often need different versions."
-}
-  ]
+  {
+    "q": "What AI handbag photography services does SetlesStudio provide?",
+    "a": "SetlesStudio creates professional handbag and accessories images using your product photos and creative brief. Services can include studio product views, model images, lifestyle scenes and campaign visuals."
+  },
+  {
+    "q": "Do you provide handbag photography for US fashion and ecommerce brands?",
+    "a": "Yes. We work remotely with fashion and ecommerce brands across the United States and worldwide. You can share handbag photos, brand references and image requirements online."
+  },
+  {
+    "q": "Can you create model and lifestyle images from my handbag photos?",
+    "a": "Yes. Clear front, back and side views can guide model images, studio compositions and lifestyle scenes. Include a size reference when scale is important."
+  },
+  {
+    "q": "How do you preserve bag shape, logo, stitching and hardware?",
+    "a": "We use your product references and close ups to guide shape, colour, material, logos, stitching, straps and hardware. Fine details can vary in AI images, so we review the results against your original product before delivery."
+  },
+  {
+    "q": "Do I need to ship my handbag to SetlesStudio?",
+    "a": "Projects can start with digital product photos and creative references. Send the available images first so we can assess whether they show enough detail or whether additional photographs are needed."
+  },
+  {
+    "q": "Can you create studio and lifestyle images for Shopify?",
+    "a": "Yes. We can plan clean product images for ecommerce listings and styled model or lifestyle visuals for banners, social media and campaigns. Share the required dimensions and placements in your brief."
+  },
+  {
+    "q": "How much does AI handbag photography cost?",
+    "a": "Pricing depends on the number of bag styles and final images, model requirements, scene complexity and detail review. Share your product photos and image list for a project quote."
+  }
+]
 },
 
 
   "ai-beauty-skincare-photography": {
   "meta": {
-    "title": "AI Product Photography for Beauty & Skincare | SetlesStudio",
-    "description": "Turn beauty and skincare product photos into realistic AI model, studio and lifestyle images for ecommerce and campaigns. Get a SetlesStudio project quote."
+    "title": "AI Product Photography for US Beauty Brands | SetlesStudio",
+    "description": "AI product photography services for US beauty and skincare brands. Create product, model and lifestyle images for cosmetics, skincare and ecommerce campaigns."
   },
   "hero": {
-    "eyebrow": "AI BEAUTY & SKINCARE PHOTOGRAPHY",
+    "eyebrow": "AI BEAUTY AND SKINCARE PHOTOGRAPHY",
     "titlePrefix": "AI Product Photography",
     "titleHighlight": "for Beauty and Skincare Brands",
-    "subtitle": "Turn your product photos into realistic skincare visuals. We create studio images, on-model photography and lifestyle campaigns for beauty brands, online stores and product launches.",
+    "subtitle": "Professional AI product photography for beauty and skincare brands across the United States and worldwide. We create product images, model portraits and lifestyle campaigns from your existing product photos and brand references.",
     "image": "/images/ai-skincare-sunscreen-banner.webp",
     "imageAlt": "AI beauty model holding a yellow Solaris sunscreen tube among tropical palm leaves",
     "waText": "Hi, I'd like a quote for AI product photography for my beauty or skincare brand.",
@@ -782,17 +803,16 @@ const services: Record<string, ServiceData> = {
     "afterCaption": "Model example: sunscreen presented by an AI model against green palm leaves."
   },
   "description": {
-    "titleHighlight": "Beauty Product Photography",
-    "titleSuffix": "Built Around Your Brand",
+    "titleHighlight": "AI Product Photography",
+    "titleSuffix": "for Beauty and Skincare Brands",
     "paragraphs": [
-      "SetlesStudio creates AI product photography for beauty and skincare brands using your existing product photos and creative brief. From a clean product listing to a sunlit campaign, we plan the setting, model and composition around the product you want shoppers to notice.",
-      "Create a coordinated image set for serums, moisturisers, cleansers, sunscreen, cosmetics and perfume. Use product-focused images on ecommerce pages, model portraits for launches and lifestyle visuals for website banners and social media.",
-      "Our process combines AI image creation with editing and review. Clear packaging references help us assess shape, colour, logos and labels, while your brand guidelines guide the overall style."
-    ]
+  "SetlesStudio provides AI product photography services for beauty and skincare brands. Our team creates product focused studio images, model portraits and lifestyle campaigns from your existing product photos and brand references.",
+  "We work remotely with beauty brands across the United States and worldwide. Share clear packaging views, label artwork and your creative brief so we can plan ecommerce images, product launches and advertising visuals."
+]
   },
   "features": {
-    "heading": "Skincare Images for Every Customer Touchpoint",
-    "subheading": "Plan the visuals your brand needs",
+    "heading": "AI Product Photography for Beauty and Skincare Brands",
+    "subheading": "Product images, model portraits and lifestyle campaigns",
     "items": [
       {
         "number": "01",
@@ -862,69 +882,53 @@ const services: Record<string, ServiceData> = {
       "title": "Plan Images for Ecommerce, Launches and Ads",
       "paragraphs": [
         "A product page needs clear packaging views. A launch campaign may need model portraits, lifestyle scenes and a wide website banner. Sharing the intended use helps us plan useful compositions from the start.",
-        "The sunscreen and perfume examples show how product references can inform coordinated model portraits, packaging close-ups and styled campaign scenes. They illustrate creative presentation, rather than measured product performance or skincare results."
+        "The sunscreen and perfume examples show how product references can inform coordinated model portraits, packaging close ups and styled campaign scenes. They illustrate creative presentation, rather than measured product performance or skincare results."
       ]
     }
   ],
   "ctaBanner": {
     "image": "",
     "imageAlt": "",
-    "title": "Give Your Skincare Collection a Consistent Look",
-    "text": "Send your product photos and the images you need. We will review your brief and prepare a quote for your beauty or skincare campaign.",
+    "title": "Give Your Beauty and Skincare Collection a Consistent Look",
+    "text": "Send your product photos, packaging details and the images you need. Our team will review your brief and prepare a quote for your beauty or skincare campaign.",
     "waText": "Hi, I'd like a quote for AI beauty and skincare product photography.",
     "buttonLabel": "Request My Project Quote"
   },
   "faqTitle": "AI Beauty & Skincare Product Photography FAQs",
   "faqs": [
-    {
-      "q": "What is AI product photography for beauty and skincare brands?",
-      "a": "AI product photography combines your product photographs with AI-assisted image creation and professional editing to produce beauty and skincare visuals. SetlesStudio creates product-only images, model portraits and lifestyle scenes for ecommerce stores and campaigns."
-    },
-    {
-      "q": "Can you create skincare images from my existing product photos?",
-      "a": "Yes. Send clear photographs of your product, including its front label, packaging and additional angles. We use those references to plan the product shape, colours and presentation in studio or lifestyle images."
-    },
-    {
-      "q": "Which beauty products can you photograph with AI?",
-      "a": "Projects can include sunscreen, serums, moisturisers, cleansers, face creams, cosmetics and fragrances. Share your product range so we can review packaging details and recommend suitable compositions for each item."
-    },
-    {
-      "q": "Can AI models hold my sunscreen or skincare product?",
-      "a": "Yes. We can create model images showing your product held near the face, in hand or within a styled setting. The brief should specify the model direction, product scale, pose and background you want."
-    },
-    {
-      "q": "Will my packaging, logo and label stay accurate?",
-      "a": "Your reference photos guide the packaging, colours and label placement. Small lettering and intricate logos may need manual refinement. Supply clear label artwork where available and review the final images against your actual product before publishing."
-    },
-    {
-      "q": "Can I use the images on Shopify and in social media ads?",
-      "a": "Images can be prepared for Shopify product pages, website banners, social posts and advertising. Tell us the required dimensions and placements before production. Marketplace listings and ad platforms may have their own image requirements."
-    },
-    {
-      "q": "Do I need to ship my skincare products?",
-      "a": "Our AI photography process starts with digital product photos and creative references. Send your files first so we can confirm whether they show enough detail or whether additional photographs are needed."
-    },
-    {
-      "q": "How much does AI skincare product photography cost?",
-      "a": "The cost depends on the number of products and finished images, scene complexity, model requirements and delivery formats. Review our pricing page for package information, then send your brief for a skincare project quote."
-    },
-    {
-      "q": "How long does a beauty photography project take?",
-      "a": "Delivery depends on the number of images, creative direction and revisions. Share your launch date when requesting a quote so we can confirm a schedule before production begins."
-    },
-    {
-      "q": "Can you create consistent images across a skincare collection?",
-      "a": "Yes. We can plan a shared model, background, lighting style and colour palette across a collection. Providing the full product range and brand guidelines at the start helps keep the campaign consistent."
-    },
-    {
-      "q": "Can AI skincare images demonstrate product results?",
-      "a": "These images illustrate product presentation and campaign styling. They do not demonstrate tested skincare results, SPF performance or changes to a person's skin. Use substantiated product information for any performance claims."
-    },
-    {
-      "q": "Do you work with beauty brands outside Pakistan?",
-      "a": "Yes. SetlesStudio is based in Lahore, Pakistan, and works with brands remotely using digital product photos and briefs. Share your target market, preferred visual style and delivery requirements when you contact us."
-    }
-  ]
+  {
+    "q": "What AI product photography services do you provide for beauty and skincare brands?",
+    "a": "SetlesStudio creates product focused studio images, AI model portraits and lifestyle campaign visuals for skincare, cosmetics, sunscreen, fragrance and other beauty products."
+  },
+  {
+    "q": "Do you provide AI product photography for US beauty brands remotely?",
+    "a": "Yes. We work remotely with beauty and skincare brands across the United States and worldwide. You can share product photos, packaging references and your creative brief online."
+  },
+  {
+    "q": "Which beauty and skincare products can you photograph?",
+    "a": "Projects can include serums, moisturisers, cleansers, sunscreen, face creams, cosmetics, fragrance and other packaged beauty products. Send your product range so we can assess the required images."
+  },
+  {
+    "q": "Can you create AI model images holding my beauty product?",
+    "a": "Yes. We can create model images showing a product held in hand, beside the face or within a styled setting. Your brief can guide the model direction, pose, product scale and background."
+  },
+  {
+    "q": "How do you keep packaging, labels and logos accurate?",
+    "a": "Your reference photos guide the packaging shape, colour, logo and label placement. Small lettering and intricate artwork may need additional refinement. Provide clear label files where available and review the finished images against the actual product."
+  },
+  {
+    "q": "Do I need to ship my skincare products?",
+    "a": "Projects can begin with digital product photos and creative references. Send clear front, back and side views first so we can confirm whether more photographs or detail references are needed."
+  },
+  {
+    "q": "Can I use the images on Shopify, ecommerce stores and social ads?",
+    "a": "Yes. We can plan images for product pages, website banners, social posts and digital advertising. Share the required dimensions and intended placements before production."
+  },
+  {
+    "q": "How much does AI beauty and skincare product photography cost?",
+    "a": "Pricing depends on the number of products and final images, packaging complexity, model requirements and scene direction. Send your product photos and brief for a project quote."
+  }
+]
 },
 
 
@@ -1095,7 +1099,7 @@ export default function ServiceSlugPage({
         url: `${site.url}/services/${params.slug}`,
         provider: { "@id": `${site.url}/#organization` },
       }} />
-      {beautyPhotos && <StructuredData data={{
+      <StructuredData data={{
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: svc.faqs.map((faq) => ({
@@ -1103,7 +1107,7 @@ export default function ServiceSlugPage({
           name: faq.q,
           acceptedAnswer: { "@type": "Answer", text: faq.a },
         })),
-      }} />}
+      }} />
       <StructuredData data={breadcrumbData([
         { name: "Home", path: "/" },
         { name: "Services", path: "/services" },
