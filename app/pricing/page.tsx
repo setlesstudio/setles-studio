@@ -29,19 +29,35 @@ export default function PricingPage() {
     { title: "Room to grow", text: "Start with a collection or request a custom brief." },
   ];
   const faqs = [
-    { q: "How much does AI product photography cost?", a: "SetlesStudio offers project packages with different final image counts and services. Compare the current prices above, then share your product photos and brief to confirm which package fits. Custom work is quoted according to product count, image variations, and creative requirements." },
-    { q: "Which AI fashion photography package should I choose?", a: "Choose Starter for studio and model images for a smaller collection. Growth adds lifestyle photography, multiple models, and social media content. Premium brings together a larger image collection, fashion and footwear visuals, and AI video and advertising. The cards above show each package’s included services." },
-    { q: "Does an image package cover products or final images?", a: "Packages are based on the number of final images, not the number of products. Several poses, angles, or backgrounds for one product use multiple images. Send your product list and desired views so we can agree on the image allocation before starting." },
-    { q: "What do I need to send for an AI photography quote?", a: "Send clear product photos, the number of products, the final image count you need, and examples of your preferred style. Include close-ups of logos, stitching, materials, and any details that must stay accurate. Tell us where the images will be used and your target launch date." },
-    { q: "Can you turn flat lay clothing photos into model images?", a: "Yes. We use your clothing photos and references to create AI model images in studio or lifestyle settings. Clear front and back views and detail photos help us review garment colors, logos, and construction against the originals." },
-    { q: "Can I combine studio and lifestyle photography?", a: "Growth includes studio and lifestyle photography. If you need a different mix of product shots, model images, campaign visuals, or video, request a custom quote and we will confirm the scope with you." },
-    { q: "How long does an AI photography project take?", a: "Starter lists delivery in three business days. Growth includes priority delivery, while Premium includes fast turnaround and priority support. Confirm the start date, review stages, and final delivery date when your product photos and creative brief are agreed." },
-    { q: "Are revisions included in the package price?", a: "Ask us to confirm the number of revision rounds and what they cover in your project quote before ordering. Product-detail corrections and a new creative direction can require different amounts of work, so the agreed scope should be clear from the start." },
-    { q: "Can I use the images on Shopify and other ecommerce stores?", a: "We can prepare final images for your ecommerce store, product listings, and marketing channels. Share the dimensions and file formats you need. Each marketplace has its own image requirements, so confirm the intended placement before production." },
-    { q: "Are AI videos included in every package?", a: "AI Fashion Ads and UGC Videos is listed in Premium. Video is not listed as part of Starter or Growth. For a separate video brief, ask for a quote and confirm the clip count, duration, format, and included revisions." },
-    { q: "Can I get a custom quote for footwear or handbag photography?", a: "Yes. Send your footwear or handbag product photos, the image count you need, and your preferred studio, on foot, on model, or lifestyle references. We will recommend a package or quote a custom scope for your collection." },
-    { q: "How can I compare AI photography offers fairly?", a: "Compare the number of finished images, product and model variations, editing, revision rounds, delivery time, file formats, and usage terms. Review examples alongside the price so you can choose the service that matches your product and brand requirements." },
-  ];
+  {
+    "q": "How much do AI fashion and product photography services cost?",
+    "a": "The cost depends on the number of products and final images, model requirements, scene complexity, creative direction and agreed deliverables. Current package prices are shown above, and custom projects can be quoted from your brief."
+  },
+  {
+    "q": "Are package quantities based on products or final images?",
+    "a": "Packages are based on the number of final images, not simply the number of products. Multiple poses, angles or backgrounds for one product can require multiple final images. Confirm the image allocation before production begins."
+  },
+  {
+    "q": "Which photography package should I choose?",
+    "a": "Compare the services and image quantities listed in each package. Consider whether you need studio images, model photography, lifestyle visuals, campaign content or video. Contact us if your project needs a combination that is not listed."
+  },
+  {
+    "q": "Can US brands order AI fashion and product photography remotely?",
+    "a": "Yes. SetlesStudio works remotely with brands across the United States and worldwide. You can share product photos, brand references and your creative brief online, then confirm the quote and project scope with our team."
+  },
+  {
+    "q": "What should I send to receive a photography quote?",
+    "a": "Send clear product photos, the number of products, your required final image count, preferred model or background references, important product details and your target launch date."
+  },
+  {
+    "q": "Can I request a custom photography package?",
+    "a": "Yes. If you need a different mix of product images, model visuals, campaign scenes, footwear, handbags or video, share your requirements and we will review a custom project scope."
+  },
+  {
+    "q": "How are revisions and delivery dates agreed?",
+    "a": "The revision scope and delivery schedule are confirmed in your project quote before production begins. Timing depends on the image count, product complexity, creative direction and review stages."
+  }
+];
 
   const currentTiers = tiers.length > 0 ? tiers : defaultTiers;
 
@@ -52,8 +68,8 @@ export default function PricingPage() {
         <div className="container-site pb-12 pt-8 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:py-0">
           <div className="max-w-xl lg:max-w-[53%]">
             <p className="eyebrow">AI photography packages</p>
-            <h1 id="pricing-heading" className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl xl:text-6xl">AI Product Photography<br /><span className="text-brand">Pricing &amp; Packages</span></h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">Turn your product photos into a coordinated collection of studio, model, and lifestyle images. Compare packages for your next launch, online store, or fashion campaign.</p>
+            <h1 id="pricing-heading" className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl xl:text-6xl">AI Fashion &amp; Product Photography<br /><span className="text-brand">Pricing &amp; Packages</span></h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">Compare photography packages for clothing, beauty and ecommerce brands across the United States and worldwide. Choose the image quantity and creative direction that fit your project, or request a custom quote.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#packages" className="btn-primary">Compare Packages</a>
               <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-ink/20 bg-white px-7 py-3 font-semibold">Help Me Choose</Link>
@@ -229,7 +245,7 @@ export default function PricingPage() {
       {/* FAQ */}
       <section id="faq" className="scroll-mt-24 bg-cream py-14 rounded-3xl">
         <div className="container-site">
-          <SectionHeading eyebrow="FAQ" title="AI photography pricing questions" />
+          <SectionHeading eyebrow="FAQ" title="AI Fashion and Product Photography Pricing FAQs" />
           <div className="mt-12">
             <FAQ faqs={faqs}/>
           </div>

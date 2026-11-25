@@ -24,31 +24,39 @@ import { site } from "@/lib/data";
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const WHY_ITEMS = [
-  { icon: ImageIcon,   title: "Ultra-realistic AI Images",  text: "Indistinguishable from traditional photoshoots — every fabric, texture, and detail perfected." },
-  { icon: ShieldCheck, title: "Commercial Usage",           text: "Full commercial rights included. Use your visuals anywhere, on any platform, without restrictions." },
-  { icon: Zap,         title: "Fast Delivery",              text: "Average 7-day turnaround. Starter projects ship in as little as 3 business days." },
-  { icon: Repeat2,     title: "Brand Consistency",          text: "Consistent models, lighting, and style across your entire catalog for a cohesive brand identity." },
-  { icon: DollarSign,  title: "Affordable Pricing",         text: "10× more affordable than traditional photoshoots without compromising on quality." },
-  { icon: TrendingUp,  title: "Unlimited Scalability",      text: "Scale from 20 images to 200+ with no additional logistics, models, or studio costs." },
+  { icon: ImageIcon, title: "Product Detail Review", text: "We review finished images against the product photos and detail references you provide." },
+  { icon: ShieldCheck, title: "Creative Direction", text: "Model styling, backgrounds and compositions are planned around your brand brief." },
+  { icon: Zap, title: "Clear Project Schedule", text: "Image quantities, review stages and delivery dates are discussed before production." },
+  { icon: Repeat2, title: "Consistent Visual Style", text: "Shared model references, lighting and styling help connect images across a collection." },
+  { icon: DollarSign, title: "Custom Project Scope", text: "Choose the image quantity and creative direction that fit your products and campaign." },
+  { icon: TrendingUp, title: "Remote Collaboration", text: "Work with our team remotely from the United States and worldwide." },
 ];
 
 const CONTACT_FAQS = [
   {
-    q: "How quickly do you respond?",
-    a: "We respond to every inquiry within 24 hours on business days. For urgent projects, reach out via WhatsApp for a faster reply.",
+    "q": "How do I start an AI fashion or product photography project?",
+    "a": "Share your brand name, product photos, image quantity, preferred visual style and intended use through the contact form or WhatsApp. Our team will review the brief and discuss the next steps."
   },
   {
-    q: "Can you handle bulk orders?",
-    a: "Absolutely. We regularly handle large-scale catalog projects with hundreds of images. Our workflow is built for volume without sacrificing quality.",
+    "q": "Do you provide AI photography services for US brands remotely?",
+    "a": "Yes. SetlesStudio works remotely with clothing, beauty and ecommerce brands across the United States and worldwide. You can share product images and creative references online."
   },
   {
-    q: "Can you sign an NDA?",
-    a: "Yes. We are happy to sign a Non-Disclosure Agreement before discussing your project details. Just mention it in your inquiry.",
+    "q": "What information should I include in my enquiry?",
+    "a": "Include your product category, clear product photos, the number of images you need, important details to preserve, preferred model or background references and your target launch date."
   },
   {
-    q: "Do you offer revisions?",
-    a: "Yes. All packages include revision rounds. We work with you until the results match your brand vision and quality expectations.",
+    "q": "Can you handle larger ecommerce catalog projects?",
+    "a": "We can review larger product catalogs and plan the work in agreed stages. Share the number of products, image requirements and deadline so we can assess the scope and schedule."
   },
+  {
+    "q": "Can you sign a non disclosure agreement?",
+    "a": "If your project requires an NDA, mention it in your enquiry. We can discuss the document and confidentiality requirements before reviewing sensitive project materials."
+  },
+  {
+    "q": "How are revisions, pricing and delivery dates confirmed?",
+    "a": "The quote sets out the agreed deliverables, revision scope and schedule before production begins. These details depend on the number of images, product complexity and creative requirements."
+  }
 ];
 
 // ─── Input styles (matching existing ContactForm) ─────────────────────────────
@@ -231,11 +239,11 @@ export default function ContactPageClient() {
         eyebrow="Contact Us"
         title={
           <>
-            Request an AI Fashion{" "}
-            <span className="text-brand">Photography Sample</span>
+            Start Your AI Fashion &amp; Product{" "}
+            <span className="text-brand">Photography Project</span>
           </>
         }
-        text="One product image is all we need. You'll get it back on a model in 2 days — no cost."
+        text="Share your product photos and creative brief to discuss a photography sample or project quote. We work remotely with brands across the United States and worldwide."
         image="/images/project_image.jpeg"
         imageMobile="/images/project_image.jpeg"
         animateReveal
@@ -248,10 +256,10 @@ export default function ContactPageClient() {
           <div>
             <p className="eyebrow">Get in Touch</p>
             <h2 className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-3xl">
-              We&apos;d love to hear about your project
+              Tell Us About Your Photography Project
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              Fill in the form and our team will review your requirements and get back to you with a tailored proposal.
+              Share your product category, image requirements and creative direction. Our team will review your brief and discuss a suitable project scope.
             </p>
           </div>
 
@@ -259,7 +267,7 @@ export default function ContactPageClient() {
           {[
             { icon: Mail,  label: "Email",         value: site.email, href: `mailto:${site.email}` },
             { icon: Clock, label: "Response Time", value: "Within 24 Hours",        href: null },
-            { icon: Globe, label: "Availability",  value: "Worldwide",              href: null },
+            { icon: Globe, label: "Availability",  value: "United States and worldwide, remote", href: null },
           ].map(({ icon: Icon, label, value, href }) => (
             <div key={label} className="flex gap-4">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand">
@@ -300,8 +308,8 @@ export default function ContactPageClient() {
         <div className="container-site">
           <SectionHeading
             eyebrow="Why Work With Us"
-            title="Everything your brand needs, delivered fast"
-            text="We combine cutting-edge AI technology with professional creative direction to produce visuals that convert."
+            title="Professional Photography Services for Your Brand"
+            text="Our team combines creative direction, AI image production and careful review to create product and fashion visuals based on your brand references."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {WHY_ITEMS.map((item, i) => (
@@ -323,8 +331,8 @@ export default function ContactPageClient() {
       <section className="container-site py-20">
         <SectionHeading
           eyebrow="FAQ"
-          title="Frequently Asked Questions"
-          text="Quick answers to the most common questions about working with us."
+          title="AI Fashion and Product Photography Service FAQs"
+          text="Answers about remote projects, product references, quotes, revisions and working with SetlesStudio."
         />
         <div className="mt-12">
           <ContactFAQ />
@@ -332,8 +340,8 @@ export default function ContactPageClient() {
       </section>
 
       <CTABand
-        title="Not ready to fill the form? Let's talk first."
-        text="Book a free consultation and we'll walk you through exactly what we can create for your brand."
+        title="Ready to Discuss Your Photography Project?"
+        text="Tell us what you sell, the images you need and where you plan to use them. Our team will help you plan the next step."
         primary={{
           href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to book a free consultation about AI fashion photography for my brand.")}`,
           label: "Book a Free Consultation",

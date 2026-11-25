@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Product Photography Pricing & Packages | SetlesStudio",
-  description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
+  title: "AI Fashion & Product Photography Pricing | SetlesStudio",
+  description: "Compare AI fashion and product photography packages for clothing, beauty and ecommerce brands across the United States and worldwide. Review image quantities, services and custom project options.",
   alternates: {
     canonical: "https://www.setlesstudio.com/pricing",
   },
   openGraph: {
-    title: "AI Product Photography Pricing & Packages | SetlesStudio",
-    description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
+    title: "AI Fashion & Product Photography Pricing | SetlesStudio",
+    description: "Compare AI fashion and product photography packages for clothing, beauty and ecommerce brands across the United States and worldwide. Review image quantities, services and custom project options.",
     url: "https://www.setlesstudio.com/pricing",
     siteName: "SetlesStudio",
     images: [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Product Photography Pricing & Packages | SetlesStudio",
-    description: "Compare AI product and fashion photography packages for ecommerce brands. Explore studio, model, lifestyle, and campaign options or request a custom quote.",
+    title: "AI Fashion & Product Photography Pricing | SetlesStudio",
+    description: "Compare AI fashion and product photography packages for clothing, beauty and ecommerce brands across the United States and worldwide. Review image quantities, services and custom project options.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/ai-photography-pricing-banner.webp"],

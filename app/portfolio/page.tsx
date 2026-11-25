@@ -8,29 +8,25 @@ import { site } from "@/lib/data";
 
 const faqs = [
   {
-    q: "What can I see in the SetlesStudio AI photography portfolio?",
-    a: "Choose a service banner to open its dedicated page. Each photography page contains relevant product, model or campaign examples, and the video ads page includes video examples.",
+    "q": "What can I see in the SetlesStudio AI fashion and product photography portfolio?",
+    "a": "Explore examples of clothing model photography, beauty and skincare images, footwear, handbags, lifestyle scenes, fashion campaigns and AI video ads. Each service gallery shows examples relevant to that type of project."
   },
   {
-    q: "Can SetlesStudio turn my flat-lay product photo into an AI model photo?",
-    a: "Yes. Share a clear product or flat-lay photograph and your preferred style. We can create AI-assisted on-model imagery for ecommerce product pages, catalogs and marketing, subject to a review of the source photo and product details.",
+    "q": "Can you create similar images from my original product photos?",
+    "a": "Yes. Our team uses your product photos, brand references and creative brief to plan similar studio, model, lifestyle or campaign visuals. We review the source images before confirming the project scope."
   },
   {
-    q: "Do the AI images preserve the original product details?",
-    a: "We aim to preserve visible product characteristics such as colour, silhouette, fabric texture, seams, hardware and shape. Results depend on the quality and angles of the reference images, so important details are reviewed before delivery.",
+    "q": "Do you provide photography services for US brands remotely?",
+    "a": "Yes. SetlesStudio works remotely with fashion, beauty and ecommerce brands across the United States and worldwide. You can share product images and creative references online."
   },
   {
-    q: "Does SetlesStudio create AI photography for handbags and shoes?",
-    a: "Yes. Dedicated services are available for handbag and footwear imagery, including product-led studio views and AI model styling. Visit the relevant service page to see the scope and request a sample.",
+    "q": "How do you review product details in the finished images?",
+    "a": "We compare the finished visuals with your supplied references, paying attention to visible product shape, colour, fabric, logos, hardware and other details. Clear source photos help the review, but exact reproduction is not guaranteed."
   },
   {
-    q: "Does SetlesStudio offer AI beauty and skincare product photography?",
-    a: "Yes. SetlesStudio offers AI-assisted beauty and skincare product photography for products such as serums, sunscreen, cosmetics and packaging. Contact the studio to discuss the product and creative direction.",
-  },
-  {
-    q: "How do I order AI product photography for my brand?",
-    a: "Send your product photographs, brand references, required image quantity and intended use through the contact page or WhatsApp. SetlesStudio can review the brief and recommend a suitable package or sample.",
-  },
+    "q": "How can I request a photography project or sample?",
+    "a": "Choose the relevant service page, then send your product photos, required image quantity and preferred visual direction through the contact page or WhatsApp. Our team can review your brief and discuss the next step."
+  }
 ];
 
 const faqSchema = {
@@ -44,8 +40,8 @@ const faqSchema = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-  description: "Browse AI fashion, beauty, skincare, footwear and handbag photography. Select a service banner to view its image gallery or video examples.",
+  title: "AI Fashion & Product Photography Portfolio | SetlesStudio",
+  description: "Explore SetlesStudio AI fashion and product photography for clothing, beauty, skincare, footwear and handbags. We work remotely with brands across the United States and worldwide.",
   alternates: { canonical: "https://www.setlesstudio.com/portfolio" },
   keywords: [
     "AI fashion photography portfolio",
@@ -58,8 +54,8 @@ export const metadata: Metadata = {
     "AI beauty and skincare product photography",
   ],
   openGraph: {
-    title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Explore our photography and video services. Select a banner to view the full gallery on its service page.",
+    title: "AI Fashion & Product Photography Portfolio | SetlesStudio",
+    description: "Explore our photography and video services for US and worldwide brands. Select a service to view examples of product, model and campaign visuals.",
     url: "https://www.setlesstudio.com/portfolio",
     siteName: "SetlesStudio",
     images: [{ url: "https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp", width: 2752, height: 1536, alt: "AI fashion model showcasing a coral tote bag in a lush lifestyle setting" }],
@@ -67,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Product & Fashion Photography Portfolio | SetlesStudio",
-    description: "Explore AI photography galleries and video examples by service.",
+    title: "AI Fashion & Product Photography Portfolio | SetlesStudio",
+    description: "View AI fashion and product photography examples created for clothing, beauty and ecommerce brands.",
     images: ["https://www.setlesstudio.com/images/ai-handbag-lifestyle-banner.webp"],
   },
 };
@@ -79,9 +75,9 @@ export default function PortfolioPage() {
       <section className="bg-[#1e201b] pb-12 pt-28 text-white sm:pb-16 sm:pt-32">
         <div className="container-site">
           <div className="max-w-4xl">
-            <p className="eyebrow text-white/65">Selected work · SetlesStudio</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">Explore our work,<br className="hidden sm:block" /> <span className="text-[#d8b994]">one service at a time.</span></h1>
-            <p className="mt-5 max-w-2xl leading-relaxed text-white/75">Choose a service below to see its full image gallery or video examples. From fashion and skincare to footwear and handbags, find the work that fits your brand.</p>
+            <p className="eyebrow text-white/65">SetlesStudio Portfolio</p>
+            <h1 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">AI Fashion & Product <span className="text-[#d8b994]">Photography Portfolio</span></h1>
+            <p className="mt-5 max-w-2xl leading-relaxed text-white/75">Explore photography examples for clothing, beauty, skincare, footwear, handbags and ecommerce brands. SetlesStudio works remotely with businesses across the United States and worldwide, creating product, model and campaign visuals from original product references.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">Start Your Project</Link>
               <a href="#portfolio-work" className="inline-flex items-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10">Browse Service Galleries</a>
@@ -107,7 +103,7 @@ export default function PortfolioPage() {
       </section>
 
       <section className="container-site py-14 sm:py-18">
-        <SectionHeading eyebrow="Common questions" title="AI product photography FAQs" text="Answers about portfolio examples, product accuracy, services and ordering." />
+        <SectionHeading eyebrow="Common questions" title="AI Fashion and Product Photography Portfolio FAQs" text="Answers about our photography examples, remote service for US brands, product accuracy and project enquiries." />
         <div className="mt-7"><FAQ faqs={faqs} /></div>
       </section>
 

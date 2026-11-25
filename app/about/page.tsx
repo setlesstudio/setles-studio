@@ -9,14 +9,14 @@ import ImageSlot from "@/components/ImageSlot";
 import { process, site, stats, team } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About SetlesStudio | AI Product Photography Studio",
-  description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
+  title: "About SetlesStudio | AI Photography Services for US Brands",
+  description: "Meet SetlesStudio, a professional AI fashion and product photography service provider working remotely with clothing, beauty and ecommerce brands across the United States and worldwide.",
   alternates: {
     canonical: "https://www.setlesstudio.com/about",
   },
   openGraph: {
-    title: "About SetlesStudio | AI Product Photography Studio",
-    description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
+    title: "About SetlesStudio | AI Photography Services for US Brands",
+    description: "Meet SetlesStudio, a professional AI fashion and product photography service provider working remotely with clothing, beauty and ecommerce brands across the United States and worldwide.",
     url: "https://www.setlesstudio.com/about",
     siteName: "SetlesStudio",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About SetlesStudio | AI Product Photography Studio",
-    description: "Meet SetlesStudio, a creative studio offering AI product photography for fashion and ecommerce brands. Learn about our team, process, and services.",
+    title: "About SetlesStudio | AI Photography Services for US Brands",
+    description: "Meet SetlesStudio, a professional AI fashion and product photography service provider working remotely with clothing, beauty and ecommerce brands across the United States and worldwide.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/about-setlesstudio.webp"],
@@ -49,43 +49,27 @@ const values = [
 const aboutFaqs = [
   {
     "q": "What does SetlesStudio do?",
-    "a": "SetlesStudio is a creative studio offering AI product photography, fashion imagery, lifestyle campaigns, and video ads for ecommerce brands. Our team works from your product photos and creative references to prepare visuals for your store and marketing."
+    "a": "SetlesStudio is a professional AI fashion and product photography service provider. Our team creates product images, model photography, lifestyle visuals, fashion campaigns and video ads for clothing, beauty and ecommerce brands."
   },
   {
-    "q": "What is AI product photography?",
-    "a": "AI product photography combines artificial intelligence with creative editing to produce product visuals from existing photographs. It can show a product against a studio background, in a lifestyle setting, or with an AI model."
+    "q": "Is SetlesStudio an AI image generator or a photography service provider?",
+    "a": "SetlesStudio provides a photography service, not a self service image generator or software tool. Our team works from your product photos and creative brief, plans the visual direction, creates the images and reviews the results."
   },
   {
-    "q": "Which products can SetlesStudio create images for?",
-    "a": "We work with clothing, footwear, handbags, accessories, and jewelry. Share your product photos and the type of image you need so we can confirm the best approach for your project."
+    "q": "Do you work with clothing and ecommerce brands in the United States?",
+    "a": "Yes. We work remotely with clothing, beauty and ecommerce brands across the United States and worldwide. Product photos, brand references and project briefs can be shared online."
   },
   {
-    "q": "What photos should I send to start a project?",
-    "a": "Send clear product photos showing the front, back, and important details, such as logos, stitching, texture, and hardware. Include your preferred backgrounds, model references, image sizes, and intended use."
+    "q": "Which products can you create photography for?",
+    "a": "Our services cover clothing, activewear, footwear, handbags, accessories, skincare, cosmetics, sunscreen and fragrance. Contact us with your product category and the image styles you need."
   },
   {
-    "q": "How do you check product details in AI images?",
-    "a": "Our team compares the created images with your supplied references, paying attention to product shape, color, material, logos, and other visible details. You review the results and request the refinements agreed for your project."
+    "q": "What should I send to start a photography project?",
+    "a": "Send clear product photos, front and back views where possible, close ups of important details, logos or artwork files, your preferred image quantity and creative references."
   },
   {
-    "q": "Can you turn flat lay clothing photos into model images?",
-    "a": "Yes. We use your clothing photos to create AI model images for studio, lifestyle, and campaign settings. Clear garment references help us present the design consistently across the requested shots."
-  },
-  {
-    "q": "Can I use the images for my ecommerce store?",
-    "a": "Images can be prepared for product pages, catalogs, social media, and advertising. Tell us your required dimensions and platform before production. Marketplace image rules should be checked for each intended placement."
-  },
-  {
-    "q": "How much does AI product photography cost?",
-    "a": "The cost depends on the products, number of images, backgrounds, model requirements, and editing complexity. Review our pricing page or send your brief for a quote covering deliverables and agreed revisions."
-  },
-  {
-    "q": "How long does an AI photography project take?",
-    "a": "Timing depends on the size and complexity of your brief and the review rounds required. We confirm the delivery schedule with you before production begins."
-  },
-  {
-    "q": "How do I choose an AI product photography studio?",
-    "a": "Compare examples with their original product photos. Check whether colors, logos, proportions, and textures remain consistent. Ask what files, revisions, usage terms, and delivery dates are included before choosing a studio."
+    "q": "How do you review product accuracy?",
+    "a": "We compare finished images with the product photos and detail references you provide. Our review considers visible colours, shape, material, logos and other important features. Exact reproduction is not guaranteed, so your final product check remains important."
   }
 ];
 
@@ -98,8 +82,8 @@ export default function AboutPage() {
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-32 bg-gradient-to-b from-black/65 to-transparent lg:block" />
         <div className="relative px-6 py-10 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[48%] lg:flex-col lg:justify-center lg:px-0 lg:pb-8 lg:pt-24">
           <p className="eyebrow text-brand">About SetlesStudio</p>
-          <h1 id="about-heading" className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl xl:text-5xl">Your creative studio for <span className="text-brand">AI product photography</span></h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 xl:text-lg">We turn product photos into realistic studio, lifestyle, and model imagery for fashion and ecommerce brands.</p>
+          <h1 id="about-heading" className="mt-4 font-display text-3xl font-semibold leading-tight sm:text-4xl xl:text-5xl">Professional <span className="text-brand">AI Fashion & Product Photography Services</span></h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/90 xl:text-lg">SetlesStudio is a professional photography service provider working remotely with clothing, beauty and ecommerce brands across the United States and worldwide. Our team creates product, model, lifestyle and campaign visuals from your original product photos and creative brief.</p>
         </div>
       </section>
 
@@ -115,10 +99,10 @@ export default function AboutPage() {
               Built on passion. Driven by creativity.
             </h2>
             <p className="mt-5 leading-relaxed text-ink-soft">
-              SetlesStudio helps fashion and ecommerce brands create AI product photography from existing product images. We bring together creative direction, image production, and editing to build a consistent visual style for each collection.
+              SetlesStudio provides professional AI fashion and product photography services for brands that need consistent commercial visuals. We bring together creative direction, image production and editing to build a visual style around each collection.
             </p>
             <p className="mt-4 leading-relaxed text-ink-soft">
-              From apparel on AI models to footwear and handbag photography, we plan each project around your products, references, and intended use. Our team reviews the finished visuals against your supplied images before delivery.
+              From apparel model photography to footwear, handbag, beauty and skincare visuals, we plan each project around your products, references and intended use. Clients work with our team remotely from the United States and worldwide. We review finished visuals against the supplied images before delivery.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {values.map((v) => (
@@ -270,7 +254,7 @@ export default function AboutPage() {
       </section>
 
       <section className="container-site py-14" aria-labelledby="about-faq-heading">
-        <h2 id="about-faq-heading" className="mb-8 text-center font-display text-2xl font-semibold sm:text-3xl">Questions about our AI product photography studio</h2>
+        <h2 id="about-faq-heading" className="mb-8 text-center font-display text-2xl font-semibold sm:text-3xl">Questions About Our AI Fashion and Product Photography Services</h2>
         <FAQ faqs={aboutFaqs} />
         <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand underline">portfolio</Link>, and <Link href="/pricing" className="text-brand underline">pricing</Link>. You can also <Link href="/contact" className="text-brand underline">request a photography sample</Link> for your collection.</p>
       </section>

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact Our AI Fashion Studio | SetlesStudio",
-  description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
+  title: "Contact SetlesStudio | AI Photography Services for US Brands",
+  description: "Contact SetlesStudio about professional AI fashion and product photography services for brands across the United States and worldwide. Share your project brief, request a quote and discuss image requirements.",
   alternates: {
     canonical: "https://www.setlesstudio.com/contact",
   },
   openGraph: {
-    title: "Contact Our AI Fashion Studio | SetlesStudio",
-    description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
+    title: "Contact SetlesStudio | AI Photography Services for US Brands",
+    description: "Contact SetlesStudio about professional AI fashion and product photography services for brands across the United States and worldwide. Share your project brief, request a quote and discuss image requirements.",
     url: "https://www.setlesstudio.com/contact",
     siteName: "SetlesStudio",
     images: [
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Our AI Fashion Studio | SetlesStudio",
-    description: "Discuss your AI fashion photography project with SetlesStudio. Request a sample, share your requirements, or ask about pricing and delivery.",
+    title: "Contact SetlesStudio | AI Photography Services for US Brands",
+    description: "Contact SetlesStudio about professional AI fashion and product photography services for brands across the United States and worldwide. Share your project brief, request a quote and discuss image requirements.",
     site: "@SetlesStudio",
     creator: "@SetlesStudio",
     images: ["https://www.setlesstudio.com/images/portfolio-page-banner.jpeg"],
