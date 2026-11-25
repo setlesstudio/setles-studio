@@ -413,7 +413,8 @@ const services: Record<string, ServiceData> = {
     "buttonLabel": "Get Your Fashion Campaign Quote"
   },
   "faqTitle": "Frequently Asked Questions About AI Fashion Campaign Photography",
-  "faqs": [
+  "faqTitle: "AI Fashion Campaign Photography FAQs",
+  faqs": [
   {
     "q": "What is included in AI fashion campaign photography?",
     "a": "A campaign project can include AI model photography, editorial style scenes, collection launch images, lookbook visuals and advertising creatives. The exact image list and creative direction are agreed in the project brief."
@@ -585,7 +586,8 @@ const services: Record<string, ServiceData> = {
       text: "Share your product images, target platforms and creative brief. We will discuss video formats, scenes, deliverables and the project schedule before production.",
       waText: "Hi, I'd like to discuss an AI video ads project.",
     },
-    faqs: [
+    faqTitle: "AI Video Ads and UGC Style Video FAQs",
+  faqs: [
   {
     "q": "What AI video ad services does SetlesStudio provide?",
     "a": "SetlesStudio provides a professional AI video production service for fashion and ecommerce brands. Our team creates product videos, campaign films, demonstrations and UGC style advertising content from your product references and brief."
@@ -737,7 +739,8 @@ const services: Record<string, ServiceData> = {
     "buttonLabel": "Request a Free Sample"
   },
   "faqTitle": "Frequently Asked Questions",
-  "faqs": [
+  "faqTitle: "AI Handbag Photography FAQs",
+  faqs": [
   {
     "q": "What AI handbag photography services does SetlesStudio provide?",
     "a": "SetlesStudio creates professional handbag and accessories images using your product photos and creative brief. Services can include studio product views, model images, lifestyle scenes and campaign visuals."
@@ -895,7 +898,8 @@ const services: Record<string, ServiceData> = {
     "buttonLabel": "Request My Project Quote"
   },
   "faqTitle": "AI Beauty & Skincare Product Photography FAQs",
-  "faqs": [
+  "faqTitle: "AI Product Photography FAQs for Beauty and Skincare Brands",
+  faqs": [
   {
     "q": "What AI product photography services do you provide for beauty and skincare brands?",
     "a": "SetlesStudio creates product focused studio images, AI model portraits and lifestyle campaign visuals for skincare, cosmetics, sunscreen, fragrance and other beauty products."
@@ -1066,7 +1070,7 @@ export default function ServiceSlugPage({
   const waHeroHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(svc.hero.waText)}`;
   if (params.slug === "realistic-ai-video-ads-ugc") {
     return <>
-      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Video Ads and UGC Style Videos for Fashion Brands", description: svc.meta.description, url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
+      <StructuredData data={{ "@context": "https://schema.org", "@type": "Service", name: "AI Video Ads and UGC Style Videos for Fashion Brands", description: svc.meta.description, areaServed: ["United States", "Worldwide"], url: site.url + "/services/" + params.slug, provider: { "@id": site.url + "/#organization" } }} />
       <StructuredData data={breadcrumbData([{name: "Home", path: "/"}, {name: "Services", path: "/services"}, {name: "AI Video Ads and UGC Style Videos for Fashion Brands", path: "/services/" + params.slug}])} />
       <FashionAds quote={waHeroHref} send={waCtaHref} />
       <div className="container-site pb-10">
