@@ -7,59 +7,36 @@ import ImageSlot from "@/components/ImageSlot";
 import ServiceFilm from "@/components/ServiceFilm";
 import SectionHeading from "@/components/SectionHeading";
 import { services } from "@/lib/data";
+import { getStoredServices } from "@/lib/dashboard-store";
 
 const serviceImages: Record<string, { src: string; alt: string }> = {
   "ai-beauty-skincare-photography": {
     src: "/images/ai-skincare-sunscreen-model.webp",
-    alt: "AI beauty model holding Solaris sunscreen among tropical palm leaves",
+    alt: "AI beauty campaign model presenting a sunscreen product in a tropical outdoor setting",
   },
   "realistic-ai-studio-photography": {
     src: "/images/ai-fashion-burgundy-outfit.webp",
-    alt: "AI fashion model wearing a burgundy scalloped top and matching trousers",
+    alt: "AI fashion model wearing a burgundy scalloped top and matching trousers for an apparel photography campaign",
   },
   "lifestyle-realistic-ai-photography": {
     src: "/images/ai-lifestyle-pink-tracksuit.webp",
-    alt: "AI fashion model in a pink tracksuit beside a brown leather chair",
+    alt: "AI fashion model wearing a pink tracksuit in a styled lifestyle scene beside a brown leather chair",
   },
   "footwear-realistic-ai-photography": {
     src: "/images/ai-footwear-lime-green-heels.webp",
-    alt: "AI footwear model wearing lime green pointed heels with an orange top",
+    alt: "AI fashion model wearing lime-green pointed heels with an orange outfit in a footwear campaign",
   },
   "bags-accessories-realistic-ai-photography": {
     src: "/images/ai-handbag-coral-tote.webp",
-    alt: "AI handbag model holding a coral tote bag while wearing a green cardigan",
+    alt: "AI fashion model carrying a coral tote bag while wearing a green cardigan in a handbag campaign",
   },
 };
-
-function readServices() {
-  try {
-    const saved = JSON.parse(localStorage.getItem("setles_services") || "null");
-    if (!Array.isArray(saved) || !saved.length) return services;
-    return saved.map((item) => {
-      const current = services.find((service) => service.id === item.id);
-      if (!current) return item;
-      if (item.id === "ai-beauty-skincare-photography") return current;
-      if (item.id === "realistic-ai-video-ads-ugc") {
-        return {
-          ...item,
-          title: current.title,
-          image: current.image,
-          video: current.video,
-          short: item.short || current.short,
-        };
-      }
-      return { ...current, ...item };
-    });
-  } catch {
-    return services;
-  }
-}
 
 export default function HomeServices() {
   const [items, setItems] = useState(services);
 
   useEffect(() => {
-    const update = () => setItems(readServices());
+    const update = () => setItems(getStoredServices());
     update();
     window.addEventListener("setles_db_update", update);
     return () => window.removeEventListener("setles_db_update", update);
@@ -70,8 +47,8 @@ export default function HomeServices() {
       <div className="container-site">
         <SectionHeading
           eyebrow="What we do"
-          title="AI Fashion, Beauty and Video Services"
-          text="Explore our seven services, from fashion and beauty product photography to skincare campaigns and short video ads."
+          title="Done-for-You AI Fashion & Product Photography Services"
+          text="We provide managed photography production for US clothing, beauty and ecommerce brands. Share your product photos and creative brief; our team creates realistic on-model, product and campaign visuals for your store and marketing."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {items.map((service, index) => (
