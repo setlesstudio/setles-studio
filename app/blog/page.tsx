@@ -60,6 +60,39 @@ function formatDate(d: string) {
   }
 }
 
+const priorityGuides = [
+  {
+    href: "/blog/ai-fashion-product-photography-studio-or-lifestyle",
+    title: "Studio or Lifestyle Photography: Which Comes First?",
+    text: "Compare studio and lifestyle images for ecommerce product pages and collection campaigns.",
+  },
+  {
+    href: "/blog/ai-video-ads-for-fashion-brands",
+    title: "AI Video Ads for Fashion Brands",
+    text: "Plan product videos, testing, creative formats and platform use for fashion advertising.",
+  },
+  {
+    href: "/blog/ai-fashion-fabric-texture-fix-guide",
+    title: "How to Improve AI Fabric Texture",
+    text: "Learn how garment references, lighting and material details affect realistic fashion images.",
+  },
+  {
+    href: "/blog/ai-fashion-photography-cuts-ecommerce-content-costs",
+    title: "AI Fashion Photography Costs Explained",
+    text: "Compare production costs, image quantities, review stages and traditional photoshoot expenses.",
+  },
+  {
+    href: "/blog/clothing-photography-guide-shoot-like-a-pro-studio",
+    title: "Clothing Photography Guide",
+    text: "Understand garment preparation, lighting, flat lay, mannequin and model photography formats.",
+  },
+  {
+    href: "/blog/ecommerce-product-photography-tips-2026-increase-sales",
+    title: "Ecommerce Product Photography Tips",
+    text: "Improve product pages with better angles, backgrounds, consistency and useful shopper details.",
+  },
+];
+
 export default async function BlogPage() {
   const [blogs, pageData] = await Promise.all([
     getAllBlogs(),
@@ -84,6 +117,32 @@ export default async function BlogPage() {
         imageAlt="Fashion model outdoors"
         animateReveal
       />
+
+      <section className="container-site pt-16">
+        <div className="max-w-3xl">
+          <p className="eyebrow">Essential guides</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
+            AI Fashion and Product Photography Guides
+          </h2>
+          <p className="mt-4 leading-relaxed text-ink-soft">
+            Start with practical guides for clothing photography, ecommerce product images, AI fashion production and video advertising.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {priorityGuides.map((guide) => (
+            <Link key={guide.href} href={guide.href} className="card group p-6">
+              <h3 className="font-display text-lg font-semibold text-ink group-hover:text-brand">
+                {guide.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{guide.text}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+                Read guide
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="container-site py-24">
         {featured ? (

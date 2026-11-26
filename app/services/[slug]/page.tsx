@@ -1173,6 +1173,15 @@ export default function ServiceSlugPage({
                 {p}
               </p>
             ))}
+            {lifestylePhotos && (
+              <p className="mt-4 leading-relaxed text-ink-soft">
+                Planning a collection launch? Read our{" "}
+                <Link href="/blog/ai-fashion-product-photography-studio-or-lifestyle" className="font-medium text-brand underline">
+                  studio or lifestyle photography guide
+                </Link>{" "}
+                to decide which image type should lead your product page and campaign.
+              </p>
+            )}
             {lightStudio && (
               <>
                 <p className="mt-4 leading-relaxed text-ink-soft">

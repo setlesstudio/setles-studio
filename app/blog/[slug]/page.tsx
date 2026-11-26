@@ -19,10 +19,35 @@ const comparisonSlug = "ai-fashion-photography-vs-traditional-photoshoot-which-o
 const furtherReading: Record<string, Array<{ slug: string; title: string }>> = {
   [comparisonSlug]: [
     { slug: "ai-fashion-photography-cuts-ecommerce-content-costs", title: "How much AI fashion photography costs" },
+    { slug: "ai-fashion-product-photography-studio-or-lifestyle", title: "Choose studio or lifestyle photography for a collection" },
   ],
   "ai-fashion-photography-for-clothing-brands-2026-guide": [
-    { slug: "ai-fashion-fabric-texture-fix-guide", title: "How to fix unrealistic fabric textures in AI images" },
+    { slug: "ai-fashion-fabric-texture-fix-guide", title: "How to improve fabric texture in AI fashion images" },
     { slug: "ai-video-ads-for-fashion-brands", title: "How to plan AI video ads for a fashion brand" },
+  ],
+  "ai-fashion-product-photography-studio-or-lifestyle": [
+    { slug: "clothing-photography-guide-shoot-like-a-pro-studio", title: "Plan a professional clothing photography workflow" },
+    { slug: "ecommerce-product-photography-tips-2026-increase-sales", title: "Improve ecommerce product photography" },
+  ],
+  "ai-video-ads-for-fashion-brands": [
+    { slug: "ai-fashion-product-photography-studio-or-lifestyle", title: "Choose the right still images before building video ads" },
+    { slug: "ai-fashion-photography-cuts-ecommerce-content-costs", title: "Compare AI fashion photography production costs" },
+  ],
+  "ai-fashion-fabric-texture-fix-guide": [
+    { slug: "clothing-photography-guide-shoot-like-a-pro-studio", title: "Prepare clothing references for better photography" },
+    { slug: "ai-fashion-photography-for-clothing-brands-2026-guide", title: "Read the AI fashion photography guide for clothing brands" },
+  ],
+  "ai-fashion-photography-cuts-ecommerce-content-costs": [
+    { slug: "ai-fashion-product-photography-studio-or-lifestyle", title: "Decide when studio or lifestyle images add value" },
+    { slug: "ecommerce-product-photography-tips-2026-increase-sales", title: "Improve ecommerce product image planning" },
+  ],
+  "clothing-photography-guide-shoot-like-a-pro-studio": [
+    { slug: "ai-fashion-fabric-texture-fix-guide", title: "Improve fabric texture in AI fashion images" },
+    { slug: "ai-fashion-product-photography-studio-or-lifestyle", title: "Compare studio and lifestyle photography" },
+  ],
+  "ecommerce-product-photography-tips-2026-increase-sales": [
+    { slug: "clothing-photography-guide-shoot-like-a-pro-studio", title: "Build a better clothing photography workflow" },
+    { slug: "ai-fashion-photography-cuts-ecommerce-content-costs", title: "Understand AI fashion photography costs" },
   ],
 };
 
@@ -112,9 +137,12 @@ export default async function BlogPostPage({
     (b: any) => (b.slug?.current || b.slug) === params.slug
   );
   const relatedPages: Record<string, { href: string; title: string }> = {
-    "ai-fashion-photography-cuts-ecommerce-content-costs": { href: "/pricing", title: "Compare AI fashion photography packages" },
-    "ai-video-ads-for-fashion-brands": { href: "/services/realistic-ai-video-ads-ugc", title: "AI Fashion Ads and UGC Videos" },
-    "ai-fashion-fabric-texture-fix-guide": { href: "/services/realistic-ai-studio-photography", title: "Explore studio photography for apparel" },
+    "ai-fashion-product-photography-studio-or-lifestyle": { href: "/services/lifestyle-realistic-ai-photography", title: "Explore AI lifestyle photography for fashion brands" },
+    "ai-fashion-photography-cuts-ecommerce-content-costs": { href: "/pricing", title: "Compare AI fashion and product photography pricing" },
+    "ai-video-ads-for-fashion-brands": { href: "/services/realistic-ai-video-ads-ugc", title: "Explore AI video ads for fashion brands" },
+    "ai-fashion-fabric-texture-fix-guide": { href: "/services/realistic-ai-studio-photography", title: "Explore AI fashion photography for clothing brands" },
+    "clothing-photography-guide-shoot-like-a-pro-studio": { href: "/services/realistic-ai-studio-photography", title: "Explore AI fashion photography for clothing brands" },
+    "ecommerce-product-photography-tips-2026-increase-sales": { href: "/services", title: "Explore AI fashion and product photography services" },
   };
   const nextPost = allBlogs[index + 1];
   const related = relatedPages[params.slug] || (nextPost && { href: "/blog/" + (nextPost.slug?.current || nextPost.slug), title: articleHeading(nextPost.slug?.current || nextPost.slug, nextPost.title) });
