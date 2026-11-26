@@ -91,6 +91,11 @@ const priorityGuides = [
     title: "Ecommerce Product Photography Tips",
     text: "Improve product pages with better angles, backgrounds, consistency and useful shopper details.",
   },
+  {
+    href: "/blog/ai-skincare-product-photography-ecommerce-guide",
+    title: "AI Skincare Product Photography for Ecommerce",
+    text: "Plan accurate product, detail, lifestyle and campaign images for US skincare and beauty brands.",
+  },
 ];
 
 export default async function BlogPage() {
@@ -125,7 +130,7 @@ export default async function BlogPage() {
             AI Fashion and Product Photography Guides
           </h2>
           <p className="mt-4 leading-relaxed text-ink-soft">
-            Start with practical guides for clothing photography, ecommerce product images, AI fashion production and video advertising.
+            Start with practical guides for clothing photography, skincare and beauty product images, ecommerce, AI fashion production and video advertising.
           </p>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

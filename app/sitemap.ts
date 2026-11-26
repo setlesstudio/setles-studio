@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/services/${service.id}`,
   }));
 
-  // 3. Dynamic Blog Pages (from Sanity CMS - only published articles)
+  // 3. Dynamic Blog Pages (published Sanity articles and local guides)
   let blogRoutes: MetadataRoute.Sitemap = [];
   try {
     const blogs = await getAllBlogs();

@@ -5,6 +5,7 @@ import plumGuide from "@/content/plum-outfit-guide.json";
 import burgundyGuide from "@/content/burgundy-look.json";
 
 import comparison from "@/content/fashion-shoot-comparison.json";
+import skincareGuide from "@/content/ai-skincare-product-photography-ecommerce-guide.json";
 
 const comparisonSlug = "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand";
 const comparisonPublishedAt = "2026-11-24T18:48:05.421Z";
@@ -13,7 +14,7 @@ function revisedComparison(post: { slug?: { current?: string }; _updatedAt?: str
   return post?.slug?.current === comparisonSlug && post._updatedAt && post._updatedAt <= comparisonPublishedAt;
 }
 
-const studioGuides = [plumGuide, burgundyGuide];
+const studioGuides = [plumGuide, burgundyGuide, skincareGuide];
 
 const apparelArticleSlug = "apparel-photography-stop-losing-sales-to-bad-photos";
 const legacyApparelSlug = `${apparelArticleSlug}-`;
