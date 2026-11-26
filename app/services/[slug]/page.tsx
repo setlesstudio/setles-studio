@@ -412,9 +412,8 @@ const services: Record<string, ServiceData> = {
     "waText": "Hi, I'd like a fashion campaign quote.",
     "buttonLabel": "Get Your Fashion Campaign Quote"
   },
-  "faqTitle": "Frequently Asked Questions About AI Fashion Campaign Photography",
-  "faqTitle: "AI Fashion Campaign Photography FAQs",
-  faqs": [
+  faqTitle: "AI Fashion Campaign Photography FAQs",
+  faqs: [
   {
     "q": "What is included in AI fashion campaign photography?",
     "a": "A campaign project can include AI model photography, editorial style scenes, collection launch images, lookbook visuals and advertising creatives. The exact image list and creative direction are agreed in the project brief."
@@ -738,9 +737,8 @@ const services: Record<string, ServiceData> = {
     "waText": "Hi, I'd like to request a free sample of AI handbag photography.",
     "buttonLabel": "Request a Free Sample"
   },
-  "faqTitle": "Frequently Asked Questions",
-  "faqTitle: "AI Handbag Photography FAQs",
-  faqs": [
+  faqTitle: "AI Handbag Photography FAQs",
+  faqs: [
   {
     "q": "What AI handbag photography services does SetlesStudio provide?",
     "a": "SetlesStudio creates professional handbag and accessories images using your product photos and creative brief. Services can include studio product views, model images, lifestyle scenes and campaign visuals."
@@ -897,9 +895,8 @@ const services: Record<string, ServiceData> = {
     "waText": "Hi, I'd like a quote for AI beauty and skincare product photography.",
     "buttonLabel": "Request My Project Quote"
   },
-  "faqTitle": "AI Beauty & Skincare Product Photography FAQs",
-  "faqTitle: "AI Product Photography FAQs for Beauty and Skincare Brands",
-  faqs": [
+  faqTitle: "AI Product Photography FAQs for Beauty and Skincare Brands",
+  faqs: [
   {
     "q": "What AI product photography services do you provide for beauty and skincare brands?",
     "a": "SetlesStudio creates product focused studio images, AI model portraits and lifestyle campaign visuals for skincare, cosmetics, sunscreen, fragrance and other beauty products."
