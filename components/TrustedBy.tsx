@@ -7,7 +7,7 @@ export default function TrustedBy() {
 
   return (
     <section className="overflow-hidden bg-cream py-14">
-      <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-ink-soft/50">
+      <p className="text-center text-xs font-bold uppercase tracking-[0.25em] text-ink-soft">
         Trusted by brands worldwide
       </p>
       <p className="mx-auto mt-3 max-w-3xl px-6 text-center text-sm leading-relaxed text-ink-soft">

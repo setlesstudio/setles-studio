@@ -27,7 +27,7 @@ body {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
   .btn-primary {
-    @apply btn bg-brand text-white hover:bg-brand-dark hover:shadow-lg hover:shadow-brand/25;
+    @apply btn bg-brand text-ink hover:bg-brand-dark hover:text-white hover:shadow-lg hover:shadow-brand/25;
   }
   .btn-dark {
     @apply btn bg-ink text-white hover:bg-black;
@@ -39,7 +39,7 @@ body {
     @apply btn border border-white/30 text-white hover:bg-white hover:text-ink;
   }
   .eyebrow {
-    @apply text-xs font-bold uppercase tracking-[0.22em] text-brand;
+    @apply text-xs font-bold uppercase tracking-[0.22em] text-brand-readable;
   }
   .card {
     @apply rounded-3xl border border-ink/[0.06] bg-white shadow-[0_2px_24px_-12px_rgba(28,24,20,0.12)];

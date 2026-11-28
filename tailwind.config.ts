@@ -12,6 +12,7 @@ const config: Config = {
         brand: {
           DEFAULT: "#F26A1B", // SetlesStudio orange
           dark: "#D9560E",
+          readable: "#A7430D",
           soft: "#FFF1E8",
         },
         ink: {

@@ -1144,7 +1144,7 @@ export default function ServiceSlugPage({
             <div className="mb-6 max-w-3xl">
               <p className="eyebrow">Beauty, skincare and fragrance</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-ink">From product photos to brand campaigns</h2>
-              <p className="mt-3 leading-relaxed text-ink-soft">Explore sunscreen product photography, AI model portraits and perfume campaign images. Start with a clear product reference, then build a coordinated collection of studio and lifestyle visuals.</p>
+              <p className="mt-3 leading-relaxed text-ink-soft">Explore sunscreen product photography, AI model portraits and perfume campaign images. Start with a clear product reference, then build a coordinated collection of studio and lifestyle visuals. See our <Link href="/blog/ai-skincare-product-photography-ecommerce-guide" className="font-semibold text-brand-readable underline underline-offset-4">skincare photography guide</Link> for a shot list.</p>
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
               {beautyGallery.map((photo) => (

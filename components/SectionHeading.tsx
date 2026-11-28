@@ -17,7 +17,7 @@ export default function SectionHeading({
     <Reveal
       className={`max-w-6xl ${align === "center" ? "mx-auto text-center" : ""}`}
     >
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      {eyebrow && <p className={dark ? "eyebrow text-brand" : "eyebrow"}>{eyebrow}</p>}
       <h2
         className={`mt-2 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-4xl ${
           dark ? "text-white" : "text-ink"

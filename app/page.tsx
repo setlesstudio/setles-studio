@@ -212,7 +212,7 @@ export default function HomePage() {
                       return (
                         <ComparisonFigure key={src} caption={caption}>
                           <Reveal delay={(pairIndex * 2 + index) * 0.08} className="flex flex-col items-start gap-2">
-                            <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-white"}`}>
+                            <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider sm:px-3 sm:text-xs ${isBefore ? "bg-cream text-ink" : "bg-brand text-ink"}`}>
                               {isBefore ? "Before" : "After"}
                             </span>
                             <Image
@@ -220,7 +220,7 @@ export default function HomePage() {
                               width={width}
                               height={height}
                               alt={alt}
-                              sizes="(min-width: 1280px) 340px, (min-width: 1024px) 30vw, 63vw"
+                              sizes={`(min-width: 1280px) 340px, (min-width: 1024px) 30vw, ${Math.ceil(ratios[index] / ratios.reduce((sum, ratio) => sum + ratio, 0) * 100)}vw`}
                               loading="lazy"
                               className="block h-auto w-full rounded-md bg-white ring-1 ring-ink/10"
                             />
@@ -256,7 +256,7 @@ export default function HomePage() {
           />
           {process.map((p, i) => (
             <Reveal key={p.step} delay={i * 0.1} className="relative text-center">
-              <span className="relative z-10 mx-auto grid h-12 w-12 place-items-center rounded-full border-2 border-brand bg-white font-display font-bold text-brand">
+              <span className="relative z-10 mx-auto grid h-12 w-12 place-items-center rounded-full border-2 border-brand bg-white font-display font-bold text-brand-readable">
                 {p.step}
               </span>
               <h3 className="mt-4 font-display text-lg font-semibold">

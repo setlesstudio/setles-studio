@@ -89,7 +89,7 @@ export default function Footer() {
             >
               Message us on WhatsApp
             </a>
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-white/65">
               Available worldwide through remote photography services.
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function Footer() {
 
         {cols.map((col) => (
           <nav key={col.title} aria-label={col.title}>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/40">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">
               {col.title}
             </h3>
             <ul className="mt-4 space-y-3">
@@ -136,7 +136,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
+        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/65 sm:flex-row">
           <p>© {new Date().getFullYear()} SetlesStudio. All rights reserved.</p>
           <div className="flex flex-wrap gap-5">
             <Link href="/privacy" className="transition-colors hover:text-white">

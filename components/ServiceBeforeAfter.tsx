@@ -114,16 +114,17 @@ export default function ServiceBeforeAfter({
         {/* After 1 — video or image */}
         <ComparisonFigure caption={afterCaption}>
           <Reveal delay={0.1} className={afterVideo ? "md:h-[480px] xl:h-[540px]" : "flex-1"}>
-            <div className={lightStudio ? studioFrame : `relative overflow-hidden rounded-3xl ${afterVideo ? "h-full" : "h-full min-h-[280px] md:min-h-0"}`}>
+            <div className={lightStudio ? studioFrame : `relative overflow-hidden rounded-3xl ${afterVideo ? "aspect-[3/4] md:aspect-auto md:h-full" : "h-full min-h-[280px] md:min-h-0"}`}>
               <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 {afterLabel}
               </span>
               {afterVideo ? (
                 <video
-                  autoPlay
+                  controls
+                  preload="none"
                   muted
-                  loop
                   playsInline
+                  aria-label={afterAlt || "Video comparison"}
                   className="h-full w-full object-cover object-top"
                 >
                   <source src={afterVideo} type="video/mp4" />

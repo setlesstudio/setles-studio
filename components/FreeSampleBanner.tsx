@@ -26,7 +26,7 @@ export default function FreeSampleBanner() {
           <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn-primary">
             Request Free Sample
           </a>
-          <p className="mt-2 text-xs text-ink-soft/70">No credit card required</p>
+          <p className="mt-2 text-xs text-ink-soft">No credit card required</p>
         </div>
       </div>
     </section>

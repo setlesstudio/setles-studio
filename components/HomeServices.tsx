@@ -73,12 +73,12 @@ export default function HomeServices() {
                 />
               )}
               <div className="flex flex-col py-1">
-                <span className="font-display text-sm font-semibold text-brand">{service.number}.</span>
+                <span className="font-display text-sm font-semibold text-brand-readable">{service.number}.</span>
                 <h3 className="mt-1 font-display text-xl font-semibold group-hover:text-brand">
-                  <Link href={`/services/${service.id}`} className="after:absolute after:inset-0">{service.title}</Link>
+                  <Link href={`/services/${service.id}`} prefetch={false} className="after:absolute after:inset-0">{service.title}</Link>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{service.short}</p>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-brand">
+                <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-bold text-brand-readable">
                   Learn more <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
               </div>
