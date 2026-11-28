@@ -54,5 +54,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Note: <priority> and <changefreq> are omitted as modern search engines (Google) ignore them.
   const routes = [...staticRoutes, ...serviceRoutes, ...blogRoutes];
-  return [...new Map(routes.map((route) => [route.url, route])).values()];
+  return Array.from(new Map(routes.map((route) => [route.url, route])).values());
 }
