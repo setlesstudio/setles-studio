@@ -9,7 +9,7 @@ const valueIcons = [CircleDollarSign, Clock, Infinity, Layers];
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import FAQ from "@/components/FAQ";
-import { pricingTiers as defaultTiers, site } from "@/lib/data";
+import { pricingTiers as defaultTiers, site, standardProjectAnswer } from "@/lib/data";
 import { getStoredPricing, PricingTile } from "@/lib/dashboard-store";
 
 
@@ -55,7 +55,7 @@ export default function PricingPage() {
   },
   {
     "q": "How are revisions and delivery dates agreed?",
-    "a": "The revision scope and delivery schedule are confirmed in your project quote before production begins. Timing depends on the image count, product complexity, creative direction and review stages."
+    "a": standardProjectAnswer
   }
 ];
 

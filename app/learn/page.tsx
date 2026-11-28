@@ -21,7 +21,7 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
 import Testimonials from "@/components/Testimonials";
-import { learnIncluded, learnProducts, site } from "@/lib/data";
+import { learnIncluded, learnProducts, site, studioDetails } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Learn AI Fashion Photography | SetlesStudio",
@@ -305,7 +305,7 @@ export default function LearnPage() {
                 { Icon: Award,   title: "Top Rated Plus",  sub: "on Upwork" },
                 { Icon: Star,    title: "Top 1% Talented", sub: "Professional" },
                 { Icon: Globe,   title: "Worked With",     sub: "Global Brands" },
-                { Icon: Package, title: "500+ Projects", sub: "Delivered Successfully" },
+                { Icon: Package, title: `${studioDetails.completedProjects} Projects`, sub: "Delivered Successfully" },
                 { Icon: Clock,   title: "4+ Years",        sub: "Industry Experience" },
               ].map(({ Icon, title, sub }) => (
                 <div key={title} className="flex items-center gap-3 sm:px-5">

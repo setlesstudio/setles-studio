@@ -1,7 +1,14 @@
 import StructuredData from "@/components/StructuredData";
 import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
+import { standardProjectAnswer } from "@/lib/data";
 
 const homeFaqs = [
+  {
+    question: "How long does a project take, and is a revision included?",
+    answer: standardProjectAnswer,
+    link: { href: "/pricing", label: "Compare photography packages" },
+  },
   {
     question: "What AI fashion and product photography services does SetlesStudio offer?",
     answer: "SetlesStudio provides professional AI fashion and product photography for clothing, beauty, skincare, footwear, handbags and ecommerce brands. Our services include AI model photography, product images, studio visuals, lifestyle scenes and commercial campaign content. We work remotely with brands in the United States and worldwide.",
@@ -76,6 +83,9 @@ export default function HomeFAQs() {
               </summary>
               <p className="mt-3 max-w-3xl pr-8 text-sm leading-7 text-ink-soft sm:text-base">
                 {faq.answer}
+                {faq.link && (
+                  <> <Link className="font-semibold underline underline-offset-4" href={faq.link.href}>{faq.link.label}</Link>.</>
+                )}
               </p>
             </details>
           ))}

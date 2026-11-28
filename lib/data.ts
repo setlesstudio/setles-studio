@@ -15,6 +15,19 @@ export const site = {
   },
 };
 
+export const studioDetails = {
+  teamSize: 4,
+  completedProjects: 250,
+  standardDeliveryDays: 3,
+  includedRevisions: 1,
+  reviews: {
+    upwork: "https://www.upwork.com/freelancers/muhammads2556",
+    fiverr: "https://www.fiverr.com/s/gvNmqAW",
+  },
+};
+
+export const standardProjectAnswer = `Standard delivery is ${studioDetails.standardDeliveryDays} days and includes ${studioDetails.includedRevisions} revision. We confirm the schedule and scope for your project in your quote.`;
+
 export const legal = {
   effectiveDate: "June 21, 2026",
   paymentProvider: "Fastpay",
@@ -43,10 +56,10 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-  { value: "500+", label: "Projects Completed" },
-  { value: "100+", label: "Happy Fashion Brands" },
-  { value: "30+", label: "Countries Served" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: String(studioDetails.completedProjects), label: "Projects Completed" },
+  { value: String(studioDetails.teamSize), label: "Team Members" },
+  { value: `${studioDetails.standardDeliveryDays} days`, label: "Standard Delivery" },
+  { value: String(studioDetails.includedRevisions), label: "Included Revision" },
 ];
 
 export const valueProps = [
@@ -214,7 +227,7 @@ export const pricingTiers: Tier[] = [
       "Model Photography",
       "Ecommerce Ready",
       "High Resolution Files",
-      "3 Business Days Delivery",
+      `${studioDetails.standardDeliveryDays}-Day Standard Delivery`,
     ],
     cta: "Get Started",
     href: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'm interested in the Starter plan. Can we get started?")}`,
@@ -284,7 +297,7 @@ export const faqs = [
   },
   {
     q: "How long does delivery take?",
-    a: "Our average delivery is 7 days. Starter projects ship in 3 business days, and larger campaigns are scheduled with clear milestones. Priority delivery is included in Growth and Premium.",
+    a: standardProjectAnswer,
   },
   {
     q: "Can I choose models?",

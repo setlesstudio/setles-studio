@@ -6,7 +6,7 @@ import FAQ from "@/components/FAQ";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import ImageSlot from "@/components/ImageSlot";
-import { process, site, stats, team } from "@/lib/data";
+import { process, site, stats, studioDetails, team } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About SetlesStudio | AI Photography Services for US Brands",
@@ -102,7 +102,7 @@ export default function AboutPage() {
               SetlesStudio provides professional AI fashion and product photography services for brands that need consistent commercial visuals. We bring together creative direction, image production and editing to build a visual style around each collection.
             </p>
             <p className="mt-4 leading-relaxed text-ink-soft">
-              From apparel model photography to footwear, handbag, beauty and skincare visuals, we plan each project around your products, references and intended use. Clients work with our team remotely from the United States and worldwide. We review finished visuals against the supplied images before delivery.
+              From apparel model photography to footwear, handbag, beauty and skincare visuals, our team of {studioDetails.teamSize} plans each project around your products, references and intended use. Clients work with our team remotely from the United States and worldwide. We review finished visuals against the supplied images before delivery.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {values.map((v) => (
@@ -198,6 +198,10 @@ export default function AboutPage() {
             <h2 className="text-center font-display text-2xl font-semibold sm:text-3xl">
               Awards and Certifications
             </h2>
+            <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold">
+              <a href={studioDetails.reviews.upwork} className="underline underline-offset-4">Read reviews on Upwork</a>
+              <a href={studioDetails.reviews.fiverr} className="underline underline-offset-4">Read reviews on Fiverr</a>
+            </div>
             <div className="mt-5 grid items-center gap-4 sm:grid-cols-3">
               <div className="p-4 md:p-8">
                 <Image

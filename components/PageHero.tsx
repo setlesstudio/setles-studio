@@ -88,7 +88,7 @@ export default function PageHero({
   const imageOptions = {
     alt: imageDescription(image, imageAlt),
     fill: true as const,
-    sizes: "100vw",
+    sizes: productPhotography ? "(min-width: 1024px) 50vw, 100vw" : "100vw",
     quality: preserveImageQuality ? 94 : 90,
     loading: "eager" as const,
     unoptimized: Boolean(image && !image.startsWith("/") && preserveImageQuality),

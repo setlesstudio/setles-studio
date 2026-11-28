@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import StructuredData from "@/components/StructuredData";
-import { site } from "@/lib/data";
+import { site, studioDetails } from "@/lib/data";
 
 const display = localFont({
   src: "./fonts/dmsans.woff2",
@@ -89,15 +89,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const trackAnalytics = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === "production";
+
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
-        <Script
+        {trackAnalytics && <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9T4N04VXYS"
           strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
+        />}
+        {trackAnalytics && <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -105,7 +107,7 @@ export default function RootLayout({
 
             gtag('config', 'G-9T4N04VXYS');
           `}
-        </Script>
+        </Script>}
       </head>
       <body className="font-sans">
         <StructuredData data={{
@@ -134,6 +136,7 @@ export default function RootLayout({
             contactType: "customer service",
             availableLanguage: ["English"],
           },
+          numberOfEmployees: { "@type": "QuantitativeValue", value: studioDetails.teamSize },
           sameAs: Object.values(site.social),
         }} />
         <LayoutWrapper>{children}</LayoutWrapper>

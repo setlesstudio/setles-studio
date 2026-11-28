@@ -27,8 +27,8 @@ export const articleSeo: Record<string, {title: string; description: string; old
   "ai-fashion-photography-vs-traditional-photoshoot-which-one-actually-fits-your-brand": {
     "heading": "AI Fashion Photography vs Traditional Photoshoots",
     "oldHeading": "AI Fashion Photography vs Traditional Photoshoot: Which One Actually Fits Your Brand?",
-    "title": "AI vs Traditional Fashion Photography | SetlesStudio",
-    "description": "Compare AI fashion photography and traditional shoots by cost, garment accuracy, creative control, and use case to choose the right approach for your brand.",
+    "title": "AI Fashion Photography vs. Traditional Photoshoots | SetlesStudio",
+    "description": "Compare AI and traditional fashion photoshoots by cost, garment accuracy and creative control. See which approach fits catalogs, lookbooks and campaigns.",
     "oldTitle": "AI Fashion Photography vs Traditional Photoshoot:",
     "oldDescription": "For standard garments on clean backgrounds, results are often strong."
   },

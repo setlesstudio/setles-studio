@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 1. Core Published Static Pages
   const staticRoutes = [
-    "",
+    "/",
     "/services",
     "/portfolio",
     "/pricing",
@@ -53,5 +53,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Note: <priority> and <changefreq> are omitted as modern search engines (Google) ignore them.
-  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  const routes = [...staticRoutes, ...serviceRoutes, ...blogRoutes];
+  return [...new Map(routes.map((route) => [route.url, route])).values()];
 }

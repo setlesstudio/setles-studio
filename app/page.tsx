@@ -18,7 +18,7 @@ import CTABand from "@/components/CTABand";
 import FreeSampleBanner from "@/components/FreeSampleBanner";
 import HomeFAQs from "@/components/HomeFAQs";
 import StructuredData from "@/components/StructuredData";
-import { process, site } from "@/lib/data";
+import { process, site, studioDetails } from "@/lib/data";
 const homeMetaTitle = "AI Fashion & Product Photography Services for US Brands | SetlesStudio";
 const homeMetaDescription = "AI fashion and product photography services for US clothing, beauty and ecommerce brands. Realistic AI model photography, product images and commercial campaigns.";
 
@@ -181,8 +181,7 @@ export default function HomePage() {
           Message us on WhatsApp
         </a>
         <p className="w-full text-sm text-white/50">
-          7 day average delivery · 500+ projects completed · Top Rated Plus on
-          Upwork
+          {studioDetails.standardDeliveryDays}-day standard delivery · {studioDetails.completedProjects} projects completed · {studioDetails.includedRevisions} revision included
         </p>
       </PageHero>
 

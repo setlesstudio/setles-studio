@@ -29,7 +29,17 @@ const nextConfig = {
     ];
   },
   async headers() {
+    const previewHeaders = process.env.VERCEL_ENV === "preview" ? [{
+      source: "/:path*",
+      headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+    }] : [];
+
     return [
+      ...previewHeaders,
+      {
+        source: "/login",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
       {
         source: "/dashboard/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
