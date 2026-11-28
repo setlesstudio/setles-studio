@@ -154,7 +154,7 @@ export default function PricingPage() {
                 }`}
               >
                 {t.badge && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink">
                     {t.badge === "Most Popular" ? "Studio + Lifestyle" : t.badge}
                   </span>
                 )}

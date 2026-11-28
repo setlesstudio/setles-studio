@@ -264,7 +264,7 @@ export default function AboutPage() {
       </section>
       <section className="bg-cream px-6 py-16 text-center">
         <div className="mx-auto max-w-3xl">
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Let’s create your next <span className="text-brand">product images</span></h2>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Let’s create your next <span className="text-brand-readable">product images</span></h2>
           <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-ink-soft">Share your product photos, creative references, and image requirements. We’ll help you plan AI product photography for your collection, online store, or next campaign.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I'd like to discuss AI product photography with SetlesStudio.")}`} className="btn-primary">Discuss Your Project</a>

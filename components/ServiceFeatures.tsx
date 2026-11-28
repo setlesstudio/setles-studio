@@ -31,7 +31,7 @@ export default function ServiceFeatures({ heading, subheading, items }: Props) {
                   <span className="grid h-11 w-11 lg:w-10 lg:h-10 place-items-center rounded-xl bg-brand-soft text-brand">
                     <item.icon size={20} />
                   </span>
-                  <span className="text-xs font-bold text-ink/25">{item.number}</span>
+                  <span className="text-xs font-bold text-ink-soft">{item.number}</span>
                 </div>
                 <h3 className="mt-4 font-bold lg:text-sm">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft lg:text-[12px]">{item.description}</p>

@@ -214,7 +214,7 @@ export default function LearnPage() {
                   >
                     <Icon size={32} strokeWidth={1.5} />
                     <h3 className="text-sm font-bold">{item.title}</h3>
-                    <p className="text-xs leading-relaxed text-white/70">
+                    <p className="text-xs leading-relaxed text-ink">
                       {item.text}
                     </p>
                   </div>

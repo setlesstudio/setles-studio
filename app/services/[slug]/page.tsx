@@ -1166,7 +1166,7 @@ export default function ServiceSlugPage({
         <Reveal>
           <div className="rounded-4xl bg-cream px-10 py-12 sm:px-16 sm:py-14">
             <h2 className="text-center font-display text-3xl font-bold sm:text-4xl">
-              <span className="text-brand">{svc.description.titleHighlight}</span>{" "}
+              <span className="text-brand-readable">{svc.description.titleHighlight}</span>{" "}
               <span className="text-ink">{svc.description.titleSuffix}</span>
             </h2>
             {svc.description.paragraphs.map((p, i) => (

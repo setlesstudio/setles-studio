@@ -132,7 +132,7 @@ export default function ServicesPage() {
                 )}
               </Reveal>
               <Reveal delay={0.1} className="flex flex-col justify-between">
-                <span aria-hidden="true" className="font-display text-4xl font-semibold text-brand/20 xl:text-5xl">
+                <span aria-hidden="true" className="font-display text-4xl font-semibold text-brand-readable xl:text-5xl">
                   {s.number}
                 </span>
                 <h2 className="mt-2 font-display text-3xl font-semibold xl:text-4xl xl:mt-0">
