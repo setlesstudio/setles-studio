@@ -77,6 +77,11 @@ export function parseMarkdownToHtml(markdownText: string): string {
       const label = /\b(?:role|aria-label|aria-labelledby)\s*=/i.test(attrs) ? "" : ' role="region" aria-label="Scrollable table"';
       return `<div${attrs} tabindex="0"${label}>${table}`;
     })
+    .replace(/<div\b([^>]*\bstyle\s*=\s*["\'][^"\']*overflow-x\s*:\s*auto[^"\']*["\'][^>]*)>/gi, (tag, attrs: string) => {
+      if (/\btabindex\s*=/i.test(attrs)) return tag;
+      const label = /\b(?:role|aria-label|aria-labelledby)\s*=/i.test(attrs) ? "" : ' role="region" aria-label="Scrollable article content"';
+      return `<div${attrs} tabindex="0"${label}>`;
+    })
     .replace(/<img\b[^>]*>/gi, tag => {
     const src = tag.match(/\ssrc=["']([^"']+)["']/i)?.[1];
     const label = imageDescription(src, "");

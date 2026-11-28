@@ -1073,7 +1073,7 @@ export default function ServiceSlugPage({
       <div className="container-site pb-10">
         <p className="leading-relaxed text-ink-soft">
           Planning a campaign? Our{" "}
-          <Link href="/blog/ai-video-ads-for-fashion-brands" className="font-medium text-brand underline">
+          <Link href="/blog/ai-video-ads-for-fashion-brands" className="font-medium text-brand-readable underline">
             guide to AI video ads for fashion brands
           </Link>{" "}
           covers production costs, creative testing, and platform disclosure.
@@ -1120,7 +1120,7 @@ export default function ServiceSlugPage({
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}
-        title={handbagPhotos ? <><span className="block lg:whitespace-nowrap">{svc.hero.titlePrefix}</span><span className="block text-brand lg:whitespace-nowrap">{svc.hero.titleHighlight}</span></> : footwearPhotos ? <><span className="block">{svc.hero.titlePrefix}</span><span className="block text-brand">{svc.hero.titleHighlight}</span></> : lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className="text-brand">{svc.hero.titleHighlight}</span></>}
+        title={handbagPhotos ? <><span className="block lg:whitespace-nowrap">{svc.hero.titlePrefix}</span><span className="block text-brand-readable lg:text-brand lg:whitespace-nowrap">{svc.hero.titleHighlight}</span></> : footwearPhotos ? <><span className="block">{svc.hero.titlePrefix}</span><span className="block text-brand-readable">{svc.hero.titleHighlight}</span></> : lightStudio ? <><span className="block md:inline">{svc.hero.titlePrefix}</span>{" "}<span className="block text-brand-readable md:inline">{svc.hero.titleHighlight}</span></> : <>{svc.hero.titlePrefix} <span className={lifestylePhotos ? "text-brand" : "text-brand-readable lg:text-brand"}>{svc.hero.titleHighlight}</span></>}
         text={handbagPhotos ? <><span className="lg:block">Turn your bag photos into realistic AI images.</span>{" "}<span className="lg:block">Create studio, lifestyle, and model photography.</span>{" "}<span className="lg:block">Made for ecommerce stores and fashion brands.</span></> : svc.hero.subtitle}
         image={svc.hero.image}
         imageMobile={svc.hero.mobileImage}
@@ -1177,7 +1177,7 @@ export default function ServiceSlugPage({
             {lifestylePhotos && (
               <p className="mt-4 leading-relaxed text-ink-soft">
                 Planning a collection launch? Read our{" "}
-                <Link href="/blog/ai-fashion-product-photography-studio-or-lifestyle" className="font-medium text-brand underline">
+                <Link href="/blog/ai-fashion-product-photography-studio-or-lifestyle" className="font-medium text-brand-readable underline">
                   studio or lifestyle photography guide
                 </Link>{" "}
                 to decide which image type should lead your product page and campaign.
@@ -1187,27 +1187,27 @@ export default function ServiceSlugPage({
               <>
                 <p className="mt-4 leading-relaxed text-ink-soft">
                   Working on a skincare collection? See our{" "}
-                  <Link href="/services/ai-beauty-skincare-photography" className="font-medium text-brand underline">
+                  <Link href="/services/ai-beauty-skincare-photography" className="font-medium text-brand-readable underline">
                     beauty and skincare product photography examples
                   </Link>.
                 </p>
                 <p className="mt-4 leading-relaxed text-ink-soft">
                   Prepping a catalog shoot? Read our{" "}
-                  <Link href="/blog/clothing-photography-guide-shoot-like-a-pro-studio" className="font-medium text-brand underline">
+                  <Link href="/blog/clothing-photography-guide-shoot-like-a-pro-studio" className="font-medium text-brand-readable underline">
                     clothing photography guide
                   </Link>{" "}
                   and{" "}
-                  <Link href="/blog/ecommerce-product-photography-tips-2026-increase-sales" className="font-medium text-brand underline">
+                  <Link href="/blog/ecommerce-product-photography-tips-2026-increase-sales" className="font-medium text-brand-readable underline">
                     ecommerce product photography tips
                   </Link>.
                 </p>
                 <p className="mt-4 leading-relaxed text-ink-soft">
                   Considering AI for your next collection? See how to{" "}
-                  <Link href="/blog/ai-fashion-fabric-texture-fix-guide" className="font-medium text-brand underline">
+                  <Link href="/blog/ai-fashion-fabric-texture-fix-guide" className="font-medium text-brand-readable underline">
                     improve AI fabric texture
                   </Link>{" "}
                   and{" "}
-                  <Link href="/blog/ai-fashion-photography-cuts-ecommerce-content-costs" className="font-medium text-brand underline">
+                  <Link href="/blog/ai-fashion-photography-cuts-ecommerce-content-costs" className="font-medium text-brand-readable underline">
                     compare AI and traditional photography costs
                   </Link>.
                 </p>

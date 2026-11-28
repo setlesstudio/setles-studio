@@ -58,7 +58,7 @@ export default function PortfolioGallery() {
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <h3 className="font-display text-xl font-semibold leading-snug text-ink group-hover:text-brand">{service.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-soft">{banner.description}</p>
-              <span className="mt-auto flex items-center justify-between gap-3 pt-6 text-sm font-semibold text-brand">
+              <span className="mt-auto flex items-center justify-between gap-3 pt-6 text-sm font-semibold text-brand-readable">
                 {banner.cta ?? "View Gallery"}
                 <ArrowUpRight size={20} aria-hidden="true" className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </span>

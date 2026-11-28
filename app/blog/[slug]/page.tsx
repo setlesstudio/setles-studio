@@ -187,7 +187,7 @@ export default async function BlogPostPage({
           >
             <ArrowLeft size={15} /> All articles
           </Link>
-          <div className="mt-8 flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand">
+          <div className="mt-8 flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-readable">
             <span>{post.category}</span>
             <span className="h-1 w-1 rounded-full bg-ink/20" />
             <span className="text-ink-soft/70">{post.readTime}</span>
@@ -240,10 +240,10 @@ export default async function BlogPostPage({
                 ))}
               </div>
               <p>For your first test, choose one garment with a detail a customer would recognize immediately, such as an asymmetrical strap or an embroidered logo. Send a close-up of that detail with the flat lay. Compare both references with the finished image before approving the rest of the collection. For sizing questions, use measurements from the actual garment.</p>
-              <Link className="inline-block font-semibold text-brand underline" href="/services/realistic-ai-studio-photography">See our on-model photography for clothing brands</Link>
+              <Link className="inline-block font-semibold text-brand-readable underline" href="/services/realistic-ai-studio-photography">See our on-model photography for clothing brands</Link>
             </section>
           )}
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl prose-img:mx-auto prose-img:max-h-[60vh] sm:prose-img:max-h-[75vh] prose-img:object-contain leading-relaxed space-y-4 [&_.flex:has(img)]:flex-col sm:[&_.flex:has(img)]:flex-row [&_.grid:has(img)]:grid-cols-1 sm:[&_.grid:has(img)]:grid-cols-2 [&_.flex:has(img)]:gap-6 [&_.grid:has(img)]:gap-6 [&_.flex_img]:w-full sm:[&_.flex_img]:w-auto [&_.flex_img]:h-auto [&_.grid_img]:w-full sm:[&_.grid_img]:w-auto [&_.grid_img]:h-auto">
+          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink-soft prose-a:text-brand-readable prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:rounded-2xl prose-img:mx-auto prose-img:max-h-[60vh] sm:prose-img:max-h-[75vh] prose-img:object-contain leading-relaxed space-y-4 [&_.flex:has(img)]:flex-col sm:[&_.flex:has(img)]:flex-row [&_.grid:has(img)]:grid-cols-1 sm:[&_.grid:has(img)]:grid-cols-2 [&_.flex:has(img)]:gap-6 [&_.grid:has(img)]:gap-6 [&_.flex_img]:w-full sm:[&_.flex_img]:w-auto [&_.flex_img]:h-auto [&_.grid_img]:w-full sm:[&_.grid_img]:w-auto [&_.grid_img]:h-auto">
             {post.body ? (
               <div
                 dangerouslySetInnerHTML={{
@@ -266,7 +266,7 @@ export default async function BlogPostPage({
               className="card group mb-4 flex items-center justify-between gap-6 p-7 last:mb-0"
             >
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-brand">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand-readable">
                   Explore next
                 </p>
                 <p className="mt-2 font-display text-lg font-semibold leading-snug group-hover:text-brand">

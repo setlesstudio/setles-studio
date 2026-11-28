@@ -223,7 +223,7 @@ function ProjectForm() {
         )}
       </button>
 
-      <p className="text-center text-xs text-ink-soft/70">
+      <p className="text-center text-xs text-ink-soft">
         We reply within 24 hours. No spam, ever.
       </p>
     </form>
@@ -274,9 +274,9 @@ export default function ContactPageClient() {
                 <Icon size={20} />
               </span>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-ink/40">{label}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-ink-soft">{label}</p>
                 {href ? (
-                  <a href={href} className="mt-0.5 font-semibold text-brand hover:underline">
+                  <a href={href} className="mt-0.5 font-semibold text-brand-readable hover:underline">
                     {value}
                   </a>
                 ) : (
