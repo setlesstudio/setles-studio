@@ -1116,6 +1116,7 @@ export default function ServiceSlugPage({
       ])} />
       <PageHero handbagPhotos={handbagPhotos} footwearPhotos={footwearPhotos} productPhotography={false} preserveImageQuality={footwearPhotos || handbagPhotos}
         campaignPhotos={campaignPhotos || beautyPhotos}
+        imageQuality={beautyPhotos ? 85 : undefined}
         lifestylePhotos={lifestylePhotos}
         lightStudio={lightStudio}
         eyebrow={svc.hero.eyebrow}

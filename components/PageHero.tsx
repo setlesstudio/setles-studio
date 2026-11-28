@@ -6,6 +6,7 @@ export default function PageHero({
   handbagPhotos = false,
   footwearPhotos = false,
   preserveImageQuality = false,
+  imageQuality,
   lightStudio = false,
   lifestylePhotos = false,
   campaignPhotos = false,
@@ -26,6 +27,7 @@ export default function PageHero({
   handbagPhotos?: boolean;
   footwearPhotos?: boolean;
   preserveImageQuality?: boolean;
+  imageQuality?: number;
   lightStudio?: boolean;
   lifestylePhotos?: boolean;
   campaignPhotos?: boolean;
@@ -88,7 +90,7 @@ export default function PageHero({
   const imageOptions = {
     alt: imageDescription(image, imageAlt),
     fill: true as const,
-    sizes: productPhotography ? "(min-width: 1024px) 50vw, 100vw" : "100vw",
+    sizes: "100vw",
     quality: preserveImageQuality ? 94 : 90,
     loading: "eager" as const,
     unoptimized: Boolean(image && !image.startsWith("/") && preserveImageQuality),
@@ -126,7 +128,7 @@ export default function PageHero({
     return (
       <section className="bg-cream text-ink lg:text-white">
         <div className="relative pt-20 lg:pt-0">
-          <Image priority sizes="100vw" quality={92} src={image} alt={imageAlt} width={handbagPhotos ? 2752 : 2912} height={handbagPhotos ? 1536 : 1440} className="block h-auto w-full" />
+          <Image priority sizes="100vw" quality={imageQuality ?? 92} src={image} alt={imageAlt} width={handbagPhotos ? 2752 : 2912} height={handbagPhotos ? 1536 : 1440} className="block h-auto w-full" />
           <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/65 via-black/15 to-transparent lg:block" />
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 bg-gradient-to-b from-black/50 to-transparent lg:block" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[44%] lg:flex-col lg:justify-center lg:pb-8 lg:pt-24">
