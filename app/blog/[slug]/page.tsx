@@ -190,7 +190,7 @@ export default async function BlogPostPage({
           <div className="mt-8 flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-readable">
             <span>{post.category}</span>
             <span className="h-1 w-1 rounded-full bg-ink/20" />
-            <span className="text-ink-soft/70">{post.readTime}</span>
+            <span className="text-ink-soft">{post.readTime}</span>
           </div>
           <h1 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
             {heading}
@@ -198,7 +198,7 @@ export default async function BlogPostPage({
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">
             {post.excerpt}
           </p>
-          <p className="mt-6 text-sm text-ink-soft/70">
+          <p className="mt-6 text-sm text-ink-soft">
             {formatDate(post.publishedAt)} · {post.author || "SetlesStudio Team"}
           </p>
         </header>

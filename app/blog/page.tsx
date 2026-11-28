@@ -136,11 +136,11 @@ export default async function BlogPage() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {priorityGuides.map((guide) => (
             <Link key={guide.href} href={guide.href} className="card group p-6">
-              <h3 className="font-display text-lg font-semibold text-ink group-hover:text-brand">
+              <h3 className="font-display text-lg font-semibold text-ink group-hover:text-brand-readable">
                 {guide.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">{guide.text}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-readable">
                 Read guide
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </span>
@@ -170,21 +170,21 @@ export default async function BlogPage() {
               )}
             </div>
             <div className="flex flex-col justify-center p-8 sm:p-12">
-              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand">
+              <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-readable">
                 <span>{featured.category}</span>
                 <span className="h-1 w-1 rounded-full bg-ink/20" />
-                <span className="text-ink-soft/70">{featured.readTime}</span>
+                <span className="text-ink-soft">{featured.readTime}</span>
               </div>
-              <h2 className="mt-4 font-display text-2xl font-semibold leading-snug group-hover:text-brand sm:text-3xl">
+              <h2 className="mt-4 font-display text-2xl font-semibold leading-snug group-hover:text-brand-readable sm:text-3xl">
                 {articleHeading(featured.slug?.current || featured.slug, featured.title)}
               </h2>
               <p className="mt-4 leading-relaxed text-ink-soft text-sm sm:text-base">
                 {featured.excerpt}
               </p>
-              <p className="mt-6 text-sm text-ink-soft/70">
+              <p className="mt-6 text-sm text-ink-soft">
                 {formatDate(featured.publishedAt)}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-brand-readable">
                 Read article{" "}
                 <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </span>
@@ -220,18 +220,18 @@ export default async function BlogPage() {
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-7">
-                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand">
+                  <div className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-readable">
                     <span>{post.category}</span>
                     <span className="h-1 w-1 rounded-full bg-ink/20" />
-                    <span className="text-ink-soft/70">{post.readTime}</span>
+                    <span className="text-ink-soft">{post.readTime}</span>
                   </div>
-                  <h3 className="mt-3 font-display text-xl font-semibold leading-snug group-hover:text-brand">
+                  <h3 className="mt-3 font-display text-xl font-semibold leading-snug group-hover:text-brand-readable">
                     {articleHeading(post.slug?.current || post.slug, post.title)}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
                     {post.excerpt}
                   </p>
-                  <p className="mt-5 text-xs text-ink-soft/70">
+                  <p className="mt-5 text-xs text-ink-soft">
                     {formatDate(post.publishedAt)}
                   </p>
                 </div>

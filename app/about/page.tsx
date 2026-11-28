@@ -150,7 +150,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="rounded-4xl bg-cream px-10 py-12 sm:px-16 sm:py-14">
             <h2 className="text-center font-display text-3xl font-bold sm:text-4xl">
-              Trusted Expertise. <span className="text-brand">Proven Results.</span>
+              Trusted Expertise. <span className="text-brand-readable">Proven Results.</span>
             </h2>
             <p className="mt-8 text-justify leading-relaxed text-ink-soft">
               Our team has worked with fashion brands worldwide through
@@ -176,14 +176,14 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-brand py-16 text-white">
+      <section className="bg-brand py-16 text-ink">
         <div className="container-site grid grid-cols-2 gap-10 text-center lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="font-display text-4xl font-semibold sm:text-5xl">
                 {s.value}
               </p>
-              <p className="mt-1.5 text-sm font-semibold uppercase tracking-wide text-white/80">
+              <p className="mt-1.5 text-sm font-semibold uppercase tracking-wide text-ink">
                 {s.label}
               </p>
             </div>
@@ -245,7 +245,7 @@ export default function AboutPage() {
           />
           {process.map((p, i) => (
             <Reveal key={p.step} delay={i * 0.1} className="relative text-center">
-              <span className="relative z-10 mx-auto grid h-12 w-12 place-items-center rounded-full border-2 border-brand bg-white font-display font-bold text-brand">
+              <span className="relative z-10 mx-auto grid h-12 w-12 place-items-center rounded-full border-2 border-brand bg-white font-display font-bold text-brand-readable">
                 {p.step}
               </span>
               <h3 className="mt-4 font-display text-lg font-semibold">{p.title}</h3>
@@ -260,7 +260,7 @@ export default function AboutPage() {
       <section className="container-site py-14" aria-labelledby="about-faq-heading">
         <h2 id="about-faq-heading" className="mb-8 text-center font-display text-2xl font-semibold sm:text-3xl">Questions About Our AI Fashion and Product Photography Services</h2>
         <FAQ faqs={aboutFaqs} />
-        <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand underline">portfolio</Link>, and <Link href="/pricing" className="text-brand underline">pricing</Link>. You can also <Link href="/contact" className="text-brand underline">request a photography sample</Link> for your collection.</p>
+        <p className="mt-8 text-center text-ink-soft">Explore our <Link href="/services" className="text-brand-readable underline">AI photography services</Link>, <Link href="/portfolio" className="text-brand-readable underline">portfolio</Link>, and <Link href="/pricing" className="text-brand-readable underline">pricing</Link>. You can also <Link href="/contact" className="text-brand-readable underline">request a photography sample</Link> for your collection.</p>
       </section>
       <section className="bg-cream px-6 py-16 text-center">
         <div className="mx-auto max-w-3xl">

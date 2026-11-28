@@ -68,7 +68,7 @@ export default function PricingPage() {
         <div className="container-site pb-12 pt-8 lg:absolute lg:inset-x-0 lg:top-1/2 lg:-translate-y-1/2 lg:py-0">
           <div className="max-w-xl lg:max-w-[53%]">
             <p className="eyebrow">AI photography packages</p>
-            <h1 id="pricing-heading" className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl xl:text-6xl">AI Fashion &amp; Product Photography<br /><span className="text-brand">Pricing &amp; Packages</span></h1>
+            <h1 id="pricing-heading" className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl xl:text-6xl">AI Fashion &amp; Product Photography<br /><span className="text-brand-readable">Pricing &amp; Packages</span></h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">Compare photography packages for clothing, beauty and ecommerce brands across the United States and worldwide. Choose the image quantity and creative direction that fit your project, or request a custom quote.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#packages" className="btn-primary">Compare Packages</a>
@@ -114,7 +114,7 @@ export default function PricingPage() {
               </p>
               <Link
                 href="/portfolio"
-                className="mt-6 inline-flex items-center gap-2 font-semibold text-brand transition-colors hover:text-brand-dark"
+                className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-readable transition-colors hover:text-brand-dark"
               >
                 View Portfolio <ArrowRight size={18} />
               </Link>
@@ -158,7 +158,7 @@ export default function PricingPage() {
                     {t.badge === "Most Popular" ? "Studio + Lifestyle" : t.badge}
                   </span>
                 )}
-                <h3 className="font-display text-lg font-semibold text-brand">
+                <h3 className="font-display text-lg font-semibold text-brand-readable">
                   {t.name}
                 </h3>
                 <p
@@ -187,7 +187,7 @@ export default function PricingPage() {
                         className={`mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full ${
                           t.featured
                             ? "bg-brand text-white"
-                            : "bg-brand-soft text-brand"
+                            : "bg-brand-soft text-brand-readable"
                         }`}
                       >
                         <Check size={12} strokeWidth={3} />
@@ -232,7 +232,7 @@ export default function PricingPage() {
                 Request Custom Quote
               </a>
             </div>
-            <div className="px-10 pb-10 sm:px-14 sm:pb-14 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-brand">
+            <div className="px-10 pb-10 sm:px-14 sm:pb-14 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-brand-readable">
               <Link href="/services/realistic-ai-studio-photography">AI fashion photography</Link>
               <Link href="/services/lifestyle-realistic-ai-photography">AI lifestyle photography</Link>
               <Link href="/services/footwear-realistic-ai-photography">AI footwear photography</Link>

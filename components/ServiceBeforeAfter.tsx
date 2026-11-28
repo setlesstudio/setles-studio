@@ -57,7 +57,7 @@ export default function ServiceBeforeAfter({
     ];
     return (
       <section className="container-site py-8 md:py-12">
-        {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand sm:text-4xl">{heading}</h2>}
+        {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand-readable sm:text-4xl">{heading}</h2>}
         {introduction && <p className="mx-auto mb-8 max-w-3xl text-center leading-relaxed text-ink-soft">{introduction}</p>}
         <div className={`mx-auto grid max-w-[240px] grid-cols-1 items-start gap-4 md:gap-5 ${photos.length === 3 ? "md:max-w-[820px] md:grid-cols-3" : "md:max-w-[540px] md:grid-cols-2"}`}>
           {photos.map((photo) => (
@@ -72,7 +72,7 @@ export default function ServiceBeforeAfter({
                   <Image src={photo.src} alt={imageDescription(photo.src, photo.alt)} fill quality={92}
                     sizes="(min-width: 768px) 260px, 240px" className={compactProduct && photo.src === before ? "object-contain mix-blend-multiply" : "object-contain"} />
                 )}
-                <span className="absolute left-2 top-2 z-10 max-w-[calc(100%-1rem)] rounded-full bg-brand px-2 py-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-white">{photo.label}</span>
+                <span className="absolute left-2 top-2 z-10 max-w-[calc(100%-1rem)] rounded-full bg-brand px-2 py-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-ink">{photo.label}</span>
               </div>
             </ComparisonFigure>
           ))}
@@ -87,7 +87,7 @@ export default function ServiceBeforeAfter({
 
   return (
     <section className="container-site py-8 md:py-12">
-      {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand sm:text-4xl">{heading}</h2>}
+      {heading && <h2 className="mb-4 text-center font-display text-3xl font-semibold text-brand-readable sm:text-4xl">{heading}</h2>}
       {introduction && <p className="mx-auto mb-8 max-w-3xl text-center leading-relaxed text-ink-soft">{introduction}</p>}
       <div className={`grid gap-4 ${hasTwo ? "md:grid-cols-[0.8fr_1fr_1fr]" : afterVideo ? "md:grid-cols-[1fr_0.45fr]" : "md:grid-cols-[0.8fr_1fr]"}`}>
         {/* Before */}
@@ -115,7 +115,7 @@ export default function ServiceBeforeAfter({
         <ComparisonFigure caption={afterCaption}>
           <Reveal delay={0.1} className={afterVideo ? "md:h-[480px] xl:h-[540px]" : "flex-1"}>
             <div className={lightStudio ? studioFrame : `relative overflow-hidden rounded-3xl ${afterVideo ? "h-full" : "h-full min-h-[280px] md:min-h-0"}`}>
-              <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">
                 {afterLabel}
               </span>
               {afterVideo ? (
@@ -147,7 +147,7 @@ export default function ServiceBeforeAfter({
           <ComparisonFigure caption={after2Caption ?? after2Alt ?? ""}>
             <Reveal delay={0.2} className="flex-1">
               <div className={lightStudio ? studioFrame : "relative h-full min-h-[280px] overflow-hidden rounded-3xl md:min-h-0"}>
-                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">
                   {afterLabel}
                 </span>
                 <Image

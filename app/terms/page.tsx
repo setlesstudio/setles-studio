@@ -31,7 +31,7 @@ export default function TermsPage() {
           <p className="lead text-lg leading-relaxed text-ink-soft">
             Please read these Terms of Service (&ldquo;Terms&rdquo;) carefully
             before using our website at{" "}
-            <Link href="/" className="text-brand hover:underline">
+            <Link href="/" className="text-brand-readable hover:underline">
               setlesstudio.com
             </Link>{" "}
             or commissioning any service from SetlesStudio
@@ -240,7 +240,7 @@ export default function TermsPage() {
               To request a cancellation or raise a dispute, contact us at{" "}
               <a
                 href={`mailto:${site.email}`}
-                className="text-brand hover:underline"
+                className="text-brand-readable hover:underline"
               >
                 {site.email}
               </a>{" "}
@@ -339,7 +339,7 @@ export default function TermsPage() {
                 Email:{" "}
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-brand hover:underline"
+                  className="text-brand-readable hover:underline"
                 >
                   {site.email}
                 </a>
@@ -350,7 +350,7 @@ export default function TermsPage() {
                   href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your terms of service.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brand hover:underline"
+                  className="text-brand-readable hover:underline"
                 >
                   Message us on WhatsApp
                 </a>

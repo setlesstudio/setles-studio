@@ -171,7 +171,7 @@ export default function LearnPage() {
                       {p.description}
                     </p>
                     <div className="mt-5 flex items-center justify-between">
-                      <span className={`font-display ${p.comingSoon ? "text-sm text-ink-soft/50" : "text-2xl font-semibold"}`}>
+                      <span className={`font-display ${p.comingSoon ? "text-sm text-ink-soft" : "text-2xl font-semibold"}`}>
                         {p.price}
                       </span>
                       {!p.comingSoon && (
@@ -194,7 +194,7 @@ export default function LearnPage() {
       </section>
 
       {/* What's included */}
-      <section className="bg-brand py-12 text-white">
+      <section className="bg-brand py-12 text-ink">
         <div className="container-site">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch">
             {/* Heading */}

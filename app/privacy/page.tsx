@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             Privacy Policy explains what personal information we collect, how we
             use it, and your rights regarding that information when you use our
             website at{" "}
-            <Link href="/" className="text-brand hover:underline">
+            <Link href="/" className="text-brand-readable hover:underline">
               setlesstudio.com
             </Link>{" "}
             or engage with our AI fashion content services.
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
                   href="https://vercel.com/legal/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brand hover:underline"
+                  className="text-brand-readable hover:underline"
                 >
                   Vercel&apos;s privacy policy
                 </a>
@@ -251,7 +251,7 @@ export default function PrivacyPage() {
               To exercise any of these rights, email us at{" "}
               <a
                 href={`mailto:${site.email}`}
-                className="text-brand hover:underline"
+                className="text-brand-readable hover:underline"
               >
                 {site.email}
               </a>
@@ -292,7 +292,7 @@ export default function PrivacyPage() {
                 Email:{" "}
                 <a
                   href={`mailto:${site.email}`}
-                  className="text-brand hover:underline"
+                  className="text-brand-readable hover:underline"
                 >
                   {site.email}
                 </a>
@@ -303,7 +303,7 @@ export default function PrivacyPage() {
                   href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi, I have a question about your privacy policy.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brand hover:underline"
+                  className="text-brand-readable hover:underline"
                 >
                   Message us on WhatsApp
                 </a>
