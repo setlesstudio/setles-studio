@@ -31,9 +31,9 @@ function TestimonialCard({ t }: { t: TestimonialTile }) {
             <p className="text-xs text-ink-soft/70">{t.role}</p>
           </div>
         </div>
-        <div className="flex shrink-0 gap-0.5 text-brand" aria-label="5 out of 5 stars">
+        <div className="flex shrink-0 gap-0.5 text-brand" role="img" aria-label="5 out of 5 stars">
           {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} size={13} fill="currentColor" strokeWidth={0} />
+            <Star key={i} size={13} fill="currentColor" strokeWidth={0} aria-hidden="true" />
           ))}
         </div>
       </figcaption>

@@ -71,7 +71,13 @@ export function parseMarkdownToHtml(markdownText: string): string {
     return `<p class="text-ink-soft leading-relaxed my-4">${paraHtml}</p>`;
   });
 
-  return htmlBlocks.filter(Boolean).join("").replace(/<img\b[^>]*>/gi, tag => {
+  return htmlBlocks.filter(Boolean).join("")
+    .replace(/<div\b([^>]*)>(\s*<table\b)/gi, (tag, attrs: string, table: string) => {
+      if (/\btabindex\s*=/i.test(attrs)) return tag;
+      const label = /\b(?:role|aria-label|aria-labelledby)\s*=/i.test(attrs) ? "" : ' role="region" aria-label="Scrollable table"';
+      return `<div${attrs} tabindex="0"${label}>${table}`;
+    })
+    .replace(/<img\b[^>]*>/gi, tag => {
     const src = tag.match(/\ssrc=["']([^"']+)["']/i)?.[1];
     const label = imageDescription(src, "");
     let image = tag;
@@ -97,7 +103,7 @@ function processInlineFormatting(text: string): string {
     (_, linkText, url) => {
       const isExternal = url.startsWith("http");
       const targetAttr = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-      return `<a href="${url}" ${targetAttr} class="text-brand font-semibold underline decoration-brand/30 hover:decoration-brand hover:text-brand-dark transition-all">${linkText}</a>`;
+      return `<a href="${url}" ${targetAttr} class="text-brand-readable font-semibold underline decoration-brand/30 hover:decoration-brand hover:text-brand-readable transition-all">${linkText}</a>`;
     }
   );
 
@@ -107,7 +113,7 @@ function processInlineFormatting(text: string): string {
     (_, url, linkText) => {
       const isExternal = url.startsWith("http");
       const targetAttr = isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-      return `<a href="${url}" ${targetAttr} class="text-brand font-semibold underline decoration-brand/30 hover:decoration-brand hover:text-brand-dark transition-all">${linkText}</a>`;
+      return `<a href="${url}" ${targetAttr} class="text-brand-readable font-semibold underline decoration-brand/30 hover:decoration-brand hover:text-brand-readable transition-all">${linkText}</a>`;
     }
   );
 
