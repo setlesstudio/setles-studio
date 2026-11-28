@@ -132,7 +132,7 @@ export default function PageHero({
           <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black/65 via-black/15 to-transparent lg:block" />
           <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 bg-gradient-to-b from-black/50 to-transparent lg:block" />
           <div className="relative px-6 py-8 lg:absolute lg:inset-y-0 lg:left-[5%] lg:flex lg:w-[44%] lg:flex-col lg:justify-center lg:pb-8 lg:pt-24">
-            <p className="eyebrow">{eyebrow}</p>
+            <p className="eyebrow lg:text-brand">{eyebrow}</p>
             <h1 className={handbagPhotos ? "mt-3 font-display text-3xl font-semibold leading-tight lg:text-[3.2vw]" : "mt-3 font-display text-3xl font-semibold leading-tight xl:text-5xl"}>{title}</h1>
             {text && <p className={handbagPhotos ? "mt-4 text-sm leading-relaxed text-ink-soft lg:text-[1.15vw] lg:text-white/90" : "mt-4 text-sm leading-relaxed text-ink-soft lg:text-white/90 xl:text-lg"}>{text}</p>}
             {children && <div className="mt-6 flex flex-wrap gap-3">{children}</div>}
@@ -152,7 +152,7 @@ export default function PageHero({
           </picture>
           <div className="relative px-6 pb-10 pt-8 md:absolute md:inset-0 md:flex md:items-center md:p-0">
             <div className="md:ml-[10%] md:w-[58%] md:-translate-y-6 lg:-translate-y-24">
-              <p className="eyebrow">{eyebrow}</p>
+              <p className={lifestylePhotos ? "eyebrow text-brand" : "eyebrow"}>{eyebrow}</p>
               <h1 className={lifestylePhotos ? "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[2.6vw]" : "mt-3 font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-[3.15vw]"}>{title}</h1>
               {text && <p className={`mt-5 text-base leading-relaxed lg:text-lg ${lifestylePhotos ? "text-white/90" : "text-ink-soft"}`}>{text}</p>}
               {children && <div className="mt-8 flex flex-wrap gap-4">{children}</div>}
@@ -187,7 +187,7 @@ export default function PageHero({
       />}
       <div className="container-site relative">
           <div className={lightStudio ? "md:ml-[10%] md:max-w-[58%]" : undefined}>
-            <p className="eyebrow">{eyebrow}</p>
+            <p className="eyebrow text-brand">{eyebrow}</p>
             <h1 className="mt-2 sm:mt-4 max-w-3xl font-display text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
               {title}
             </h1>

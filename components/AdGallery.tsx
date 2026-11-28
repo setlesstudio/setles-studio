@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Play } from "lucide-react";
 import styles from "./FashionAds.module.css";
 
@@ -20,7 +21,7 @@ export default function AdGallery() {
         <div className={styles.frame}>
           {active === index ? <video src={base + ".mp4"} poster={base + ".webp"} controls autoPlay playsInline aria-label={title} /> :
             <button className={styles.poster} aria-label={"Play " + title} onClick={() => setActive(index)}>
-              <img loading="lazy" src={base + ".webp"} alt="" width="640" height="1138" />
+              <Image src={base + ".webp"} alt="" width={640} height={1138} sizes="(max-width: 760px) min(75vw, 310px), (min-width: 1440px) 340px, 25vw" />
               <span className={styles.play}><Play size={20} fill="currentColor" aria-hidden="true" /></span>
             </button>}
         </div>
